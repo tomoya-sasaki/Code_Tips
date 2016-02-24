@@ -3,6 +3,8 @@ How to use Git
 
 # Table of Contents
 1. [How to clone](#how-to-clone)
+2. [How to upload changes](#how-to-upload-changes)
+3. [When someone updates the files](#when-someone-updates-the-files)
 
 
 ### How to clone
@@ -34,3 +36,4 @@ or, you can use `git push origin your_branch_name(ex. master)` for the last line
 ```
 $ git pull
 ```
+`pull` should be done first in case codes are modified.
