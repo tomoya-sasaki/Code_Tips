@@ -1,5 +1,7 @@
 # Git
 How to use Git
+* Websites for reference
+  * [いまさら聞けないgitの使い方](http://qiita.com/mountcedar/items/682743c95fd3b8fc274b)
 
 # Table of Contents
 1. [How to clone](#how-to-clone)
