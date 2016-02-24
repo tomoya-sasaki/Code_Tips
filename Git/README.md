@@ -21,8 +21,16 @@ Checking connectivity... done.
 $ cd /Users/Backup/GitHubData/Code_Tips # Move to cloned folder
 $ git init
 ```
+## How to upload changes
 After you make changes,
 ```
+$ git add *
+$ git commit -m "your comments"
+$ git push https://github.com/xxxxx/Code_Tips.git master:master
+```
+or, you can use `git push origin your_branch_name(ex. master)` for the last line.
 
-
-
+## When someone updates the files
+```
+$ git pull
+```
