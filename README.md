@@ -14,6 +14,6 @@ How to use `ArcGIS/ArcPy` will also be added.
 ### 例1
 ### Example2
 ### Third Example
-When spaces are used in the header, remeber to use "-".
+When spaces are used in the header, remember to use "-".
 ```
 
