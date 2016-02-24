@@ -1,4 +1,4 @@
 # Code_Tips
-Efficient ways to write codes in `Python`, `R`, and `C/C++`.
+Efficient ways to write codes in `Python/ArcPy`, `R`, and `C/C++`.
 
 ##Contents
