@@ -4,7 +4,7 @@ How to use `ArcGIS/ArcPy` will also be added.
 
 ##How to write
 * Please use following code.
-```markdown_sample.md
+```README.md
 # Table of Contents
 1. [例1](#例1)
 2. [Example2](#example2)
