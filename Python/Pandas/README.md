@@ -2,14 +2,12 @@
 
 # Table of Contents
 1. [データフレームを初期化した後に登録](#データフレームを初期化した後に登録)
-2. [Example2](#example2)
-3. [Third Example](#third-example)
+2. [再インデックス](#再インデックス)
+3. [Third Example](#Third Example)
 
-## Example
-## Example2
-## Third Example
+###Third Example
 
-##データフレームを初期化した後に登録
+###データフレームを初期化した後に登録
 ```
 results_df = pd.DataFrame()
 results_df = results_df.append(pd.DataFrame({
@@ -21,7 +19,7 @@ results_df = results_df.append(pd.DataFrame({
    columns = ['ID', 'Date', 'Time', 'Tweet', 'Type']))
 ```
 
-##再インデックス
+###再インデックス
 単純に上から番号を振るだけでよければ、<br>
 `dataframe.reindex(range(len(df))) # re-index`
 番号順だけで良いのに、indexがあるばっかりに面倒なことも。そのときは、とりあえず文字列を被らないように振っておいて、 reindexを繰り返すしかないのかも<br><br>
