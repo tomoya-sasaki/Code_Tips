@@ -1,7 +1,7 @@
-#Pandas
+<h1>Pandas</h1>
 
 # Table of Contents
-1. [Example](#example)
+1. [データフレームを初期化した後に登録](#データフレームを初期化した後に登録)
 2. [Example2](#example2)
 3. [Third Example](#third-example)
 
