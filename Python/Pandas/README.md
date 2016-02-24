@@ -3,7 +3,7 @@
 # Table of Contents
 1. [データフレームを初期化した後に登録](#データフレームを初期化した後に登録)
 2. [再インデックス](#再インデックス)
-3. [Third Example](#Third-Example)
+3. [Third Example](#third-example)
 
 ###Third Example
 
