@@ -3,9 +3,7 @@
 # Table of Contents
 1. [データフレームを初期化した後に登録](#データフレームを初期化した後に登録)
 2. [再インデックス](#再インデックス)
-3. [Third Example](#third-example)
-
-###Third Example
+3. [時系列インデックスをつけてソートする](#時系列インデックスをつけてソートする)
 
 ###データフレームを初期化した後に登録
 ```
@@ -26,3 +24,11 @@ results_df = results_df.append(pd.DataFrame({
 
 `user_tweet_df.index = [i for i in range(len(user_tweet_df))]`<br>
 としないと上手く行かないこともあった
+
+###時系列インデックスをつけてソートする
+cf. 言語処理100本ノック No.18<br>
+```
+time = pd.Series(df[3]) # dataframeの3列目が時系列
+df.sort(3, ascending=True)
+```
+
