@@ -42,4 +42,5 @@ for field in fields:
 
 arcpy.Dissolve_management(in_features, out_feature_class, dissolve_field, statistic_list, "MULTI_PART", "DISSOLVE_LINES")
 ```
-統計処理をする場合は、`statistics_fields=[['Code_Dist','LAST'],['Population','SUM']]`のようになっていなければならない。
+統計処理をする場合は、`statistics_fields=[['Code_Dist','LAST'],['Population','SUM']]`のようになっていなければならない。<br>
+A real example is [here](https://github.com/Shusei-E/Code_Tips/blob/master/ArcGIS-ArcPy/Codes/Malapportionment.py).
