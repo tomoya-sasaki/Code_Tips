@@ -2,7 +2,7 @@
 
 ## Basics
 
-### メモリ上のオビジェクトの削除
+### Delecte an object on memory
 ```python
 del OBJECT
 ```
