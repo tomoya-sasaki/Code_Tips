@@ -28,15 +28,17 @@ statistic_list = []
 for field in fields:
   if re.search(r"OBJECTID", field.name):
     continue
-  if re.search(r"KEN", field.name):
+  elif re.search(r"KEN", field.name):
     statistic_list.append([field.name, "FIRST"])
-  if re.search(r"MALE_", field.name):
+  elif re.search(r"MALE_", field.name):
     statistic_list.append([field.name, "SUM"])
     statistic_list.append([field.name, "FIRST"])
-  if re.search(r"FEMALE_", field.name):
+  elif re.search(r"FEMALE_", field.name):
     statistic_list.append([field.name, "SUM"])
-  if re.search(r"POP_", field.name):
-    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"X_CODE", field.name):
+    statistic_list.append([field.name, "MEAN"])
+  elif re.search(r"Y_CODE", field.name):
+    statistic_list.append([field.name, "MEAN"])
 
 arcpy.Dissolve_management(in_features, out_feature_class, dissolve_field, statistic_list, "MULTI_PART", "DISSOLVE_LINES")
 ```
