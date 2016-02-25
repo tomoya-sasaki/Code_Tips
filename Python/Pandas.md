@@ -119,7 +119,7 @@ df = df.drop_duplicates(["Municipality_code", "District_code"])
 ```
 
 ### ある列の中で、ある文字列を含む行だけを抜き出す
-以下の例は、`merged_df`というデータフレームの`SHI_NAME`列の値が市川市になっているデータにおいて、`CHOZA_NAME`列の値に「大野町」を含むデータを抜き出している
+以下の例は、`merged_df`というデータフレームの`SHI_NAME`列の値が市川市になっているデータにおいて、`CHOZA_NAME`列の値に「大野町」を含むデータを抜き出している。
 ```python
 # ある名前を含むかどうかの論理判定
 row_select = pd.Series(merged_df[(merged_df["SHI_NAME"] == "市川市")]["CHOAZA_NAME"]).str.contains("大野町")
