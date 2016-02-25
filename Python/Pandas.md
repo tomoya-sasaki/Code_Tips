@@ -14,6 +14,7 @@
 11. [データフレームのmerge](#データフレームのmerge)
 12. [列のdatatypeを変える](#列のdatatypeを変える)
 13. [重複の削除](#重複の削除)
+14. [ある列の中で、特定の文字列を含む行だけを抜き出す](#ある列の中で、ある文字列を含む行だけを抜き出す)
 
 ### データフレームを初期化した後に登録
 ```python
@@ -116,3 +117,14 @@ data_wTopicExt[['Likes', 'RT', 'Topic']] = data_wTopicExt[['Likes', 'RT', 'Topic
 ```python
 df = df.drop_duplicates(["Municipality_code", "District_code"])
 ```
+
+### ある列の中で、ある文字列を含む行だけを抜き出す
+以下の例は、`merged_df`というデータフレームの`SHI_NAME`列の値が市川市になっているデータにおいて、`CHOZA_NAME`列の値に「大野町」を含むデータを抜き出している
+```python
+# ある名前を含むかどうかの論理判定
+row_select = pd.Series(merged_df[(merged_df["SHI_NAME"] == "市川市")]["CHOAZA_NAME"]).str.contains("大野町")
+# 論理配列を使って列選択
+merged_df[(merged_df["SHI_NAME"] == "市川市")].ix[np.array(row_select), :]
+```
+列名の部分一致は[こちら](http://qiita.com/hik0107/items/d991cc44c2d1778bb82e#%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%81%84%E3%81%98%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86)が参考になる。
+
