@@ -13,9 +13,10 @@
 10. [一部列名の変更](#一部列名の変更)
 11. [データフレームのmerge](#データフレームのmerge)
 12. [列のdatatypeを変える](#列のdatatypeを変える)
+13. [重複の削除](#重複の削除)
 
 ### データフレームを初期化した後に登録
-```
+```python
 results_df = pd.DataFrame()
 results_df = results_df.append(pd.DataFrame({
    "ID": [user for i in range(len(tweet_list))],       
@@ -36,12 +37,12 @@ results_df = results_df.append(pd.DataFrame({
 
 ### 時系列インデックスをつけてソートする
 cf. 言語処理100本ノック No.18<br>
-```
+```python
 time = pd.Series(df[3]) # dataframeの3列目が時系列
 df.sort(3, ascending=True)
 ```
 ### columnの入れ替え
-```
+```python
 col = MC_df.columns.tolist()
 col = col[-1:] + col[:-1] # 一番最後を最初に持ってくる
 MC_df = MC_df[col]
@@ -61,7 +62,7 @@ verb_surface = MC_df.ix[MC_df["pos"]=="動詞", "surface"]
 また、単純に複数列を取り出したいのならリストを使って、`data[["x1", "x2"]]`などでOK。
 
 ### ランダムに行を取り出す
-```
+```python
 sampler = np.random.permutation(len(cleaned_df3))
 sampled = cleaned_df3.take(sampler[:1500])
 ```
@@ -72,10 +73,10 @@ csvで書き出したとき、encodingを指定しないとutf-8になってExce
 sample_df.to_csv("sample.csv",  encoding ='cp932', index=False)
 ```
 
-###要素の取り出し
+### 要素の取り出し
 `state_df.ix[state_df["state"]==state, "State"]`
 とすると、
-```
+```python
 50    North Carolina
 Name: State, dtype: object
 ```
@@ -84,8 +85,8 @@ Name: State, dtype: object
 `str(state_df.ix[state_df["state"]==state, "State"].values[0])`<br>
 とする。
 
-###列の追加
-```
+### 列の追加
+```python
 new_col = pd.DataFrame(["not" for i in range(len(user_df))])
 new_col.columns =["status_download"] #列名は結合後にもそのまま使われる
 
@@ -94,19 +95,24 @@ new_col.index = [i for i in range(len(user_df))]
 user_df = pd.concat([user_df, new_col], axis=1)
 ```
 
-###一部列名の変更
+### 一部列名の変更
 `df_temp.rename(columns={df_temp.columns[0]: 'A_code'}, inplace=True)`<br>
 行も変えるなら、<br>
 `df.rename(columns={'A': 'a'}, index={'ONE': 'one'}, inplace=True)`<br>
 とすればOK。<br>
 `inplace=False`（デフォルト）にすると新しいDataFrameを返し、元のデータは変更されない。`inplace=True`にすると元のデータが変更される。
 
-###データフレームのmerge
+### データフレームのmerge
 [ここ](http://sinhrks.hatenablog.com/entry/2015/01/28/073327)に詳しい。
 デフォルトでは2つのDataFrameにkeyがないと結合後に残らないので、howオプションで細かく指定する。
 
-###列のdatatypeを変える
+### 列のdatatypeを変える
 seabornなどでplotする際に必要になることがある
-```
+```python
 data_wTopicExt[['Likes', 'RT', 'Topic']] = data_wTopicExt[['Likes', 'RT', 'Topic']].astype(float)
+```
+
+### 重複の削除
+```python
+df = df.drop_duplicates(["Municipality_code", "District_code"])
 ```
