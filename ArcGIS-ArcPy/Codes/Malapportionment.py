@@ -53,3 +53,5 @@ for field in fields:
     statistic_list.append([field.name, "SUM"])
 
 arcpy.Dissolve_management(in_features, out_feature_class, dissolve_field, statistic_list, "MULTI_PART", "DISSOLVE_LINES")
+
+arcpy.CopyFeatures_management(out_feature_class, "Election_District_H12.shp")
