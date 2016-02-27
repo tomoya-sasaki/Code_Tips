@@ -35,6 +35,12 @@ for field in fields:
     statistic_list.append([field.name, "SUM"])
   elif re.search(r"GENNUM", field.name):
     statistic_list.append([field.name, "SUM"])
+  elif re.search(r"FMHH", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"MHH", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"HHW", field.name):
+    statistic_list.append([field.name, "SUM"])
   elif re.search(r"X_CODE", field.name):
     statistic_list.append([field.name, "MEAN"])
   elif re.search(r"Y_CODE", field.name):
