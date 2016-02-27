@@ -19,10 +19,17 @@ for field in fields:
     statistic_list.append([field.name, "FIRST"])
   elif re.search(r"MALE_", field.name):
     statistic_list.append([field.name, "SUM"])
-    statistic_list.append([field.name, "FIRST"])
   elif re.search(r"FEMALE_", field.name):
     statistic_list.append([field.name, "SUM"])
   elif re.search(r"POP_", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"GENHH", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"STNUM", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"WK_", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"IND_", field.name):
     statistic_list.append([field.name, "SUM"])
   elif re.search(r"X_CODE", field.name):
     statistic_list.append([field.name, "MEAN"])
