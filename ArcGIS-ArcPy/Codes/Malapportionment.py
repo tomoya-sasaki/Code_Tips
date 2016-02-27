@@ -30,7 +30,13 @@ for field in fields:
     statistic_list.append([field.name, "MEAN"])
   elif re.search(r"COORDINATE_AREA", field.name):
     statistic_list.append([field.name, "SUM"])
-  elif re.search(r"Y_CODE", field.name):
-    statistic_list.append([field.name, "MEAN"])
+  elif re.search(r"Num_Votes", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"Num_Voter", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"Num_Electorate", field.name):
+    statistic_list.append([field.name, "SUM"])
+  elif re.search(r"Num_Votes_Sum", field.name):
+    statistic_list.append([field.name, "SUM"])
 
 arcpy.Dissolve_management(in_features, out_feature_class, dissolve_field, statistic_list, "MULTI_PART", "DISSOLVE_LINES")
