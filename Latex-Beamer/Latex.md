@@ -1,4 +1,5 @@
 # Latex
+uplatexを使うと良いのかも。jsarticleのオプションとしてuplatexを指定。
 
 ## Table of Contents
 1. <a href="https://gist.github.com/Shusei-E/8c56c276875ec798ab49" target="_blank">レポートテンプレ</a>と<a href="https://gist.github.com/Shusei-E/18389f19f278a2b6e965" target="_blank">卒論テンプレ</a>
