@@ -1,7 +1,7 @@
 #Beamer
 
 # Table of Contents
-1. [全体のテンプレ](https://gist.github.com/m-note/f527da8d65c5078c04f4)
+1. <a href="https://gist.github.com/m-note/f527da8d65c5078c04f4" target="_blank">全体のテンプレ</a>
 2. [Beamer Slide](#beamer-slide)
 3. [ボックス](#ボックス)
 4. [2段組](#2段組)
