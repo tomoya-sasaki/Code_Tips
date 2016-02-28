@@ -11,9 +11,10 @@
 8. [少し空白を入れる](#少し空白を入れる)
 9. [使いやすそうなスタイル](#使いやすそうなスタイル) 
 10. [右下のナビゲーションバーを消す](#右下のナビゲーションバーを消す)
-11. [画像を2枚並べて表示](#画像を2枚並べて表示) 
-12. [Citation and Reference](#citation-and-reference)
-13. [Hide Appendix and References](#hide-appendix-and-references)
+11. [スライド番号を右下に入れる](#スライド番号を右下に入れる)
+12. [画像を2枚並べて表示](#画像を2枚並べて表示) 
+13. [Citation and Reference](#citation-and-reference)
+14. [Hide Appendix and References](#hide-appendix-and-references)
 
 ### Beamer Slide
 ```tex
@@ -91,6 +92,9 @@ Right Part
 
 ### 右下のナビゲーションバーを消す
 `\usenavigationsymbolstemplate{}`
+
+### スライド番号を右下に入れる
+プリアンブルに`\setbeamertemplate{footline}[frame number]`
 
 ### 画像を2枚並べて表示
 [こちら](https://gist.github.com/Shusei-E/8536241e264b976acd6b)を参考にすること
