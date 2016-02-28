@@ -13,6 +13,7 @@
 10. [右下のナビゲーションバーを消す](#右下のナビゲーションバーを消す)
 11. [画像を2枚並べて表示](#画像を2枚並べて表示) 
 12. [Citation and Reference](#citation-and-reference)
+13. [Hide Appendix and References](#hide-appendix-and-references)
 
 ### Beamer Slide
 ```tex
@@ -113,3 +114,6 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 \printbibliography	
 \end{frame}
 ```
+
+### Hide Appendix and References
+`\appendix`を直前に追加するだけでOK
