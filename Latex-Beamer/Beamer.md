@@ -12,6 +12,7 @@
 9. [使いやすそうなスタイル](#使いやすそうなスタイル) 
 10. [右下のナビゲーションバーを消す](#右下のナビゲーションバーを消す)
 11. [画像を2枚並べて表示](#画像を2枚並べて表示) 
+12. [Citation and Reference](#citation-and-reference)
 
 ### Beamer Slide
 ```tex
@@ -92,3 +93,23 @@ Right Part
 
 ### 画像を2枚並べて表示
 [こちら](https://gist.github.com/Shusei-E/8536241e264b976acd6b)を参考にすること
+
+### Citation and Reference
+プリアンブルには、
+```tex
+% Citation
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{ref.bib}
+```
+引用する際には、
+```tex
+Test\textcite{Alesina2002} % Alesina and Weder (2002)
+Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
+```
+引用文献一覧のスライドには、
+```tex
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\printbibliography	
+\end{frame}
+```
