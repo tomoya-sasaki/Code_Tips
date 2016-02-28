@@ -30,6 +30,12 @@
 
 ### 数式で、式と式の間を広げる
 `\\[12pt]`のように改行するところで記述
+```tex
+\begin{eqnarray*} 
+\sigma_E &=& \beta, \\[7pt] \sigma_B &=& \pi (1- \beta), \\[7pt]
+\sigma_M &=& (1-\pi) (1- \beta).  
+\end{eqnarray*}
+```
 
 ### ダブルスペース
 ```tex
