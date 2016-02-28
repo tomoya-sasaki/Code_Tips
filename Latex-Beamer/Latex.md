@@ -38,4 +38,4 @@
 \doublespacing
 ```
 ### itemizeでbulletを変える
-`\item[→] Item 1`でOK。Beamer全体に適用するには[こちら](#http://tex.stackexchange.com/questions/294067/beamer-change-only-several-bullets-in-the-list)。
+`\item[→] Item 1`でOK。Beamer全体に適用するには[こちら](http://tex.stackexchange.com/questions/294067/beamer-change-only-several-bullets-in-the-list)。
