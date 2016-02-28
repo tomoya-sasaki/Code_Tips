@@ -1,12 +1,69 @@
 #Beamer
 
 # Table of Contents
-1. [脚注のサイズの調整](#脚注のサイズの調整)
-2. [図の挿入](#図の挿入)
-3. [少し空白を入れる](#少し空白を入れる)
-4. [使いやすそうなスタイル](#使いやすそうなスタイル) 
-5. [右下のナビゲーションバーを消す](#右下のナビゲーションバーを消す)
-6. [画像を2枚並べて表示](#画像を2枚並べて表示) 
+1. [全体のテンプレ](https://gist.github.com/m-note/f527da8d65c5078c04f4)
+2. [Beamer Slide](#beamer-slide)
+3. [ボックス](#ボックス)
+4. [2段組](#2段組)
+5. [このセクションの内容](#このセクションの内容)
+6. [脚注のサイズの調整](#脚注のサイズの調整)
+7. [図の挿入](#図の挿入)
+8. [少し空白を入れる](#少し空白を入れる)
+9. [使いやすそうなスタイル](#使いやすそうなスタイル) 
+10. [右下のナビゲーションバーを消す](#右下のナビゲーションバーを消す)
+11. [画像を2枚並べて表示](#画像を2枚並べて表示) 
+
+### Beamer Slide
+```tex
+\begin{frame}[fragile]
+\frametitle{Title} 
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\end{frame}
+```
+
+### ボックス
+```tex
+\begin{block}{} %blue
+
+\end{block}
+
+\begin{alertblock}{} %red
+
+\end{alertblock}
+
+\begin{exampleblock}{} %green
+
+\end{exampleblock}
+```
+
+### 2段組
+```tex
+\begin{columns}[T] % align columns
+\begin{column}{.48\textwidth}
+Left Part
+\end{column}
+\hfill
+\begin{column}{.48\textwidth}
+Right Part
+\end{column}
+\end{columns}
+```
+
+### このセクションの内容
+```tex
+\begin{frame}<beamer>
+\frametitle{この章の内容}
+\tableofcontents[currentsection]
+\end{frame}
+```
 
 ### 脚注のサイズの調整 
 ([参考](http://tex.stackexchange.com/questions/21741/how-do-i-change-footnote-font-size-in-beamer-presentation))
