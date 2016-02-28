@@ -111,6 +111,7 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 ```tex
 \begin{frame}[allowframebreaks]
 \frametitle{References}
+\renewcommand*{\bibfont}{\scriptsize}
 \printbibliography	
 \end{frame}
 ```
