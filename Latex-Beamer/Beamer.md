@@ -114,7 +114,8 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 \printbibliography	
 \end{frame}
 ```
-エンコードっぽいエラーが発生する場合は、`\usepackage[utf8]{inputenc}`をプリアンブルに追加する。
+エンコードっぽいエラーが発生する場合は、`\usepackage[utf8]{inputenc}`をプリアンブルに追加する。<br>
+エラーが出ても、そのまま何回かコンパイルしないといけないのかも。
 
 ### Hide Appendix and References
 `\appendix`を直前に追加するだけでOK
