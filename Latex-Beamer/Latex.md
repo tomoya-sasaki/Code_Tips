@@ -9,6 +9,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 5. [数式で、式と式の間を広げる](#数式で式と式の間を広げる)
 6. [ダブルスペース](#ダブルスペース)
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
+8. [横長の表を回転する](#横長の表を回転する)
 
 ### 写真の挿入
 ```tex
@@ -46,3 +47,14 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ```
 ### itemizeでbulletを変える
 `\item[$\Rightarrow$] Item 1`でOK。Beamer全体に適用するには[こちら](http://tex.stackexchange.com/questions/294067/beamer-change-only-several-bullets-in-the-list)。
+
+### 横長の表を回転する
+プリアンブルに<br>
+`\usepackage{lscape}`<br>
+を記載する。<br>
+<br>
+次に、横にしたいところで、<br>
+```
+\begin{landscape}
+\end{landscape}
+```
