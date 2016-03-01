@@ -8,3 +8,9 @@
 >>> [str(a) + str(b) for (a, b) in zip(a, b)]
 ['14', '25', '36']
 ```
+
+### リスト内包表記でif elseを用いる
+以下の例では、`ku_num_list`に番号が入っていて、それが1桁なら先頭にゼロを付けたものを返す。もともと2桁なら何もしない。
+```python
+["0"+ str(item) if len(str(item))==1 else str(item) for item in ku_num_list]
+```
