@@ -16,7 +16,7 @@ How to use `ArcGIS/ArcPy` is also added.
 ### Third Example
 When spaces are used in the header, remember to use "-".
 ```
-* To open links in a new tab (window)
+* To open links in a new tab (window)<br>
 `<a href="http://www.sampleurl.com" target="_blank">こちら</a>`
 
 ## Write Codes with Vim
