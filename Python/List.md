@@ -14,3 +14,7 @@
 ```python
 ["0"+ str(item) if len(str(item))==1 else str(item) for item in ku_num_list]
 ```
+次の例では、elif的な用法。全てのものを3桁に統一する。
+```python
+["00"+ str(item) if len(str(item))==1 else "0"+str(item) if len(str(item))==2 else str(item) for item in ku_num_list]
+```
