@@ -104,7 +104,7 @@ user_df = pd.concat([user_df, new_col], axis=1)
 `inplace=False`（デフォルト）にすると新しいDataFrameを返し、元のデータは変更されない。`inplace=True`にすると元のデータが変更される。
 
 ### データフレームのmerge
-<a href=”http://sinhrks.hatenablog.com/entry/2015/01/28/073327” target=”_blank”>ここ</a>に詳しい。
+<a href="http://sinhrks.hatenablog.com/entry/2015/01/28/073327" target="_blank">ここ</a>に詳しい。
 デフォルトでは2つのDataFrameにkeyがないと結合後に残らないので、howオプションで細かく指定する。
 
 ### 列のdatatypeを変える
@@ -126,5 +126,5 @@ row_select = pd.Series(merged_df[(merged_df["SHI_NAME"] == "市川市")]["CHOAZA
 # 論理配列を使って列選択
 merged_df[(merged_df["SHI_NAME"] == "市川市")].ix[np.array(row_select), :]
 ```
-列名の部分一致は<a href=”http://qiita.com/hik0107/items/d991cc44c2d1778bb82e#%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%81%84%E3%81%98%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86” target=”_blank”>こちら</a>が参考になる。
+列名の部分一致は<a href="http://qiita.com/hik0107/items/d991cc44c2d1778bb82e#%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%81%84%E3%81%98%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86" target="_blank">こちら</a>が参考になる。
 
