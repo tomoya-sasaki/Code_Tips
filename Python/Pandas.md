@@ -105,7 +105,12 @@ user_df = pd.concat([user_df, new_col], axis=1)
 
 ### データフレームのmerge
 <a href="http://sinhrks.hatenablog.com/entry/2015/01/28/073327" target="_blank">ここ</a>に詳しい。
-デフォルトでは2つのDataFrameにkeyがないと結合後に残らないので、howオプションで細かく指定する。
+デフォルトでは2つのDataFrameにkeyがないと結合後に残らないので、howオプションで細かく指定する。<br>
+`pd.merge(left, right, on='key', how="left)`
+* `inner`: 既定。両方のデータに含まれるキーだけを残す。
+* `left`: ひとつめのデータのキーをすべて残す。
+* `right`: ふたつめのデータのキーをすべて残す。
+* `outer`: すべてのキーを残す。
 
 ### 列のdatatypeを変える
 seabornなどでplotする際に必要になることがある
