@@ -2,7 +2,7 @@
 Efficient ways to write codes in `Python`, `R`, and `C/C++`.<br>
 How to use `ArcGIS/ArcPy` is also added.
 
-## How to write
+## How to write Markdown
 * Please use following code.
 
 ```README.md
