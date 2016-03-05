@@ -12,7 +12,8 @@ You have to specify libraries you want to use. If you don't use that option, all
 $ source /home/xxxxxxxxx/.conda/envs/py3k/bin/activate py3k
 ```
 Some websites say it's fine to use `source activate py3k`, but in my environment, it crashes. <br>
-If you want to use Anaconda Launcher, type `$ launcher` in Terminal.
+If you want to use Anaconda Launcher, type `$ launcher` in Terminal. <br>
+The path might be `~/.conda/envs/py3k/bin/activate`.
 
 ### Install Packages
 In the environment you've made,
