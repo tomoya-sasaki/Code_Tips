@@ -1,8 +1,23 @@
 # How to use Anaconda
 
-### Install
+### New Environment
 It seems better to use Miniconda rather full Anaconda in university's computers. To install Miniconda, execute
 ```terminal
-$ conda create -n my_pandas python=3 pandas
+$ conda create -n py3k python=3 pandas
 ```
-You have to specify libraries you want to use. 
+You have to specify libraries you want to use. If you don't use that option, all packages will be copied. <br>
+
+### Launch
+```terminal
+$ source /home/xxxxxxxxx/.conda/envs/py3k/bin/activate py3k
+```
+Some websites say it's fine to use `source activate py3k`, but in my environment, it crashes. <br>
+If you want to use Anaconda Launcher, type `$ launcher` in Terminal.
+
+### Install Packages
+In the environment you've made,
+```terminal
+$ conda install beautifulsoup4
+```
+
+If you want to use `pip`,
