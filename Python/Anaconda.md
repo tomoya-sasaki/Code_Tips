@@ -30,5 +30,10 @@ or
 $ conda pipbuild PACKAGE
 ```
 
+### Delete the Environment
+```terminal
+$ conda remove -n <my_env> --all
+```
+
 ### Reference
 [conda で python の環境つくり](https://gist.github.com/aphlysia/d5fcee79ff81b8272faf)
