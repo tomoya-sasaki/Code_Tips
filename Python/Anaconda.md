@@ -3,7 +3,7 @@
 ### New Environment
 It seems better to use Miniconda rather full Anaconda in university's computers. To install Miniconda, execute
 ```terminal
-$ conda create -n py3k python=3 pandas
+$ conda create -n py3k python=3.4.3 pandas
 ```
 You have to specify libraries you want to use. If you don't use that option, all packages will be copied. <br>
 
