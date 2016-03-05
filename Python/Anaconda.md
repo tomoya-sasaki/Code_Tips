@@ -21,9 +21,13 @@ $ conda install beautifulsoup4
 ```
 
 If you want to use `pip`,
-```
+```terminal
 $ conda skeleton pypi PACKAGE
 $ conda build PACKAGE
+```
+or
+```terminal
+$ conda pipbuild PACKAGE
 ```
 
 ### Reference
