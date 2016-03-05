@@ -21,3 +21,10 @@ $ conda install beautifulsoup4
 ```
 
 If you want to use `pip`,
+```
+$ conda skeleton pypi PACKAGE
+$ conda build PACKAGE
+```
+
+### Reference
+[conda で python の環境つくり](https://gist.github.com/aphlysia/d5fcee79ff81b8272faf)
