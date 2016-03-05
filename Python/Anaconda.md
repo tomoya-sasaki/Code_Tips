@@ -20,7 +20,7 @@ In the environment you've made,
 $ conda install beautifulsoup4
 ```
 
-If you want to use `pip`,
+If you want to use `pip`, the simplest way is `pip install PACKAGE` (no need to use `pip3`).
 ```terminal
 $ conda skeleton pypi PACKAGE
 $ conda build PACKAGE
