@@ -137,4 +137,5 @@ merged_df[(merged_df["SHI_NAME"] == "市川市")].ix[np.array(row_select), :]
 列名の部分一致は<a href="http://qiita.com/hik0107/items/d991cc44c2d1778bb82e#%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%81%84%E3%81%98%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86" target="_blank">こちら</a>が参考になる。
 
 ### エラーへの対処
-#### `Plan shapes are not aligned`
+#### contactが上手くできない
+`Plan shapes are not aligned`というエラーが発生する場合は、
