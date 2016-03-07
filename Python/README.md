@@ -21,3 +21,4 @@ Example 3:
 ```python
 "My Name is {person1}. Hello {person2}".format(person1="John", person2="Ken")
 ```
+If you want to use `{` itself, change it to `{{` (doubled).
