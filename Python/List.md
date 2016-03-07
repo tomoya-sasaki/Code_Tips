@@ -3,7 +3,6 @@
 ## Table of Contents
 1. [複数のリスト型オブジェクトの間の計算](#複数のリスト型オブジェクトの間の計算)
 2. [リスト内包表記でif elseを用いる](#リスト内包表記でif-elseを用いる)
-3. [リストの要素の比較](#リストの要素の比較)
 
 ### 複数のリスト型オブジェクトの間の計算
 [参考](http://qiita.com/HirofumiYashima/items/7f82620f42dae5b7c9ca) <br>
@@ -24,4 +23,4 @@
 ["00"+ str(item) if len(str(item))==1 else "0"+str(item) if len(str(item))==2 else str(item) for item in ku_num_list]
 ```
 
-### リストの要素の比較
+
