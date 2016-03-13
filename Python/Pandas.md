@@ -37,7 +37,8 @@ results_df = results_df.append(pd.DataFrame({
 番号順だけで良いのに、indexがあるばっかりに面倒なことも。そのときは、とりあえず文字列を被らないように振っておいて、 reindexを繰り返すしかないのかも<br><br>
 
 `user_tweet_df.index = [i for i in range(len(user_tweet_df))]`<br>
-としないと上手く行かないこともあった
+としないと上手く行かないこともあった。<br>
+追記: これは、`df.reset_index(drop=True)`と同じことみたい。
 
 ### 時系列インデックスをつけてソートする
 cf. 言語処理100本ノック No.18<br>
