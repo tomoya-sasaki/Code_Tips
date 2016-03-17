@@ -38,9 +38,9 @@ X6 347.6667 350.85 344.20    6
 ```
 コード
 ```r
-true_index <- 120:1
+true_index <- 120:1  # 軸ラベルの調整用 (これをしないと、0スタートにソートされてしまう)
 
-xlabels <- rep("", 120) # 軸ラベルの調整用 (これをしないと、0スタートにソートされてしまう)
+xlabels <- rep("", 120) # 適度に間隔の開いたラベルを作る
 xlabels[c(seq(from = 1, to = 120, by = 10))] <- c(seq(from = 120, to = 1, by = -10))
 
 g <- ggplot(result, aes(x=reorder(Date, true_index), y=mean, group=1)) + # reorderで指定した順序にする
@@ -54,4 +54,4 @@ g <- ggplot(result, aes(x=reorder(Date, true_index), y=mean, group=1)) + # reord
 options(repr.plot.width=7, repr.plot.height=2.8)
 g
 ```
-<img src="figures/ggplot2_error_bars.png" width="550">
+<img src="figures/ggplot2_error_bars.png" width="580">
