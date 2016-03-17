@@ -1,6 +1,6 @@
 # ggplot2
 
-# Table of Contents
+## Table of Contents
 1. [xラベルの変更](#xラベルの変更)
 
 ### xラベルの変更
