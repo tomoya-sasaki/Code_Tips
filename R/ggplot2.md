@@ -15,3 +15,4 @@ g <- ggplot(data.frame(predicted=predicted, Date=date_vec, true_index=true_index
 options(repr.plot.width=6, repr.plot.height=2.8)
 g
 ```
+![](R/figures/ggplot2_xlab_change.png)
