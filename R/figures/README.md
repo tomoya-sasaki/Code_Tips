@@ -1,0 +1,1 @@
+# Figures used as examples
