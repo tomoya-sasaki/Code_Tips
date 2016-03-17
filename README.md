@@ -15,6 +15,9 @@ How to use `ArcGIS/ArcPy` is also added.
 ### Example2
 ### Third Example
 When spaces are used in the header, remember to use "-".
+
+# Insert images
+<img src="figures/ggplot2_xlab_change.png" width="550">
 ```
 * To open links in a new tab (window)<br>
 `<a href="http://www.sampleurl.com" target="_blank">こちら</a>`
