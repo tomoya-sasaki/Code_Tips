@@ -15,5 +15,4 @@ g <- ggplot(data.frame(predicted=predicted, Date=date_vec, true_index=true_index
 options(repr.plot.width=6, repr.plot.height=2.8)
 g
 ```
-![image]( =150x)
-<img src="figures/ggplot2_xlab_change.png" width="150">
+<img src="figures/ggplot2_xlab_change.png" width="350">
