@@ -22,6 +22,10 @@ When spaces are used in the header, remember to use "-".
 * To open links in a new tab (window)<br>
 `<a href="http://www.sampleurl.com" target="_blank">こちら</a>`
 
+### Use Mardown on ...
+* **on computer**: <a href="http://marked2app.com/"  target="_blank">Markded 2</a> with Vim
+* **on Evernote**: <a href="https://marxi.co"  target="_blank">Marxico</a>
+
 ## Write Codes with Vim
 To change settings, use `:edit ~/.vimrc` and `:edit ~/.gvimrc`.<br>
 For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b31993" target="_blank">this</a>.
