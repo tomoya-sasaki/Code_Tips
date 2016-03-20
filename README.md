@@ -41,6 +41,7 @@ Insert double spaces at the end of the line
  * You have to install <a href="http://www.geeknote.me/install/" target="_blank">Geeknote</a> first. 
  * if you fail at anypoint, use `sudo` to install
  * if you got an error on permission, check the last line of error and change the permission. Example: `sudo chmod a+rw /Users/Shusei/.geeknote/error.log` / <a href="http://vi.stackexchange.com/questions/6954/permission-error-when-using-vim-geeknote?noredirect=1#comment11332_6954" target="_blank">StackExchange</a>
+ * `~/.vimrc` might be like <a href="https://gist.github.com/Shusei-E/89b4ed836b0add6f79a9" target="_blank">this</a>
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
