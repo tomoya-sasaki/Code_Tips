@@ -37,6 +37,8 @@ Insert double spaces at the end of the line
  * Set up details are <a href="https://gist.github.com/Shusei-E/f9ef1e6b273108ef7c67" target="_blank">here</a>.
  * Keybord shortcus are [here](#evervim).
  * Since it's not well-maintained, check pull requests and copy some of them (Vim plugins are stored at `~/.vim/`)
+* <a href="https://github.com/neilagabriel/vim-geeknote" target="_blank">vim-geeknote</a>
+  * if you fail at anypoint, use `sudo`
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
