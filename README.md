@@ -39,6 +39,7 @@ Insert double spaces at the end of the line
  * Since it's not well-maintained, check pull requests and copy some of them (Vim plugins are stored at `~/.vim/`)
 * <a href="https://github.com/neilagabriel/vim-geeknote" target="_blank">vim-geeknote</a>
   * if you fail at anypoint, use `sudo`
+  * if you got an error on permission, check the last line and change the permission. Example: `sudo chmod a+rw /Users/Shusei/.geeknote/error.log`
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
