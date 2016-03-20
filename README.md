@@ -28,7 +28,9 @@ Insert double spaces at the end of the line
 ### Use Mardown on ...
 * **on computer**: <a href="http://marked2app.com/"  target="_blank">Markded 2</a> with Vim
   * CSS template is <a href="https://gist.github.com/Shusei-E/d4e58dd6fc7f320fa7b3" target="_blank">here</a>.
-* **on Evernote**: <a href="https://marxi.co"  target="_blank">Marxico</a>
+* **on Evernote**
+ * <a href="https://marxi.co"  target="_blank">Marxico</a> --> It's not free anymore.
+ * <a href="https://github.com/kakkyz81/evervim"  target="_blank">Evervim</a>
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
