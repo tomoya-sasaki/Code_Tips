@@ -1,5 +1,5 @@
 # Code_Tips
-Efficient ways to write codes in `Python`, `R`, and `C/C++`.<br>
+Efficient ways to write codes in `Python`, `R`, and `C/C++`.  
 How to use `ArcGIS/ArcPy` is also added.
 
 ## How to write Markdown
