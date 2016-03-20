@@ -31,6 +31,7 @@ Insert double spaces at the end of the line
 * **on Evernote**
  * <a href="https://marxi.co"  target="_blank">Marxico</a> --> It's not free anymore.
  * <a href="https://github.com/kakkyz81/evervim"  target="_blank">Evervim</a>
+  * If you use Evervim in a shared computer, you have to create Python virtual environment (Anaconda).
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
