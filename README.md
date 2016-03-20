@@ -31,13 +31,13 @@ Insert double spaces at the end of the line
 
 ##### on Evernote
 * <a href="https://marxi.co"  target="_blank">Marxico</a> --> It's not free anymore.
-* <a href="https://github.com/kakkyz81/evervim" target="_blank">Evervim</a>
+* <a href="https://github.com/kakkyz81/evervim" target="_blank">Evervim</a> -- recommended
  * If you use Evervim in a shared computer, you have to create Python virtual environment (Anaconda).
  * If you can't install via pip, try <a href="https://pythonhosted.org/Markdown/install.html" target="_blank">a manual install</a>
  * Set up details are <a href="https://gist.github.com/Shusei-E/f9ef1e6b273108ef7c67" target="_blank">here</a>.
  * Keybord shortcus are [here](#evervim).
  * Since it's not well-maintained, check pull requests and copy some of them (Vim plugins are stored at `~/.vim/`)
-* <a href="https://github.com/neilagabriel/vim-geeknote" target="_blank">vim-geeknote</a> -- recommended
+* <a href="https://github.com/neilagabriel/vim-geeknote" target="_blank">vim-geeknote</a> 
  * You have to install <a href="http://www.geeknote.me/install/" target="_blank">Geeknote</a> first. 
  * if you fail at anypoint, use `sudo` to install
  * if you got an error on permission, check the last line of error and change the permission. Example: `sudo chmod a+rw /Users/Shusei/.geeknote/error.log` / <a href="http://vi.stackexchange.com/questions/6954/permission-error-when-using-vim-geeknote?noredirect=1#comment11332_6954" target="_blank">StackExchange</a>
