@@ -46,7 +46,7 @@ For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b
 
 ### Keybord shortcuts
 
-###### 挿入と変更
+##### 挿入と変更
 * `dd`: 行全体の削除
 * `u`: undo
 * `CTRL-R`: redo
