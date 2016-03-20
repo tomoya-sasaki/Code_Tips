@@ -44,7 +44,8 @@ For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b
 `zg`	カーソル下の単語を正しいスペルとして辞書登録<br>
 `zw`	カーソル下の単語を誤ったスペルとして辞書登録<br>
 
-### Keybord shortcuts 
+### Keybord shortcuts
+
 ###### 挿入と変更
 * `dd`: 行全体の削除
 * `u`: undo
@@ -91,3 +92,7 @@ For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b
  * `j` (下方向)で選択
  * `d` 削除
  * これで行頭の1文字が削除される。
+
+##### タブ
+* `gt`	次のタブに切替
+* `gT` 前のタブに切替
