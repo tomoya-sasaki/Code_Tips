@@ -37,9 +37,9 @@ Insert double spaces at the end of the line
  * Set up details are <a href="https://gist.github.com/Shusei-E/f9ef1e6b273108ef7c67" target="_blank">here</a>.
  * Keybord shortcus are [here](#evervim).
  * Since it's not well-maintained, check pull requests and copy some of them (Vim plugins are stored at `~/.vim/`)
-* <a href="https://github.com/neilagabriel/vim-geeknote" target="_blank">vim-geeknote</a>
-  * if you fail at anypoint, use `sudo`
-  * if you got an error on permission, check the last line and change the permission. Example: `sudo chmod a+rw /Users/Shusei/.geeknote/error.log`
+* <a href="https://github.com/neilagabriel/vim-geeknote" target="_blank">vim-geeknote</a> -- recommended
+  * if you fail at anypoint, use `sudo` to install
+  * if you got an error on permission, check the last line of error and change the permission. Example: `sudo chmod a+rw /Users/Shusei/.geeknote/error.log` / <a href="http://vi.stackexchange.com/questions/6954/permission-error-when-using-vim-geeknote?noredirect=1#comment11332_6954" target="_black">StackExchange</a>
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
