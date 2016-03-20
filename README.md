@@ -30,10 +30,10 @@ Insert double spaces at the end of the line
   * CSS template is <a href="https://gist.github.com/Shusei-E/d4e58dd6fc7f320fa7b3" target="_blank">here</a>.
 * **on Evernote**
  * <a href="https://marxi.co"  target="_blank">Marxico</a> --> It's not free anymore.
- * <a href="https://github.com/kakkyz81/evervim"  target="_blank">Evervim</a>
+ * <a href="https://github.com/kakkyz81/evervim" target="_blank">Evervim</a>
   * If you use Evervim in a shared computer, you have to create Python virtual environment (Anaconda).
-  * Set up details are <a href="https://gist.github.com/Shusei-E/f9ef1e6b273108ef7c67"  target="_blank">here</a>.
-  * Keybord shortcus are [here](#evervim)
+  * Set up details are <a href="https://gist.github.com/Shusei-E/f9ef1e6b273108ef7c67" target="_blank">here</a>.
+  * Keybord shortcus are [here](#evervim).
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
