@@ -40,7 +40,7 @@ Insert double spaces at the end of the line
 * <a href="https://github.com/neilagabriel/vim-geeknote" target="_blank">vim-geeknote</a> -- recommended
  * You have to install <a href="http://www.geeknote.me/install/" target="_blank">Geeknote</a> first. 
  * if you fail at anypoint, use `sudo` to install
- * if you got an error on permission, check the last line of error and change the permission. Example: `sudo chmod a+rw /Users/Shusei/.geeknote/error.log` / <a href="http://vi.stackexchange.com/questions/6954/permission-error-when-using-vim-geeknote?noredirect=1#comment11332_6954" target="_black">StackExchange</a>
+ * if you got an error on permission, check the last line of error and change the permission. Example: `sudo chmod a+rw /Users/Shusei/.geeknote/error.log` / <a href="http://vi.stackexchange.com/questions/6954/permission-error-when-using-vim-geeknote?noredirect=1#comment11332_6954" target="_blank">StackExchange</a>
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
