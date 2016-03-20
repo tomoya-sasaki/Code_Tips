@@ -105,6 +105,15 @@ For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b
 * `gt`	次のタブに切替
 * `gT` 前のタブに切替
 
+##### 分割ウィンドウの移動
+`<C-w>`は`control+w`の意味
+* `<C-w>h`: 左に移動
+* `<C-w>w`: 次に移動
+* `<C-w>l`: 右に移動
+* `<C-w>j`: 下に移動
+* `<C-w>k`: 上に移動	
+
+
 ##### Evervim
 `~/.vimrc`に設定が必要
 * `\l`でノートブックのリスト取得
