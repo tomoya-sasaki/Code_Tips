@@ -18,6 +18,9 @@ When spaces are used in the header, remember to use "-".
 
 # Insert images
 <img src="figures/ggplot2_xlab_change.png" width="550">
+
+# Change Line
+Insert double spaces at the end of the line
 ```
 * To open links in a new tab (window)<br>
 `<a href="http://www.sampleurl.com" target="_blank">こちら</a>`
