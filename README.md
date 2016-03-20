@@ -27,6 +27,10 @@ When spaces are used in the header, remember to use "-".
   * CSS template is <a href="https://gist.github.com/Shusei-E/d4e58dd6fc7f320fa7b3" target="_blank">here</a>.
 * **on Evernote**: <a href="https://marxi.co"  target="_blank">Marxico</a>
 
+### Creating Table of Contents automatically
+* [summarizeMD](https://github.com/Shusei-E/summarizeMD)
+
+
 ## Write Codes with Vim
 To change settings, use `:edit ~/.vimrc` and `:edit ~/.gvimrc`.<br>
 For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b31993" target="_blank">this</a>.
