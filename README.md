@@ -33,6 +33,7 @@ Insert double spaces at the end of the line
 * <a href="https://marxi.co"  target="_blank">Marxico</a> --> It's not free anymore.
 * <a href="https://github.com/kakkyz81/evervim" target="_blank">Evervim</a>
  * If you use Evervim in a shared computer, you have to create Python virtual environment (Anaconda).
+ * If you can't install via pip, try <a href="https://pythonhosted.org/Markdown/install.html" target="_blank">a manual install</a>
  * Set up details are <a href="https://gist.github.com/Shusei-E/f9ef1e6b273108ef7c67" target="_blank">here</a>.
  * Keybord shortcus are [here](#evervim).
  * Since it's not well-maintained, check pull requests and copy some of them (Vim plugins are stored at `~/.vim/`)
