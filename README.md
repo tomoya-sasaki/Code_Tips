@@ -35,7 +35,7 @@ When spaces are used in the header, remember to use "-".
 To change settings, use `:edit ~/.vimrc` and `:edit ~/.gvimrc`.<br>
 For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b31993" target="_blank">this</a>.
 
-#### Spell Check in Vim
+### Spell Check in Vim
 `:set spell`	スペルチェック機能を ON<br>
 `:set nospell`	スペルチェック機能を OFF<br>
 `]s`	次のスペルミスの箇所へ移動<br>
@@ -43,3 +43,23 @@ For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b
 `z=`	正しいスペルの候補を表示し、選択した単語でスペルミスを修正<br>
 `zg`	カーソル下の単語を正しいスペルとして辞書登録<br>
 `zw`	カーソル下の単語を誤ったスペルとして辞書登録<br>
+
+### Keybord shortcuts 
+* 挿入と変更
+ * `dd`: 行全体の削除
+ * `u`: undo
+ * `CTRL-R`: redo
+ * `x`: 一文字削除
+ * `dw`: 単語の削除 cf. `d4w`は4単語削除
+  * 発展系として:
+  * `d$`: カーソル位置から行末まで削除 (Dも同じ)
+ * `o`: カーソルの下に行を挿入する
+ * `O`: カーソルの上に行を挿入する。これでは必ず挿入モードになるので注意
+  * 挿入モードを避けるには、`~/.vimrc`に以下の一行を
+   * `nnoremap O :<C-u>call append(expand('.'), '')<Cr>j`
+
+ * `A`: 行末にカーソルを動かして挿入モードを開始
+
+ * `cc` = `S`: 行全体の変更 (chap. 4)
+ * `cw`: その単語の変更 (dwiと同じ意味かな)
+ * `c$` = `C`: 行末まで変更
