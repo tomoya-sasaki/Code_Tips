@@ -32,6 +32,8 @@ Insert double spaces at the end of the line
  * <a href="https://marxi.co"  target="_blank">Marxico</a> --> It's not free anymore.
  * <a href="https://github.com/kakkyz81/evervim"  target="_blank">Evervim</a>
   * If you use Evervim in a shared computer, you have to create Python virtual environment (Anaconda).
+  * Set up details are <a href="https://gist.github.com/Shusei-E/f9ef1e6b273108ef7c67"  target="_blank">here</a>.
+  * Keybord shortcus are [here](#evervim)
 
 ### Create Table of Contents Automatically
 * [summarizeMD](https://github.com/Shusei-E/summarizeMD)
@@ -102,3 +104,10 @@ For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b
 ##### タブ
 * `gt`	次のタブに切替
 * `gT` 前のタブに切替
+
+##### Evervim
+`~/.vimrc`に設定が必要
+* `\l`でノートブックのリスト取得
+* `\s`で検索
+* `\c`で新しいノートブック作成
+* `\t`でタグ一覧表示する
