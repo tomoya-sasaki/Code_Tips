@@ -5,7 +5,7 @@ How to use `ArcGIS/ArcPy` is also added.
 ## How to write Markdown
 * Please use following syntax.
 
-```README.md
+```markdown
 # Table of Contents
 1. [例1](#例1)
 2. [Example2](#example2)
@@ -21,6 +21,12 @@ When spaces are used in the header, remember to use "-".
 
 # Change Line
 Insert double spaces at the end of the line
+
+# Eqnarray (wrap with $$)
+$$\begin{eqnarray*}
+U_{E_i}^A &=& y_{E_i} + \frac{t_A (y_B + y_M)}{\beta} \\
+ &=& \frac{ca}{\beta} + \frac{1}{\beta} \left( t_A \left( \frac{ \{ (1-c)a + k  \}  \{ \phi + \pi - 2 \phi \pi \} }{\pi (1-\beta) (1-\pi)}  \right)   \right)
+\end{eqnarray*}$$
 ```
 * To open links in a new tab (window)<br>
 `<a href="http://www.sampleurl.com" target="_blank">こちら</a>`
