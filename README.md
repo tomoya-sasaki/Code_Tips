@@ -49,7 +49,8 @@ Insert double spaces at the end of the line
 
 ## Write Codes with Vim
 To change settings, use `:edit ~/.vimrc` and `:edit ~/.gvimrc`.<br>
-For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b31993" target="_blank">this</a>.
+For more details, read <a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b31993" target="_blank">this</a>.  
+Currently, NeoBundle is used for managing packages, but in the future, dein should be used. Example setup is <a href="https://gist.github.com/Shusei-E/578df70897f4534f73b5" target="_blank">here</a>. Quickrun doesn't work when I tried 21/03/2016.
 
 ### Spell Check in Vim
 `:set spell`	スペルチェック機能を ON<br>
