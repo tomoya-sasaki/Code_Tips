@@ -4,13 +4,13 @@ Modified style files are:
 
 1. [Original with slight modification](https://gist.github.com/Shusei-E/0c13b64ac31d8fc2cce395e2f892325e)
 2. [Left aligned title](https://gist.github.com/Shusei-E/39d6d5bc86f46acf2b1b6fc06193aa91)
-3. [Hyphenation](#hyphenation)
 
 
 # Table of Contents
 1. [Graphics related error such as BoundingBox](#graphics-related-error-such-as-boundingbox)
 2. [Manually insert a subtitle](#manually-insert-a-subtitle)
-3. [Change box depth](#change-box-depth)
+3. [Hyphenation](#hyphenation)
+4. [Change box depth](#change-box-depth)
 
 ### Graphics related error such as BoundingBox
 Set `dvipdfmx` option in document class. `\documentclass[dvipdfmx, final,hyperref={pdfpagelabels=false}]{beamer}`  
