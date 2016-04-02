@@ -11,6 +11,7 @@ Modified style files are:
 2. [Manually insert a subtitle](#manually-insert-a-subtitle)
 3. [Hyphenation](#hyphenation)
 4. [Change box depth](#change-box-depth)
+5. [Hilight](#hilight)
 
 ### Graphics related error such as BoundingBox
 Set `dvipdfmx` option in document class. `\documentclass[dvipdfmx, final,hyperref={pdfpagelabels=false}]{beamer}`  
@@ -32,3 +33,30 @@ Please note that hyphenation seems to work in `itemize`.
 ### Change box depth
 Edit style file. Probably `beamercolorbox` `dp` option. ([reference](https://sites.google.com/site/mymemoryforfuture/tex/beamer))  
 Should we change `ht`??
+
+### Hilight
+Preamble:
+```tex
+% Highlight
+\usepackage{soul} 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\patchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\patchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\newdimen\SOUL@dimen
+\makeatother
+\makeatletter 
+\newcommand\Oricolor{% 
+  \let\set@color\beamerorig@set@color 
+  \let\reset@color\beamerorig@reset@color 
+  } 
+\makeatother
+```
+In text:
+```tex
+\begin{itemize}
+	\item  {\Oricolor\hl{This is the test sentence for soul}} 
+\end{itemize}
+```
+[Reference](http://tex.stackexchange.com/questions/302081/soul-package-doesnt-work-in-beamer-with-existing-solution)
