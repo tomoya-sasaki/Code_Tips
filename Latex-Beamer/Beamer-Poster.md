@@ -10,7 +10,7 @@ Modified style files are:
 # Table of Contents
 1. [Graphics related error such as BoundingBox](#graphics-related-error-such-as-boundingbox)
 2. [Manually insert a subtitle](#manually-insert-a-subtitle)
-3. [Change box depth])(#change-box-depth)
+3. [Change box depth](#change-box-depth)
 
 ### Graphics related error such as BoundingBox
 Set `dvipdfmx` option in document class. `\documentclass[dvipdfmx, final,hyperref={pdfpagelabels=false}]{beamer}`  
