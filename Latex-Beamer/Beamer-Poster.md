@@ -1,5 +1,5 @@
 # Beamer-Poster
-Make poster with [latex-beamerposter](https://github.com/deselaers/latex-beamerposter) package.  
+Make poster with [latex-beamerposter](https://github.com/deselaers/latex-beamerposter) package. The original template can be found [here](http://www.latextemplates.com/template/dreuw-deselaers-poster).  
 Modified style files are:
 
 1. [Original with slight modification](https://gist.github.com/Shusei-E/0c13b64ac31d8fc2cce395e2f892325e)
