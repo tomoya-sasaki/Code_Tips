@@ -20,6 +20,12 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \label{ }
 \end{figure}
 ```
+他の例としては、
+```tex
+\includegraphics[width=1.2 \linewidth]{fig1.eps}
+```
+ここで`width=1.2`は、図の幅を元の1.2倍に拡大することを意味する。  
+`\linewidth`は縦幅のスケールは横幅に合わせることを意味する。
 
 ### 文字サイズ変更
 `{\fontsize{9.5pt}{8pt}\selectfont   }`
