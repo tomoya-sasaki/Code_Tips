@@ -30,4 +30,5 @@ Add the following in `.tex` or `.sty`.
 Please note that hyphenation seems to work in `itemize`.
 
 ### Change box depth
-Edit style file. Probably `beamercolorbox` `dp` option. ([reference](https://sites.google.com/site/mymemoryforfuture/tex/beamer))
+Edit style file. Probably `beamercolorbox` `dp` option. ([reference](https://sites.google.com/site/mymemoryforfuture/tex/beamer))  
+Should we change `ht`??
