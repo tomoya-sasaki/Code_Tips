@@ -29,6 +29,7 @@ $ git init
 After you make changes,
 ```
 $ git add *
+($ git status)
 $ git commit -m "your comments"
 $ git push https://github.com/xxxxx/Code_Tips.git master:master
 ```
