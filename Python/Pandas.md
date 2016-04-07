@@ -16,7 +16,7 @@
 13. [重複の削除](#重複の削除)
 14. [ある列の中で、特定の文字列を含む行だけを抜き出す](#ある列の中で特定の文字列を含む行だけを抜き出す)
 15. <a href="http://stackoverflow.com/questions/35966051/changing-data-frame-style-in-pandas" target="_blank">データフレームの変形</a>
-16. [(上と関連して)LongからWideへ](#LongからWideへ)
+16. [(上と関連して)LongからWideへ](#longからwideへ)
 
 
 ### データフレームを初期化した後に登録
