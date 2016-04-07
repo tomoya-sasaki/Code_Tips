@@ -139,4 +139,11 @@ merged_df[(merged_df["SHI_NAME"] == "市川市")].ix[np.array(row_select), :]
 列名の部分一致は<a href="http://qiita.com/hik0107/items/d991cc44c2d1778bb82e#%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E3%81%84%E3%81%98%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86" target="_blank">こちら</a>が参考になる。
 
 ### LongからWideへ
+`pivot_table`を使うのが一番良さそう
+
 cf. https://codedump.io/share/FJA2PUE30eqf/1/long-to-wide-data-pandas
+cf. http://stackoverflow.com/questions/35966051/changing-data-frame-style-in-pandas
+```python
+#remove top level of multiindex
+df.columns = df.columns.droplevel(0)
+```
