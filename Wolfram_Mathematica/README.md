@@ -62,8 +62,24 @@
 3
 ```
 
+## Do
+* Example 1
+```mathematica
+> Do[Print[n*2], {n, 4, 9}]
+8
+10
+12
+14
+16
+18
+```
 
-
+## For
+```mathematica
+> For[i = 1, i < 3, i++, Print[i*3]]
+3
+6
+```
 
 
 
