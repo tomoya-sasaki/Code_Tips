@@ -25,6 +25,34 @@ typeのサイズは、機械によって変わってくる。値を知りたい�
 ```cpp
 double d1 = 2.3;
 double d2 {2.3};
+complex<double> z = 1; // a complex number with double-precision floating-point scalars
 ```
+`auto`を使えば、初期化の値から自動的に型が判断される
+```cpp
+auto b = true; //bool
+auto ch = 'x'; //char
+```
+
+計算の簡略化:
+*`x+=y` equals to x = x+y
+* `++x` equals to x = x+1 (increment)
+* 他にもある (p.7)
+
+変数の宣言によって、nameがscopeに入ってくる
+* Local scope: declarationがなされたblockだけで
+* Class scope:
+* Namespace scope:
+```cpp
+vector<int> vec; // global (a global vector of intergers)
+
+struct Test{
+  sring name; // member
+};
+
+void funct(int arg){ // fct is global, funct is local integer argument
+  string sentence {"Test sentence"}; // local
+}
+```
+
 
  
