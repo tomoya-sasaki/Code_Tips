@@ -19,3 +19,12 @@ fundamental types:
   * int
   * double
   * unsigned: non-negative integer
+typeのサイズは、機械によって変わってくる。値を知りたい場合は、`sizeof`を使う  
+
+初期化:
+```cpp
+double d1 = 2.3;
+double d2 {2.3};
+```
+
+ 
