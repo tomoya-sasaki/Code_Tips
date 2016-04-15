@@ -3,6 +3,8 @@
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
 
-### C++入門
-#### Chapter 18
-* デストラクタ
+### A Tour of C++
+`Elem* next_elem();` no argument; return a pointer to Elem (an Elem*)  
+`void exit(int);` int argument, return nothing  
+`double sqrt(double);` double argument; return a double  
+return typeが名前の前に来ていることに注意。argumentのtypeは括弧の中。  
