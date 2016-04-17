@@ -5,6 +5,7 @@
 1. [soupを作る](#soupを作る)
 2. [探す](#探す)
 3. [タグの中身を取り出す](#タグの中身を取り出す)
+4. [少し待つ](#少し待つ)
 
 
 ### soupを作る
@@ -29,4 +30,11 @@ soup.find_all("td", class_="td2")
 
 > td_list[1].find_all("a")[0].contents
 ['test']
+```
+
+### 少し待つ
+```python
+import random
+import time
+time.sleep(random.uniform(1, 2))
 ```
