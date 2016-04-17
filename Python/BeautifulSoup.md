@@ -1,4 +1,5 @@
 # BeautifulSoup
+`from bs4 import BeautifulSoup`
 
 ## Table of Contents
 1. [soupを作る](#soupを作る)
