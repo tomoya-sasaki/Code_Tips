@@ -10,6 +10,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 6. [ダブルスペース](#ダブルスペース)
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
 8. [横長の表を回転する](#横長の表を回転する)
+9. [コードを挿入](#コードを挿入)
 
 ### 写真の挿入
 ```tex
@@ -64,3 +65,49 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \begin{landscape}
 \end{landscape}
 ```
+
+### コードを挿入
+```tex
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{ %
+  language= Python, %個別に設定することも可能
+  aboveskip=0.1mm,
+  belowskip=0.1mm,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  numbers=left,                    
+  numbersep=5pt,    
+  basicstyle={\small\ttfamily},
+  commentstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  backgroundcolor=\color{lightgray},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+	xleftmargin = 1cm,
+  framexleftmargin = 1em
+}
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{green!8}
+```
+
+```tex
+\begin{lstlisting}[language=Python, caption=Python example]
+\end{lstlisting}
+```
+[こちら](https://www.sharelatex.com/learn/Code_listing)も参考になる。
