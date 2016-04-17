@@ -67,6 +67,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ```
 
 ### コードを挿入
+以下をプリアンブルに:
 ```tex
 \usepackage{listings}
 \usepackage{color}
@@ -105,7 +106,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \usepackage{framed}
 \colorlet{shadecolor}{green!8}
 ```
-
+本文中では次のようにする:
 ```tex
 \begin{lstlisting}[language=Python, caption=Python example]
 \end{lstlisting}
