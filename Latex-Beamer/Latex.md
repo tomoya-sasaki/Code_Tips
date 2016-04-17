@@ -82,7 +82,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 
 \lstset{ %
   language= Python, %個別に設定することも可能
-  aboveskip=0.1mm,
+  aboveskip=0.1mm, %ここでコードの上の隙間を調整
   belowskip=0.1mm,
   showstringspaces=false,
   columns=flexible,
@@ -99,7 +99,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
   keywordstyle=\color{magenta},
   numberstyle=\tiny\color{codegray},
   stringstyle=\color{codepurple},
-	xleftmargin = 1cm,
+  xleftmargin = 1cm,
   framexleftmargin = 1em
 }
 \usepackage{xcolor}
