@@ -183,5 +183,5 @@ df = df.fillna('').reset_index()
 ```python
 import openpyxl
 panel = pd.read_csv("File.csv", encoding ='cp932')
-panel.to_excel("File.xlsx","sheet1")
+panel.to_excel("File.xlsx","sheet1", index=False)
 ```
