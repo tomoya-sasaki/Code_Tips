@@ -17,6 +17,7 @@
 14. [ある列の中で、特定の文字列を含む行だけを抜き出す](#ある列の中で特定の文字列を含む行だけを抜き出す)
 15. <a href="http://stackoverflow.com/questions/35966051/changing-data-frame-style-in-pandas" target="_blank">データフレームの変形</a>
 16. [(上と関連して)LongからWideへ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/Pandas.md#longからwideへ)
+17. [Excel形式で保存](#excel形式で保存)
 
 
 ### データフレームを初期化した後に登録
@@ -143,7 +144,7 @@ merged_df[(merged_df["SHI_NAME"] == "市川市")].ix[np.array(row_select), :]
 
 cf. https://codedump.io/share/FJA2PUE30eqf/1/long-to-wide-data-pandas  
 cf. http://stackoverflow.com/questions/35966051/changing-data-frame-style-in-pandas
-```python
+```
 print df
   Old_City  New_City_Code New_City_Name Old_City_Code
 0        a            101             A           001
@@ -175,4 +176,12 @@ df = pd.pivot_table(df,
 df.columns = [''.join(col) for col in df.columns.values]
 #replace NaN to '', reset index
 df = df.fillna('').reset_index()
+```
+
+
+### Excel形式で保存
+```python
+import openpyxl
+panel = pd.read_csv("File.csv", encoding ='cp932')
+panel.to_excel("File.xlsx","sheet1")
 ```
