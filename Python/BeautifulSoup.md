@@ -43,7 +43,7 @@ time.sleep(random.uniform(1, 2))
 ### リンクの取り出し
 ```python
 links = soup.find_all("a")
-list_xls_files=[]
+list_xls_files = []
 for link in links:
   link_url = link.get("href")
   try:
