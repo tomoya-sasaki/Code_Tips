@@ -6,6 +6,7 @@
 2. [探す](#探す)
 3. [タグの中身を取り出す](#タグの中身を取り出す)
 4. [少し待つ](#少し待つ)
+5. [リンクの取り出し](#リンクの取り出し)
 
 
 ### soupを作る
@@ -37,4 +38,18 @@ soup.find_all("td", class_="td2")
 import random
 import time
 time.sleep(random.uniform(1, 2))
+```
+
+### リンクの取り出し
+```python
+links=soup.find_all("a")
+list_xls_files=[]
+  for link in links:
+  link_url=link.get("href")
+  try:
+    if".xls"inlink_url:
+    list_xls_files.append(’http://www.irdes.fr’+
+    link_url[5:])
+  except TypeError:
+    pass
 ```
