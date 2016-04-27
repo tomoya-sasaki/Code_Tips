@@ -18,7 +18,7 @@ Matrix3d::Constant(1.2) // matrices of a fixed size
 ```
 3×3行列で要素が1.2
 
-要素の選択
+* 要素の選択
 ```cpp
 Vector3d mu(-0.8, 0.0, 2.0); //
 cout << "Output: " << mu(1) << endl;
