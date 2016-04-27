@@ -1,4 +1,5 @@
 #Seaborn
+inlineの表示`%matplotlib inline`
 
 # Table of Contents
 1. [軸やラベルなどの設定](#軸やラベルなどの設定)
