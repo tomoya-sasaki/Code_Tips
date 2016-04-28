@@ -24,3 +24,6 @@ Vector3d mu(-0.8, 0.0, 2.0); //
 cout << "Output: " << mu(1) << endl;
 > Output: 0
 ```
+
+## Links
+* [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
