@@ -5,8 +5,8 @@ a template library for linear algebra
 1. [Install](#install)
 2. [Examples](#examples)
 
-* Links(#links)
-* Sample Code(#sample-code)
+* [Links](#links)
+* [Sample Code](#sample-code)
 
 ### Install
 1. Expand zip file and put a folder named `Eigen` into `/usr/include`
