@@ -5,6 +5,8 @@ a template library for linear algebra
 1. [Install](#install)
 2. [Examples](#examples)
 
+* Links(#links)
+* Sample Code(#sample-code)
 
 ### Install
 1. Expand zip file and put a folder named `Eigen` into `/usr/include`
@@ -27,3 +29,6 @@ cout << "Output: " << mu(1) << endl;
 
 ## Links
 * [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
+
+## Sample Code
+* [Data Generation with fixed variance](https://gist.github.com/Shusei-E/adbfd85aa67d9ac9ef6e122142c4239d)
