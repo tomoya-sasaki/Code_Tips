@@ -7,6 +7,7 @@
 3. [タグの中身を取り出す](#タグの中身を取り出す)
 4. [少し待つ](#少し待つ)
 5. [リンクの取り出し](#リンクの取り出し)
+6. [PhantomJS](#phantomjs)
 
 
 ### soupを作る
@@ -52,3 +53,6 @@ for link in links:
   except TypeError:
     pass
 ```
+
+### PhantomJS
+#### インストール
