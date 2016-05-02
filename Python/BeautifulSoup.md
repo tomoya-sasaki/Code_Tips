@@ -55,4 +55,8 @@ for link in links:
 ```
 
 ### PhantomJS
-###### インストール
+##### インストール
+* `homebrew`
+* 権限の問題で上手くインストール出来ない場合は、以下の方法を試す
+  * `echo $PATH`として、出てきたフォルダの中でアクセス可能なものの中に`bin/phantomjs`をコピー
+  * もしくは、PATHを通す。`export PATH=$PATH:/Users/test/`としたら、`/Users/test/`にPATHを通すことができる
