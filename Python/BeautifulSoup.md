@@ -62,9 +62,9 @@ for link in links:
   * もしくは、PATHを通す。`export PATH=$PATH:/Users/test/`としたら、`/Users/test/`にPATHを通すことができる
   * [参考](http://qiita.com/nbkn/items/01a11392921119fa0153)
 
-##### クリックする例
+##### オブジェクトを探す
 これは、Seleniumの[Locating Elements](http://selenium-python.readthedocs.io/locating-elements.html)と関係している。サイトに例多数。
-* `by_id`
+* IDで探してクリック
 ```html
 <li class="tab1"><span><a href="http://xxxx.co.jp/" id="isearch" hidefocus="true">画像</a></span></li>
 ```
