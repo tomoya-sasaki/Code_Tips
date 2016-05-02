@@ -60,3 +60,15 @@ for link in links:
 * 権限の問題で上手くインストール出来ない場合は、以下の方法を試す
   * `echo $PATH`として、出てきたフォルダの中でアクセス可能なものの中に`bin/phantomjs`をコピー
   * もしくは、PATHを通す。`export PATH=$PATH:/Users/test/`としたら、`/Users/test/`にPATHを通すことができる
+  * [参考](http://qiita.com/nbkn/items/01a11392921119fa0153)
+
+##### クリックする例
+これは、Seleniumの[Locating Elements](http://selenium-python.readthedocs.io/locating-elements.html)と関係している。サイトに例多数。
+* `by_id`
+```html
+<li class="tab1"><span><a href="http://xxxx.co.jp/" id="isearch" hidefocus="true">画像</a></span></li>
+```
+```python
+browser.find_by_id('isearch').first.click()
+```
+
