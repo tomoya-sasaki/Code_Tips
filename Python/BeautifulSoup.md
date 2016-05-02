@@ -72,3 +72,7 @@ for link in links:
 browser.find_by_id('isearch').first.click()
 ```
 
+##### スクリーンショット
+```python
+driver.save_screenshot('last.png')
+```
