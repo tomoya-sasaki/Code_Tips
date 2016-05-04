@@ -5,7 +5,7 @@ a template library for linear algebra
 1. [Install](#install)
 2. [Examples](#examples)
 3. [Read Files](#read-files)
-
+  
 * [Links](#links)
 * [Sample Code](#sample-code)
 
