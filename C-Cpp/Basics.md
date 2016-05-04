@@ -63,6 +63,7 @@ void funct(int arg){ // fct is global, funct is local integer argument
 ```
 
 #### Pointers
-`*` contents of / `&` address of として考えられる (p.10)
+`*` contents of / `&` address of として考えられる (p.10)  
+[これ](http://goo.gl/BFdGE3)はかなりわかりやすい。
 
  
