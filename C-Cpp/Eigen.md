@@ -4,6 +4,7 @@ a template library for linear algebra
 ## Table of Contents
 1. [Install](#install)
 2. [Examples](#examples)
+3. [Read Files](#read-files)
 
 * [Links](#links)
 * [Sample Code](#sample-code)
@@ -26,6 +27,9 @@ Vector3d mu(-0.8, 0.0, 2.0); //
 cout << "Output: " << mu(1) << endl;
 > Output: 0
 ```
+
+### Read Files
+こちらの[Gist](https://gist.github.com/Shusei-E/f632c9a7b7e197cf50709915d210f7c8)を参考に。
 
 ## Links
 * [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
