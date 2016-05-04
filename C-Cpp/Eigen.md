@@ -5,6 +5,7 @@ a template library for linear algebra
 1. [Install](#install)
 2. [Examples](#examples)
 3. [Read Files](#read-files)
+4. [Matrix](#matrix)
   
 * [Links](#links)
 * [Sample Code](#sample-code)
@@ -30,6 +31,15 @@ cout << "Output: " << mu(1) << endl;
 
 ### Read Files
 こちらの[Gist](https://gist.github.com/Shusei-E/f632c9a7b7e197cf50709915d210f7c8)を参考に。
+
+#### Matrix
+* Select specific row and column ([Reference](https://eigen.tuxfamily.org/dox/group__TutorialBlockOperations.html))
+```cpp
+// ith row	
+matrix.row(i);
+// jth column
+matrix.col(j);
+```
 
 ## Links
 * [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
