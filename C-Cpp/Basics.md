@@ -1,5 +1,10 @@
 # Basics of C/C++
 
+## Random Notes
+#### 小数の計算
+`double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
+
+
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
 
