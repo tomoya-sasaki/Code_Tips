@@ -89,12 +89,12 @@ void Matrix_Element_Access_Test()
 使用例:
 ```cpp
 // count n_k
-	VectorXd n_k = VectorXd::Zero(K);
-	int c;
-	for(int ob=0; ob<num_observations; ob++){
-		c = auxZ.row(ob).coeffRef(0);
-		 n_k[c] = n_k[c] + 1;
-  }
+VectorXd n_k = VectorXd::Zero(K);
+int c;
+for(int ob=0; ob<num_observations; ob++){
+	c = auxZ.row(ob).coeffRef(0);
+	n_k[c] = n_k[c] + 1;
+}
 ```
 
 ## Links
