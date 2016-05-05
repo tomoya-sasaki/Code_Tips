@@ -1,11 +1,28 @@
 # Basics of C/C++
 
 ## Random Notes
+1. [小数の計算](#小数の計算)
+2. [引数の型変換(キャスト)](#引数の型変換)
+3. [変数で宣言できない場合](#変数で宣言できない場合)
+
 #### 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
 
-### 引数の型変換(キャスト)
+### 引数の型変換
 `(int)K`のようにして引数とする。
+
+### 変数で宣言できない場合
+```cpp
+typedef struct{
+		vector<double> KeepMu;
+		vector<double> KeepZ;
+}KEEP_RESULT;
+
+int main(){
+ KEEP_RESULT *Keep_Result = new KEEP_RESULT[S];
+}
+```
+http://goo.gl/n1tTj4
 
 
 ## Sites
