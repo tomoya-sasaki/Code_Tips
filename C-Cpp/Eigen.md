@@ -10,6 +10,7 @@ Usage:
 4. [Matrix](#matrix)
 5. [Count Elements](#count-elements)
 6. [行列要素へのアクセス](#行列要素へのアクセス)
+7. [行列の要素ごとの演算](#行列の要素ごとの演算)
 
 
 Other Material: 
@@ -95,6 +96,12 @@ for(int ob=0; ob<num_observations; ob++){
 	c = auxZ.row(ob).coeffRef(0);
 	n_k[c] = n_k[c] + 1;
 }
+```
+
+### 行列の要素ごとの演算
+`.array()`
+```cpp
+x_bar.array() = x_bar.array() / n_k.array();
 ```
 
 ## Links
