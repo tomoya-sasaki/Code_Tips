@@ -2,11 +2,13 @@
 a template library for linear algebra
 
 ## Table of Contents
+Usage:
 1. [Install](#install)
 2. [Examples](#examples)
 3. [Read Files](#read-files)
 4. [Matrix](#matrix)
-  
+5. [Count Elements](#count-elements)
+Other Material: 
 * [Links](#links)
 * [Sample Code](#sample-code)
 
@@ -40,6 +42,9 @@ matrix.row(i);
 // jth column
 matrix.col(j);
 ```
+
+#### Count Elements
+`.count()`
 
 ## Links
 * [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
