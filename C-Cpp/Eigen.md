@@ -2,12 +2,14 @@
 a template library for linear algebra
 
 ## Table of Contents
-Usage:
+Usage:  
 1. [Install](#install)
 2. [Examples](#examples)
 3. [Read Files](#read-files)
 4. [Matrix](#matrix)
 5. [Count Elements](#count-elements)
+
+
 Other Material: 
 * [Links](#links)
 * [Sample Code](#sample-code)
