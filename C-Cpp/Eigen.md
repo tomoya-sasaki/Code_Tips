@@ -11,6 +11,7 @@ Usage:
 5. [Count Elements](#count-elements)
 6. [行列要素へのアクセス](#行列要素へのアクセス)
 7. [行列の要素ごとの演算](#行列の要素ごとの演算)
+8. [数値を毎回ランダムに](#数値を毎回ランダムに)
 
 
 Other Material: 
@@ -103,6 +104,19 @@ for(int ob=0; ob<num_observations; ob++){
 ```cpp
 x_bar.array() = x_bar.array() / n_k.array();
 ```
+
+### 数値を毎回ランダムに
+```cpp
+double rnorm(double mean, double sd){
+	// random generation for the normal distribution
+	random_device seed_gen; // http://cpprefjp.github.io/reference/random.html
+	mt19937 engine(seed_gen());
+	normal_distribution<double> distribution(mean, sd);
+
+	return distribution(engine);
+}
+```
+
 
 ## Links
 * [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
