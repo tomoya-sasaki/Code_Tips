@@ -37,7 +37,7 @@ cout << "Output: " << mu(1) << endl;
 ### Read Files
 こちらの[Gist](https://gist.github.com/Shusei-E/f632c9a7b7e197cf50709915d210f7c8)を参考に。
 
-#### Matrix
+### Matrix
 * Select specific row and column ([Reference](https://eigen.tuxfamily.org/dox/group__TutorialBlockOperations.html))
 ```cpp
 // ith row	
@@ -46,7 +46,7 @@ matrix.row(i);
 matrix.col(j);
 ```
 
-#### Count Elements
+### Count Elements
 `.count()`
 
 ## Links
