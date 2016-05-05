@@ -3,6 +3,7 @@ a template library for linear algebra
 
 ## Table of Contents
 Usage:
+
 1. [Install](#install)
 2. [Examples](#examples)
 3. [Read Files](#read-files)
