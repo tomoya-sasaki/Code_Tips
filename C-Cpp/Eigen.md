@@ -9,6 +9,7 @@ Usage:
 3. [Read Files](#read-files)
 4. [Matrix](#matrix)
 5. [Count Elements](#count-elements)
+6. [行列要素へのアクセス](#行列要素へのアクセス)
 
 
 Other Material: 
@@ -26,6 +27,19 @@ MatrixXd::Constant(3,3,1.2)
 Matrix3d::Constant(1.2) // matrices of a fixed size
 ```
 3×3行列で要素が1.2
+
+* constant以外
+K次元ベクトルを作る
+```cpp
+VectorXd n_k = VectorXd::Zero(K);
+
+VectorXd n_k = VectorXd::Identity(K);  // 単位ベクトル(1, 0, 0)
+VectorXd n_k = VectorXd::Ones(K);
+
+// ランダムな値
+// FIXME:std::rand()を使っている
+VectorXd n_k = VectorXd::Random(K);
+```
 
 * 要素の選択
 ```cpp
@@ -48,6 +62,40 @@ matrix.col(j);
 
 ### Count Elements
 `.count()`
+
+### 行列要素へのアクセス
+```cpp
+// http://goo.gl/eEk5sJ から取得したExample //
+void Matrix_Element_Access_Test()
+{
+    /* 行列成分は [] でなく () 演算子でアクセス可能
+     * これらの演算子は「配列添字の妥当性チェック」を行う
+     * coeff(i,j) や coeffRef(i,j) で「添字チェックなし」の
+     * アクセスが可能になる！
+     */
+    PRINT_FNC;
+ 
+    MatrixXd A = MatrixXd::Identity(3,3);
+    cout << "A(0,0) = " << A(0,0) << endl;;
+    cout << "A.coeff(1,2) = " << A.coeff(1,2) << endl;
+    cout << "A.coeffRef(1,2) = " << A.coeff(1,2) << endl;
+ 
+    A.coeffRef(2,2) = 100;  // OK
+    //A.coeff(2,2) = 100;  // NG
+ 
+    cout << endl;
+}
+```
+使用例:
+```cpp
+// count n_k
+	VectorXd n_k = VectorXd::Zero(K);
+	int c;
+	for(int ob=0; ob<num_observations; ob++){
+		c = auxZ.row(ob).coeffRef(0);
+		 n_k[c] = n_k[c] + 1;
+  }
+```
 
 ## Links
 * [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
