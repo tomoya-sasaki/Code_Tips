@@ -11,6 +11,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
 8. [横長の表を回転する](#横長の表を回転する)
 9. [コードを挿入](#コードを挿入)
+10. [図のフォルダの指定](#図のフォルダの指定)
 
 ### 写真の挿入
 ```tex
@@ -112,3 +113,9 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \end{lstlisting}
 ```
 [こちら](https://www.sharelatex.com/learn/Code_listing)も参考になる。
+
+### 図のフォルダの指定
+```latex
+\graphicspath{{D:/LATEX/Reports@IIT/figures/}}
+\graphicspath{{subdir1/}{subdir2/}{subdir3/}{subdirn/}}
+```
