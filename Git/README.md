@@ -33,7 +33,8 @@ $ git add *
 $ git commit -m "your comments"
 $ git push https://github.com/xxxxx/Code_Tips.git master:master
 ```
-or, you can use `git push origin your_branch_name(ex. master)` for the last line.
+or, you can use `git push origin your_branch_name(ex. master)` for the last line.  
+To remove added files, use `git reset HEAD`.
 
 ## When someone updates the files
 ```
