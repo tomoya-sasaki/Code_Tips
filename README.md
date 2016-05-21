@@ -128,6 +128,12 @@ Currently, NeoBundle is used for managing packages, but in the future, dein shou
 * `<C-w>j`: 下に移動
 * `<C-w>k`: 上に移動	
 
+##### VimFiler
+Use VimFiler with Unite.
+* `\v`: launch VimFiler for current buffer
+* `:UniteBookmarkAdd`: add folder in Unite bookmark (you can do it on Vimfiler)
+* `:Unite bookmark`: open Unite bookmark
+ * `\v` on the folder --> Open in VimFiler
 
 ##### Evervim
 `~/.vimrc`に設定が必要
