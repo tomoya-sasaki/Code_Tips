@@ -131,7 +131,7 @@ Currently, NeoBundle is used for managing packages, but in the future, dein shou
 ##### VimFiler
 Use VimFiler with Unite.
 * `\v`: launch VimFiler for current buffer
-* `:UniteBookmarkAdd`: add folder in Unite bookmark (you can do it on Vimfiler)
+* `:UniteBookmarkAdd`: add folder in Unite bookmark (you can do it on VimFiler)
 * `:Unite bookmark`: open Unite bookmark
  * `\v` on the folder --> Open in VimFiler
 
