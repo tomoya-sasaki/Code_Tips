@@ -98,6 +98,8 @@ Currently, NeoBundle is used for managing packages, but in the future, dein shou
 * `M`: 画面上の中央の行 (Middle)
 * `L`: 画面上の最後の行 (Last)
 * `:[LineNumber]`: specified line
+* `Ctrl + o` / `Ctrl + i`: 古いカーソル位置に戻る (Old) / 新しいカーソル位置に進む
+* `zz`:	カーソルが画面中央になるようにスクロール
 
 
 ##### 検索と置換 
