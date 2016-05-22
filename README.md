@@ -93,6 +93,13 @@ Currently, NeoBundle is used for managing packages, but in the future, dein shou
 * `zz` 今のカーソルの前後を表示
 * `zt` 今のカーソルを画面の一行目として表示
 
+##### カーソル
+* `H`: 画面上の最初の行 (Home)
+* `M`: 画面上の中央の行 (Middle)
+* `L`: 画面上の最後の行 (Last)
+* `:[LineNumber]`: specified line
+
+
 ##### 検索と置換 
 * 例えば、includeという単語を検索するのなら、`/include`とする
  * 今のカーソル位置の後ろにある単語を検索するのなら、`/#include`となる　
