@@ -14,3 +14,11 @@
 ```
 
 ## 欧文
+### 一番簡単な方法
+`pxchfon`を完全インストールするのは面倒なので、`jsarticle`を使用し、以下のように設定
+```tex
+\usepackage[noalphabet]{pxchfon}
+\setminchofont[0]{TsukushiAMaruGothic.ttc} 
+\setgothicfont[0]{TsukushiAMaruGothic.ttc}  
+\renewcommand{\familydefault}{lmss}
+```
