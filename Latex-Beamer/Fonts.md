@@ -22,3 +22,13 @@
 \setgothicfont[0]{TsukushiAMaruGothic.ttc}  
 \renewcommand{\familydefault}{lmss}
 ```
+
+## 数式
+上のスタイルに合いそうなものとしては、
+```tex
+%数学用のフォント
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsfonts} 
+\usepackage[math]{kurier}
+```
