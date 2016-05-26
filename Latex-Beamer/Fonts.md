@@ -8,6 +8,7 @@
 `pxchfon.sty`と使いたいフォントを`.tex`と同じフォルダに入れる。  
 プリアンブルで以下のように記す。
 ```tex
+%日本語フォント
 \usepackage[noalphabet]{pxchfon}
 \setminchofont[0]{TsukushiAMaruGothic.ttc} 
 \setgothicfont[0]{TsukushiAMaruGothic.ttc}  
@@ -17,6 +18,7 @@
 ### 一番簡単な方法
 `pxchfon`を完全インストールするのは面倒なので、`jsarticle`を使用し、以下のように設定
 ```tex
+%フォント
 \usepackage[noalphabet]{pxchfon}
 \setminchofont[0]{TsukushiAMaruGothic.ttc} 
 \setgothicfont[0]{TsukushiAMaruGothic.ttc}  
