@@ -13,6 +13,7 @@
 \setminchofont[0]{TsukushiAMaruGothic.ttc} 
 \setgothicfont[0]{TsukushiAMaruGothic.ttc}  
 ```
+`Klee`も良い。
 
 ## 欧文
 ### 一番簡単な方法
