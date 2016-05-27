@@ -1,7 +1,7 @@
 # Latexでフォントを変更する
 
 ## Pxchfon
-[こちら](http://zrbabbler.sp.land.to/pxchfon.html#ssec-environ)のPxchfonが一番簡単そうだった
+[こちら](http://zrbabbler.sp.land.to/pxchfon.html#ssec-environ)のPxchfonが一番簡単そうだった。スタイルファイルの置き方は、[こちら](http://oku.edu.mie-u.ac.jp/tex/mod/forum/discuss.php?d=1091)を参考にすること。
 
 ## 日本語
 ### 一番簡単な方法
@@ -13,7 +13,7 @@
 \setminchofont[0]{TsukushiAMaruGothic.ttc} 
 \setgothicfont[0]{TsukushiAMaruGothic.ttc}  
 ```
-`Klee`も良い。
+`Klee`も良い。その場合は`[1]`の方が見やすいかも。
 
 ## 欧文
 ### 一番簡単な方法
