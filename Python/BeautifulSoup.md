@@ -19,6 +19,13 @@ response, content = h.request("http://lab.magicvox.net/proxy/")
 content = content.decode("utf-8")
 soup = BeautifulSoup(content, "lxml")
 ```
+ファイルから直接開く
+```python
+path = "/Test/File"
+f = open(path, 'r')
+soup = BeautifulSoup(f.read(), "html.parser")
+f.close()
+```
 
 ### 探す
 ```python
