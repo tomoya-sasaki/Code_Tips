@@ -33,12 +33,25 @@ soup.find_all("td", class_="td2")
 ```
 
 ### タグの中身を取り出す
+Example 1:
 ```python
 >td_list[1].find_all("a")
 [<a class="a1" href="**URL**">test</a>]
 
 > td_list[1].find_all("a")[0].contents
 ['test']
+```
+  
+Example 2:
+```xml
+<caption time="2015-01-18T04:56:02.976" text="何らかの文章。"/>
+```
+```python
+> res = soup.find_all("caption")
+> res[0]
+<caption text="何らかの文章。" time="2015-01-18T04:56:02.976"></caption>
+> res[0].get("text")
+'何らかの文章。'
 ```
 
 ### 少し待つ
