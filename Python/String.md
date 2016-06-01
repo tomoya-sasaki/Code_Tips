@@ -1,7 +1,7 @@
 # 文字絡みの処理
 
 ## Table of Contents
-1. [Shift-JisからUnicodeへ](shift-jisからunicodeへ)
+1. [Shift-JisからUnicodeへ](#shift-jisからunicodeへ)
 
 
 ### Shift-JisからUnicodeへ
