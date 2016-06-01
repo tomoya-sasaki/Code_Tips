@@ -43,9 +43,11 @@ Example 1:
 ```
   
 Example 2:
+Original is
 ```xml
 <caption time="2015-01-18T04:56:02.976" text="何らかの文章。"/>
 ```
+Using Beautifulsoup,
 ```python
 > res = soup.find_all("caption")
 > res[0]
