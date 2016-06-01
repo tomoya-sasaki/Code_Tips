@@ -47,6 +47,8 @@ cf. 言語処理100本ノック No.18<br>
 time = pd.Series(df[3]) # dataframeの3列目が時系列
 df.sort(3, ascending=True)
 ```
+`pd.to_datetime`を使えば、Timestamp形式に変更できる。
+
 ### columnの入れ替え
 ```python
 col = MC_df.columns.tolist()
