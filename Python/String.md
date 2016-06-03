@@ -25,6 +25,7 @@ Example 3:
 If you want to use `{` itself, change it to `{{` (doubled).
 
 # ディクショナリで指定する場合はアンパックすればよい
+```python
 >>> d = {"name": "Smith", "age": 20}
 >>> "My name is {name}. I'm {age} years old.".format(**d) #アンパックしてキーワード引数に
 "My name is Smith. I'm 20 years old."
