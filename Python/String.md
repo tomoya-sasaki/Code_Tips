@@ -9,15 +9,20 @@
 エンコーディングを指定して読み込んだ段階で、utf-8になっているようなので、後は保存するときに適切に指定すれば良い
 
 ### Format
+Example 1:
 ```python
->>> "My Name is {0}.".format("Smith")   #インデックスを指定して埋め込み
-'My Name is Smith.'
->>> "My Name is {0}. Hello {1}".format("Smith", "Taro")
-'My Name is Smith. Hello Taro'
-
-# キーワード引数で指定
->>> "My Name is {person1}. Hello {person2}".format(person1="Smith", person2="Taro")
-'My Name is Smith. Hello Taro'
+print('Hello, %s!' % 'World')
+```
+Example 2:
+```python
+"My Name is {0}.".format("Kenta")
+"My Name is {0}. Hello {1}".format("Ken", "Taro")
+```
+Example 3:
+```python
+"My Name is {person1}. Hello {person2}".format(person1="John", person2="Ken")
+```
+If you want to use `{` itself, change it to `{{` (doubled).
 
 # ディクショナリで指定する場合はアンパックすればよい
 >>> d = {"name": "Smith", "age": 20}
