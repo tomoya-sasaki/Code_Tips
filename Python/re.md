@@ -12,3 +12,4 @@ for matched in re.finditer(r"○<strong>(?P<Name>.+?)<\/strong>(?P<Speech>(.|\n)
     name_list.append(matched.group("Name"))
     speech_list.append(clean_text(matched.group("Speech")))
 ```
+繰り返す際に、テキスト冒頭からある回のloopでmatchしたところまでは、次のloopでは考慮されないようなので注意
