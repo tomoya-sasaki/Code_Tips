@@ -26,7 +26,7 @@ int main(){
 http://goo.gl/n1tTj4
 
 ### ファイルリストの作成
-<script src="https://gist.github.com/Shusei-E/b91e7e3419103036059455100464c1cb.js"></script>
+[こちらのgist](https://gist.github.com/Shusei-E/b91e7e3419103036059455100464c1cb)
 
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
