@@ -7,6 +7,7 @@ How to use Git
 1. [How to clone](#how-to-clone)
 2. [How to upload changes](#how-to-upload-changes)
 3. [When someone updates the files](#when-someone-updates-the-files)
+4. [gitignore](#gitignore)
 
 
 ### How to clone
@@ -41,3 +42,10 @@ To remove added files, use `git reset HEAD`.
 $ git pull
 ```
 `pull` should be done first in case codes are modified.
+
+## gitignore
+```
+*.out
+._*
+/.gitignore
+```
