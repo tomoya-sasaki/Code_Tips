@@ -66,3 +66,29 @@ $ git checkout <branchname>
 $ git commit -m "your comments"
 $ git push origin <branchname>
 ```
+### Delete branch
+```terminal
+$ git branch -d <branchname>
+```
+
+### Merge Branch
+#### Normal
+```terminal
+$ git checkout master
+$ git merge <branchname>
+```
+
+#### You have changed both original and branched
+Delete original modification and use version in the branch
+```terminal
+$ git checkout <branchname>
+$ git rebase master
+$ git checkout master
+$ git merge issue3
+```
+
+### If you get an error
+This can get you back before you try to merge something
+```terminal
+$ git reset --hard HEAD~
+```
