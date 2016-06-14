@@ -31,7 +31,9 @@ http://goo.gl/n1tTj4
 
 
 ### ファイルの読み込み
-[こちらのサイト](http://fa11enprince.hatenablog.com/entry/2014/04/03/233500)
+[こちらのサイト](http://fa11enprince.hatenablog.com/entry/2014/04/03/233500)  
+[その2](http://mementoo.info/archives/611#A_getline)
+
 
 
 ## Sites
