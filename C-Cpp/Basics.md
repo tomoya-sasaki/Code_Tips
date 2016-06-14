@@ -6,6 +6,8 @@
 3. [変数で宣言できない場合](#変数で宣言できない場合)
 4. [ファイルリストの作成](#ファイルリストの作成)
 5. [ファイルの読み込み](#ファイルの読み込み)
+	* [タブ区切り](#タブ区切り)
+6. 
 
 #### 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
@@ -33,6 +35,26 @@ http://goo.gl/n1tTj4
 ### ファイルの読み込み
 [こちらのサイト](http://fa11enprince.hatenablog.com/entry/2014/04/03/233500)  
 [その2](http://mementoo.info/archives/611#A_getline)
+
+#### タブ区切り
+```cpp
+#include <sstream>
+#include <fstream>
+/* Read File */
+	ifstream ifs(full_path);
+   	string str, temp;
+   	if (ifs.fail())
+   	{
+   	    std::cerr << "Reading file failed" << std::endl;
+   	    return -1;
+   	}
+   	while (getline(ifs, str)){ // read file line by line
+			istringstream stream(str);
+			while(getline(stream,temp,'\t')){ // analyze each line
+				std::cout<< temp << std::endl;
+			}
+	}
+```
 
 
 
