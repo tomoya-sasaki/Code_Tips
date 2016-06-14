@@ -84,7 +84,7 @@ Delete original modification and use version in the branch
 $ git checkout <branchname>
 $ git rebase master
 $ git checkout master
-$ git merge issue3
+$ git merge <branchname>
 ```
 
 ### If you get an error
