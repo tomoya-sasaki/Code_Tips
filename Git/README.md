@@ -8,6 +8,7 @@ How to use Git
 2. [How to upload changes](#how-to-upload-changes)
 3. [When someone updates the files](#when-someone-updates-the-files)
 4. [gitignore](#gitignore)
+5. [Branch](#branch)
 
 
 ### How to clone
@@ -48,4 +49,20 @@ $ git pull
 *.out
 ._*
 /.gitignore
+```
+
+## Branch
+### Initialize Branch
+```terminal
+$ git branch <branchname>
+```
+Check the branches you have:
+```terminal
+$ git branch
+```
+Change branch and make push
+```terminal
+$ git checkout <branchname>
+$ git commit -m "your comments"
+$ git push origin <branchname>
 ```
