@@ -59,6 +59,7 @@ $ git branch <branchname>
 Check the branches you have:
 ```terminal
 $ git branch
+$ git checkout -b <branch> // Make a new branch and checkout
 ```
 Change branch and make push
 ```terminal
