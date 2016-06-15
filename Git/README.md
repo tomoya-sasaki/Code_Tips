@@ -74,6 +74,7 @@ $ git branch -d <branchname>
 
 ### Merge Branch
 #### Normal
+Before you merge, `$ git commit -m "your comments"` in the branch?
 ```terminal
 $ git checkout master
 $ git merge <branchname>
