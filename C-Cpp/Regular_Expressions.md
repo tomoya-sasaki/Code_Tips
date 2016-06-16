@@ -1,5 +1,6 @@
 # Regular Expresions
 [Good Website](http://program.station.ez-net.jp/special/handbook/cpp/string/regex.asp)
+But be careful, it seems to be quite SLOW!! Consider using [`std::string::find`](http://www.cplusplus.com/reference/string/string/find/), for example.
 
 ## Table of Contents
 1. [Find](#find)
