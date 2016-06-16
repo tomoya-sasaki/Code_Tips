@@ -20,7 +20,7 @@ Use or:
 #include <string>
 using namespace std; 
 int main(int argc, char **argv) {
-    string test= "ニュースかその他の話題";
+    string test= "ニュースかその他のテーマ";
 		regex pattern("[ニュース|話題].*");
 
 		if(regex_match(test, pattern)){
