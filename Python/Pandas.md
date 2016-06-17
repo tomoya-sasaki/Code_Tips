@@ -18,6 +18,7 @@
 15. <a href="http://stackoverflow.com/questions/35966051/changing-data-frame-style-in-pandas" target="_blank">データフレームの変形</a>
 16. [(上と関連して)LongからWideへ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/Pandas.md#longからwideへ)
 17. [Excel形式で保存](#excel形式で保存)
+18. [ソート](#ソート)
 
 
 ### データフレームを初期化した後に登録
@@ -186,4 +187,9 @@ df = df.fillna('').reset_index()
 import openpyxl
 panel = pd.read_csv("File.csv", encoding ='cp932')
 panel.to_excel("File.xlsx","sheet1", index=False)
+```
+
+### ソート
+```python
+data.sort_values(by="Date")
 ```
