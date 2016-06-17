@@ -70,6 +70,11 @@ verb_surface = MC_df.ix[MC_df["pos"]=="動詞", "surface"]
 数値だけを考えているなら、`query`を使えばシンプルに書ける<br>
 また、単純に複数列を取り出したいのならリストを使って、`data[["x1", "x2"]]`などでOK。
 
+他にも、一つの列に対して複数条件を適用したい場合は、
+```python
+top = data[ data["Word"].isin([topwords[0], topwords[1]]) ] 
+```
+
 ### ランダムに行を取り出す
 ```python
 sampler = np.random.permutation(len(cleaned_df3))
