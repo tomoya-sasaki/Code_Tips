@@ -8,6 +8,7 @@ inlineの表示`%matplotlib inline`
 1. [軸やラベルなどの設定](#軸やラベルなどの設定)
 2. [サイズの調整](#サイズの調整)
 3. [棒だけのhistogram](#棒だけのhistogram)
+4. [折れ線グラフ](#折れ線グラフ)
 
 
 ### 軸やラベルなどの設定
@@ -27,4 +28,11 @@ fig1 = sns.boxplot(x="Topic", y="Likes", data=data_wTopicExt[["Topic", "Likes"]]
 ### 棒だけのhistogram
 ```python
 sns.distplot(result, hist=True, kde=False)
+```
+
+### 折れ線グラフ
+```python
+labels = [str(i) for i in range(32)]
+fig1 = sns.pointplot(x="Date", y="Count", data=top1.sort_values(by="Date"))
+fig1 = fig1.set_xticklabels(labels, rotation=0)
 ```
