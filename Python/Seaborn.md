@@ -56,3 +56,7 @@ sns.set(font=['Meiryo'])
 fig1 = sns.pointplot(x="Date", y="Count", data=top.sort_values(by="Date"), hue="Word", markers=["o", "x"], linestyles=["-", "--"])
 ```
 のように、`marker`と`linestyles`を入れる。両者とも、matplotlibの表記が可能([marker](http://matplotlib.org/api/markers_api.html), [linestyle](http://matplotlib.org/examples/lines_bars_and_markers/line_styles_reference.html))。
+
+サイズの変更
+* `pointplot`では`scale=0.8`のようにする。
+* `regplot`では、`scatter_kws={'s':df['c']*100}`のように辞書で渡す。`scatter_kws`には`scatter_kws={'marker':'o', 'color':'indianred'}`のように、他の値を情報を渡すこともできるみた。
