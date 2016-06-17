@@ -1,4 +1,5 @@
 #Seaborn
+`import seaborn as sns`  
 inlineの表示`%matplotlib inline`
 
 # Table of Contents
