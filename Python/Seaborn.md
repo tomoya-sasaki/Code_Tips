@@ -9,6 +9,7 @@ inlineの表示`%matplotlib inline`
 2. [サイズの調整](#サイズの調整)
 3. [棒だけのhistogram](#棒だけのhistogram)
 4. [折れ線グラフ](#折れ線グラフ)
+5. [日本語フォント](#日本語フォント)
 
 
 ### 軸やラベルなどの設定
@@ -36,3 +37,15 @@ labels = [str(i) for i in range(32)]
 fig1 = sns.pointplot(x="Date", y="Count", data=top1.sort_values(by="Date"))
 fig1 = fig1.set_xticklabels(labels, rotation=0)
 ```
+
+### 日本語フォント
+[参考](http://qiita.com/keisuke-nakata/items/2309764d21438645f6b9)
+```python
+import matplotlib as mpl
+print(mpl.matplotlib_fname())
+```
+として、`matplotlibrc`の存在するフォルダに`fonts`フォルダを、さらにその中に`ttf`フォルダを作り、適当な`.ttf`フォントを移動する。
+```python
+sns.set(font=['Meiryo']) 
+```
+とすることで指定可能。
