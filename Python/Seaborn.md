@@ -10,6 +10,7 @@ inlineの表示`%matplotlib inline`
 3. [棒だけのhistogram](#棒だけのhistogram)
 4. [折れ線グラフ](#折れ線グラフ)
 5. [日本語フォント](#日本語フォント)
+6. [点や線のスタイル](#点や線のスタイル)
 
 
 ### 軸やラベルなどの設定
@@ -49,3 +50,9 @@ print(mpl.matplotlib_fname())
 sns.set(font=['Meiryo']) 
 ```
 とすることで指定可能。
+
+### 点や線のスタイル
+```python
+fig1 = sns.pointplot(x="Date", y="Count", data=top.sort_values(by="Date"), hue="Word", markers=["o", "x"], linestyles=["-", "--"])
+```
+のように、`marker`と`linestyles`を入れる。両者とも、matplotlibの表記が可能([marker](http://matplotlib.org/api/markers_api.html), [linestyle](http://matplotlib.org/examples/lines_bars_and_markers/line_styles_reference.html))。
