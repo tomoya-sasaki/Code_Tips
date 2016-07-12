@@ -4,6 +4,7 @@ from selenium import webdriver
 driver = webdriver.Firefox() # If you want to download something, PhantomJS cannot be used
 driver.get(url) 
 ```
+PhantomJSを使う場合は、homebrewでインストール可能。
 
 ## Table of Content
 1. [クリック](#クリック)
