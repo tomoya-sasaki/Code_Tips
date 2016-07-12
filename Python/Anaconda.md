@@ -22,6 +22,8 @@ $ conda install beautifulsoup4
 ```
 
 If you want to use `pip`, the simplest way is `pip install PACKAGE` (no need to use `pip3`).
+
+You don't need following if you've decided to use `pip`.
 ```terminal
 $ conda skeleton pypi PACKAGE
 $ conda build PACKAGE
