@@ -13,4 +13,5 @@ PhantomJSを使う場合は、homebrewでインストール可能。[ここ](htt
 ## クリック
 ```python
 driver.find_element_by_id("ctl00_ContentPlaceHolder1_showRelAggreement_imgExport").click()
+driver.find_element_by_link_text("Click This").click() 
 ```
