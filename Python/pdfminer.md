@@ -10,7 +10,7 @@ from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LAParams, LTTextBox, LTTextLine, LTFigure, LTImage
 from itertools import chain
  
-images_folder = "/home/3928941380/Desktop/Temp/ImaiText/ExtImages"
+images_folder = "/home/Text/ExtImages"
  
 def with_pdf (pdf_doc, pdf_pwd, fn, *args):
     """Open the pdf document, and apply the function, returning the results"""
