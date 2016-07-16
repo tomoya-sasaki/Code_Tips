@@ -54,7 +54,7 @@ urllib.request.urlretrieve(pdf_url, "test.pdf")
 ```
 
 このUNのサイトの原因は、一度[この](http://www.un.org/ga/search/view_doc.asp?symbol=A/51/PV.11)オリジナルを開かないとPDF単体を開けないことにある(恐らく背後でCookieが使われている)。そこで、**全てを一つのブラウザで完結させることを考える**。
-```
+```python
 from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 chrome_options.add_experimental_option("prefs", {"plugins.plugins_disabled": ['Chrome PDF Viewer'], "download.default_directory" : "/User/Save/Path"})
