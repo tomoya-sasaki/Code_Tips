@@ -8,6 +8,7 @@
 4. [少し待つ](#少し待つ)
 5. [リンクの取り出し](#リンクの取り出し)
 6. [PhantomJS](#phantomjs)
+7. [Download File](#download-file)
 
 
 ### soupを作る
@@ -97,4 +98,9 @@ browser.find_by_id('isearch').first.click()
 ##### スクリーンショット
 ```python
 driver.save_screenshot('last.png')
+```
+
+### Download File
+```python
+urllib.request.urlretrieve(script_url, filename)
 ```
