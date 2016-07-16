@@ -52,3 +52,16 @@ soup = BeautifulSoup(data, "html.parser")
 pdf_url = "https://documents-dds-ny.un.org/doc/UNDOC/GEN/N96/862/83/PDF/N9686283.pdf?OpenElement"
 urllib.request.urlretrieve(pdf_url, "test.pdf")
 ```
+
+このUNのサイトの原因は、一度[この](http://www.un.org/ga/search/view_doc.asp?symbol=A/51/PV.11)オリジナルを開かないとPDF単体を開けないことにある(恐らく背後でCookieが使われている)。そこで、**全てを一つのブラウザで完結させることを考える**。
+```
+from selenium.webdriver.chrome.options import Options
+chrome_options = Options()
+chrome_options.add_experimental_option("prefs", {"plugins.plugins_disabled": ['Chrome PDF Viewer'], "download.default_directory" : "/User/Save/Path"})
+  #Same as:
+  # profile = {"plugins.plugins_list": [{"enabled":False,"name":"Chrome PDF Viewer"}]}
+  # chrome_options.add_experimental_option("prefs", profile)
+  
+driver = webdriver.Chrome('/Users/temp/chromedriver/chromedriver', chrome_options=chrome_options) 
+```
+とすることで、ChromeデフォルトのPDFViewerをオフにすることができる。これには、[Chromiumの議論](https://bugs.chromium.org/p/chromium/issues/detail?id=528436)が参考になった。
