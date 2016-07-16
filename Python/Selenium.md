@@ -64,4 +64,5 @@ chrome_options.add_experimental_option("prefs", {"plugins.plugins_disabled": ['C
   
 driver = webdriver.Chrome('/Users/temp/chromedriver/chromedriver', chrome_options=chrome_options) 
 ```
-とすることで、ChromeデフォルトのPDFViewerをオフにすることができる。これには、[Chromiumの議論](https://bugs.chromium.org/p/chromium/issues/detail?id=528436)が参考になった。
+とすることで、ChromeデフォルトのPDFViewerをオフにすることができる。これには、[Chromiumの議論](https://bugs.chromium.org/p/chromium/issues/detail?id=528436)が参考になった。  
+これで、frameを移動することなくPDFが表示された瞬間にダウンロードできる。
