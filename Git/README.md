@@ -3,6 +3,7 @@ How to use Git
 * Websites for reference
   * [いまさら聞けないgitの使い方](http://qiita.com/mountcedar/items/682743c95fd3b8fc274b)
   * [Pull Request入門(複数人管理)](http://blog.qnyp.com/2013/05/28/pull-request-for-github-beginners/)
+  * [git pull -rebase](http://kray.jp/blog/git-pull-rebase/)
 
 # Table of Contents
 1. [How to clone](#how-to-clone)
