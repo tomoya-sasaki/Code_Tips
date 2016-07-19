@@ -14,7 +14,7 @@ How to use Git
 7. [Pull Request](#pull-request)
 
 
-### How to clone
+## How to clone
 What you will do first is to `clone` files from the existing repository.<br>
 To do so,
 ```
@@ -92,13 +92,13 @@ $ git checkout master
 $ git merge <branchname>
 ```
 
-### If you get an error
+## If you get an error
 This can get you back before you try to merge something
 ```terminal
 $ git reset --hard HEAD~
 ```
 
-### Pull Request
+## Pull Request
 ```terminal
 $ git branch  # check current branch
 $ git checkout -b update-readme
