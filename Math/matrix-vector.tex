@@ -1,0 +1,121 @@
+\documentclass[a4paper,10.5pt]{jsarticle}  %jsarticleでも良いかも
+%--脚注の設定
+\usepackage{natbib}
+\bibpunct[, ]{(}{)}{;}{and}{}{,} %本文での引用の体裁はここで整えられるみたい
+\bibliographystyle{apsr2006-2}   %このagsmは編集済みなので注意。ジャーナルが太字にならないようにしてる。ブログ参照。
+\usepackage{amsmath}
+%--余白の設定   http://pcwide-jp.blogspot.co.uk/2009/07/latex.html  より
+\setlength{\topmargin}{20mm}
+\addtolength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{20mm}
+\addtolength{\oddsidemargin}{-1in}
+\setlength{\evensidemargin}{15mm}
+\addtolength{\evensidemargin}{-1in}
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{254mm}
+\setlength{\headsep}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0mm}
+%--図の設定
+\usepackage[dvipdfmx]{graphicx} % PDFの利用もOKに
+  %\usepackage[dvips]{graphicx}
+%--行間の設定
+\usepackage{setspace} 
+\setstretch{1.13} % ページ全体の行間を設定
+%コードの設定
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{ %
+  language= Python, %ここを含めなければ、変に太字になったりしない
+  aboveskip=2.5mm,
+  belowskip=4.5mm,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  numbers=left,                    
+  numbersep=5pt,    
+  basicstyle={\small\ttfamily},
+  commentstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  backgroundcolor=\color{backgroundcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+	xleftmargin = 1.1cm,
+  framexleftmargin = 1em
+}
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{green!8}
+%リンクの埋め込みを可能にする  \href{ **URL** }{表示テキスト}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{courier}
+\usepackage{here}
+%日本語環境用の設定を追加
+\renewcommand{\refname}{参考文献}
+\renewcommand{\abstractname}{要約}
+\usepackage{multirow}
+\usepackage{placeins}
+%数学用のフォント
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsfonts} 
+%-----------------
+\begin{document}
+
+\title{Matrix and Vector}
+\author{}
+\date{}
+\maketitle
+%\begin{abstract}
+%\end{abstract}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\section{Calculation of the squared Euclidean norm}
+From \href{http://math.stackexchange.com/questions/1865476/calculation-of-the-squared-euclidean-norm/1865487}{StackExchange}.
+\subsection{Question}
+\begin{align*}
+&\|\mathbf{x} - \mathbf{\alpha} \|^2 - \|\mathbf{x} - \mathbf{\beta}\|^2\\
+&= \|\mathbf{x}\| \|\mathbf{x}\| - 2 \|\mathbf{\mathbf{\alpha}}\| \|\mathbf{x}\| + \|\mathbf{\alpha}\| \|\mathbf{\mathbf{\alpha}}\|  - \|\mathbf{x}\| \|\mathbf{x}\| +2 \|\mathbf{\beta}\| \|\mathbf{x}\| - \|\mathbf{\beta}\| \|\mathbf{\beta}\|\\
+&= \mathbf{\alpha}^T \mathbf{\alpha} - \beta^T \beta + 2(\sqrt{\mathbf{\beta}\cdot\mathbf{\beta}}-\sqrt{\mathbf{\alpha}\cdot\mathbf{\alpha}})\|\mathbf{x}\|\\
+&= \mathbf{\alpha}^T \mathbf{\alpha} - \beta^T \beta + 2(\sqrt{\mathbf{\beta}\cdot\mathbf{\beta}}-\sqrt{\mathbf{\alpha}\cdot\mathbf{\alpha}})(\sqrt{\mathbf{x}\cdot\mathbf{x}}),
+\end{align*}
+where I used the fact that $$\|a\|\|a\| = \sqrt{a\cdot a}\sqrt{a\cdot a} = \sqrt{a^T a}\sqrt{a^T a} = a^Ta.$$
+
+However, the article gives $$2(\beta-\alpha)^T \mathbf{x} + \alpha^T \alpha - \beta^T\beta $$
+
+\subsection{Answer}
+Your transition from the first line to the second is incorrect.  We should have
+\begin{align*}
+  &\|x - \alpha\|^2 - \|x - \beta\|^2\\
+  &(x - \alpha)^T(x - \alpha) - (x - \beta)^T(x - \beta)  \\
+  &=\|x\|^2 + \|\alpha\|^2 - \|x\|^2 - \|\beta\|^2 - x^T\alpha - \alpha^Tx + x^T\beta + \beta^Tx \\
+  &=\|\alpha\|^2 - \|\beta\|^2 - 2\alpha^Tx + 2 \beta^Tx \\
+  &=\alpha^T\alpha - \beta^T\beta + 2(\beta - \alpha)^Tx
+\end{align*}
+which is the desired result.
+
+\subsection{Caution}
+\subsubsection{}
+For any vectors $u, v$, $u^Tv = v^Tu$.
+
+\subsubsection{}
+\begin{align*}
+  (x-\alpha)^T (x-\alpha) = x^T x + - x^T \alpha - \alpha^T x + \alpha^T \alpha 
+\end{align*}
+
+\end{document}
