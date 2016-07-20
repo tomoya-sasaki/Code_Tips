@@ -10,4 +10,6 @@
 &= \mathbf{\alpha}^T \mathbf{\alpha} - \beta^T \beta + 2(\sqrt{\mathbf{\beta}\cdot\mathbf{\beta}}-\sqrt{\mathbf{\alpha}\cdot\mathbf{\alpha}})(\sqrt{\mathbf{x}\cdot\mathbf{x}}),
 \end{align}
 
-$$ \mathbf{\alpha}^T \mathbf{\alpha} - \beta^T \beta + 2(\sqrt{\mathbf{\beta}\cdot\mathbf{\beta}}-\sqrt{\mathbf{\alpha}\cdot\mathbf{\alpha}})(\sqrt{\mathbf{x}\cdot\mathbf{x}}) $$
+$$\mathbf{\alpha}^T \mathbf{\alpha} - \beta^T \beta + 2(\sqrt{\mathbf{\beta}\cdot\mathbf{\beta}}-\sqrt{\mathbf{\alpha}\cdot\mathbf{\alpha}})(\sqrt{\mathbf{x}\cdot\mathbf{x}})$$
+
+$x$
