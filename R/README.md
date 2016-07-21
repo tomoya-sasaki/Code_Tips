@@ -7,8 +7,10 @@ cols <- rainbow(length(job_freq))
 
 ### 図の保存
 ```r
-pdf("ファイル名", オプション色々)
-  描画処理
+pdf("NonNormal1.pdf", width=10 , height=6)
+par(mfrow=c(1,2))
+hist(residuals(model1), main="Residual Plot (Model 1)")
+qqPlot(model1)
 dev.off()
 ```
 
