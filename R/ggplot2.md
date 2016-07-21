@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [xラベルの変更](#xラベルの変更)
 2. [エラーバーの追加](#エラーバーの追加)
+3. [線の種類](#線の種類)
 
 ### xラベルの変更
 ```r
@@ -55,3 +56,29 @@ options(repr.plot.width=7, repr.plot.height=2.8)
 g
 ```
 <img src="figures/ggplot2_error_bars.png" width="580">
+
+
+# 線の種類
+```r
+g <- ggplot(res1, aes(x=EnrollmentCount, y=ClassSize)) +
+  geom_line(aes(colour = type, linetype=type), size = 0.87)
+```
+
+Manualで変える ([Reference](http://www.sthda.com/english/wiki/ggplot2-line-types-how-to-change-line-types-of-a-graph-in-r-software))
+```r
+# Set line types manually
+g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
+  geom_line(aes(linetype=gender))+
+  geom_point()+
+  scale_linetype_manual(values=c("dotdash", "dotted"))+
+  theme(legend.position="top")
+  
+# Change line colors and sizes
+g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
+  geom_line(aes(linetype=gender, color=gender, size=gender))+
+  geom_point()+
+  scale_linetype_manual(values=c("solid", "dotted"))+
+  scale_color_manual(values=c('#999999','#E69F00'))+
+  scale_size_manual(values=c(1, 1.5))+
+  theme(legend.position="top")
+```
