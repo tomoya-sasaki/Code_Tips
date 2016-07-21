@@ -1,4 +1,8 @@
 # Julia
+```julia
+using IJulia
+notebook()
+```
 
 ## Useful Resources
 [PyPlot](https://gist.github.com/gizmaa/7214002)
