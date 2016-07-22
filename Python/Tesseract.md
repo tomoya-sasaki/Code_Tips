@@ -27,13 +27,16 @@ def OCR_PDF(file_path):
     final_text = []
     for img in image_jpg.sequence:
         img_page = Image(image=img)
-
+        open_img = PI.open(io.BytesIO(img_page.make_blob("jpeg")))
+        
         txt = tool.image_to_string(
-            PI.open(io.BytesIO(img_page.make_blob("jpeg"))),
-            lang="eng",
-            builder=pyocr.builders.TextBuilder()
+        	open_img,
+        	lang="eng",
+        	builder=pyocr.builders.TextBuilder()
         )
         final_text.append(txt)
+        open_img.close()
+
         
     return(final_text)
 ```
