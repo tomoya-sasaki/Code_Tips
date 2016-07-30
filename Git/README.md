@@ -102,7 +102,7 @@ $ git reset --hard HEAD~
 ## Pull Request
 ```terminal
 $ git branch  # check current branch
-$ git checkout -b update-readme # branch for pull request
+$ git checkout -b update-readme # create a branch for pull request
 -- Do some modification using your favorite editor --
 $ git add *
 $ git commit -m "Update"
