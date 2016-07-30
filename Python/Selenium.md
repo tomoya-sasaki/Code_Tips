@@ -74,7 +74,7 @@ driver = webdriver.Chrome('/Users/temp/chromedriver/chromedriver', chrome_option
 def compare(original_files, after_files):
     for item in after_files:
         if re.search(r"download", item) != None:
-            # Skit Crhome Downloading FIle
+            # Skip Crhome Downloading File
             continue
         
         if item not in original_files:
