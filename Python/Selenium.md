@@ -9,6 +9,7 @@ PhantomJSを使う場合は、homebrewでインストール可能。[ここ](htt
 ## Table of Content
 1. [クリック](#クリック)
 2. [埋め込みPDFへの対処](#埋め込みpdfへの対処)
+3. [File download](#file-download)
 
 ## クリック
 ```python
@@ -66,3 +67,25 @@ driver = webdriver.Chrome('/Users/temp/chromedriver/chromedriver', chrome_option
 ```
 とすることで、ChromeデフォルトのPDFViewerをオフにすることができる。これには、[Chromiumの議論](https://bugs.chromium.org/p/chromium/issues/detail?id=528436)が参考になった。  
 これで、frameを移動することなくPDFが表示された瞬間にダウンロードできる。
+
+## File Download
+一つのファイルのダウンロードが終わるまで待つ (ダウンロードフォルダに、ファイルが増えたら`while`を抜ける)
+```python
+def compare(original_files, after_files):
+    for item in after_files:
+        if re.search(r"download", item) != None:
+            # Skit Crhome Downloading FIle
+            continue
+        
+        if item not in original_files:
+            return (item)
+
+url  = country_sessions.ix[i, "URL"]
+driver.get(url)
+        
+dl_wait=0
+while compare(original_files, os.listdir(path)) == None and dl_wait != 36:
+  # Wait until file is downloaded, check every second
+  time.sleep(1)
+  dl_wait += 1            
+```
