@@ -121,16 +121,20 @@ git checkout -ours .    # 今のディレクトリのファイルを採用
 Another example
 ```terminal 
 # now at master
-git branch
+$ git branch
  * master
    branchA
+
 # merge
-git merge branchA
+$ git merge branchA
+
 # xxx.R conflicts! I want to use xxx.R in branchA
-git checkout --theirs xxx.R
+$ git checkout --theirs xxx.R
+
 # yyy.R conflicts! I want to use yyy.R in master
-git checkout --ours yyy.R
+$ git checkout --ours yyy.R
+
 # Commit
-git add *
-git commit -m "Resolved Conflict"
+$ git add *
+$ git commit -m "Resolved Conflict"
 ```
