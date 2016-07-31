@@ -4,6 +4,7 @@ How to use Git
   * [いまさら聞けないgitの使い方](http://qiita.com/mountcedar/items/682743c95fd3b8fc274b)
   * [Pull Request入門(複数人管理)](http://blog.qnyp.com/2013/05/28/pull-request-for-github-beginners/)
   * [git pull -rebase](http://kray.jp/blog/git-pull-rebase/) / [Git開発でmasterの内容を開発ブランチに反映させる方法](http://sota1235.com/blog/2015/03/19/git-rebase.html)
+  * [Gitでやらかした時に使える19個の奥義](http://qiita.com/muran001/items/dea2bbbaea1260098051)
 
 # Table of Contents
 1. [How to clone](#how-to-clone)
@@ -13,6 +14,7 @@ How to use Git
 5. [Branch](#use-branch)
 6. [If you get an error](#if-you-get-an-error)
 7. [Pull Request](#pull-request)
+8. [Resolve Conflict](#resolve-conflict]
 
 
 ## How to clone
@@ -109,3 +111,26 @@ $ git commit -m "Update"
 $ git push origin update-readme
 ```
 From here, move to GitHub website. Push Compare & pull request button and send a Pull Request.
+
+
+## Resolve Conflict
+```terminal
+git checkout -theirs .  # merge元を採用
+git checkout -ours .    # 今のディレクトリのファイルを採用
+```
+Another example
+```terminal 
+# now at master
+git branch
+ * master
+   branchA
+# merge
+git merge branchA
+# xxx.R conflicts! I want to use xxx.R in branchA
+git checkout --theirs xxx.R
+# yyy.R conflicts! I want to use yyy.R in master
+git checkout --ours yyy.R
+# Commit
+git add *
+git commit -m "Resolved Conflict"
+```
