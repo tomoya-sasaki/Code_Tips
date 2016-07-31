@@ -14,7 +14,7 @@ How to use Git
 5. [Branch](#use-branch)
 6. [If you get an error](#if-you-get-an-error)
 7. [Pull Request](#pull-request)
-8. [Resolve Conflict](#resolve-conflict]
+8. [Resolve Conflict](#resolve-conflict)
 
 
 ## How to clone
