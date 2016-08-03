@@ -1,4 +1,6 @@
 # ggplot2
+References:
+* [ggplot2 — きれいなグラフを簡単に合理的に](https://heavywatal.github.io/rstats/ggplot2.html)
 
 ## Table of Contents
 1. [xラベルの変更](#xラベルの変更)
