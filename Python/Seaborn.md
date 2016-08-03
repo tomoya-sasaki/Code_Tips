@@ -4,6 +4,9 @@ inlineの表示`%matplotlib inline`
 
 インストール時に、`ValueError: unknown locale: UTF-8`と出たら、ターミナルで`export LC_ALL=ja_JP.UTF-8`と実行。
 
+References:
+* [matplotlib + seaborn — Pythonでグラフ描画 ](https://heavywatal.github.io/python/matplotlib.html)
+
 # Table of Contents
 1. [軸やラベルなどの設定](#軸やラベルなどの設定)
 2. [サイズの調整](#サイズの調整)
