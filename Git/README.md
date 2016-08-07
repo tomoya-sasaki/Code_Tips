@@ -16,7 +16,7 @@ How to use Git
 7. [Pull Request](#pull-request)
 8. [Resolve Conflict](#resolve-conflict)
 9. [When push is rejected](#when-push-is-rejected)
-10. [Create a new repository from Terminal](#create-a-new-repository-from-terminal]
+10. [Create a new repository from Terminal](#create-a-new-repository-from-terminal)
 
 
 ## How to clone
