@@ -15,6 +15,7 @@ How to use Git
 6. [If you get an error](#if-you-get-an-error)
 7. [Pull Request](#pull-request)
 8. [Resolve Conflict](#resolve-conflict)
+9. [When push is rejected](#when-push-is-rejected)
 
 
 ## How to clone
@@ -137,4 +138,11 @@ $ git checkout --ours yyy.R
 # Commit
 $ git add *
 $ git commit -m "Resolved Conflict"
+```
+
+## When push is rejected
+[Reference](https://www.softel.co.jp/blogs/tech/archives/3569)
+```terminal
+git fetch 
+git rebase origin/master
 ```
