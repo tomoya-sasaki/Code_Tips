@@ -115,8 +115,8 @@ From here, move to GitHub website. Push Compare & pull request button and send a
 
 ## Resolve Conflict
 ```terminal
-git checkout -theirs .  # merge元を採用
-git checkout -ours .    # 今のディレクトリのファイルを採用
+git checkout --theirs .  # merge元を採用
+git checkout --ours .    # 今のディレクトリのファイルを採用
 ```
 Another example
 ```terminal 
