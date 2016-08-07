@@ -149,7 +149,8 @@ git rebase origin/master
 ```
 
 ## Create a new repository from Terminal
-Follow the GitHub instruction. Do **NOT** create `README.md` at this point.
+Follow the GitHub instruction. Do **NOT** create `README.md` at this point.  
+After that, this code might be useful.
 ```terminal
 git branch --set-upstream-to=origin/master master
 ```
