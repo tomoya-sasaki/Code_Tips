@@ -12,8 +12,9 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 8. [横長の表を回転する](#横長の表を回転する)
 9. [コードを挿入](#コードを挿入)
 10. [図のフォルダの指定](#図のフォルダの指定)
+11. [名前を英語に統一](#名前を英語に統一)
 
-### 写真の挿入
+## 写真の挿入
 ```tex
 \begin{figure}[!htb]
 \centering
@@ -29,16 +30,16 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ここで`width=1.2`は、図の幅を元の1.2倍に拡大することを意味する。  
 `\linewidth`は縦幅のスケールは横幅に合わせることを意味する。
 
-### 文字サイズ変更
+## 文字サイズ変更
 `{\fontsize{9.5pt}{8pt}\selectfont   }`
 
-### Tikzでゲームツリー
+## Tikzでゲームツリー
 `\documentclass[report, 10.5pt, a4paper, oneside, openany, dvipdfmx]{jsbook}`<br>
 のように、始めにdivipdfmxを指定して、テンプレにある
 `\usepackage[dvipdfmx]{graphicx}`<br>
 はコメントアウトしておかないと表示ができなかった。
 
-### 数式で、式と式の間を広げる
+## 数式で、式と式の間を広げる
 `\\[12pt]`のように改行するところで記述
 ```tex
 \begin{eqnarray*} 
@@ -47,13 +48,13 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \end{eqnarray*}
 ```
 
-### ダブルスペース
+## ダブルスペース
 ```tex
 %--行間の設定
 \usepackage{setspace}
 \doublespacing
 ```
-### itemizeでbulletを変える
+## itemizeでbulletを変える
 `\item[$\Rightarrow$] Item 1`でOK。Beamer全体に適用するには[こちら](http://tex.stackexchange.com/questions/294067/beamer-change-only-several-bullets-in-the-list)。
 
 ### 横長の表を回転する
@@ -67,7 +68,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \end{landscape}
 ```
 
-### コードを挿入
+## コードを挿入
 以下をプリアンブルに:
 ```tex
 \usepackage{listings}
@@ -114,8 +115,22 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ```
 [こちら](https://www.sharelatex.com/learn/Code_listing)も参考になる。
 
-### 図のフォルダの指定
+## 図のフォルダの指定
 ```latex
 \graphicspath{{D:/LATEX/Reports@IIT/figures/}}
 \graphicspath{{subdir1/}{subdir2/}{subdir3/}{subdirn/}}
+```
+
+## 名前を英語に統一
+```tex
+%名前を英語に統一
+\renewcommand{\refname}{References}
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\figurename}{Figure }
+\renewcommand{\tablename}{Table }
+\renewcommand{\listfigurename}{Figure List}
+\renewcommand{\listtablename}{Table List}
+\renewcommand{\appendixname}{Appendix }
+\renewcommand{\prechaptername}{Chapter } 
+\renewcommand{\postchaptername}{}  
 ```
