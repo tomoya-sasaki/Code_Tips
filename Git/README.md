@@ -44,7 +44,7 @@ $ git commit -m "your comments"
 $ git push https://github.com/xxxxx/Code_Tips.git master:master
 ```
 or, you can use `git push origin your_branch_name(ex. master)` for the last line.  
-To remove added files, use `git reset HEAD` for all and `git reset HEAD example.txt` for a file.
+To remove added files, use `git reset HEAD` for all and `git rm --cached *.*` for a file.
 
 ## When someone updates the files
 ```
@@ -57,6 +57,11 @@ $ git pull
 *.out
 ._*
 /.gitignore
+/.cache
+_*.*
+*.swp
+.*.*
+*-checkpoint.ipynb
 ```
 
 ## Use Branch
