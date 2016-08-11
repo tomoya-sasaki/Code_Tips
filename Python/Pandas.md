@@ -19,6 +19,7 @@
 16. [(上と関連して)LongからWideへ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/Pandas.md#longからwideへ)
 17. [Excel形式で保存](#excel形式で保存)
 18. [ソート](#ソート)
+19. [複数列に同じ値を入れる](#複数列に同じ値を入れる)
 
 
 ## データフレームを初期化した後に登録
@@ -200,4 +201,10 @@ panel.to_excel("File.xlsx","sheet1", index=False)
 ## ソート
 ```python
 data.sort_values(by="Date")
+```
+
+## 複数列に同じ値を入れる
+ある`名前`の人の3つの列に同じ値を入れる
+```python
+data.loc[data["Candidate_u"]=="名前", ["ID", "roman", "roman2"]] = [400006, "Namae1", "Namae2"]
 ```
