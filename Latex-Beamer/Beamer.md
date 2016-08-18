@@ -15,6 +15,7 @@
 12. [画像を2枚並べて表示](#画像を2枚並べて表示) 
 13. [Citation and Reference](#citation-and-reference)
 14. [Hide Appendix and References](#hide-appendix-and-references)
+15. [上部のナビゲーションバーを消す](#上部のナビゲーションバーを消す)
 
 ### Beamer Slide
 ```tex
@@ -64,7 +65,7 @@ Right Part
 \end{columns}
 ```
 
-### このセクションの内容
+## このセクションの内容
 ```tex
 \begin{frame}<beamer>
 \frametitle{この章の内容}
@@ -72,7 +73,7 @@ Right Part
 \end{frame}
 ```
 
-### 脚注のサイズの調整 
+## 脚注のサイズの調整 
 ([参考](http://tex.stackexchange.com/questions/21741/how-do-i-change-footnote-font-size-in-beamer-presentation))
 ```tex
 \let\oldfootnotesize\footnotesize
@@ -80,30 +81,30 @@ Right Part
 ```
 これを、`\begin{document}`の前に挿入する。
 
-### 図の挿入
+## 図の挿入
 `\includegraphics[width=6cm]{Fig1.pdf}`<br>
 だけで良さそう。
 
-### 少し空白を入れる
+## 少し空白を入れる
 `\vspace{5mm}`
 
-### 使いやすそうなスタイル 
+## 使いやすそうなスタイル 
 ([参考](https://www.hartwork.org/beamer-theme-matrix/))
 ```tex
 \usetheme{Frankfurt}
 \usepackage{beamerthemeshadow}
 ```
 
-### 右下のナビゲーションバーを消す
+## 右下のナビゲーションバーを消す
 `\usenavigationsymbolstemplate{}`
 
-### スライド番号を右下に入れる
+## スライド番号を右下に入れる
 プリアンブルに`\setbeamertemplate{footline}[frame number]`
 
-### 画像を2枚並べて表示
+## 画像を2枚並べて表示
 [こちら](https://gist.github.com/Shusei-E/8536241e264b976acd6b)を参考にすること
 
-### Citation and Reference
+## Citation and Reference
 プリアンブルには、
 ```tex
 % Citation
@@ -126,5 +127,12 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 エンコードっぽいエラーが発生する場合は、`\usepackage[utf8]{inputenc}`をプリアンブルに追加する。<br>
 エラーが出ても、そのまま何回かコンパイルしないといけないのかも。
 
-### Hide Appendix and References
+## Hide Appendix and References
 `\appendix`を直前に追加するだけでOK
+
+## 上部のナビゲーションバーを消す
+`\usetheme{Frankfurt}`の場合は、
+```tex
+\setbeamertemplate{headline}{}
+```
+を`\begin{document}`の前に入れる
