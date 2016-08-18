@@ -54,5 +54,6 @@ with open(save_path, mode='a', encoding='utf-8') as a_file:
 
 ## Caution
 Cash files (quite large!) are stored in `private/var/tmp`.  
-Find `policy.xml`(for example, `/usr/local/etc/ImageMagick-6/policy.xml`), comment out the following part and change the size `<policy domain="resource" name="disk" value="2GB"/>`.
+Find `policy.xml`(for example, `/usr/local/etc/ImageMagick-6/policy.xml`), comment out the following part and change the size `<policy domain="resource" name="disk" value="2GB"/>`.  
+You can check settings by typing `identify -list resource` in Terminal.  
 [Reference](http://qiita.com/nt-uni/items/bb4cc3064a3af857a63e)
