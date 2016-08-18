@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Install](#install)
 2. [Use in Python](#use-in-python)
+3. [Caution](#caution)
 
 ### Install
 `homebrew` can be used.
@@ -50,3 +51,6 @@ with open(save_path, mode='a', encoding='utf-8') as a_file:
     for text in text_list:
         a_file.write(text)
 ```
+
+## Caution
+Cash files (quite large!) are stored in `private/var/tmp`
