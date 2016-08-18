@@ -107,9 +107,10 @@ Right Part
 ## Citation and Reference
 プリアンブルには、
 ```tex
-% Citation
-\usepackage[style=authoryear]{biblatex}
+\usepackage{silence,lmodern} % 警告を表示しない
+\usepackage[style=authoryear,backend=biber]{biblatex}
 \addbibresource{ref.bib}
+\WarningFilter{biblatex}{Patching footnotes failed}
 ```
 引用する際には、
 ```tex
