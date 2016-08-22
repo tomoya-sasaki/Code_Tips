@@ -5,3 +5,6 @@
 
 ## Probability Theory
 * Bayes' Theorem and Independence
+
+## Derivatives
+* Useful Derivatives
