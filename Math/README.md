@@ -8,3 +8,5 @@
 
 ## Derivatives
 * Useful Derivatives
+* Differentiation of Vector/Matrix
+* Differentiation of natural log
