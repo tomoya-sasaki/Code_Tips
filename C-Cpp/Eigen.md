@@ -12,7 +12,7 @@ Usage:
 6. [行列要素へのアクセス](#行列要素へのアクセス)
 7. [行列の要素ごとの演算](#行列の要素ごとの演算)
 8. [数値を毎回ランダムに](#数値を毎回ランダムに)
-9. [行列でのvalue()の使い方](#行列でのvalue()の使い方)
+9. [行列でのvalueの使い方](#行列でのvalueの使い方)
 
 
 Other Material: 
@@ -119,7 +119,7 @@ double rnorm(double mean, double sd){
 	return distribution(engine);
 }
 ```
-## 行列でのvalue()の使い方
+## 行列でのvalueの使い方
 `double k = b.transpose()*Z.inverse()*b;`とするとエラーが出るので、`double k = (b.transpose()*Z.inverse()*b)(0);`とするか、`double k = (b.transpose()*Z.inverse()*b).value()`とする。([参考](http://stackoverflow.com/questions/25107120/cannot-convert-from-const-eigengeneralproductlhs-rhs-producttype-to-doubl))
 
 ## Links
