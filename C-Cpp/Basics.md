@@ -9,13 +9,13 @@
 	* [タブ区切り](#タブ区切り)
 6. 
 
-#### 小数の計算
+## 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
 
-### 引数の型変換
+## 引数の型変換
 `(int)K`のようにして引数とする。
 
-### 変数で宣言できない場合
+## 変数で宣言できない場合
 ```cpp
 typedef struct{
 		vector<double> KeepMu;
@@ -28,15 +28,15 @@ int main(){
 ```
 http://goo.gl/n1tTj4
 
-### ファイルリストの作成
+## ファイルリストの作成
 [こちらのgist](https://gist.github.com/Shusei-E/b91e7e3419103036059455100464c1cb)
 
 
-### ファイルの読み込み
+## ファイルの読み込み
 [こちらのサイト](http://fa11enprince.hatenablog.com/entry/2014/04/03/233500)  
 [その2](http://mementoo.info/archives/611#A_getline)
 
-#### タブ区切り
+### タブ区切り
 ```cpp
 #include <sstream>
 #include <fstream>
