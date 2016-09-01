@@ -6,3 +6,6 @@ Read "EM.pdf".
 
 # Output
 <img src="output.png" width="350">
+
+# 実装上の注意
+* `.row(n)`は横ベクトル
