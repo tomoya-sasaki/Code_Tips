@@ -1,0 +1,200 @@
+\documentclass[a4paper,10.5pt]{jsarticle}  %jsarticleでも良いかも
+%--脚注の設定
+\usepackage{natbib}
+\bibpunct[, ]{(}{)}{;}{and}{}{,} %本文での引用の体裁はここで整えられるみたい
+\bibliographystyle{apsr2006-2}   %このagsmは編集済みなので注意。ジャーナルが太字にならないようにしてる。ブログ参照。
+\usepackage{amsmath}
+%--余白の設定   http://pcwide-jp.blogspot.co.uk/2009/07/latex.html  より
+\setlength{\topmargin}{20mm}
+\addtolength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{20mm}
+\addtolength{\oddsidemargin}{-1in}
+\setlength{\evensidemargin}{15mm}
+\addtolength{\evensidemargin}{-1in}
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{254mm}
+\setlength{\headsep}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0mm}
+%--図の設定
+\usepackage[dvipdfmx]{graphicx} % PDFの利用もOKに
+\graphicspath{{./figures/}} %To add paths relative to the latexfile invoking the command
+  %\usepackage[dvips]{graphicx}
+%--行間の設定
+\usepackage{setspace} 
+\setstretch{1.13} % ページ全体の行間を設定
+%コードの設定
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{ %
+  language= C++, %ここを含めなければ、変に太字になったりしない
+  aboveskip=2.5mm,
+  belowskip=4.5mm,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  numbers=left,                    
+  numbersep=5pt,    
+  basicstyle={\small\ttfamily},
+  commentstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  backgroundcolor=\color{backgroundcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+	xleftmargin = 0.9cm,
+  framexleftmargin = 1em
+}
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{green!8}
+%リンクの埋め込みを可能にする  \href{ **URL** }{表示テキスト}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{courier}
+\usepackage{here}
+%日本語環境用の設定を追加
+\renewcommand{\refname}{参考文献}
+\renewcommand{\abstractname}{要約}
+\usepackage{multirow}
+\usepackage{placeins}
+%数学用のフォント
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsfonts} 
+%-----------------
+\begin{document}
+
+\title{EMアルゴリズム}
+\author{EMアルゴリズムの導出とC++での実装}
+\maketitle
+kivantium活動日記 「C++を使ったEMアルゴリズムの実装（＋Pythonによるプロット)」\footnote{http://kivantium.hateblo.jp/entry/2015/08/17/235832}の内容を実行してみる。
+
+\section{導出}
+\subsection{準備}
+混合ガウス分布は、\begin{equation}\sum_{k=1}^{K} \pi_k \mathcal{N} (x|\mu_k, \Sigma_k)\end{equation}で表される分布。$\sum_{k=1}^{K} \pi_k = 1, \ 0\leq\pi_k\leq 1$に注意。$\pi_k$が$k$番目のガウス分布の割合を表している。\par
+$D$次元ガウス分布は、\begin{equation} \mathcal{N} (x|\mu_k, \Sigma_k) = \frac{1}{(2 \pi)^{\frac{D}{2}}} \frac{1}{|\Sigma|^{\frac{1}{2}}} \exp \left\{ -\frac{1}{2} (x-\mu)^\top \Sigma^{-1} (x-\mu)   \right\} \end{equation}という形で表される。\par
+潜在変数は$z$。$K$次元ベクトル$z$は、K-of-1符号化がなされている。$z$の確率分布は、$p(z_k = 1)= \pi_k$となる。$z_k$はどれか一つだけが$1$となるので、$p(\mathbf{z}) = p(z_1, \cdots, z_K) = \prod_{k=1}^K \pi_k^{z_k}$が、1-of-K表現の場合言えることに注意。
+
+\subsection{条件付き分布}
+$z$が与えられた下での$x$の条件付き分布は、\begin{equation} p(x|z_k=1) = \mathcal{N}(x|\mu_k,\Sigma_k)  \end{equation}と表されるとする。
+このとき、$x$の周辺分布は$z$で周辺化して (以下の式の導出にはスライド\footnote{http://www.slideshare.net/takao-y/20131113-em}も参考に)、
+\begin{align} p(\mathbf{x}) &= \sum_{\mathbf{z}} p(\mathbf{x},\mathbf{z})\\
+																	 &= \sum_{\mathbf{z}} p(\mathbf{z}) p(\mathbf{x}|\mathbf{z})\\
+																	 &= \sum_{\mathbf{z}} \prod_{k=1}^{K} \pi_{k}^{z_k} \prod_{k=1}^{K} \mathcal{N} (\mathbf{x}|\boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)^{z_k}\\
+																 &= \sum_{\mathbf{z}} \prod_{k=1}^{K} (\pi_{k} \mathcal{N} (\mathbf{x}|\boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k))^{z_k}
+\end{align}
+
+また、負担率(データ$\mathbf{x}$が与えられた下での$z_k=1$の確率)\footnote{$k$番目のガウス分布が$x$を説明する度合いとしても考えられる}は以下のようになる (細かな導出はスライド参考のこと、PRMLの9.13式)。
+\begin{align}
+	\gamma(z_k) \equiv p(z_k=1 | \mathbf{x}) = \frac{\pi_k \mathcal{N}(\mathbf{x}|\boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)}{\sum_{j=1}^{K} \pi_j \mathcal{N}(\mathbf{x}|\boldsymbol{\mu}_j, \boldsymbol{\Sigma}_j)}
+\end{align}
+
+\subsection{対数尤度関数と各パラメータ}
+これは、PRMLや前述のスライドを確認
+
+\subsection{EMアルゴリズム}
+\begin{enumerate}
+	\item $\boldsymbol{\mu}_k,\ \boldsymbol{\Sigma}_k,\ \boldsymbol{\pi}_k$を適当な値に初期化
+	\item Eステップ
+		\begin{itemize}
+			\item 以下の式を現在のパラメータに基づいて計算する $$\gamma(z_k) \equiv p(z_k=1 | \mathbf{x}) = \frac{\pi_k \mathcal{N}(\mathbf{x}|\boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)}{\sum_{j=1}^{K} \pi_j \mathcal{N}(\mathbf{x}|\boldsymbol{\mu}_j, \boldsymbol{\Sigma}_j)}$$
+		\end{itemize}
+	\item Mステップ
+		\begin{itemize}
+			\item $N_k = \sum_{n=1}^{N} \gamma (z_{nk}) $として、新しい$\boldsymbol{\mu}_k,\ \boldsymbol{\Sigma}_k,\ \boldsymbol{\pi}_k$を計算
+		\end{itemize}
+	\item 対数尤度が変化しなくなるか、一定の回数に達するまでEステップとMステップを交互に繰り返す
+\end{enumerate}
+
+\section{実装}
+
+\subsection{正規分布}
+行列式が\texttt{.determinant()}で、$\det A$や、$|A|$と数式では表される。\texttt{M\_PI}が$\pi$のことなので注意。\texttt{.size()}が返すのは、"the number of coefficients, which is \texttt{rows()*cols()}"とのことだった。
+\begin{lstlisting}
+double Norm(VectorXd x, VectorXd mu, MatrixXd sigma){ //Equation (2)
+    return exp(((x-mu).transpose() * sigma.inverse() * (x-mu)/(-2.0)).value()) 
+        / sqrt(sigma.determinant())
+        / pow(2.0*M_PI, x.size()/2.0);
+}
+\end{lstlisting}
+
+\subsection{変数の宣言}
+C言語において\texttt{const}修飾子は、指定した変数が定数である（中身を変更 できない）ことを指定する。これによってバグの混入を防ぐことが出来る。
+\begin{lstlisting}
+int main() {
+    const int D = 2; // dimension
+    const int K = 2; // number of distribution
+    int N;          // number of data
+    vector<VectorXd> x;
+\end{lstlisting}
+
+\subsection{データの読み込み}
+Stackoverflow\footnote{http://stackoverflow.com/questions/20786220/eigen-library-initialize-matrix-with-data-from-file-or-existing-stdvector}の回答を参考にした。
+
+\begin{lstlisting}
+#define MAXBUFSIZE  ((int) 1e6)
+MatrixXd readMatrix(const char *filename)
+    {
+    int cols = 0, rows = 0;
+    double buff[MAXBUFSIZE];
+
+    // Read numbers from file into buffer.
+    ifstream infile;
+    infile.open(filename);
+    while (! infile.eof())
+        {
+        string line;
+        getline(infile, line);
+
+        int temp_cols = 0;
+        stringstream stream(line);
+        while(! stream.eof())
+            stream >> buff[cols*rows+temp_cols++];
+
+        if (temp_cols == 0)
+            continue;
+
+        if (cols == 0)
+            cols = temp_cols;
+
+        rows++;
+        }
+
+    infile.close();
+
+    rows--;
+
+    // Populate matrix with numbers.
+    MatrixXd result(rows,cols);
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < cols; j++)
+            result(i,j) = buff[ cols*i+j ];
+
+    return result;
+};
+\end{lstlisting}
+
+\subsection{推定}
+
+\subsubsection{必要な変数の宣言}
+\begin{lstlisting}
+VectorXd mu[K]; // mean vector
+MatrixXd sigma[K]; // covariance matrix
+VectorXd pi[K]; // mixture
+VectorXd N_k[K]; // effective cluster size
+MatrixXd gamma(N,K); // responsibility
+\end{lstlisting}
+
+\end{document}
