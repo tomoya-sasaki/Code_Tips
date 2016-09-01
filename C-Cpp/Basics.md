@@ -7,7 +7,7 @@
 4. [ファイルリストの作成](#ファイルリストの作成)
 5. [ファイルの読み込み](#ファイルの読み込み)
 	* [タブ区切り](#タブ区切り)
-6. 
+6. [ファイルの書き込み)(#ファイルの書き込み)
 
 ## 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
@@ -56,6 +56,23 @@ http://goo.gl/n1tTj4
 	}
 ```
 
+## ファイルの書き込み
+
+### 追記モード
+`sigma[k]`の値を順々に書き込んでいく
+```cpp
+#include <cstdlib> // EXIT_FAILURE のため
+// Save Results
+for(int k=0; k<K; ++k){
+	fstream fs;
+	fs.open("em-output.txt", ios::out|ios::app); // Can write (append mode)
+	if(!fs.is_open()){
+		return EXIT_FAILURE;
+	}
+	fs << sigma[k] << endl;
+	fs.close();
+}//for(k)
+```
 
 
 ## Sites
