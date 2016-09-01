@@ -18,11 +18,11 @@ Other Material:
 * [Links](#links)
 * [Sample Code](#sample-code)
 
-### Install
+## Install
 1. Expand zip file and put a folder named `Eigen` into `/usr/include`
 2. If you want to use Eigne in a specific folder, change `#include <Eigen/Dense>` to `#include "Eigen/Dense"`.
 
-### Examples
+## Examples
 * 行列のconstant [参考](http://eigen.tuxfamily.org/dox/GettingStarted.html)
 ```cpp
 MatrixXd::Constant(3,3,1.2)
@@ -50,10 +50,10 @@ cout << "Output: " << mu(1) << endl;
 > Output: 0
 ```
 
-### Read Files
+## Read Files
 こちらの[Gist](https://gist.github.com/Shusei-E/f632c9a7b7e197cf50709915d210f7c8)を参考に。
 
-### Matrix
+## Matrix
 * Select specific row and column ([Reference](https://eigen.tuxfamily.org/dox/group__TutorialBlockOperations.html))
 ```cpp
 // ith row	
@@ -62,10 +62,12 @@ matrix.row(i);
 matrix.col(j);
 ```
 
-### Count Elements
+## Count Elements
 `.count()`
 
-### 行列要素へのアクセス
+## 行列要素へのアクセス
+The simplest way is to specify row and colum, `Matrix(row, column)`. The way to access a single column is `.col(i)`, and similarly for row, its `.row(i)`. Also of interest is `.block<>`.
+
 ```cpp
 // http://goo.gl/eEk5sJ から取得したExample //
 void Matrix_Element_Access_Test()
@@ -99,13 +101,13 @@ for(int ob=0; ob<num_observations; ob++){
 }
 ```
 
-### 行列の要素ごとの演算
+## 行列の要素ごとの演算
 `.array()`
 ```cpp
 x_bar.array() = x_bar.array() / n_k.array();
 ```
 
-### 数値を毎回ランダムに
+## 数値を毎回ランダムに
 ```cpp
 double rnorm(double mean, double sd){
 	// random generation for the normal distribution
