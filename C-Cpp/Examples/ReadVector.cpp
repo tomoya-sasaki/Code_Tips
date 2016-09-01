@@ -1,3 +1,7 @@
+// You might be interested in this Gist
+// https://gist.github.com/Shusei-E/f632c9a7b7e197cf50709915d210f7c8
+
+
 #include <fstream>
 #include <string>
 #include <random>
