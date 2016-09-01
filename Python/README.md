@@ -22,3 +22,6 @@ Output:
 with open("filename", "w") as file:
     file.write("some string")
 ```
+
+### Show figures on jupyter
+`%matplotlib inline`
