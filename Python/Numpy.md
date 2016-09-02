@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [arrayとmatrixの違い](#arrayとmatrixの違い)
 2. [行列の掛け算](#行列の掛け算)
+3. [size](#size)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -30,4 +31,17 @@ A.dot(B)
 A = numpy.matrix([[1,2,3],[4,5,6]])
 B = numpy.matrix([[2,3],[4,5],[6,7]])
 A * B
+```
+
+## size
+```python
+>> x = np.zeros((3, 5, 2), dtype=np.complex128)
+>> size(x,0)
+3
+>> size(x,1)
+5
+>> size(x,2)
+2
+>> size(x)
+30
 ```
