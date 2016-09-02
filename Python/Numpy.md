@@ -49,15 +49,15 @@ A * B
 
 ## 縦ベクトル
 ```python
->>> a = np.array([1, 2, 3, 2, 3, 4])
->>> np.vstack(a)
+>> a = np.array([1, 2, 3, 2, 3, 4])
+>> np.vstack(a)
 array([[1],
        [2],
        [3],
        [2],
        [3],
        [4]])
->>> a[:, np.newaxis]
+>> a[:, np.newaxis]
 array([[1],
        [2],
        [3],
