@@ -4,6 +4,7 @@
 1. [arrayとmatrixの違い](#arrayとmatrixの違い)
 2. [行列の掛け算](#行列の掛け算)
 3. [size](#size)
+4. [縦ベクトル](#縦ベクトル)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -44,4 +45,23 @@ A * B
 2
 >> size(x)
 30
+```
+
+## 縦ベクトル
+```python
+>>> a = np.array([1, 2, 3, 2, 3, 4])
+>>> np.vstack(a)
+array([[1],
+       [2],
+       [3],
+       [2],
+       [3],
+       [4]])
+>>> a[:, np.newaxis]
+array([[1],
+       [2],
+       [3],
+       [2],
+       [3],
+       [4]])
 ```
