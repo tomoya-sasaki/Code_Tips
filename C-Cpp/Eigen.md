@@ -13,6 +13,7 @@ Usage:
 7. [行列の要素ごとの演算](#行列の要素ごとの演算)
 8. [数値を毎回ランダムに](#数値を毎回ランダムに)
 9. [行列でのvalueの使い方](#行列でのvalueの使い方)
+10. [logdetの計算](#logdetの計算)
 
 
 Other Material: 
@@ -122,8 +123,21 @@ double rnorm(double mean, double sd){
 ## 行列でのvalueの使い方
 `double k = b.transpose()*Z.inverse()*b;`とするとエラーが出るので、`double k = (b.transpose()*Z.inverse()*b)(0);`とするか、`double k = (b.transpose()*Z.inverse()*b).value()`とする。([参考](http://stackoverflow.com/questions/25107120/cannot-convert-from-const-eigengeneralproductlhs-rhs-producttype-to-doubl))
 
+## logdetの計算
+```cpp
+Matrix3d A4;
+A4 << 1.0, 0.8, 0.2,
+      4.0, 1.0, 0.0,
+      0.0, 9.0, 1.0;
+cout << log(A4.determinant()) << endl;
+```
+
+
+------------------------------------------------------------------------
+
 ## Links
 * [シリアライズ](http://qiita.com/Soramichi/items/611db0551d7df28d5233)
 
 ## Sample Code
 * [Data Generation with fixed variance](https://gist.github.com/Shusei-E/adbfd85aa67d9ac9ef6e122142c4239d)
+
