@@ -10,3 +10,6 @@
 * Useful Derivatives
 * Differentiation of Vector/Matrix
 * Differentiation of natural log
+
+## Natural Language Processing
+* KL divergence of Gaussians
