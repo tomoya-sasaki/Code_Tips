@@ -1,0 +1,95 @@
+\documentclass[a4paper,10.5pt]{jsarticle}  %jsarticleでも良いかも
+%--脚注の設定
+\usepackage{natbib}
+\bibpunct[, ]{(}{)}{;}{and}{}{,} %本文での引用の体裁はここで整えられるみたい
+\bibliographystyle{apsr2006-2}   %このagsmは編集済みなので注意。ジャーナルが太字にならないようにしてる。ブログ参照。
+\usepackage{amsmath}
+%--余白の設定   http://pcwide-jp.blogspot.co.uk/2009/07/latex.html  より
+\setlength{\topmargin}{20mm}
+\addtolength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{20mm}
+\addtolength{\oddsidemargin}{-1in}
+\setlength{\evensidemargin}{15mm}
+\addtolength{\evensidemargin}{-1in}
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{254mm}
+\setlength{\headsep}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0mm}
+%--図の設定
+\usepackage[dvipdfmx]{graphicx} % PDFの利用もOKに
+\graphicspath{{./figures/}} %To add paths relative to the latexfile invoking the command
+  %\usepackage[dvips]{graphicx}
+%--行間の設定
+\usepackage{setspace} 
+\setstretch{1.13} % ページ全体の行間を設定
+%コードの設定
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{ %
+  language= C++, %ここを含めなければ、変に太字になったりしない
+  aboveskip=2.5mm,
+  belowskip=4.5mm,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  numbers=left,                    
+  numbersep=5pt,    
+  basicstyle={\small\ttfamily},
+  commentstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  backgroundcolor=\color{backgroundcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+	xleftmargin = 0.9cm,
+  framexleftmargin = 1em
+}
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{green!8}
+%リンクの埋め込みを可能にする  \href{ **URL** }{表示テキスト}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{courier}
+\usepackage{here}
+%日本語環境用の設定を追加
+\renewcommand{\refname}{参考文献}
+\renewcommand{\abstractname}{要約}
+\usepackage{multirow}
+\usepackage{placeins}
+%数学用のフォント
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsfonts} 
+%-----------------
+\begin{document}
+
+\title{Natural Language Processing}
+\date{}
+\maketitle
+
+\section{KL divergence of Gaussians}
+\noindent
+1 Dimension:
+\begin{eqnarray*} 
+D_{\mathrm{KL}}(P\|Q) &=& \frac{1}{2}\left[\log \frac{\sigma_2^2}{\sigma_1^2} + \frac{\sigma_1^2}{\sigma^2_2} + \frac{(\mu_1 - \mu_2)^2}{\sigma^2_2} - 1 \right] 
+\end{eqnarray*}
+D Dmension:
+\begin{eqnarray*} 
+D_{\mathrm{KL}}(P\|Q) &=& \frac{1}{2}\left[\log \frac{|\Sigma_2|}{|\Sigma_1|} + \mathrm{tr}\left\{\Sigma_2^{-1}\Sigma_1\right\} + ({\vec \mu_1} - {\vec \mu_2})^\mathrm{T} \Sigma_2^{-1} ({\vec \mu_1} - {\vec \mu_2}) -d\right] 
+\end{eqnarray*}
+\href{http://sucrose.hatenablog.com/entry/2013/07/20/190146}{Reference}
+
+\end{document}
