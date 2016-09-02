@@ -14,6 +14,7 @@ Usage:
 8. [数値を毎回ランダムに](#数値を毎回ランダムに)
 9. [行列でのvalueの使い方](#行列でのvalueの使い方)
 10. [logdetの計算](#logdetの計算)
+11. [大きな行列の逆行列](#大きな行列の逆行列)
 
 
 Other Material: 
@@ -132,6 +133,21 @@ A4 << 1.0, 0.8, 0.2,
 cout << log(A4.determinant()) << endl;
 ```
 
+## 大きな行列の逆行列
+```cpp
+Matrix3d A;
+A << 3.0, 1.0, 2.0,
+     1.0, 1.0, 1.0,
+     9.0, -1.0, 5.0;
+
+cout << A.trace() << endl;
+
+std::cout << "[[[[[inverse_matrix]]]]]" << std::endl;
+FullPivLU< MatrixXd > lu(A);
+ 
+MatrixXd B=lu.inverse(); // B is inverse
+std::cout << "A^{-1}" << std::endl << B << std::endl << std::endl;
+```
 
 ------------------------------------------------------------------------
 
