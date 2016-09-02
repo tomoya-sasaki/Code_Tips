@@ -26,6 +26,14 @@ Other Material:
 2. If you want to use Eigne in a specific folder, change `#include <Eigen/Dense>` to `#include "Eigen/Dense"`.
 
 ## Examples
+* VectorとMatrixを作るいくつかの例
+```cpp
+VectorXd v = VectorXd::Random(5);
+MatrixXd A2 = MatrixXd::Ones(n,n);
+MatrixXd A = MatrixXd::Random(3,4);
+```
+
+
 * 行列のconstant [参考](http://eigen.tuxfamily.org/dox/GettingStarted.html)
 ```cpp
 MatrixXd::Constant(3,3,1.2)
