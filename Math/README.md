@@ -2,7 +2,7 @@
 
 ## Matrix and Vector
 * Calculation of the squared Euclidean norm 
-
+* General answer of (x−μ)'Λ(x−μ)
 ## Probability Theory
 * Bayes' Theorem and Independence
 

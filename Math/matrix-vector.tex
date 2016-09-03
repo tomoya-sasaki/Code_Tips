@@ -119,5 +119,21 @@ For any vectors $u, v$, $u^Tv = v^Tu$.
   (x-\alpha)^T (x-\alpha) = x^T x - x^T \alpha - \alpha^T x + \alpha^T \alpha 
 \end{align*}
 
+\section{General answer of $(\mathbf{x}_n - \boldsymbol{\mu}_k)^\top \boldsymbol{\Lambda}_k(\mathbf{x}_n - \boldsymbol{\mu}_k)$}
+From \href{http://math.stackexchange.com/questions/1913182/general-answer-of-mathbfx-n-boldsymbol-mu-k-top-boldsymbol-lambda/1913208#1913208}{StackExchange}.
+\subsection{Question}
+Can we say this generally? 
+$$(\mathbf{x}_n - \boldsymbol{\mu}_k)^\top \boldsymbol{\Lambda}_k(\mathbf{x}_n - \boldsymbol{\mu}_k) = \mathbf{x}_n^\top \boldsymbol{\Lambda}_k \mathbf{x}_n - 2 \boldsymbol{\mu}_k^\top \boldsymbol{\Lambda}_k \mathbf{x}_n + \boldsymbol{\mu}_k^\top \boldsymbol{\Lambda}_k \boldsymbol{\mu}_k$$
+Or is this the case when $\mathbf{x}_n$ comes from normal distribution, $\mathcal{N}(\mathbf{x}_n|\boldsymbol{\mu}_k,{\Lambda}_k)$ ?
+
+I'm a bit confused because I know following equation is generally correct.
+$$(\mathbf{x}_n - \boldsymbol{\alpha})^T (\mathbf{x}_n-\boldsymbol{\alpha}) = \mathbf{x}_n^T \mathbf{x}_n - \mathbf{x}_n^T \boldsymbol{\alpha} - \boldsymbol{\alpha}^T \mathbf{x}_n + \boldsymbol{\alpha}^T \boldsymbol{\alpha} $$
+
+\subsection{Answer}
+Your statement is true as long as the $\mathbf{\Lambda}_n$ matrix is symmetric. 
+
+Expand the product and you'll get:
+$$(\mathbf{x}_n -  \mathbf{\mu}_n)^T \mathbf{\Lambda}_n (\mathbf{x}_n -  \mathbf{\mu}_n) = \mathbf{x}_n ^T \mathbf{\Lambda}_n \mathbf{x}_n - \mathbf{x}_n^T \mathbf{\Lambda}_n \mathbf{\mu}_n -  \mathbf{\mu}_n^T \mathbf{\Lambda}_n \mathbf{x}_n + \mathbf{\mu}_n^T \mathbf{\Lambda}_n \mathbf{\mu}_n$$
+The cross terms are equal only if the lambda matrix is symmetric. 
 
 \end{document}
