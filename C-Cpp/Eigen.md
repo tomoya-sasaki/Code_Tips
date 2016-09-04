@@ -15,7 +15,7 @@ Usage:
 9. [行列でのvalueの使い方](#行列でのvalueの使い方)
 10. [logdetの計算](#logdetの計算)
 11. [大きな行列の逆行列](#大きな行列の逆行列)
-12. [Matrixのある行をvectorで置き換え](#Matrixのある行をvectorで置き換え)
+12. [Matrixのある行をvectorで置き換え](#matrixのある行をvectorで置き換え)
 
 
 Other Material: 
