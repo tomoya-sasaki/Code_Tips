@@ -68,8 +68,8 @@ cout << "Output: " << mu(1) << endl;
 ## Matrix
 * Select specific row and column ([Reference](https://eigen.tuxfamily.org/dox/group__TutorialBlockOperations.html))
 ```cpp
-// ith row	
-matrix.row(i);
+// ith row
+matrix.row(i); // seems to return a horizontal vector
 // jth column
 matrix.col(j);
 ```
@@ -78,7 +78,7 @@ matrix.col(j);
 `.count()`
 
 ## 行列要素へのアクセス
-The simplest way is to specify row and colum, `Matrix(row, column)`. The way to access a single column is `.col(i)`, and similarly for row, its `.row(i)`. Also of interest is `.block<>`.
+The simplest way is to specify row and colum, `Matrix(row, column)`. The way to access a single column is `.col(i)`, and similarly for row, its `.row(i)` (`.row()` seems to return a horizontal vector). Also of interest is `.block<>`.
 
 ```cpp
 // http://goo.gl/eEk5sJ から取得したExample //
