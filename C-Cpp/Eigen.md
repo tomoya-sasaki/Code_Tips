@@ -15,6 +15,7 @@ Usage:
 9. [行列でのvalueの使い方](#行列でのvalueの使い方)
 10. [logdetの計算](#logdetの計算)
 11. [大きな行列の逆行列](#大きな行列の逆行列)
+12. [Matrixのある行をvectorで置き換え](#Matrixのある行をvectorで置き換え)
 
 
 Other Material: 
@@ -155,6 +156,19 @@ FullPivLU< MatrixXd > lu(A);
  
 MatrixXd B=lu.inverse(); // B is inverse
 std::cout << "A^{-1}" << std::endl << B << std::endl << std::endl;
+```
+
+## Matrixのある行をvectorで置き換え
+```cpp
+Matrix2d a;
+a << 1,2,
+     3,4;
+Vector2d b(10,10);
+a.row(0) = b;
+
+>> a
+10, 10
+ 3,  4
 ```
 
 ------------------------------------------------------------------------
