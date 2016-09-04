@@ -1,14 +1,15 @@
 # Variational Inference Simple Example
 [Reference](http://machine-learning.hatenablog.com/entry/2016/01/31/172500)
 
-特にKL Divergenceを計算するときに、ベクトルの向きに注意
+特にKL Divergenceを計算するときに、ベクトルの向きに注意  
+numpyでは、arrayではなくmatrixに直しておいた方が後々便利かも
 
 ## Julia Version
 
 ## Python Version
 
 ## C++ Version
-Output:
+Output (KL Divergence):
 ```terminal
 :!clang++ -std=c++11 -stdlib=libc++  VA.cpp -o VA.out
 :!./VA.out
