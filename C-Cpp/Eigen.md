@@ -130,6 +130,9 @@ double rnorm(double mean, double sd){
 	return distribution(engine);
 }
 ```
+Eigenには、`VectorXd n_k = VectorXd::Random(K);`みたいなものも用意されている。
+
+
 ## 行列でのvalueの使い方
 `double k = b.transpose()*Z.inverse()*b;`とするとエラーが出るので、`double k = (b.transpose()*Z.inverse()*b)(0);`とするか、`double k = (b.transpose()*Z.inverse()*b).value()`とする。([参考](http://stackoverflow.com/questions/25107120/cannot-convert-from-const-eigengeneralproductlhs-rhs-producttype-to-doubl))
 
