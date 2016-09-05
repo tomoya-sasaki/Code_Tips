@@ -1,4 +1,5 @@
 # Variational Bayes: Gaussian Mixture Model
+References:
 * PRML: 10.2
 * PRML Math Book: p.93
 * [Slides](http://www.slideshare.net/takao-y/ss-28872465)
@@ -10,3 +11,4 @@
 
 ## C++
 Digamma Function can be found at [CODECOGS](http://www.codecogs.com/library/maths/special/gamma/psi.php)
+* You need `psi.h` and `poly_eval.h`.
