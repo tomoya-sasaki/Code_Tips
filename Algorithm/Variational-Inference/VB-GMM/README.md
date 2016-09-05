@@ -15,7 +15,7 @@ References:
 Digamma Function can be found at [CODECOGS](http://www.codecogs.com/library/maths/special/gamma/psi.php)
 * You need `psi.h` and `poly_eval.h`.
  
-Best output:
+Best output (not the one in `output` file):
 ```terminal
 num: 272 / ndim: 2
 Nk:
