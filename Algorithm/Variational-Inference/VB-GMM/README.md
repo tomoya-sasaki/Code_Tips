@@ -12,3 +12,4 @@ References:
 ## C++
 Digamma Function can be found at [CODECOGS](http://www.codecogs.com/library/maths/special/gamma/psi.php)
 * You need `psi.h` and `poly_eval.h`.
+**This may include bugs!!!**
