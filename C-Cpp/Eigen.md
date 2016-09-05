@@ -133,7 +133,7 @@ double rnorm(double mean, double sd){
 	return distribution(engine);
 }
 ```
-Eigenには、`VectorXd n_k = VectorXd::Random(K);`みたいなものも用意されている。
+Eigenには、`VectorXd n_k = VectorXd::Random(K);`みたいなものも用意されている。`std::srand((unsigned int) time(0));`とかと一緒に使ってseedを変えないといつも結果が同じになる。
 
 
 ## 行列でのvalueの使い方
