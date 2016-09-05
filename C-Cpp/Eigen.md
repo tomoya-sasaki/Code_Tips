@@ -18,6 +18,7 @@ Usage:
 12. [Matrixのある行をvectorで置き換え](#matrixのある行をvectorで置き換え)
 13. [列ごとの計算](#列ごとの計算)
 14. [行列の列ごとにvectorを足していく](#行列の列ごとにvectorを足していく)
+15. [コンマ区切りで出力](#コンマ区切りで出力)
 
 
 Other Material: 
@@ -193,6 +194,15 @@ cout << test << endl;
 
 >>> 31, 3
     31, 3
+```
+
+## コンマ区切りで出力
+```cpp
+IOFormat CommaInitFmt(StreamPrecision, DontAlignCols, ",", ",", "", "", "", "");
+cout << normX_solver.samples(5).rowwise().mean().transpose().format(CommaInitFmt) << "\n" << endl;
+
+// -0.0252315,-0.0310973
+// と出力される
 ```
 
 ------------------------------------------------------------------------
