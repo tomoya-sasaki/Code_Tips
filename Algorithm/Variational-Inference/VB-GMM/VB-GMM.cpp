@@ -1,4 +1,4 @@
-// Reference: 
+// Reference: http://d.hatena.ne.jp/chrofieyue/20111128/1322486240
 #include <iostream>
 #include <vector> // KLの格納用
 #include "Eigen/Dense"
