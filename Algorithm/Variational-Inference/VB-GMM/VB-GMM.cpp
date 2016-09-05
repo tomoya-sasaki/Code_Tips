@@ -259,7 +259,7 @@ int main(){
 
 	/* Initialization */
 	int num_class = 6;
-	int num_iter = 150;
+	int num_iter = 200;
 	VectorXd alpha0 = VectorXd::Constant(num_class, 1e-3); // vertical vector
 	double beta0 = 1e-3;
 	VectorXd m0 = VectorXd::Zero(ndim); // vertical vector
@@ -307,7 +307,8 @@ int main(){
 	//cout << "Nk:\n" << Nk + Nk << "\n" << endl;
 	cout << "alpha:\n" << expect_pi(alpha) << "\n" <<endl;
 	cout << "mk:\n" << mk << "\n" <<endl;
-	cout << r_nk.row(1) << endl;
+	cout << "xbar:\n" << xbar << "\n" <<endl;
+	cout << "r_nk.row(1):\n" << r_nk.row(1) << "\n" <<endl;
 
 
 	/* Plot Results */
@@ -331,7 +332,7 @@ int main(){
 	for(int k=0; k<num_class; ++k){
 		mean = mk.row(k);
 		MatrixXd covar = MatrixXd::Zero(ndim, ndim);
-		covar = beta(k) * expect_lambda(Keep_Res[k].W_k, nu(k));
+		covar = (beta(k) * expect_lambda(Keep_Res[k].W_k, nu(k))).inverse();
 		Eigen::EigenMultivariateNormal<double> normX_solver(mean,covar);
 
 		fstream fs;
