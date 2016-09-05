@@ -17,6 +17,7 @@ Usage:
 11. [大きな行列の逆行列](#大きな行列の逆行列)
 12. [Matrixのある行をvectorで置き換え](#matrixのある行をvectorで置き換え)
 13. [列ごとの和](#列ごとの和)
+14. [行列の列ごとにvectorを足していく](#行列の列ごとにvectorを足していく)
 
 
 Other Material: 
@@ -180,6 +181,17 @@ a.row(0) = b;
 [Reference](https://eigen.tuxfamily.org/dox/group__TutorialReductionsVisitorsBroadcasting.html)
 ```cpp
 matrix.colwise().sum()
+```
+
+## 行列の列ごとにvectorを足していく
+```cpp
+MatrixXd test = MatrixXd::Ones(2,2);
+Vector2d test2(30,2)
+for(int i; i<2; ++i) test.row(i) = test.row(i) + test2.transpose();
+cout << test << endl;
+
+>>> 31, 3
+    31, 3
 ```
 
 ------------------------------------------------------------------------
