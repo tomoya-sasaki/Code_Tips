@@ -16,6 +16,7 @@ Usage:
 10. [logdetの計算](#logdetの計算)
 11. [大きな行列の逆行列](#大きな行列の逆行列)
 12. [Matrixのある行をvectorで置き換え](#matrixのある行をvectorで置き換え)
+13. [列ごとの和](#列ごとの和)
 
 
 Other Material: 
@@ -172,6 +173,12 @@ a.row(0) = b;
 >> a
 10, 10
  3,  4
+```
+
+## 列ごとの和
+[Reference](https://eigen.tuxfamily.org/dox/group__TutorialReductionsVisitorsBroadcasting.html)
+```cpp
+matrix.colwise().sum()
 ```
 
 ------------------------------------------------------------------------
