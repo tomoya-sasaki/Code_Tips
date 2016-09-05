@@ -197,6 +197,7 @@ cout << test << endl;
 ```
 
 ## コンマ区切りで出力
+[Reference](https://eigen.tuxfamily.org/dox/structEigen_1_1IOFormat.html)
 ```cpp
 IOFormat CommaInitFmt(StreamPrecision, DontAlignCols, ",", ",", "", "", "", "");
 cout << normX_solver.samples(5).rowwise().mean().transpose().format(CommaInitFmt) << "\n" << endl;
