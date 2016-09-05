@@ -95,9 +95,9 @@ namespace Eigen {
 			  const bool use_cholesky=false,const uint64_t &seed=std::mt19937::default_seed)
       :_use_cholesky(use_cholesky)
      {
-			 	std::random_device rd;
-				std::mt19937 random_seed(rd());
-					// Two lines above are added to randomize the results each time
+	std::random_device rd;
+	std::mt19937 random_seed(rd());
+	  // Two lines above are added to randomize the results each time
         randN.seed(random_seed());
 	setMean(mean);
 	setCovar(covar);
