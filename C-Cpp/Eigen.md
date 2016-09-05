@@ -174,6 +174,7 @@ a.row(0) = b;
 10, 10
  3,  4
 ```
+場合によっては`.transpose()`しないと上手くいかないこともあった。
 
 ## 列ごとの和
 [Reference](https://eigen.tuxfamily.org/dox/group__TutorialReductionsVisitorsBroadcasting.html)
