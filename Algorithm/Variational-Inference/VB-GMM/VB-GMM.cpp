@@ -1,4 +1,4 @@
-// Reference: http://d.hatena.ne.jp/chrofieyue/20111128/1322486240
+// Reference: http://d.hatena.ne.jp/chrofieyue/20111128/1322486240 
 #include <iostream>
 #include <vector> // KLの格納用
 #include "Eigen/Dense"
@@ -100,16 +100,16 @@ VectorXd expect_lpi(VectorXd alpha){
 }
 
 // Wishart
-double expect_llambda(MatrixXd Wk, double nu_k){
+double expect_llambda(MatrixXd Wk, double nu_k){ // PRML(10.65)
 	int ndim = Wk.cols();
 	double arr = 0.0;
 
 	for(int index=0; index<ndim; index++){
 		double i = (double)index + 1.0;
-		arr = Maths::Special::Gamma::psi((nu_k + 1.0 - i)/2.0);
+		arr += Maths::Special::Gamma::psi((nu_k + 1.0 - i)/2.0);
 	}
 
-	return (arr + ndim * log(2) + log(Wk.determinant()));
+	return (arr + ndim * log(2.0) + log(Wk.determinant()));
 }
 
 MatrixXd expect_lambda(MatrixXd Wk, double nu_k){
@@ -259,7 +259,7 @@ int main(){
 
 	/* Initialization */
 	int num_class = 6;
-	int num_iter = 120;
+	int num_iter = 150;
 	VectorXd alpha0 = VectorXd::Constant(num_class, 1e-3); // vertical vector
 	double beta0 = 1e-3;
 	VectorXd m0 = VectorXd::Zero(ndim); // vertical vector
@@ -304,9 +304,10 @@ int main(){
 	}
 
 	cout << "Nk:\n" << Nk << "\n" << endl;
-	//cout << "Nk:\n" << Nk * 0.5<< "\n" << endl;
+	//cout << "Nk:\n" << Nk + Nk << "\n" << endl;
 	cout << "alpha:\n" << expect_pi(alpha) << "\n" <<endl;
 	cout << "mk:\n" << mk << "\n" <<endl;
+	cout << r_nk.row(1) << endl;
 
 
 	/* Plot Results */
@@ -338,7 +339,7 @@ int main(){
 		if(!fs.is_open()){
 			return EXIT_FAILURE;
 		}
-		fs << "mu," << k << "," << normX_solver.samples(10000).rowwise().mean().transpose().format(CommaInitFmt) << endl;
+		fs << "mu," << k << "," << normX_solver.samples(20000).rowwise().mean().transpose().format(CommaInitFmt) << endl;
 		fs << "alpha," << k << "," << expected_pi(k) << endl;
 		fs << "nk," << k << "," << Nk(k) << endl;
 		fs.close();
