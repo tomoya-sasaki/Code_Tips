@@ -9,7 +9,7 @@ Useful derivation [note](http://chasen.org/~daiti-m/paper/lda-fullvb.pdf)
 > トピックzの数をk個、単語wの種類をV個とすると、パラメータαはk次元のベクトル、βはk x V次元の行列でβij=p(wj|zi)  
 > ここで、ドキュメントにおけるαとβの値がわかれば、トピックがどんな割合であって（α）、そのトピックに関する語がどんな割合で存在するか（β）がわかる。つまり、ドキュメントが上のようなプロセスで生成されているとしてαとβの値はいくつかということを推定するのがLDAの目的。
 
-<img src="model.png" width="300">
+<img src="model.png" width="300"> 今回はgraphvizだったけど、["tikz lda"](https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#safe=off&q=tikz+lda)とか検索してもできそうだった
 ```dot
  digraph G {
   rankdir = LR;
