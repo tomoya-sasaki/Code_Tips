@@ -16,6 +16,8 @@ Digamma Function can be found at [CODECOGS](http://www.codecogs.com/library/math
 * You need `psi.h` and `poly_eval.h`.
  
 ### Results
+Blue Stars: mixing coefficient >= 0.1 / Red stars: mixing coefficient < 0.1
+
 Iteration 10:  
 <img src="figures/cpp-10.png" width="320">
 
