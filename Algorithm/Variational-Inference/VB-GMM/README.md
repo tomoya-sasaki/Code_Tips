@@ -17,7 +17,7 @@ Digamma Function can be found at [CODECOGS](http://www.codecogs.com/library/math
  
 ### Results
 Iteration 10:  
-<img src="figures/cpp-10.png" width="350">
+<img src="figures/cpp-10.png" width="320">
  
 Best output (not the one in `output` file):
 ```terminal
