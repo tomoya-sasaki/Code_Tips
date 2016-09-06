@@ -159,24 +159,24 @@ cf. http://stackoverflow.com/questions/35966051/changing-data-frame-style-in-pan
 ```python
 >>> print df
   Old_City  New_City_Code New_City_Name Old_City_Code
-0        a            101             A           001
-1        b            101             A           002
-2        c            102             B           003
-3        d            103             C           004
-4        e            103             C           005
-5        f            103             C           006
+0        a            101             A          1001
+1        b            101             A          1002
+2        c            102             B          1003
+3        d            103             C          1004
+4        e            103             C          1005
+5        f            103             C          1006
 
 #create columns names for pivoting
 >>> df['cols'] = (df.groupby(['New_City_Name', 'New_City_Code']).cumcount() + 1).astype(str)
 
 >>> print df  
   Old_City  New_City_Code New_City_Name Old_City_Code cols
-0        a            101             A           001    1
-1        b            101             A           002    2
-2        c            102             B           003    1
-3        d            103             C           004    1
-4        e            103             C           005    2
-5        f            103             C           006    3    
+0        a            101             A          1001    1
+1        b            101             A          1002    2
+2        c            102             B          1003    1
+3        d            103             C          1004    1
+4        e            103             C          1005    2
+5        f            103             C          1006    3    
 
 >>> df = pd.pivot_table(df, 
                     index=['New_City_Name', 'New_City_Code'], 
