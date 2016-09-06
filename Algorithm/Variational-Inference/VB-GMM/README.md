@@ -22,7 +22,7 @@ Iteration 10:
 Iteration 50:  
 <img src="figures/cpp-50.png" width="320">
 
-Iteration 100:  
+Iteration 100:   
 <img src="figures/cpp-100-1.png" width="320">
 <img src="figures/cpp-100-2.png" width="320">
 
