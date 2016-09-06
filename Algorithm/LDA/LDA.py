@@ -10,7 +10,7 @@
 # LDA ([Blei et al.](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) Figure 1)  
 # Variational Bayes EM
 
-# In[2]:
+# In[65]:
 
 import sys,getopt
 from numpy import array,matrix,diag
@@ -19,6 +19,7 @@ from scipy.special import polygamma
 from scipy.linalg import norm
 from random import random
 import os
+import pandas as pd
 
 
 # In[3]:
@@ -47,6 +48,8 @@ def main():
     writer = open('output-beta.txt','w')
     writer.write(str(beta.tolist()))
     writer.close()
+    
+    return alpha, beta
 
 
 # In[51]:
@@ -273,8 +276,46 @@ class lda():
         return norm(u - udash) / norm(u) < threshold
 
 
+# alphaは長さがトピック数のリスト。betaはトピックの数×語の数の二次元リスト
+# 
+# alpha:  
+# ```
+# array([ 0.04939266,  0.08121416,  0.06315083,  0.07805509,  0.06456953,
+#         0.05401515,  0.04950355,  0.04082875,  0.03303216,  0.04126227])
+# ```
+# 
+# beta.shape:
+# ```
+# (1325,10)
+# ```
+# 
+# beta[1]:
+# ```
+# matrix([[  3.13629002e-03,   2.14675287e-03,   9.11276558e-04,
+#            1.25669929e-03,   8.50530562e-17,   2.68656272e-03,
+#            4.44369171e-03,   1.27595937e-03,   1.70240226e-03,
+#            2.38235775e-03]])
+# ```
+
 # In[ ]:
 
 if __name__ == '__main__':
-    main()
+    alpha, beta = main()
+    
+    res_b = pd.DataFrame(beta)
+    for i in range(beta.shape[1]):
+        res_temp = res_b.ix[:, i].sort_values(ascending=False)[:10]
+        res_temp.index += 1
+        print("Topic: ", i)
+        print(res_temp)
+        print("\n")
 
+
+# res_b = pd.DataFrame(beta)
+
+# for i in range(beta.shape[1]):
+#     res_temp = res_b.ix[:, i].sort_values(ascending=False)[:10]
+#     res_temp.index += 1
+#     print("Topic: ", i)
+#     print(res_temp)
+#     print("\n")
