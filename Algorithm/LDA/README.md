@@ -36,3 +36,11 @@ Mはコーパス内のドキュメントの数。Nは各ドキュメントの語
 
 ## Memo
 * コード中の`gamma`は`theta`のこと？
+ 
+## Data Structure
+`<feature_id>:<count>`. Here, `feature_id`is an integer starting from 1 (same as SVMlight).
+```txt
+1:1 2:4 5:2
+1:2 3:3 5:1 6:1 7:1
+2:4 5:1 7:1
+```
