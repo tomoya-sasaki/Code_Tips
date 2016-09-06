@@ -18,7 +18,18 @@ Digamma Function can be found at [CODECOGS](http://www.codecogs.com/library/math
 ### Results
 Iteration 10:  
 <img src="figures/cpp-10.png" width="320">
- 
+
+Iteration 50:  
+<img src="figures/cpp-50.png" width="320">
+
+Iteration 100:  
+<img src="figures/cpp-100-1.png" width="320">
+<img src="figures/cpp-100-2.png" width="320">
+
+Iteration 200:  
+<img src="figures/cpp-200-1.png" width="320">
+<img src="figures/cpp-200-2.png" width="320">
+
 Best output (not the one in `output` file):
 ```terminal
 num: 272 / ndim: 2
