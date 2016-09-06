@@ -156,8 +156,8 @@ merged_df[(merged_df["SHI_NAME"] == "市川市")].ix[np.array(row_select), :]
 
 cf. https://codedump.io/share/FJA2PUE30eqf/1/long-to-wide-data-pandas  
 cf. http://stackoverflow.com/questions/35966051/changing-data-frame-style-in-pandas
-```
-print df
+```python
+>>> print df
   Old_City  New_City_Code New_City_Name Old_City_Code
 0        a            101             A           001
 1        b            101             A           002
@@ -167,9 +167,9 @@ print df
 5        f            103             C           006
 
 #create columns names for pivoting
-df['cols'] = (df.groupby(['New_City_Name', 'New_City_Code']).cumcount() + 1).astype(str)
+>>> df['cols'] = (df.groupby(['New_City_Name', 'New_City_Code']).cumcount() + 1).astype(str)
 
-print df  
+>>> print df  
   Old_City  New_City_Code New_City_Name Old_City_Code cols
 0        a            101             A           001    1
 1        b            101             A           002    2
@@ -178,16 +178,16 @@ print df
 4        e            103             C           005    2
 5        f            103             C           006    3    
 
-df = pd.pivot_table(df, 
+>>> df = pd.pivot_table(df, 
                     index=['New_City_Name', 'New_City_Code'], 
                     columns=['cols'], 
                     values=['Old_City','Old_City_Code'], 
                     aggfunc='first')
 
 #remove multiindex in columns
-df.columns = [''.join(col) for col in df.columns.values]
+>>> df.columns = [''.join(col) for col in df.columns.values]
 #replace NaN to '', reset index
-df = df.fillna('').reset_index()
+>>> df = df.fillna('').reset_index()
 ```
 
 
