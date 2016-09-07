@@ -115,6 +115,8 @@
   }
   \makeatother
   \setcounter{secnumdepth}{4}
+%footnote / Usage: \footnote[num]{text}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 %-----------------
 \begin{document}
 
@@ -320,13 +322,15 @@ What are stored in \texttt{di[1]} and \texttt{d->cnt[1]} is the word count for e
 \section{More notes on code}
 \subsection{\texttt{accum\_beta()}}
 \noindent
-This makes matrix $\beta$. Maybe it corresponds to \S A.4.1 in the original article. \par
+This makes matrix $\beta$, (number of topic $K$) $\times$ (number of unique words $V$)\footnote[2]{$\beta_{k,v} = p(w_{d,i} = v|z_{d,i}=k)$ is the probability of the word $v$ occuring given the topic $k$.}. At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well). It corresponds to \S5.3 and \S A.4.1 in the original article. Variational EM algorithm is used. \par
 In Python (mpre details are in \texttt{LDA-explanation.ipynb}),
 \begin{lstlisting}[style=Python]
-t = d[1]
-betas[t[0],:] += matrix(diag(t[1])) * q 
+def accum_beta(betas, q, t):
+  # t = d[i]
+  betas[t[0],:] += matrix(diag(t[1])) * q        
+  return betas 
 \end{lstlisting}
-Matrix \texttt{betas[t[0],:]} is (number of unique words in document no1) $\times$  (number of class (category). \texttt{t[0]} is word ID.
+Matrix \texttt{betas[t[0],:]} is (number of unique words in a document) $\times$  (number of class (category)). \texttt{t[0]} is word IDs.
 
 In C,
 \begin{lstlisting}[style=C]
@@ -337,6 +341,14 @@ int n = dp->len;
 for (i = 0; i < n; i++)
 	for (k = 0; k < K; k++)
 		betas[dp->id[i]][k] += q[i][k] * dp->cnt[i];
+\end{lstlisting}
+Original article says \begin{equation} \beta_{ij} \propto \sum_{d=1}^{M} \sum_{n=1}^{Nd} \phi_{dni}^{*} w_{dn}^{j} \end{equation} for this part. $\phi_{dni}$ in the original article ($n$ is the $n$th word in the document $d$, $i$ is the topic index. should be denoted as $\phi_{dik}$ in this note) might correspond to \texttt{q} in the codes, which is $q(z_{d,i}=k)$ (here, $i$ is the $i$th word in the document $d$). In the original article, each word is counted up, so $\sum_{n=1}^{N_d} w_{dn}^{j}$ is the total number of word $j$ that comes from topic $i$ in document $d$ (original article Eq.(9), p.1006), which is summed in advance in dataset (\texttt{t[1]}, \texttt{dp->cnt[i]}).\par
+There is a loop in the code, so part of the $\beta$ is updated every time when looping over the all documents (be careful again that $\beta$ is $V \times K$ in codes, which is different from the original paper).
+\begin{lstlisting}[style=Python]
+for i in range(n): # n is the number of documents
+  gamma,q = lda.vbem(d[i], beta, alpha, demmax)
+  gammas[i,:] = gamma
+  betas = lda.accum_beta(betas,q,d[i])
 \end{lstlisting}
 
 
