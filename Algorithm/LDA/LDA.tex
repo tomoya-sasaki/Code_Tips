@@ -161,7 +161,7 @@ Variables:
 		\begin{itemize}
 				\tightlist
 			\item $\beta_{k,v} = p(w_{d,i} = v|z_{d,i}=k)$ is the probability of the word $v$ occuring given the topic $k$
-			\item Caution: At least in the Python code, $\beta$ is $V \times K$
+			\item Caution: At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well)
 		\end{itemize}
 	\item $z_{d,i}$: latent topic
 \end{itemize}
@@ -214,11 +214,40 @@ Hence,
 	q(z_{d,i} = k) &\propto \exp \left[ \int q(\boldsymbol{\theta}_d) \log (\beta_{k, w_{d,i}} \theta_{d,k}) d \boldsymbol{\theta}_d \right] \\
 &= \exp \left[ \int q (\boldsymbol{\theta}_d) \log(\beta_{k, w_{d,i}}) d \boldsymbol{\theta}_d \right] \exp \left[\int q(\boldsymbol{\theta}_d) \log(\theta_{d,k}) d \boldsymbol{\theta}_d  \right]\\
 &= \beta_{k, w_{d,i}} \ \exp \left[ \mathbb{E}_{q(\boldsymbol{\theta}_d)} \log(\theta_{d,k}) \right]\\
-&\propto \beta_{k, w_{d,i}} \ \frac{\exp \left[ \Psi( \xi_{d,k}^{\theta}) \right]}{\exp \left[ \Psi( \sum_{k^{`} = 1}^{K} \xi_{d,k^{'}}^{\theta}) \right]} \qquad \xi_{d,k}^{\theta} = \mathbb{E}_{q(\boldsymbol{z}_d)} [N_{d,k}] + \alpha_k
+&\propto \beta_{k, w_{d,i}} \ \frac{\exp \left[ \Psi( \xi_{d,k}^{\theta}) \right]}{\exp \left[ \Psi( \sum_{k^{`} = 1}^{K} \xi_{d,k^{'}}^{\theta}) \right]} \qquad \xi_{d,k}^{\theta} = \mathbb{E}_{q(\boldsymbol{z}_d)} [N_{d,k}] + \alpha_k \label{Eq:z_q}
 \end{align}
 Note $\Psi(\ )$ is a digamma function. If $p(\boldsymbol{\theta} | \boldsymbol{\alpha})$ is a $K$-dimensional Dirichlet distribution,$$ \mathbb{E}_{p(\boldsymbol{\theta} | \boldsymbol{\alpha})} [\log \theta_k] = \Psi(\alpha_k) - \Psi \left( \sum_{k=1}^{K} \alpha_k \right) $$
 
 \subsubsection{Code}
+\noindent
+Caution: At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well) \par
+In Python,
+\begin{lstlisting}[style=Python]
+q = lda.mnormalize(matrix(beta[d[0],:]) * matrix(diag(exp(digamma(alpha0 + nt))[0])), 1)
+\end{lstlisting}
+
+In C,
+\begin{lstlisting}[style=C]
+/* In vbem.c */
+/* vb-estep */
+for (k = 0; k < K; k++)
+	ap[k] = exp(psi(alpha[k] + nt[k]));
+/* accumulate q */
+for (l = 0; l < L; l++)
+	for (k = 0; k < K; k++)
+		q[l][k] = beta[d->id[l]][k] * ap[k];
+/* normalize q */
+for (l = 0; l < L; l++) {
+	z = 0;
+	for (k = 0; k < K; k++)
+		z += q[l][k];
+	for (k = 0; k < K; k++)
+		q[l][k] /= z;
+}
+\end{lstlisting}
+\texttt{ap[k]} is the second term in (\ref{Eq:z_q}).
+
+
 
 \subsection{Update Equation of $q(\boldsymbol{\theta}_d)$}
 \subsubsection{Derivation}
@@ -288,8 +317,32 @@ for (k = 0; k < K; k++) {
 
 What are stored in \texttt{di[1]} and \texttt{d->cnt[1]} is the word count for each word in each document.
 
+\section{More notes on code}
+\subsection{\texttt{accum\_beta()}}
+\noindent
+This makes matrix $\beta$. Maybe it corresponds to \S A.4.1 in the original article. \par
+In Python (mpre details are in \texttt{LDA-explanation.ipynb}),
+\begin{lstlisting}[style=Python]
+t = d[1]
+betas[t[0],:] += matrix(diag(t[1])) * q 
+\end{lstlisting}
+Matrix \texttt{betas[t[0],:]} is (number of unique words in document no1) $\times$  (number of class (category). \texttt{t[0]} is word ID.
+
+In C,
+\begin{lstlisting}[style=C]
+/* in learn.c */
+int i, k;
+int n = dp->len;
+
+for (i = 0; i < n; i++)
+	for (k = 0; k < K; k++)
+		betas[dp->id[i]][k] += q[i][k] * dp->cnt[i];
+\end{lstlisting}
+
+
 \section*{Reference}
 \begin{enumerate}
+	\item Blei et al., "Latent Dirichlet Allocation", The Journal of Machine Learning Research, 2003.
 	\item Mochihashi, Daichi. "lda, a Latent Dirichlet Allocation package" at http://chasen.org/~daiti-m/dist/lda/ for C code
 	\item Sato, Makoto. 「PythonでLDAを実装してみる」 at http://satomacoto.blogspot.jp/2009/12/pythonlda.html for Python code
 \end{enumerate}
