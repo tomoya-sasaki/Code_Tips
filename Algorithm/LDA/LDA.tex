@@ -194,7 +194,7 @@ Evidence lower bound (ELBO) is:
 &=\int \sum_{\boldsymbol{z}} q(\boldsymbol{z}) q(\boldsymbol{\theta}) \log p(\boldsymbol{w} | \boldsymbol{z}, \boldsymbol{\beta}) p(\boldsymbol{z} | \boldsymbol{\theta}) d \boldsymbol{\theta} - \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \log q (\boldsymbol{z}) + \int q(\boldsymbol{\theta}) \log \frac{p(\boldsymbol{\theta} | \boldsymbol{\alpha})}{q(\boldsymbol{\theta})} d \boldsymbol{\theta} \\
 &\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad ({\rm integrate\ out\ unrelated\ variables}) \nonumber \\
 \begin{split}
-&= \int \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) q(\boldsymbol{\theta}_d) \log p(w_{d,i} | z_{d,i}, \beta) p(z_{d,i} | \theta_{d}) d \boldsymbol{\theta}_d\\
+&= \int \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) q(\boldsymbol{\theta}_d) \log p(w_{d,i} | z_{d,i}, \beta) p(z_{d,i} | \boldsymbol{\theta}_d) d \boldsymbol{\theta}_d\\
 &\qquad - \sum_{d=1}^{M} \sum_{i=1}^{N_d} \sum_{k=1}^{K} q(z_{d,i} = k) \log q(z_{d,i} = k)\\
 &\qquad - \sum_{d=1}^{M} \underbrace{\int q(\boldsymbol{\theta}_d) \log \frac{q(\boldsymbol{\theta}_d)}{p(\boldsymbol{\theta}_d | \boldsymbol{\alpha})} d \boldsymbol{\theta}_d}_{{\rm KL}\left[ q(\boldsymbol{\theta}_d) || p(\boldsymbol{\theta}_d | \boldsymbol{\alpha}) \right]}
 \end{split}
