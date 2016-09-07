@@ -1,0 +1,296 @@
+\documentclass[a4paper,10.5pt,dvipdfmx]{jarticle}  %jsarticleでも良いかも
+%--脚注の設定
+\usepackage{natbib}
+\bibpunct[, ]{(}{)}{;}{and}{}{,} %本文での引用の体裁はここで整えられるみたい
+\bibliographystyle{apsr2006-2}   %このagsmは編集済みなので注意。ジャーナルが太字にならないようにしてる。ブログ参照。
+\usepackage{amsmath}
+%--余白の設定   http://pcwide-jp.blogspot.co.uk/2009/07/latex.html  より
+\setlength{\topmargin}{20mm}
+\addtolength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{20mm}
+\addtolength{\oddsidemargin}{-1in}
+\setlength{\evensidemargin}{15mm}
+\addtolength{\evensidemargin}{-1in}
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{254mm}
+\setlength{\headsep}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0mm}
+%--図の設定
+%\usepackage[dvipdfmx]{graphicx} % PDFの利用もOKに
+%\graphicspath{{./figures/}} %To add paths relative to the latexfile invoking the command
+  %\usepackage[dvips]{graphicx}
+%--行間の設定
+\usepackage{setspace} 
+\setstretch{1.13} % ページ全体の行間を設定
+%コードの設定
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{Python} {
+  language= Python, %ここを含めなければ、変に太字になったりしない
+  aboveskip=2.5mm,
+  belowskip=4.5mm,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  numbers=left,                    
+  numbersep=5pt,    
+  basicstyle={\small\ttfamily},
+  commentstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  backgroundcolor=\color{backgroundcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+	xleftmargin = 1.1cm,
+  framexleftmargin = 1em
+}
+\lstdefinestyle{C} {
+  language= C, %ここを含めなければ、変に太字になったりしない
+  aboveskip=2.5mm,
+  belowskip=4.5mm,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  numbers=left,                    
+  numbersep=5pt,    
+  basicstyle={\small\ttfamily},
+  commentstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+  backgroundcolor=\color{backgroundcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+	xleftmargin = 1.1cm,
+  framexleftmargin = 1em
+}
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{green!8}
+%リンクの埋め込みを可能にする  \href{ **URL** }{表示テキスト}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{courier}
+\usepackage{here}
+%日本語環境用の設定を追加
+\usepackage[english]{babel}
+\renewcommand{\refname}{参考文献}
+\renewcommand{\abstractname}{要約}
+\usepackage{multirow}
+\usepackage{placeins}
+%数学用のフォント
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{amsfonts} 
+%tikz
+\usepackage{tikz}
+\usetikzlibrary{bayesnet}
+%tightlist
+\def\tightlist{
+	\itemsep1pt
+	\parskip1pt
+	\parsep1pt
+	\itemindent20pt
+}
+%subsubsubsection
+\makeatletter
+  \newcommand{\subsubsubsection}{\@startsection{paragraph}{4}{\z@}%
+    {1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
+    {.1\Cvs \@plus.3\Cdp}%
+    {\reset@font\normalsize}
+  }
+  \makeatother
+  \setcounter{secnumdepth}{4}
+%-----------------
+\begin{document}
+
+\title{Variational Bayes Derivation of Latent Dirichlet Allocation}
+\author{Simple LDA, not smoothed LDA}
+\maketitle
+%\begin{abstract}
+%\end{abstract}
+
+\section{Model}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+
+  % Nodes
+
+  \node[obs]                   (w)      {$w$} ; %
+  \node[latent, left=of w]    (z)      {$z$} ; %
+  \node[latent, left=of z]    (theta)  {$\theta$}; %
+  \node[latent, left=of theta] (alpha) {$\alpha$};
+  \node[latent, above=of z] (beta) {$\beta$};
+
+	% Edges
+	\edge{alpha}{theta}; \edge{theta}{z}; \edge{theta}{z}; \edge{z}{w}; 
+	\edge{beta}{w};
+
+	% Plates
+  \plate {plateN} { %
+    (w)(z) %
+  }{$N_d$}; %
+	\plate{plateM}{
+		(plateN)(theta)
+	}{$M$};
+\end{tikzpicture}
+\caption{LDA Model}
+\end{figure}
+Variables:
+\begin{itemize}
+	\tightlist
+	\item $M$: a number of document
+	\item $N_d$: a number of words in document $d$
+	\item $w_{d,i}$: a word
+	\item $\beta$: (number of topic $K$) $\times$ (number of unique words $V$)
+		\begin{itemize}
+				\tightlist
+			\item $\beta_{k,v} = p(w_{d,i} = v|z_{d,i}=k)$ is the probability of the word $v$ occuring given the topic $k$
+			\item Caution: At least in the Python code, $\beta$ is $V \times K$
+		\end{itemize}
+	\item $z_{d,i}$: latent topic
+\end{itemize}
+
+\section{Derivation with Code}
+\subsection{Evidence lower bound}
+\begin{align}
+	\log p(\boldsymbol{w}|\boldsymbol{\alpha}, \boldsymbol{\beta}) &= \log \int \sum_{\boldsymbol{z}} p(\boldsymbol{w}, \boldsymbol{z}, \boldsymbol{\theta} | \boldsymbol{\alpha}, \boldsymbol{\beta}) d \boldsymbol{\theta} \qquad ({\rm intdotuce \ latent\ variables})\\
+&=\log \int \sum_{\boldsymbol w} q(\boldsymbol{z}, \boldsymbol{\theta}) \frac{p(\boldsymbol{w}, \boldsymbol{z}, \boldsymbol{\theta} | \boldsymbol{\alpha}, \boldsymbol{\beta})}{q(\boldsymbol{z}, \boldsymbol{\theta})} d\boldsymbol{\theta}\\
+&\leq \int \sum_{\boldsymbol{z}} q(\boldsymbol{z}, \boldsymbol{\theta}) \log \frac{p(\boldsymbol{w}, \boldsymbol{z}, \boldsymbol{\theta} | \boldsymbol{\alpha}, \boldsymbol{\beta})}{q(\boldsymbol{z}, \boldsymbol{\theta})} d \boldsymbol{\theta} \qquad \because {\rm Jensen's\ Inequality}\\
+&\equiv F[q(\boldsymbol{z}, \boldsymbol{\theta})]
+\end{align}
+
+From factorization assumption:
+\begin{equation}
+	q(\boldsymbol{z}, \boldsymbol{\theta}) = \left[ \prod_{d=1}^{M} \prod_{i=1}^{N_d} q(z_{d,i}) \right] \left[ \prod_{d=1}^{M} q(\boldsymbol{\theta}_d) \right]
+\end{equation}
+
+Expand the joint distribution using Bayes' Theorem:
+\begin{align}
+	p(\boldsymbol{w}, \boldsymbol{z}, \boldsymbol{\theta} | \boldsymbol{\alpha}, \boldsymbol{\beta}) &= p(\boldsymbol{w}| \boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{z}, \boldsymbol{\theta}) \underbrace{p(\boldsymbol{z}, \boldsymbol{\theta} | \boldsymbol{\alpha}, \boldsymbol{\beta})}_{p(\boldsymbol{z}|\boldsymbol{\theta}, \boldsymbol{\alpha}, \boldsymbol{\beta}) p(\boldsymbol{\theta} | \boldsymbol{\alpha}, \boldsymbol{\beta})} \\
+&= p(\boldsymbol{w} | \boldsymbol{z}, \boldsymbol{\beta}) p(\boldsymbol{z} | \boldsymbol{\theta}) p(\boldsymbol{\theta} | \boldsymbol{\alpha})  \qquad \because {\rm Graphical\ Model}\\
+&= \left[ \prod_{d=1}^{M} \prod_{i=1}^{N_d} p(w_{d,i} | \beta_{z_{d,i}}) p(z_{d,i} | \boldsymbol{\theta}_d) \right] \left[ \prod_{d=1}^{M} p(\boldsymbol{\theta}_{d} | \boldsymbol{\alpha})  \right]
+\end{align}
+
+Evidence lower bound (ELBO) is:
+\begin{align}
+	F[q(\boldsymbol{z}, \boldsymbol{\theta})] &= \int \sum_{\boldsymbol{z}} q(\boldsymbol{z}) q(\boldsymbol{\theta}) \log \frac{p(\boldsymbol{w} | \boldsymbol{z}, \boldsymbol{\beta}) p(\boldsymbol{z} | \boldsymbol{\theta}) p(\boldsymbol{\theta} | \boldsymbol{\alpha})}{q(\boldsymbol{z}) q(\boldsymbol{\theta})} d \boldsymbol{\theta}\\
+&= \int \sum_{\boldsymbol{z}} q(\boldsymbol{z}) q(\boldsymbol{\theta}) \log \frac{p(\boldsymbol{w} | \boldsymbol{z}, \boldsymbol{\beta}) p(\boldsymbol{z} | \boldsymbol{\theta})}{q(\boldsymbol{z})} d \boldsymbol{\theta} + \int \sum_{\boldsymbol{z}} q(\boldsymbol{z}) q(\boldsymbol{\theta}) \log \frac{p(\boldsymbol{\theta} | \boldsymbol{\alpha})}{q(\boldsymbol{\theta})} d \boldsymbol{\theta} \\
+&=\int \sum_{\boldsymbol{z}} q(\boldsymbol{z}) q(\boldsymbol{\theta}) \log p(\boldsymbol{w} | \boldsymbol{z}, \boldsymbol{\beta}) p(\boldsymbol{z} | \boldsymbol{\theta}) d \boldsymbol{\theta} - \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \log q (\boldsymbol{z}) + \int q(\boldsymbol{\theta}) \log \frac{p(\boldsymbol{\theta} | \boldsymbol{\alpha})}{q(\boldsymbol{\theta})} d \boldsymbol{\theta} \\
+&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad ({\rm integrate\ out\ unrelated\ variables}) \nonumber \\
+\begin{split}
+&= \int \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) q(\boldsymbol{\theta}_d) \log p(w_{d,i} | z_{d,i}, \beta) p(z_{d,i} | \theta_{d}) d \boldsymbol{\theta}_d\\
+&\qquad - \sum_{d=1}^{M} \sum_{i=1}^{N_d} \sum_{k=1}^{K} q(z_{d,i} = k) \log q(z_{d,i} = k)\\
+&\qquad - \sum_{d=1}^{M} \underbrace{\int q(\boldsymbol{\theta}_d) \log \frac{q(\boldsymbol{\theta}_d)}{p(\boldsymbol{\theta}_d | \boldsymbol{\alpha})} d \boldsymbol{\theta}_d}_{{\rm KL}\left[ q(\boldsymbol{\theta}_d) || p(\boldsymbol{\theta}_d | \boldsymbol{\alpha}) \right]}
+\end{split}
+\end{align}
+
+\subsection{Update Equation of $q(z_{d,i})$}
+\subsubsection{Derivation}
+\begin{align}
+	\widetilde{F}[q(z_{d,i})] &= \sum_{k=1}^{K} q(z_{d,i} = k) \int q(\boldsymbol{\theta}_d) \log \{ p(w_{d,i} | z_{d,i}, \beta_{k,i}) p(z_{d,i} = k | \boldsymbol{\theta}_d) \} d \boldsymbol{\theta}_d - \sum_{k=1}^{K} q(z_{d,i}=k) \log q(z_{d,i}=k)
+\end{align}
+Use variational inference:
+\begin{align}
+	\frac{\delta \widetilde{F}[q(z_{d,i})]}{\delta q(z_{d,i} = k)} = \frac{\partial \widetilde{F}[q(z_{d,i})]}{\partial q(z_{d,i} = k)} &= \int q(\boldsymbol{\theta}_d) \log(\beta_{k, w_{d,i}}, \theta_{d,k}) d \boldsymbol{\theta}_d - \log q(z_{d,i} = k) - 1 = 0
+\end{align}
+Hence,
+\begin{align}
+	q(z_{d,i} = k) &\propto \exp \left[ \int q(\boldsymbol{\theta}_d) \log (\beta_{k, w_{d,i}} \theta_{d,k}) d \boldsymbol{\theta}_d \right] \\
+&= \exp \left[ \int q (\boldsymbol{\theta}_d) \log(\beta_{k, w_{d,i}}) d \boldsymbol{\theta}_d \right] \exp \left[\int q(\boldsymbol{\theta}_d) \log(\theta_{d,k}) d \boldsymbol{\theta}_d  \right]\\
+&= \beta_{k, w_{d,i}} \ \exp \left[ \mathbb{E}_{q(\boldsymbol{\theta}_d)} \log(\theta_{d,k}) \right]\\
+&\propto \beta_{k, w_{d,i}} \ \frac{\exp \left[ \Psi( \xi_{d,k}^{\theta}) \right]}{\exp \left[ \Psi( \sum_{k^{`} = 1}^{K} \xi_{d,k^{'}}^{\theta}) \right]} \qquad \xi_{d,k}^{\theta} = \mathbb{E}_{q(\boldsymbol{z}_d)} [N_{d,k}] + \alpha_k
+\end{align}
+Note $\Psi(\ )$ is a digamma function. If $p(\boldsymbol{\theta} | \boldsymbol{\alpha})$ is a $K$-dimensional Dirichlet distribution,$$ \mathbb{E}_{p(\boldsymbol{\theta} | \boldsymbol{\alpha})} [\log \theta_k] = \Psi(\alpha_k) - \Psi \left( \sum_{k=1}^{K} \alpha_k \right) $$
+
+\subsubsection{Code}
+
+\subsection{Update Equation of $q(\boldsymbol{\theta}_d)$}
+\subsubsection{Derivation}
+Again, ELBO is
+\begin{align}
+	F[q(\boldsymbol{z}, \boldsymbol{\theta})]  &= \int \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) q(\boldsymbol{\theta}_d) \log p(w_{d,i} | z_{d,i}, \beta) p(z_{d,i} | \theta_{d}) d \boldsymbol{\theta}_d - \sum_{d=1}^{M} \sum_{i=1}^{N_d} \sum_{k=1}^{K} q(z_{d,i} = k) \log q(z_{d,i} = k) \\ &\qquad - \sum_{d=1}^{M} \underbrace{\int q(\boldsymbol{\theta}_d) \log \frac{q(\boldsymbol{\theta}_d)}{p(\boldsymbol{\theta}_d) | \boldsymbol{\alpha})} d \boldsymbol{\theta}_d}_{{\rm KL}\left[ q(\boldsymbol{\theta}_d) || p(\boldsymbol{\theta}_d | \boldsymbol{\alpha}) \right]} \nonumber
+\end{align}
+We use terms only related to $\boldsymbol{\theta}$.
+\begin{align}
+	\widetilde{F}[q(\boldsymbol{\theta})] = \int q(\boldsymbol{\theta}) \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \log p(\boldsymbol{z} | \boldsymbol{\theta}) d \boldsymbol{\theta} - \int q(\boldsymbol{\theta}) \log \frac{q(\boldsymbol{\theta})}{p(\boldsymbol{\theta} | \boldsymbol{\alpha})} d \boldsymbol{\theta} \\
+	\widetilde{F}[q(\boldsymbol{\theta}_d)] = \int q(\boldsymbol{\theta}_d) \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \sum_{i=1}^{N_d} \log p(z_{d,i} | \boldsymbol{\theta}_d) d \boldsymbol{\theta}_d - \int q(\boldsymbol{\theta}_d) \log \frac{q(\boldsymbol{\theta}_d)}{p(\boldsymbol{\theta}_d | \boldsymbol{\alpha})} d \boldsymbol{\theta}_d
+\end{align}
+Using variational inference,
+\begin{align}
+	\frac{\delta \widetilde{F}[q(\boldsymbol{\theta}_d)]}{\delta q(\boldsymbol{\theta}_d)} = \frac{\partial \widetilde{F}[q(\boldsymbol{\theta}_d)]}{\partial q(\boldsymbol{\theta}_d)} = \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \sum_{i=1}^{N_d} \log p(z_{d,i} | \boldsymbol{\theta}_d) - \log \frac{q(\boldsymbol{\theta}_d)}{p(\boldsymbol{\theta}_d | \boldsymbol{\alpha})} - 1 = 0
+\end{align}
+Before we move on, let's check some deformations:
+\begin{itemize}
+\item Dirichlet distribution
+\begin{align}
+	{\rm Dir}(\boldsymbol{\pi} | \boldsymbol{\alpha}) \equiv \frac{\Gamma(\sum_{k=1}^{K} \alpha_k)}{\prod_{k=1}^{K} \Gamma(\alpha_k)} \prod_{k=1}^{K} \pi_{k}^{\alpha_k - 1} 
+\end{align}
+\item If we consider a category $k$ in a document $d$, the average number of words that belong to the category $k$ under certain latent variables is
+\begin{align}
+	\mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}] = \sum_{i=1}^{N_d} q(z_{d,i} = k) \label{Eq:N_dk}
+\end{align}
+\item Remember $z_{d,i} \sim {\rm Multi}(\boldsymbol{\theta}_d)$ (Sato pp.26-27, Equation 2.1). Be careful that a word belongs to a category or not, so we can use $\delta(z_{d,i}=k)$ here.
+\begin{align}
+	p(z_{d,i} | \boldsymbol{\theta}_d) = \prod_{k=1}^{K} \theta_{d,k}^{\delta(z_{d,i} = k)}
+\end{align}
+\end{itemize}
+
+Now, we can back to the variational inference
+\begin{align}
+	p(\boldsymbol{\theta}_d) &\propto p(\boldsymbol{\theta}_d | \boldsymbol{\alpha}) \exp \left[ \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \sum_{i=1}^{N_d} \log p(z_{d,i} | \boldsymbol{\theta}_d) \right]\\
+ &\propto \prod_{k=1}^{K} \theta_{d,k}^{\alpha_k -1} \exp \left[ \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \sum_{i=1}^{N_d} \sum_{k=1}^{K} \delta({z_{d,i} = k}) \log \theta_{d,k} \right] \label{Eq:t_1} \\
+&= \exp \left[ \sum_{k=1}^{K} (\alpha_k -1) \log \theta_{d,k} \right] \exp \left[ \sum_{k=1}^{K} \sum_{i=1}^{N_d} q(z_{d,i} = k) \log \theta_{d,k} \right] \label{Eq:t_2} \\
+&= \exp \left[\sum_{k=1}^{K} (\alpha_k -1) \log \theta_{d,k}  \right] \exp \left[ \sum_{k=1}^{K} \mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}]  \log \theta_{d,k} \right] \\
+&= \exp \left[ \sum_{k=1}^{K} (\mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}] + \alpha_k -1) \log \theta_{d,k} \right]\\
+&= \prod_{k=1}^{K} \theta_{d,k}^{\mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}] + \alpha_k -1}
+\end{align}
+From (\ref{Eq:t_1}) to (\ref{Eq:t_2}), we marginalize the equation with respect to $q(\boldsymbol{z})$. For various $z_{d,i}$ in $\boldsymbol{z}$, some take $\delta({z_{d,i} = k})=0$ and other take $\delta({z_{d,i} = k})=1$. We only need to consider those that are $\delta({z_{d,i} = k})=1$. \par
+If we define $\xi_{d,k}^{\theta} = \mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}] + \alpha_k$, $q(\boldsymbol{\theta}_d)$ is a Dirichlet distribution whose parameters are $\boldsymbol{\xi}_{d}^{\theta} = (\xi_{d,1}^{\theta}, \xi_{d,2}^{\theta}, \cdots, \xi_{d,K}^{\theta})$. We can easily normalize it:
+\begin{align}
+	q(\boldsymbol{\theta}_d | \boldsymbol{\xi}_{d}^{\theta}) = \frac{\Gamma (\sum_{k=1}^{K} \xi_{d,k}^{\theta})}{\prod_{k=1}^{K} \Gamma(\xi_{d,k}^{\theta})} \prod_{k=1}^{K} \theta_{d,k}^{\xi_{d,k}^{\theta} -1}
+\end{align}
+
+
+\subsubsection{Code}
+\subsubsubsection{$\mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}]$ in Equation (\ref{Eq:N_dk})}
+In the dataset, we only have how many times each word appears, so we calculate (number of times a word appears) $\times$ $q(z_{d,i}=k)$\par
+In Python,
+\begin{lstlisting}[style=Python]
+nt = matrix(di[1]) * q
+\end{lstlisting}
+
+In C,
+\begin{lstlisting}[style=C]
+/* In vbem.c */
+for (k = 0; k < K; k++) {
+	z = 0;
+	for (l = 0; l < L; l++)
+		z += q[l][k] * d->cnt[l];
+	nt[k] = z;
+}
+\end{lstlisting}
+
+What are stored in \texttt{di[1]} and \texttt{d->cnt[1]} is the word count for each word in each document.
+
+\section*{Reference}
+\begin{enumerate}
+	\item Mochihashi, Daichi. "lda, a Latent Dirichlet Allocation package" at http://chasen.org/~daiti-m/dist/lda/ for C code
+	\item Sato, Makoto. 「PythonでLDAを実装してみる」 at http://satomacoto.blogspot.jp/2009/12/pythonlda.html for Python code
+\end{enumerate}
+\end{document}
