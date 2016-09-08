@@ -284,7 +284,7 @@ Before we move on, let's check some deformations:
 
 Now, we can back to the variational inference
 \begin{align}
-	p(\boldsymbol{\theta}_d) &\propto p(\boldsymbol{\theta}_d | \boldsymbol{\alpha}) \exp \left[ \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \sum_{i=1}^{N_d} \log p(z_{d,i} | \boldsymbol{\theta}_d) \right]\\
+	q(\boldsymbol{\theta}_d) &\propto p(\boldsymbol{\theta}_d | \boldsymbol{\alpha}) \exp \left[ \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \sum_{i=1}^{N_d} \log p(z_{d,i} | \boldsymbol{\theta}_d) \right]\\
  &\propto \prod_{k=1}^{K} \theta_{d,k}^{\alpha_k -1} \exp \left[ \sum_{\boldsymbol{z}} q(\boldsymbol{z}) \sum_{i=1}^{N_d} \sum_{k=1}^{K} \delta({z_{d,i} = k}) \log \theta_{d,k} \right] \label{Eq:t_1} \\
 &= \exp \left[ \sum_{k=1}^{K} (\alpha_k -1) \log \theta_{d,k} \right] \exp \left[ \sum_{k=1}^{K} \sum_{i=1}^{N_d} q(z_{d,i} = k) \log \theta_{d,k} \right] \label{Eq:t_2} \\
 &= \exp \left[\sum_{k=1}^{K} (\alpha_k -1) \log \theta_{d,k}  \right] \exp \left[ \sum_{k=1}^{K} \mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}]  \log \theta_{d,k} \right] \\
