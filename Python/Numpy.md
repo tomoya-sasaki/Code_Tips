@@ -5,6 +5,7 @@
 2. [行列の掛け算](#行列の掛け算)
 3. [size](#size)
 4. [縦ベクトル](#縦ベクトル)
+5. [ValueError: object too deep for desired array](#valueerror:-object-too-deep-for-desired-array)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -65,3 +66,5 @@ array([[1],
        [3],
        [4]])
 ```
+
+## ValueError: object too deep for desired array
