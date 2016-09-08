@@ -126,6 +126,8 @@
 %\begin{abstract}
 %\end{abstract}
 
+\tableofcontents
+
 \section{Model}
 \begin{figure}[H]
 \centering
@@ -162,7 +164,7 @@ Variables:
 	\item $\beta$: (number of topic $K$) $\times$ (number of unique words $V$)
 		\begin{itemize}
 				\tightlist
-			\item $\beta_{k,v} = p(w_{d,i} = v|z_{d,i}=k)$ is the probability of the word $v$ occuring given the topic $k$
+			\item $\beta_{k,v} = p(w_{d,i} = v|z_{d,i}=k)$ is the probability of the word $v$ occurring given the topic $k$
 			\item Caution: At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well)
 		\end{itemize}
 	\item $z_{d,i}$: latent topic
@@ -199,7 +201,7 @@ Evidence lower bound (ELBO) is:
 &= \int \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) q(\boldsymbol{\theta}_d) \log p(w_{d,i} | z_{d,i}, \beta) p(z_{d,i} | \boldsymbol{\theta}_d) d \boldsymbol{\theta}_d\\
 &\qquad - \sum_{d=1}^{M} \sum_{i=1}^{N_d} \sum_{k=1}^{K} q(z_{d,i} = k) \log q(z_{d,i} = k)\\
 &\qquad - \sum_{d=1}^{M} \underbrace{\int q(\boldsymbol{\theta}_d) \log \frac{q(\boldsymbol{\theta}_d)}{p(\boldsymbol{\theta}_d | \boldsymbol{\alpha})} d \boldsymbol{\theta}_d}_{{\rm KL}\left[ q(\boldsymbol{\theta}_d) || p(\boldsymbol{\theta}_d | \boldsymbol{\alpha}) \right]}
-\end{split}
+\end{split} \label{Eq:ELBO}
 \end{align}
 
 \subsection{Update Equation of $q(z_{d,i})$}
@@ -222,7 +224,7 @@ Note $\Psi(\ )$ is a digamma function. If $p(\boldsymbol{\theta} | \boldsymbol{\
 
 \subsubsection{Code}
 \noindent
-Caution: At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well) \par
+Caution: At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well). Probably normalization comes later. \par
 In Python,
 \begin{lstlisting}[style=Python]
 q = lda.mnormalize(matrix(beta[d[0],:]) * matrix(diag(exp(digamma(alpha0 + nt))[0])), 1)
@@ -247,8 +249,7 @@ for (l = 0; l < L; l++) {
 		q[l][k] /= z;
 }
 \end{lstlisting}
-\texttt{ap[k]} is the second term in (\ref{Eq:z_q}).
-
+\texttt{ap[k]} is (the numerator of) the second term in (\ref{Eq:z_q}).
 
 
 \subsection{Update Equation of $q(\boldsymbol{\theta}_d)$}
@@ -294,7 +295,7 @@ Now, we can back to the variational inference
 From (\ref{Eq:t_1}) to (\ref{Eq:t_2}), we marginalize the equation with respect to $q(\boldsymbol{z})$. For various $z_{d,i}$ in $\boldsymbol{z}$, some take $\delta({z_{d,i} = k})=0$ and other take $\delta({z_{d,i} = k})=1$. We only need to consider those that are $\delta({z_{d,i} = k})=1$. \par
 If we define $\xi_{d,k}^{\theta} = \mathbb{E}_{q(\boldsymbol{z}_d)}[N_{d,k}] + \alpha_k$, $q(\boldsymbol{\theta}_d)$ is a Dirichlet distribution whose parameters are $\boldsymbol{\xi}_{d}^{\theta} = (\xi_{d,1}^{\theta}, \xi_{d,2}^{\theta}, \cdots, \xi_{d,K}^{\theta})$. We can easily normalize it:
 \begin{align}
-	q(\boldsymbol{\theta}_d | \boldsymbol{\xi}_{d}^{\theta}) = \frac{\Gamma (\sum_{k=1}^{K} \xi_{d,k}^{\theta})}{\prod_{k=1}^{K} \Gamma(\xi_{d,k}^{\theta})} \prod_{k=1}^{K} \theta_{d,k}^{\xi_{d,k}^{\theta} -1}
+  q(\boldsymbol{\theta}_d | \boldsymbol{\xi}_{d}^{\theta}) = \frac{\Gamma (\sum_{k=1}^{K} \xi_{d,k}^{\theta})}{\prod_{k=1}^{K} \Gamma(\xi_{d,k}^{\theta})} \prod_{k=1}^{K} \theta_{d,k}^{\xi_{d,k}^{\theta} -1} \label{Eq:normalizeTheta}
 \end{align}
 
 
@@ -319,10 +320,38 @@ for (k = 0; k < K; k++) {
 
 What are stored in \texttt{di[1]} and \texttt{d->cnt[1]} is the word count for each word in each document.
 
-\section{More notes on code}
-\subsection{\texttt{accum\_beta()}}
+\subsubsubsection{$\boldsymbol{\xi}_{d}^{\theta}$ in Equation (\ref{Eq:normalizeTheta})}
+We only need parameters of Dirichlet distribution. In Python,
+\begin{lstlisting}[style=Python]
+alpha = alpha0 + nt 
+  # corresponds to Sato Eq (3.89)
+  # for all k in d
+\end{lstlisting}
+
+
+\subsection{Update Equation of $\beta$}
+\subsubsection{Derivation}
+From Equation (\ref{Eq:ELBO}), extract parts related to $\beta$,
+\begin{align}
+  \widetilde{F}[\beta] &= \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) \log p(w_{d,i} | z_{d,i}, \beta) p(z_{d,i})\\
+&= \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) \log \left( \prod_{k=1}^{K} \beta_{z_{d,i}=k}^{N_{d,i}} \right) p(z_{d,i})\\
+&= \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) \sum_{k=1}^{K} \log \left( \beta_{z_{d,i}=k}^{N_{d,i}} \right) p(z_{d,i})\\
+&= \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) \sum_{k=1}^{K} \{N_{d,i} \log  \left( \beta_{z_{d,i}=k} \right) + \log p(z_{d,i}) \}
+\end{align}
+Here, I used the fact that $w_{d,i} \sim {\rm Multi}(z_{d,i}, \beta)$. Certain value $s$ appearing $n_s$ times in $n$ times try of Multinomial distribution is (Sato p.27)\begin{equation}\frac{n!}{\prod_{s=1}^{S} n_s!} \prod_{s=1}^{S} \pi_s^{n_s} \label{Eq:sum_multi}\end{equation}In codes, we only know the total number of a word appearance, that is $N_{d,i}$ for a word ID $i$ in document $d$. Since $\beta_{k,v}$ is the probability of the word $v$ occurring in the topic $k$, we can use the formula in Equation (\ref{Eq:sum_multi}). 
+Hence,
+\begin{align}
+  \frac{\partial \widetilde{F}[\beta]}{\partial \beta} &= \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) \sum_{k=1}^{K} \frac{N_{d,i}}{\beta_{z_{d,i}=k}} - 1\\
+&= \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) N_{d,i} \sum_{k=1}^{K}  \frac{1}{\beta_{z_{d,i}=k}} - 1  = 0
+\end{align}
+For fixed $k$,
+\begin{align}
+  \beta_{z_{d,i} = k} = \beta_{k, i} \propto \sum_{d=1}^{M} \sum_{i=1}^{N_d} q(z_{d,i}) N_{d,i}
+\end{align}
+
+\subsubsection{Code: \texttt{accum\_beta()}}
 \noindent
-This makes matrix $\beta$, (number of topic $K$) $\times$ (number of unique words $V$)\footnote[2]{$\beta_{k,v} = p(w_{d,i} = v|z_{d,i}=k)$ is the probability of the word $v$ occuring given the topic $k$.}. At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well). It corresponds to \S5.3 and \S A.4.1 in the original article. Variational EM algorithm is used. \par
+This makes matrix $\beta$, (number of topic $K$) $\times$ (number of unique words $V$)\footnote[2]{$\beta_{k,v} = p(w_{d,i} = v|z_{d,i}=k)$ is the probability of the word $v$ occurring given the topic $k$.}. At least in the Python code, $\beta$ is $V \times K$ (maybe in C as well). It corresponds to \S5.3 and \S A.4.1 in the original article. Variational EM algorithm is used. \par
 In Python (mpre details are in \texttt{LDA-explanation.ipynb}),
 \begin{lstlisting}[style=Python]
 def accum_beta(betas, q, t):
@@ -347,7 +376,7 @@ There is a loop in the code, so part of the $\beta$ is updated every time when l
 \begin{lstlisting}[style=Python]
 for i in range(n): # n is the number of documents
   gamma,q = lda.vbem(d[i], beta, alpha, demmax)
-  gammas[i,:] = gamma
+  gammas[i,:] = gamma # gamma = xi_d ? cf. eq(32)
   betas = lda.accum_beta(betas,q,d[i])
 \end{lstlisting}
 
