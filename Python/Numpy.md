@@ -67,4 +67,5 @@ array([[1],
        [4]])
 ```
 
-## ValueError: object too deep for desired array
+## object too deep for desired array
+`np.squeeze(np.asarray(OBJECT))`
