@@ -66,4 +66,5 @@ In text:
 Be careful with
 * `\end{frame}` can NOT be indented
 * `\end{frame}` cannot have any comments directly after it
+
 Changing this line fixed the error.
