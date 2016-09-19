@@ -68,3 +68,24 @@ Be careful with
 * `\end{frame}` cannot have any comments directly after it
 
 Changing this line fixed the error.
+
+If the above does not work, try [this](http://tex.stackexchange.com/questions/73366/a-line-in-the-lstlisting-environment-cannot-start-with-endframe-in-a-beamer):
+```tex
+\documentclass{beamer}%
+\usepackage{listings}%
+\newsavebox{\codebox}% For storing listings
+
+\begin{document}
+
+\begin{lrbox}{\codebox}
+\begin{lstlisting}
+Your code
+\end{lstlisting}
+\end{lrbox}
+
+\begin{frame}
+\usebox{\codebox}
+\end{frame}
+
+\end{document}​
+```
