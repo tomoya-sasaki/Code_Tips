@@ -1,4 +1,6 @@
 # Numpy
+* [100 numpy exercises](https://github.com/rougier/numpy-100)
+* [Scipy Lecture Notes](http://www.scipy-lectures.org/index.html)
 
 ## Table of Contents
 1. [arrayとmatrixの違い](#arrayとmatrixの違い)
