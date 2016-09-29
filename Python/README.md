@@ -1,4 +1,4 @@
-#Python Tips
+# Python Tips
 
 ## Basics
 
@@ -10,8 +10,14 @@ del OBJECT
 ### File input/output
 Input:
 ```python
+# Read Entile File
 with open("filename", "r") as file:
   whole_str = file.read()
+  
+# Read Line by Line
+with open("filename", encoding='utf-8') as a_file:  
+    for a_line in a_file:                                               
+        print(a_line)
 ```
 * `file.read([size])`で指定したバイト数を読み込み。size未指定の場合は全て読み込み。  
 * `file.readline()`で1行読み込み。文字列に改行文字は残る。最後の行を読み込んだ後には`””`（空文字）が返る。  
