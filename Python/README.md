@@ -34,7 +34,7 @@ with open("filename", "w") as file:
 
 ### Get File List
 ```python
-# Return List of Text Files
+# Return the list of Text Files
 glob.glob(directory+"/*.txt")
 
 # Return the list of Subdirectory
