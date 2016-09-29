@@ -31,3 +31,12 @@ with open("filename", "w") as file:
 
 ### Show figures on jupyter
 `%matplotlib inline`
+
+### Get File List
+```python
+# Return List of Text Files
+glob.glob(directory+"/*.txt")
+
+# Return the list of Subdirectory
+glob.glob(root_directory + "/*/")
+```
