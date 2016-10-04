@@ -2,6 +2,7 @@
 How to use Git
 * Websites for reference
   * [いまさら聞けないgitの使い方](http://qiita.com/mountcedar/items/682743c95fd3b8fc274b)
+  * [初心者向けGithubへのPullRequest方法](http://qiita.com/samurairunner/items/7442521bce2d6ac9330b)
   * [Pull Request入門(複数人管理)](http://blog.qnyp.com/2013/05/28/pull-request-for-github-beginners/)
   * [git pull -rebase](http://kray.jp/blog/git-pull-rebase/) / [Git開発でmasterの内容を開発ブランチに反映させる方法](http://sota1235.com/blog/2015/03/19/git-rebase.html)
   * [Gitでやらかした時に使える19個の奥義](http://qiita.com/muran001/items/dea2bbbaea1260098051)
