@@ -161,3 +161,4 @@ After that, this code might be useful.
 ```terminal
 git branch --set-upstream-to=origin/master master
 ```
+I still recommend you to create repo on GitHub at first, and then clone it.
