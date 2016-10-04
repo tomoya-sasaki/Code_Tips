@@ -67,22 +67,23 @@ _*.*
 ## Use Branch
 ### Initialize Branch
 ```terminal
-$ git branch <branchname>
+$ git branch branchname
 ```
 Check the branches you have:
 ```terminal
 $ git branch
-$ git checkout -b <branch> // Make a new branch and checkout
+$ git checkout -b branch // Make a new branch and checkout
 ```
 Change branch and make push
 ```terminal
-$ git checkout <branchname>
+$ git checkout branchname
+$ git add *
 $ git commit -m "your comments"
-$ git push origin <branchname>
+$ git push origin branchname
 ```
 ### Delete branch
 ```terminal
-$ git branch -d <branchname>
+$ git branch -d branchname
 ```
 
 ### Merge Branch
