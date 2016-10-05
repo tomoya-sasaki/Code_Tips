@@ -31,6 +31,11 @@ with open("filename", "w") as file:
 
 ### Show figures on jupyter
 `%matplotlib inline`
+If you want to change the size of figures,
+```python
+import matplotlib.pylab as pylab
+pylab.rcParams['figure.figsize'] = 16, 12 # default image size
+```
 
 ### Get File List
 ```python
