@@ -8,6 +8,7 @@
 3. [size](#size)
 4. [縦ベクトル](#縦ベクトル)
 5. [object too deep for desired array](#object-too-deep-for-desired-array)
+6. [配列への追加](#配列への追加)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -71,3 +72,6 @@ array([[1],
 
 ## object too deep for desired array
 `np.squeeze(np.asarray(OBJECT))`
+
+## 配列への追加
+`append` methodでOKみたい
