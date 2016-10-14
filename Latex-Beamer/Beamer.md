@@ -16,6 +16,7 @@
 13. [Citation and Reference](#citation-and-reference)
 14. [Hide Appendix and References](#hide-appendix-and-references)
 15. [上部のナビゲーションバーを消す](#上部のナビゲーションバーを消す)
+16. [箇条書きを左にずらす](#箇条書きを左にずらす)
 
 ### Beamer Slide
 ```tex
@@ -137,3 +138,11 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 \setbeamertemplate{headline}{}
 ```
 を`\begin{document}`の前に入れる
+
+## 箇条書きを左にずらす
+```tex
+\usepackage{enumitem} %latexならこの行だけでOK
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+```
