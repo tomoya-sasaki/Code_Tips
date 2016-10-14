@@ -145,3 +145,10 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
   \item Topic distribution $\theta_{d,k}$: Probability that topic $k$ appears in document $d$
 \end{itemize}
 ```
+beamerの、場合は
+```tex
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+```
