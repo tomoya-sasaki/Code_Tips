@@ -13,6 +13,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 9. [コードを挿入](#コードを挿入)
 10. [図のフォルダの指定](#図のフォルダの指定)
 11. [名前を英語に統一](#名前を英語に統一)
+12. [箇条書きを左にずらす](#箇条書きを左にずらす)
 
 ## 写真の挿入
 ```tex
@@ -133,4 +134,14 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \renewcommand{\appendixname}{Appendix }
 \renewcommand{\prechaptername}{Chapter } 
 \renewcommand{\postchaptername}{}  
+```
+
+## 箇条書きを左にずらす
+```tex
+\usepackage{enumitem}
+\begin{itemize}[leftmargin=-9mm]
+  \item[$\cdot$] There are $M$ documents. 
+  \item The number of words in the $d$-th document is $n_d$
+  \item Topic distribution $\theta_{d,k}$: Probability that topic $k$ appears in document $d$
+\end{itemize}
 ```
