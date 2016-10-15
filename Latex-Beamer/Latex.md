@@ -152,3 +152,14 @@ beamerの、場合は
   \usebeamercolor[fg]{itemize item}
   \usebeamertemplate{itemize item}}
 ```
+
+## 数式の左寄せ
+```tex
+\usepackage{nccmath} 
+\begin{fleqn}[20pt]
+\begin{align*}
+a&=b\\
+b&=c
+\end{align*} 
+\end{fleqn}
+```
