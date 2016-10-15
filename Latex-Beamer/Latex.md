@@ -14,6 +14,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 10. [図のフォルダの指定](#図のフォルダの指定)
 11. [名前を英語に統一](#名前を英語に統一)
 12. [箇条書きを左にずらす](#箇条書きを左にずらす)
+13. [余白の設定](#余白の設定)
 
 ## 写真の挿入
 ```tex
@@ -162,4 +163,8 @@ a&=b\\
 b&=c
 \end{align*} 
 \end{fleqn}
+```
+## 余白の設定
+```tex
+\usepackage[truedimen,margin=15truemm]{geometry}
 ```
