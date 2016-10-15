@@ -17,6 +17,7 @@
 14. [Hide Appendix and References](#hide-appendix-and-references)
 15. [上部のナビゲーションバーを消す](#上部のナビゲーションバーを消す)
 16. [箇条書きを左にずらす](#箇条書きを左にずらす)
+17. [図の左寄せ](#図の左寄せ)
 
 ### Beamer Slide
 ```tex
@@ -145,4 +146,12 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 \setitemize{label=\usebeamerfont*{itemize item}%
   \usebeamercolor[fg]{itemize item}
   \usebeamertemplate{itemize item}}
+```
+
+## 図の左寄せ
+```tex
+\begin{figure}
+  \hspace*{-20mm}
+  \includegraphics[width=0.84 \linewidth]{Fig.pdf}\\
+\end{figure}
 ```
