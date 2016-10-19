@@ -155,3 +155,8 @@ Use VimFiler with Unite.
 * `\es`で検索
 * `\ec`で新しいノート作成
 * `\et`でタグ一覧表示する
+
+##### colorscheme
+* `:colorscheme solarized`
+* `:set background=dark`
+* `:set background=lighy`
