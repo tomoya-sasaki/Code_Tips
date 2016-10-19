@@ -137,6 +137,10 @@ Currently, NeoBundle is used for managing packages, but in the future, dein shou
 * `<C-w>j`: 下に移動
 * `<C-w>k`: 上に移動	
 
+##### セッション
+* `:mksession hoge.vim`: hoge.vimにセッションを保存
+* `:souce hoge.vim`: 読み込み
+
 ##### VimFiler
 Use VimFiler with Unite.
 * `\v`: launch VimFiler for current buffer
