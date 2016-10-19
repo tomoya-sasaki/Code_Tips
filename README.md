@@ -138,7 +138,8 @@ Currently, NeoBundle is used for managing packages, but in the future, dein shou
 * `<C-w>k`: 上に移動	
 
 ##### セッション
-* `:mksession hoge.vim`: hoge.vimにセッションを保存
+* `:mksession hoge.vim`: hoge.vimにセッションを保存 (`mks`でもOK)
+* `:mksession! hoge.vim`: 上書き
 * `:souce hoge.vim`: 読み込み
 
 ##### VimFiler
