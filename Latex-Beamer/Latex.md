@@ -168,3 +168,17 @@ b&=c
 ```tex
 \usepackage[truedimen,margin=15truemm]{geometry}
 ```
+別の例
+```tex
+\setlength{\topmargin}{20mm}
+\addtolength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{20mm}
+\addtolength{\oddsidemargin}{-1in}
+\setlength{\evensidemargin}{15mm}
+\addtolength{\evensidemargin}{-1in}
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{254mm}
+\setlength{\headsep}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0mm}
+```
