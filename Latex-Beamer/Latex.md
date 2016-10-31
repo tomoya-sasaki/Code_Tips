@@ -38,14 +38,14 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 \begin{figure}[htbp]
  \begin{minipage}{0.5\hsize}
   \begin{center}
-   \includegraphics[width=70mm]{fig1.pdf}
+   \includegraphics[width=0.7 \linewidth]{fig1.pdf}
   \end{center}
   \caption{Fig 1}
   \label{fig:one}
  \end{minipage}
  \begin{minipage}{0.5\hsize}
   \begin{center}
-   \includegraphics[width=70mm]{fig2.pdf}
+   \includegraphics[width=0.7 \linewidth]{fig2.pdf}
   \end{center}
   \caption{Fig 2}
   \label{fig:two}
