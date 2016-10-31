@@ -15,6 +15,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 11. [名前を英語に統一](#名前を英語に統一)
 12. [箇条書きを左にずらす](#箇条書きを左にずらす)
 13. [余白の設定](#余白の設定)
+14. [2段組](#2段組)
 
 ## 写真の挿入
 ```tex
@@ -181,4 +182,12 @@ b&=c
 \setlength{\headsep}{0mm}
 \setlength{\headheight}{0mm}
 \setlength{\topskip}{0mm}
+```
+
+## 2段組
+```tex
+\usepackage{multicol}
+\begin{multicols}{2}
+
+\end{multicols}
 ```
