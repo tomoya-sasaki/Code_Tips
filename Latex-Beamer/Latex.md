@@ -33,6 +33,26 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ここで`width=1.2`は、図の幅を元の1.2倍に拡大することを意味する。  
 `\linewidth`は縦幅のスケールは横幅に合わせることを意味する。
 
+### 図を並べる
+```tex
+\begin{figure}[htbp]
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{fig1.pdf}
+  \end{center}
+  \caption{Fig 1}
+  \label{fig:one}
+ \end{minipage}
+ \begin{minipage}{0.5\hsize}
+  \begin{center}
+   \includegraphics[width=70mm]{fig2.pdf}
+  \end{center}
+  \caption{Fig 2}
+  \label{fig:two}
+ \end{minipage}
+\end{figure}
+```
+
 ## 文字サイズ変更
 `{\fontsize{9.5pt}{8pt}\selectfont   }`
 
