@@ -189,6 +189,9 @@ b&=c
 ```tex
 \usepackage[truedimen,margin=15truemm]{geometry}
 ```
+```tex
+\usepackage[truedimen,top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+```
 別の例
 ```tex
 \setlength{\topmargin}{20mm}
