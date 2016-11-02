@@ -1,8 +1,8 @@
 # Java
 
 ## Setup Vim
-`.vimrc`
-```
+`.vimrc`の設定
+```vim
 NeoBundle 'thinca/vim-quickrun'
 if neobundle#tap('vim-quickrun') "{{{
   \ 'java' : {
@@ -10,6 +10,4 @@ if neobundle#tap('vim-quickrun') "{{{
   \ 'hook/output_encode/encoding' : 'sjis',
   \ }
 endif "}}}
-
-nmap <F6> :QuickRun<CR>
 ```
