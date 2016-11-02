@@ -16,6 +16,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 12. [箇条書きを左にずらす](#箇条書きを左にずらす)
 13. [余白の設定](#余白の設定)
 14. [2段組](#2段組)
+15. [ページをまたぐ表](#ページをまたぐ表)
 
 ## 写真の挿入
 ```tex
@@ -213,4 +214,22 @@ b&=c
 \begin{multicols}{2}
 
 \end{multicols}
+```
+## ページをまたぐ表
+`\usepackage{ltablex}`を使うことで、tabluarx環境下で、longtable環境も使えるようになる。
+```tex
+\setlongtables %これでlongtable環境を使えるようになる。
+\begin{tabularx}{\linewidth}{|X|X|} %表の中身はtabularx環境と同じ書き方。
+\hline
+項目 & 説明 \\
+\hline
+\endhead %longtable環境と同様にendheadやendfootも使える
+%以下、表の中身。
+A&B\\
+C&D\\
+D&B\\
+……
+V&X。\\
+\hline
+\end{tabularx}
 ```
