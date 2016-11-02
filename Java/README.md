@@ -1,4 +1,5 @@
 # Java
+* [Java入門](#http://www.asahi-net.or.jp/~yf8k-kbys/newjava0.html)
 
 ## Setup Vim
 `.vimrc`の設定
