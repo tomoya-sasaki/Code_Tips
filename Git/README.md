@@ -42,9 +42,9 @@ After you make changes,
 $ git add *
 ($ git status)
 $ git commit -m "your comments"
-$ git push https://github.com/xxxxx/Code_Tips.git master:master
+$ git push origin master
 ```
-or, you can use `git push origin your_branch_name(ex. master)` for the last line.  
+The last line is `$ git push https://github.com/xxxxx/Code_Tips.git master:master` or, you can use `git push origin your_branch_name(ex. master)` for the last line.  
 To remove added files, use `git reset HEAD` for all and `git rm --cached *.*` for a file.
 
 ## When someone updates the files
@@ -88,9 +88,10 @@ $ git branch -d branchname
 ```
 
 ### Merge Branch
+It is always better to do it on GitHub. 
 #### Normal
-Before you merge, `$ git commit -m "your comments"` in the branch?
 ```terminal
+$ git commit -m "your comments"
 $ git checkout master
 $ git merge <branchname>
 ```
