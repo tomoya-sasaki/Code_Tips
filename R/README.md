@@ -14,6 +14,12 @@ qqPlot(model1)
 dev.off()
 ```
 
+### オブジェクトの保存
+```r
+write(x, file="variavle1.txt")
+```
+
+
 ### エラーの言語切り替え
 ```r
 Sys.getenv("LANGUAGE") #初めは空
