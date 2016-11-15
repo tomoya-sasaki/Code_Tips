@@ -21,5 +21,5 @@ data <- merge(data,vals,all = TRUE)
 ```
 ## 不要な列をdropする
 ```r
-df <- subset(df, select = -c(a,c) )
+df <- subset(df, select = -c(a,c))
 ```
