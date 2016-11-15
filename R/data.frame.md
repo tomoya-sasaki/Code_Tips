@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [rbindの注意](#rbindの注意)
 2. [足りない行を追加する](#足りない行を追加する)
+3. [不要な列をdropする](#不要な列をdropする)
 
 ## rbindの注意
 そのまますると、column名に沿って結合されてしまうので注意。  
@@ -17,4 +18,8 @@ rbind(df, setNames(rev(df) ,names(df)))
 ```r
 vals <- expand.grid(year = unique(data$year), id= unique(data$id))
 data <- merge(data,vals,all = TRUE)
+```
+## 不要な列をdropする
+```r
+df <- subset(df, select = -c(a,c) )
 ```
