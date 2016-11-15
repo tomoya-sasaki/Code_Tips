@@ -156,6 +156,9 @@ Use VimFiler with Unite.
 * `\ec`で新しいノート作成
 * `\et`でタグ一覧表示する
 
+##### 単語補完
+挿入モード時に`Ctrl+P`や`Ctrl+N`で単純な単語補完
+
 ##### colorscheme
 * `:colorscheme solarized`
 * `:set background=dark`
