@@ -4,6 +4,7 @@
 1. [rbindの注意](#rbindの注意)
 2. [足りない行を追加する](#足りない行を追加する)
 3. [不要な列をdropする](#不要な列をdropする)
+4. [wideとlongの変換](#wideとlongの変換)
 
 ## rbindの注意
 そのまますると、column名に沿って結合されてしまうので注意。  
@@ -23,3 +24,10 @@ data <- merge(data,vals,all = TRUE)
 ```r
 df <- subset(df, select = -c(a,c))
 ```
+
+### wideとlongの変換
+`reshape`で、
+```r
+data <- reshape(temp, timevar="year", v.names=c("iv7","iv8","iv9"), idvar="id", direction="wide")
+```
+のようにすれば良いが、あるidに対して欠けているyearがあったりすると結果が得られないので、[足りない行を追加する](#足りない行を追加する)を参照。
