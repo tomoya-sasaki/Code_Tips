@@ -8,3 +8,4 @@
 ```r
 apply(data_b["enrollment"], 1, function)
 ```
+`data_b[c("enrollment", "age")]`とした場合、`x`には`data`の j 行ベクトルが代入される
