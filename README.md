@@ -163,3 +163,9 @@ Use VimFiler with Unite.
 * `:colorscheme solarized`
 * `:set background=dark`
 * `:set background=lighy`
+カラースキームの色が微妙に気にくわないときは、以下を利用
+```vim
+" コメントを濃い緑にする
+autocmd ColorScheme * highlight Comment ctermfg=22 guifg=#0d660d
+```
+カラースキームを適用した後でも、`highlight Comment ctermfg=22 guifg=#0d660d`でOK。
