@@ -166,6 +166,6 @@ Use VimFiler with Unite.
 カラースキームの色が微妙に気にくわないときは、以下を利用
 ```vim
 " コメントを濃い緑にする
-autocmd ColorScheme * highlight Comment ctermfg=22 guifg=#0d660d
+autocmd ColorScheme * highlight Comment ctermfg=22 guifg=#4286f4
 ```
-カラースキームを適用した後でも、`highlight Comment ctermfg=22 guifg=#0d660d`でOK。`ctermfg`はターミナルの、`guifg`は GUI 版の Vim の前景色を表している。
+カラースキームを適用した後でも、`highlight Comment ctermfg=22 guifg=#4286f4`でOK。`ctermfg`はターミナルの、`guifg`は GUI 版の Vim の前景色を表している。
