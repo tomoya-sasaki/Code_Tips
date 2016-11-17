@@ -40,4 +40,5 @@ colnames(data[,grep("age_.",colnames(data))])
 これを使って、regression用の変数を作る
 ```r
 paste(colnames(data[,grep("age_.",colnames(data))]), collapse=" + ")
+formula <- as.formula(paste("educ ~ ", paste(colnames(data[,grep("age_.",colnames(data))]), collapse=" + ")))
 ```
