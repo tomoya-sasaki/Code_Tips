@@ -37,3 +37,7 @@ data <- reshape(temp, timevar="year", v.names=c("iv7","iv8","iv9"), idvar="id", 
 ```r
 colnames(data[,grep("age_.",colnames(data))])
 ```
+これを使って、regression用の変数を作る
+```r
+paste(colnames(data[,grep("age_.",colnames(data))]), collapse=" + ")
+```
