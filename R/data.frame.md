@@ -26,14 +26,14 @@ data <- merge(data,vals,all = TRUE)
 df <- subset(df, select = -c(a,c))
 ```
 
-### wideとlongの変換
+## wideとlongの変換
 `reshape`で、
 ```r
 data <- reshape(temp, timevar="year", v.names=c("iv7","iv8","iv9"), idvar="id", direction="wide")
 ```
 のようにすれば良いが、あるidに対して欠けているyearがあったりすると結果が得られないので、[足りない行を追加する](#足りない行を追加する)を参照。
 
-### 特定の文字列を含む列を取り出す
+## 特定の文字列を含む列を取り出す
 ```r
 colnames(data[,grep("age_.",colnames(data))])
 ```
