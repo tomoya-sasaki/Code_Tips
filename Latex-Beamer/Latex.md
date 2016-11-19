@@ -233,3 +233,17 @@ V&X。\\
 \hline
 \end{tabularx}
 ```
+## 条件分岐でテキストを変更
+```tex
+\usepackage{ifthen}
+\newboolean{long}   
+
+\begin{document}
+
+\setboolean{long}{false}   
+\ifthenelse{\boolean{long}}{long version}{short version} 
+
+\setboolean{long}{true}
+\ifthenelse{\boolean{long}}{long version}{short version}  
+\end{document} 
+```
