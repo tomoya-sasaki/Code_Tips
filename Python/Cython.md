@@ -3,6 +3,7 @@
 
 ## Table of Contents
 1. [Basics](#basics)
+    * [C variable and type definitions](#c-variable-and-type-definitions)
 
 ## Basics
 ### Import Cython Code
@@ -26,3 +27,5 @@ $ python setup.py build_ext --inplace
 import pyximport; pyximport.install()
 ```
 Then, you can `import NeyCython`.
+
+### C variable and type definitions
