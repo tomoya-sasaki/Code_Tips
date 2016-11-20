@@ -6,15 +6,15 @@ But be careful, it seems to be quite SLOW!! Consider using [`std::string::find`]
 1. [Find](#find)
 2. [OR](#or)
 
-### Find
-#### Use in if function
+## Find
+### Use in if function
 ```cpp
 #include <regex>
 regex re("(.*)(CCText)(.*)");
 if(regex_match(*iter, re)) // found = True, not found = False
 ```
 
-### OR
+## OR
 Use or:
 ```cpp
 #include <iostream>
