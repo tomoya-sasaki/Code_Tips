@@ -4,6 +4,7 @@
 ## Table of Contents
 1. [Basics](#basics)
     * [C variable and type definitions](#c-variable-and-type-definitions)
+2. []()
 
 ## Basics
 ### Import Cython Code
@@ -26,6 +27,13 @@ $ python setup.py build_ext --inplace
 ```python
 import pyximport; pyximport.install()
 ```
-Then, you can `import NeyCython`.
+Then, you can `import NeyCython`.  
+`main.py`みたいなのを作って、以下のようにして簡単で良さそう。
+```python
+if __name__ == '__main__':
+ import pyximport; pyximport.install()  
+ import NewCython
+```
 
 ### C variable and type definitions
+[Reference](http://docs.cython.org/en/latest/src/userguide/language_basics.html#c-variable-and-type-definitions)
