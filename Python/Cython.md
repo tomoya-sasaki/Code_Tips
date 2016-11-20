@@ -5,7 +5,8 @@
 1. [Basics](#basics)
 
 ## Basics
-### Make Cython library
+### Import Cython Code
+#### If you need setup manually
 ```python
 # setup.py
 from distutils.core import setup
@@ -19,3 +20,9 @@ Then,
 ```terminal
 $ python setup.py build_ext --inplace
 ```
+
+#### Extra C libraries or a special build setup is not required
+```python
+import pyximport; pyximport.install()
+```
+Then, you can `import NeyCython`.
