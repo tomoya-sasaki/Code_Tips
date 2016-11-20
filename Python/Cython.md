@@ -37,3 +37,6 @@ if __name__ == '__main__':
 
 ### C variable and type definitions
 [Reference](http://docs.cython.org/en/latest/src/userguide/language_basics.html#c-variable-and-type-definitions)
+
+変数の宣言時には、以下に注意
+> a Cython module, Python functions and C functions can call each other freely, but only Python functions can be called from outside the module by interpreted Python code
