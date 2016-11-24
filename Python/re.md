@@ -5,6 +5,7 @@
 ## Table of Contents
 1. [繰り返しmatch](#繰り返しmatch)
 2. [パターンの作り方](#パターンの作り方)
+3. [パターンを別に定義](#パターンを別に定義)
 
 ### 繰り返しmatch
 `finditer`を使う
@@ -47,3 +48,10 @@ for matched in re.finditer(r"○<strong>(?P<Name>.+?)<\/strong>(?P<Speech>(.|\n)
 | \w       | 英数字とアンダースコア _ に一致 ([_a-zA-Z0-9] と同じ)     |
 | \W       | \w 以外と一致                                             |
 | \Z       | 文字列の末尾と一致                                        |
+
+
+## パターンを別に定義
+```python
+prog = re.compile("pattern")
+result = prog.match(string)
+```
