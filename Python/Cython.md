@@ -4,7 +4,7 @@
 ## Table of Contents
 1. [Basics](#basics)
     * [C variable and type definitions](#c-variable-and-type-definitions)
-2. []()
+2. [With Numpy](#with-numpy)
 
 ## Basics
 ### Import Cython Code
@@ -40,3 +40,17 @@ if __name__ == '__main__':
 
 変数の宣言時には、以下に注意
 > a Cython module, Python functions and C functions can call each other freely, but only Python functions can be called from outside the module by interpreted Python code. So, any functions that you want to “export” from your Cython module must be declared as Python functions using **def**.
+
+## With Numpy
+基本はこのように設定すれば良いはず:
+```setup.py
+from distutils.core import setup
+from Cython.Build import cythonize
+import numpy
+
+setup(
+    name = 'test',
+    ext_modules = cythonize('test.pyx')
+    include_dirs = [numpy.get_include()]
+    )
+```
