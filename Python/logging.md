@@ -2,6 +2,7 @@
   
 ## Table of Contents
 1. [Basic Usage](#basic-usage)
+2. [Configulation File](#configulation-file)
   
   
 ## Basic Usage
@@ -9,7 +10,7 @@
 import logging
 
 def main():
-  logging.basicConfig(format='%(asctime)s:%(levelname)s:%(message)s', level=logging.DEBUG)
+  logging.basicConfig(filename='example.log', format='%(asctime)s:%(levelname)s:%(message)s', level=logging.DEBUG)
   logging.debug('Log1/Debug')
   logging.info('Log2/Info')
   logging.warning('Log3/Warning')
@@ -36,3 +37,44 @@ Output:
 | %(message)s   	| ログメッセージ          	|
 | %(process)d   	| プロセスID              	|
 | %(thread)d    	| スレッドID              	|
+
+
+## Configulation File
+```conf
+[loggers]
+keys=root
+
+[handlers]
+keys=consoleHandler,errorHandler
+
+[formatters]
+keys=simpleFormatter
+
+[logger_root]
+level=DEBUG
+handlers=consoleHandler,errorHandler
+
+[handler_consoleHandler]
+class=StreamHandler
+level=DEBUG
+formatter=simpleFormatter
+args=(sys.stdout,)
+
+[formatter_simpleFormatter]
+format=%(asctime)s - %(threadName)s - %(name)s - %(levelname)s - %(message)s
+```
+
+```python
+import logging
+import logging.config
+
+
+
+if __name__ == '__main__':
+  logging.config.fileConfig('logging.conf')
+  logger = logging.getLogger(__name__)
+  
+  logger.debug('Log1/Debug')
+  logger.info('Log2/Info')
+  logger.warning('Log3/Warning')
+```
