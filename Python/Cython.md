@@ -43,7 +43,8 @@ if __name__ == '__main__':
 
 ## With Numpy
 基本はこのように設定すれば良いはず:
-```setup.py
+```python
+#setup.py
 from distutils.core import setup
 from Cython.Build import cythonize
 import numpy
@@ -54,3 +55,18 @@ setup(
     include_dirs = [numpy.get_include()]
     )
 ```
+しかし、`AttributeError: 'module' object has no attribute 'Handler'`というエラーが出てしまってコンパイルできない。
+そこで、Pythonで`numpy.get_include()`して得たpathを直に入れた
+
+```python
+#setup.py
+from distutils.core import setup
+from Cython.Build import cythonize
+
+setup(
+        name = 'test',
+        ext_modules = cythonize('test.pyx'),
+        include_dirs = "/usr/local/lib/python3.4/site-packages/numpy/core/include"
+)
+```
+これで、`cd`でディレクトリに移動して`python3 setup.py build_ext --inplace`する。場合によっては`sudo`つける必要があるかも。
