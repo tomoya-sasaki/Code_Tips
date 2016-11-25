@@ -70,3 +70,7 @@ setup(
 )
 ```
 これで、`cd`でディレクトリに移動して`python3 setup.py build_ext --inplace`する。場合によっては`sudo`つける必要があるかも。
+
+### 注意事項
+* `.pyx`の冒頭には`from __future__ import division`が要るかも
+* 保存しているフォルダ名に`_`や`-`があると上手くいかなかった (理想的には小文字じゃないとダメ?)
