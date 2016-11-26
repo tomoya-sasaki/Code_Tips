@@ -8,7 +8,7 @@
 
 ## Basics
 ### Import Cython Code
-#### If you need setup manually
+#### If you prepare "setup.py" manually
 ```python
 # setup.py
 from distutils.core import setup
