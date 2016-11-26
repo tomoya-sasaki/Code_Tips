@@ -88,12 +88,18 @@ $ git branch -d branchname
 ```
 
 ### Merge Branch
-It is always better to do it on GitHub. 
+It is always better to do it on GitHub. Before merge, do not forget to update the merged branch.
+
 #### Normal
 ```terminal
 $ git commit -m "your comments"
 $ git checkout master
 $ git merge <branchname>
+```
+#### --no-ff option
+```terminal
+$ git checkout mergeTo
+$ git merge --no-ff mergeFrom
 ```
 
 #### You have changed both original and branched
