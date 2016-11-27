@@ -45,3 +45,13 @@ glob.glob(directory+"/*.txt")
 # Return the list of Subdirectory
 glob.glob(root_directory + "/*/")
 ```
+
+### Copy objects
+When you use list or numpy.array, simple insert will return unexpected results. You can avoid it by adding `[:]`.
+```python
+a = [1,2,3,4,5]
+b = np.array([[1,2,3,4],[5,6,7,8,9]])
+c = a[:]
+d = b[:]
+e = b[0][:]
+```
