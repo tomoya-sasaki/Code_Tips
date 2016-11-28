@@ -34,7 +34,7 @@ ifだけ使うなら、以下のようになる
 
 ### 二重ループ
 ```python
-[wordID  for item in dictionary.doc2bow(document.split()) for x in range(count)]
+[wordID for item in dictionary.doc2bow(document.split()) for x in range(count)]
 ```
 
 ## 別のリストの要素を追加
