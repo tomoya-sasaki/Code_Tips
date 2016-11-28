@@ -18,7 +18,7 @@ setup(
     ext_modules = cythonize("NewCython.pyx")
 )
 ```
-Then,
+Then, ([将来的に変わる？](https://github.com/cython/cython/issues/1509))
 ```terminal
 $ python setup.py build_ext --inplace
 ```
