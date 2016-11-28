@@ -42,6 +42,14 @@ if __name__ == '__main__':
 > a Cython module, Python functions and C functions can call each other freely, but only Python functions can be called from outside the module by interpreted Python code. So, any functions that you want to “export” from your Cython module must be declared as Python functions using **def**.
 
 ## With Numpy
+### .pyx
+```python
+from __future__ import division
+import numpy as np
+cimport numpy as np
+```
+
+### setup.py
 基本はこのように設定すれば良いはず:
 ```python
 #setup.py
