@@ -2,7 +2,9 @@
 
 ## Table of Contents
 1. [複数のリスト型オブジェクトの間の計算](#複数のリスト型オブジェクトの間の計算)
-2. [リスト内包表記でif elseを用いる](#リスト内包表記でif-elseを用いる)
+2. [リスト内包表記](#リスト内包表記)
+  * [if elseを用いる](#if-elseを用いる)
+  * [二重ループ](#二重ループ)
 3. [別のリストの要素を追加](#別のリストの要素を追加)
 
 ## 複数のリスト型オブジェクトの間の計算
@@ -14,7 +16,8 @@
 ['14', '25', '36']
 ```
 
-## リスト内包表記でif elseを用いる
+## リスト内包表記
+### if elseを用いる
 以下の例では、`ku_num_list`に番号が入っていて、それが1桁なら先頭にゼロを付けたものを返す。もともと2桁なら何もしない。
 ```python
 ["0"+ str(item) if len(str(item))==1 else str(item) for item in ku_num_list]
@@ -27,6 +30,11 @@ ifだけ使うなら、以下のようになる
 次の例では、elif的な用法。全てのものを3桁に統一する。
 ```python
 ["00"+ str(item) if len(str(item))==1 else "0"+str(item) if len(str(item))==2 else str(item) for item in ku_num_list]
+```
+
+### 二重ループ
+```python
+[wordID  for item in dictionary.doc2bow(document.split()) for x in range(count)]
 ```
 
 ## 別のリストの要素を追加
