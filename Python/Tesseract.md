@@ -5,10 +5,11 @@
 2. [Use in Python](#use-in-python)
 3. [Caution](#caution)
 
-### Install
+## Install
 `homebrew` can be used.
+Training set: check [this](https://github.com/tesseract-ocr/tesseract/wiki#mac-os-x).
 
-### Use in Python
+## Use in Python
 ```python
 from wand.image import Image
 from PIL import Image as PI
