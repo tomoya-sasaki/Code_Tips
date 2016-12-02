@@ -6,10 +6,11 @@ cols <- rainbow(length(job_freq))
 ```
 
 ### 図の保存
-With ggplot2
+With ggplot2:
 ```r
 ggsave(file = "fig.pdf", plot = p, dpi = 600, width = 6.4, height = 4.8)
 ```
+Others:
 ```r
 pdf("NonNormal1.pdf", width=10 , height=6)
 par(mfrow=c(1,2))
