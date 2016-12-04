@@ -258,3 +258,13 @@ V&X。\\
 \chead{\textbf{Your Header}}
 \begin{document}
 ```
+特定のページだけ:
+```tex
+\usepackage{fancyhdr}
+\fancypagestyle{firststyle}
+{
+   \chead{\textbf{Your Header}}
+}
+\begin{document}
+```
+`\thispagestyle{firststyle}`を該当箇所で使う。
