@@ -18,6 +18,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 14. [2段組](#2段組)
 15. [ページをまたぐ表](#ページをまたぐ表)
 16. [条件分岐でテキストを変更](#条件分岐でテキストを変更)
+17. [ヘッダーとフッター](#ヘッダーとフッター)
 
 ## 写真の挿入
 ```tex
@@ -247,4 +248,13 @@ V&X。\\
 \setboolean{long}{true}
 \ifthenelse{\boolean{long}}{long version}{short version}  
 \end{document} 
+```
+
+## ヘッダーとフッター
+```tex
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\chead{\textbf{Your Header}}
+\begin{document}
 ```
