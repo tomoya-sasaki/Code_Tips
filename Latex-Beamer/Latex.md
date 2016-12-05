@@ -267,4 +267,4 @@ V&X。\\
 }
 \begin{document}
 ```
-`\thispagestyle{firststyle}`を該当箇所で使う。
+`\thispagestyle{firststyle}`を該当箇所で使う (`\maketitle`の後じゃないとダメみたい)。
