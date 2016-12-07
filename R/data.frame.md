@@ -25,6 +25,10 @@ data <- merge(data,vals,all = TRUE)
 ```r
 df <- subset(df, select = -c(a,c))
 ```
+Conditional drop:
+```r
+d<-d[!(d$A=="B" & d$E==0),]
+```
 
 ## wideとlongの変換
 `reshape`で、
