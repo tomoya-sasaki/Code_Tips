@@ -16,3 +16,4 @@ temp <- data %>%
     filter(age<31) %>%
     select_("id2", starts_with("hhii"), "abd_lgth_hh")
 ```
+なぜか上手く回らなかったので、こちらを: `temp[,grep('hhii',names(temp))]`
