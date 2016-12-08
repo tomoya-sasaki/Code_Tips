@@ -6,6 +6,7 @@
 3. [不要な列をdropする](#不要な列をdropする)
 4. [wideとlongの変換](#wideとlongの変換)
 5. [特定の文字列を含む列を取り出す](#特定の文字列を含む列を取り出す)
+6. [特定の名前を含む列を除く](#特定の名前を含む列を除く)
 
 ## rbindの注意
 そのまますると、column名に沿って結合されてしまうので注意。  
@@ -45,4 +46,9 @@ colnames(data[,grep("age_.",colnames(data))])
 ```r
 paste(colnames(data[,grep("age_.",colnames(data))]), collapse=" + ")
 formula <- as.formula(paste("educ ~ ", paste(colnames(data[,grep("age_.",colnames(data))]), collapse=" + ")))
+```
+
+## 特定の名前を含む列を除く
+```r
+data <- data[,!(1:ncol(data) %in% grep('\\.y',names(data)))]
 ```
