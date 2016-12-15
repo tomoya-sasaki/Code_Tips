@@ -100,4 +100,4 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
           layout_matrix = rbind(c(1,1,1,2,2,2,3))
           )
 ```
-<img src="figures/ggplot2_2figs.png" width="780">
+<img src="figures/ggplot_2figs.png" width="780">
