@@ -6,6 +6,7 @@ References:
 1. [xラベルの変更](#xラベルの変更)
 2. [エラーバーの追加](#エラーバーの追加)
 3. [線の種類](#線の種類)
+4. [図を並べる](#図を並べる)
 
 ### xラベルの変更
 ```r
@@ -83,4 +84,19 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
   scale_color_manual(values=c('#999999','#E69F00'))+
   scale_size_manual(values=c(1, 1.5))+
   theme(legend.position="top")
+```
+
+## 図を並べる
+[Reference](http://notchained.hatenablog.com/entry/2015/12/17/010904)
+```r
+g1 <- ggplotGrob(p1)
+id.legend <- grep("guide", g1$layout$name)
+legend <- g1[["grobs"]][[id.legend]]
+lwidth <- sum(legend$width)
+
+gA <- grid.arrange(p1 + theme(legend.position="none"), 
+          p2 + theme(legend.position="none"), 
+          legend, 
+          layout_matrix = rbind(c(1,1,1,2,2,2,3))
+          )
 ```
