@@ -9,7 +9,7 @@
 %-----------------
 \begin{document}
 \dirtree{%
-.1 /Shusei\_Replication.
+.1 /MainFolder.
 .2 Data\DTcomment{Data for analysis}.
 .2 LatexOutput\DTcomment{Results figures and tables}.
 .3 fig2.pdf.
