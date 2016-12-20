@@ -27,7 +27,7 @@ $ python setup.py build_ext --inplace
 ```python
 import pyximport; pyximport.install()
 ```
-Then, you can `import NeyCython`.  
+Then, you can `import NewCython`.  
 `main.py`みたいなのを作って、以下のようにして簡単で良さそう。
 ```python
 if __name__ == '__main__':
