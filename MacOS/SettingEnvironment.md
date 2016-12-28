@@ -26,8 +26,8 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 ```
 Do not forget to `source ~/.bash_profile` after editing!!
-
-
+  
+Then, you can install python:
 * `$ pyenv install 3.5.2`
  * If error occures, try `xcode-select --install` and install again
 * `$ brew install pyenv-virtualenv`
