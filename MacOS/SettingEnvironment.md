@@ -1,18 +1,17 @@
-# Setting Environment
+# Setting Environment 2016/12/28
 
-## 2016/12/28
-### Homebrew
-#### R
+## Homebrew
+### R
 * `brew upgrade xxx`
 
-### Manual Install
-#### XCode
+## Manual Install
+### XCode
 * From AppStore
 
-#### RStudio
+### RStudio
 * From website
 
-#### Python
+### Python
 * `$ brew install pyenv`
 
 Update `bash_profile`:
@@ -38,8 +37,11 @@ Then, you can install python:
   * Activate the environment: `$ pyenv activate NAME`
   * Deactivate the environment: `$ pyenv deactivate`
   * Delete the environment:　`$ pyenv uninstall NAME`
+  
+## pip
+`pip install jupyter pandas matplotlib beautifulsoup4`
 
    
-### In R
-#### RStan
+## In R
+### RStan
 * `install.packages('rstan', dependencies=T)`
