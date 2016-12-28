@@ -51,7 +51,8 @@ https://tug.org/mactex/mactex-download.html
 Do not forget to select custom install and **clear the checkbox for Ghostscript**
 
 ##### Update TexLive
-`sudo tlmgr update --self --all`. If there is an error, relaunch Terminal.
+`sudo tlmgr update --self --all`   
+If there is an error, relaunch Terminal.
 
 ##### Set Japanse Fonts
 Enter the following commands line by line.
