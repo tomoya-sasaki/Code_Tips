@@ -48,7 +48,7 @@ Then, you can install python:
 https://tug.org/mactex/mactex-download.html
 
 ##### Install
-Do not forget to select custom install and clear the checkbox for Ghostscript
+Do not forget to select custom install and **clear the checkbox for Ghostscript**
 
 ##### Update TexLive
 `sudo tlmgr update --self --all`. If there is an error, relaunch Terminal.
