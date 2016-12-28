@@ -59,14 +59,19 @@ noremap D "_D
 "Undoの情報はセッションを超えて保存しない
 set noundofile
 
+" ノーマルモード時だけ ; と : を入れ替える
+nnoremap ; :
+nnoremap : ;
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Dein用
-"if &compatible
-"  set nocompatible               " Be iMproved
-"endif
+if &compatible
+  set nocompatible   " Be improved
+endif
  
 " dein.vimのディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
+let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
+let s:dein_dir = s:cache_home . '/dein'
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 " なければgit clone
@@ -82,25 +87,22 @@ let g:dein#install_message_type = 'none'
 let g:dein#enable_notification = 1
  
 " Required:
-call dein#begin(s:dein_dir)
+let s:toml      = '~/.dein.toml'
+let s:lazy_toml = '~/.dein_lazy.toml'
+
  
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
  
 " Add or remove your plugins here:
-let s:toml      = '~/.dein.toml'
-let s:lazy_toml = '~/.dein_lazy.toml'
-
-" TOML を読み込み、キャッシュしておく
-if dein#load_state([expand('<sfile>'), s:toml, s:lazy_toml])
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-  call dein#save_cache()
+if dein#load_state(s:dein_dir)
+	call dein#begin(s:dein_dir, [$MYVIMRC, s:toml])
+	call dein#load_toml(s:toml, {'lazy': 0})
+	call dein#load_toml(s:lazy_toml, {'lazy': 1})
+	call dein#end()
+ call dein#save_state()
 endif
-
-" Required:
-call dein#end()
  
 " Required:
 filetype plugin indent on
@@ -109,4 +111,37 @@ filetype plugin indent on
 if dein#check_install()
   call dein#install()
 endif
+
+" Setup load libraries
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimfiler
+nnoremap <Leader>v :VimFilerBufferDir -split -simple -winwidth=35 -force-quit<CR>
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_edit_action = 'tabopen'
+
+augroup vimfiler
+  autocmd!
+  autocmd FileType vimfiler call s:vimfiler_settings()
+augroup END
+function! s:vimfiler_settings()
+  " tree での制御は，<Space>
+  map <silent><buffer> <Space> <NOP>
+  nmap <silent><buffer> <Space> <Plug>(vimfiler_expand_tree)
+  nmap <silent><buffer> <S-Space> <Plug>(vimfiler_expand_tree_recursive)
+
+  " マークは，<C-Space>(control-space)
+  nmap <silent><buffer> <C-Space> <Plug>(vimfiler_toggle_mark_current_line)
+  vmap <silent><buffer> <C-Space> <Plug>(vimfiler_toggle_mark_selected_lines)
+
+  " ウィンドウを分割して開く
+  nnoremap <silent><buffer><expr> <C-h> vimfiler#do_switch_action('split')
+  nnoremap <silent><buffer><expr> <C-v> vimfiler#do_switch_action('vsplit')
+
+  " 移動，<Tab> だけでなく <C-l> も
+  nmap <buffer> <C-l> <plug>(vimfiler_switch_to_other_window)
+
+  " 閉じる，<Esc> 2 回叩き
+  nmap <buffer> <Esc><Esc> <Plug>(vimfiler_exit)
+endfunction
