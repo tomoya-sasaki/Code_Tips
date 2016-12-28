@@ -58,3 +58,55 @@ noremap D "_D
 
 "Undoの情報はセッションを超えて保存しない
 set noundofile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Dein用
+"if &compatible
+"  set nocompatible               " Be iMproved
+"endif
+ 
+" dein.vimのディレクトリ
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" なければgit clone
+if !isdirectory(s:dein_repo_dir)
+  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+endif
+execute 'set runtimepath^=' . s:dein_repo_dir
+
+" dein.vim settings
+let g:dein#install_max_processes = 16
+let g:dein#install_progress_type = 'title'
+let g:dein#install_message_type = 'none'
+let g:dein#enable_notification = 1
+ 
+" Required:
+call dein#begin(s:dein_dir)
+ 
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+ 
+" Add or remove your plugins here:
+let s:toml      = '~/.vim/rc/dein.toml'
+let s:lazy_toml = '~/.vim/rc/dein_lazy.toml'
+
+" TOML を読み込み、キャッシュしておく
+if dein#load_cache([expand('<sfile>'), s:toml, s:lazy_toml])
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#save_cache()
+endif
+
+" Required:
+call dein#end()
+ 
+" Required:
+filetype plugin indent on
+ 
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
