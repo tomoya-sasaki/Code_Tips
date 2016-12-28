@@ -89,11 +89,11 @@ call dein#begin(s:dein_dir)
 call dein#add('Shougo/dein.vim')
  
 " Add or remove your plugins here:
-let s:toml      = '~/.vim/rc/dein.toml'
-let s:lazy_toml = '~/.vim/rc/dein_lazy.toml'
+let s:toml      = '~/.dein.toml'
+let s:lazy_toml = '~/.dein_lazy.toml'
 
 " TOML を読み込み、キャッシュしておく
-if dein#load_cache([expand('<sfile>'), s:toml, s:lazy_toml])
+if dein#load_state([expand('<sfile>'), s:toml, s:lazy_toml])
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
   call dein#save_cache()
