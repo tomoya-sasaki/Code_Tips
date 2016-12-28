@@ -38,6 +38,18 @@ Then, you can install python:
   * Deactivate the environment: `$ pyenv deactivate`
   * Delete the environment:　`$ pyenv uninstall NAME`
   
+### Tex
+[Reference](http://qiita.com/hideaki_polisci/items/3afd204449c6cdd995c9)
+
+#### Install Ghostscript
+`brew install ghostscript`
+
+#### Download MacTex
+https://tug.org/mactex/mactex-download.html
+
+#### Install
+Do not forget to select custom install and clear the checkbox for Ghostscript 
+  
 ## pip
 `pip install jupyter pandas matplotlib beautifulsoup4`
 
