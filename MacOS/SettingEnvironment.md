@@ -1,13 +1,14 @@
 # Setting Environment
 
 ## 2016/12/28
-* Homebrew
-  * R
+### Homebrew
+* R
   * `brew upgrade xxx`
-* Manual Install
-  * RStudio
+
+### Manual Install
+* RStudio
    * From website
-  * Python
+* Python
    * `brew install pyenv`
-* In R
- * `install.packages('rstan', dependencies=T)`
+### In R
+* `install.packages('rstan', dependencies=T)`
