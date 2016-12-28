@@ -6,3 +6,5 @@
   * `brew upgrade xxx`
 * Manual Install
   * RStudio
+* In R
+ * `install.packages('rstan', dependencies=T)`
