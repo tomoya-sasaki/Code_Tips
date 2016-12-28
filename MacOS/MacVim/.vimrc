@@ -57,4 +57,4 @@ noremap D "_D
 "noremap  p "0p
 
 "Undoの情報はセッションを超えて保存しない
-:set noundofile
+set noundofile
