@@ -21,9 +21,11 @@ vi ~/.bash_profile
 In `bash_profile`,
 ```terminal
 export PYENV_ROOT="/usr/local/var/pyenv"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 ```
+Do not forget to `source ~/.bash_profile` after editing!!
 
 
 * `$ pyenv install 3.5.2`
