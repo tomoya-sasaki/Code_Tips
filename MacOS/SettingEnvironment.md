@@ -6,5 +6,8 @@
   * `brew upgrade xxx`
 * Manual Install
   * RStudio
+   * From website
+  * Python
+   * `brew install pyenv`
 * In R
  * `install.packages('rstan', dependencies=T)`
