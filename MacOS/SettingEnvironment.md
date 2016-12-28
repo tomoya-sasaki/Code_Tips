@@ -6,12 +6,20 @@
 * `brew upgrade xxx`
 
 ### Manual Install
+#### XCode
+* From AppStore
 
 #### RStudio
 * From website
 
 #### Python
-   * `brew install pyenv`
+* `brew install pyenv`
+* `pyenv install 3.5.2`
+* `brew install pyenv-virtualenv`
+* Usage of pyenv-virtualenv
+  * It's easier to use virtualenv than pyenv to use multiuple versions of Python
+  * Make a new environment: `pyenv virtualenv 3.5.2 NAME`
+
    
 ### In R
 #### RStan
