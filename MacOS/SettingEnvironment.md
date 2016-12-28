@@ -3,5 +3,6 @@
 ## 2016/12/28
 * Homebrew
   * R
+  * `brew upgrade xxx`
 * Manual Install
   * RStudio
