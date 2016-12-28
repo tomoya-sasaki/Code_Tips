@@ -41,14 +41,34 @@ Then, you can install python:
 ### Tex
 [Reference](http://qiita.com/hideaki_polisci/items/3afd204449c6cdd995c9)
 
-#### Install Ghostscript
+##### Install Ghostscript
 `brew install ghostscript`
 
-#### Download MacTex
+##### Download MacTex
 https://tug.org/mactex/mactex-download.html
 
-#### Install
-Do not forget to select custom install and clear the checkbox for Ghostscript 
+##### Install
+Do not forget to select custom install and clear the checkbox for Ghostscript
+
+##### Update TexLive
+`sudo tlmgr update --self --all`. If there is an error, relaunch Terminal.
+
+##### Set Japanse Fonts
+Enter the following commands line by line.
+```
+cd /usr/local/texlive/2016/texmf-dist/scripts/cjk-gs-integrate
+sudo perl cjk-gs-integrate.pl --link-texmf --force
+sudo mktexlsr
+sudo kanji-config-updmap-sys hiragino-elcapitan-pron
+```
+
+##### Set TexShop
+1. Update Software
+2. TeXShopの環境設定の［書類］タブの左下の［設定プロファイル］から「pTeX (ptex2pdf)」を選択
+
+##### Update
+`sudo tlmgr update --self --all`
+
   
 ## pip
 `pip install jupyter pandas matplotlib beautifulsoup4`
