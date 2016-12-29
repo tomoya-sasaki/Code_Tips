@@ -1,4 +1,4 @@
-# iTterm2
+# iTerm2
 
 ## Table of Contents
 1. [Shortcut keys](#shortcut-keys)
@@ -13,3 +13,6 @@
 | 一つのウインドウを最大化／解除 | Command + shift + enter      |
 | 新しいタブ                     | Command + t                  |
 | タブ間移動                     | Command + カーソルキー       |
+| 全画面表示                     | Command + enter           |
+
+
