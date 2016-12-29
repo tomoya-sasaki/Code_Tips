@@ -101,7 +101,7 @@ if dein#load_state(s:dein_dir)
 	call dein#load_toml(s:toml, {'lazy': 0})
 	call dein#load_toml(s:lazy_toml, {'lazy': 1})
 	call dein#end()
- call dein#save_state()
+	call dein#save_state()
 endif
  
 " Required:
@@ -113,6 +113,16 @@ if dein#check_install()
 endif
 
 " Setup load libraries
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set commands for colorscheme
+" User-defined commands must start with a capital letter
+function! SkinDefault()
+	colorscheme macvim
+	highlight Normal guifg=MacTextColor  guibg=gray90
+endfunction
+command! Skindefault call SkinDefault()
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
