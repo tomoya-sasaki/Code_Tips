@@ -27,7 +27,6 @@ repo = 'lervag/vimtex'
 hook_add = '''
 let g:vimtex_fold_envs = 0
 let g:tex_indent_brace=0
-let g:vimtex_view_general_viewer = 'skim'
 '''
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
