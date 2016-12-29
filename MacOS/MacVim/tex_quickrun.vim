@@ -22,7 +22,8 @@ let g:quickrun_config['tex'] = {
 \                      '%S:p:r.fdb_latexmk',
 \                      '%S:p:r.fls',
 \                      '%S:p:r.log',
-\											 '%S:p:r.synctex.gz',
+\                      '%S:p:r.synctex.gz',
+\                      '%S:p:r.toc',
 \                      '%S:p:r.out'
 \                      ],
 \ 'exec': '%c %o %a %s',
