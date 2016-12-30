@@ -126,11 +126,12 @@ filetype plugin indent on
 " Set commands for colorscheme
 " User-defined commands must start with a capital letter
 function! SkinDefault()
+	Skinhybrid
 	colorscheme macvim
 	highlight Normal guifg=MacTextColor  guibg=gray90
 	highlight Cursor guifg=NONE guibg=#57fc00
 endfunction
-command! Skinmacvim call SkinDefault()
+command! Skindefault call SkinDefault()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -314,8 +315,6 @@ function! s:PandocRun()
     echo "File is not MarkDown"
   endif
 endfunction
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Colorscheme
-Skinmacvim
+Skindefault
