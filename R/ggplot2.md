@@ -9,6 +9,7 @@ References:
 4. [図を並べる](#図を並べる)
 5. [データの確認](#データの確認)
 6. [histogramと確率密度関数を同時に描く](#histogramと確率密度関数を同時に描く)
+7. [関数の曲線を描く](#関数の曲線を描く)
 
 
 ## xラベルの変更
@@ -111,7 +112,7 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
 
 
 ## histogramと確率密度関数を同時に描く
-[Reference](#http://qiita.com/hoxo_b/items/13d034ab0ed60b4dca88)
+[Reference](http://qiita.com/hoxo_b/items/13d034ab0ed60b4dca88)
 
 y-axsis is density:
 ```r
@@ -134,3 +135,8 @@ ggplot(faithful, aes(x=waiting)) +
   geom_density(eval(bquote(aes(y=..count..*.(bw)))), fill='black', alpha=0.3)+
   xlim(range(dens$x))
 ```
+
+
+## 関数の曲線を描く
+[Reference](http://qiita.com/hoxo_b/items/a6522a6e6561f8ca7b96)  
+`stat_function` or `geom_path`
