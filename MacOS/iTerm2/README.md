@@ -14,6 +14,5 @@
 | 新しいタブ                     | Command + t                  |
 | タブ間移動                     | Command + カーソルキー       |
 | 全画面表示                     | Command + enter           |
-|  入力補完                     | Command + ;           |
-
+| 入力補完                       | Command + ;               |
 
