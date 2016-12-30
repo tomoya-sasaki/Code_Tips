@@ -4,6 +4,8 @@
 1. [Shortcut keys](#shortcut-keys)
 
 ## Shortcut Keys
+
+### Basics
 |            Function            |              Key             |
 |:------------------------------:|:----------------------------:|
 | 横に分割                       | Command + d                  |
@@ -16,3 +18,13 @@
 | 全画面表示                     | Command + enter           |
 | 入力補完                       | Command + ;               |
 
+### Copy and Paste
+|                            Function                           |      Shortcut      |
+|:-------------------------------------------------------------:|:------------------:|
+|               Cut from cursor to the end of line              |      Ctrl + k      |
+|               Cut from cursor to the end of word              |     Option + d     |
+|              Cut from cursor to the start of word             | Option + Backspace |
+|             Cut from cursor to previous whitespace            |      Ctrl + w      |
+|                    Paste the last cut text                    |      Ctrl + w      |
+|           Loop through and paste previously cut text          |     Option + y     |
+| Loop through and paste the last argument of previous commands |     Option + .     |
