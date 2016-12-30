@@ -7,8 +7,10 @@ References:
 2. [エラーバーの追加](#エラーバーの追加)
 3. [線の種類](#線の種類)
 4. [図を並べる](#図を並べる)
+5. [データの確認](#データの確認)
 
-### xラベルの変更
+
+## xラベルの変更
 ```r
 xlabels <- rep("", 120)
 xlabels[c(seq(from = 1, to = 120, by = 10))] <- c(seq(from = 120, to = 1, by = -10))
@@ -22,8 +24,8 @@ g
 ```
 <img src="figures/ggplot2_xlab_changed.png" width="550">
 
-### エラーバーの追加
-##### その1
+## エラーバーの追加
+#### その1
 データ
 ```r
 > res_mean <- apply(result_df, 2, mean)
@@ -61,7 +63,7 @@ g
 <img src="figures/ggplot2_error_bars.png" width="580">
 
 
-# 線の種類
+## 線の種類
 ```r
 g <- ggplot(res1, aes(x=EnrollmentCount, y=ClassSize)) +
   geom_line(aes(colour = type, linetype=type), size = 0.87)
@@ -101,3 +103,7 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
           )
 ```
 <img src="figures/ggplot_2figs.png" width="780">
+
+
+## データの確認
+`GGally`の`ggpairs`を使うと良いかも。カスタマイズ方法は「StanとR」のp.55に対応するコードを参照のこと。
