@@ -313,3 +313,8 @@ function! s:PandocRun()
     echo "File is not MarkDown"
   endif
 endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Change Colorscheme
+Skinhybrid
