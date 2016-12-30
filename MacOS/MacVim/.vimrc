@@ -128,8 +128,9 @@ filetype plugin indent on
 function! SkinDefault()
 	colorscheme macvim
 	highlight Normal guifg=MacTextColor  guibg=gray90
+	highlight Cursor guifg=NONE guibg=#57fc00
 endfunction
-command! Skindefault call SkinDefault()
+command! Skinmacvim call SkinDefault()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -316,5 +317,5 @@ endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Change Colorscheme
-Skinhybrid
+"Colorscheme
+Skinmacvim
