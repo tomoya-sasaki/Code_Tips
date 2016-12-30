@@ -8,6 +8,7 @@ References:
 3. [線の種類](#線の種類)
 4. [図を並べる](#図を並べる)
 5. [データの確認](#データの確認)
+6. [histogramと確率密度関数を同時に描く](#histogramと確率密度関数を同時に描く)
 
 
 ## xラベルの変更
@@ -107,3 +108,29 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
 
 ## データの確認
 `GGally`の`ggpairs`を使うと良いかも。カスタマイズ方法は「StanとR」のp.55に対応するコードを参照のこと。
+
+
+## histogramと確率密度関数を同時に描く
+[Reference](#http://qiita.com/hoxo_b/items/13d034ab0ed60b4dca88)
+
+y-axsis is density:
+```r
+dens <- density(faithful$waiting)
+bw <- diff(range(faithful$waiting))/20
+
+ggplot(faithful, aes(x=waiting)) +
+  geom_histogram(aes(y=..density..), binwidth=bw, fill='white', color='black') +
+  geom_density(fill='black', alpha=0.3) +
+  xlim(range(dens$x))
+```
+
+y-axis is count:
+```r
+dens <- density(faithful$waiting)
+bw <- diff(range(faithful$waiting))/20
+
+ggplot(faithful, aes(x=waiting)) +
+  geom_histogram(binwidth=bw, fill='white', color='black') +
+  geom_density(eval(bquote(aes(y=..count..*.(bw)))), fill='black', alpha=0.3)+
+  xlim(range(dens$x))
+```
