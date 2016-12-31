@@ -12,18 +12,22 @@ There are several ways for scaling:
 
 ### Visualization of Multiple Regression
 #### p.61 / model5-3
-実測値と予測値のプロット / 推定されたノイズの分布
+実測値と予測値のプロット / 推定されたノイズの分布。   
+どういう場合に問題があるのかについてはp.62を参照のこと。
 
 ## Words
 * extrapolation: 与えられたデータの範囲外を予測すること
 
 ## Pictures
-### Multiple Regression Visualizations
+### Multiple Regression Visualizations (p.61)
 #### Observed values and Predicted values
-`modelres5-3_PredValues.png`: distribution of the each error term
+`modelres5-3_PredValues.png`: distribution of the each error term.   
 <img src="modelres5-3_PredValues.png" width="380">
 
 
-`modelres5-3_DistError.png`:  
-Choose MAP from the distribution of error term, and made its distribution.
-<img src="modelres5-3_DistError.png" width="680">
+`modelres5-3_DistError.png`: Choose MAP from the distribution of error term, and made its distribution.   
+<img src="modelres5-3_DistError.png" width="640">
+
+### Logistic Regression (p.74)
+Median's distribution   
+<img src="modelres5-5.png" width="450">
