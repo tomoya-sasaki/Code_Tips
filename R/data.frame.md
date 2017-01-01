@@ -57,10 +57,15 @@ data <- data[,!(1:ncol(data) %in% grep('\\.y',names(data)))]
 ## 新しい列の追加
 Use `transform()`. `transform(d, y=Value)`: データフレーム d に新たな列 y を追加する。
 ```r
+N <- 40
+s_Y <- 25
+
 > head(d, 2)
    X KID        a        b
 1 10   1 285.9306 9.499843
 2 28   1 285.9306 9.499843
+> nrow(d)
+[1] 40
 
 d <- transform(d, Y=rnorm(N, mean=a+b*X, sd=s_Y))
 ```
