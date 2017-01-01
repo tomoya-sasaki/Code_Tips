@@ -11,6 +11,7 @@ References:
 6. [histogramと確率密度関数を同時に描く](#histogramと確率密度関数を同時に描く)
 7. [関数の曲線を描く](#関数の曲線を描く)
 8. [タイトルの位置調整](#タイトルの位置調整)
+9. [文字列でaesを使う](#文字列でaesを使う)
 
 
 ## xラベルの変更
@@ -147,3 +148,9 @@ ggplot(faithful, aes(x=waiting)) +
 
 ## タイトルの位置調整
 Add `theme(plot.title = element_text(hjust = 0.5))` last does centering.
+
+## 文字列でaesを使う
+```r
+var = 'a'
+ggplot(data=d, aes_string(x=var))
+```
