@@ -94,6 +94,8 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
 ## 図を並べる
 [Reference](http://notchained.hatenablog.com/entry/2015/12/17/010904)
 ```r
+library(gridExtra)
+
 g1 <- ggplotGrob(p1)
 id.legend <- grep("guide", g1$layout$name)
 legend <- g1[["grobs"]][[id.legend]]
