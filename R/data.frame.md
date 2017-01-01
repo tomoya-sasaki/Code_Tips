@@ -7,6 +7,9 @@
 4. [wideとlongの変換](#wideとlongの変換)
 5. [特定の文字列を含む列を取り出す](#特定の文字列を含む列を取り出す)
 6. [特定の名前を含む列を除く](#特定の名前を含む列を除く)
+7. [新しい列の追加](#新しい列の追加)
+8. [文字列でaesを使う](#文字列でaesを使う)
+
 
 ## rbindの注意
 そのまますると、column名に沿って結合されてしまうので注意。  
@@ -51,4 +54,26 @@ formula <- as.formula(paste("educ ~ ", paste(colnames(data[,grep("age_.",colname
 ## 特定の名前を含む列を除く
 ```r
 data <- data[,!(1:ncol(data) %in% grep('\\.y',names(data)))]
+```
+
+## 新しい列の追加
+Use `transform()`. `transform(d, y=Value)`: データフレーム d に新たな列 y を追加する。
+```r
+N <- 40
+s_Y <- 25
+
+> head(d, 2)
+   X KID        a        b
+1 10   1 285.9306 9.499843
+2 28   1 285.9306 9.499843
+> nrow(d)
+[1] 40
+
+d <- transform(d, Y=rnorm(N, mean=a+b*X, sd=s_Y))
+```
+
+## 文字列でaesを使う
+```r
+var = 'a'
+ggplot(data=d, aes_string(x=var))
 ```

@@ -10,6 +10,7 @@ References:
 5. [データの確認](#データの確認)
 6. [histogramと確率密度関数を同時に描く](#histogramと確率密度関数を同時に描く)
 7. [関数の曲線を描く](#関数の曲線を描く)
+8. [タイトルの位置調整](#タイトルの位置調整)
 
 
 ## xラベルの変更
@@ -93,6 +94,8 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
 ## 図を並べる
 [Reference](http://notchained.hatenablog.com/entry/2015/12/17/010904)
 ```r
+library(gridExtra)
+
 g1 <- ggplotGrob(p1)
 id.legend <- grep("guide", g1$layout$name)
 legend <- g1[["grobs"]][[id.legend]]
@@ -140,3 +143,7 @@ ggplot(faithful, aes(x=waiting)) +
 ## 関数の曲線を描く
 [Reference](http://qiita.com/hoxo_b/items/a6522a6e6561f8ca7b96)  
 `stat_function` or `geom_path`
+
+
+## タイトルの位置調整
+Add `theme(plot.title = element_text(hjust = 0.5))` last does centering.
