@@ -12,6 +12,7 @@ References:
 7. [関数の曲線を描く](#関数の曲線を描く)
 8. [タイトルの位置調整](#タイトルの位置調整)
 9. [文字列でaesを使う](#文字列でaesを使う)
+10. [軸のorderを変える](#軸のorderを変える)
 
 
 ## xラベルの変更
@@ -154,3 +155,9 @@ Add `theme(plot.title = element_text(hjust = 0.5))` last does centering.
 var = 'a'
 ggplot(data=d, aes_string(x=var))
 ```
+
+## 軸のorderを変える
+```r
+scale_x_discrete(limits = c('a3', 'a2', 'a1'))
+```
+が一番簡単そう。
