@@ -17,16 +17,16 @@ a (coefficient): category 3 has bigger average, smaller variance
 ### (1)
 The figure is different from the textbook's figure. I generated `y_pred` in the Stan code, but textbook generates predicted values after the estimation. This is why textbook can successfully generates values across X's range.  
 My try:  
-<img src="Ex1.png" width="520">
-Textbook answer:
-<img src="fig-ex1.png" width="520">
+<img src="Ex1.png" width="480"><br>
+Textbook answer:<br>
+<img src="fig-ex1.png" width="480">
 
 ### (2)
-<img src="Ex2.png" width="520"><br>
+<img src="Ex2.png" width="480"><br>
 Calculated expected values inside the Stan code, which is different from the textbook (I believe this is more computationally efficient).
 
 ### (3)
-<img src="Ex3.png" width="520"><br>
+<img src="Ex3.png" width="480"><br>
 
 ### (4)
 <img src="Ex4.png" width="640"><br>
