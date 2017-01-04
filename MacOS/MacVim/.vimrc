@@ -65,7 +65,7 @@ nnoremap : ;
 
 " インサートモードで - と _ を入れ替える
 inoremap _ -
-inoremap _ -
+inoremap - _
 
 " F3でwordcount (Latexなら純粋に単語数だけ)
 map <F3> :w !detex \| wc -w<CR>
