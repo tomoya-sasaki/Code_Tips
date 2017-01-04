@@ -78,3 +78,6 @@ sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 ## In R
 ### RStan
 * `install.packages('rstan', dependencies=T)`
+
+## Chrome Extension
+[Change Tab Size](https://github.com/Shusei-E/tab-size-on-github)
