@@ -64,8 +64,25 @@ nnoremap ; :
 nnoremap : ;
 
 " インサートモードで - と _ を入れ替える
-inoremap _ -
-inoremap - _
+let g:code_mode = 0
+nnoremap <Leader>c :CodeMode<CR>
+command! CodeMode call s:CodeMode()
+function! s:CodeMode()
+  if g:code_mode==0
+    let g:code_mode = 1
+    inoremap _ -
+		inoremap - _
+    :echomsg "CodeSpecialMode is on"
+  else
+    let g:code_mode = 0
+    inoremap _ _
+		inoremap - -
+    :echomsg "CodeSpecialMode is off"
+  endif
+endfunction
+
+
+
 
 " F3でwordcount (Latexなら純粋に単語数だけ)
 map <F3> :w !detex \| wc -w<CR>
