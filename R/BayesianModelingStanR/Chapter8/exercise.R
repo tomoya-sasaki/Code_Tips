@@ -240,7 +240,7 @@ p_course <- ggplot(data=d_course, aes(x=mean)) +
 							geom_density(eval(bquote(aes(y=..count..*.(bw)))), fill='gray80', alpha=0.4) 
 						
 pA <- grid.arrange(p_person, p_course, layout_matrix=rbind(c(1,1,1,2,2,2)))
-ggsave(file='Ex4.png', plot=pA, dpi=200, w=7, h=4)
+ggsave(file='Chapter8/Ex4.png', plot=pA, dpi=200, w=7, h=4)
 
 #########
 ## (5) ##
