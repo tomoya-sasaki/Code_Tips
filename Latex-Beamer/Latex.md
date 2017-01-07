@@ -19,6 +19,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 15. [ページをまたぐ表](#ページをまたぐ表)
 16. [条件分岐でテキストを変更](#条件分岐でテキストを変更)
 17. [ヘッダーとフッター](#ヘッダーとフッター)
+18. [箇条書きのスタイル変更](#箇条書きのスタイル変更)
 
 ## 写真の挿入
 ```tex
@@ -268,3 +269,29 @@ V&X。\\
 \begin{document}
 ```
 `\thispagestyle{firststyle}`を該当箇所で使う (`\maketitle`の後じゃないとダメみたい)。
+
+
+## 箇条書きのスタイル変更
+```tex
+% itemize
+\usepackage{enumitem}
+\setlistdepth{20}
+\renewlist{itemize}{itemize}{20}
+\setlist[itemize]{label=\textbullet}
+\setlist[itemize,2]{label=\(\circ\)}
+\setlist[itemize,3]{label=\(\diamond\)}
+\setlist[itemize,4]{label=\(\triangledown\)}
+\setlist[itemize,5]{label=\(\triangleright\)}
+\setlist[itemize,6]{label=\(\vartriangle\)}
+\setlist[itemize,8]{label=\(\circ\)}
+\setlist[itemize,9]{label=\(\diamond\)}
+\setlist[itemize,10]{label=\(\triangledown\)}
+\setlist[itemize,11]{label=\(\triangleright\)}
+\setlist[itemize,12]{label=\(\vartriangle\)}
+\setlist[itemize,14]{label=\(\circ\)}
+\setlist[itemize,15]{label=\(\diamond\)}
+\setlist[itemize,16]{label=\(\triangledown\)}
+\setlist[itemize,17]{label=\(\triangleright\)}
+\setlist[itemize,18]{label=\(\vartriangle\)}
+\setlist[itemize,20]{label=\(\circ\)}
+```
