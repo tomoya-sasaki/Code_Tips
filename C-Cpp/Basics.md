@@ -8,6 +8,7 @@
 5. [ファイルの読み込み](#ファイルの読み込み)
 	* [タブ区切り](#タブ区切り)
 6. [ファイルの書き込み](#ファイルの書き込み)
+7. [prinfでの出力](#prinfでの出力)
 
 ## 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
@@ -74,6 +75,16 @@ for(int k=0; k<K; ++k){
 }//for(k)
 ```
 
+## prinfでの出力
+```c
+printf("%d %d %f", d, r, f);
+```
+| %i or %d |               int               |
+|:--------:|:-------------------------------:|
+|    %c    |               char              |
+|    %f    | float (see also the note below) |
+|    %s    |              string             |
+There are other Format Specifiers as well.
 
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
