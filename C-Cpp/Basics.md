@@ -10,6 +10,7 @@
 6. [ファイルの書き込み](#ファイルの書き込み)
 7. [prinfでの出力](#prinfでの出力)
 8. [Single quote and double quote](#single-quote-and-double-quote)
+9. [Switch with character](#switch-with-character)
 
 ## 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
@@ -77,7 +78,7 @@ for(int k=0; k<K; ++k){
 ```
 
 ## prinfでの出力
-```c
+```cpp
 printf("%d %d %f", d, r, f);
 ```
 | %i or %d |               int               |
@@ -89,6 +90,24 @@ There are other Format Specifiers as well.
 
 ## Single quote and double quote
 In C and in C++ single quotes identify a single character, while double quotes create a string literal. 
+
+## Switch with character
+```cpp
+switch(op){
+ case '+': 
+ 	cout << a + b << endl;
+ 	break;
+ case '-':
+ 	cout << a - b << endl;
+ 	break;
+ case '/':
+ 	cout << a / b << endl;
+ 	break;
+ case '*':
+ 	cout << a * b << endl;
+ 	break;
+}
+```
 
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
