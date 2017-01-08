@@ -9,6 +9,7 @@
 	* [タブ区切り](#タブ区切り)
 6. [ファイルの書き込み](#ファイルの書き込み)
 7. [prinfでの出力](#prinfでの出力)
+8. [Single quote and double quote](#single-quote-and-double-quote)
 
 ## 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
@@ -85,6 +86,9 @@ printf("%d %d %f", d, r, f);
 |    %f    | float (see also the note below) |
 |    %s    |              string             |
 There are other Format Specifiers as well.
+
+## Single quote and double quote
+In C and in C++ single quotes identify a single character, while double quotes create a string literal. 
 
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
