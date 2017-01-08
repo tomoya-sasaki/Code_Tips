@@ -4,7 +4,6 @@ How to use R in a modern way.
 ## purrr_list1
 * 関数型プログラミングとは何か
 * 要素の選択とマッピング
-* レコードに対する操作
 
 ## purrr_list2
 * レコードに対する操作
