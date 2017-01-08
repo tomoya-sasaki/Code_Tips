@@ -72,16 +72,29 @@ function! s:CodeMode()
     let g:code_mode = 1
     inoremap _ -
 		inoremap - _
+		inoremap ' ""<Left>
+		inoremap " '
+		noremap ' ""<Left>
+		noremap " '
     :echomsg "CodeSpecialMode is on"
   else
     let g:code_mode = 0
     inoremap _ _
 		inoremap - -
+		inoremap ' '
+		inoremap " "
+		noremap ' '
+		noremap " "
     :echomsg "CodeSpecialMode is off"
   endif
 endfunction
 
-
+" 開いているファイルのあるフォルダにカレントディレクトリを設定
+nnoremap <Leader>d :ChangeDir<CR>
+command! ChangeDir call s:ChangeDir()
+function! s:ChangeDir()
+  :cd %:h
+endfunction
 
 
 " F3でwordcount (Latexなら純粋に単語数だけ)
@@ -200,7 +213,7 @@ endfunction
 command! CPP1 call s:CPP1()
 function! s:CPP1()
     :cd %:p:h
-    :!sudo clang++ -std=c++11 -stdlib=libc++ % -o %:r.out
+    :!clang++ -std=c++11 -stdlib=libc++ % -o %:r.out
     ":!%:p:h/%:r.out
     :!./%:r.out 
 endfunction
