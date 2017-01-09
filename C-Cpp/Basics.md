@@ -11,6 +11,7 @@
 7. [prinfでの出力](#prinfでの出力)
 8. [Single quote and double quote](#single-quote-and-double-quote)
 9. [Switch with character](#switch-with-character)
+10. [Vector](#vector)
 
 ## 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
@@ -107,6 +108,16 @@ switch(op){
  	cout << a * b << endl;
  	break;
 }
+```
+
+## Vector
+[Reference](http://vivi.dyndns.org/tech/cpp/vector.html#init)
+```cpp
+#include <vector>
+
+vector<int> numbers(n);
+vector<int> numbers2; 
+  // オブジェクトの要素数は0。データを追加するには次の章で説明する push_back() などを使う
 ```
 
 ## Sites
