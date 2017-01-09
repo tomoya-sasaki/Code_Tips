@@ -60,6 +60,25 @@ http://goo.gl/n1tTj4
 	}
 ```
 
+### 空白区切り
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+  int n;
+  cin >> n; // number of elements in one line
+
+  vector<int> numbers(n);
+  for (int i=0; i<n; i++) {
+    cin >> numbers[i];
+  }
+
+  return 0;
+}
+```
+
 ## ファイルの書き込み
 
 ### 追記モード
