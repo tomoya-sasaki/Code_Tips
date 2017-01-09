@@ -15,3 +15,8 @@ How to use R in a modern way.
 * tidyデータとは何か
 * 変数の処理
 * tidyデータからggplot2へのつなげ方
+
+## dplyr_Window
+* ランキング関数
+* 累積関数
+* Window関数の使い方
