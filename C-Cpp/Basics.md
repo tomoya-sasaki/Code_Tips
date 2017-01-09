@@ -7,6 +7,7 @@
 4. [ファイルリストの作成](#ファイルリストの作成)
 5. [ファイルの読み込み](#ファイルの読み込み)
 	* [タブ区切り](#タブ区切り)
+	* [空白区切り](#空白区切り)
 6. [ファイルの書き込み](#ファイルの書き込み)
 7. [prinfでの出力](#prinfでの出力)
 8. [Single quote and double quote](#single-quote-and-double-quote)
@@ -22,8 +23,8 @@
 ## 変数で宣言できない場合
 ```cpp
 typedef struct{
-		vector<double> KeepMu;
-		vector<double> KeepZ;
+  vector<double> KeepMu;
+  vector<double> KeepZ;
 }KEEP_RESULT;
 
 int main(){
