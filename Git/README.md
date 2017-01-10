@@ -18,6 +18,7 @@ How to use Git
 8. [Resolve Conflict](#resolve-conflict)
 9. [When push is rejected](#when-push-is-rejected)
 10. [Create a new repository from Terminal](#create-a-new-repository-from-terminal)
+11. [Change Previous Committed Comment](#change-previous-committed-comment)
 
 
 ## How to clone
@@ -169,3 +170,8 @@ After that, this code might be useful.
 git branch --set-upstream-to=origin/master master
 ```
 I still recommend you to create repo on GitHub at first, and then clone it.
+
+## Change Previous Committed Comment
+```terminal
+git commit --amend -m "New Comment"
+```
