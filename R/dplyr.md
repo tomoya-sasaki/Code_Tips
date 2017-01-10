@@ -4,6 +4,7 @@
 1. [処理をして列を追加](#処理をして列を追加)
 2. [条件付き列選択](#条件付き列選択)
 3. [列名変更](#列名変更)
+4. [複数列へ同じ処理を行う](#複数列へ同じ処理を行う)
 
 
 ## 処理をして列を追加
@@ -22,4 +23,10 @@ temp <- data %>%
 ## 列名変更
 ```r
 rename(data, NEW = OLD)
+```
+
+## 複数列へ同じ処理を行う
+```r
+> iris %>% mutate_each(funs(h = ./2), -Species) # Species以外の全ての値を半分に
+> iris %>% group_by(Species) %>% summarise_each(funs(mean, sd)) # Speciesでグループ化して各列の平均と標準偏差
 ```
