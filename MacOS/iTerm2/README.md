@@ -32,5 +32,5 @@
 
 ## Keep Windows
 * In menu, Window -> Save Window Arrangement
-  * このときに`save as default`と打つことで、defaultになるみたい
+ * このときに`save as default`と打つことで、defaultになるみたい
 * You can start the default Arrangement Option to enable are at Preferences -> General -> Startup -> Open default window arrangement .
