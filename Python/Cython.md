@@ -23,7 +23,7 @@ Then, ([将来的に変わる？](https://github.com/cython/cython/issues/1509))
 $ python setup.py build_ext --inplace
 ```
 
-#### Extra C libraries or a special build setup is not required
+#### If extra C libraries or a special build setup is not required
 ```python
 import pyximport; pyximport.install()
 ```
