@@ -48,6 +48,7 @@ if __name__ == '__main__':
 from __future__ import division
 import numpy as np
 cimport numpy as np
+cimport cython
 ```
 
 ### setup.py
