@@ -86,5 +86,5 @@ setup(
 
 ## Function and Class
 [Reference](http://nekowarau.seesaa.net/article/429150491.html)    
-`def`としても`cdef`としてもOK。恐らく`cdef`とするとpython側から使えない。   
+`def`としても`cdef`としてもOK。恐らく`cdef`とするとpython側から使えない。<br>
 クラスに対しても`class`ではなく`cdef class`とできる(classに`cdef`とすることでclassのメソッドに`cdef`を使える)。
