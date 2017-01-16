@@ -91,11 +91,10 @@ setup(
 クラスに対しても`class`ではなく`cdef class`とできる(classに`cdef`とすることでclassのメソッドに`cdef`を使える)。
 
 ```pyx
-cdef class node:
-    def __init__(self):
-        pass
-
-
+cdef class Node:
+    cdef list path
+    def __cinit__(self):
+       self.path = [] 
     cdef int method(self):
         for i in range(100000):
             self.f()
