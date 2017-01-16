@@ -5,6 +5,7 @@
 1. [Basics](#basics)
     * [C variable and type definitions](#c-variable-and-type-definitions)
 2. [With Numpy](#with-numpy)
+3. [Function and Class](#function-and-class)
 
 ## Basics
 ### Import Cython Code
@@ -82,3 +83,8 @@ setup(
 ### 注意事項
 * `.pyx`の冒頭には`from __future__ import division`が要るかも
 * 保存しているフォルダ名に`_`や`-`があると上手くいかなかった (理想的には小文字じゃないとダメ?)
+
+## Function and Class
+[Reference](http://nekowarau.seesaa.net/article/429150491.html)    
+`def`としても`cdef`としてもOK。恐らく`cdef`とするとpython側から使えない。   
+クラスに対しても`class`ではなく`cdef class`とできる(classに`cdef`とすることでclassのメソッドに`cdef`を使える)。
