@@ -89,3 +89,15 @@ setup(
 [Reference](http://nekowarau.seesaa.net/article/429150491.html)    
 `def`としても`cdef`としてもOK。恐らく`cdef`とするとpython側から使えない。<br>
 クラスに対しても`class`ではなく`cdef class`とできる(classに`cdef`とすることでclassのメソッドに`cdef`を使える)。
+
+```pyx
+cdef class node:
+    def __init__(self):
+        pass
+
+
+    cdef int method(self):
+        for i in range(100000):
+            self.f()
+        return i
+```
