@@ -56,7 +56,7 @@ U_{E_i}^A &=& y_{E_i} + \frac{t_A (y_B + y_M)}{\beta} \\
 ## Write Codes with Vim
 To change settings, use `:edit ~/.vimrc` and `:edit ~/.gvimrc`.<br>
 For more details, read <a href="https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/MacVim" target="_blank">this</a> (<a href="https://gist.github.com/Shusei-E/db4ed25ce011a5b31993" target="_blank">old</a>).  
-Currently, NeoBundle is used for managing packages, but in the future, dein should be used. An example setup is <a href="https://gist.github.com/Shusei-E/578df70897f4534f73b5" target="_blank">here</a>. Quickrun doesn't work when I tried on 21/03/2016.
+
 
 ### Spell Check in Vim
 `:set spell`	スペルチェック機能を ON<br>
