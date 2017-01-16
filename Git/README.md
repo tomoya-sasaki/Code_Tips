@@ -76,9 +76,18 @@ Check the branches you have:
 $ git branch
 $ git checkout -b branch // Make a new branch and checkout
 ```
-Change branch and make push
+
+### Change branch and make push
+Commit files before you checkout, otherwise updated files reamin.
 ```terminal
-$ git checkout branchname
+$ git add *
+$ git commit -m "your comments"
+$ git checkout master
+```
+Another option is use `git stash` before switch the branch. You can `git stash apply` to resume.
+
+Commit and push:
+```terminal
 $ git add *
 $ git commit -m "your comments"
 $ git push origin branchname
