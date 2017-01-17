@@ -1,16 +1,15 @@
 # Setup
+We need to install Java JDK.
 
 ## Table of Contents
 1. [ant](#ant)
 
 
 ## ant
-### 1.
+### Install
 ```terminal
 $ brew install ant
 ```
 
-### 2.
-
 ### Use
-We need to prepare `build.xml`.
+We need to prepare `build.xml`. Just `$ ant` in the specified folder.
