@@ -33,4 +33,16 @@ $ /Users/S/Downloads/mallet-github/bin/mallet train-topics --input data-input.ma
 If you want to modify something, it seems we need to change `~TUI` in `mallet/topics/tui`.
 
 #### Understand output
-[Reference](http://stackoverflow.com/questions/38088972/unable-to-understand-the-hlda-output-in-mallet)
+[Reference](http://stackoverflow.com/questions/38088972/unable-to-understand-the-hlda-output-in-mallet)    
+`cc/mallet/topics/HierarchicalLDA.java`を以下のように修正してから、`ant`して結果をみるとわかりやすいのではないか。
+```java
+// l.447~
+for (level = numLevels - 1; level >= 0; level--) {
+		path.append(node.nodeID + "/" + "");
+		node = node.parent;
+}
+```
+```java
+// l.457
+out.println("path: " + path + " " + "tokenID: " + type + "  Object: " + alphabet.lookupObject(type) + " level: " + level + " ");
+```
