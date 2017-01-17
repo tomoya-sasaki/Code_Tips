@@ -19,4 +19,4 @@ print(dot.source) # これを保存すればDOT言語のファイルが保存で
 dot.render('test-output/round-table.gv')
 dot
 ```
-<img src="figures/graphviz_basic.png" width="350">
+<img src="figures/graphviz_basic.png" width="300">
