@@ -21,5 +21,5 @@ $ /Users/S/Downloads/mallet-github/bin/mallet run cc.mallet.topics.tui.Hierarchi
 ```
 
 ```terminal
-$ /Users/S/Downloads/mallet-github/bin/mallet train-topics --input data-input.mallet --num-topics 100 --output-state topic-result.gz　--inferencer cc.mallet.topics.HierarchicalLDA
+$ /Users/S/Downloads/mallet-github/bin/mallet train-topics --input data-input.mallet --num-topics 100 --output-state topic-result.gz
 ```
