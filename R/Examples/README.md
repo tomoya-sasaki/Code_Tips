@@ -20,3 +20,6 @@ How to use R in a modern way.
 * ランキング関数
 * 累積関数
 * Window関数の使い方
+
+## tidyr_gather_spread.ipynb
+* gatherとspreadの使い方
