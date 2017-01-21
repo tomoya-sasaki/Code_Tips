@@ -20,6 +20,7 @@
 17. [Excel形式で保存](#excel形式で保存)
 18. [ソート](#ソート)
 19. [複数列に同じ値を入れる](#複数列に同じ値を入れる)
+20. [あるパターンの行の個数を数えて列に入れる](#あるパターンの行の個数を数えて列に入れる)
 
 
 ## データフレームを初期化した後に登録
@@ -207,4 +208,35 @@ data.sort_values(by="Date")
 ある`名前`の人の3つの列に同じ値を入れる
 ```python
 data.loc[data["Candidate_u"]=="名前", ["ID", "roman", "roman2"]] = [400006, "Namae1", "Namae2"]
+```
+
+## あるパターンの行の個数を数えて列に入れる
+[Reference](http://stackoverflow.com/questions/25619297/duplicate-rows-in-pandas-df)    
+```txt
+Letters Numbers
+A       1
+A       3
+A       2
+A       1
+B       1
+B       2
+B       3
+C       2
+C       2
+```
+を
+```txt
+Letters Numbers Events
+A       1       2
+A       2       1
+A       3       1
+B       1       1
+B       2       1
+B       3       1
+C       2       2
+```
+とする
+```python
+df = df.groupby('Letters')['Numbers'].transform(pd.Series.value_counts)
+df = df.drop_duplicates()
 ```
