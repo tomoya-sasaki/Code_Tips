@@ -52,7 +52,7 @@ To remove added files, use `git reset HEAD` for all and `git rm --cached *.*` fo
 ```
 $ git pull
 ```
-`pull` should be done first in case codes are modified.
+`pull` should be done first in case codes are modified.　`pull` does `fetch` and `merge` at the same time (to know more about `fetch` --> [link](http://qiita.com/osamu1203/items/cb94ef9da02e1ec3e921)).
 
 ## gitignore
 ```
