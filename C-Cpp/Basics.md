@@ -13,6 +13,7 @@
 8. [Single quote and double quote](#single-quote-and-double-quote)
 9. [Switch with character](#switch-with-character)
 10. [Vector](#vector)
+11. [Dynamic array](#dynamic-array)
 
 ## 小数の計算
 `double`で宣言していても、`2.0`とかとしない限り、整数扱いみたい。`2/4`では`0`が返ってくるが、`2.0/4.0`なら`0.5`にちゃんとなる。
@@ -138,6 +139,27 @@ switch(op){
 vector<int> numbers(n);
 vector<int> numbers2; 
   // オブジェクトの要素数は0。データを追加するには次の章で説明する push_back() などを使う
+```
+
+## Dynamic array
+2D
+```cpp
+int n,m;
+cin >> n >> m;
+int **A = new int*[n+1];
+for(int i=0; i < n+1; i++){
+	A[i] = new int[m+1];
+}
+```
+
+3D
+```cpp
+int ***arr = new int**[X];
+for (i = 0; i < z_size; ++i) {
+  arr[i] = new int*[Y];
+  for (j = 0; j < WIDTH; ++j)
+    arr[i][j] = new int[Z];
+}
 ```
 
 ## Sites
