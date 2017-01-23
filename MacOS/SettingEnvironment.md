@@ -34,7 +34,7 @@ Then, you can install python:
 * Usage of pyenv-virtualenv
   * It's easier to use virtualenv than pyenv to use multiuple versions of Python
   * Make a new environment: `$ pyenv virtualenv 3.5.2 NAME`
-  * Activate the environment: `$ pyenv activate NAME`
+  * Activate the environment: `$ pyenv activate NAME` or `source activate NAME`
   * Deactivate the environment: `$ pyenv deactivate`
   * Delete the environment:　`$ pyenv uninstall NAME`
   
