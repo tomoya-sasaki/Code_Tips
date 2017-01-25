@@ -1,6 +1,9 @@
 # Examples for R
 How to use R in a modern way.
 
+## Tibbles
+* data.frameに代わるTibblesの使い方
+
 ## purrr_list1
 * 関数型プログラミングとは何か
 * 要素の選択とマッピング
