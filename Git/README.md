@@ -64,6 +64,7 @@ _*.*
 *.swp
 .*.*
 *-checkpoint.ipynb
+.DS_Store
 ```
 
 ## Use Branch
