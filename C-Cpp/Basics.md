@@ -145,7 +145,7 @@ vector<int> numbers2;
 2D
 ```cpp
 int n,m;
-cin >> n >> m;
+cin >> n >> m; // n+1 \times m+1 matrix
 int **A = new int*[n+1];
 for(int i=0; i < n+1; i++){
 	A[i] = new int[m+1];
