@@ -361,7 +361,7 @@ command! TeXShopRun call s:TeXShopRun()
 function! s:TeXShopRun()
   let e = expand("%:e")
   if e == "tex"
-    :!open -a /Applications/TeX/TeXShop.app %:r.pdf
+    :!open -a /Applications/TeX/TeXShop.app %:r.tex
     echo "Open in TeXShop"
   else
     echo "File is not tex"
