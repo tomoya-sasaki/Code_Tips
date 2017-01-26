@@ -180,6 +180,9 @@ for(int i =0; i<X; i++){
 }
 ```
 
+関数に読み込ませてやるときは、`vecsum(int n, int Data[n+1])`のように長さに関わるものを先にすることで上手くいった。
+
+
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
 
