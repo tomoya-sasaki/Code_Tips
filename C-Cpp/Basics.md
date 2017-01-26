@@ -150,16 +150,20 @@ const int MAX_SIZE=128;
 int *arr1D = new int[MAX_SIZE];
 ```
 
-2D
+2D (Row×Column)
 ```cpp
-const int HEIGHT=20;
-const int WIDTH=20;
+const int Row=20; // 1st Dimension
+const int Column=20; // 2nd Dimension
 
-int **arr2D = new int*[WIDTH];  //create an array of int pointers (int*), that will point to 
+int **arr2D = new int*[Row];  //create an array of int pointers (int*), that will point to 
                                 //data as described in 1D array.
-for(int i = 0;i < WIDTH; i++){
-      arr2D[i] = new int[HEIGHT]; 
+for(int i = 0;i < Row; i++){
+      arr2D[i] = new int[Column]; 
 }
+// ... some codes ...
+for(int i=0; i<Row; i++)
+   delete [] arr2D[];
+delete [] arr2D;
 ```
 
 3D
