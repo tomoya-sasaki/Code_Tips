@@ -4,6 +4,8 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ## Table of Contents
 1. <a href="https://gist.github.com/Shusei-E/8c56c276875ec798ab49" target="_blank">レポートテンプレ</a>と<a href="https://gist.github.com/Shusei-E/18389f19f278a2b6e965" target="_blank">卒論テンプレ</a>
 2. [写真の挿入](#写真の挿入)
+  * [図を並べる](#図を並べる)
+  * [図の回転](#図の回転)
 3. [文字サイズ変更](#文字サイズ変更)
 4. [Tikzでゲームツリー](#tikzでゲームツリー)
 5. [数式で、式と式の間を広げる](#数式で式と式の間を広げる)
@@ -55,6 +57,11 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
   \label{fig:two}
  \end{minipage}
 \end{figure}
+```
+
+### 図の回転
+```tex
+\includegraphics[width=100mm, angle=90]{fig1.pdf}
 ```
 
 ## 文字サイズ変更
