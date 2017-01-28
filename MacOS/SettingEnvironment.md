@@ -37,7 +37,7 @@ Then, you can install python:
   * Activate the environment: `$ pyenv activate NAME` or `source activate NAME`
   * Deactivate the environment: `$ pyenv deactivate`
   * Delete the environment:　`$ pyenv uninstall NAME`
-  * List Current Environments: `pyenv versions`
+  * List Current Environments: `$ pyenv versions`
   
 ### Tex
 [Reference](http://qiita.com/hideaki_polisci/items/3afd204449c6cdd995c9)
