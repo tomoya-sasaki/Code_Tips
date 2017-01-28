@@ -31,3 +31,8 @@ Sys.getenv("LANGUAGE") #初めは空
 Sys.setenv(LANGUAGE="en")
 Sys.setenv(LANGUAGE="ja") # 戻す
 ```
+
+### Change Figures Size in Jupyter Notebook
+```r
+options(repr.plot.width=4, repr.plot.height=3)
+```
