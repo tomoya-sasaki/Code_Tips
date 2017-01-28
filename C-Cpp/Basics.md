@@ -142,25 +142,50 @@ vector<int> numbers2;
 ```
 
 ## Dynamic array
-2D
+[Reference](http://stackoverflow.com/questions/3904304/3d-array-c-using-int-operator)  
+最後に`()`をつけることで`0`にinitializeできる。     
+1D
+```
+const int MAX_SIZE=128;
+int *arr1D = new int[MAX_SIZE];
+```
+
+2D (Row×Column)
 ```cpp
-int n,m;
-cin >> n >> m;
-int **A = new int*[n+1];
-for(int i=0; i < n+1; i++){
-	A[i] = new int[m+1];
+const int Row=20; // 1st Dimension
+const int Column=20; // 2nd Dimension
+
+int **arr2D = new int*[Row];  //create an array of int pointers (int*), that will point to 
+                                //data as described in 1D array.
+for(int i = 0;i < Row; i++){
+      arr2D[i] = new int[Column]; 
 }
+// ... some codes ...
+for(int i=0; i<Row; i++)
+   delete [] arr2D[];
+delete [] arr2D;
 ```
 
 3D
 ```cpp
-int ***arr = new int**[X];
-for (i = 0; i < z_size; ++i) {
-  arr[i] = new int*[Y];
-  for (j = 0; j < WIDTH; ++j)
-    arr[i][j] = new int[Z];
+const int X=20;
+const int Y=20;
+const int z=20;
+
+int ***arr3D = new int**[X];
+for(int i =0; i<X; i++){
+   arr3D[i] = new int*[Y];
+   for(int j =0; j<Y; j++){
+       arr3D[i][j] = new int[Z];
+       for(int k = 0; k<Z;k++){
+          arr3D[i][j][k] = 0;
+       }
+   }
 }
 ```
+
+関数に読み込ませてやるときは、`vecsum(int n, int Data[n+1])`のように長さに関わるものを先にすることで上手くいった。
+
 
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)

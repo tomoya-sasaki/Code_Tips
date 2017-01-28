@@ -94,6 +94,7 @@ nnoremap <Leader>d :ChangeDir<CR>
 command! ChangeDir call s:ChangeDir()
 function! s:ChangeDir()
   :cd %:h
+	:pwd
 endfunction
 
 
@@ -351,6 +352,19 @@ function! s:PandocRun()
     echo "Converted to tex file"
   else
     echo "File is not MarkDown"
+  endif
+endfunction
+
+" TexShopでtexファイルを表示
+nnoremap <Leader>t :TeXShopRun<CR>
+command! TeXShopRun call s:TeXShopRun()
+function! s:TeXShopRun()
+  let e = expand("%:e")
+  if e == "tex"
+    :!open -a /Applications/TeX/TeXShop.app %:r.tex
+    echo "Open in TeXShop"
+  else
+    echo "File is not tex"
   endif
 endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
