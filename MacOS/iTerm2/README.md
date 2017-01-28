@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Shortcut keys](#shortcut-keys)
 2. [Keep Windows](#keep-windows)
+3. [Load Preferences](#load-preferences)
 
 ## Shortcut Keys
 
@@ -34,3 +35,6 @@
 * In menu, Window -> Save Window Arrangement
  * このときに`save as default`と打つことで、defaultになるみたい
 * You can start the default Arrangement Option to enable are at Preferences -> General -> Startup -> Open default window arrangement .
+
+## Load Preferences
+Preferences >> General >> Preferences >> "Save Settings to Folder" and select the folder.
