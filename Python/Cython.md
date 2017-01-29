@@ -104,7 +104,7 @@ cdef class Node:
 
 ### class内の変数の呼び出し
 [Reference](http://omake.accense.com/static/doc-ja/cython/src/userguide/extension_types.html)
-```pyx
+```py
 cdef class Shrubbery:
 
     cdef int width, height
@@ -118,12 +118,12 @@ cdef class Shrubbery:
             "by", self.height, "cubits."
 ```
 というクラスがあったら、
-```pyx
+```py
 cdef widen_shrubbery(Shrubbery sh, extra_width):
     sh.width = sh.width + extra_width
 ```
 や
-```pyx
+```py
 cdef Shrubbery another_shrubbery(Shrubbery sh1):
     cdef Shrubbery sh2
     sh2 = Shrubbery()
@@ -132,6 +132,6 @@ cdef Shrubbery another_shrubbery(Shrubbery sh1):
     return sh2
 ```
 また、関数でreturnさせるには、
-```pyx
+```py
 cdef Shrubbery sh = quest() # Shrubbery 型のオブジェクトを返す quest() というメソッド
 ```
