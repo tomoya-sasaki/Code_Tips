@@ -5,7 +5,8 @@
 1. [Basics](#basics)
     * [C variable and type definitions](#c-variable-and-type-definitions)
 2. [With Numpy](#with-numpy)
-3. [Function and Class](#function-and-class)
+3. [Class](#class)
+   * [class内の変数の呼び出し](#class内の変数の呼び出し)
 
 ## Basics
 ### Import Cython Code
@@ -85,7 +86,7 @@ setup(
 * `.pyx`の冒頭には`from __future__ import division`が要るかも
 * 保存しているフォルダ名に`_`や`-`があると上手くいかなかった (理想的には小文字じゃないとダメ?)
 
-## Function and Class
+## Class
 [Reference](http://nekowarau.seesaa.net/article/429150491.html)    
 `def`としても`cdef`としてもOK。恐らく`cdef`とするとpython側から使えない。<br>
 クラスに対しても`class`ではなく`cdef class`とできる(classに`cdef`とすることでclassのメソッドに`cdef`を使える)。
@@ -99,4 +100,38 @@ cdef class Node:
         for i in range(100000):
             self.f()
         return i
+```
+
+### class内の変数の呼び出し
+[Reference](http://omake.accense.com/static/doc-ja/cython/src/userguide/extension_types.html)
+```pyx
+cdef class Shrubbery:
+
+    cdef int width, height
+
+    def __init__(self, w, h):
+        self.width = w
+        self.height = h
+
+    def describe(self):
+        print "This shrubbery is", self.width, \
+            "by", self.height, "cubits."
+```
+というクラスがあったら、
+```pyx
+cdef widen_shrubbery(Shrubbery sh, extra_width):
+    sh.width = sh.width + extra_width
+```
+や
+```pyx
+cdef Shrubbery another_shrubbery(Shrubbery sh1):
+    cdef Shrubbery sh2
+    sh2 = Shrubbery()
+    sh2.width = sh1.width
+    sh2.height = sh1.height
+    return sh2
+```
+また、関数でreturnさせるには、
+```pyx
+cdef Shrubbery sh = quest() # Shrubbery 型のオブジェクトを返す quest() というメソッド
 ```
