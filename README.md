@@ -170,3 +170,4 @@ autocmd ColorScheme * highlight Comment ctermfg=22 guifg=#4286f4
 ```
 カラースキームを適用した後でも、`highlight Comment ctermfg=22 guifg=#4286f4`でOK (blue)。`ctermfg`はターミナルの、`guifg`は GUI 版の Vim の前景色を表している。
 * green: `highlight Comment ctermfg=22 guifg=#228B22`
+* gray: `highlight Comment ctermfg=22 guifg=#606c7a`
