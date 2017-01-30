@@ -7,6 +7,7 @@
 2. [With Numpy](#with-numpy)
 3. [Class](#class)
    * [class内の変数の呼び出し](#class内の変数の呼び出し)
+4. [Global Variable](#global-variable)
 
 ## Basics
 ### Import Cython Code
@@ -134,4 +135,15 @@ cdef Shrubbery another_shrubbery(Shrubbery sh1):
 また、関数でreturnさせるには、
 ```python
 cdef Shrubbery sh = quest() # Shrubbery 型のオブジェクトを返す quest() というメソッド
+```
+
+
+## Global Variable
+[Reference](https://github.com/cython/cython/wiki/FAQ#how-do-i-declare-a-global-variable)
+```python
+cdef double alpha
+
+cdef main():
+  global alpha
+  alpha = 5.0
 ```
