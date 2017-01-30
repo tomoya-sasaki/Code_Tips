@@ -7,6 +7,7 @@
 2. [With Numpy](#with-numpy)
 3. [Class](#class)
    * [class内の変数の呼び出し](#class内の変数の呼び出し)
+   * [for loop](#for-loop)
 4. [Global Variable](#global-variable)
 
 ## Basics
@@ -137,6 +138,25 @@ cdef Shrubbery another_shrubbery(Shrubbery sh1):
 cdef Shrubbery sh = quest() # Shrubbery 型のオブジェクトを返す quest() というメソッド
 ```
 
+### for loop
+上と関連して、for loopのiterationのobjectとしてclassをそのまま扱うことはできなかった。以下`Node`というクラスがあるとする。
+
+```python
+# Bad Example
+for node in root_node.children: # children is a list in class, and contains a lot of nodes
+	if prob < node.phi: # check horizontal stop
+		prob = npr.uniform(0.0, 1.0)
+```
+これを動かすには、
+```python
+# Good Example
+cdef Node iter_node
+for node in root_node.children: # children is a list in class, and contains a lot of nodes
+	iter_node = node
+
+	if prob < iter_node.phi: # check horizontal stop
+		prob = npr.uniform(0.0, 1.0)
+```
 
 ## Global Variable
 [Reference](https://github.com/cython/cython/wiki/FAQ#how-do-i-declare-a-global-variable)
