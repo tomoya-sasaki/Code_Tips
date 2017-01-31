@@ -36,7 +36,7 @@ rename(data, NEW = OLD)
 ```r
 fun_AgeCohorts <- function(x){
 	if(x==0) return("male")
-	if(x==1) return("female")
+	if(x==1) return("female") # if you return a number, make sure as.double() !!
 }
 
 population <- population %>% 
