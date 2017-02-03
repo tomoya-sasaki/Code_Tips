@@ -6,6 +6,7 @@
 3. [列名変更](#列名変更)
 4. [複数列へ同じ処理を行う](#複数列へ同じ処理を行う)
 5. [apply的処理](#apply的処理)
+6. [Regression Simulation](#regression-simulation)
 
 
 ## 処理をして列を追加
@@ -43,3 +44,26 @@ population <- population %>%
 	rowwise() %>%
 	mutate(gender_name=fun_AgeCohorts(gender))
 ```
+
+## Regression Simulation
+```r
+temp <- population %>%
+  group_by(setid) %>%
+  do(model1 = tidy(lm(score ~ age, data = .)),
+     model2 = tidy(lm(score ~ age + gender, data = .))) %>%   ## Same as question
+  gather(model_name, model, -setid) %>%                        ## make it long format
+  unnest() %>%                                                 ## gather
+  filter(term == "age")                                        ## select a variable
+
+
+  ## same as the website linked in the question (some parts are skipped)
+interval1 <- -qnorm((1-0.9)/2)
+
+ggplot(temp, aes(colour = as.factor(setid))) +
+  geom_hline(yintercept = 0, colour = gray(1/2), lty = 2) +
+  geom_linerange(aes(x = model_name, ymin = estimate - std.error*interval1,
+                     ymax = estimate + std.error*interval1),
+                 lwd = 1, position = position_dodge(width = 1/2)) +
+  coord_flip()
+```
+<img src="figures/dplyr_simulation.png" width="400">
