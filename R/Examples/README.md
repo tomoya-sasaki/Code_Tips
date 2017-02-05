@@ -23,6 +23,9 @@ How to use R in a modern way.
 * 変数の処理
 * tidyデータからggplot2へのつなげ方
 
+## TidyData
+[R for Data Science Chapter 12](http://r4ds.had.co.nz/tidy-data.html)
+
 ## dplyr_Window
 * ランキング関数
 * 累積関数
