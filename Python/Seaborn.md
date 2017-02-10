@@ -14,35 +14,36 @@ References:
 4. [折れ線グラフ](#折れ線グラフ)
 5. [日本語フォント](#日本語フォント)
 6. [点や線のスタイル](#点や線のスタイル)
+7. [Scatterplot](#scatterplot)
 
 
-### 軸やラベルなどの設定
+## 軸やラベルなどの設定
 `.set()`でOK
 ```python
 fig1 = sns.regplot(x=data_wTopicExt.ix[: ,"Topic"].values,  y=data_wTopicExt.ix[:, "Likes"].values, fit_reg=False)
 fig1.set(xlabel='Category', ylabel='Likes', xlim=(-0.5, 10))
 ```
 
-### サイズの調整
+## サイズの調整
 先頭に一行追加
 ```python
 plt.subplots(figsize=(8, 8))
 fig1 = sns.boxplot(x="Topic", y="Likes", data=data_wTopicExt[["Topic", "Likes"]])
 ```
 
-### 棒だけのhistogram
+## 棒だけのhistogram
 ```python
 sns.distplot(result, hist=True, kde=False)
 ```
 
-### 折れ線グラフ
+## 折れ線グラフ
 ```python
 labels = [str(i) for i in range(32)]
 fig1 = sns.pointplot(x="Date", y="Count", data=top1.sort_values(by="Date"))
 fig1 = fig1.set_xticklabels(labels, rotation=0)
 ```
 
-### 日本語フォント
+## 日本語フォント
 [参考](http://qiita.com/keisuke-nakata/items/2309764d21438645f6b9)
 ```python
 import matplotlib as mpl
@@ -54,7 +55,7 @@ sns.set(font=['Meiryo'])
 ```
 とすることで指定可能。
 
-### 点や線のスタイル
+## 点や線のスタイル
 ```python
 fig1 = sns.pointplot(x="Date", y="Count", data=top.sort_values(by="Date"), hue="Word", markers=["o", "x"], linestyles=["-", "--"])
 ```
@@ -63,3 +64,9 @@ fig1 = sns.pointplot(x="Date", y="Count", data=top.sort_values(by="Date"), hue="
 サイズの変更
 * `pointplot`では`scale=0.8`のようにする。
 * `regplot`では、`scatter_kws={'s':df['c']*100}`のように辞書で渡す。`scatter_kws`には`scatter_kws={'marker':'o', 'color':'indianred'}`のように、他の値を情報を渡すこともできるみた。
+
+## Scatterplot
+[Reference](http://seaborn.pydata.org/generated/seaborn.regplot.html)
+```python
+sns.regplot(x=x, y=y, fit_reg=False)
+```
