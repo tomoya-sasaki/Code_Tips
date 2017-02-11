@@ -15,6 +15,7 @@ References:
 5. [日本語フォント](#日本語フォント)
 6. [点や線のスタイル](#点や線のスタイル)
 7. [Scatterplot](#scatterplot)
+8. [直線を引く](#直線を引く)
 
 
 ## 軸やラベルなどの設定
@@ -69,4 +70,10 @@ fig1 = sns.pointplot(x="Date", y="Count", data=top.sort_values(by="Date"), hue="
 [Reference](http://seaborn.pydata.org/generated/seaborn.regplot.html)
 ```python
 sns.regplot(x=x, y=y, fit_reg=False)
+```
+
+## 直線を引く
+```python
+import matplotlib.pyplot as plt
+plt.plot([x1, x2], [y1, y2], linewidth=2, color='red')
 ```
