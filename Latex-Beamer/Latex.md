@@ -22,6 +22,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 16. [条件分岐でテキストを変更](#条件分岐でテキストを変更)
 17. [ヘッダーとフッター](#ヘッダーとフッター)
 18. [箇条書きのスタイル変更](#箇条書きのスタイル変更)
+19. [数式コマンドショートカット](#数式コマンドショートカット)
 
 ## 写真の挿入
 ```tex
@@ -128,8 +129,8 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
   basicstyle={\small\ttfamily},
   commentstyle={\small\ttfamily},
   breaklines=true,
-  breakatwhitespace=true
-  tabsize=3
+  breakatwhitespace=true,
+  tabsize=3,
   backgroundcolor=\color{lightgray},   
   commentstyle=\color{codegreen},
   keywordstyle=\color{magenta},
@@ -301,4 +302,44 @@ V&X。\\
 \setlist[itemize,17]{label=\(\triangleright\)}
 \setlist[itemize,18]{label=\(\vartriangle\)}
 \setlist[itemize,20]{label=\(\circ\)}
+```
+
+## 数式コマンドショートカット
+```tex
+\newcommand{\E}{\mathbb{E}}
+\newcommand\dist{\buildrel\rm d\over\sim}
+\newcommand\ind{\stackrel{\rm indep.}{\sim}}
+\newcommand\iid{\stackrel{\rm i.i.d.}{\sim}}
+\newcommand\logit{{\rm logit}}
+\renewcommand\r{\right}
+\renewcommand\l{\left}
+
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\boldeta}{\boldsymbol{\eta}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\bsigma}{\boldsymbol{\sigma}}
+\newcommand{\bphi}{\boldsymbol{\phi}}
+\newcommand{\bpsi}{\boldsymbol{\psi}}
+\newcommand{\bh}{\mathbf{h}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bY}{\mathbf{Y}}
+\newcommand{\rmDir}{{\rm Dir}}
+\newcommand{\rmMulti}{{\rm Multi}}
+
+\newcommand{\blurb}[1]{\footnotesize \flushleft #1}
+\newcommand{\pre}[1]{\texttt{#1}}
+\newcommand{\R}{\textbf{\textsf{R}}}
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
 ```
