@@ -23,6 +23,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 17. [ヘッダーとフッター](#ヘッダーとフッター)
 18. [箇条書きのスタイル変更](#箇条書きのスタイル変更)
 19. [数式コマンドショートカット](#数式コマンドショートカット)
+20. [Insert a table of contents](#insert-a-table-of-contents)
 
 ## 写真の挿入
 ```tex
@@ -342,4 +343,16 @@ V&X。\\
 
 \newcommand{\argmax}{\operatornamewithlimits{argmax}}
 \newcommand{\argmin}{\operatornamewithlimits{argmin}}
+```
+
+## Insert a table of contents
+```tex
+\noindent\rule{17.5cm}{1.7pt}
+\vspace{-1.3cm}
+\tableofcontents
+\noindent\rule{17.5cm}{1.7pt}
+```
+Modify depth:
+```tex
+\setcounter{tocdepth}{3}
 ```
