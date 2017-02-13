@@ -82,3 +82,6 @@ sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 
 ## Chrome Extension
 [Change Tab Size](https://github.com/Shusei-E/tab-size-on-github)
+
+## Office
+Check Amazon's 「ゲーム&PCソフトダウンロードライブラリ」
