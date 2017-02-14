@@ -83,18 +83,24 @@ Various ways to draw samples from distributions that are analytically hard to co
 \tableofcontents
 \noindent\rule{17.5cm}{1.7pt}
 
-\section{Metropolis-Hastings}
-Bayesian linear regression with Metropolis-Hastings.
+\section{Bayesian Method}
+The most imoportant thing is $$P(\theta|D) \propto P(D|\theta) P(\theta).$$ Supporse we want to do Bayesian linear regression.
+\begin{align}
+  P(y) = \mathcal{N}(a+bx, \sigma^2) P(a, b, \sigma^2)
+\end{align}
+If we only focus on the likelihood, we can think we used the uniform distribution as a non-informative prior (read \S\ref{Sec:MLEMCMC} for detail), but it is better to include prior distribution.
 
-\subsection{Prerequisite Knowledge}
 
-\subsubsection{Likelihood function}
+\subsection{Likelihood function}
 A likelihood is the probability of getting the data (observations) under certain parameters (あるパラメータにおいてその観測値が得られる確率), which means it is a function of prior distribution.\par
 Suppose we have a random variable $Y \sim p(y|\theta)$. If we get $n$ independent observations, a joint probability of these observations is $$p(y|\theta) = \prod_{i=1}^{n} p(y_i | \theta).$$ If we set the prior distribution $p(\theta)$, the probability of getting the observations under the distribution $p(\theta)$ is $$p(y|\theta)p(\theta).$$Likelihood can be defined as $$L(\theta|y) = \prod_{i=1}^{n} p(y_i|\theta).$$ We use maximum likelihood estimation to search the parameters that can maximize the likelihood.
 
-\subsubsection{MLE and MCMC}
+\subsection{MLE and MCMC}\label{Sec:MLEMCMC}
 We can use MCMC instead of MLE to find the parameter (parameter's distribution). MCMC samples from the probability distribution that is proportional to the likelihood. To be precise, a statistical model can define a likelihood under the data you have. MCMC can get random samples from the parameter's distribution that is proportional to the likelihood. This is the same as sampling from the posterior distribution if we use the uniform distribution as a non-informative prior. (統計モデルを作るとあるデータの下での尤度が定義される。この尤度に対してMCMCをすることで、「尤度に比例するパラメーターの分布」からのランダムサンプルを得ることができる。無情報事前分布に一様分布を使うと考えるのならば、これは事後分布からのサンプリングである。)\par
 Recall that $$({\rm Posterior\ distribution}) \propto ({\rm Likelihood}) \times ({\rm Prior\ distribution}).$$
+
+\section{Metropolis-Hastings}
+Bayesian linear regression with Metropolis-Hastings.
 
 \subsection{Example 1: Linear Model}
 \subsubsection{Create Data Set}
@@ -140,11 +146,11 @@ def next_param(param, param_index):
     a_next = param[0][0] ; b_next = param[0][1] ; sd_next = param[0][2]
     
     if param_index == 0:
-        a_next = param[0][0] + npr.uniform(-1.5, 1.5)
+        a_next = param[0][0] + npr.normal(0, 0.1)
     elif param_index == 1:
-        b_next = param[0][1] + npr.uniform(-5.5,5.5)
+        b_next = param[0][1] + npr.normal(0, 0.1)
     elif param_index == 2:
-        sd_next = param[0][2] + npr.uniform(-1.5, 1.5)
+        sd_next = param[0][2] + npr.normal(0, 0.1)
         
     return np.array([[a_next, b_next, sd_next]])
 \end{lstlisting}
@@ -154,9 +160,9 @@ def next_param2(param):
     a_next = param[0][0] ; b_next = param[0][1] ; sd_next = param[0][2]
 
 
-    a_next = param[0][0] + npr.uniform(-1.5,1.5)
-    b_next = param[0][1] + npr.uniform(-3.5,3.5)
-    sd_next = param[0][2] + npr.uniform(-1.5,1.5)
+    a_next = param[0][0] + npr.normal(0, 0.1)
+    b_next = param[0][1] + npr.normal(0, 0.1)
+    sd_next = param[0][2] + npr.normal(0, 0.1)
 
     return np.array([[a_next, b_next, sd_next]])
 \end{lstlisting}
