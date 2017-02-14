@@ -3,3 +3,6 @@
 For converting figures, ToyViewer is the best option.
 
 * Section Symbol: `\S`
+
+## jsarticleで目次の英字書体を変える
+`\renewcommand{\headfont}{\bfseries}`
