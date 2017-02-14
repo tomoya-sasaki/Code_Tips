@@ -1,4 +1,5 @@
 # R Markdown
+Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 
 ## Table of Contents
 1. 日本語を使用する際の設定[#日本語を使用する際の設定]
