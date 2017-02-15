@@ -7,6 +7,7 @@
 4. [複数列へ同じ処理を行う](#複数列へ同じ処理を行う)
 5. [apply的処理](#apply的処理)
 6. [Regression Simulation](#regression-simulation)
+7. [記述統計](#記述統計)
 
 
 ## 処理をして列を追加
@@ -67,3 +68,29 @@ ggplot(temp, aes(colour = as.factor(setid))) +
   coord_flip()
 ```
 <img src="figures/dplyr_simulation.png" width="400">
+
+## 記述統計
+### Example 1
+```r
+sway %>% subset(found==1) %>% 
+	select_("abd", "w_abs2", "abd_l", "abd_age", "exper", "viol_perp", "educ") %>%
+	group_by(abd) %>%
+	summarise_each(funs(mean = weighted.mean(., w=w_abs2, na.rm=T)), -matches("w_abs2")) %>%
+	round(2) %>%
+	select_("-abd") %>% 
+	t %>%  # transpose
+	`colnames<-`(c("NonAbducted", "Abducted")) %>% # or setNames()
+	subset(select=c(2,1)) %>% # reorder columns
+	`rownames<-`(c("Months abducted", "Age of abduction",
+		"Index of violence experienced","Index of violence perpetrated",
+		"Educational attainment")) %>%
+	knitr::kable(caption = "記述統計")
+	
+|                                              | Abducted| NonAbducted|
+|:---------------------------------------------|--------:|-----------:|
+|Months abducted                               |     0.74|        0.00|
+|Age of abduction                              |    15.34|         NaN|
+|Index of violence experienced                 |     8.43|        6.95|
+|Index of violence perpetrated                 |     1.51|        0.07|
+|Educational attainment                        |     7.10|        7.62|
+```
