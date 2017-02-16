@@ -60,6 +60,7 @@ population <- population %>%
 ```
 
 ## Regression Simulation
+[Reference](http://ja.stackoverflow.com/q/32351/12704)
 ```r
 library(broom) # for tidy()
 temp <- population %>%
