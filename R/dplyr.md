@@ -48,6 +48,7 @@ population <- population %>%
 
 ## Regression Simulation
 ```r
+library(broom) # for tidy()
 temp <- population %>%
   group_by(setid) %>%
   do(model1 = tidy(lm(score ~ age, data = .)),
