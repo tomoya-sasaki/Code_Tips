@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [処理をして列を追加](#処理をして列を追加)
-2. [select()](#select())
+2. [select](#select)
   * [文字で](#文字で)
   * [条件付き列選択](#条件付き列選択)
 3. [列名変更](#列名変更)
@@ -17,7 +17,7 @@
 data %>%  group_by(year)  %>% mutate(med_age = median(age, na.rm=TRUE)) -> data
 ```
 
-## select()
+## select
 ## 文字で
 ```r
 select_(.dots = c("educ",
