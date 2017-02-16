@@ -10,7 +10,7 @@
 5. [apply的処理](#apply的処理)
 6. [Regression Simulation](#regression-simulation)
 7. [記述統計](#記述統計)
-8. [Environmentの変数を使う](#Environmentの変数を使う)
+8. [Environmentの変数を使う](#environmentの変数を使う)
 
 
 ## 処理をして列を追加
