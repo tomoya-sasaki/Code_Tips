@@ -67,9 +67,9 @@ temp <- population %>%
   group_by(setid) %>%
   do(model1 = tidy(lm(score ~ age, data = .)),
      model2 = tidy(lm(score ~ age + gender, data = .))) %>%   ## Same as question
-  gather(model_name, model, -setid) %>%                        ## make it long format
-  unnest() %>%                                                 ## gather
-  filter(term == "age")                                        ## select a variable
+  gather(model_name, model, -setid) %>%  ## make it long format / gather(-setid, key=model_name, value=mode)??
+  unnest() %>%  ## expand
+  filter(term == "age") ## select a variable
 
 
   ## same as the website linked in the question (some parts are skipped)
