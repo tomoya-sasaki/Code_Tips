@@ -14,8 +14,8 @@ References:
 8. [タイトルの位置調整](#タイトルの位置調整)
 9. [文字列でaesを使う](#文字列でaesを使う)
 10. [軸関連](#軸関連)
-        * [軸のorderを変える](#軸のorderを変える)
-        * [orderとlabelを変える](#orderとlabelを変える)
+       * [軸のorderを変える](#軸のorderを変える)
+       * [orderとlabelを変える](#orderとlabelを変える)
 
 ## xラベルの変更
 ```r
