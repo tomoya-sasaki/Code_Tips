@@ -2,7 +2,9 @@
 
 ## Table of Contents
 1. [処理をして列を追加](#処理をして列を追加)
-2. [条件付き列選択](#条件付き列選択)
+2. [`select()`](#select()]
+  * [文字で](#文字で)
+  * [条件付き列選択](#条件付き列選択)
 3. [列名変更](#列名変更)
 4. [複数列へ同じ処理を行う](#複数列へ同じ処理を行う)
 5. [apply的処理](#apply的処理)
@@ -15,7 +17,17 @@
 data %>%  group_by(year)  %>% mutate(med_age = median(age, na.rm=TRUE)) -> data
 ```
 
-## 条件付き列選択
+## select()
+## 文字で
+```r
+select_(.dots = c("educ",
+	"A14:A29", "C_ach:C_pal", ~starts_with("G", ignore.case=F), # ACG
+	"-G1_14_17", "-G1_26_30", "-G2_18_21", "-G2_26_30", "-G3_22_25","-G3_26_30",
+	~starts_with("fthr_"), "-fthr_ed", "-fthr_edhi", # ctrls
+	))
+```
+
+### 条件付き列選択
 ```r
 temp <- data %>% 
     filter(age<31) %>%
