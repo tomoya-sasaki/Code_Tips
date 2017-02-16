@@ -16,6 +16,8 @@ References:
 10. [軸関連](#軸関連)
        * [軸のorderを変える](#軸のorderを変える)
        * [orderとlabelを変える](#orderとlabelを変える)
+11. [Legend関連](#legend関連)
+      * [順番を変える](#順番を変える)
 
 ## xラベルの変更
 ```r
@@ -169,4 +171,11 @@ scale_x_discrete(limits = c('a3', 'a2', 'a1'))
 ```r
 p + scale_x_discrete(limit = c("I1", "SI2", "SI1"), # order
                      labels = c("Ione","SItwo","SIone")) # new label
+```
+
+## Legend関連
+### 順番を変える
+```r
+guides(fill = guide_legend(reverse = TRUE)) # factor with `aes(fill = )`
+guides(colour = guide_legend(reverse = TRUE)) # factor with `aes(colour = )`
 ```
