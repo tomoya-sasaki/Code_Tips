@@ -10,6 +10,7 @@
 5. [apply的処理](#apply的処理)
 6. [Regression Simulation](#regression-simulation)
 7. [記述統計](#記述統計)
+8. [Environmentの変数を使う](#Environmentの変数を使う)
 
 
 ## 処理をして列を追加
@@ -106,4 +107,10 @@ sway %>% subset(found==1) %>%
 |Index of violence experienced                 |     8.43|        6.95|
 |Index of violence perpetrated                 |     1.51|        0.07|
 |Educational attainment                        |     7.10|        7.62|
+```
+
+## Environmentの変数を使う
+Use `get()` function.
+```r
+df %>% filter(b == get("b")) # Note the "" around b
 ```
