@@ -18,7 +18,7 @@ data %>%  group_by(year)  %>% mutate(med_age = median(age, na.rm=TRUE)) -> data
 ```
 
 ## select
-## 文字で
+### 文字で
 ```r
 select_(.dots = c("educ",
 	"A14:A29", "C_ach:C_pal", ~starts_with("G", ignore.case=F), # ACG
