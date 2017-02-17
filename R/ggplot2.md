@@ -171,7 +171,7 @@ scale_x_discrete(limits = c('a3', 'a2', 'a1'))
 
 ### orderとlabelを変える
 ```r
-p + scale_x_discrete(limit = c("I1", "SI2", "SI1"), # order
+p + scale_x_discrete(limits = c("I1", "SI2", "SI1"), # order
                      labels = c("Ione","SItwo","SIone")) # new label
 ```
 
