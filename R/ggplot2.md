@@ -18,7 +18,9 @@ References:
    * [orderとlabelを変える](#orderとlabelを変える)
 11. [Legend関連](#legend関連)
    * [順番を変える](#順番を変える)
-
+12. [theme関連](#theme関連)
+   * [一括でサイズ](#一括でサイズ)
+   
 ## xラベルの変更
 ```r
 xlabels <- rep("", 120)
@@ -178,4 +180,11 @@ p + scale_x_discrete(limit = c("I1", "SI2", "SI1"), # order
 ```r
 guides(fill = guide_legend(reverse = TRUE)) # factor with `aes(fill = )`
 guides(colour = guide_legend(reverse = TRUE)) # factor with `aes(colour = )`
+```
+
+## theme関連
+### 一括でサイズ
+```r
+theme_gray(base_size=12)
+theme_bw(base_size=12)
 ```
