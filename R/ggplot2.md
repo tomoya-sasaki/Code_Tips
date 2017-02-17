@@ -174,7 +174,7 @@ scale_x_discrete(limits = c('a3', 'a2', 'a1'))
 p + scale_x_discrete(limits = c("I1", "SI2", "SI1"), # order
                      labels = c("Ione","SItwo","SIone")) # new label
 ```
-`coord_flip()`をするときは、逆に書かないといけないので注意
+`coord_flip()`をするときは、逆順で書かないといけないので注意
 
 ## Legend関連
 ### 順番を変える
