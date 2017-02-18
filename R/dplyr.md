@@ -111,6 +111,31 @@ sway %>% subset(found==1) %>%
 |Educational attainment                        |     7.10|        7.62|
 ```
 
+### Example 2
+```r
+sway %>% subset(found==1) %>% 
+ select_("abd", "w_abs2", "abd_l", "abd_age", "exper", "viol_perp", "educ") %>%
+ group_by(abd) %>%
+ summarise_each(funs(mean = paste(weighted.mean(., w=w_abs2, na.rm=T)%>%round(2), " [",
+                 sd=sd(., na.rm=T)%>%round(2), "]",
+                 sep="")),-matches("w_abs2")) %>%
+ select_("-abd") %>% t %>%
+ `colnames<-`(c("NonAbducted", "Abducted")) %>% # or setNames()
+ subset(select=c(2,1)) %>% # reorder columns
+ `rownames<-`(c("Months abducted", "Age of abduction",
+      "Index of violence experienced","Index of violence perpetrated",
+      "Educational attainment")) %>%
+ knitr::kable(caption = "記述統計 / 平均[標準偏差]")
+ 
+ |                                              |Abducted          |NonAbducted       |
+|:---------------------------------------------|:-----------------|:-----------------|
+|Months abducted                               |0.74 [1.46]       |0 [0]             |
+|Age of abduction                              |15.34 [4.86]      |NaN [NaN]         |
+|Index of violence experienced                 |8.43 [5.77]       |6.95 [5.25]       |
+|Index of violence perpetrated                 |1.51 [1.88]       |0.07 [0.26]       |
+|Educational attainment                        |7.1 [2.79]        |7.62 [3.01]       |
+```
+
 ## Environmentの変数を使う
 Use `get()` function.
 ```r
