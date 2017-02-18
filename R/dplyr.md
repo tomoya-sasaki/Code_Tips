@@ -61,6 +61,7 @@ population <- population %>%
 
 ## Regression Simulation
 [Reference](http://ja.stackoverflow.com/q/32351/12704)
+ちなみに、下のコードでは`position_dodge`を負の値にすることで線分の並びを逆にすることができる
 ```r
 library(broom) # for tidy()
 temp <- population %>%
