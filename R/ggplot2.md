@@ -21,9 +21,8 @@ References:
 12. [theme関連](#theme関連)
    * [一括でサイズ](#一括でサイズ)
 13. [position関連](#position関連)
-   * [線分の位置](#線分の位置)
+   * [線分の位置](#線分の位置)
    
-
    
 ## xラベルの変更
 ```r
@@ -193,3 +192,8 @@ guides(colour = guide_legend(reverse = TRUE)) # factor with `aes(colour = )`
 theme_gray(base_size=12)
 theme_bw(base_size=12)
 ```
+
+## position関連
+### 線分の位置
+[ここ](https://github.com/Shusei-E/Code_Tips/blob/master/R/dplyr.md#regression-simulation)にも書いた通り、`position_dodge`を負の値にすることで線分の並びを逆にすることができる。
+<img src="figures/dplyr_simulation.png" width="300">
