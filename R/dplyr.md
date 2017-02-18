@@ -32,9 +32,9 @@ select_(.dots = c("educ",
 ```r
 temp <- data %>% 
     filter(age<31) %>%
-    select_("id2", starts_with("hhii"), "abd_lgth_hh")
+    select_(.dots=c("id2", starts_with("hhii"), "abd_lgth_hh"))
 ```
-なぜか上手く回らなかったので、こちらを: `temp[,grep('hhii|id2|abd_lgth_hh',names(temp))]`
+なぜか上手く回らなかったので、こちらを: `temp[,grep('hhii|id2|abd_lgth_hh',names(temp))]` --> `.dots`とすればOK?
 
 ## 列名変更
 ```r
