@@ -69,7 +69,6 @@
 \setcounter{tocdepth}{3}
 %-----------------
 \begin{document}
-
 \title{Sampling Methods}
 \author{@Shusei-E}
 \date{\today}
@@ -83,8 +82,10 @@ Various ways to draw samples from distributions that are analytically hard to co
 \tableofcontents
 \noindent\rule{17.5cm}{1.7pt}
 
+\textbf{\Large \textcolor{red}{Metropolis-Hastings codes are old version! Please refer to the Jupyter notebook on GitHub.}}
+
 \section{Bayesian Method}
-The most imoportant thing is $$P(\theta|D) \propto P(D|\theta) P(\theta).$$ Supporse we want to do Bayesian linear regression.
+The most important thing is \begin{equation}P(\theta|D) \propto P(D|\theta) P(\theta).\label{Eq:Bayes}\end{equation} Suppose we want to do Bayesian linear regression.
 \begin{align}
   P(y) = \mathcal{N}(a+bx, \sigma^2) P(a, b, \sigma^2)
 \end{align}
@@ -98,6 +99,10 @@ Suppose we have a random variable $Y \sim p(y|\theta)$. If we get $n$ independen
 \subsection{MLE and MCMC}\label{Sec:MLEMCMC}
 We can use MCMC instead of MLE to find the parameter (parameter's distribution). MCMC samples from the probability distribution that is proportional to the likelihood. To be precise, a statistical model can define a likelihood under the data you have. MCMC can get random samples from the parameter's distribution that is proportional to the likelihood. This is the same as sampling from the posterior distribution if we use the uniform distribution as a non-informative prior. (統計モデルを作るとあるデータの下での尤度が定義される。この尤度に対してMCMCをすることで、「尤度に比例するパラメーターの分布」からのランダムサンプルを得ることができる。無情報事前分布に一様分布を使うと考えるのならば、これは事後分布からのサンプリングである。)\par
 Recall that $$({\rm Posterior\ distribution}) \propto ({\rm Likelihood}) \times ({\rm Prior\ distribution}).$$
+
+\subsection{Bayesian Data Analysis}
+In the actual problem, we have data, and suppose a model and prior distributions for parameters in the model. Recall Equation (\ref{Eq:Bayes}) \begin{equation*}P(\theta|D) \propto P(D|\theta) P(\theta).\end{equation*} Data $D$ is the set of $n$ observations, so it can be written as\begin{equation} P(\theta|\mathbf{x}^{(n)}) \propto P(\mathbf{x}^{(n)}|\theta) P(\theta).\label{Eq:BayesX}\end{equation} We want to know the posterior distribution $P(\theta|\mathbf{x}^{(n)})$, but it is hard to calculate it analytically. Here, sampling methods come in.\par
+  In the example below, only a likelihood function is considered, which means the prior distribution is a uniform distribution. If you want to specify specific distributions for prior distributions, you need to calculate $P(\theta)$.
 
 \section{Metropolis-Hastings}
 Bayesian linear regression with Metropolis-Hastings.
@@ -140,7 +145,7 @@ An error term in the linear regression follows normal distribution. Recall that 
                                                        &\propto \left( \frac{1}{\sigma^2} \right)^{\frac{n}{2}} \exp \left( - \frac{\sum_{i=1}^{n} (y_i - \mathbf{x}_i^T \boldsymbol{\beta})^2 }{2 \sigma^2} \right)
 \end{align}
 
-\subsubsection{Propose parameter}
+\subsubsection{Propose parameters}
 \begin{lstlisting}[caption={Draw a parameter one by one}]
 def next_param(param, param_index):
     a_next = param[0][0] ; b_next = param[0][1] ; sd_next = param[0][2]
@@ -169,7 +174,7 @@ def next_param2(param):
 
 \subsubsection{MCMC}
 \begin{lstlisting}[caption={Component-wise Sampling}]
-num_sampling = 9500
+num_sampling = 950
 chain = np.zeros((num_sampling, 1, 3))
 chain[0][0][0] = 20 # starting value for a
 chain[0][0][1] = 15 # starting value for b
@@ -182,8 +187,8 @@ for i in range(num_sampling-1):
     proposal = next_param2(chain[i])
 
     probab = likelihood(proposal) - likelihood(chain_previous)
-    #u = np.exp(npr.uniform(0, 1))
-    if 0  < probab:
+    if np.exp(0) < probab: # compare with log likelihood
+                           # if it is 0, it converges to MLE
         chain[i+1] = proposal
         num_accepted += 1
     else:
@@ -191,7 +196,7 @@ for i in range(num_sampling-1):
 \end{lstlisting}
 
 \begin{lstlisting}[caption={Block-wise Sampling}]
-num_sampling = 9500
+num_sampling = 950
 chain = np.zeros((num_sampling, 1, 3))
 chain[0][0][0] = 20 # starting value for a
 chain[0][0][1] = 15 # starting value for b
@@ -206,8 +211,7 @@ for i in range(num_sampling-1):
         proposal = next_param(chain_previous, p)
         
         probab = likelihood(proposal) - likelihood(chain_previous)
-        #u = np.exp(npr.uniform(0, 1))
-        if 0 < probab:
+        if np.exp(0) < probab:
             chain_new[0][0][p] = proposal[0][p]
             num_accepted += 1
         else:
