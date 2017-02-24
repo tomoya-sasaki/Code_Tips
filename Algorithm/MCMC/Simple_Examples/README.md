@@ -6,6 +6,7 @@
 * `Metropolis-Hastings-Linear-bOnly`: should be fine / with prior
 * `Metropolis-Hastings-Linear`: no prior, no log sigma
 * `Gibbs-Gaussian`: should be fine
+* `Slice-Sampling-SimpleDiscrete`: just a simple example
 
 ## Questions
 * MHでのBlock-wiseとComponent-wise
