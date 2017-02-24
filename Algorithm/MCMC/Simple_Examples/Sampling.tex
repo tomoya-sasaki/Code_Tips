@@ -107,6 +107,23 @@ In the actual problem, we have data, and suppose a model and prior distributions
 \section{Metropolis-Hastings}
 Bayesian linear regression with Metropolis-Hastings.
 
+\subsection{Use $\log \sigma$}
+For code, please check \texttt{Metropolis-Hastings-Gaussian1D}. We use Normal distribution for standard deviation, 
+\begin{equation}
+  f_{X} (x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left\{ - \frac{(x-\mu)^2}{2 \sigma^2} \right\}.
+\end{equation}
+We need to change variable, $Y = \log(X)$. Recall this formula,
+\begin{equation}
+  f_{Y}(y) = f_{X} (g^{-1}(y)) \left| \frac{d}{dy} g^{-1}(y) \right|.
+\end{equation}
+In this case, $g^{-1}(\cdot) = \exp(\cdot)$.
+\begin{align}
+  f_{Y}(y) &= f_{X}(\exp (y)) \left| \frac{d}{dy} \exp (y) \right| \\[10pt]
+           &= \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left\{ - \frac{(e^y - \mu)^2}{2 \sigma^2} \right\} \left| e^y \right| \\[10pt]
+           &\propto \frac{e^y}{\sqrt{\sigma^2}} \exp \left\{ - \frac{(e^y - \mu)^2}{2 \sigma^2} \right\} \\[10pt]
+           &= e^y \cdot (\sigma^2)^{- \frac{1}{2}} \cdot \exp \left\{ - \frac{(e^y - \mu)^2}{2 \sigma^2} \right\}
+\end{align}
+
 \subsection{Example 1: Linear Model}
 \subsubsection{Create Data Set}
 \begin{lstlisting}
