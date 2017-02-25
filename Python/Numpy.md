@@ -9,6 +9,8 @@
 4. [縦ベクトル](#縦ベクトル)
 5. [object too deep for desired array](#object-too-deep-for-desired-array)
 6. [配列への追加](#配列への追加)
+7. [要素の数を数える](#要素の数を数える)
+
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -75,3 +77,8 @@ array([[1],
 
 ## 配列への追加
 `append` methodでOKみたい
+
+## 要素の数を数える
+```python
+np.unique(Z, return_counts=True)
+```
