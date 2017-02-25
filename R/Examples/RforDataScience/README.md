@@ -5,4 +5,4 @@
 
 
 ## RelationalData
-* [R for Data Science Chapter 13](http://r4ds.had.co.nz/relational-data.html)
+[R for Data Science Chapter 13](http://r4ds.had.co.nz/relational-data.html)
