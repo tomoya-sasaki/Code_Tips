@@ -33,3 +33,6 @@ How to use R in a modern way.
 
 ## tidyr_gather_spread.ipynb
 * gatherとspreadの使い方
+
+## RelationalData
+* R for Data Science Chapter 13
