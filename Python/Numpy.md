@@ -10,6 +10,7 @@
 5. [object too deep for desired array](#object-too-deep-for-desired-array)
 6. [配列への追加](#配列への追加)
 7. [要素の数を数える](#要素の数を数える)
+8. [警告・エラー表示の変更](#警告・エラー表示の変更)
 
 
 ## arrayとmatrixの違い
@@ -87,4 +88,12 @@ np.unique(Z, return_counts=True)
 np.array(list(map(lambda k: np.sum(Z==k), range(K))))
 # K: number of category
 # Z: array you want to check
+```
+
+## 警告・エラー表示の変更
+[numpy.seterr](https://docs.scipy.org/doc/numpy/reference/generated/numpy.seterr.html)
+```python
+old_settings = np.seterr(all='ignore')
+np.seterr(over='raise')
+np.seterr(**old_settings)  # reset to default
 ```
