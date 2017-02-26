@@ -10,7 +10,7 @@
 5. [object too deep for desired array](#object-too-deep-for-desired-array)
 6. [配列への追加](#配列への追加)
 7. [要素の数を数える](#要素の数を数える)
-8. [警告・エラー表示の変更](#警告・エラー表示の変更)
+8. [警告・エラー表示の変更](#警告エラー表示の変更)
 
 
 ## arrayとmatrixの違い
