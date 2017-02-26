@@ -82,3 +82,9 @@ array([[1],
 ```python
 np.unique(Z, return_counts=True)
 ```
+個数0でも出力:
+```python
+np.array(list(map(lambda k: np.sum(Z==k), range(K))))
+# K: number of category
+# Z: array you want to check
+```
