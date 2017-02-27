@@ -70,6 +70,10 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 `{\fontsize{9.5pt}{8pt}\selectfont   }`
 
 ## Tikzでゲームツリー
+### upLatex
+`\usepackage[dvipdfmx]{graphicx,xcolor}`として、`documentclass`は`\documentclass[a4paper,10.5pt,uplatex]{jsarticle}`でOK。
+
+### old
 `\documentclass[report, 10.5pt, a4paper, oneside, openany, dvipdfmx]{jsbook}`<br>
 のように、始めにdivipdfmxを指定して、テンプレにある
 `\usepackage[dvipdfmx]{graphicx}`<br>
