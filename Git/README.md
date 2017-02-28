@@ -20,7 +20,7 @@ How to use Git
 10. [Create a new repository from Terminal](#create-a-new-repository-from-terminal)
 11. [Change Previous Committed Comment](#change-previous-committed-comment)
 12. [Get a branch on GitHub](#get-a-branch-on-github)
-13. [Get back to previous commits](#get-back-to-previous-commits]
+13. [Get back to previous commits](#get-back-to-previous-commits)
 
 
 ## How to clone
