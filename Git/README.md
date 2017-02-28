@@ -19,6 +19,8 @@ How to use Git
 9. [When push is rejected](#when-push-is-rejected)
 10. [Create a new repository from Terminal](#create-a-new-repository-from-terminal)
 11. [Change Previous Committed Comment](#change-previous-committed-comment)
+12. [Get a branch on GitHub](#get-a-branch-on-github)
+13. [Get back to previous commits](#get-back-to-previous-commits]
 
 
 ## How to clone
@@ -184,4 +186,23 @@ I still recommend you to create repo on GitHub at first, and then clone it.
 ## Change Previous Committed Comment
 ```terminal
 git commit --amend -m "New Comment"
+```
+
+## Get a branch on GitHub
+Supporse your collague made a branch titled `branch-test` on GitHub and you want to check it on your computer.
+```terminal
+$ git checkout -b branch-test-local`
+$ git pull origin branch-test`
+```
+If you pull the branch on `master`, it will be a mess!
+
+## Get back to previous commits
+Reset all files to previous commits:
+```terminal
+$ git reset --hard HEAD  #back to the most resent commit
+```
+
+Cancel the last `git reset`
+```terminal
+$ git reset --hard ORIG_HEAD
 ```
