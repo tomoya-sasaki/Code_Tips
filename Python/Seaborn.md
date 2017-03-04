@@ -15,6 +15,7 @@ References:
 5. [日本語フォント](#日本語フォント)
 6. [点や線のスタイル](#点や線のスタイル)
 7. [Scatterplot](#scatterplot)
+  * [カテゴリごとの色](#カテゴリごとの色)
 8. [直線を引く](#直線を引く)
 
 
@@ -71,6 +72,15 @@ fig1 = sns.pointplot(x="Date", y="Count", data=top.sort_values(by="Date"), hue="
 ```python
 sns.regplot(x=x, y=y, fit_reg=False)
 ```
+
+### カテゴリごとの色
+```python
+results = pd.DataFrame({'X':list(X), 'Z':[str(i) for i in Z], 'Y':[npr.normal(0,0.0002) for i in Z]})
+results['Z'] = results['Z'].astype('category')
+sns.lmplot('X', 'Y', data=results, hue='Z', fit_reg=False)
+```
+`X`がデータ、`Z`がカテゴリ、`Y`は少しPlotする位置をズラしている。
+
 
 ## 直線を引く
 ```python
