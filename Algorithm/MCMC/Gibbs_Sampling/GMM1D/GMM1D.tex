@@ -113,6 +113,7 @@
 \usetikzlibrary{bayesnet}
 % Fonts
 \renewcommand{\headfont}{\bfseries}
+\allowdisplaybreaks
 %-----------------
 \begin{document}
 
@@ -202,36 +203,79 @@ $\btheta$はDirichlet分布からなので正規化項も考えると、
 
 \subsubsection{$\boldsymbol{\mu_k}$のサンプリング}
 \begin{align}
-  &\qquad p(\mu_k | \bmu^\deli, \bx, \bz, \btheta, \balpha, \mu_P, \sigma^2_P, \sigma^2) \\
-  &\propto p(\bx | \bmu, \bz, \btheta, \balpha, \mu_P, \sigma_P^2, \sigma^2) p(\bmu, \bz, \btheta | \balpha, \mu_P, \sigma_P^2, \sigma^2)\\
-  &= p(\bx | \bmu, \bz, \sigma^2) p(\mu_k | \mu_P, \sigma^2_P) p(\bmu^{\backslash k}, \bz, \btheta | \balpha, \mu_P, \sigma_P^2, \sigma^2)\\
+  &\qquad p(\mu_k | \bmu^{\backslash k}, \bx, \bz, \btheta, \balpha, \mu_P, \sigma^2_P, \sigma^2) \\
+  &\propto p(\mu_k, \bmu^{\backslash k}, \bx, \bz, \btheta | \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
+  &= p(\bx | \bmu, \bmu^{\backslash k}, \bz, \btheta, \balpha, \mu_P, \sigma_P^2, \sigma^2) p(\bmu, \bmu^{\backslash k} \bz, \btheta | \balpha, \mu_P, \sigma_P^2, \sigma^2)\\
+  &= p(\bx | \bmu, \bmu^{\backslash k}, \bz, \sigma^2) p(\mu_k | \mu_P, \sigma^2_P) p(\bmu^{\backslash k}, \bz, \btheta | \balpha, \mu_P, \sigma_P^2, \sigma^2)\\
   &\propto \underbrace{p(\bx | \bmu, \bz, \sigma^2)}_{\rm Normal} \underbrace{ p(\mu_k | \mu_P, \sigma^2_P)}_{\rm Normal} \\
   &\propto \prod_{k=1}^{K} \left[ \left\{ \prod_{i=1}^{D} \frac{1}{\sqrt{\sigma^2}} \exp \left( - \frac{(x_i - \mu_k)^2}{2 \sigma^2} \right)  \cdot \delta(z_i = k) \right\} \times \left\{  \frac{1}{\sqrt{\sigma_P^2}} \exp \left(  - \frac{(\mu_k - \mu_P)^2}{2 \sigma_P^2} \right) \right\} \right]
 \end{align}
 \href{https://en.wikipedia.org/wiki/Conjugate_prior#Table_of_conjugate_distributions}{WikipediaのConjugate prior}の記事を参考にすると、更新後の平均は、
 \begin{align}
-  \left. \left( \frac{\mu_P}{\sigma_P^2} + \frac{\sum_{i=1}^{D} x_i \cdot \delta(z_i=k)}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{\sum_{i=1}^{D} \delta (z_i = k)}{\sigma^2} \right)   \right.
+  \left. \left( \frac{\mu_P}{\sigma_P^2} + \frac{\sum_{i=1}^{D} x_i \cdot \delta(z_i=k)}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{\sum_{i=1}^{D} \delta (z_i = k)}{\sigma^2} \right)   \right. , \ \ \ k=1, \cdots, K
 \end{align}
 分散は、
 \begin{align}
-  \left( \frac{1}{\sigma^2_P} + \frac{\sum_{i=1}^{D} \delta(z_i=k)}{\sigma^2} \right)^{-1}
+  \left( \frac{1}{\sigma^2_P} + \frac{\sum_{i=1}^{D} \delta(z_i=k)}{\sigma^2} \right)^{-1} , \ \ \ k=1, \cdots, K
 \end{align}
 となる。
 
 \section{Collapsed Gibbs Sampling}
-$\btheta$と$\bmu$を積分消去する。
+$\btheta$と$\bmu$を積分消去する。このときのグラフィカルモデルは以下のようになる。
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  % Nodes
+  % parameters and data
+	\node[obs]           (X1)    {$x_1$}; %
+  \node[obs, below = 0.5 of X1]    (Xi)    {$x_i$};
+  \node[obs, below = 0.5 of Xi]    (XD)    {$x_D$};
+	\node[obs, left = 0.7 of X1]           (Z1)    {$z_1$}; %
+  \node[latent, above = 0.5 of X1,  xshift=1.3cm] (sigma)    {$\sigma^2$};
+  \node[obs, below = 0.5 of Z1]    (Zi)    {$z_i$};
+  \node[obs, below = 0.5 of Zi]    (ZD)    {$z_D$};
+  \node[latent, right = 1.2 of Xi, yshift=-0.5cm] (muP)    {$\mu_P$};
+  \node[latent, right = 1.2 of Xi, yshift=0.5cm] (sigmaP)    {$\sigma^2_P$};
+  \node[latent, left = 1.2 of Zi] (alpha)    {$\alpha$};
+ % Draw
+  \draw(X1)--(Xi);\draw(Xi)--(XD); \draw(Z1)--(Zi);\draw(Zi)--(ZD);
+  \draw(X1) [out=320, in=35] to (XD);\draw(Z1) [out=222, in=142] to (ZD);
+ % Edges
+  \edge{Z1}{X1};\edge{Zi}{Xi};\edge{ZD}{XD};
+  \edge{sigma}{X1};\edge{sigma}{Xi};\edge{sigma}{XD};
+  \edge{muP}{X1};\edge{muP}{Xi};\edge{muP}{XD};
+  \edge{sigmaP}{X1};\edge{sigmaP}{Xi};\edge{sigmaP}{XD};
+  \edge{alpha}{Z1};\edge{alpha}{Zi};\edge{alpha}{ZD};
+ % Plates
+\end{tikzpicture}
+\caption{Collapsed Gibbs Sampling}
+\end{figure}
+周辺化されることで、隠れ変数やデータに依存関係が生まれていることに注意する必要がある。依存関係があるため、$z$を全て同時にサンプリングすることはできないが、$z_1, \cdots, z_D$のように1つずつサンプリングすることは可能である。ある$z_i$は、それ以外のデータ$\bz^\deli$が与えられた状態でサンプリングする。
+
+
+
 \begin{align}
   &\qquad p(z_i = k| x_i, \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
   &\propto p(z_i=k, x_i, \bx^\deli, \bz^\deli | \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
   &= p(x_i | z_i=k, \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2) p(z_i=k, \bx^\deli, \bz^\deli | \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
   &= p(x_i | z_i=k, \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2) p(z_i=k | \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2) p(\bx^\deli, \bz^\deli | \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
   &\propto p(x_i | z_i=k, \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2) p(z_i=k| \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
-  &= \int p(x_i| z_i=k, \bmu, \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma_P^2, \sigma^2) p(\bmu | \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2) d\bmu \\
-  &\qquad \qquad \qquad \times \int p(z_i=k| \btheta, \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2) p(\btheta | \bx^\deli, \bz^\deli, \balpha, \mu_P, \sigma^2_P, \sigma^2) d\btheta\\
-  &= \int p(x_i | z_i=k, \mu_k, \sigma^2) p(\bmu | \bx^\deli, \bz^\deli, \mu_P, \sigma^2_P, \sigma^2) d\bmu \int p(z_i =k|\btheta) p(\btheta | \bz^\deli,\balpha) d\btheta\\[3.5pt]
-  &= \E_{p(\bmu | \bx^\deli, \bz^\deli, \mu_P, \sigma^2_P, \sigma^2)} \left[ x_i \right] \cdot \E_{p(\btheta | \bz^\deli,\balpha)} \left[ p(z_i | \btheta) \right]\\[4pt]
-  &= \left\{ \left( \frac{\mu_P}{\sigma_P^2} + \frac{\sum_{d=1}^{D^{\backslash i}} x_d \cdot \delta(z_d=k)}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{\sum_{d=1}^{D^{\backslash i}} \delta (z_d = k)}{\sigma^2} \right)   \right\} \cdot \frac{n_k^{\backslash i} + \alpha_k}{\sum_{k=1}^{K} n_k^{\backslash i} + \alpha_k}
+  &= p(x_i | z_i=k, \bx^\deli, \bz^\deli,  \mu_P, \sigma^2_P, \sigma^2) p(z_i=k| \bx^\deli, \bz^\deli, \balpha)\\
+  &= \int p(x_i| z_i=k, \bmu, \bx^\deli, \bz^\deli,  \mu_P, \sigma_P^2, \sigma^2) p(\bmu |z_i=k, \bx^\deli, \bz^\deli,  \mu_P, \sigma^2_P, \sigma^2) d\bmu \\
+  &\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \times \int p(z_i=k| \btheta, \bx^\deli, \bz^\deli, \balpha) p(\btheta | \bx^\deli, \bz^\deli, \balpha) d\btheta\\
+  &= \int p(x_i | z_i=k, \mu_k, \sigma^2) p(\mu_k | \bx^\deli, \bz^\deli, \mu_P, \sigma^2_P, \sigma^2) d\mu_k \int p(z_i =k|\btheta) p(\btheta | \bz^\deli,\balpha) d\btheta \label{pred1}\\[3.5pt]
+  %&= \left[ \int \frac{1}{\sqrt{\sigma^2}} \exp \left\{ -\frac{(x_i - \mu_k)^2}{2 \sigma^2} \right\} \times \frac{1}{\sqrt{\sigma^2_P}} \exp \left\{ -\frac{(\mu_k - \mu_P)^2}{2 \sigma^2_P} \right\} d\mu_k \right] \cdot  \E_{p(\btheta | \bz^\deli,\balpha)} \left[ p(z_i | \btheta) \right] \\[4pt]
+  \begin{split}
+  &= \cN(x_i | \mu_{\rm New}, \sigma_{\rm New}) \cdot \frac{n_k^{\backslash i} + \alpha_k}{\sum_{k=1}^{K} n_k^{\backslash i} + \alpha_k},
+\qquad {\rm where} \ \ 
+    \begin{cases} 
+      \left. \mu_{\rm New} = \left( \frac{\mu_P}{\sigma_P^2} + \frac{\mu_k}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{1}{\sigma^2} \right) \right.   \\[8pt] 
+     \sigma_{\rm New} = \left( \frac{1}{\sigma_P^2} + \frac{1}{\sigma^2}  \right)^{-1}
+    \end{cases} 
+  \end{split}
+  %&= \left\{ \left( \frac{\mu_P}{\sigma_P^2} + \frac{\sum_{d=1}^{D^{\backslash i}} x_d \cdot \delta(z_d=k)}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{\sum_{d=1}^{D^{\backslash i}} \delta (z_d = k)}{\sigma^2} \right)   \right\} \cdot \frac{n_k^{\backslash i} + \alpha_k}{\sum_{k=1}^{K} n_k^{\backslash i} + \alpha_k}
 \end{align}
 
+式(\ref{pred1})は、それぞれ$x_i$、$z_i$に関する予測分布 (posterior predictive distribution)\footnote{Wikipedia, Coonjugate Prior: https://en.wikipedia.org/wiki/Conjugate\_prior\#Table\_of\_conjugate\_distributions}であると解釈することができる。第1項はNormalとNormal、第2項はMultinomial (Categorical)とDirichletである。
 
 \end{document}
