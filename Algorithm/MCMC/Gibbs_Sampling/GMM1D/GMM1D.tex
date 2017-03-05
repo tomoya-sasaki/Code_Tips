@@ -230,10 +230,10 @@ $\btheta$と$\bmu$を積分消去する。このときのグラフィカルモ�
 	\node[obs]           (X1)    {$x_1$}; %
   \node[obs, below = 0.5 of X1]    (Xi)    {$x_i$};
   \node[obs, below = 0.5 of Xi]    (XD)    {$x_D$};
-	\node[obs, left = 0.7 of X1]           (Z1)    {$z_1$}; %
+	\node[latent, left = 0.7 of X1]           (Z1)    {$z_1$}; %
   \node[latent, above = 0.5 of X1,  xshift=1.3cm] (sigma)    {$\sigma^2$};
-  \node[obs, below = 0.5 of Z1]    (Zi)    {$z_i$};
-  \node[obs, below = 0.5 of Zi]    (ZD)    {$z_D$};
+  \node[latent, below = 0.5 of Z1]    (Zi)    {$z_i$};
+  \node[latent, below = 0.5 of Zi]    (ZD)    {$z_D$};
   \node[latent, right = 1.2 of Xi, yshift=-0.5cm] (muP)    {$\mu_P$};
   \node[latent, right = 1.2 of Xi, yshift=0.5cm] (sigmaP)    {$\sigma^2_P$};
   \node[latent, left = 1.2 of Zi] (alpha)    {$\alpha$};
