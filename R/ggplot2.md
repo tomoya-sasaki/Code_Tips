@@ -22,6 +22,7 @@ References:
    * [一括でサイズ](#一括でサイズ)
 13. [position関連](#position関連)
    * [線分の位置](#線分の位置)
+14. [Theme](#theme)
    
    
 ## xラベルの変更
@@ -197,3 +198,6 @@ theme_bw(base_size=12)
 ### 線分の位置
 [ここ](https://github.com/Shusei-E/Code_Tips/blob/master/R/dplyr.md#regression-simulation)にも書いた通り、`position_dodge`を負の値にすることで線分の並びを逆にすることができる ([Reference](http://stackoverflow.com/questions/42303960/ggplot2-change-the-order-of-color))。
 <img src="figures/dplyr_simulation.png" width="300">
+
+## Theme
+[ggthemes](https://www.karada-good.net/analyticsr/r-566)
