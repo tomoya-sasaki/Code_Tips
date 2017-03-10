@@ -64,3 +64,26 @@ For example, [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/doc
 
 ## Top Page
 Edit `_layouts/home.html`
+
+## Equations
+Write equations in LaTex Style. You need to add
+```md
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+```
+For example,
+```latex
+$$
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\balpha}{\boldsymbol{\alpha}}
+\newcommand{\bz}{\mathbf{z}}
+\begin{align}
+  &\quad\quad p(\bx, \btheta, \bz, \bmu | \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
+  &= p(\bx | \bz, \bmu, \sigma^2) p(\btheta, \bz, \bmu | \balpha, \mu_P, \sigma^2_P, \sigma^2)\\
+  &= p(\bx | \bz, \bmu, \sigma^2) p(\bz|\btheta)p(\btheta|\balpha)p(\bmu|\mu_P, \sigma^2_P)\\[3pt]
+  &= \prod_{i=1}^{D} \left\{ p(x_i | \mu_{z_i}, \sigma^2) p(z_i|\btheta) \right\} \cdot p(\btheta|\balpha) \cdot \prod_{k=1}^{K} p(\mu_k | \mu_P, \sigma_P^2)
+\end{align}
+$$
+```
