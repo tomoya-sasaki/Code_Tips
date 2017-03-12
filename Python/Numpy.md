@@ -11,7 +11,7 @@
 6. [配列への追加](#配列への追加)
 7. [要素の数を数える](#要素の数を数える)
 8. [警告・エラー表示の変更](#警告エラー表示の変更)
-
+9. [配列の要素とindexのsort](#配列の要素とindexのsort)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -96,4 +96,20 @@ np.array(list(map(lambda k: np.sum(Z==k), range(K))))
 old_settings = np.seterr(all='ignore')
 np.seterr(over='raise')
 np.seterr(**old_settings)  # reset to default
+```
+
+## 配列の要素とindexのsort
+sort関数は昇順にソートした要素の配列、argsort関数は昇順にソートしたインデックスの配列を返すため、[::-1]というスライスの書き方を使って逆順、つまり、降順にする。
+```python
+x = np.array([19, 5, 58, 30])
+
+for i in range(len(x)):
+    print np.argsort(x)[::-1][i], np.sort(x)[::-1][i]
+```
+Output:
+```txt
+2 58
+3 30
+0 19
+1 5
 ```
