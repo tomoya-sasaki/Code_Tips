@@ -2,7 +2,8 @@
 Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 
 ## Table of Contents
-1. 日本語を使用する際の設定[#日本語を使用する際の設定]
+1. [日本語を使用する際の設定](#日本語を使用する際の設定)
+2. [Chunk Options](#chunk-options)
 
 ## 日本語を使用する際の設定
 この部分のインデントは、タブではなくスペースで行わないといけないことに注意。Vimでは改行した時に自動にタブでインデントが入ってしまう。
@@ -22,3 +23,16 @@ output:
 mainfont: Meiryo
 ---
 ```
+
+## Chunk Options
+[Reference](http://d.hatena.ne.jp/teramonagi/20130615/1371303616)   Chunk optionsにはRの関数や評価結果の値を代入することが可能。
+| オプション       | デフォルト値 | 型              | 意味                                                                                                                      |
+|------------------|--------------|-----------------|---------------------------------------------------------------------------------------------------------------------------|
+| eval             | TRUE         | logical         | chunkを実際にRのコードとして評価するか                                                                                    |
+| echo             | TRUE         | logical/numeric | chunkを出力として表示するか否か。echo=2:3等ともかけてこの場合2・3番目のコードのみ出力。echo=-3だと3番目のコード以外出力。 |
+| warning          | TRUE         | logical         | chunkに対する警告を表示させるか否か                                                                                       |
+| error            | TRUE         | logical         | chunkに対するエラーを表示させるか否か                                                                                     |
+| prompt           | FALSE        | logical         | プロンプトの文字(例：>)を実行したコードの結果として追加するか否か                                                         |
+| include          | TRUE         | logical         | chunk・実行結果を出力(通常、RStudio使ってるならHTML）に入れるか否か。これをFALSEにしてもRのコードは実行される点に注意。   |
+| fig.width/height | 7            | numeric         | 図のプロットのサイズ、"出力"画像のサイズであり、貼り付けのサイズではない点に注意（単位：インチ）                          |
+| fig.cap          | -            | character       | 図のキャプション                                                                                                          |
