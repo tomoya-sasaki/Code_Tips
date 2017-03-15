@@ -41,3 +41,4 @@ Chunk optionsにはRの関数や評価結果の値を代入することが可能
 | include          | TRUE         | logical         | chunk・実行結果を出力(通常、RStudio使ってるならHTML）に入れるか否か。これをFALSEにしてもRのコードは実行される点に注意。   |
 | fig.width/height | 7            | numeric         | 図のプロットのサイズ、"出力"画像のサイズであり、貼り付けのサイズではない点に注意（単位：インチ）                          |
 | fig.cap          | -            | character       | 図のキャプション    |
+| fig.align        |              | character       | `fig.align = 'center'` |
