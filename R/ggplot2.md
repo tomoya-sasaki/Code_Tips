@@ -18,7 +18,7 @@ References:
    * [orderとlabelを変える](#orderとlabelを変える)
 11. [Legend関連](#legend関連)
    * [順番を変える](#順番を変える)
-   * [ラベルを変える](#ラベルを変える)
+   * [ラベルを変える](#ラベルを変える)
 12. [theme関連](#theme関連)
    * [一括でサイズ](#一括でサイズ)
 13. [position関連](#position関連)
@@ -192,7 +192,7 @@ guides(colour = guide_legend(reverse = TRUE)) # factor with `aes(colour = )`
 data %>% select_("Group", "Finished") %>% slice(3:n()) %>% 
    ggplot(aes(Group, fill=Finished)) + geom_bar() + scale_fill_hue(name = "Finished", labels = c("0"="Not Finished", "1"="Finished")) 
 ```
-`aes`のところが`color`なら、`scale_fill_hue`になる。
+`aes`のところが`color`なら、`scale_fill_hue`になる。<br>
 <img src="figures/ggplot2_legend_label.png" width="300">
 
 
