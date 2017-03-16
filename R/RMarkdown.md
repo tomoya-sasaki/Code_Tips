@@ -11,7 +11,7 @@ Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 ---
 title: 'Title'
 author: "名前"
-date: "2/14/2017"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
  pdf_document:
   latex_engine: xelatex
