@@ -12,6 +12,8 @@
 7. [記述統計](#記述統計)
 8. [Environmentの変数を使う](#environmentの変数を使う)
 9. [時間関連](#時間関連)
+10. [行のスライス](#行のスライス)
+
 
 ## 処理をして列を追加
 ```r
@@ -149,4 +151,9 @@ df %>% filter(b == get("b")) # Note the "" around b
 ### 2017-03-01 23:43:30 のような形
 data %>% select_("StartDate", "EndDate") %>% slice(3:n()) %>%
     mutate_each(funs(as.POSIXct(.,"%Y-%m-%d %H:%M:%S", tz="UTC")))
+```
+
+## 行のスライス
+```r
+slice(data, 5:n())
 ```
