@@ -11,7 +11,7 @@
 6. [Regression Simulation](#regression-simulation)
 7. [記述統計](#記述統計)
 8. [Environmentの変数を使う](#environmentの変数を使う)
-
+9. [時間関連](#時間関連)
 
 ## 処理をして列を追加
 ```r
@@ -140,4 +140,13 @@ sway %>% subset(found==1) %>%
 Use `get()` function.
 ```r
 df %>% filter(b == get("b")) # Note the "" around b
+```
+
+
+## 時間関連
+### Timeの型にする
+```r
+### 2017-03-01 23:43:30 のような形
+data %>% select_("StartDate", "EndDate") %>% slice(3:n()) %>%
+    mutate_each(funs(as.POSIXct(.,"%Y-%m-%d %H:%M:%S", tz="UTC")))
 ```
