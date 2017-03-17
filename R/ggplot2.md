@@ -194,7 +194,7 @@ guides(colour = guide_legend(reverse = TRUE)) # factor with `aes(colour = )`
 data %>% select_("Group", "Finished") %>% slice(3:n()) %>% 
    ggplot(aes(Group, fill=Finished)) + geom_bar() + scale_fill_hue(name = "Finished", labels = c("0"="Not Finished", "1"="Finished")) 
 ```
-`aes`のところが`color`なら、`scale_fill_hue`になる。<br>
+`aes`のところが`colour`なら、`scale_colour_hue`になる。<br>
 <img src="figures/ggplot2_legend_label.png" width="330">
 
 
@@ -208,7 +208,39 @@ theme_bw(base_size=12)
 ## position関連
 ### 線分の位置
 [ここ](https://github.com/Shusei-E/Code_Tips/blob/master/R/dplyr.md#regression-simulation)にも書いた通り、`position_dodge`を負の値にすることで線分の並びを逆にすることができる ([Reference](http://stackoverflow.com/questions/42303960/ggplot2-change-the-order-of-color))。
-<img src="figures/dplyr_simulation.png" width="330">
+<img src="figures/dplyr_simulation.png" width="330"><br>
+```r
+# Toy Data and Make a Figure
+interval1 <- -qnorm((1-0.9)/2)  # 90% multiplier
+interval2 <- -qnorm((1-0.95)/2)  # 95% multiplier
+population_num <- 100
+tibble(
+    gender = as.numeric(rbinom(population_num, 1, 0.5)),
+    age=rnorm(population_num, mean=50, sd=20),
+    score=rnorm(population_num, mean=80, sd=30),
+    setid=sample(c(1,2,3), size=population_num, replace=T)
+    ) %>%
+  group_by(setid) %>%
+  do(model1 = tidy(lm(score ~ age, data = .)),
+     model2 = tidy(lm(score ~ age + gender, data = .))) %>% 
+  gather(model_name, model, -setid) %>%                     
+  unnest() %>%                                              
+  filter(term == "age")  %>%                                 
+ggplot(aes(colour = as.factor(setid))) +
+  geom_hline(yintercept = 0, colour = gray(1/2), lty = 2) +
+  geom_linerange(aes(x = model_name, ymin = estimate - std.error*interval1,
+                     ymax = estimate + std.error*interval1),
+                 lwd = 1, position = position_dodge(width = -1/2)) +
+  geom_pointrange(aes(x = model_name, y = estimate, 
+											ymin = estimate - std.error*interval2,
+											ymax = estimate + std.error*interval2),
+									lwd = 1/2, position = position_dodge(width = -1/2),
+									shape = 21, fill = "WHITE") +
+  scale_x_discrete(limits=c("model2", "model1"), labels=c("M2", "M1")) +
+  scale_colour_hue(name = "Model", 
+					labels = c("1"="Model 1", "2"="Model 2", "3"="Model 3")) +
+  coord_flip()
+```
 
 ## Theme
 [ggthemes](https://www.karada-good.net/analyticsr/r-566)
