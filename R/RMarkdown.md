@@ -23,7 +23,11 @@ output:
 graphics: yes
 mainfont: YuMincho
 ---
+\fontsize{9}{12}
+\hrulefill
 ```
+`\fontsize{文字サイズ}{行間}`なのかな？
+
 
 ## Chunk Options
 [Reference](http://d.hatena.ne.jp/teramonagi/20130615/1371303616)   
