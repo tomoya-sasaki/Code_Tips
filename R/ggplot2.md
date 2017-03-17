@@ -24,7 +24,7 @@ References:
 13. [position関連](#position関連)
    * [線分の位置](#線分の位置)
 14. [Theme](#theme)
-   
+15. [日本語関連](#日本語関連) 
    
 ## xラベルの変更
 ```r
@@ -210,3 +210,9 @@ theme_bw(base_size=12)
 
 ## Theme
 [ggthemes](https://www.karada-good.net/analyticsr/r-566)
+
+
+## 日本語関連
+```r
+theme_gray(base_family="YuGo-Medium")
+```
