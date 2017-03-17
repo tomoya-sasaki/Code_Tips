@@ -143,7 +143,14 @@ Use `get()` function.
 ```r
 df %>% filter(b == get("b")) # Note the "" around b
 ```
-
+関数内、`mutate()`や`select_()`のときは[こちら](http://stackoverflow.com/questions/42864215/dplyr-use-environment-variables-in-select-and-mutate)も参考に。
+```r
+reg_figure <- function(var1, var2, var3){
+    test %>% select_(.dots=c(get("var1"), get("var2"), get("var3"), "Group")) %>%
+    mutate(y=create_y(.[[get("var1")]], .[[get("var2")]], .[[get("var3")]], Group))
+}
+reg_figure("Q1", "Q2", "Q3")
+```
 
 ## 時間関連
 ### Timeの型にする
