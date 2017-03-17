@@ -61,6 +61,13 @@ For example, [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/doc
 ```md
 <span style="color: #f2cf4a; font-family: Babas; font-size: 2em;">INSPIRATION DAY</span>
 ```
+Change Default:
+```css
+/* _page.scss */
+p, li, dl {
+	font-size: 0.9em; /* Main Character Size */
+}
+```
 
 ## Top Page
 Edit `_layouts/home.html`

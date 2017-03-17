@@ -265,17 +265,28 @@ $\btheta$と$\bmu$を積分消去する。このときのグラフィカルモ�
   &\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \times \int p(z_i=k| \btheta, \bx^\deli, \bz^\deli, \balpha) p(\btheta | \bx^\deli, \bz^\deli, \balpha) d\btheta\\
   &= \int p(x_i | z_i=k, \mu_k, \sigma^2) p(\mu_k | \bx^\deli, \bz^\deli, \mu_P, \sigma^2_P, \sigma^2) d\mu_k \int p(z_i =k|\btheta) p(\btheta | \bz^\deli,\balpha) d\btheta \label{pred1}\\[3.5pt]
   %&= \left[ \int \frac{1}{\sqrt{\sigma^2}} \exp \left\{ -\frac{(x_i - \mu_k)^2}{2 \sigma^2} \right\} \times \frac{1}{\sqrt{\sigma^2_P}} \exp \left\{ -\frac{(\mu_k - \mu_P)^2}{2 \sigma^2_P} \right\} d\mu_k \right] \cdot  \E_{p(\btheta | \bz^\deli,\balpha)} \left[ p(z_i | \btheta) \right] \\[4pt]
-  \begin{split}
-  &= \cN(x_i | \mu_{\rm New}, \sigma_{\rm New}) \cdot \frac{n_k^{\backslash i} + \alpha_k}{\sum_{k=1}^{K} n_k^{\backslash i} + \alpha_k},
-\qquad {\rm where} \ \ 
-    \begin{cases} 
-      \left. \mu_{\rm New} = \left( \frac{\mu_P}{\sigma_P^2} + \frac{\mu_k}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{1}{\sigma^2} \right) \right.   \\[8pt] 
-     \sigma_{\rm New} = \left( \frac{1}{\sigma_P^2} + \frac{1}{\sigma^2}  \right)^{-1}
-    \end{cases} 
-  \end{split}
+  %\begin{split}
+  &= \cN(x_i | \mu_{\rm New}, \sigma^2) \cdot \frac{n_k^{\backslash i} + \alpha_k}{\sum_{k=1}^{K} n_k^{\backslash i} + \alpha_k} \label{eq:final}
+%\qquad {\rm where} \ \ 
+%    \begin{cases} 
+%      \left. \mu_{\rm New} = \left( \frac{\mu_P}{\sigma_P^2} + \frac{\mu_k}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{1}{\sigma^2} \right) \right.   \\[8pt] 
+%     \sigma_{\rm New} = \left( \frac{1}{\sigma_P^2} + \frac{1}{\sigma^2}  \right)^{-1}
+%    \end{cases} 
+%  \end{split}
   %&= \left\{ \left( \frac{\mu_P}{\sigma_P^2} + \frac{\sum_{d=1}^{D^{\backslash i}} x_d \cdot \delta(z_d=k)}{\sigma^2} \right) \middle/ \left( \frac{1}{\sigma_P^2} + \frac{\sum_{d=1}^{D^{\backslash i}} \delta (z_d = k)}{\sigma^2} \right)   \right\} \cdot \frac{n_k^{\backslash i} + \alpha_k}{\sum_{k=1}^{K} n_k^{\backslash i} + \alpha_k}
 \end{align}
 
-式(\ref{pred1})は、それぞれ$x_i$、$z_i$に関する予測分布 (posterior predictive distribution)\footnote{Wikipedia, Coonjugate Prior: https://en.wikipedia.org/wiki/Conjugate\_prior\#Table\_of\_conjugate\_distributions}であると解釈することができる。第1項はNormalとNormal、第2項はMultinomial (Categorical)とDirichletである。
+式(\ref{pred1})は、それぞれ$x_i$、$z_i$に関する予測分布 (posterior predictive distribution)\footnote{Wikipedia, Coonjugate Prior: https://en.wikipedia.org/wiki/Conjugate\_prior\#Table\_of\_conjugate\_distributions}であると解釈することができる。第1項はNormalとNormal、第2項はMultinomial (Categorical)とDirichletである。\par
+式(\ref{eq:final})\footnote{これが計算しているのは、「事後分布のヒストグラム」になるはず。事後分布のヒストグラムから$z$を選ぶ。}については、今回$\sigma$を明示的に与えているので$\sigma^2$の更新はない。もし、$\sigma^2$もベイズにするのなら、
+\begin{align}
+\int p(x_i | z_i=k, \mu_k, \sigma^2) p(\mu_k, \sigma_k^2 | \bx^\deli, \bz^\deli, \mu_P, \sigma^2_P ) d\mu_k d \sigma_k^2
+\end{align}
+のような形になるはず。\par
+式(\ref{pred1})の初項に関しては、$\mu_k$の期待値($\overline{\mu_k}$)を使う近似を考えてしまって良い。
+\begin{align}
+  & p(x_i | z_i=k, {\mu_k}, \sigma^2) \int  p(\mu_k | \bx^\deli, \bz^\deli, \mu_P, \sigma^2_P, \sigma^2) d\mu_k\\
+  &= p(x_i | z_i=k, \overline{\mu_k}, \sigma^2)
+\end{align}
+$\mu_k$は色々な値を取りうるけれども、正規分布に従う。データが十分にあれば、$\mu_k$の事後分布は充分に尖った形になるので期待値で代表させたもので近似しても良い。
 
 \end{document}
