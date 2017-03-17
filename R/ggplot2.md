@@ -223,3 +223,12 @@ theme_gray(base_family="YuGo-Medium")
 annotate("text", x=5, y=8, colour="red",
    label=paste("Average:", as.character(round(mean_v,2))))
 ```
+
+## 選択肢を強制的に表示
+```r
+data %>% select_("Q1.5", "Group") %>%
+  ggplot(aes(factor(Q1.5), fill=factor(Group))) + geom_bar() +
+  scale_fill_hue(name = "Group") + labs(x="Choice") +
+  scale_x_discrete(limits=c(1,2,3,4,5,"NA"))
+```
+<img src="figures/ggplot2_show_choices.png" width="400">
