@@ -79,6 +79,7 @@ Write equations in LaTex Style. You need to add
 ```
 For example,
 ```latex
+<span style="font-size:0.8em; line-height:0%">
 $$
 \newcommand{\bx}{\mathbf{x}}
 \newcommand{\btheta}{\boldsymbol{\theta}}
@@ -93,4 +94,5 @@ $$
   &= \prod_{i=1}^{D} \left\{ p(x_i | \mu_{z_i}, \sigma^2) p(z_i|\btheta) \right\} \cdot p(\btheta|\balpha) \cdot \prod_{k=1}^{K} p(\mu_k | \mu_P, \sigma_P^2)
 \end{align}
 $$
+</span>
 ```
