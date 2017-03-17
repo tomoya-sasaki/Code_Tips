@@ -26,6 +26,7 @@ References:
 14. [Theme](#theme)
 15. [日本語関連](#日本語関連)
 16. [文字の追加](#文字の追加)
+17. [選択肢を強制的に表示](#選択肢を強制的に表示)
    
 ## xラベルの変更
 ```r
@@ -194,7 +195,7 @@ data %>% select_("Group", "Finished") %>% slice(3:n()) %>%
    ggplot(aes(Group, fill=Finished)) + geom_bar() + scale_fill_hue(name = "Finished", labels = c("0"="Not Finished", "1"="Finished")) 
 ```
 `aes`のところが`color`なら、`scale_fill_hue`になる。<br>
-<img src="figures/ggplot2_legend_label.png" width="300">
+<img src="figures/ggplot2_legend_label.png" width="330">
 
 
 ## theme関連
@@ -207,7 +208,7 @@ theme_bw(base_size=12)
 ## position関連
 ### 線分の位置
 [ここ](https://github.com/Shusei-E/Code_Tips/blob/master/R/dplyr.md#regression-simulation)にも書いた通り、`position_dodge`を負の値にすることで線分の並びを逆にすることができる ([Reference](http://stackoverflow.com/questions/42303960/ggplot2-change-the-order-of-color))。
-<img src="figures/dplyr_simulation.png" width="300">
+<img src="figures/dplyr_simulation.png" width="330">
 
 ## Theme
 [ggthemes](https://www.karada-good.net/analyticsr/r-566)
