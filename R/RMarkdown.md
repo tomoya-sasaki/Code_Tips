@@ -29,14 +29,7 @@ mainfont: YuMincho
 `\fontsize{文字サイズ}{行間}`なのかな？
 
 ### ggplot2
-```r
-library(extrafont) 
-font_import() 
-```
-をしておいて、
-```r
-theme_gray(base_family="YuGo-Medium")
-```
+
 
 
 ## Chunk Options
