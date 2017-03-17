@@ -24,7 +24,8 @@ References:
 13. [position関連](#position関連)
    * [線分の位置](#線分の位置)
 14. [Theme](#theme)
-15. [日本語関連](#日本語関連) 
+15. [日本語関連](#日本語関連)
+16. [文字の追加](#文字の追加)
    
 ## xラベルの変更
 ```r
@@ -215,4 +216,10 @@ theme_bw(base_size=12)
 ## 日本語関連
 ```r
 theme_gray(base_family="YuGo-Medium")
+```
+
+## 文字の追加
+```r
+annotate("text", x=5, y=8, colour="red",
+   label=paste("Average:", as.character(round(mean_v,2))))
 ```
