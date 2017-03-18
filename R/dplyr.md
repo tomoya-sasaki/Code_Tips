@@ -13,7 +13,7 @@
 8. [Environmentの変数を使う](#environmentの変数を使う)
 9. [時間関連](#時間関連)
 10. [行のスライス](#行のスライス)
-
+11. [NAの処理](#naの処理)
 
 ## 処理をして列を追加
 ```r
@@ -163,4 +163,40 @@ data %>% select_("StartDate", "EndDate") %>% slice(3:n()) %>%
 ## 行のスライス
 ```r
 slice(data, 5:n())
+```
+
+
+## NAの処理
+`mutate`を他のところで使うにせよ、NAの処理は独立にしなければならない
+```r
+# Example 1
+data %>% select_("Group", "Q19.6") %>%  
+  mutate(Q19.6 = ifelse(is.na(Q19.6), 0, Q19.6)) %>%   # NAを0にする
+  mutate(Q19.6 = ifelse(Q19.6==1, "Junior High", 
+                 ifelse(Q19.6==2, "High",
+                 ifelse(Q19.6==3, "Vocational",
+                 ifelse(Q19.6==4, "College",
+                 ifelse(Q19.6==5, "National Institute of Technology",
+                 ifelse(Q19.6==6, "University",
+                 ifelse(Q19.6==7, "Grad School", 
+                 ifelse(Q19.6==0, "NA", NA))))))))) %>%    # NAを文字列にする
+  ggplot(aes(factor(Q19.6), fill=factor(Group))) + geom_bar() + 
+  scale_x_discrete(limits = c("Junior High", "High", "Vocational",
+                        "College", "National Institute of Technology",
+                        "University", "Grad School", "NA"),
+                   labels = c("Junior\nHigh", "High", "Vocational",
+                        "College", "National\nInstitute\nof\nTechnology",
+                        "University", "Grad\nSchool", "NA")) +
+  scale_fill_hue(name = "Group") + labs(x="Category")
+
+# Example 2
+bar_figure <- function(var, item_num){
+   data %>% select_(.dots=c(get("var"), "Group")) %>%
+     mutate(Value = ifelse(is.na(.[[get("var")]]), "NA", .[[get("var")]])) %>% # NAを文字列にする
+     ggplot(aes(factor(Value), fill=factor(Group))) + geom_bar() +
+     coord_flip() +
+     scale_fill_hue(name = "Group") + labs(x="Choice") +
+     scale_x_discrete(limits=c("NA", get("item_num"):1)) -> res
+   return(res)
+}
 ```
