@@ -6,6 +6,7 @@ How to use Git
   * [Pull Request入門(複数人管理)](http://blog.qnyp.com/2013/05/28/pull-request-for-github-beginners/)
   * [git pull -rebase](http://kray.jp/blog/git-pull-rebase/) / [Git開発でmasterの内容を開発ブランチに反映させる方法](http://sota1235.com/blog/2015/03/19/git-rebase.html)
   * [Gitでやらかした時に使える19個の奥義](http://qiita.com/muran001/items/dea2bbbaea1260098051)
+  * [さっきの取り消したい！って時のGitコマンドまとめ](http://qiita.com/kansiho/items/2bacecdb95d752cb38b7)
 
 # Table of Contents
 1. [How to clone](#how-to-clone)
