@@ -199,6 +199,7 @@ If you pull the branch on `master`, it will be a mess!
 ## Get back to previous commits
 Reset all files to previous commits:
 ```terminal
+$ git reset --soft HEAD^ #back to the most resent commit
 $ git reset --hard HEAD  #back to the most resent commit
 ```
 
