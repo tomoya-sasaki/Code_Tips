@@ -22,11 +22,14 @@ output:
   toc_depth: 2
 graphics: yes
 mainfont: YuMincho
+monofont: Ricty Discord
 ---
 \fontsize{9}{12}
 \hrulefill
 ```
 `\fontsize{文字サイズ}{行間}`なのかな？
+`monofont: Ricty Discord`といった行を追加して等幅日本語フォントの指定をしておかないと、コードブロックの日本語が表示されない。
+
 
 ### ggplot2
 
