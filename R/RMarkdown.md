@@ -32,6 +32,14 @@ monofont: Ricty Discord
 
 
 ### ggplot2
+[Reference](http://ja.stackoverflow.com/questions/33375/rmarkdown-ggplot2%E3%81%A7%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B)
+```r
+```{r, dev="quartz_pdf", warning=FALSE}
+ggplot(pressure, aes(temperature, pressure)) + geom_point() + 
+  xlab("Temperature") + ylab("Pressure") +
+  theme_gray(base_family = "YuGo-Medium")
+```
+```
 
 
 
