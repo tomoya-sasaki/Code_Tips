@@ -170,7 +170,7 @@ delete [] arr2D;
 ```cpp
 const int X=20;
 const int Y=20;
-const int z=20;
+const int Z=20;
 
 int ***arr3D = new int**[X];
 for(int i =0; i<X; i++){
