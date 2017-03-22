@@ -158,7 +158,7 @@ const int Column=20; // 2nd Dimension
 int **arr2D = new int*[Row];  //create an array of int pointers (int*), that will point to 
                                 //data as described in 1D array.
 for(int i = 0;i < Row; i++){
-      arr2D[i] = new int[Column]; 
+  arr2D[i] = new int[Column]; 
 }
 // ... some codes ...
 for(int i=0; i<Row; i++)
@@ -174,13 +174,13 @@ const int Z=20;
 
 int ***arr3D = new int**[X];
 for(int i =0; i<X; i++){
-   arr3D[i] = new int*[Y];
-   for(int j =0; j<Y; j++){
-       arr3D[i][j] = new int[Z];
-       for(int k = 0; k<Z;k++){
-          arr3D[i][j][k] = 0;
-       }
-   }
+  arr3D[i] = new int*[Y];
+  for(int j =0; j<Y; j++){
+    arr3D[i][j] = new int[Z];
+    for(int k = 0; k<Z;k++){
+      arr3D[i][j][k] = 0;
+    }
+  }
 }
 ```
 
