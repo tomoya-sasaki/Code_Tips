@@ -142,8 +142,10 @@ vector<int> numbers2;
 ```
 
 ## Dynamic array
-[Reference](http://stackoverflow.com/questions/3904304/3d-array-c-using-int-operator)  
+[Reference](http://stackoverflow.com/questions/3904304/3d-array-c-using-int-operator)   
 最後に`()`をつけることで`0`にinitializeできる。     
+[Use in function](https://github.com/Shusei-E/Online_Judge/blob/master/AOJ/Introduction/ITP1_10_D.DistanceII.cpp)
+
 1D
 ```
 const int MAX_SIZE=128;
