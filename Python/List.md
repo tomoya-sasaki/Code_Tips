@@ -32,6 +32,12 @@ ifだけ使うなら、以下のようになる
 ["00"+ str(item) if len(str(item))==1 else "0"+str(item) if len(str(item))==2 else str(item) for item in ku_num_list]
 ```
 
+`""`なら`continue`(リストに要素を追加しない)をする:
+```python
+paragraphs = [preprocessing(paragraph) for paragraph in paragraphs if paragraph is not ""]
+```
+
+
 ### 二重ループ
 ```python
 [wordID for item in dictionary.doc2bow(document.split()) for x in range(count)]
