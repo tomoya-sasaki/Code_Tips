@@ -1,4 +1,5 @@
-#Seaborn
+# Seaborn
+
 `import seaborn as sns`  
 inlineの表示`%matplotlib inline`
 
@@ -15,7 +16,7 @@ References:
 5. [日本語フォント](#日本語フォント)
 6. [点や線のスタイル](#点や線のスタイル)
 7. [Scatterplot](#scatterplot)
-  * [カテゴリごとの色](#カテゴリごとの色)
+   * [カテゴリごとの色](#カテゴリごとの色)
 8. [直線を引く](#直線を引く)
 
 
