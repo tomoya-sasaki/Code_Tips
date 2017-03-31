@@ -45,6 +45,8 @@ glob.glob(directory+"/*.txt")
 # Return the list of Subdirectory
 glob.glob(root_directory + "/*/")
 ```
+`"/Users/Test/test_doc_small/*.txt"`と`"/Users/Test/test_doc_small///*.txt"`は同じもの。`"/Users/Test/test_doc_small//*//*.txt"`は違う。
+
 
 ### Copy objects
 When you use list or numpy.array, simple insert will return unexpected results. You can avoid it by adding `[:]`.
