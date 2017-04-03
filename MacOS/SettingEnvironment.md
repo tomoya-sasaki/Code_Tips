@@ -85,3 +85,7 @@ sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 
 ## Office
 Check Amazon's 「ゲーム&PCソフトダウンロードライブラリ」
+
+## Keyboard Shortcuts
+* Keyboard -> Shortcuts -> App Shortcuts -> Add(+)
+* Help: Create keyboard shortcuts for apps
