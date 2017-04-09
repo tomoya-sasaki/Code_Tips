@@ -28,12 +28,12 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 Do not forget to `source ~/.bash_profile` after editing!!
   
 Then, you can install python:
+* List Available Versions: `$ pyenv install -l`
 * `$ pyenv install 3.5.2` 
  * If error occures, try `xcode-select --install` and install again
 * `$ brew install pyenv-virtualenv`
 * Usage of pyenv-virtualenv
   * It's easier to use virtualenv than pyenv to use multiuple versions of Python
-  * List Available Versions: `$ pyenv install -l`
   * Make a new environment: `$ pyenv virtualenv 3.5.2 NAME`
   * Activate the environment: `$ pyenv activate NAME` or `source activate NAME`
   * Deactivate the environment: `$ pyenv deactivate`
