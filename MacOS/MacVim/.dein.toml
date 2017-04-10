@@ -29,6 +29,15 @@ let g:vimtex_fold_envs = 0
 let g:tex_indent_brace=0
 '''
 
+### Programming
+## Lisp
+[[plugins]]
+repo = 'kovisoft/slimv'
+
+## R
+[[plugins]]
+repo = 'jalvesaq/Nvim-R'
+
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -46,7 +55,7 @@ repo = 'sjl/badwolf'
 hook_add = '''
 function! Badwolf()
 	colorscheme badwolf
-	highlight Comment ctermfg=22 guifg=#4286f4
+	highlight Comment ctermfg=22 guifg=#84cc90
 endfunction
 command! Skinbadwolf call Badwolf()
 '''
