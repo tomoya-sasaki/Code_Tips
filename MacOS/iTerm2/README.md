@@ -1,4 +1,5 @@
 # iTerm2
+`brew install tmux`で共存も可能みたい。
 
 ## Table of Contents
 1. [Shortcut keys](#shortcut-keys)
