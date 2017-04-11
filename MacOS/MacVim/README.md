@@ -3,6 +3,15 @@
 
 # Shortcuts
 ## Nvim-R
+* `\rf`: Start
+* `\rq`: End
+* `\ll`: Send a line and down
+* `\pp`: Send a paragraph
+* `\ss`: Send a selection
+* `\cc`: Send a chunk
+* `\cn`: Next chunk
+* `\cN`: Previous chunk
+* `\kp`: Knit PDF (Errorが出たらフォント絡みのことがあるので、`mainfont: Meiryo`とだけする。この場合図の日本語は表示できない)
 
 ## slimv
 * `,c`: 接続
