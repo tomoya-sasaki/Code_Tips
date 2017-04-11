@@ -5,7 +5,7 @@
 ## Nvim-R
 * `\rf`: Start
 * `\rq`: End
-* `\ll`: Send a line and down
+* `Cmd+Enter`: Send a line and down
 * `\pp`: Send a paragraph
 * `\ss`: Send a selection
 * `\cc`: Send a chunk
