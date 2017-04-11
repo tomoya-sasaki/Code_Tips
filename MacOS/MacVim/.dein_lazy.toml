@@ -18,7 +18,7 @@ hook_source = '''
   let g:R_assign = 0 
 	let g:R_rconsole_width = 40
 	let g:R_rconsole_height = 50
-	nmap <LocalLeader>ll <Plug>RDSendLine
+	nmap <D-Enter> <Plug>RDSendLine
 	nmap <LocalLeader>cc <Plug>RSendChunk
 	vmap <LocalLeader>ss <Plug>RDSendSelection <C-c>
 	nmap <LocalLeader>pp <Plug>RDSendParagraph
