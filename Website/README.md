@@ -77,6 +77,14 @@ Write equations in LaTex Style. You need to add
 ```md
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 ```
+Added on 4/13/2017
+The above url will be obsolete. Use this instead:
+```md
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+```
+
 For example,
 ```latex
 <span style="font-size:0.8em; line-height:0%">
