@@ -1,10 +1,10 @@
 # Create a website on GitHub
 
 ## Requirements
-[Reference](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+[Reference (GitHub)](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
 
 ### globalのrubyのversion変更
-[Reference](http://qiita.com/keneo/items/1772adc2ebbde229fb71)
+[Reference (Qiita)](http://qiita.com/keneo/items/1772adc2ebbde229fb71)
 ```terminal
 $ brew update
 $ brew install rbenv
@@ -22,13 +22,17 @@ $ gem install bundler
 ```
 
 ## Create a local repository
+### Create a folder
+Create a repository on GitHub and download, or initialize a new Git repository on your local computer ([reference (GitHub)](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#step-1-create-a-local-repository-for-your-jekyll-site)).
+
 ### Create Gemfile
+In editor,
 ```txt
 source 'https://rubygems.org'
 gem 'github-pages', group: :jekyll_plugins
 ```
 
-Name the file Gemfile and save it to the root directory of your local Jekyll site repository.
+Name the file `Gemfile` and save it to the root directory of your local Jekyll site repository.
 
 ## Generate Jekyll site files
 Install github-pages
@@ -63,9 +67,9 @@ For example, [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/doc
 ```
 Change Default:
 ```css
-/* _page.scss */
+/* in _sass/_page.scss */
 p, li, dl {
-	font-size: 0.9em; /* Main Character Size */
+	font-size: 0.8em; /* Main Character Size */
 }
 ```
 
