@@ -93,6 +93,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ```
 
 ### 数式の改ページ
+プリアンブル中に、
 ```tex
 \allowdisplaybreaks[1]
 ```
