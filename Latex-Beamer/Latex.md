@@ -321,6 +321,8 @@ V&X。\\
 ```
 
 ## 数式コマンドショートカット
+`\begin{document}`の後で定義
+
 ```tex
 \newcommand{\E}{\mathbb{E}}
 \newcommand\dist{\buildrel\rm d\over\sim}
