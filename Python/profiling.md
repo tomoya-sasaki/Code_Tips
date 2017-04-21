@@ -8,6 +8,16 @@ $ pycallgraph graphviz  -- main.py
 ```
 
 ### Options
+* `--i`
+  * 出力するノードを限定指定
+  * ワイルドカードも使用可能
+  * `--i sysconfig*`なら、sysconfigで始まるラベルのノードだけ出力
+* `--e`
+  * 出力するノードを除外指定
+* `--max-depth`
+  * 出力する階層を限定
+
+
 ```terminal
 $ pycallgraph --help
 
