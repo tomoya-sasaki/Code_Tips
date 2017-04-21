@@ -1,10 +1,20 @@
 # Profiling
 
+## cProfile
+
+### Usage
+時間で並び替え
+```terminal
+python -m cProfile -s time main.py
+```
+
 ## PyCallGraph
 
 ### Usage
 ```terminal
 $ pycallgraph graphviz  -- main.py
+$ pycallgraph -v --stdlib --include "django.core.*" graphviz -- ./manage.py syncdb --noinput 
+   # only trace the core Django modules
 ```
 
 ### Options
