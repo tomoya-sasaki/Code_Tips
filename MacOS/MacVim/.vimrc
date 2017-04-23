@@ -179,6 +179,8 @@ function! SkinDefault()
 	highlight Normal guifg=MacTextColor  guibg=gray90
 	highlight Cursor guifg=NONE guibg=#57fc00
 	highlight StatusLineNC guibg=#a8a6a6 guifg=#606060
+	highlight Cursor guifg=NONE guibg=Green
+	highlight CursorIM guifg=NONE guibg=Purple
 endfunction
 command! Skindefault call SkinDefault()
 
@@ -381,5 +383,3 @@ function! s:TeXShopRun()
   endif
 endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Colorscheme
-:Skindefault
