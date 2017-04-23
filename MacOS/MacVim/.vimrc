@@ -98,8 +98,18 @@ function! s:ChangeDir()
 endfunction
 
 
-" F3でwordcount (Latexなら純粋に単語数だけ)
-map <F3> :w !detex \| wc -w<CR>
+" \wでwordcount (LatexならTeXcountを利用して純粋に単語数だけ)
+nnoremap <Leader>w :MyWordCount<CR>
+command! MyWordCount call s:MyWordCount()
+function! s:MyWordCount()
+  let e = expand("%:e")
+  if e == "tex" 
+    :w !perl /Users/Shusei/.vim/texcount.pl %:r.tex
+  else
+		" g<C-g>のキーマッピングの実行
+    :execute "normal g\<C-g>"
+  endif
+endfunction
 
 "テキストでは勝手に改行しない
 autocmd FileType text setlocal textwidth=0 
@@ -107,7 +117,7 @@ autocmd FileType text setlocal textwidth=0
 "Spell Checkのときに日本語を除外
 set spelllang=en,cjk
 
-" インサートモードでは、Esc2回で括弧を抜ける
+" インサートモードでは、Shift-Escで括弧を抜ける
 inoremap <S-ESC> <ESC>la
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -191,7 +201,10 @@ function! s:Run1()
     if e == "tex"
     :lcd %:p:h
     :QuickRun
-    endif
+  endif
+		if e == "R"
+		:QuickRun
+	endif
 endfunction
 
 command! Python3Do call s:Python1()
@@ -333,7 +346,7 @@ nnoremap <Leader>s :SkimRun<CR>
 command! SkimRun call s:SkimRun()
 function! s:SkimRun()
   let e = expand("%:e")
-  if e == "tex"
+  if e == "tex" || e== "Rmd"
     :!open -a /Applications/Skim.app %:r.pdf
     echo "Open in Skim"
   else
