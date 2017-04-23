@@ -27,6 +27,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 18. [箇条書きのスタイル変更](#箇条書きのスタイル変更)
 19. [数式コマンドショートカット](#数式コマンドショートカット)
 20. [Insert a table of contents](#insert-a-table-of-contents)
+21. [引用](#引用)
 
 ## 写真の挿入
 ```tex
@@ -380,4 +381,24 @@ V&X。\\
 Modify depth:
 ```tex
 \setcounter{tocdepth}{3}
+```
+
+## 引用
+```tex
+\citep{jon90} %⇒ (Jones et al. 1990)
+\citep*{jon90} %⇒ (Jones, Baker, and Williams 1990)
+\citep[pp.36-38]{Diamond11} %⇒ (Diamond 2011, pp.36-38)
+
+\citep{jon90,jon91} %⇒ (Jones et al. 1990, 1991)
+
+\citetext{priv.\ comm.} %⇒ (priv. comm.)
+
+\citet{jon90} %⇒ Jones et al. (1990)
+\citeyearpar{jon90} %⇒ (1990)
+\citeauthor{jon90} %⇒ Jones et al.
+\citeauthor*{jon90} %⇒ Jones, Baker, and Williams
+
+% Multiple citation:
+\citet{jon90,jam91}
+\citep{jon90,jam91}
 ```
