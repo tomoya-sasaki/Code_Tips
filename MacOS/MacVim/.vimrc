@@ -71,20 +71,20 @@ function! s:CodeMode()
   if g:code_mode==0
     let g:code_mode = 1
     inoremap _ -
-		inoremap - _
-		inoremap ' ""<Left>
-		inoremap " '
-		noremap ' ""<Left>
-		noremap " '
+    inoremap - _
+    inoremap ' ""<Left>
+    inoremap " '
+    noremap ' ""<Left>
+    noremap " '
     :echomsg "CodeSpecialMode is on"
   else
     let g:code_mode = 0
     inoremap _ _
-		inoremap - -
-		inoremap ' '
-		inoremap " "
-		noremap ' '
-		noremap " "
+    inoremap - -
+    inoremap ' '
+    inoremap " "
+    noremap ' '
+    noremap " "
     :echomsg "CodeSpecialMode is off"
   endif
 endfunction
@@ -94,19 +94,21 @@ nnoremap <Leader>d :ChangeDir<CR>
 command! ChangeDir call s:ChangeDir()
 function! s:ChangeDir()
   :cd %:h
-	:pwd
+  :pwd
 endfunction
 
 
 " \wでwordcount (LatexならTeXcountを利用して純粋に単語数だけ)
+vnoremap <Leader>w g<C-g>
 nnoremap <Leader>w :MyWordCount<CR>
 command! MyWordCount call s:MyWordCount()
 function! s:MyWordCount()
   let e = expand("%:e")
   if e == "tex" 
+    :w !detex %:r.tex | wc -w
     :w !perl /Users/Shusei/.vim/texcount.pl %:r.tex
   else
-		" g<C-g>のキーマッピングの実行
+    " g<C-g>のキーマッピングの実行
     :execute "normal g\<C-g>"
   endif
 endfunction
@@ -154,11 +156,11 @@ call dein#add('Shougo/dein.vim')
  
 " Add or remove your plugins here:
 if dein#load_state(s:dein_dir)
-	call dein#begin(s:dein_dir, [$MYVIMRC, s:toml])
-	call dein#load_toml(s:toml, {'lazy': 0})
-	call dein#load_toml(s:lazy_toml, {'lazy': 1})
-	call dein#end()
-	call dein#save_state()
+  call dein#begin(s:dein_dir, [$MYVIMRC, s:toml])
+  call dein#load_toml(s:toml, {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#end()
+  call dein#save_state()
 endif
  
 " If you want to install not installed plugins on startup.
@@ -174,13 +176,13 @@ filetype plugin indent on
 " Set commands for colorscheme
 " User-defined commands must start with a capital letter
 function! SkinDefault()
-	Skinhybrid
-	colorscheme macvim
-	highlight Normal guifg=MacTextColor  guibg=gray90
-	highlight Cursor guifg=NONE guibg=#57fc00
-	highlight StatusLineNC guibg=#a8a6a6 guifg=#606060
-	highlight Cursor guifg=NONE guibg=Green
-	highlight CursorIM guifg=NONE guibg=Purple
+  Skinhybrid
+  colorscheme macvim
+  highlight Normal guifg=MacTextColor  guibg=gray90
+  highlight Cursor guifg=NONE guibg=#57fc00
+  highlight StatusLineNC guibg=#a8a6a6 guifg=#606060
+  highlight Cursor guifg=NONE guibg=Green
+  highlight CursorIM guifg=NONE guibg=Purple
 endfunction
 command! Skindefault call SkinDefault()
 
@@ -204,14 +206,14 @@ function! s:Run1()
     :lcd %:p:h
     :QuickRun
   endif
-		if e == "R"
-		:QuickRun
-	endif
+    if e == "R"
+    :QuickRun
+  endif
 endfunction
 
 command! Python3Do call s:Python1()
 function! s:Python1()
-	echo "Not Ready"
+  echo "Not Ready"
 endfunction
 
 command! Gcc1 call s:Gcc1()
