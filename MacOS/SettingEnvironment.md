@@ -87,6 +87,10 @@ sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 ## Office
 Check Amazon's 「ゲーム&PCソフトダウンロードライブラリ」
 
+## Pandoc
+* `$ brew install pandoc`
+* `$ brew install pandoc-citeproc`
+
 ## Keyboard Shortcuts
 * Keyboard -> Shortcuts -> App Shortcuts -> Add(+)
 * Help: Create keyboard shortcuts for apps
