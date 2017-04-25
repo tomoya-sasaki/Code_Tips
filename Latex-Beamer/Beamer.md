@@ -16,7 +16,9 @@
 13. [Citation and Reference](#citation-and-reference)
 14. [Hide Appendix and References](#hide-appendix-and-references)
 15. [上部のナビゲーションバーを消す](#上部のナビゲーションバーを消す)
-16. [箇条書きを左にずらす](#箇条書きを左にずらす)
+16. [箇条書き](#箇条書き)
+  * [箇条書きを左にずらす](#箇条書きを左にずらす)
+  * [間隔の調整](#間隔の調整)
 17. [図の左寄せ](#図の左寄せ)
 
 ### Beamer Slide
@@ -140,12 +142,23 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 ```
 を`\begin{document}`の前に入れる
 
-## 箇条書きを左にずらす
+## 箇条書き
+
+### 箇条書きを左にずらす
 ```tex
 \usepackage{enumitem} %latexならこの行だけでOK
 \setitemize{label=\usebeamerfont*{itemize item}%
   \usebeamercolor[fg]{itemize item}
   \usebeamertemplate{itemize item}}
+```
+
+### 間隔の調整
+プリアンブルに、
+```tex
+\usepackage{xpatch}
+\xpatchcmd{\itemize}
+  {\def\makelabel}
+  {\setlength{\itemsep}{9pt}\def\makelabel}
 ```
 
 ## 図の左寄せ
