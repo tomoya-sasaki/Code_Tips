@@ -1,8 +1,9 @@
 # Setting Environment 2016/12/28
 
-## Homebrew
+## Using Homebrew
 ### R
 * `brew upgrade xxx`
+* `brew upgrade r` will update your R
 
 ## Manual Install
 ### XCode
