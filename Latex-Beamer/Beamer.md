@@ -1,4 +1,5 @@
-#Beamer
+# Beamer
+* `\pause`をしていても、`\documentclass[handout]{beamer}`とすれば作成時に快適
 
 # Table of Contents
 1. <a href="https://gist.github.com/Shusei-E/12caa6d176d7b07d393e" target="_blank">全体のテンプレ</a>
