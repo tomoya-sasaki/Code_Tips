@@ -141,7 +141,7 @@ inoremap <S-ESC> <ESC>la
 
 " Fold method (起動時には全てunfold)
 set foldmethod=syntax
-au BufRead * normal zR
+au BufNewFile,BufRead * normal zR
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dein用
