@@ -11,38 +11,38 @@ nnoremap <C-s> :source ~/.vim_session <cr> :nohl <cr>
 noremap <D-1> 0
 noremap <D-0> $
 
-"Chrome的なタブの切り替え
+" Chrome的なタブの切り替え
 nnoremap <D-A-Left> gT
 nnoremap <D-A-Right> gt
 
-"行番号を表示する
+" 行番号を表示する
 set number
 
-"タブ幅の設定、Tabではなくスペース2つにする
+" タブ幅の設定、Tabではなくスペース2つにする
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
 set softtabstop=0
 autocmd Filetype tex setlocal expandtab
 
-"新しい行のインデントを現在行と同じにする
+" 新しい行のインデントを現在行と同じにする
 set autoindent
 autocmd BufNewFile,BufRead *.c set cindent
 autocmd BufNewFile,BufRead *.cpp set cindent
 
-"バックアップをとらない
+" バックアップをとらない
 set nobackup
 
-"ビープ音を出さない
+" ビープ音を出さない
 set visualbell t_vb=
 
-"括弧ハイライトの調整 cf. http://goo.gl/acS2xh http://goo.gl/4caCgN
+" 括弧ハイライトの調整 cf. http://goo.gl/acS2xh http://goo.gl/4caCgN
 autocmd ColorScheme * highlight MatchParen gui=bold,underline guibg=white guifg=orange
 
-"勝手に括弧のハイライトでカーソルを動かさない
+" 勝手に括弧のハイライトでカーソルを動かさない
 set noshowmatch
 
-"括弧の補完
+" 括弧の補完
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap ( ()<Left>
@@ -51,12 +51,12 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
-"ビジュアルモードでは勝手にヤンクしないようにする cf. http://goo.gl/7jq1Th
+" ビジュアルモードでは勝手にヤンクしないようにする cf. http://goo.gl/7jq1Th
 vnoremap d "_d
 noremap D "_D
 "noremap  p "0p
 
-"Undoの情報はセッションを超えて保存しない
+" Undoの情報はセッションを超えて保存しない
 set noundofile
 
 " ノーマルモード時だけ ; と : を入れ替える
@@ -122,8 +122,25 @@ set spelllang=en,cjk
 " インサートモードでは、Shift-Escで括弧を抜ける
 inoremap <S-ESC> <ESC>la
 
+" Window Size
+" ウィンドウ間の移動 (Command)
+  noremap <D-Left> <C-w>h
+  noremap <D-Right> <C-w>l
+  noremap <D-Down> <C-w>j
+  noremap <D-Up> <C-w>k
+" ウィンドウの移動 (Shift+Command)
+  noremap <S-D-Left> <C-w><S-h>
+  noremap <S-D-Right> <C-w><S-l>
+  noremap <S-D-Down> <C-w><S-j>
+	noremap <S-D-Up> <C-w><S-k>
+" ウィンドウサイズの調整 (Control+option)
+  noremap <A-C-Left> <C-w><
+  noremap <A-C-Right> <C-w>>
+  noremap <A-C-Down> <C-w>-
+  noremap <A-C-Up> <C-w>+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Dein用
+" Dein用
 if &compatible
   set nocompatible   " Be improved
 endif
@@ -237,7 +254,7 @@ function! s:CPP1()
 endfunction
 
 
-"QuickRunで実行
+" QuickRunで実行
 command! Run call s:Run()
 nmap <F6> :Run<CR>
 function! s:Run()
@@ -307,24 +324,24 @@ function! s:vimfiler_settings()
 endfunction
 
 
-"uniteを開いている間のキーマッピング
+" uniteを開いている間のキーマッピング
 augroup vimrc
   autocmd FileType unite call s:unite_my_settings()
 augroup END
 function! s:unite_my_settings()
-  "ESCでuniteを終了
+  " ESCでuniteを終了
   nmap <buffer> <ESC><ESC> <Plug>(unite_exit)
-  "入力モードのときjjでノーマルモードに移動
+  " 入力モードのときjjでノーマルモードに移動
   imap <buffer> jj <Plug>(unite_insert_leave)
-  "入力モードのときctrl+wでバックスラッシュも削除
+  " 入力モードのときctrl+wでバックスラッシュも削除
   imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-  "<C-s>でsplit
+  " <C-s>でsplit
   nnoremap <silent><buffer><expr> <C-s> unite#smart_map('<C-s>', unite#do_action('split'))
   inoremap <silent><buffer><expr> <C-s> unite#smart_map('<C-s>', unite#do_action('split'))
-  "<C-v>でvsplit
+  " <C-v>でvsplit
   nnoremap <silent><buffer><expr> <C-v> unite#smart_map('<C-v>', unite#do_action('vsplit'))
   inoremap <silent><buffer><expr> <C-v>f unite#smart_map('<C-v>', unite#do_action('vsplit'))
-  "vでvimfiler
+  " vでvimfiler
   nnoremap <silent><buffer><expr> v unite#smart_map('v', unite#do_action('vimfiler'))
   inoremap <silent><buffer><expr> v unite#smart_map('v', unite#do_action('vimfiler'))
 endfunction
