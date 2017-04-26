@@ -139,8 +139,9 @@ inoremap <S-ESC> <ESC>la
   noremap <A-C-Down> <C-w>-
   noremap <A-C-Up> <C-w>+
 
-" Fold method
+" Fold method (起動時には全てunfold)
 set foldmethod=syntax
+au BufRead * normal zR
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dein用
