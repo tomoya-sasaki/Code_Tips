@@ -139,6 +139,9 @@ inoremap <S-ESC> <ESC>la
   noremap <A-C-Down> <C-w>-
   noremap <A-C-Up> <C-w>+
 
+" Fold method
+set foldmethod=syntax
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dein用
 if &compatible
