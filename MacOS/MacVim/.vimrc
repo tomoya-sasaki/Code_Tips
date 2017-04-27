@@ -140,7 +140,7 @@ inoremap <S-ESC> <ESC>la
   noremap <A-C-Up> <C-w>+
 
 " Fold method (起動時には全てunfold)
-set foldmethod=syntax
+set foldmethod=marker
 au BufNewFile,BufRead * normal zR
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
