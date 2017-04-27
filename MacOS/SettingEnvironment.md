@@ -4,6 +4,7 @@
 ### R
 * `brew upgrade xxx`
 * `brew upgrade r` will update your R
+* Old packages: `/usr/local/lib/R/`
 
 ## Manual Install
 ### XCode
