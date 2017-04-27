@@ -11,10 +11,10 @@ on_ft = ['python']
 repo = 'kovisoft/slimv'
 on_ft = ['lisp']
 hook_source = '''
-  gnmap <D-Enter> ,d j
-  gimap <D-Enter> <ESC> ,d i
-  gnmap <LocalLeader>rf ,c
-  gnmap <LocalLeader>cc ,b
+  nmap <D-Enter> ,d j
+  imap <D-Enter> <ESC> ,d i
+  nmap <LocalLeader>rf ,c
+  nmap <LocalLeader>cc ,b
 '''
 
 ## R
@@ -23,15 +23,13 @@ repo = 'jalvesaq/Nvim-R'
 on_ft = ['r', 'rmd']
 hook_source = '''
   let g:R_assign = 0 
-  glet g:R_rconsole_width = 40
-  glet g:R_rconsole_height = 50
-  gnmap <D-Enter> <Plug>RDSendLine
-  gimap <D-Enter> <ESC> <Plug>RDSendLine i
-  gnmap <LocalLeader>cc <Plug>RSendChunk
-  gvmap <LocalLeader>ss <Plug>RDSendSelection <C-c>
-  gnmap <LocalLeader>pp <Plug>RDSendParagraph
-  gnmap <LocalLeader>cn <Plug>RNextRChunk
-  gnmap <LocalLeader>cN <Plug>RPreviousRChunk
+  nmap <D-Enter> <Plug>RDSendLine
+  imap <D-Enter> <ESC> <Plug>RDSendLine i
+  nmap <LocalLeader>cc <Plug>RSendChunk
+  vmap <LocalLeader>ss <Plug>RDSendSelection <C-c>
+  nmap <LocalLeader>pp <Plug>RDSendParagraph
+  nmap <LocalLeader>cn <Plug>RNextRChunk
+  nmap <LocalLeader>cN <Plug>RPreviousRChunk
 '''
 
 ## Tex
