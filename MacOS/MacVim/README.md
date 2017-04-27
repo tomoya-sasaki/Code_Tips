@@ -12,6 +12,7 @@
 * `\cn`: Next chunk
 * `\cN`: Previous chunk
 * `\kp`: Knit PDF (Errorが出たらフォント絡みのことがあるので、`mainfont: Meiryo`とだけする。この場合図の日本語は表示できない)
+* `\aa`: Send a file
 
 ## foldmethod
 * `{{{`と`}}}`で囲う、コメントアウトされていてもOK
