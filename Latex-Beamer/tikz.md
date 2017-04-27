@@ -6,6 +6,10 @@
 
 
 ## 設定
+### New
+[こちら](https://github.com/Shusei-E/Code_Tips/blob/master/Latex-Beamer/Latex.md#tikzでゲームツリー)を参考にすること。
+
+### Old
 ```tex
 \documentclass[a4paper,10.5pt,dvipdfmx]{jarticle}
 ```
