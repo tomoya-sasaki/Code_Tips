@@ -4,16 +4,17 @@
 repo = 'jmcantrell/vim-virtualenv'
 on_ft = ['python']
 
+
 ### Programming
 ## Lisp
 [[plugins]]
 repo = 'kovisoft/slimv'
 on_ft = ['lisp']
 hook_source = '''
-	nmap <D-Enter> ,d j
-	imap <D-Enter> <ESC> ,d i
-	nmap <LocalLeader>rf ,c
-	nmap <LocalLeader>cc ,b
+  gnmap <D-Enter> ,d j
+  gimap <D-Enter> <ESC> ,d i
+  gnmap <LocalLeader>rf ,c
+  gnmap <LocalLeader>cc ,b
 '''
 
 ## R
@@ -22,13 +23,34 @@ repo = 'jalvesaq/Nvim-R'
 on_ft = ['r', 'rmd']
 hook_source = '''
   let g:R_assign = 0 
-	let g:R_rconsole_width = 40
-	let g:R_rconsole_height = 50
-	nmap <D-Enter> <Plug>RDSendLine
-	imap <D-Enter> <ESC> <Plug>RDSendLine i
-	nmap <LocalLeader>cc <Plug>RSendChunk
-	vmap <LocalLeader>ss <Plug>RDSendSelection <C-c>
-	nmap <LocalLeader>pp <Plug>RDSendParagraph
-	nmap <LocalLeader>cn <Plug>RNextRChunk
-	nmap <LocalLeader>cN <Plug>RPreviousRChunk
+  glet g:R_rconsole_width = 40
+  glet g:R_rconsole_height = 50
+  gnmap <D-Enter> <Plug>RDSendLine
+  gimap <D-Enter> <ESC> <Plug>RDSendLine i
+  gnmap <LocalLeader>cc <Plug>RSendChunk
+  gvmap <LocalLeader>ss <Plug>RDSendSelection <C-c>
+  gnmap <LocalLeader>pp <Plug>RDSendParagraph
+  gnmap <LocalLeader>cn <Plug>RNextRChunk
+  gnmap <LocalLeader>cN <Plug>RPreviousRChunk
+'''
+
+## Tex
+[[plugins]] 
+repo = 'thinca/vim-quickrun'
+on_ft = ['tex']
+hook_add = '''
+let g:quickrun_config = {
+\   'tex': {
+\       'command': 'latexmk',
+\       'exec': ['%c -gg -pdfdvi %s']
+\   },
+\}
+'''
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+let g:vimtex_fold_envs = 0
+let g:tex_indent_brace=0
 '''
