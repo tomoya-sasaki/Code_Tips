@@ -10,34 +10,6 @@ repo = 'Shougo/unite.vim'
 repo = 'Shougo/vimfiler.vim'
 
 
-### Tex
-[[plugins]] 
-repo = 'thinca/vim-quickrun'
-hook_add = '''
-let g:quickrun_config = {
-\   'tex': {
-\       'command': 'latexmk',
-\       'exec': ['%c -gg -pdfdvi %s']
-\   },
-\}
-'''
-
-[[plugins]]
-repo = 'lervag/vimtex'
-hook_add = '''
-let g:vimtex_fold_envs = 0
-let g:tex_indent_brace=0
-'''
-
-### Programming
-## Lisp
-[[plugins]]
-repo = 'kovisoft/slimv'
-
-## R
-[[plugins]]
-repo = 'jalvesaq/Nvim-R'
-
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -54,33 +26,43 @@ repo = 'Shougo/vimproc.vim'
 repo = 'sjl/badwolf'
 hook_add = '''
 function! Badwolf()
-	colorscheme badwolf
-	highlight Comment ctermfg=22 guifg=#84cc90
+  colorscheme badwolf
+  highlight Comment ctermfg=22 guifg=#84cc90
 endfunction
 command! Skinbadwolf call Badwolf()
 '''
 
+# [[plugins]]
+# repo = 'cseelus/vim-colors-lucid'
+# hook_add = '''
+# function! SchemeLucid()
+#   colorscheme lucid
+#   highlight Comment ctermfg=22 guifg=#4286f4
+# endfunction
+# command! Skinlucid call SchemeLucid()
+# '''
+
 [[plugins]]
-repo = 'cseelus/vim-colors-lucid'
+repo = 'altercation/vim-colors-solarized'
 hook_add = '''
-function! SchemeLucid()
-	colorscheme lucid
-	highlight Comment ctermfg=22 guifg=#4286f4
+function! SchemeSolarized()
+  set background=light
+  colorscheme solarized
 endfunction
-command! Skinlucid call SchemeLucid()
+command! Skinsolarized call SchemeSolarized()
 '''
 
 [[plugins]]
 repo = 'scwood/vim-hybrid'
 hook_add = '''
 function! Schemehybrid()
-	colorscheme hybrid
-	set background=light
-	highlight Comment ctermfg=22 guifg=#4286f4
-	highlight Cursor guifg=NONE guibg=#57fc00		
-	highlight LineNr guifg=#808080
-	highlight Visual guifg=black guibg=#aaa2dc
-	highlight Search guibg=yellow guifg=black
+  colorscheme hybrid
+  set background=light
+  highlight Comment ctermfg=22 guifg=#4286f4
+  highlight Cursor guifg=NONE guibg=#57fc00    
+  highlight LineNr guifg=#808080
+  highlight Visual guifg=black guibg=#aaa2dc
+  highlight Search guibg=yellow guifg=black
 endfunction
 command! Skinhybrid call Schemehybrid()
 '''
