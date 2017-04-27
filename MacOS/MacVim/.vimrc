@@ -122,26 +122,31 @@ set spelllang=en,cjk
 " インサートモードでは、Shift-Escで括弧を抜ける
 inoremap <S-ESC> <ESC>la
 
-" Window Size
-" ウィンドウ間の移動 (Command)
-  noremap <D-Left> <C-w>h
-  noremap <D-Right> <C-w>l
-  noremap <D-Down> <C-w>j
-  noremap <D-Up> <C-w>k
-" ウィンドウの移動 (Shift+Command)
-  noremap <S-D-Left> <C-w><S-h>
-  noremap <S-D-Right> <C-w><S-l>
-  noremap <S-D-Down> <C-w><S-j>
-	noremap <S-D-Up> <C-w><S-k>
-" ウィンドウサイズの調整 (Control+option)
-  noremap <A-C-Left> <C-w><
-  noremap <A-C-Right> <C-w>>
-  noremap <A-C-Down> <C-w>-
-  noremap <A-C-Up> <C-w>+
 
 " Fold method (起動時には全てunfold)
 set foldmethod=marker
+autocmd BufNewFile,BufRead *.cpp set foldmethod=syntax
 au BufNewFile,BufRead * normal zR
+
+" Window Size
+command! Window call s:WindowSetting()
+function! s:WindowSetting()
+	" ウィンドウ間の移動 (Command)
+		noremap <D-Left> <C-w>h
+		noremap <D-Right> <C-w>l
+		noremap <D-Down> <C-w>j
+		noremap <D-Up> <C-w>k
+	" ウィンドウの移動 (Shift+Command)
+		noremap <S-D-Left> <C-w><S-h>
+		noremap <S-D-Right> <C-w><S-l>
+		noremap <S-D-Down> <C-w><S-j>
+		noremap <S-D-Up> <C-w><S-k>
+	" ウィンドウサイズの調整 (Control+option)
+		noremap <A-C-Left> <C-w><
+		noremap <A-C-Right> <C-w>>
+		noremap <A-C-Down> <C-w>-
+		noremap <A-C-Up> <C-w>+
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dein用
@@ -206,7 +211,6 @@ function! SkinDefault()
   highlight CursorIM guifg=NONE guibg=Purple
 endfunction
 command! Skindefault call SkinDefault()
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Programming and QuickRun Commands
