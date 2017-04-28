@@ -379,6 +379,15 @@ V&X。\\
 ```
 
 ## Insert a table of contents
+プリアンブル (間隔の調整):
+```tex
+%--Table of Contents
+\usepackage{tocloft}
+\cftsetindents{section}{0em}{2em}
+\cftsetindents{subsection}{3em}{2em}
+\cftsetindents{subsubsection}{5em}{3em}
+```
+
 ```tex
 \noindent\rule{17.5cm}{1.7pt}
 \vspace{-1.3cm}
