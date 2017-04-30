@@ -13,6 +13,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
    * [数式の改ページ](#数式の改ページ)
    * [frac色々](#frac色々)
    * [alignの行間](#alignの行間)
+   * [記号をまたぐlinebreak](#記号をまたぐlinebreak)
 6. [ダブルスペース](#ダブルスペース)
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
 8. [横長の表を回転する](#横長の表を回転する)
@@ -113,6 +114,12 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 プリアンブルに以下を記述
 ```tex
 \jot=3.5mm
+```
+
+### 記号をまたぐlinebreak
+```tex
+  \frac{\partial \cL}{\partial q(\bz)} &= \frac{\partial}{\partial q(\bz)} \left[ \iint q(\bz) q(\btheta) \ln p(\bx, \bz, \btheta) d\bz d\btheta - \iint q(\bz)q(\btheta) \ln q(\bz) d\bz d\btheta \right.\\
+  &\qquad \qquad \quad \left. \iint q(\bz) q(\btheta) \ln q(\btheta) d\bz d\btheta \right] + \lambda \left( \int q(\bz) d\bz - 1 \right)
 ```
 
 ## ダブルスペース
