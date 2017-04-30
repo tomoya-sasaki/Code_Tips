@@ -26,7 +26,7 @@ Other Material:
 * [Sample Code](#sample-code)
 
 ## Install
-1. Expand zip file and put a folder named `Eigen` into `/usr/include`
+1. Expand zip file and put a folder named `Eigen` into `usr/local/include` (or `/usr/include` if you are using older Mac).
 2. If you want to use Eigne in a specific folder, change `#include <Eigen/Dense>` to `#include "Eigen/Dense"`.
 
 ## Examples
