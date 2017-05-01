@@ -14,16 +14,20 @@ typedef struct{
 	vector<int> words;
 }DATA_STRUCT;
 
-void dadd(DATA_STRUCT *data){
-	for(int i=0; i<5; i++){
-		(&data)[0] -> words.push_back(3);
+void add(DATA_STRUCT *data, int M){
+	for(int i=0; i<M; i++){
+		for(int s=0;s<3; s++){
+			data[i].words.push_back(s);
+			cout << i << s << endl;
+		}
 	}
 }
 
 int main(){
-
-	DATA_STRUCT *data = new DATA_STRUCT[5];
-	dadd(data);
-	cout << (&data)[0] -> words[0] << endl;
+	int M=5;
+	DATA_STRUCT *data = new DATA_STRUCT[M];
+	add(data, M);
+	cout << data[0].words[0] << endl;
+	delete[] data;
 }
 ```
