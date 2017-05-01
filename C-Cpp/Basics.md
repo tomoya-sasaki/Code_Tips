@@ -245,6 +245,6 @@ void funct(int arg){ // fct is global, funct is local integer argument
 
 #### Pointers
 `*` contents of / `&` address of として考えられる (p.10)  
-[これ](http://goo.gl/BFdGE3)はかなりわかりやすい。
-
+* `int *p;` or `int* p;`: p is a pointer to an int.
+* ポインタとはアドレスを入れることを目的とした変数です。 ポインタ型として箱を用意した変数の中には、アドレスを入れることができます。
  
