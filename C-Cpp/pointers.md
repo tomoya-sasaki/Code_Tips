@@ -18,3 +18,6 @@
 > `&x` は `x` のアドレスをあらわします． さらに， `&x` に `*` を用いると， そのアドレス `&x` が指すメモリを変数とみなすので， `*(&x)` は `x` と同じ変数
 
 ポインタを介在して、違う変数の変数にアクセスすることができる。
+
+### Explanation 2
+[Reference](http://www.cplusplus.com/doc/tutorial/pointers/)
