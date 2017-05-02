@@ -78,7 +78,19 @@ matrix.col(j);
 ```
 
 ## Count Elements
-`.count()`
+```cpp
+x.size() // vector length
+C.rows() // number of rows
+C.cols() // number of columns
+```
+
+```cpp
+MatrixXd A = MatrixXd::Identity(3,3);
+cout << "Does A(i,j)<1.0 hold for all elements? : " << (A.array()<1.0).all() << endl;
+cout << "Does A(i,j)<2.0 hold for all elements? : " << (A.array()<2.0).all() << endl;
+cout << "Does A(i,j)<1.0 hold for any elements? : " << (A.array()<1.0).any() << endl;
+cout << "How many elements do A(i,j)<1.0 hold?  : " << (A.array()<1.0).count() << endl;
+```
 
 ## 行列要素へのアクセス
 The simplest way is to specify row and colum, `Matrix(row, column)`. The way to access a single column is `.col(i)`, and similarly for row, its `.row(i)` (`.row()` seems to return a horizontal vector). Also of interest is `.block<>`.
