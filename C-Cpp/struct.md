@@ -32,3 +32,16 @@ int main(){
 }
 ```
 `data[i]`と `*(data+i)`は等価ゆえ、`(data+i) -> words.push_back(s);`としてもOK。
+```cpp
+void show(int *a){
+	cout << a[2] << endl;
+	cout << *(a+2) << endl;
+}
+
+int main() {
+	int a[3] = {1,2,3};	
+	show(a);
+
+	return 0;
+} 
+```
