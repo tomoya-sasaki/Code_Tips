@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Basics](#basics)
 2. [Structs](#structs)
+3. [Arrays](#arrays)
 
 
 ## Basics
@@ -32,3 +33,19 @@
 
 ## Structs
 構造体のポインタは1つのデータ群の先頭アドレスを指していて、メンバ変数を指しているわけじゃない
+
+## Arrays
+```
+void num_docs(int *a){
+  cout << a[2] << endl;
+  cout << *(a+2) << endl;
+}
+
+int main() {
+  int a[3] = {1,2,3};	
+  num_docs(a);
+  num_docs(&a[0]); // 上と同じ
+  return 0;
+} 
+```
+`&a[0]`のことを`a`と書いても良いという規則。先頭要素のアドレスと配列本体のアドレスは別（場所は同じでも型が異なる）ので、`&a`とするとエラーになる。
