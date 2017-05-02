@@ -31,4 +31,4 @@ int main(){
 	delete[] data;
 }
 ```
-`data[i]と *(data+i)は等価`ゆえ、`(data+i) -> words.push_back(s);`としてもOK。
+`data[i]`と `*(data+i)`は等価ゆえ、`(data+i) -> words.push_back(s);`としてもOK。
