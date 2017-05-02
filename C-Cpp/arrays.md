@@ -1,7 +1,7 @@
 # Arrays
 
 ## Table of Contents
-1. [Arrays and brackets](#arrays-and-brackets]
+1. [Arrays and brackets](#arrays-and-brackets)
 
 ## Arrays and brackets
 まず、`int a[10];`に対して`a`と記述すると`&a[0]`と同じに解釈 (arrayの先頭要素へのポインタ)
