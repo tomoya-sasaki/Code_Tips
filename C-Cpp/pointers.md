@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Basics](#basics)
+2. [Structs](#structs)
 
 
 ## Basics
@@ -28,3 +29,6 @@
 > the declaration of a pointer needs to include the data type the pointer is going to point to: `type *name;`
 
 > Note that the asterisk (`*`) used when declaring a pointer only means that it is a pointer (it is part of its type compound specifier), and should not be confused with the dereference operator seen a bit earlier, but which is also written with an asterisk (`*`). They are simply two different things represented with the same sign.
+
+## Structs
+構造体のポインタは1つのデータ群の先頭アドレスを指していて、メンバ変数を指しているわけじゃない
