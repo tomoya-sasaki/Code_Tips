@@ -21,3 +21,10 @@
 
 ### Explanation 2
 [Reference](http://www.cplusplus.com/doc/tutorial/pointers/)
+
+* `&` is the address-of operator, and can be read simply as "address of"
+* `*` is the dereference operator, and can be read as "value pointed to by"
+
+> the declaration of a pointer needs to include the data type the pointer is going to point to: `type *name;`
+
+> Note that the asterisk (`*`) used when declaring a pointer only means that it is a pointer (it is part of its type compound specifier), and should not be confused with the dereference operator seen a bit earlier, but which is also written with an asterisk (`*`). They are simply two different things represented with the same sign.
