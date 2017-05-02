@@ -1,4 +1,5 @@
 #include <math.h>
+#include <random>
 
 
 double pnorm(double x, double mean, double sd){
@@ -56,4 +57,26 @@ double rnorm(double mean, double sd){
   normal_distribution<double> distribution(mean, sd);
 
 	return distribution(engine);
+}
+
+int multi1(VectorXd prob){
+	random_device rd;
+	mt19937 rng(rd());
+	std::uniform_real_distribution<double> uniform(0.0,1.0);
+
+	if (prob.sum() != 1.0){
+		cout << "Prob sum is strange" << endl;
+		return -1.0;
+	}
+	double u = uniform(rng);
+	double temp = 0.0;
+	int index = 0;
+	for(int i=0; i<prob.size(); i++){
+		temp += prob(i);
+		if(u < temp){
+			index = i;
+			break;
+		}
+	}
+	return index;
 }
