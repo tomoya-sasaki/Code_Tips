@@ -65,10 +65,6 @@ int multi1(VectorXd prob){
 	mt19937 rng(rd());
 	std::uniform_real_distribution<double> uniform(0.0,1.0);
 
-	if (prob.sum() != 1.0){
-		cout << "Prob sum is strange" << endl;
-		return -1.0;
-	}
 	double u = uniform(rng);
 	double temp = 0.0;
 	int index = 0;
