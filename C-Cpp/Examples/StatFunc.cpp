@@ -60,6 +60,7 @@ double rnorm(double mean, double sd){
 }
 
 int multi1(VectorXd prob){
+	// Multi(x, 1), return category index
 	random_device rd;
 	mt19937 rng(rd());
 	std::uniform_real_distribution<double> uniform(0.0,1.0);
