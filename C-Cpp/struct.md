@@ -31,7 +31,8 @@ int main(){
 	delete[] data;
 }
 ```
-`data[i]`と `*(data+i)`は等価ゆえ、`(data+i) -> words.push_back(s);`としてもOK。
+`data[i]`と `*(data+i)`は等価ゆえ、`(data+i) -> words.push_back(s);`としてもOK。`data`という基準点（それがポインタ）からみて`i`番目（ゼロ番目から数える）の位置にある内容が、二通りで表せる。
+
 実は、以下は皆同じ:
 ```cpp
 (data+i)->words.push_back(s);
