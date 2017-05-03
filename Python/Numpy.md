@@ -13,6 +13,7 @@
 8. [警告・エラー表示の変更](#警告エラー表示の変更)
 9. [配列の要素とindexのsort](#配列の要素とindexのsort)
 10. [特定の列または行で並び替え](#特定の列または行で並び替え)
+11. [行列をindexで並び替え](#行列をindexで並び替え)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -128,3 +129,32 @@ array([[3, 2, 4],
 array([[2, 3, 4],
        [2, 4, 3]])
 ```
+
+## 行列をindexで並び替え
+```python
+>>> a = np.array(([1,2,3,4], [5,6,7,8], [9,10,11,12]))
+>>> b = np.array(([0,1,3,2], [1,3,2,0], [2,1,3,0]))
+>>> a
+array([[ 1,  2,  3,  4],
+       [ 5,  6,  7,  8],
+       [ 9, 10, 11, 12]])
+>>> b
+array([[0, 1, 3, 2],
+       [1, 3, 2, 0],
+       [2, 1, 3, 0]])
+```
+`a`の行列を、`b`に従って並べ替えたい。手で書くなら、
+```python
+>>> a[ np.array(([0, 1, 2]))[:, np.newaxis], np.array(([0,1,3,2], [1,3,2,0], [2,1,3,0]))]
+array([[ 1,  2,  4,  3],
+       [ 6,  8,  7,  5],
+       [11, 10, 12,  9]])
+```
+これは、
+```python
+>>> a[ np.arange(a.shape[0])[:, np.newaxis], b]
+array([[ 1,  2,  4,  3],
+       [ 6,  8,  7,  5],
+       [11, 10, 12,  9]])
+```
+ 
