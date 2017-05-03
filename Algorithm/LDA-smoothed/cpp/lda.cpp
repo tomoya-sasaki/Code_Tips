@@ -22,7 +22,7 @@ random_device rd;
 mt19937 rng(rd());
 std::uniform_real_distribution<double> uniform(0.0,1.0);
 // Fixed Parameters
-char filepath[] = "longdata.txt";
+char filepath[] = "data.txt";
 int iters = 100;
 int K=5; // Number of topics
 double alpha = 50.0 / (double)K;
