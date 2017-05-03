@@ -12,6 +12,7 @@
 7. [要素の数を数える](#要素の数を数える)
 8. [警告・エラー表示の変更](#警告エラー表示の変更)
 9. [配列の要素とindexのsort](#配列の要素とindexのsort)
+10. [特定の列または行で並び替え](#特定の列または行で並び替え)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -112,4 +113,18 @@ Output:
 3 30
 0 19
 1 5
+```
+
+## 特定の列または行で並び替え
+```python
+>>> x = np.array(([4,2,3], [3,2,4]))
+>>> x
+array([[4, 2, 3],
+       [3, 2, 4]])
+>>> (x[ x[:, 0].argsort()]) # 0列目でsort
+array([[3, 2, 4],
+       [4, 2, 3]])
+>>> x[:,  x[0, :].argsort()] # 0行目でsort
+array([[2, 3, 4],
+       [2, 4, 3]])
 ```
