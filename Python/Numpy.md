@@ -14,6 +14,7 @@
 9. [配列の要素とindexのsort](#配列の要素とindexのsort)
 10. [特定の列または行で並び替え](#特定の列または行で並び替え)
 11. [行列をindexで並び替え](#行列をindexで並び替え)
+12. [vectorを繰り返してmatrixにする](#vectorを繰り返してmatrixにする)
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -158,3 +159,11 @@ array([[ 1,  2,  4,  3],
        [11, 10, 12,  9]])
 ```
  
+## vectorを繰り返してmatrixにする
+```python
+>>> test = np.array([1,2,3,4,5])
+>>> np.tile(test, 3).reshape(3,5)
+array([[1, 2, 3, 4, 5],
+       [1, 2, 3, 4, 5],
+       [1, 2, 3, 4, 5]])
+```
