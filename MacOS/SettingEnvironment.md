@@ -54,7 +54,8 @@ $ bazel build -c opt --copt=-mavx --copt=-msse4.1 --copt=-msse4.2 --copt=-mavx2 
 # --copt=-mの後に拡張命令 (check tensorflow warining)
 $ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 $ ls /tmp/tensorflow_pkg 
-$ pip install /tmp/tensorflow_pkg/tensorflow-1.0.1-cp36-cp36m-macosx_10_12_x86_64.whl # check you version
+$ pip uninstall -y tensorflow
+$ pip install /tmp/tensorflow_pkg/tensorflow-1.1.1-cp36-cp36m-macosx_10_12_x86_64.whl # check you version
 ```
 
 ## Manual Install
