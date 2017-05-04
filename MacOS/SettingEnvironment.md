@@ -7,7 +7,7 @@
 * Old packages: `/usr/local/lib/R/`
 
 ### Tensorflow
-It is always better to check the latest information on the official website.
+It is always better to check the latest information on the official website. *Radeon Pro 450 2048 MB* is not for this instruction (or I could not find a way).
 
 Cuda:
 ```terminal
