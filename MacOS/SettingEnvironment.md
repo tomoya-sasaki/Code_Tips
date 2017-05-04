@@ -9,6 +9,7 @@
 ### Tensorflow
 It is always better to check the latest information on the official website. *Radeon Pro 450 2048 MB* is not for this instruction (or I could not find a way).
 
+#### If you use NVIDIA
 Cuda:
 ```terminal
 $ brew install coreutils
@@ -41,6 +42,20 @@ $ pip install tensorflow-gpu
 ```
 
 Reference (check comments as well): [TensorflowでOSXのGPUが対応されたよ](http://qiita.com/tawago/items/15160c6aa0ebd1c61715)
+
+#### CPU version
+```terminal
+$ brew install bazel swig
+$ git clone -b master --recurse-submodules https://github.com/tensorflow/tensorflow
+$ cd tensorflow
+$ git checkout master
+$ ./configure # use default or select N
+$ bazel build -c opt --copt=-mavx --copt=-msse4.1 --copt=-msse4.2 --copt=-mavx2 --copt=-mfma //tensorflow/tools/pip_package:build_pip_package
+# --copt=-mの後に拡張命令 (check tensorflow warining)
+$ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+$ ls /tmp/tensorflow_pkg 
+$ pip install /tmp/tensorflow_pkg/tensorflow-1.0.1-cp36-cp36m-macosx_10_12_x86_64.whl # check you version
+```
 
 ## Manual Install
 ### XCode
