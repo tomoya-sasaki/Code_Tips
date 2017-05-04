@@ -31,12 +31,15 @@ Set Link:
 ```terminal
 $ cd /usr/local/cuda/lib
 $ sudo ln -s libcuda.dylib libcuda.1.dylib
+$ ln -s /usr/local/cuda/lib/* /usr/local/lib
 ```
 
 Install:
 ```terminal
 $ pip install tensorflow-gpu
 ```
+
+Reference (check comments as well): [TensorflowでOSXのGPUが対応されたよ](http://qiita.com/tawago/items/15160c6aa0ebd1c61715)
 
 ## Manual Install
 ### XCode
