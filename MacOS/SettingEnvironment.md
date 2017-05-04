@@ -51,7 +51,7 @@ $ cd tensorflow
 $ git checkout master
 $ ./configure # use default or select N
 $ bazel build -c opt --copt=-mavx --copt=-msse4.1 --copt=-msse4.2 --copt=-mavx2 --copt=-mfma //tensorflow/tools/pip_package:build_pip_package
-# --copt=-mの後に拡張命令 (check tensorflow warining)
+          # --copt=-mの後に拡張命令 (check tensorflow warining)
 $ bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
 $ ls /tmp/tensorflow_pkg 
 $ pip uninstall -y tensorflow
