@@ -22,10 +22,11 @@ return 0;
 #include <iostream>
 #include <vector>
 #include <numeric>
+using namespace std;
 
 int main(){
 	vector<int> data(10);
-	iota(begin(data), end(data), 0);
+	iota(begin(data), end(data), 0); // 0: starting number
 
 	for(int i=0; i<10; i++)
 		cout << data[i];
