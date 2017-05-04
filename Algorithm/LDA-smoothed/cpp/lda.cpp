@@ -10,6 +10,7 @@
 #include <vector>
 #include <numeric>
 #include <math.h>
+#include <algorithm>
 
 // Eigen
 #include <Eigen/Dense>
@@ -234,6 +235,7 @@ void Gibbs(DATA_STRUCT *data, Parameters *parameters){
 	// Shuffle the order of documents
 	vector<int> odoc(M);
 	iota(begin(odoc), end(odoc), 0);
+	shuffle(begin(odoc), end(odoc), rng);
 
 	for(int d=0; d<M; d++){
 		int doc_id = odoc[d]; // document_id
