@@ -33,6 +33,7 @@ $ cd /usr/local/cuda/lib
 $ sudo ln -s libcuda.dylib libcuda.1.dylib
 $ ln -s /usr/local/cuda/lib/* /usr/local/lib
 ```
+Delete ailiases in `/Developer/NVIDIA/CUDA-8.0/lib`.
 
 Install:
 ```terminal
