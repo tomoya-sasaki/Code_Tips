@@ -6,6 +6,35 @@
 * `brew upgrade r` will update your R
 * Old packages: `/usr/local/lib/R/`
 
+### Tensorflow
+Cuda:
+```terminal
+$ brew install coreutils
+$ brew cask install cuda
+$ brew cask info cuda  # version check
+```
+cuDNN v5.1 Library for OSX:<br>
+Download from the official page and copy to corresponding folders `/usr/local/cuda/`.
+
+.bash_profile:
+```bash
+export CUDA_HOME=/usr/local/cuda
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib"
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
+export PATH="$CUDA_HOME/bin:$PATH"
+```
+
+Set Link:
+```terminal
+$ cd /usr/local/cuda/lib
+$ sudo ln -s libcuda.dylib libcuda.1.dylib
+```
+
+Install:
+```terminal
+$ pip install tensorflow-gpu
+```
+
 ## Manual Install
 ### XCode
 * From AppStore
