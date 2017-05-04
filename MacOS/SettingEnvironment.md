@@ -7,6 +7,8 @@
 * Old packages: `/usr/local/lib/R/`
 
 ### Tensorflow
+It is always better to check the latest information on the official website.
+
 Cuda:
 ```terminal
 $ brew install coreutils
