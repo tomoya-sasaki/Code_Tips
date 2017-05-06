@@ -97,7 +97,7 @@ np.array(list(map(lambda k: np.sum(Z==k), range(K))))
 [numpy.seterr](https://docs.scipy.org/doc/numpy/reference/generated/numpy.seterr.html)
 ```python
 old_settings = np.seterr(all='ignore')
-np.seterr(over='raise')
+np.seterr(all='warn')
 np.seterr(**old_settings)  # reset to default
 ```
 
