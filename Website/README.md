@@ -88,6 +88,7 @@ The above url will be obsolete. Use this instead:
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 ```
+Probably enough to add in template file such as `_layouts/single.html`.
 
 For example,
 ```latex
