@@ -5,7 +5,8 @@
 2. [Multi core](#multi-core)
 
 ## Visualization
-[Bayesplot](https://github.com/stan-dev/bayesplot)
+* [Bayesplot](https://github.com/stan-dev/bayesplot)
+* [ShinyStan](http://mc-stan.org/interfaces/shinystan)
 
 ## Multi core
 ```r
