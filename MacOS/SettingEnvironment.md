@@ -70,7 +70,7 @@ $ pip install /tmp/tensorflow_pkg/tensorflow-1.1.1-cp36-cp36m-macosx_10_12_x86_6
 
 Update `bash_profile`:
 ```
-vi ~/.bash_profile
+$ vi ~/.bash_profile
 ```
 In `bash_profile`,
 ```terminal
