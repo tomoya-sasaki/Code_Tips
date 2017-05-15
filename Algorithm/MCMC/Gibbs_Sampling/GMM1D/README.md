@@ -3,3 +3,5 @@ Gibbs Sapling with
 * Basic Multinomial
 * Slice Sampling
 * Retrospective Sampling
+
+May have the label switching problem
