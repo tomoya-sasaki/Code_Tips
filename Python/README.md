@@ -45,7 +45,8 @@ glob.glob(directory+"/*.txt")
 # Return the list of Subdirectory
 glob.glob(root_directory + "/*/")
 ```
-`"/Users/Test/test_doc_small/*.txt"`と`"/Users/Test/test_doc_small///*.txt"`は同じもの。`"/Users/Test/test_doc_small//*//*.txt"`は違う。
+* `"/Users/Test/test_doc_small/*.txt"`と`"/Users/Test/test_doc_small///*.txt"`は同じもの。`"/Users/Test/test_doc_small//*//*.txt"`は違う
+* `os.path.basename(filepath)`でファイル名だけ取得
 
 
 ### Copy objects
