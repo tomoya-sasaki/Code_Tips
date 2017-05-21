@@ -411,6 +411,8 @@ Modify depth:
 \citep{jon90} %⇒ (Jones et al. 1990)
 \citep*{jon90} %⇒ (Jones, Baker, and Williams 1990)
 \citep[pp.36-38]{Diamond11} %⇒ (Diamond 2011, pp.36-38)
+\citep[see][p.220]{Andrews07} => (see Andrews 2007, p.220)
+\citep[cf.][]{Andrews07} => (cf. Andrews 2007)
 
 \citep{jon90,jon91} %⇒ (Jones et al. 1990, 1991)
 
