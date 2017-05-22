@@ -7,6 +7,10 @@
 ```terminal
 python -m cProfile -s time main.py
 ```
+Save outputs:
+```terminal
+python -m cProfile -s time main.py > profile.text 2>&1
+```
 
 ## PyCallGraph
 
