@@ -1,4 +1,6 @@
 # Various Ways of Sampling
+It is always good to track accept rate.
+
 **There might be bugs, or theoretical misunderstandings!!**
 * `Metropolis-Hastings-Gaussian1D`: should be fine
 * `Metropolis-Hastings-Gaussian`: no prior, no log sigma
@@ -20,3 +22,4 @@
 * 線形モデルでの`b`のバラツキ
 	* --> 図からもわかるように、傾き`a`に比べて、切片`b`は色々な値を取っているので、バラつくのがむしろ自然
 * MHで、`log f(x) - rexp(1)` が、 `u ~ Uniform(0, f(x))`と等価になっているのはなぜ？
+	* --> Blog
