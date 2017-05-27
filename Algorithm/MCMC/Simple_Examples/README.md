@@ -21,6 +21,7 @@ else:
   param_new[k] = param_current[k].copy()
 ```
 **Follow the simple way.**
+* `Metropolis-Hastings-PRML-LogisticRegression`: Above points are fine.
 
 ## Questions
 * MHでのBlock-wiseとComponent-wise
