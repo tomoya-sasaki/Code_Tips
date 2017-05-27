@@ -4,7 +4,7 @@ It is always good to track accept rate.
 **There might be bugs, or theoretical misunderstandings!!**
 * `Metropolis-Hastings-Gaussian1D`: should be fine
 * `Metropolis-Hastings-Gaussian`: no prior, no log sigma
-* `Metropolis-Hastings-Linear-WithoutSD`: should be fine / with prioir
+* `Metropolis-Hastings-Linear-WithoutSD`: should be fine? / with prioir (prior might be wrong)
 * `Metropolis-Hastings-Linear-bOnly`: should be fine / with prior
 * `Metropolis-Hastings-Linear`: no prior, no log sigma
 * `Gibbs-Gaussian`: should be fine
