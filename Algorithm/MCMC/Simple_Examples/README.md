@@ -10,6 +10,18 @@ It is always good to track accept rate.
 * `Gibbs-Gaussian`: should be fine
 * `Slice-Sampling-SimpleDiscrete`: just a simple example
 
+**MH rejection condition above might be wrong.** It should be
+```python
+diflikelihood = loglikelihood(param_proposal, X) - loglikelihood(param_current, X)
+r = min(0, diflikelihood)
+u = np.log(npr.uniform(0,1))
+if u < r:
+  param_new[k] = new_value.copy()
+else:
+  param_new[k] = param_current[k].copy()
+```
+**Follow the simple way.**
+
 ## Questions
 * MHでのBlock-wiseとComponent-wise
 	* この考え方の違いでOKみたい
