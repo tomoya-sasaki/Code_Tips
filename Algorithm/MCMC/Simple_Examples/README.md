@@ -1,7 +1,7 @@
 # Various Ways of Sampling
 It is always good to track accept rate.
 
-**There might be bugs, or theoretical misunderstandings!!**
+**There might be bugs, or theoretical misunderstandings!! Check list below!!**
 * `Metropolis-Hastings-Gaussian1D`: should be fine
 * `Metropolis-Hastings-Gaussian`: no prior, no log sigma
 * `Metropolis-Hastings-Linear-WithoutSD`: should be fine? / with prioir (prior might be wrong)
@@ -22,6 +22,7 @@ else:
 ```
 **Follow the simple way.**
 * `Metropolis-Hastings-PRML-LogisticRegression`: Above points are fine.
+* `Slice-Sampling-LogisticRegression`: This should also be fine.
 
 ## Questions
 * MHでのBlock-wiseとComponent-wise
