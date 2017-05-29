@@ -1,5 +1,15 @@
 # Profiling
 
+## Progress bar
+```python
+from tqdm import tqdm
+import time
+
+add = 0
+for i in tqdm(range(100)):
+    add += i
+```
+
 ## cProfile
 
 ### Usage
