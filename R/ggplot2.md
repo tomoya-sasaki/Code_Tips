@@ -241,6 +241,7 @@ ggplot(aes(colour = as.factor(setid))) +
 					labels = c("1"="Model 1", "2"="Model 2", "3"="Model 3")) +
   coord_flip()
 ```
+図の[Reference](https://gist.github.com/Shusei-E/48c2cc1c36899cd6615480a8fbcf5cc5)。
 
 ## Theme
 [ggthemes](https://www.karada-good.net/analyticsr/r-566)
