@@ -21,7 +21,8 @@ else:
   param_new[k] = param_current[k].copy()
 ```
 **Follow the simple way.**
-Maybe you don't need to add an logistic error term.
+
+Maybe you don't need to add an logistic error term in the examples below.
 * `Metropolis-Hastings-PRML-LogisticRegression`: Above points are fine.
 * `Slice-Sampling-LogisticRegression`: This should also be fine.
 
