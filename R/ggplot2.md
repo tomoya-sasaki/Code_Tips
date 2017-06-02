@@ -297,7 +297,7 @@ fig_BarPlot <- function(data, qnum, varname, savename, mylimits=NA, mylabels=NA,
   geom_bar(stat="count") 
 
   # Modify order and labels
-  if(is.vector(mylimits) & is.vector(mylabels))
+  if(is.vector(mylimits) & !is.vector(mylabels))
     p <- p + scale_x_discrete(limits=mylimits) 
 
   if(!is.vector(mylimits) & is.vector(mylabels))
