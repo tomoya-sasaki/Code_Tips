@@ -27,6 +27,9 @@ References:
 15. [日本語関連](#日本語関連)
 16. [文字の追加](#文字の追加)
 17. [選択肢を強制的に表示](#選択肢を強制的に表示)
+18. [Use environment variables](#use-environment-variables)
+
+
    
 ## xラベルの変更
 ```r
@@ -276,3 +279,9 @@ data %>% select_("Q1.5", "Group") %>%
   scale_x_discrete(limits=c(1,2,3,4,5,"NA"))
 ```
 <img src="figures/ggplot2_show_choices.png" width="400">
+
+## Use environment variables
+```r
+.e <- environment()
+    ggplot(Data, aes(x = x, y = y*YMul), environment = .e) + geom_line()
+```
