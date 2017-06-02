@@ -305,13 +305,14 @@ fig_BarPlot <- function(data, qnum, varname, savename, mylimits=NA, mylabels=NA,
   # Modify order and labels
   if (is.na(mylimits) & is.na(mylabels)){
     # Nothing to do
+  } else if(is.vector(mylimits) & is.vector(mylabels) & !is.na(mylimits) & !is.na(mylabels)){
+    p <- p + scale_x_discrete(limits=mylimits, labels=mylabels) 
   } else if(is.vector(mylimits) & is.na(mylabels)){
     p <- p + scale_x_discrete(limits=mylimits) 
   } else if(is.na(mylimits) & is.vector(mylabels)){
     p <- p + scale_x_discrete(labels=mylabels) 
-  } else if(is.vector(mylimits) & is.vector(mylabels) & is.na(mylimits) & is.na(mylabels)){
-    p <- p + scale_x_discrete(limits=mylimits, labels=mylabels) 
   }
+
 
   p <- p + scale_fill_hue(name = varname) + labs(x=varname)
 
