@@ -310,7 +310,7 @@ fig_BarPlot <- function(data, qnum, varname, savename, mylimits=NA, mylabels=NA,
   p <- p + scale_fill_hue(name = varname) + labs(x=varname)
 
   savehist <- paste(folder, savename, sep="")
-  myggsave(savehist, p)
+  ggsave(savehist, p)
   
 }
 
