@@ -249,7 +249,17 @@ ggplot(aes(colour = as.factor(setid))) +
 
 ## 日本語関連
 ```r
-theme_gray(base_family="YuGo-Medium")
+p <- p + theme_gray(base_family="YuGo-Medium")
+```
+のような使い方になる。もしくは、ファイルの先頭で
+```
+quartzFonts(HiraKaku = quartzFont(rep('Hiragino Kaku Gothic Pro W3', 4)))
+theme_set(theme_gray(base_size = 12, base_family = 'HiraKaku'))
+```
+
+ただし、ggsaveの場合は使えるフォントが限られる。
+```r
+ggsave(filepath, p, family="Japan1GothicBBB")
 ```
 
 ## 文字の追加
