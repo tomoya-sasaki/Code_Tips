@@ -152,6 +152,12 @@ reg_figure <- function(var1, var2, var3){
 reg_figure("Q1", "Q2", "Q3")
 ```
 
+In ggolot2,
+```r
+.e <- environment()
+    ggplot(Data, aes(x = x, y = y*YMul), environment = .e) + geom_line()
+```
+
 ## 時間関連
 ### Timeの型にする
 ```r
