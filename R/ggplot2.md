@@ -321,3 +321,40 @@ fig_BarPlot(data, "Q15.7", "Education",
 
 ```
 <img src="figures/ggplot2_env_barplot.png" width="380">
+
+Another Example:
+```r
+myggsave <- function(savepath, p, font_family="Japan1GothicBBB", save=T, themebw=T, legend=F, return_=F){
+  if(themebw)
+    p <- p + theme_bw() 
+  
+  if(!legend)
+    p <- p + theme(legend.position="none")
+
+  if(save)
+    ggsave(savepath, p, family=font_family)
+
+  if(return_)
+    return(p)
+}
+
+fig_hist <- function(data, qnum, varname, savename, bin=25, folder="figures/"){  
+  # Hist
+  mean_v <- mean(unlist(data[, qnum]))
+  temp <- data
+  .e <- environment()
+  p <- ggplot(temp, aes(x=temp[[get("qnum")]], , fill=temp[[get("qnum")]])) + 
+    geom_histogram(binwidth=bin) +
+    labs(x=varname) + 
+    geom_vline(xintercept=mean_v, colour="red") +
+    annotate("text", x=mean_v, y=8, colour="white",
+            label=paste("Average:", as.character(round(mean_v,2)))) 
+
+  savehist <- paste(folder, savename, sep="")
+  myggsave(savehist, p)
+}
+
+data %>% mutate(Q15.5_real = 2017 - Q15.5) %>%
+  fig_hist(., "Q15.5_real", "Age", "age.pdf", bin=3)
+```
+<img src="figures/ggplot2_env_hist.png" width="380">
