@@ -64,7 +64,7 @@ population <- population %>%
 ```r
 data %>% select_("Q3.2") %>%
   rowwise() %>% mutate(Q3.2_marked = change_choices(choice=Q3.2, type="Q3.2")) %>%
-  fig_BarPlot(., "Q3.2_marked", "Q3.2: 日本国憲法の三大原則", "Q3.2.pdf")
+  fig_BarPlot(., "Q3.2_marked", "Q3.2: Title", "Q3.2.pdf")
 ```
 
 ## Regression Simulation
