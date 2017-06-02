@@ -61,6 +61,12 @@ population <- population %>%
 	mutate(gender_name=fun_AgeCohorts(gender))
 ```
 
+```r
+data %>% select_("Q3.2") %>%
+  rowwise() %>% mutate(Q3.2_marked = change_choices(choice=Q3.2, type="Q3.2")) %>%
+  fig_BarPlot(., "Q3.2_marked", "Q3.2: 日本国憲法の三大原則", "Q3.2.pdf")
+```
+
 ## Regression Simulation
 [Reference](http://ja.stackoverflow.com/q/32351/12704)  
 ちなみに、下のコードでは`position_dodge`を負の値にすることで線分の並びを逆にすることができる。
