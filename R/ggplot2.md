@@ -21,6 +21,7 @@ References:
 	* [ラベルを変える](#ラベルを変える)
 12. [theme関連](#theme関連)
 	* [一括でサイズ](#一括でサイズ)
+	* [細かくサイズ](#細かくサイズ)
 13. [position関連](#position関連)
 	* [線分の位置](#線分の位置)
 14. [Theme](#theme)
@@ -206,6 +207,11 @@ data %>% select_("Group", "Finished") %>% slice(3:n()) %>%
 ```r
 theme_gray(base_size=12)
 theme_bw(base_size=12)
+```
+
+### 細かくサイズ
+```r
+theme(legend.position="none", text = element_text(size=15))
 ```
 
 ## position関連
