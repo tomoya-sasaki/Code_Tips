@@ -285,3 +285,39 @@ data %>% select_("Q1.5", "Group") %>%
 .e <- environment()
     ggplot(Data, aes(x = x, y = y*YMul), environment = .e) + geom_line()
 ```
+
+Let's use this and make a function to draw a bar plot.
+```r
+fig_BarPlot <- function(data, qnum, varname, savename, mylimits=NA, mylabels=NA, folder="figures/"){
+
+  temp <- data %>% select_(get("qnum")) 
+  .e <- environment()
+
+  p <- ggplot(temp, aes(x=temp[[get("qnum")]], fill=temp[[get("qnum")]]), environment = .e) + 
+  geom_bar(stat="count") 
+
+  # Modify order and labels
+  if(is.vector(mylimits) & is.vector(mylabels))
+    p <- p + scale_x_discrete(limits=mylimits) 
+
+  if(!is.vector(mylimits) & is.vector(mylabels))
+    p <- p + scale_x_discrete(labels=mylabels) 
+
+  if(is.vector(mylimits) & is.vector(mylabels))
+    p <- p + scale_x_discrete(limits=mylimits, labels=mylabels) 
+
+
+  p <- p + scale_fill_hue(name = varname) + labs(x=varname)
+
+  savehist <- paste(folder, savename, sep="")
+  myggsave(savehist, p)
+  
+}
+
+fig_BarPlot(data, "Q15.7", "Education",
+       mylimits=c("中学校", "高校", "専門学校", "高専",
+                   "短期大学", "大学", "大学院"),
+       savename = "education.pdf")
+
+```
+<img src="figures/ggplot2_env_barplot.png" width="380">
