@@ -163,6 +163,12 @@ In ggolot2,
 .e <- environment()
     ggplot(Data, aes(x = x, y = y*YMul), environment = .e) + geom_line()
 ```
+Don't need if we use list??
+```r
+data_list[["data"]] %>% # Data frame in list
+  filter(data_list[["grouping"]] == data_list[['grouping_cat']][1]) %>% # string type value in list
+  select_(data_list[["variable"]]) # string in list
+```
 
 ## 時間関連
 ### Timeの型にする
