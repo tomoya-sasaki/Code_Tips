@@ -21,6 +21,7 @@
 18. [ソート](#ソート)
 19. [複数列に同じ値を入れる](#複数列に同じ値を入れる)
 20. [あるパターンの行の個数を数えて列に入れる](#あるパターンの行の個数を数えて列に入れる)
+21. [型の指定](#型の指定)
 
 
 ## データフレームを初期化した後に登録
@@ -239,4 +240,9 @@ C       2       2
 ```python
 df = df.groupby('Letters')['Numbers'].transform(pd.Series.value_counts)
 df = df.drop_duplicates()
+```
+
+## 型の指定
+```python
+df[var_lst] = df[var_lst].astype(float)
 ```
