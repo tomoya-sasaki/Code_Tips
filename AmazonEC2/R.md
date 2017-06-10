@@ -7,3 +7,5 @@
 * Default username and password: rstudio/rstudio
   * This is the same as Linux
   * If you want to change them, connect with ssh and adduser + passwd
+
+PDFの図の日本語フォントがブラウザ上で見ると乱れているように見えるけど、ダウンロードすればOK
