@@ -14,6 +14,8 @@
 9. [時間関連](#時間関連)
 10. [行のスライス](#行のスライス)
 11. [NAの処理](#naの処理)
+12. [Create Dummy](#create-dummy)
+
 
 ## 処理をして列を追加
 ```r
@@ -217,4 +219,38 @@ bar_figure <- function(var, item_num){
      scale_x_discrete(limits=c("NA", get("item_num"):1)) -> res
    return(res)
 }
+```
+
+## Create Dummy
+Taken from [Stackoverflow](https://stackoverflow.com/questions/35943455/creating-indicator-variable-columns-in-dplyr-chain)
+```r
+dummy <- function(data, col) {
+    for(c in col) {
+        idx <- which(names(data)==c)
+        v <- data[[idx]]
+        stopifnot(class(v)=="factor")
+        m <- matrix(0, nrow=nrow(data), ncol=nlevels(v))
+        m[cbind(seq_along(v), as.integer(v))]<-1
+        colnames(m) <- paste(c, levels(v), sep="_")
+        r <- data.frame(m)
+        if ( idx>1 ) {
+            r <- cbind(data[1:(idx-1)],r)
+        }
+        if ( idx<ncol(data) ) {
+            r <- cbind(r, data[(idx+1):ncol(data)])
+        }
+        data <- r
+    }
+    data
+}
+
+# Sample 
+dd <- data.frame(a=runif(30),
+    b=sample(letters[1:3],30,replace=T),
+    c=rnorm(30),
+    d=sample(letters[10:13],30,replace=T)
+)
+
+dd %>% dummy("b")
+dd %>% dummy(c("b","d"))
 ```
