@@ -225,6 +225,7 @@ bar_figure <- function(var, item_num){
 Taken from [Stackoverflow](https://stackoverflow.com/questions/35943455/creating-indicator-variable-columns-in-dplyr-chain)
 ```r
 dummy <- function(data, col) {
+    # Can take factor
     for(c in col) {
         idx <- which(names(data)==c)
         v <- data[[idx]]
@@ -232,6 +233,27 @@ dummy <- function(data, col) {
         m <- matrix(0, nrow=nrow(data), ncol=nlevels(v))
         m[cbind(seq_along(v), as.integer(v))]<-1
         colnames(m) <- paste(c, levels(v), sep="_")
+        r <- data.frame(m)
+        if ( idx>1 ) {
+            r <- cbind(data[1:(idx-1)],r)
+        }
+        if ( idx<ncol(data) ) {
+            r <- cbind(r, data[(idx+1):ncol(data)])
+        }
+        data <- r
+    }
+    data
+}
+
+dummynumeric <- function(data, col) {
+    # Can take numeric
+    for(c in col) {
+        idx <- which(names(data)==c)
+        v <- data[[idx]]
+        #stopifnot(class(v)=="factor")
+        m <- matrix(0, nrow=nrow(data), ncol=length(sort(unique(v))))
+        m[cbind(seq_along(v), as.integer(v))]<-1
+        colnames(m) <- paste(c, sort(unique(v)), sep="_")
         r <- data.frame(m)
         if ( idx>1 ) {
             r <- cbind(data[1:(idx-1)],r)
