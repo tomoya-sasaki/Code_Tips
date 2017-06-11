@@ -10,6 +10,7 @@ PhantomJSを使う場合は、homebrewでインストール可能。[ここ](htt
 1. [クリック](#クリック)
 2. [埋め込みPDFへの対処](#埋め込みpdfへの対処)
 3. [File download](#file-download)
+4. [With BeautifulSoup](#with-beautifulsoup)
 
 ## クリック
 ```python
@@ -88,4 +89,18 @@ while compare(original_files, os.listdir(path)) == None and dl_wait != 36:
   # Wait until file is downloaded, check every second
   time.sleep(1)
   dl_wait += 1            
+```
+
+
+## With BeautifulSoup
+```python
+from bs4 import BeautifulSoup
+from selenium import webdriver
+driver = webdriver.PhantomJS()
+
+url = "https://www.roberts.senate.gov/public/index.cfm?p=PressReleases"
+driver.get(url)
+
+data = driver.page_source.encode('utf-8')
+soup = BeautifulSoup(data, "lxml")
 ```
