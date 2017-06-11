@@ -21,8 +21,10 @@ driver.save_screenshot('last.png')
 ## クリック
 ```python
 driver.find_element_by_id("ctl00_ContentPlaceHolder1_showRelAggreement_imgExport").click()
-driver.find_element_by_link_text("Click This").click() 
+driver.find_element_by_link_text("Click This").click()
+driver.find_element_by_class_name("Button").click()
 ```
+Maybe there are other ways to click.
 
 ## 埋め込みPDFへの対処
 [この](http://www.un.org/ga/search/view_doc.asp?symbol=A/65/PV.22)サイトのように、フレームの一つにPDFが埋め込まれている。Chromeでソースをみると、frameのアドレスらしきものがあるが、これを読み込んでも何も表示されない。
