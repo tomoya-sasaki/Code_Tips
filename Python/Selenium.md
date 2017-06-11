@@ -6,11 +6,17 @@ driver.get(url)
 ```
 PhantomJSを使う場合は、homebrewでインストール可能。[ここ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/BeautifulSoup.md#phantomjs)にも情報あり。
 
+スクリーンショットをとると、PhantomJSでも楽。
+```python
+driver.save_screenshot('last.png')
+```
+
 ## Table of Content
 1. [クリック](#クリック)
 2. [埋め込みPDFへの対処](#埋め込みpdfへの対処)
 3. [File download](#file-download)
 4. [With BeautifulSoup](#with-beautifulsoup)
+5. [Pulldown menu](#pulldown-menu)
 
 ## クリック
 ```python
@@ -103,4 +109,32 @@ driver.get(url)
 
 data = driver.page_source.encode('utf-8')
 soup = BeautifulSoup(data, "lxml")
+```
+
+## Pulldown menu
+What you have:
+```html
+<select name="YearDisplay" id="BrowseByYearFD5F77A1-B53C-94A4-983A8E7E2FE633F5" onChange="changeBrowseBySelect('FD5F77A1-B53C-94A4-983A8E7E2FE633F5');" style="width:99px;">
+	<option value="0">-- Year --</option>
+	<option value="2017">2017</option>
+	<option value="2016">2016</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
+	<option value="2013">2013</option>
+	<option value="2012">2012</option>
+	<option value="2011">2011</option>
+	<option value="2010">2010</option>
+	<option value="2009">2009</option>
+	<option value="2008">2008</option>
+	<option value="2007">2007</option>
+	<option value="2006">2006</option>
+</select>
+```
+To select,
+```python
+select = Select(driver.find_element_by_id('BrowseByYearFD5F77A1-B53C-94A4-983A8E7E2FE633F5'))
+# select by visible text
+select.select_by_visible_text('2007')
+# select by value 
+select.select_by_value('2007')
 ```
