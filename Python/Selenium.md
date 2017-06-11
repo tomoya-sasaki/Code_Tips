@@ -25,6 +25,16 @@ driver.find_element_by_link_text("Click This").click()
 driver.find_element_by_class_name("Button").click()
 ```
 Maybe there are other ways to click.
+```python
+find_element_by_class_name
+find_element_by_css_selector
+find_element_by_id
+find_element_by_link_text
+find_element_by_name
+find_element_by_partial_link_text
+find_element_by_tag_name
+find_element_by_xpath
+```
 
 ## 埋め込みPDFへの対処
 [この](http://www.un.org/ga/search/view_doc.asp?symbol=A/65/PV.22)サイトのように、フレームの一つにPDFが埋め込まれている。Chromeでソースをみると、frameのアドレスらしきものがあるが、これを読み込んでも何も表示されない。
