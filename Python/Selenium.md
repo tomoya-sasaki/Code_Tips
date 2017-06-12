@@ -36,6 +36,16 @@ find_element_by_tag_name
 find_element_by_xpath
 ```
 
+You may need to clean the link text:
+```python
+def clean_linktext(link_text):
+link_text = re.sub("&amp;", "&", link_text)
+  if link_text[-1] == ' ':
+    link_text = link_text[:-1]
+    link_text = re.sub("\s{2,200}?", " ", link_text)        
+  return link_text
+```
+
 ## 埋め込みPDFへの対処
 [この](http://www.un.org/ga/search/view_doc.asp?symbol=A/65/PV.22)サイトのように、フレームの一つにPDFが埋め込まれている。Chromeでソースをみると、frameのアドレスらしきものがあるが、これを読み込んでも何も表示されない。
 ```html
