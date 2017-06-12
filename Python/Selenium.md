@@ -39,10 +39,10 @@ find_element_by_xpath
 You may need to clean the link text:
 ```python
 def clean_linktext(link_text):
-link_text = re.sub("&amp;", "&", link_text)
+link_text = re.sub("&amp;", "&", link_text) # for &
   if link_text[-1] == ' ':
-    link_text = link_text[:-1]
-    link_text = re.sub("\s{2,200}?", " ", link_text)        
+    link_text = link_text[:-1] # remove a space from the end
+    link_text = re.sub("\s{2,200}?", " ", link_text) # avoid multiple spaces
   return link_text
 ```
 
