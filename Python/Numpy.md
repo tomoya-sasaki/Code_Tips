@@ -15,6 +15,8 @@
 10. [特定の列または行で並び替え](#特定の列または行で並び替え)
 11. [行列をindexで並び替え](#行列をindexで並び替え)
 12. [vectorを繰り返してmatrixにする](#vectorを繰り返してmatrixにする)
+13. [Sparse matrix](#sparse-matrix)
+
 
 ## arrayとmatrixの違い
 [Reference](http://stackoverflow.com/questions/4151128/what-are-the-differences-between-numpy-arrays-and-matrices-which-one-should-i-u)
@@ -167,3 +169,13 @@ array([[1, 2, 3, 4, 5],
        [1, 2, 3, 4, 5],
        [1, 2, 3, 4, 5]])
 ```
+
+## Sparse matrix
+```python
+from scipy import sparse
+sparse.csr_matrix(np.array(A))
+sparse.csc_matrix(np.array(A))
+```
+* `csr_matrix`は行を取り出す操作、`csc_matrix`は列を取り出す操作が高速である
+* 同じ型同士の和・積は高速である。つまり`csr_matrix`同士 or `csc_matrix`同士の和・積にすべき
+* `csr_matrix`, `csc_matrix`は転置行列を取ると型が移り合う。Ex. `csr_matrix`の転置をとると`csc_matrix`
