@@ -201,7 +201,7 @@ matrix.colwise().mean()
 ```cpp
 MatrixXd test = MatrixXd::Ones(2,2);
 Vector2d test2(30,2)
-for(int i; i<2; ++i) test.row(i) = test.row(i) + test2.transpose();
+for(int i=0; i<2; ++i) test.row(i) = test.row(i) + test2.transpose();
 cout << test << endl;
 
 >>> 31, 3
