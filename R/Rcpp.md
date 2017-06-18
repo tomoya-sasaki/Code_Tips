@@ -7,7 +7,9 @@
 test.cpp
 ```cpp
 #include <Rcpp.h>
+#include <Eigen/Dense>
 using namespace Rcpp;
+using namespace Eigen;
 
 // Use c++11 and link functions to R
 // [[Rcpp::plugins("cpp11")]]
