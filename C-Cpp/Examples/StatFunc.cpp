@@ -1,6 +1,23 @@
 #include <math.h>
 #include <random>
+#include <Eigen/Dense>
 
+// Dirichlet
+// Reference: http://wildpie.hatenablog.com/entry/20150419/1429435583
+random_device rd;
+mt19937 rng(rd());
+VectorXd DirichletSampling(const VectorXd& alpha)
+{
+  VectorXd x(alpha.size());
+  for (int i = 0; i < alpha.size(); i++)
+  {
+    std::gamma_distribution<double> gamma(alpha(i));
+    x(i) = gamma(rng);
+  }
+  x /= x.sum();
+
+  return x;
+}
 
 double pnorm(double x, double mean, double sd){
 	//Cumulative Distribution Function (CDF) Calculator for the Normal Distribution (distribution function)
