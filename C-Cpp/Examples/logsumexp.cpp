@@ -1,14 +1,16 @@
+#include <math.h>
+
 double logsumexp (double x, double y, bool flg)
 {
-if (flg) return y; // init mode
-if (x == y) return x + 0.69314718055; // log(2)
-double vmin = std::min (x, y);
-double vmax = std::max (x, y);
-if (vmax > vmin + 50) {
-return vmax;
-} else {
-return vmax + std::log (std::exp (vmin - vmax) + 1.0);
-}
+  if (flg) return y; // init mode
+  if (x == y) return x + 0.69314718055; // log(2)
+  double vmin = std::min (x, y);
+  double vmax = std::max (x, y);
+  if (vmax > vmin + 50) {
+    return vmax;
+  } else {
+    return vmax + std::log (std::exp (vmin - vmax) + 1.0);
+  }
 }
 
 /*
