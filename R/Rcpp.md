@@ -33,6 +33,9 @@ sourceCpp('test.cpp')
 rcpp_sum(1:10)
 ```
 
+### Boost
+`install.packages("BH")`. You can use Boost functions that require header files only.
+
 ## Matrix
 Read `matrix` in R for Rcpp:
 ```cpp
