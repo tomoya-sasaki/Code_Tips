@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Basics](#basics)
+2. [RcppEigen](#rcppeigen)
 
 ## Basics
 test.cpp
@@ -29,4 +30,11 @@ test.R
 library(Rcpp)
 sourceCpp('test.cpp')
 rcpp_sum(1:10)
+```
+
+## RcppEigen
+Read `matrix` in R for Rcpp:
+```cpp
+void cossim_vec(Map<MatrixXd> dtm){
+}
 ```
