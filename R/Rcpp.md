@@ -7,12 +7,13 @@
 test.cpp
 ```cpp
 #include <Rcpp.h>
-#include <Eigen/Dense>
+#include <RcppEigen.h>
 using namespace Rcpp;
 using namespace Eigen;
 
 // Use c++11 and link functions to R
 // [[Rcpp::plugins("cpp11")]]
+// [[Rcpp::depends("RcppEigen")]]
 // [[Rcpp::export]]
 
 double rcpp_sum(NumericVector v){
