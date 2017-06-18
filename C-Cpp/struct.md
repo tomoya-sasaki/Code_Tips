@@ -59,7 +59,7 @@ int main() {
 ```
 
 ## 構造体の要素へポインタでアクセス
-エラーを出さない方法。
+エラーを出さない方法 (間違ってるかも)。
 ```cpp
 typedef struct{
   MatrixXd phi_jl; // phi[j,l]
