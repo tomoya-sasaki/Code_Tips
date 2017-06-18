@@ -184,6 +184,14 @@ for(int i =0; i<X; i++){
     }
   }
 }
+
+// free memory
+for(int i = 0; i <X; i++){
+  for(int j=0; j <Y; j++)
+    delete[] arr3D[i][j];
+  delete[] arr3D[i];
+}
+delete[] arr3D;
 ```
 
 関数に読み込ませてやるときは、`vecsum(int n, int Data[n+1])`のように長さに関わるものを先にすることで上手くいった。
