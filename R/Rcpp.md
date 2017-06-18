@@ -9,6 +9,7 @@ test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use
 ```cpp
 #include <Rcpp.h>
 #include <RcppEigen.h>
+using namespace std;
 using namespace Rcpp;
 using namespace Eigen;
 
