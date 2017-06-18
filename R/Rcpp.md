@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Basics](#basics)
-2. [RcppEigen](#rcppeigen)
+2. [Matrix](#matrix)
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -33,9 +33,12 @@ sourceCpp('test.cpp')
 rcpp_sum(1:10)
 ```
 
-## RcppEigen
+## Matrix
 Read `matrix` in R for Rcpp:
 ```cpp
-void cossim_vec(Map<MatrixXd> dtm){
+void cossim_vec(Map<MatrixXd> dtm,
+      MappedSparseMatrix<double> dtm2)
+{
+
 }
 ```
