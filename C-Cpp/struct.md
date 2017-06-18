@@ -82,6 +82,6 @@ void access(Parameters *parameters){
 }
 
 void main(){
-  PHI *phi = new PHI[N];
+  Parameters parameters();
 }
 ```
