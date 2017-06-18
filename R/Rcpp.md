@@ -5,7 +5,7 @@
 2. [RcppEigen](#rcppeigen)
 
 ## Basics
-test.cpp
+test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
 ```cpp
 #include <Rcpp.h>
 #include <RcppEigen.h>
@@ -15,8 +15,8 @@ using namespace Eigen;
 // Use c++11 and link functions to R
 // [[Rcpp::plugins("cpp11")]]
 // [[Rcpp::depends("RcppEigen")]]
-// [[Rcpp::export]]
 
+// [[Rcpp::export]]
 double rcpp_sum(NumericVector v){
     double sum = 0;
     for(int i=0; i<v.length(); ++i){
