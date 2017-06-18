@@ -34,7 +34,7 @@ rcpp_sum(1:10)
 ```
 
 ### Boost
-`install.packages("BH")`. You can use Boost functions that require header files only.
+`install.packages("BH")`. You can use Boost functions that require header files only. In C++, you need to add `// [[Rcpp::depends("BH")]]`.
 
 ## Matrix
 Read `matrix` in R for Rcpp:
