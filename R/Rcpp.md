@@ -37,7 +37,7 @@ rcpp_sum(1:10)
 `install.packages("BH")`. You can use Boost functions that require header files only. In C++, you need to add `// [[Rcpp::depends("BH")]]`.
 
 ## Matrix
-Read `matrix` in R for Rcpp:
+Read `matrix` in R for Rcpp using Eigen:
 ```cpp
 void cossim_vec(Map<MatrixXd> dtm,
       MappedSparseMatrix<double> dtm2)
