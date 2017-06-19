@@ -2,8 +2,6 @@
 
 ## Table of Contents
 1. [Simple Examples](#simple-examples)
-2. [構造体の要素へポインタでアクセス](#構造体の要素へポインタでアクセス)
-
 
 ## Simple Examples
 ### Data for LDA
@@ -56,32 +54,4 @@ int main() {
 
 	return 0;
 } 
-```
-
-## 構造体の要素へポインタでアクセス
-エラーを出さない方法 (間違ってるかも)。
-```cpp
-typedef struct{
-  MatrixXd phi_jl; // phi[j,l]
-}PHI;
-
-class Parameters{
-public: 
-  PHI *phi; // [i,j,l], in log-scale
-  Parameters(); // constructor
-};
-
-Parameters::Parameters()
-{
-  PHI *phi = new PHI[N]; // phi[i,j,l]
-}
-
-void access(Parameters *parameters){
-  PHI *phi_pointer =  parameters -> phi; // use pointer like this!!
-  cout << (phi_pointer+0) -> phi_jl(1,1) << endl;
-}
-
-void main(){
-  Parameters parameters();
-}
 ```
