@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Simple Examples](#simple-examples)
+2. [When use with Eigen](#when-use-with-eigen)
 
 ## Simple Examples
 ### Data for LDA
@@ -55,3 +56,6 @@ int main() {
 	return 0;
 } 
 ```
+
+## When use with Eigen
+[Check this note](https://github.com/Shusei-E/Code_Tips/blob/master/C-Cpp/Eigen.md#passing-values)
