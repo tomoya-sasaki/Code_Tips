@@ -19,6 +19,7 @@ Usage:
 13. [列ごとの計算](#列ごとの計算)
 14. [行列の列ごとにvectorを足していく](#行列の列ごとにvectorを足していく)
 15. [コンマ区切りで出力](#コンマ区切りで出力)
+16. [Passing values](#passing-values)
 
 
 Other Material: 
@@ -216,6 +217,20 @@ cout << normX_solver.samples(5).rowwise().mean().transpose().format(CommaInitFmt
 
 // -0.0252315,-0.0310973
 // と出力される
+```
+
+## Passing values
+[Reference: Passing Eigen objects by value to functions](https://eigen.tuxfamily.org/dox/group__TopicPassingByValue.html)
+
+```cpp
+void my_function(const Eigen::Vector2d& v);
+
+// If you have a class having a Eigen object as member
+struct Foo
+{
+  Eigen::Vector2d v;
+};
+void my_function(const Foo& v);
 ```
 
 ------------------------------------------------------------------------
