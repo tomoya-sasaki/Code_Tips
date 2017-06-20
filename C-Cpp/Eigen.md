@@ -268,7 +268,7 @@ MatrixXd Array2DToEigenMatrix(double **data, int row, int col)
 
 MatrixXd Array3DToEigenMatrix(double ***data, int row=0, int col=0, int axis=0)
 {
-  // axis, which dimension you slice the array
+  // axis: which dimension you slice the array
   // [axis][row][col]
   
   double **array;
