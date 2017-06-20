@@ -238,6 +238,87 @@ void my_function(const Foo& v);
 ## Map
 You can use c++ array as a Eigen object by mapping.
 
+### Array to Eigen matrix
+```cpp
+#include <iostream>
+#include <Eigen/Dense>
+#include <vector>
+using namespace Eigen;
+using namespace std;
+
+// Original code on Stackoverflow
+MatrixXd ConvertToEigenMatrix(std::vector<std::vector<double>> data)
+{
+    MatrixXd eMatrix(data.size(), data[0].size());
+    for (int i = 0; i < data.size(); ++i)
+      eMatrix.row(i) = VectorXd::Map(&data[i][0], data[0].size());
+    return eMatrix;
+}
+
+// My function
+MatrixXd Array2DToEigenMatrix(double **data, int row, int col)
+{
+  MatrixXd Emat(row, col);
+  for(int r=0; r<row; r++){
+    Emat.row(r) = VectorXd::Map(&(data[r][0]), col);
+  }
+
+  return Emat;
+}
+
+MatrixXd Array3DToEigenMatirix(double ***data, int row, int col, int axis)
+{
+  // axis, which dimension you slice the array
+  // [axis][row][col]
+  
+  double **array;
+  array = new double *[row];
+  for(int r=0; r<row; r++){
+    array[r] = new double[col];
+    
+    for(int c=0; c<col; c++){
+      array[r][c] = data[axis][r][c];
+    }
+
+  }
+
+  return Array2DToEigenMatrix(array, row, col);
+
+}
+
+int main()
+{
+  double **array;
+  array = new double *[3];
+  for(int r = 0; r<3; r++){
+    array[r] = new double[3];
+    for(int c=0; c<3; c++){
+      array[r][c] = 1.5;
+    }
+  }
+
+  cout << Array2DToEigenMatrix(array, 3, 3) << endl;
+
+ double ***array2;
+ array2 = new double**[3];
+ for(int i=0; i<3; i++){
+   array2[i] = new double*[4];
+
+   for(int j=0; j < 4; j++){
+     array2[i][j] = new double[2];
+
+     for(int l=0; l<2; l++){
+       array2[i][j][l] = (double)i + 0.1;
+     }
+   }
+ }
+
+  cout << Array3DToEigenMatirix(array2, row=4, col=2, axis=1) << endl;
+
+  return 0;
+}
+```
+
 ------------------------------------------------------------------------
 
 ## Links
