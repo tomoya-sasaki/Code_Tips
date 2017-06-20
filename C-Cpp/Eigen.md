@@ -266,7 +266,7 @@ MatrixXd Array2DToEigenMatrix(double **data, int row, int col)
   return Emat;
 }
 
-MatrixXd Array3DToEigenMatrix(double ***data, int row, int col, int axis)
+MatrixXd Array3DToEigenMatrix(double ***data, int row=0, int col=0, int axis=0)
 {
   // axis, which dimension you slice the array
   // [axis][row][col]
@@ -313,7 +313,7 @@ int main()
    }
  }
 
-  cout << Array3DToEigenMatrix(array2, row=4, col=2, axis=1) << endl;
+  cout << Array3DToEigenMatrix(array2, 4, 2, 0) << endl;
 
   return 0;
 }
