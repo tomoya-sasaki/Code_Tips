@@ -21,6 +21,7 @@ Usage:
 15. [コンマ区切りで出力](#コンマ区切りで出力)
 16. [Passing values](#passing-values)
 17. [Map](#map)
+18. [Get Index](#get-index)
 
 
 Other Material: 
@@ -314,6 +315,28 @@ int main()
  }
 
   cout << Array3DToEigenMatrix(array2, 4, 2, 0) << endl;
+
+  return 0;
+}
+```
+
+## Get Index
+Visitors:
+```cpp
+#include <iostream>
+#include <Eigen/Dense>
+using namespace Eigen;
+using namespace std;
+
+int main()
+{
+
+  VectorXd a(5);
+  VectorXd::Index index;
+  a<<1.1, 2.2, 0.8, 2.4, 1.3;
+
+  cout << a.maxCoeff(&index) << endl;
+  cout << index << endl;
 
   return 0;
 }
