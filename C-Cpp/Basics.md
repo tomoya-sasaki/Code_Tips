@@ -166,6 +166,16 @@ for(int i = 0;i < Row; i++){
 for(int i=0; i<Row; i++)
    delete [] arr2D[];
 delete [] arr2D;
+// -------
+// If you want to insert the value at the same time,
+double **array;
+array = new double *[3];
+for(int r = 0; r<3; r++){
+  array[r] = new double[3];
+  for(int c=0; c<3; c++){
+    array[r][c] = 1.3;
+  }
+}
 ```
 
 3D
