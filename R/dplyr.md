@@ -21,6 +21,7 @@
 ```r
 data %>%  group_by(year)  %>% mutate(med_age = median(age, na.rm=TRUE)) -> data
 ```
+You can `ungroup()` after grouping.
 
 ## select
 ### 文字で
