@@ -29,7 +29,7 @@ References:
 16. [文字の追加](#文字の追加)
 17. [選択肢を強制的に表示](#選択肢を強制的に表示)
 18. [Use environment variables](#use-environment-variables)
-
+19. [色の変更](#色の変更)
 
    
 ## xラベルの変更
@@ -365,3 +365,9 @@ data %>% mutate(Q15.5_real = 2017 - Q15.5) %>%
   fig_hist(., "Q15.5_real", "Age", "age.pdf", bin=3)
 ```
 <img src="figures/ggplot2_env_hist.png" width="380">
+
+## 色の変更
+```r
+scale_fill_brewer(palette="Spectral")
+scale_fill_manual(values=c("#09aa04", "#990066"))
+```
