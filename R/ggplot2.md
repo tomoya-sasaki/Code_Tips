@@ -367,6 +367,7 @@ data %>% mutate(Q15.5_real = 2017 - Q15.5) %>%
 <img src="figures/ggplot2_env_hist.png" width="380">
 
 ## 色の変更
+[Color Palettes](http://rstudio-pubs-static.s3.amazonaws.com/5312_98fc1aba2d5740dd849a5ab797cc2c8d.html)
 ```r
 scale_fill_brewer(palette="Spectral")
 scale_fill_manual(values=c("#09aa04", "#990066"))
