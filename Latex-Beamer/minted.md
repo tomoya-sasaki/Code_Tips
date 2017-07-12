@@ -1,4 +1,5 @@
 # minted
+Better syntax highlight.
 
 ## Resources
 * [Official](https://github.com/gpoore/minted)
