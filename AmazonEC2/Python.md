@@ -1,11 +1,14 @@
 # Amazon EC2 Python
 
 # Access
-## 1. 
+## 1. Set key
 `chmod 400 KEY.pem`
 
-## 2.
+## 2. Access
 `ssh -i /Users/KEY.pem ec2-user@ec2-**-***-**-**.***.compute.amazonaws.com`
+
+## 3. Exit
+`exit`
 
 # Setup
 ## 1. Update
