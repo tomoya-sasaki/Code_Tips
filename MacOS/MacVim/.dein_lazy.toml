@@ -14,6 +14,7 @@ hook_source = '''
   nmap <D-Enter> ,d j
   imap <D-Enter> <ESC> ,d i
   nmap <LocalLeader>rf ,c
+  nmap <LocalLeader>rq ,Q
   nmap <LocalLeader>cc ,b
 '''
 
