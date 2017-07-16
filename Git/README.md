@@ -47,6 +47,10 @@ $ git add *
 ($ git status)
 $ git commit -m "your comments"
 $ git push origin master
+
+# If deleted files are not staged
+$ git add * -update
+$ git add -u <file> #alternative way
 ```
 The last line is `$ git push https://github.com/xxxxx/Code_Tips.git master:master` or, you can use `git push origin your_branch_name(ex. master)` for the last line.  
 To remove added files, use `git reset HEAD` for all and `git rm --cached *.*` for a file.
