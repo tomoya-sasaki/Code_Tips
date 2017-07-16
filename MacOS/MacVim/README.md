@@ -30,3 +30,6 @@
 * `\rf`: 接続
 * `Cmd+Enter`: カーソルがあるS式を評価
 * `\cc`: バッファーを評価
+* Error
+  * `\a`: Abort
+  * `\n`: Continue
