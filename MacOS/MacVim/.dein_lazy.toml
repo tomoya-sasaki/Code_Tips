@@ -16,6 +16,8 @@ hook_source = '''
   nmap <LocalLeader>rf ,c
   nmap <LocalLeader>rq ,Q
   nmap <LocalLeader>cc ,b
+	nmap <LocalLeader>a ,a
+	nmap <LocalLeader>n ,n
 '''
 
 ## R
