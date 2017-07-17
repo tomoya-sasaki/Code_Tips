@@ -1,5 +1,7 @@
 # MacVim Kaoriya Version
 * 自作関数の先頭は大文字のようなので注意
+* Combine commands and move: `nnoremap <Leader>tc :TemplateChunk<CR>i`
+* Get line num: `line(".")`
 
 # Shortcuts
 ## Nvim-R
