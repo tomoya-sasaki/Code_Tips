@@ -1,0 +1,151 @@
+\documentclass[report, 10.5pt,a4paper,oneside,openany]{jsbook}
+%--脚注の設定
+\usepackage{natbib}
+\bibpunct[, ]{(}{)}{;}{and}{}{,} %本文での引用の体裁はここで整えられるみたい
+
+%--目次に索引以外は出力する cf. http://www.howtotex.com/packages/how-to-add-bibliography-and-more-to-table-of-contents/
+\usepackage[notindex, nottoc, notlof, notlot]{tocbibind}
+
+%--数式用
+\usepackage{amsmath}
+%--余白の設定   http://pcwide-jp.blogspot.co.uk/2009/07/latex.html  より
+\usepackage[truedimen,top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+
+%--図の設定
+\usepackage[dvipdfmx]{graphicx}
+%--行間の設定
+\usepackage{setspace} 
+\setstretch{1.13} % ページ全体の行間を設定
+%--コードの設定
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+  %language= R,
+  aboveskip=0.1mm,
+  belowskip=0.1mm,
+  showstringspaces=false,
+  columns=flexible,
+  keepspaces=true,
+  numbers=none,                    
+  numbersep=7pt,    
+  basicstyle={\small\ttfamily},
+  commentstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+\usepackage{xcolor}
+\usepackage{framed}
+\colorlet{shadecolor}{green!8}
+%--リンクの埋め込みを可能にする  \href{ **URL** }{表示テキスト}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{courier}
+\usepackage{here}
+%--日本語環境用の設定を追加
+%\renewcommand{\refname}{参考文献}
+%\renewcommand{\abstractname}{要約}
+\usepackage{multirow}
+\usepackage{placeins}
+
+%--名前を英語に統一
+%\renewcommand{\bibname}{参考文献}
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\figurename}{Figure }
+\renewcommand{\tablename}{Table }
+\renewcommand{\listfigurename}{Figure List}
+\renewcommand{\listtablename}{Table List}
+\renewcommand{\appendixname}{Appendix }
+\renewcommand{\prechaptername}{Chapter } 
+\renewcommand{\postchaptername}{}  
+
+%--Appendix
+\usepackage[toc,page]{appendix}
+
+\usepackage{cite} 
+
+%--subsectionも目次に出力する
+\setcounter{tocdepth}{2}
+
+%-----------------
+
+%%--表紙の定義
+\title{
+  \vspace{-30truemm}
+  {\Large Graduation Thesis}\\
+  \vspace{5truemm}
+  %{\Large }\\
+  \vspace{15truemm}
+  {\LARGE THIS IS TITLE}\\
+  \vspace{3truemm}
+  {\LARGE SUBTITLE}
+  \vspace{40truemm}
+}
+  
+%%--著者の定義
+\author{
+   {\large MY COURSE} \\
+  {\large MY DEPARTMENT}\\ \\
+  \vspace{10truemm}
+  {\Large MY NUNIVERSITY\\
+  \vspace{10truemm}
+  {\LARGE MY NAME}
+}
+  
+%%--日付の定義
+\date{{\Large **/*****/****}}
+
+\begin{document}
+\maketitle              % 1ページ目の表紙生成
+\thispagestyle{empty}   % 1ページ目はページ番号無し
+\pagenumbering{roman}   % 目次はローマ字でページ番号を振る
+\setcounter{page}{1}    % 目次のページ番号はi, ii, iii...
+\tableofcontents        % 目次の生成
+{%図一覧の生成
+\let\oldnumberline\numberline%
+\renewcommand{\numberline}{\figurename~\oldnumberline}%
+\listoffigures%
+} 
+{%表一覧の生成
+\let\oldnumberline\numberline%
+\renewcommand{\numberline}{\tablename~\oldnumberline}%
+\listoftables %
+} 
+ 
+ 
+\input{abstract.tex}        % アブストラクト
+\pagenumbering{arabic}  % 本文のページ番号 1, 2, 3...
+
+%%--章毎にファイルを区切りる
+\input{chapter1.tex} % 序論
+\input{chapter2.tex} % 分析
+\input{chapter3.tex} % 結語
+
+%--ここからAppendix
+\def\thesection{\Alph{section}}
+\appendix
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\renewcommand{\thetable}{A.\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\input{chapter_appendix_a.tex}
+
+\renewcommand{\thefigure}{B.\arabic{figure}}
+\renewcommand{\thesubsection}{B.\arabic{subsection}}
+\renewcommand{\thetable}{B.\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\input{chapter_appendix_b.tex}
+
+
+%--ここからBibliography
+\renewcommand{\bibname}{References}
+%\bibliographystyle{agsm2}   %このagsm2は編集済みなので注意。ジャーナルが太字にならないようにしてる。ブログ参照。
+\bibliographystyle{apsr2006Edited}   %このagsmは編集済みなので注意。ジャーナルが太字にならないようにしてる。ブログ参照。
+\bibliography{ref}
+
+
+\input{acknowledgement.tex}          % 謝辞
+\end{document}
