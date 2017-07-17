@@ -34,7 +34,13 @@ hook_source = '''
   nmap <LocalLeader>cn <Plug>RNextRChunk
   nmap <LocalLeader>cN <Plug>RPreviousRChunk
 
-  nnoremap <Leader>tc :TemplateChunk<CR>jjo
+  nnoremap <Leader>tc :Templatechunk<CR>jo
+  command! Templatechunk call s:Templatechunk()
+  function! s:Templatechunk()
+    call append(line("."), "```{r, warning=FALSE, message=FALSE}")
+    call append(line(".")+1,"```")
+  endfunction
+  nnoremap <Leader>tC :TemplateChunk<CR>jjo
   command! TemplateChunk call s:TemplateChunk()
   function! s:TemplateChunk()
     call append(line("."), "")
