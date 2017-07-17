@@ -1,6 +1,7 @@
 # MacVim Kaoriya Version
 * 自作関数の先頭は大文字のようなので注意
 * Combine commands and move: `nnoremap <Leader>tc :TemplateChunk<CR>i`
+    * [Use self-defined tempalte](https://stackoverflow.com/questions/690386/writing-a-vim-function-to-insert-a-block-of-static-text)
 * Get line num: `line(".")`
 
 # Shortcuts
