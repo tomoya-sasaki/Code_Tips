@@ -39,7 +39,7 @@
 
 # Settings
 ## Latex
-You need to know how to write in `.latexmkrc` and command options.
+You need to know how to write in `.latexmkrc` and command options. ([Reference](https://texwiki.texjp.org/?Latexmk))
 ```
 $latex = 'uplatex %O -synctex=1 %S'; #-pdfdvi
 $pdflatex = 'pdflatex %O -synctex=1 %S';
