@@ -34,6 +34,7 @@ hook_source = '''
   nmap <LocalLeader>cn <Plug>RNextRChunk
   nmap <LocalLeader>cN <Plug>RPreviousRChunk
 
+  " Insert chunk
   nnoremap <Leader>tc :Templatechunk<CR>jo
   command! Templatechunk call s:Templatechunk()
   function! s:Templatechunk()
@@ -81,5 +82,21 @@ hook_source = '''
     else
       echo "File is not tex"
     endif
+  endfunction
+
+ " Insert align
+  nnoremap <Leader>ta :TemplateAlign<CR>jo
+  command! TemplateAlign call s:TemplateAlign()
+  function! s:TemplateAlign()
+    call append(line("."), "\begin{align}")
+    call append(line(".")+1,"\end{align}")
+  endfunction
+
+ " Insert itemize
+  nnoremap <Leader>ti :TemplateItemize<CR>jo
+  command! TemplateItemize call s:TemplateItemize()
+  function! s:TemplateAlign()
+    call append(line("."), "\begin{itemize}")
+    call append(line(".")+1,"\end{itemize}")
   endfunction
 '''
