@@ -22,6 +22,9 @@ hook_source = '''
   nmap <LocalLeader>cc ,b
   nmap <LocalLeader>a ,a
   nmap <LocalLeader>n ,n
+
+  :Skinbadwolf
+  :Window
 '''
 
 ## R
@@ -61,22 +64,13 @@ hook_source = '''
 repo = 'thinca/vim-quickrun'
 on_ft = ['tex']
 hook_add = '''
-let g:quickrun_config = {
-\   'tex': {
-\       'command': 'latexmk',
-\       'exec': ['%c -gg -pdfdvi %s']
-\   },
-\}
-'''
+  let g:quickrun_config = {
+  \   'tex': {
+  \       'command': 'latexmk',
+  \       'exec': ['%c -gg -pdfdvi %s']
+  \   },
+  \}
 
-[[plugins]]
-repo = 'lervag/vimtex'
-on_ft = ['tex']
-hook_add = '''
-let g:vimtex_fold_envs = 0
-let g:tex_indent_brace=0
-'''
-hook_source = '''
   " TexShopでtexファイルを表示
   nnoremap <Leader>ts :TeXShopRun<CR>
   command! TeXShopRun call s:TeXShopRun()
@@ -90,20 +84,46 @@ hook_source = '''
     endif
   endfunction
 
+ " Insert Default Template
+  nnoremap <Leader>tn :TemplateNewDefault<CR>
+  command! TemplateNewDefault call s:TemplateNewDefault()
+  function! s:TemplateNewDefault()
+    r ~/.vim/ftplugin/default.tex
+  endfunction
+
+ " Insert Eng Template
+  nnoremap <Leader>tN :TemplateNewEng<CR>
+  command! TemplateNewEng call s:TemplateNewEng()
+  function! s:TemplateNewEng()
+    r ~/.vim/ftplugin/EngTex.tex
+  endfunction
+
  " Insert align
   nnoremap <Leader>ta :TemplateAlign<CR>jo
   command! TemplateAlign call s:TemplateAlign()
   function! s:TemplateAlign()
-    call append(line("."), "\begin{align}")
-    call append(line(".")+1,"\end{align}")
+    call append(line("."), "\\begin{align}")
+    call append(line(".")+1,"\\end{align}")
   endfunction
 
  " Insert itemize
   nnoremap <Leader>ti :TemplateItemize<CR>jo
   command! TemplateItemize call s:TemplateItemize()
-  function! s:TemplateAlign()
-    call append(line("."), "\begin{itemize}")
-    call append(line(".")+1,"\end{itemize}")
+  function! s:TemplateItemize()
+    call append(line("."), "\\begin{itemize}")
+    call append(line(".")+1,"\\end{itemize}")
+  endfunction
+
+ " Insert figure
+  nnoremap <Leader>tf :TemplateFigure<CR>jjj
+  command! TemplateFigure call s:TemplateFigure()
+  function! s:TemplateFigure()
+    call append(line("."), "\\begin{figure}[!htb]")
+    call append(line(".")+1, "\\centering")
+    call append(line(".")+2, "\\includegraphics[width=1.0 \linewidth]{}")
+    call append(line(".")+3,"\\caption{}")
+    call append(line(".")+4,"\\label{}")
+    call append(line(".")+5,"\\end{figure}")
   endfunction
 
   " Typeset
@@ -172,4 +192,12 @@ hook_source = '''
     endif
   endfunction
   :LatexMode
+'''
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+let g:vimtex_fold_envs = 0
+let g:tex_indent_brace=0
 '''
