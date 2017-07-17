@@ -9,7 +9,7 @@ Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 この部分のインデントは、タブではなくスペースで行わないといけないことに注意。Vimでは改行した時に自動にタブでインデントが入ってしまう。
 ```rmd
 ---
-title: 'Title'
+title: "Title"
 author: "名前"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
