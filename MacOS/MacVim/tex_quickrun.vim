@@ -7,32 +7,8 @@
 :cd %:p:h
 
 " LaTeX Quickrun
-let g:quickrun_config['tex'] = {
-\ 'command' : 'latexmk',
-\ 'outputter' : 'error',
-\ 'outputter/error/success' : 'null',
-\ 'outputter/error/error' : 'quickfix',
-\ 'srcfile' : expand("%"),
-\ 'cmdopt': '-pdfdvi',
-\ 'hook/sweep/files' : [
-\                      '%S:p:r.aux',
-\                      '%S:p:r.bbl',
-\                      '%S:p:r.blg',
-\                      '%S:p:r.dvi',
-\                      '%S:p:r.fdb_latexmk',
-\                      '%S:p:r.fls',
-\                      '%S:p:r.log',
-\											 '%S:p:r.synctex.gz',
-\											 '%S:p:r.toc',
-\                      '%S:p:r.bcf',
-\                      '%S:p:r.nav',
-\                      '%S:p:r.run.xml',
-\                      '%S:p:r.snm',
-\                      '%S:p:r.vrb',
-\                      '%S:p:r.out'
-\                      ],
-\ 'exec': '%c %o %a %s',
-\}
+" Moved to Dein
+
 
 " 部分的に選択してコンパイル
 " http://auewe.hatenablog.com/entry/2013/12/25/033416 を参考に
