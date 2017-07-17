@@ -36,3 +36,13 @@
 * Error
   * `\a`: Abort
   * `\n`: Continue
+
+# Settings
+## Latex
+You need to know how to write in `.latexmkrc` and command options.
+```
+$latex = 'uplatex %O -synctex=1 %S'; #-pdfdvi
+$pdflatex = 'pdflatex %O -synctex=1 %S';
+$lualatex = 'lualatex %O -synctex=1 %S';
+$xelatex = 'xelatex %O -synctex=1 %S';
+```
