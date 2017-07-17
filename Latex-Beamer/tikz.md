@@ -32,7 +32,7 @@
   \node[latent, left=of w]    (z)      {$z$} ; %
   \node[latent, above left=1.2 of z]    (theta)  {$\theta$}; %
   \node[latent, left=of theta] (alpha) {$\alpha$};
-  \node[latent, above=of z] (beta) {$\beta$};
+  \node[latent, above=1.2 of z, xshift=-0.5cm] (beta) {$\beta$};
 
 	% Edges
 	\edge{alpha}{theta}; \edge{theta}{z}; \edge{theta}{z}; \edge{z}{w}; 
