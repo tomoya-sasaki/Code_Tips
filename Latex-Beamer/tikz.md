@@ -30,7 +30,7 @@
 
   \node[obs]                   (w)      {$w$} ; %
   \node[latent, left=of w]    (z)      {$z$} ; %
-  \node[latent, left=of z]    (theta)  {$\theta$}; %
+  \node[latent, above left=1.2 of z]    (theta)  {$\theta$}; %
   \node[latent, left=of theta] (alpha) {$\alpha$};
   \node[latent, above=of z] (beta) {$\beta$};
 
