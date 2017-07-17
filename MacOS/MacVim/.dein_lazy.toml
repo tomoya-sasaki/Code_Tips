@@ -16,8 +16,8 @@ hook_source = '''
   nmap <LocalLeader>rf ,c
   nmap <LocalLeader>rq ,Q
   nmap <LocalLeader>cc ,b
-	nmap <LocalLeader>a ,a
-	nmap <LocalLeader>n ,n
+  nmap <LocalLeader>a ,a
+  nmap <LocalLeader>n ,n
 '''
 
 ## R
@@ -54,4 +54,18 @@ on_ft = ['tex']
 hook_add = '''
 let g:vimtex_fold_envs = 0
 let g:tex_indent_brace=0
+'''
+hook_source = '''
+  " TexShopでtexファイルを表示
+  nnoremap <Leader>t :TeXShopRun<CR>
+  command! TeXShopRun call s:TeXShopRun()
+  function! s:TeXShopRun()
+    let e = expand("%:e")
+    if e == "tex"
+      :!open -a /Applications/TeX/TeXShop.app %:r.tex
+      echo "Open in TeXShop"
+    else
+      echo "File is not tex"
+    endif
+  endfunction
 '''
