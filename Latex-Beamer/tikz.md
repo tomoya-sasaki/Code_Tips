@@ -42,7 +42,7 @@
   \plate {plateN} { %
     (w)(z) %
   }{$N$}; %
-	\plate{plateM}{
+	\plate[inner sep=0.2cm, xshift=-0.05cm, yshift=0.15cm]{plateM}{
 		(plateN)(theta)
 	}{$M$};
 \end{tikzpicture}
