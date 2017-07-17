@@ -33,6 +33,13 @@ hook_source = '''
   nmap <LocalLeader>pp <Plug>RDSendParagraph
   nmap <LocalLeader>cn <Plug>RNextRChunk
   nmap <LocalLeader>cN <Plug>RPreviousRChunk
+
+  nnoremap <Leader>tc :TemplateChunk<CR>i
+  command! TemplateChunk call s:TemplateChunk()
+  function! s:TemplateChunk()
+    call append(line(".")-1, "```{r, warning=FALSE, message=FALSE}")
+    call append(line("."),"```")
+  endfunction
 '''
 
 ## Tex
@@ -57,7 +64,7 @@ let g:tex_indent_brace=0
 '''
 hook_source = '''
   " TexShopでtexファイルを表示
-  nnoremap <Leader>t :TeXShopRun<CR>
+  nnoremap <Leader>ts :TeXShopRun<CR>
   command! TeXShopRun call s:TeXShopRun()
   function! s:TeXShopRun()
     let e = expand("%:e")
