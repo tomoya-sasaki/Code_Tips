@@ -33,3 +33,6 @@ screenを開いた後で、その開いているスクリーンを閉じるに�
 
 # Storage
 `$ df -h`
+
+# Try Later
+* `awe.s3`: R package to access ASW S3
