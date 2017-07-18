@@ -184,7 +184,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ```
 本文中では次のようにする:
 ```tex
-\begin{lstlisting}[language=Python, caption=Python example]
+\begin{lstlisting}[language=Python, caption=Python example] % You can use `c++` or `r`
 \end{lstlisting}
 ```
 [こちら](https://www.sharelatex.com/learn/Code_listing)も参考になる。
