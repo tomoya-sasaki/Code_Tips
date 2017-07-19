@@ -13,7 +13,7 @@ hook_source = '''
 ## Lisp
 [[plugins]]
 repo = 'kovisoft/slimv'
-on_ft = ['lisp']
+on_ft = ['scheme', 'lisp']
 hook_source = '''
   nmap <D-Enter> ,d j
   imap <D-Enter> <ESC> ,d i
@@ -56,6 +56,7 @@ hook_source = '''
     call append(line(".")+2,"```")
   endfunction
 
+	:Skinbadwolf
   :Window
 '''
 
@@ -71,19 +72,6 @@ hook_add = '''
   \   },
   \}
 
-  " TexShopでtexファイルを表示
-  nnoremap <Leader>ts :TeXShopRun<CR>
-  command! TeXShopRun call s:TeXShopRun()
-  function! s:TeXShopRun()
-    let e = expand("%:e")
-    if e == "tex"
-      :!open -a /Applications/TeX/TeXShop.app %:r.tex
-      echo "Open in TeXShop"
-    else
-      echo "File is not tex"
-    endif
-  endfunction
-
  " Insert Default Template
   nnoremap <Leader>tn :TemplateNewDefault<CR>
   command! TemplateNewDefault call s:TemplateNewDefault()
@@ -96,6 +84,20 @@ hook_add = '''
   command! TemplateNewEng call s:TemplateNewEng()
   function! s:TemplateNewEng()
     r ~/.vim/ftplugin/EngTex.tex
+  endfunction
+'''
+hook_source = '''
+  " TexShopでtexファイルを表示
+  nnoremap <Leader>ts :TeXShopRun<CR>
+  command! TeXShopRun call s:TeXShopRun()
+  function! s:TeXShopRun()
+    let e = expand("%:e")
+    if e == "tex"
+      :!open -a /Applications/TeX/TeXShop.app %:r.tex
+      echo "Open in TeXShop"
+    else
+      echo "File is not tex"
+    endif
   endfunction
 
  " Insert align
