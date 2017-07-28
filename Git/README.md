@@ -78,6 +78,10 @@ _*.*
 ### Initialize Branch
 ```terminal
 $ git branch branchname
+
+$ git branch dev/yourname origin/master
+  ($ git branch <New Branch> <Original Remote Branch> )
+$ git checkout -b dev/yourname origin/master
 ```
 Check the branches you have:
 ```terminal
