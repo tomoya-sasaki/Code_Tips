@@ -82,6 +82,7 @@ $ git branch branchname
 $ git branch dev/yourname origin/master
   ($ git branch <New Branch> <Original Remote Branch> )
 $ git checkout -b dev/yourname origin/master
+  (# Easier!)
 ```
 Check the branches you have:
 ```terminal
