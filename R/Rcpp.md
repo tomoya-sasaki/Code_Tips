@@ -1,4 +1,5 @@
 # Rcpp
+[Rcpp for everyone](https://teuder.github.io/rcpp4everyone_en/), [ja](https://teuder.github.io/rcpp4everyone_ja/)
 
 ## Table of Contents
 1. [Basics](#basics)
