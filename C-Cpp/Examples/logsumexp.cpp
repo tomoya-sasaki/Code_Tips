@@ -26,3 +26,17 @@ Z = logsumexp (Z, a[i], (i == 0))
 ```
 
 */
+
+// For Eigen
+double logsumexp_Eigen(VectorXd vec){
+  double sum = 0.0;
+  int index;
+
+  for(size_t i=0; i<vec.size(); ++i){
+    index = static_cast<int>(i);
+    sum = logsumexp (sum, vec[index], (index == 0));
+  }
+
+  return sum;
+
+}
