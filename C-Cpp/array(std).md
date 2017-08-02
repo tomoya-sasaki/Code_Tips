@@ -1,5 +1,6 @@
 # std::array
 `#include <array>`
+ しかし、これは固定長みたい。
 
 ## Table of Contents
 1. [Initialization](#initialization)
