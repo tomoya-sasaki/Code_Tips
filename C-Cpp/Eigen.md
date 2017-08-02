@@ -345,6 +345,9 @@ int main()
 
 ## Sparse Matrix
 ### Use in class
+[Reference](https://eigen.tuxfamily.org/dox/group__SparseQuickRefPage.html)
+
+`insert()` assumes that the element does not already exist; otherwise, use `coeffRef()`.
 ```cpp
 class Test{
 public:
@@ -352,10 +355,16 @@ public:
   
   Test(){
     sp1 = SparseMatrix<size_t, RowMajor> (10,10);
+    // Insert a new element; 
+    sp1.insert(i, j) = 1;  
+    // Update the value v_ij
+    sp1.coeffRef(i,j) = 2;
+    
     cout << sp1(1,1) << endl;
   }
 }
 ```
+
 
 ------------------------------------------------------------------------
 
