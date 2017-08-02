@@ -94,3 +94,13 @@ int multi1(VectorXd prob){
 	}
 	return index;
 }
+
+// Random selection from a vector
+int random_vec(vector<int> &vec){
+   std::random_device rd;
+   std::mt19937 rng(rd());
+   std::uniform_int_distribution<int> dist(0, vec.size() - 1);
+
+   int random_element = vec[dist(rng)];
+   return random_element;
+}
