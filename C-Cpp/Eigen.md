@@ -22,6 +22,7 @@ Usage:
 16. [Passing values](#passing-values)
 17. [Map](#map)
 18. [Get Index](#get-index)
+19. [Sparse Matrix](#sparse-matrix)
 
 
 Other Material: 
@@ -339,6 +340,20 @@ int main()
   cout << index << endl;
 
   return 0;
+}
+```
+
+## Sparse Matrix
+### Use in class
+```cpp
+class Test{
+public:
+  SparseMatrix<size_t, RowMajor> sp1;
+  
+  Test(){
+    sp1 = SparseMatrix<size_t, RowMajor> (10,10);
+    cout << sp1(1,1) << endl;
+  }
 }
 ```
 
