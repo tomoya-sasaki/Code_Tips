@@ -110,7 +110,7 @@ void Matrix_Element_Access_Test()
     PRINT_FNC;
  
     MatrixXd A = MatrixXd::Identity(3,3);
-    cout << "A(0,0) = " << A(0,0) << endl;;
+    cout << "A(0,0) = " << A(0,0) << endl;; // cannot be used for sparse matrix
     cout << "A.coeff(1,2) = " << A.coeff(1,2) << endl;
     cout << "A.coeffRef(1,2) = " << A.coeff(1,2) << endl;
  
