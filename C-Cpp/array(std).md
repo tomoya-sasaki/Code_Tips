@@ -1,4 +1,5 @@
 # std::array
+`#include <array>`
 
 ## Table of Contents
 1. [Initialization](#initialization)
