@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Sort by Key and Value](#sort-by-key-and-value)
+2. [Find](#find)
 
 ## Sort by Key and Value
 ```cpp
@@ -92,5 +93,90 @@ really 50
 important 20
 test 3
 is 1  
+*/
+```
+
+## Find
+```cpp
+// Reference: https://stackoverflow.com/questions/15499590/find-in-stdvectorstdpair
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <vector>
+using namespace std;
+
+void print_vec(vector<pair<string, int>> vect, size_t &n){
+    // Printing the vector
+    for (int i=0; i<n; i++){
+        // "first" and "second" are used to access
+        // 1st and 2nd element of pair respectively
+        cout << vect[i].first << " "
+             << vect[i].second << endl;
+    }
+}
+
+struct comp{
+  comp(string const& s) : _s(s) { }
+  
+  bool operator () (pair<string,int> const& p){
+      return (p.first == _s);
+  }
+  
+  std::string _s;
+};
+
+int main()
+{
+    //declaring vector of pairs
+    vector< pair <string,int> > vect;
+    vector< pair<string,int>>::iterator i;
+ 
+    // initialising 1st and 2nd element of
+    // pairs with vector elements
+    vector<string> key = {"test", "is", "really", "important" };
+    vector<int> value = {3, 1, 50, 20};
+    size_t n = key.size();
+ 
+    // Entering values in vector of pairs
+    for (size_t i=0; i<n; i++)
+        vect.push_back( make_pair(key[i], value[i]) );
+ 
+    // Check inputs
+    cout << "Original:" << endl;
+    print_vec(vect, n);
+
+    // Extract
+    i = find_if(vect.begin(), vect.end(), comp("test"));
+    if (i != vect.end()){
+        int &c = i->second;
+        cout << "\n" << c << endl;
+    }
+
+    // Add value and extract
+    i = find_if(vect.begin(), vect.end(), comp("test"));
+    if (i != vect.end()){
+        int &c = i->second;
+        c += 5;
+    }
+
+    i = find_if(vect.begin(), vect.end(), comp("test"));
+    if (i != vect.end()){
+        int &c = i->second;
+        cout << "\n" << c << endl;
+    }
+
+    return 0;
+}
+
+/*
+Original:
+test 3
+is 1
+really 50
+important 20
+
+3
+
+8    
 */
 ```
