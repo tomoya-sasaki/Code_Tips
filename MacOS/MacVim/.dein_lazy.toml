@@ -200,7 +200,7 @@ hook_source = '''
         \ 'outputter/error/success' : 'null',
         \ 'outputter/error/error' : 'quickfix',
         \ 'srcfile' : expand("%"),
-        \ 'cmdopt': '-pdfxe',
+        \ 'cmdopt': '-xelatex',
         \ 'hook/sweep/files' : [
         \                      '%S:p:r.aux',
         \                      '%S:p:r.bbl',
