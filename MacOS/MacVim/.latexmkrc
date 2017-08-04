@@ -2,6 +2,7 @@
 
 $latex = 'uplatex -kanji=utf-8 -synctex=1 %S';
 $pdflatex = 'pdflatex %O -synctex=1 %S';
+$xelatex = 'xelatex %O -synctex=1 %S';
 $dvipdf = 'dvipdfmx %S';
 $bibtex = 'pbibtex';
 $pdf_mode = 3; # use dvipdf
