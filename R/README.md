@@ -22,6 +22,8 @@ dev.off()
 ### オブジェクトの保存
 ```r
 write(x, file="variavle1.txt")
+
+saveRDS(RObject, file = paste("output/", "rsave.obj", sep=""))
 ```
 
 
