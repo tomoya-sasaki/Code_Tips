@@ -29,18 +29,45 @@ random_device rd;
 mt19937 rng(rd());
 
 int main(){
-	vector<int> data(10);
-	iota(begin(data), end(data), 0); // 0: starting number
+  vector<int> data(10);
+  iota(begin(data), end(data), 0); // 0: starting number
 
-	for(int i=0; i<10; i++)
-		cout << data[i] << " ";
-	cout << endl;
+  for(int i=0; i<10; i++)
+    cout << data[i] << " ";
+    cout << endl;
 
-	shuffle(begin(data), end(data), rng);
-	for(int i=0; i<10; i++)
-		cout << data[i] << " ";
-	cout << endl;
+  shuffle(begin(data), end(data), rng);
+  for(int i=0; i<10; i++)
+    cout << data[i] << " ";
+    cout << endl;
 }
+```
+```cpp
+// Reference: https://stackoverflow.com/questions/15499590/find-in-stdvectorstdpair
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <vector>
+#include <random>
+using namespace std;
+
+random_device rd;
+mt19937 rng(rd());
+
+int main()
+{
+  int doc_num = 10;
+  vector<int> v(doc_num);
+  iota(v.begin(), v.end(), 0);
+
+  shuffle(v.begin(), v.end(), rng);
+
+  cout << " after: ";
+  copy(v.begin(), v.end(), ostream_iterator<int>(cout));
+  cout << endl;
+  return 0;
+}
+
 ```
 
 ## Sort
