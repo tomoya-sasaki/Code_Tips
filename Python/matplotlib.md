@@ -1,4 +1,5 @@
 # matplotlib
+Another option: [HoloViews](http://holoviews.org/index.html)
 
 ## Table of Contents
 1. [Place legend out of the plot](#place-legend-out-of-the-plot)
