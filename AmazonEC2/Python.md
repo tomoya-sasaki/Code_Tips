@@ -57,12 +57,14 @@ python3 -m venv my_venv
 source my_venv/bin/activate
 ```
 
-Note:
+Note
 ```terminal
 # lxmlのインストールの前には次をsuして(rootとして)実行した
 sudo yum install libxml2-devel libxslt-devel python-devel
 ```
 
+# File path
+`cd`した後に開いているのなら、相対パスで指定すれば良かったみたい
 
 # References
 * [Python 開発用サーバの構築手順（AWS + Anaconda）](http://qiita.com/Salinger/items/c7b87d7000e48be6ebe2)
