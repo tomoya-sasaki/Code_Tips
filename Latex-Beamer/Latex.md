@@ -316,7 +316,7 @@ V&X。\\
 \fancyhead[C]{Center}
 \fancyhead[L]{}
 \fancyhead[R]{}
-\fancypagestyle{firststyle}{\renewcommand{\headrulewidth}{0pt} \fancyhead[C]{}}
+\fancypagestyle{firststyle}{\renewcommand{\headrulewidth}{0pt} \fancyhead[C]{}} % No line for the first page
 \begin{document}
 \title{Title}
 \author{Author}
