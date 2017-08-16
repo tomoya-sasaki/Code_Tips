@@ -30,6 +30,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 19. [数式コマンドショートカット](#数式コマンドショートカット)
 20. [Insert a table of contents](#insert-a-table-of-contents)
 21. [引用](#引用)
+22. [総ページ数の表示](#総ページ数の表示)
 
 ## 写真の挿入
 ```tex
@@ -312,10 +313,11 @@ V&X。\\
 ```tex
 % Header
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead[C]{Center}
-\fancyhead[L]{}
-\fancyhead[R]{}
+\pagestyle{fancy}{
+  \chead{Center}
+  \lhead{}
+  \rhead{}
+}
 \fancypagestyle{firststyle}{\renewcommand{\headrulewidth}{0pt} \fancyhead[C]{}} % No line for the first page
 \begin{document}
 \title{Title}
@@ -444,4 +446,25 @@ Modify depth:
 % Multiple citation:
 \citet{jon90,jam91}
 \citep{jon90,jam91}
+```
+
+## 総ページ数の表示
+```tex
+% Header
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}{
+  \chead{Center}
+  \lhead{}
+  \rhead{}
+  \cfoot{\thepage/\pageref{LastPage}} % Pagenum / Total page
+}
+\fancypagestyle{firststyle}{\renewcommand{\headrulewidth}{0pt} \fancyhead[C]{}}
+%-----------------
+\begin{document}
+
+\title{Title}
+\author{Author}
+\date{\today}
+\maketitle\thispagestyle{firststyle}
 ```
