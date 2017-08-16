@@ -308,6 +308,8 @@ V&X。\\
 \fancyhead[R]{}
 \begin{document}
 ```
+`\maketitle`があるページはスタイルが`plain`になってしまうので、`\maketitle\thispagestyle{fancy}`のようにしないと意図通りにならないことも。
+
 特定のページだけ:
 ```tex
 \usepackage{fancyhdr}
@@ -317,7 +319,7 @@ V&X。\\
 }
 \begin{document}
 ```
-`\thispagestyle{firststyle}`を該当箇所で使う (`\maketitle`の後じゃないとダメみたい)。
+`\thispagestyle{firststyle}`を該当箇所で使う (`\maketitle`, `\chapter`の後じゃないとダメみたい)。
 
 
 ## 箇条書きのスタイル変更
