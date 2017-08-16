@@ -303,7 +303,9 @@ V&X。\\
 % Header
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\chead{\textbf{Your Header}}
+\fancyhead[C]{center}
+\fancyhead[L]{}
+\fancyhead[R]{}
 \begin{document}
 ```
 特定のページだけ:
