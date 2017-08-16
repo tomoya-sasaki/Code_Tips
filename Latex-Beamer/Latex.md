@@ -309,6 +309,20 @@ V&X。\\
 \begin{document}
 ```
 `\maketitle`があるページはスタイルが`plain`になってしまうので、`\maketitle\thispagestyle{fancy}`のようにしないと意図通りにならないことも。
+```tex
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[C]{Center}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\fancypagestyle{firststyle}{\renewcommand{\headrulewidth}{0pt} \fancyhead[C]{}}
+\begin{document}
+\title{Title}
+\author{Author}
+\date{\today}
+\maketitle\thispagestyle{firststyle}
+```
 
 特定のページだけ:
 ```tex
