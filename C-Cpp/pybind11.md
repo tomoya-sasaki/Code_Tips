@@ -5,4 +5,5 @@
 
 ## Install
 ### Prerequisite
-1. cmake: `brew install cmake`
+1. Download files and move `pybind11-master/include/pybind11` to `/usr/local/include/pybind11`
+2. cmake: `brew install cmake`
