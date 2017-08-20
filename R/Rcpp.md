@@ -8,6 +8,7 @@
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
 ```cpp
+// [[Rcpp::depends(BH)]]
 #include <Rcpp.h>
 #include <RcppEigen.h>
 using namespace std;
