@@ -5,6 +5,7 @@ In AmazonEC2, check [this](https://github.com/Shusei-E/Code_Tips/blob/master/Ama
 1. [Install](#install)
 2. [Compile](#compile)
 3. [Vector](#vector)
+4. [Class](#class)
 
 ## Install
 ### Prerequisite
@@ -211,4 +212,72 @@ if __name__ == '__main__':
   import test
   print(test.make_list1())
   print(test.make_list2())
+```
+
+## Class
+test.cpp
+```cpp
+// test.cpp
+#include <vector>
+#include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
+
+using namespace std;
+namespace py = pybind11;
+
+class Vec1{
+public:
+  Vec1(){ }
+
+  vector<int> make_list1() {
+    vector<int> v;
+    v.push_back(1);
+    return v;
+  }
+};
+
+class Vec2{
+private:
+  int loop_num=0;
+public:
+  Vec2(int &num){
+    loop_num = num;
+  }
+
+  vector<vector<int>> make_list2() {
+    vector<vector<int>> v;
+    
+    for(int i=0; i<loop_num; i++){
+      vector<int> temp_vec;
+      temp_vec.push_back(i);
+      v.push_back(temp_vec);
+    }
+    return v;
+  }
+};
+
+PYBIND11_PLUGIN(test) {
+  py::module m("test", "pybind11 example plugin");
+
+  py::class_<Vec1>(m, "Vec1")
+    .def(py::init()) // for constructor
+    .def("make_list1", &Vec1::make_list1);
+
+  py::class_<Vec2>(m, "Vec2")
+    .def(py::init<int &>()) // for constructor
+    .def("make_list2", &Vec2::make_list2);
+
+  return m.ptr();
+}
+```
+test_main.py
+```py
+# test_main.py
+
+if __name__ == '__main__':
+    import test
+    v1 = test.Vec1()
+    v2 = test.Vec2(5)
+    print(v1.make_list1())
+    print(v2.make_list2())
 ```
