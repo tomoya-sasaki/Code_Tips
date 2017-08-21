@@ -21,6 +21,93 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 ```
 
 ## Compile
+### Use pyenv
+#### pybind11 package
+We need `pybind11`. We prepare two cpp files.
+```cpp
+#include <pybind11/pybind11.h>
+#include <string>
+using namespace std;
+
+class Car {
+public:
+  Car(const string &name) : name(name) {}
+  void setOwner(const string &name_) { name = name_; }
+  const string &getOwner() const { return name; }
+  static string getClassName() { return "Car"; }
+
+  string name;
+};
+
+namespace py = pybind11;
+
+PYBIND11_PLUGIN(example) {
+  py::module m("example", "pybind11 example plugin");
+
+  py::class_<Car>(m, "Car")
+      .def(py::init<const string &>())
+      .def("setOwner", &Car::setOwner)
+      .def("getOwner", &Car::getOwner)
+      .def_static("getClassName", &Car::getClassName);
+
+  return m.ptr();
+}
+```
+```cpp
+// wrap.cpp
+#include <pybind11/pybind11.h>
+int add(int i, int j) {
+    return i + j;
+};
+
+namespace py = pybind11;
+using namespace pybind11::literals;
+
+PYBIND11_PLUGIN(wrap) {
+    py::module m("wrap", "pybind11 example plugin");
+    m.def("add", &add, "A function which adds two numbers",
+          "i"_a=1, "j"_a=2);
+    return m.ptr();
+}
+```
+We need setup.py:
+```py
+import os, sys
+from distutils.core import setup, Extension
+from distutils import sysconfig
+
+cpp_args = ['-std=c++11', '-stdlib=libc++', '-mmacosx-version-min=10.7']
+
+ext_modules = [
+    Extension(
+    'example',
+        ['example.cpp'],
+        include_dirs=['pybind11/include'],
+    language='c++',
+    extra_compile_args = cpp_args,
+    ),
+    Extension(
+    'wrap',
+        ['wrap.cpp'],
+        include_dirs=['pybind11/include'],
+    language='c++',
+    extra_compile_args = cpp_args,
+    )
+]
+
+setup(
+    #name='example', version='0.0.1', author="Name", author_email='Email', description='Example',
+    ext_modules=ext_modules
+)
+```
+Finally,
+```terminal
+$ python setup.py build_ext -i
+```
+
+#### cimport
+
+### Use System Python
 ```
 clang++ -stdlib=libc++ -std=c++11  -O3 -shared -std=c++11 -I/usr/local/include/pybind11/ `python-config --cflags --ldflags` example.cpp -o example.so
 ```
