@@ -23,7 +23,7 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 ## Compile
 ### Use pyenv
 #### pybind11 package
-We need `pybind11`. We prepare two cpp files.
+We need a Python package called `pybind11` ([Official Manual](http://people.duke.edu/~ccc14/sta-663-2016/18G_C++_Python_pybind11.html#)). We prepare two cpp files.
 ```cpp
 #include <pybind11/pybind11.h>
 #include <string>
@@ -105,7 +105,23 @@ Finally,
 $ python setup.py build_ext -i
 ```
 
-#### cimport
+#### cppimport
+Let's prepare the package by typing `$ pip install cppimport`.
+
+Fitst, we need add a header in front of the cpp files. For example, `wrap.cpp` in the previous example will become,
+```cpp
+<%
+cfg['compiler_args'] = ['-std=c++11', '-stdlib=libc++', '-mmacosx-version-min=10.7']
+setup_pybind11(cfg)
+%>
+// wrap.cpp
+...[[SAME AS BEFORE]]...
+```
+In python, you can load cpp:
+```python
+>>> import cppimport
+>>> wrap = cppimport.imp('wrap')
+```
 
 ### Use System Python
 ```
