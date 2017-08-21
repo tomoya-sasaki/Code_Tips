@@ -26,17 +26,18 @@ clang++ -stdlib=libc++ -std=c++11  -O3 -shared -std=c++11 -I/usr/local/include/p
 ```
 C++ file (I used an example in [this blog](http://myenigma.hatenablog.com/entry/2016/12/17/075812#サンプルコード)):
 ```cpp
-// example.cpp
 #include <pybind11/pybind11.h>
 #include <string>
+using namespace std;
 
-class Pet {
+class Car {
 public:
-  Pet(const std::string &name) : name(name) {}
-  void setName(const std::string &name_) { name = name_; }
-  const std::string &getName() const { return name; }
-  static std::string getClassName() { return "Pet"; }
-  std::string name;
+  Car(const string &name) : name(name) {}
+  void setOwner(const string &name_) { name = name_; }
+  const string &getOwner() const { return name; }
+  static string getClassName() { return "Car"; }
+
+  string name;
 };
 
 namespace py = pybind11;
@@ -44,11 +45,11 @@ namespace py = pybind11;
 PYBIND11_PLUGIN(example) {
   py::module m("example", "pybind11 example plugin");
 
-  py::class_<Pet>(m, "Pet")
-      .def(py::init<const std::string &>())
-      .def("setName", &Pet::setName)
-      .def("getName", &Pet::getName)
-      .def_static("getClassName", &Pet::getClassName);
+  py::class_<Car>(m, "Car")
+      .def(py::init<const string &>())
+      .def("setOwner", &Car::setOwner)
+      .def("getOwner", &Car::getOwner)
+      .def_static("getClassName", &Car::getClassName);
 
   return m.ptr();
 }
