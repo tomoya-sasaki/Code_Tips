@@ -4,6 +4,7 @@ In AmazonEC2, check [this](https://github.com/Shusei-E/Code_Tips/blob/master/Ama
 ## Table of Contents
 1. [Install](#install)
 2. [Compile](#compile)
+3. [Vector](#vector)
 
 ## Install
 ### Prerequisite
@@ -163,4 +164,51 @@ PYBIND11_PLUGIN(example) {
 >>> a = example.Car('you')
 >>> a.getOwner()
 'you'
+```
+
+## Vector
+test.cpp:
+```cpp
+// test.cpp
+#include <vector>
+#include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
+
+using namespace std;
+namespace py = pybind11;
+
+
+vector<int> make_list1() {
+  vector<int> v;
+  v.push_back(1);
+  return v;
+}
+
+vector<vector<int>> make_list2() {
+  vector<vector<int>> v;
+  
+  for(int i=0; i<3; i++){
+    vector<int> temp_vec;
+    temp_vec.push_back(i);
+    v.push_back(temp_vec);
+  }
+
+  return v;
+}
+
+PYBIND11_PLUGIN(test) {
+  py::module m("test", "pybind11 example plugin");
+
+  m.def("make_list1", &make_list1);
+  m.def("make_list2", &make_list2);
+
+  return m.ptr();
+}
+```
+test.py
+```py
+if __name__ == '__main__':
+  import test
+  print(test.make_list1())
+  print(test.make_list2())
 ```
