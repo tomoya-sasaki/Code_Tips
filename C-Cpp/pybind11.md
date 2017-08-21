@@ -24,3 +24,41 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 ```
 clang++ -stdlib=libc++ -std=c++11  -O3 -shared -std=c++11 -I/usr/local/include/pybind11/ `python-config --cflags --ldflags` example.cpp -o example.so
 ```
+C++ file (I used an example in [this blog](http://myenigma.hatenablog.com/entry/2016/12/17/075812#サンプルコード)):
+```cpp
+// example.cpp
+#include <pybind11/pybind11.h>
+#include <string>
+
+class Pet {
+public:
+  Pet(const std::string &name) : name(name) {}
+  void setName(const std::string &name_) { name = name_; }
+  const std::string &getName() const { return name; }
+  static std::string getClassName() { return "Pet"; }
+  std::string name;
+};
+
+namespace py = pybind11;
+
+PYBIND11_PLUGIN(example) {
+  py::module m("example", "pybind11 example plugin");
+
+  py::class_<Pet>(m, "Pet")
+      .def(py::init<const std::string &>())
+      .def("setName", &Pet::setName)
+      .def("getName", &Pet::getName)
+      .def_static("getClassName", &Pet::getClassName);
+
+  return m.ptr();
+}
+```
+
+```python
+>>> import example
+>>> a = example.Pet('taro')
+>>> a
+<example.Pet object at 0x7f9563de5e68>
+>>> a.getName()
+'taro'
+```
