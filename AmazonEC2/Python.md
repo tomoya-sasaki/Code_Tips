@@ -28,6 +28,7 @@ sudo yum -y install make automake gcc gcc-c++ kernel-devel git-core  # ビルド
 sudo yum groupinstall "Development tools"
 sudo yum install python-devel libpng-devel freetype-devel
 
+# sudo yum install gcc ; sudo yum install zlib-devel ; sudo yum install openssl-devel ; sudo yum install bzip2-devel ; sudo yum install readline-devel ; sudo yum -y install make automake gcc gcc-c++ kernel-devel git-core ; sudo yum groupinstall "Development tools" ; sudo yum install python-devel libpng-devel freetype-devel
 #sudo yum install gcc zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
 ```
 
