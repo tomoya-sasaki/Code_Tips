@@ -8,7 +8,7 @@ inlineの表示`%matplotlib inline`
 References:
 * [matplotlib + seaborn — Pythonでグラフ描画 ](https://heavywatal.github.io/python/matplotlib.html)
 
-Another option: [HoloViews](http://holoviews.org/index.html)
+Another option: [HoloViews](https://github.com/Shusei-E/Code_Tips/blob/master/Python/HoloViews.md)
 
 # Table of Contents
 1. [軸やラベルなどの設定](#軸やラベルなどの設定)
