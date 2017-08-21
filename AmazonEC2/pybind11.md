@@ -63,9 +63,7 @@ PYBIND11_PLUGIN(example) {
 
 ```python
 >>> import example
->>> a = example.Pet('taro')
->>> a
-<example.Pet object at 0x7f9563de5e68>
->>> a.getName()
-'taro'
+>>> a = example.Car('you')
+>>> a.getOwner()
+'you'
 ```
