@@ -8,7 +8,7 @@
 1. Install Python.
 2. Install clang `$ sudo yum install clang` 
 3. Install cmake `$ sudo yum install cmake`
-4. In Python environment, `$ pip install pybind11`
+4. In Python environment (`$ source py36/bin/activate`), `$ pip install pybind11`
 
 ### Pybind11
 Put files into `/usr/local/include`
@@ -25,3 +25,7 @@ Put files into `/usr/local/include`
 4. Move `sudo mv Eigen /usr/local/include`
 
 ### Try
+Let's compile (we cannot use `-stdlib=libc++` option):
+```
+clang++ -std=c++11 -O3 -shared -std=c++11 -fPIC -I/usr/local/include/pybind11/ `python3-config --cflags --ldflags` example.cpp -o example.so
+```
