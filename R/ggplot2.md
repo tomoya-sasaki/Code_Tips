@@ -129,7 +129,7 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
 ```
 <img src="figures/ggplot_2figs.png" width="780">
 
-## Use facet
+### Use facet
 ```r
 > parameters
 # A tibble: 186 x 6
