@@ -111,6 +111,7 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
 ```
 
 ## 図を並べる
+### Use gridExtra
 [Reference](http://notchained.hatenablog.com/entry/2015/12/17/010904)
 ```r
 library(gridExtra)
@@ -128,6 +129,42 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
 ```
 <img src="figures/ggplot_2figs.png" width="780">
 
+## Use facet
+```r
+> parameters
+# A tibble: 186 x 6
+    dp_alpha   lambda_ dp_gamma `mean(node.drifts)` `mean(data_drifts)`  iter
+       <dbl>     <dbl>    <dbl>               <dbl>               <dbl> <int>
+ 1 0.6149465 0.8000000 1.186484           0.6222507            1.025149     1
+ 2 3.7064269 0.7886008 2.734082           2.2459909            7.378842    11
+ 3 2.9995301 0.7980033 2.314043           1.4600977            4.435327    21
+
+> parameters <- gather(parameters, key=parameter, value=value, "dp_alpha","lambda_", "dp_gamma", "mean(node.drifts)", "mean(data_drifts)")
+> parameters
+# A tibble: 930 x 3
+    iter parameter     value
+   <int>     <chr>     <dbl>
+ 1     1  dp_alpha 0.6149465
+ 2    11  dp_alpha 3.7064269
+ 3    21  dp_alpha 2.9995301
+
+> true <- data.frame(
+   parameter = c("dp_alpha","lambda_", "dp_gamma", "mean(node.drifts)", "mean(data_drifts)"),
+   value = c(2.0, 0.55, 2.0, 1.5, 0.25)
+   )
+> head(true, 3)
+          parameter value
+1          dp_alpha  2.00
+2           lambda_  0.55
+3          dp_gamma  2.00
+
+> ggplot(data=parameters, aes(x=iter, y=value, group=parameter, color=parameter)) +
+     geom_line() +
+     geom_point(size=0.3) +
+     facet_wrap(~parameter, ncol=2, scales = "free") +
+     geom_hline(data = true, aes(yintercept = value))
+```
+<img src="figures/ggplot2_facet.png" width="740">
 
 ## データの確認
 `GGally`の`ggpairs`を使うと良いかも。カスタマイズ方法は「StanとR」のp.55に対応するコードを参照のこと。
