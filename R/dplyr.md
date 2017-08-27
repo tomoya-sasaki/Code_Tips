@@ -65,9 +65,17 @@ population <- population %>%
 ```
 
 ```r
-data %>% select_("Q3.2") %>%
-  rowwise() %>% mutate(Q3.2_marked = change_choices(choice=Q3.2, type="Q3.2")) %>%
-  fig_BarPlot(., "Q3.2_marked", "Q3.2: Title", "Q3.2.pdf")
+get_time <- function(x, type){
+  print(x)
+  time <- stringr::str_split(x, pattern=" ")[[1]][2]
+  time <- stringr::str_split(time, pattern=":")[[1]]
+  if(type=="hour")
+    return(as.integer(time[1]))
+  if(type=="minute")
+    return(as.integer(time[2]))
+}
+data %>% select(datetime) %>% rowwise() %>%
+  mutate(hour = get_time(datetime, "hour"), minute=get_time(datetime,"minute"))
 ```
 
 ## Regression Simulation
