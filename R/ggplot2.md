@@ -19,6 +19,7 @@ References:
 11. [Legend関連](#legend関連)
 	* [順番を変える](#順番を変える)
 	* [ラベルを変える](#ラベルを変える)
+	* [Legendに表示しない](#legendに表示しない)
 12. [theme関連](#theme関連)
 	* [一括でサイズ](#一括でサイズ)
 	* [細かくサイズ](#細かくサイズ)
@@ -30,6 +31,7 @@ References:
 17. [選択肢を強制的に表示](#選択肢を強制的に表示)
 18. [Use environment variables](#use-environment-variables)
 19. [色の変更](#色の変更)
+20. [積み上げグラフ](#積み上げグラフ)
 
    
 ## xラベルの変更
@@ -239,6 +241,11 @@ data %>% select_("Group", "Finished") %>% slice(3:n()) %>%
 `aes`のところが`colour`なら、`scale_colour_hue`になる。<br>
 <img src="figures/ggplot2_legend_label.png" width="330">
 
+### Legendに表示しない
+Add `show.legend = F`
+```r
+geom_point(color="black", position="stack", show.legend = F)
+```
 
 ## theme関連
 ### 一括でサイズ
@@ -410,3 +417,35 @@ data %>% mutate(Q15.5_real = 2017 - Q15.5) %>%
 scale_fill_brewer(palette="Spectral")
 scale_fill_manual(values=c("#09aa04", "#990066"))
 ```
+
+## 積み上げグラフ
+### 折れ線
+```r
+> calorie_timeperiod
+# A tibble: 6 x 3
+        date time_period calorie
+      <date>       <chr>   <dbl>
+1 2017-08-27   afternoon    95.0
+2 2017-08-27     morning   630.0
+3 2017-08-27       night   569.0
+4 2017-08-28   afternoon   111.0
+5 2017-08-28     morning   553.2
+6 2017-08-28       night    66.9
+
+> calorie_timeperiod_fig <- ggplot(calorie_timeperiod, 
+  aes(x=date, y=calorie,
+      group=factor(time_period, levels=c("morning","afternoon", "night", "midnight")),
+      fill=factor(time_period, levels=c("morning","afternoon", "night", "midnight")),
+      color=factor(time_period, levels=c("morning","afternoon", "night", "midnight")))) +
+  geom_line(position="stack") + 
+  geom_area(aes(color=NULL),position="stack") + # use only group and fill
+  geom_hline(aes(fill=NULL), yintercept = 1400, color="red") + # Ideal calorie (actually, 1300) 
+  geom_point(color="black", position="stack", show.legend = F) + # don't show point in legend
+  ggtitle("Calorie") +
+  guides(fill=guide_legend(title="Time periods"), color=guide_legend(title="Time periods")) +
+  scale_color_brewer(palette="Set2") +
+  scale_fill_brewer(palette="Set2") +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+<img src="figures/fig_stack_line.png" width="580">
