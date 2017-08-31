@@ -344,6 +344,8 @@ int main()
 ```
 
 ## Sparse Matrix
+We have `SparseVector` as well.
+
 ### Use in class
 [Reference](https://eigen.tuxfamily.org/dox/group__SparseQuickRefPage.html)
 
