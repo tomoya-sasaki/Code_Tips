@@ -284,7 +284,15 @@ if __name__ == '__main__':
 ```
 
 ## Return values
-If you use Eigen and Numpy, you can use pass-by-reference (not for sparse matrix) and returning reference ([check](http://pybind11.readthedocs.io/en/master/advanced/cast/eigen.html#returning-values-to-python)).
+If you use Eigen and Numpy, you can use pass-by-reference (not for sparse matrix) and returning reference ([check](http://pybind11.readthedocs.io/en/master/advanced/cast/eigen.html#returning-values-to-python)). **It seems it only works for Eigen-Numpy conversion**
+
+```cpp
+MatrixXd &CstmCpp::return_docs_matrix(){
+  return docs_matrix;
+}
+...(omitted lines)...
+.def("return_words_matrix", &CstmCpp::return_words_matrix, py::return_value_policy::reference_internal)
+```
 
 (Probably) If Python object is immutable, the value won't change even if you return reference.
 * Immutable
