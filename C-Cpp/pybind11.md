@@ -285,3 +285,9 @@ if __name__ == '__main__':
 
 ## Return values
 If you use Eigen and Numpy, you can use pass-by-reference (not for sparse matrix) and returning reference ([check](http://pybind11.readthedocs.io/en/master/advanced/cast/eigen.html#returning-values-to-python)).
+
+(Probably) If Python object is immutable, the value won't change even if you return reference.
+* Immutable
+  * int, float, str, tuple, bytes, frozenset
+* Mutable
+  * list, dict, set, bytearray
