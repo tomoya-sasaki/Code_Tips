@@ -190,6 +190,11 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ```
 [こちら](https://www.sharelatex.com/learn/Code_listing)も参考になる。
 
+Probably you need this:
+```tex
+\renewcommand{\textasteriskcentered}{\ensuremath{*}}
+```
+
 ## 図のフォルダの指定
 ```latex
 \graphicspath{{D:/LATEX/Reports@IIT/figures/}}
