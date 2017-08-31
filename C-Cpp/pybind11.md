@@ -6,6 +6,7 @@ In AmazonEC2, check [this](https://github.com/Shusei-E/Code_Tips/blob/master/Ama
 2. [Compile](#compile)
 3. [Vector](#vector)
 4. [Class](#class)
+5. [Return values](#return-values)
 
 ## Install
 ### Prerequisite
@@ -281,3 +282,6 @@ if __name__ == '__main__':
     print(v1.make_list1())
     print(v2.make_list2())
 ```
+
+## Return values
+If you use Eigen and Numpy, you can use pass-by-reference (not for sparse matrix) and returning reference ([check](http://pybind11.readthedocs.io/en/master/advanced/cast/eigen.html#returning-values-to-python)).
