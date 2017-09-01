@@ -16,6 +16,7 @@
 11. [行列をindexで並び替え](#行列をindexで並び替え)
 12. [vectorを繰り返してmatrixにする](#vectorを繰り返してmatrixにする)
 13. [Sparse matrix](#sparse-matrix)
+14. [Save](#save)
 
 
 ## arrayとmatrixの違い
@@ -179,3 +180,10 @@ sparse.csc_matrix(np.array(A))
 * `csr_matrix`は行を取り出す操作、`csc_matrix`は列を取り出す操作が高速である
 * 同じ型同士の和・積は高速である。つまり`csr_matrix`同士 or `csc_matrix`同士の和・積にすべき
 * `csr_matrix`, `csc_matrix`は転置行列を取ると型が移り合う。Ex. `csr_matrix`の転置をとると`csc_matrix`
+
+## Save
+### Save to text
+```python
+header = ",".join([ "Dim"+str(i) for i in range(self.ndim)])
+np.savetxt(file_path, np_object, header=header, fmt="%0.9f", delimiter=',', comments='')
+```
