@@ -18,6 +18,9 @@ nnoremap <D-A-Right> gt
 " 行番号を表示する
 set number
 
+" Use python filetype when open .pyx
+au BufNewFile,BufRead *.pyx setf python
+
 " タブ幅の設定、Tabではなくスペース2つにする
 set tabstop=2
 set shiftwidth=2
@@ -29,6 +32,7 @@ autocmd Filetype tex setlocal expandtab
 set autoindent
 autocmd BufNewFile,BufRead *.c set cindent
 autocmd BufNewFile,BufRead *.cpp set cindent
+
 
 " バックアップをとらない
 set nobackup
