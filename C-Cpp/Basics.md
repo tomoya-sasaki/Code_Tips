@@ -143,6 +143,14 @@ vector<int> numbers2;
 ```
 
 ## size_t and int
+```cpp
+static_cast<int>(data);
+
+size_t int2size_t(int val) {
+  return (val < 0) ? __SIZE_MAX__ : (size_t)((unsigned)val);
+}
+```
+もしかしたら値が極端に大きい時に不具合があるかも
 
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
