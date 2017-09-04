@@ -13,7 +13,7 @@
 8. [Single quote and double quote](#single-quote-and-double-quote)
 9. [Switch with character](#switch-with-character)
 10. [Vector](#vector)
-11. [size_t and int](#sizet-and-int)
+11. [size_t and int](#size_t-and-int)
 
 
 ## 小数の計算
