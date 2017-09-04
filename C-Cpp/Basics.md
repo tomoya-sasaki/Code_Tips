@@ -13,6 +13,7 @@
 8. [Single quote and double quote](#single-quote-and-double-quote)
 9. [Switch with character](#switch-with-character)
 10. [Vector](#vector)
+11. [size_t and int](#sizet-and-int)
 
 
 ## 小数の計算
@@ -141,6 +142,7 @@ vector<int> numbers2;
   // オブジェクトの要素数は0。データを追加するには次の章で説明する push_back() などを使う
 ```
 
+## size_t and int
 
 ## Sites
 * [C++入門](http://www.asahi-net.or.jp/~yf8k-kbys/newcpp0.html)
@@ -200,4 +202,5 @@ void funct(int arg){ // fct is global, funct is local integer argument
 `*` contents of / `&` address of として考えられる (p.10)  
 * `int *p;` or `int* p;`: p is a pointer to an int.
 * ポインタとはアドレスを入れることを目的とした変数です。 ポインタ型として箱を用意した変数の中には、アドレスを入れることができます。
- 
+
+
