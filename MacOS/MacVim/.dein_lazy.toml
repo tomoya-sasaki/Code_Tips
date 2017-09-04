@@ -1,15 +1,39 @@
 # ~/.dein_lazy.toml
 
+# hook_add: when dein.vim recognizes plugin
+# hook_source: just before loading the plugin
+# hook_post_source: just after loading the plugin
+
+
+### Programming
+## Multiple languages
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_ft = ['tex', 'python', 'r', 'rmd', 'c', 'cpp'] # do not write separately for each language
+hook_source = '''
+  nmap <Leader>, <Plug>(caw:hatpos:toggle)
+  vmap <Leader>, <Plug>(caw:hatpos:toggle)
+
+  " Currently, I don't have cpp specific plugin
+  let e = expand("%:e")
+  if e == "cpp" || e == "hpp" || e == "c" || e == "h"
+    :Skinbadwolf
+    :Window
+    :CodeMode
+  endif
+'''
+  # copy manually the folder named 'r' in '.cache/dein/repos/github.com/tyru/caw.vim/after/ftplugin' for 'rmd'
+
+## Python
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
 on_ft = ['python']
 hook_source = '''
   :Skinbadwolf
   :Window
+  :CodeMode
 '''
 
-
-### Programming
 ## Lisp
 [[plugins]]
 repo = 'kovisoft/slimv'
@@ -58,6 +82,7 @@ hook_source = '''
 
   :Skinbadwolf
   :Window
+  :CodeMode
 '''
 
 ## Tex
@@ -106,6 +131,14 @@ hook_source = '''
   function! s:TemplateAlign()
     call append(line("."), "\\begin{align}")
     call append(line(".")+1,"\\end{align}")
+  endfunction
+
+ " Insert lstlistings
+  nnoremap <Leader>tl :TemplateLstlisting<CR>jo
+  command! TemplateLstlisting call s:TemplateLstlisting()
+  function! s:TemplateLstlisting()
+    call append(line("."), "\\begin{lstlisting}")
+    call append(line(".")+1,"\\end{lstlisting}")
   endfunction
 
  " Insert itemize
@@ -224,6 +257,9 @@ hook_source = '''
     endif
   endfunction
   :LatexMode
+  :Skinsolarized
+  highlight MatchParen guibg=white guifg=orange
+  :Window
 '''
 
 [[plugins]]
