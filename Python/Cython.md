@@ -3,7 +3,7 @@ You might want to use [pybind11](https://github.com/Shusei-E/Code_Tips/blob/mast
 
 * [Official Tutorials](#http://docs.cython.org/en/latest/src/tutorial/cython_tutorial.html)
 
-cdefの中では特に使う変数に型を明示。return valueも型がわかれば`cdef double func()`のようにできる。
+cdefの中では特に使う変数に型を明示。return valueも型がわかれば`cdef double func():`のようにできる。
 
 ## Table of Contents
 1. [Basics](#basics)
