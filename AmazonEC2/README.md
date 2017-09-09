@@ -8,6 +8,9 @@
 # Show full path
 `readlink -f file.txt`
 
+## Current path
+`pwd`
+
 # Screen
 ログアウトしても処理を続けるためには、screen内で回す必要がある。
 
