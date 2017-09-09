@@ -34,8 +34,12 @@ screenを開いた後で、その開いているスクリーンを閉じるに�
 * `Ctrl+a, n`で次のスクリーンへ
 * `Ctrl+a, p`で前のスクリーン
 
-# Storage
+# Status
+## Storage
 `$ df -h`
+
+## Memory
+`$ free -m`
 
 # Try Later
 * `awe.s3`: R package to access ASW S3
