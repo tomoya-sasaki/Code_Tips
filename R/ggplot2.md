@@ -2,6 +2,7 @@
 References:
 * [ggplot2 — きれいなグラフを簡単に合理的に](https://heavywatal.github.io/rstats/ggplot2.html)
 * [Top 50 ggplot2 Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html): 大体何でも載っているサイト
+* [ggsci: Color Palettes for ggplot2](https://github.com/road2stat/ggsci)
 
 ## Table of Contents
 1. [xラベルの変更](#xラベルの変更)
