@@ -13,6 +13,7 @@ cdefの中では特に使う変数に型を明示。return valueも型がわか�
    * [class内の変数の呼び出し](#class内の変数の呼び出し)
    * [for loop](#for-loop)
 4. [Global Variable](#global-variable)
+5. [Make Cython even faster](#make-cython-even-faster)
 
 ## Basics
 ### Import Cython Code
@@ -171,3 +172,13 @@ cdef main():
   global alpha
   alpha = 5.0
 ```
+
+## Make Cython even faster
+```python
+cdef extern from "<math.h>":
+   double log (double x) nogil
+   double exp (double x) nogil
+   double lgamma (double x)
+   double tgamma (double x) nogil
+```
+`"<math.h>"` might be `"math.h"`. I'm not sure `nogil` is necessary. Functions are listed in [cython/Cython/Includes/libc/math.pxd](https://github.com/cython/cython/blob/master/Cython/Includes/libc/math.pxd)
