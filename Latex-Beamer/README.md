@@ -8,4 +8,4 @@ For converting figures, ToyViewer is the best option.
 `\renewcommand{\headfont}{\bfseries}`
 
 ## .styの追加
-`/usr/local/texlive/texmf-local/tex/latex/`
+`/usr/local/texlive/texmf-local/tex/latex/`して`sudo mktexlsr`
