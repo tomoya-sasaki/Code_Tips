@@ -15,8 +15,6 @@ make_figure <- function(params, params_names, burn_in=1000, slice=5){
   }
   tidy_params <- do.call(rbind.data.frame, tidy_params)
 
-
-
   param <- ggplot(data=tidy_params, aes(x=iter, y=value, group=parameter, color=parameter)) + 
       geom_line() + 
       geom_point(size=0.3) +
