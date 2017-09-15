@@ -48,6 +48,8 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ここで`width=1.2`は、図の幅を元の1.2倍に拡大することを意味する。  
 `\linewidth`は縦幅のスケールは横幅に合わせることを意味する。
 
+pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{jsarticle}`としないとダメだった。
+
 ### 図を並べる
 ```tex
 \begin{figure}[htbp]
