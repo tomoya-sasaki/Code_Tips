@@ -133,6 +133,7 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
 <img src="figures/ggplot_2figs.png" width="780">
 
 ### Use facet
+Wrap function is [here](https://github.com/Shusei-E/Code_Tips/blob/master/R/Examples/others/facet_params.R).
 ```r
 > parameters
 # A tibble: 186 x 6
