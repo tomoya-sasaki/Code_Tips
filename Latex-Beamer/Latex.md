@@ -79,6 +79,8 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 `{\fontsize{9.5pt}{8pt}\selectfont   }`
 
 ## Tikzでゲームツリー
+[Use style file](https://github.com/Shusei-E/tikz-bayesnet)
+
 ### upLatex
 `\usepackage[dvipdfmx]{graphicx,xcolor}`として、`documentclass`は`\documentclass[a4paper,10.5pt,uplatex]{jsarticle}`でOK。
 
