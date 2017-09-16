@@ -1,4 +1,5 @@
 # Tikz
+[Use style file](https://github.com/Shusei-E/tikz-bayesnet)
 
 ## Table of Contents
 1. [設定](#設定)
