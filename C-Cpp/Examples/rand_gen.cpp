@@ -1,55 +1,54 @@
-// namespace, random number generator
-
 # include <iostream>
 # include <random>
 #include <chrono>
 using namespace std;
 
 namespace randgen{
-  // Default random sapler
-  mt19937::result_type seed = chrono::system_clock::now().time_since_epoch().count();
-  auto uniform_0_1 = bind(uniform_real_distribution<double>(0,1), mt19937(seed));
+  // Default seed 
+  int seed = chrono::system_clock::now().time_since_epoch().count();
+  mt19937 mt(seed);
+  auto rand_gen = mt;
 
-  void set_seed(int &use_seed){
-    seed = use_seed;
-    uniform_0_1 = bind(uniform_real_distribution<double>(0,1), mt19937(seed));
+  void set_seed(int use_seed){
+    mt19937 mt(use_seed);
+    rand_gen = mt;
   }
-  double bernoulli(double &p){
-    double r = uniform_0_1();
+  double bernoulli(double p){
+    uniform_real_distribution<double> rand(0, 1);
+    double r = rand(rand_gen);
     if(r > p){
       return 0;
     }
     return 1;
   }
-  double uniform(double min=0.0, double max=1.0){
-    auto uniform = bind(uniform_real_distribution<double>(min,max), mt19937(seed));
-    return uniform();
-  }
   double gamma(double a, double b){
-    auto gamma = bind(gamma_distribution<double>(a, 1.0 / b), mt19937(seed));
-    return gamma();
+    gamma_distribution<double> distribution(a, 1.0 / b);
+    return distribution(rand_gen);
   }
   double beta(double a, double b){
     double ga = gamma(a, 1.0);
     double gb = gamma(b, 1.0);
     return ga / (ga + gb);
   }
-
+  double uniform(double min = 0.0, double max = 1.0){
+    uniform_real_distribution<double> rand(min, max);
+    return rand(rand_gen);
+  }
 }
 
 int main(){
-  int seed = 50; // we can use the input from R
-  randgen::set_seed(seed);
+  int seed = 1234; // we can use the input from R
+  randgen::set_seed(seed); // set seed
 
-  double p = 0.2;
   for(int i=0; i<10; ++i){
-    cout << randgen::bernoulli(p) << '\n';
+    // Bernoulli
+    cout << randgen::bernoulli(0.5) << " ";
+    // Uniform
+    cout << randgen::uniform(5.0, 10.0) << " ";
+    // Gamma
+    cout << randgen::gamma(1.0, 2.0) << " ";
+    // Beta
+    cout << randgen::beta(1.5, 2.5) << endl;
   }
 
-  // Uniform
-  cout << randgen::uniform(5.0, 10.0) << endl;
-  // Gamma
-  cout << randgen::gamma(1.0, 2.0) << endl;
-  // Beta
-  cout << randgen::beta(1.5, 2.5) << endl;
 }
