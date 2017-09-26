@@ -7,7 +7,7 @@ namespace randgen{
   // Default seed 
   int seed = chrono::system_clock::now().time_since_epoch().count();
   mt19937 mt(seed);
-  auto rand_gen = mt;
+  mt19937 rand_gen = mt;
 
   void set_seed(int use_seed){
     mt19937 mt(use_seed);
