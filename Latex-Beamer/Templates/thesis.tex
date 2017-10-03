@@ -17,25 +17,41 @@
 \usepackage{setspace} 
 \setstretch{1.13} % ページ全体の行間を設定
 %--コードの設定
+%--コードの設定
 \usepackage{listings}
 \usepackage{color}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundcolour}{rgb}{0.95,0.95,0.95}
+
+\usepackage{inconsolata} % Font for code
 \lstset{ %
-  %language= R,
-  aboveskip=0.1mm,
-  belowskip=0.1mm,
+  language= {Python}, %ここを含めなければ、変に太字になったりしない
+  aboveskip=2.5mm,
+  belowskip=4.5mm,
   showstringspaces=false,
   columns=flexible,
   keepspaces=true,
-  numbers=none,                    
-  numbersep=7pt,    
-  basicstyle={\small\ttfamily},
-  commentstyle={\small\ttfamily},
+  numbers=left,                    
+  numbersep=5pt,    
+  basicstyle={\small\fontfamily{zi4}\selectfont},
+  commentstyle={\small\fontfamily{zi4}\selectfont},
   breaklines=true,
-  breakatwhitespace=true
-  tabsize=3
+  breakatwhitespace=true,
+  tabsize=3,
+  frame=single, % lines or delete this line
+  backgroundcolor=\color{backgroundcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  xleftmargin = 1.1cm,
+  framexleftmargin = 1em
 }
 \usepackage{xcolor}
 \usepackage{framed}
