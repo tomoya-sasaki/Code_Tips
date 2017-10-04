@@ -78,11 +78,19 @@
 
 %--Appendix
 \usepackage[toc,page]{appendix}
-
 \usepackage{cite} 
 
 %--subsectionも目次に出力する
 \setcounter{tocdepth}{2}
+
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[RO,RE]{\rightmark}
+\fancyhead[LE,LO]{\leftmark}
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter . ~#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+\cfoot{\thepage}
 
 %-----------------
 
