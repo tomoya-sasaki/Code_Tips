@@ -12,10 +12,12 @@
 \usepackage[truedimen,top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
 
 %--図の設定
-\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\graphicspath{{./figures/}}
 %--行間の設定
 \usepackage{setspace} 
 \setstretch{1.13} % ページ全体の行間を設定
+%--コードの設定
 %--コードの設定
 \usepackage{listings}
 \usepackage{color}
@@ -67,12 +69,13 @@
 
 %--名前を英語に統一
 %\renewcommand{\bibname}{参考文献}
-\renewcommand{\contentsname}{Contents}
+\renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\figurename}{Figure }
 \renewcommand{\tablename}{Table }
 \renewcommand{\listfigurename}{Figure List}
 \renewcommand{\listtablename}{Table List}
 \renewcommand{\appendixname}{Appendix }
+\renewcommand{\lstlistingname}{Code }
 \renewcommand{\prechaptername}{Chapter } 
 \renewcommand{\postchaptername}{}  
 
@@ -82,6 +85,9 @@
 
 %--subsectionも目次に出力する
 \setcounter{tocdepth}{2}
+
+%--セクションのフォント
+\renewcommand{\headfont}{\bfseries}
 
 % Header
 \usepackage{fancyhdr}
