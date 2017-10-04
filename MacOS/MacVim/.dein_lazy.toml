@@ -9,7 +9,7 @@
 ## Multiple languages
 [[plugins]]
 repo = 'tyru/caw.vim'
-on_ft = ['tex', 'python', 'r', 'rmd', 'c', 'cpp'] # do not write separately for each language
+on_ft = ['tex', 'pyrex', 'python', 'r', 'rmd', 'c', 'cpp'] # do not write separately for each language
 hook_source = '''
   nmap <Leader>, <Plug>(caw:hatpos:toggle)
   vmap <Leader>, <Plug>(caw:hatpos:toggle)
@@ -27,7 +27,7 @@ hook_source = '''
 ## Python
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
-on_ft = ['python']
+on_ft = ['python', 'pyrex']
 hook_source = '''
   :Skinbadwolf
   :Window
@@ -183,8 +183,10 @@ hook_source = '''
       \                      '%S:p:r.fdb_latexmk',
       \                      '%S:p:r.fls',
       \                      '%S:p:r.log',
-      \                       '%S:p:r.synctex.gz',
-      \                       '%S:p:r.toc',
+      \                      '%S:p:r.synctex.gz',
+      \                      '%S:p:r.toc',
+      \                      '%S:p:r.lof',
+      \                      '%S:p:r.lot',
       \                      '%S:p:r.bcf',
       \                      '%S:p:r.nav',
       \                      '%S:p:r.run.xml',
