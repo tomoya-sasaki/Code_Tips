@@ -4,6 +4,13 @@ For converting figures, ToyViewer is the best option.
 
 * Section Symbol: `\S`
 
+## Compile from Terminal
+If you have latexmk file,
+```terminal
+$ latexmk -pdfdvi main.tex ; rm *.aux *.bbl *.blg *.dvi *.fdb_latexmk *.lof *.log *.lot *.out *.gz *.toc
+```
+It's faster if you don't remove temporary files.
+
 ## jsarticleで目次の英字書体を変える
 `\renewcommand{\headfont}{\bfseries}`
 
