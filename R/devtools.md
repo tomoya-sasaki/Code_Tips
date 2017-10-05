@@ -13,7 +13,7 @@ devtools::create("path/to/package/testpackage")
 ```
 
 ### Add a first function
-Add R function in `R/` folder, then `load_all()` to load the function.
+Add R function in `R/` folder, then `devtools::load_all()` to load the function.
 
 ## Install Packages
 [Reference](http://r-pkgs.had.co.nz/package.html#package)
