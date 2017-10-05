@@ -6,6 +6,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 2. [写真の挿入](#写真の挿入)
    * [図を並べる](#図を並べる)
    * [図の回転](#図の回転)
+   * [sectionを跨がない](#sectionを跨がない)
 3. [文字サイズ変更](#文字サイズ変更)
 4. [Tikzでゲームツリー](#tikzでゲームツリー)
 5. [数式関連](#数式関連)
@@ -76,6 +77,13 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 ```tex
 \includegraphics[width=100mm, angle=90]{fig1.pdf}
 ```
+
+### sectionを跨がない
+プリアンブルで、
+```tex
+\usepackage[section]{placeins} % figure outputs in each section
+```
+`section`を`subsection`とかにもできる。
 
 ## 文字サイズ変更
 `{\fontsize{9.5pt}{8pt}\selectfont   }`
