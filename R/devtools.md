@@ -49,3 +49,15 @@ multiply <- function(x, y) {
 ```r
 devtools::use_rcpp()
 ```
+
+### When you edit code
+```r
+# Option 1
+devtools::load_all() # fine but not recommended
+
+# Option 2
+devtools::build()
+devtools::install()
+devtools::document()
+library(mypackage)
+```
