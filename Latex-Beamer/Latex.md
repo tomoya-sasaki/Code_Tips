@@ -32,6 +32,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 20. [Insert a table of contents](#insert-a-table-of-contents)
 21. [引用](#引用)
 22. [総ページ数の表示](#総ページ数の表示)
+23. [Wordcount](#wordcount)
 
 ## 写真の挿入
 ```tex
@@ -484,3 +485,9 @@ Modify depth:
 \date{\today}
 \maketitle\thispagestyle{firststyle}
 ```
+
+## Wordcount
+```terminal
+$ texcount file1.tex fil2.tex
+```
+We can get a total count at the end of the output.
