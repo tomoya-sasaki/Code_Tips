@@ -147,7 +147,11 @@
 \renewcommand{\numberline}{\tablename~\oldnumberline}%
 \listoftables %
 } 
- 
+{%Code一覧の生成
+\let\oldnumberline\numberline%
+\renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
+\lstlistoflistings %
+} 
  
 \input{abstract.tex}        % アブストラクト
 \pagenumbering{arabic}  % 本文のページ番号 1, 2, 3...
