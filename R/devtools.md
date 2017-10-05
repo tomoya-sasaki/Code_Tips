@@ -5,6 +5,7 @@
 1. [Setup Packages](#setup-packages)
 2. [Install Packages](#install-packages)
 3. [Document](#document)
+4. [C++](#c++)
 
 
 ## Setup Packages
@@ -39,4 +40,12 @@ multiply <- function(x, y) {
   res <- x * y
   return(res)
 }
+```
+
+## C++
+[Reference](http://r-pkgs.had.co.nz/src.html)
+
+## Setup
+```r
+devtools::use_rcpp()
 ```
