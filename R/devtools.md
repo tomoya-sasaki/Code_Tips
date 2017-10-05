@@ -55,7 +55,7 @@ devtools::use_rcpp()
 # Option 1
 devtools::load_all() # fine but not recommended
 
-# Option 2
+# Option 2 (probably you need to restart R anyway)
 devtools::build()
 devtools::install()
 devtools::document()
