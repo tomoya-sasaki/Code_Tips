@@ -7,7 +7,7 @@ For converting figures, ToyViewer is the best option.
 ## Compile from Terminal
 If you have latexmk file,
 ```terminal
-$ latexmk -pdfdvi main.tex ; rm *.aux *.bbl *.blg *.dvi *.fdb_latexmk *.lof *.log *.lot *.out *.gz *.toc
+$ latexmk -pdfdvi main.tex ; rm *.aux *.bbl *.blg *.dvi *.fdb_latexmk *.lof *.lol *.log *.lot *.out *.gz *.toc
 ```
 It's faster if you don't remove temporary files.
 
