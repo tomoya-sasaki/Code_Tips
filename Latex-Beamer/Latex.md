@@ -497,5 +497,6 @@ Modify depth:
 ## Wordcount
 ```terminal
 $ texcount file1.tex fil2.tex
+$ texcount *.tex */*.tex
 ```
 We can get a total count at the end of the output.
