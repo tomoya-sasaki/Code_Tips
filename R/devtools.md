@@ -61,3 +61,18 @@ devtools::install()
 devtools::document()
 library(mypackage)
 ```
+
+### Create Document
+```cpp
+//' My function
+//' 
+//' @param x A single integer.
+//' @examples
+//' myfunc(1, 1)
+//' myfunc(10, 1)
+//' @export
+// [[Rcpp::export]]
+int myfunc(int x){
+  return 0;
+}
+```
