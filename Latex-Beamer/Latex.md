@@ -34,6 +34,8 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 21. [引用](#引用)
 22. [総ページ数の表示](#総ページ数の表示)
 23. [Wordcount](#wordcount)
+24. [Define subsubsubsection](#define-subsubsubsection)
+
 
 ## 写真の挿入
 ```tex
@@ -500,3 +502,16 @@ $ texcount file1.tex fil2.tex
 $ texcount *.tex */*.tex
 ```
 We can get a total count at the end of the output.
+
+## Define subsubsubsection
+In preamble,
+```tex
+\makeatletter
+\newcommand{\subsubsubsection}{\@startsection{paragraph}{4}{\z@}%
+  {1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
+  {.1\Cvs \@plus.3\Cdp}%
+  {\reset@font\sffamily\normalsize}
+}
+\makeatother
+\setcounter{secnumdepth}{4}
+```
