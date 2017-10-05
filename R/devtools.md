@@ -20,5 +20,5 @@ Add R function in `R/` folder, then `devtools::load_all()` to load the function.
 ```r
 setwd("") # change directory to the package folder
 devtools::install() # same as install from source
-devtools::load_all() # In memory packages / use this for reload
+devtools::load_all() # In memory packages / use this for reloading
 ```
