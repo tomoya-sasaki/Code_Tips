@@ -58,6 +58,7 @@ external_package::fun()
 Use S4 instead of writing `library` ([reference](http://r-pkgs.had.co.nz/namespace.html#imports))
 ```r
 #' @import tidyverse readr
+NULL
 ```
 
 ## C++
