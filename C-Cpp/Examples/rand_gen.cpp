@@ -1,3 +1,5 @@
+// If you use a specific class, set seed in the class. If you set seed in main(), seed does't work.
+
 # include <iostream>
 # include <random>
 #include <chrono>
