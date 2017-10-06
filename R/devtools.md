@@ -5,7 +5,8 @@
 1. [Setup Packages](#setup-packages)
 2. [Install Packages](#install-packages)
 3. [Document](#document)
-4. [C++](#c++)
+4. [DESCRIPTION](#description)
+5. [C++](#c++)
 
 
 ## Setup Packages
@@ -42,12 +43,34 @@ multiply <- function(x, y) {
 }
 ```
 
+## DESCRIPTION
+### Add dependencies
+```r
+devtools::use_package("tidyverse")
+```
+
+### Use external package
+```r
+external_package::fun()
+```
+
+### Easy way to write
+Use S4 instead of writing `library` ([reference](http://r-pkgs.had.co.nz/namespace.html#imports))
+```r
+#' @import tidyverse readr
+```
+
 ## C++
 [Reference](http://r-pkgs.had.co.nz/src.html)
 
 ## Setup
 ```r
 devtools::use_rcpp()
+```
+In `DESCRIPTION`,
+```txt
+LinkingTo: Rcpp, BH, RcppEigen
+SystemRequirements: C++11
 ```
 
 ### When you edit code
