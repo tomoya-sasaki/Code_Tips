@@ -182,7 +182,9 @@
 \pagenumbering{arabic}  % 本文のページ番号 1, 2, 3...
 
 %%--章毎にファイルを区切りる
+\pagestyle{fancy}
 \input{chapter1.tex} % 序論
+  % You need to start chapter: \chapter{NEW CHAPTER}\thispagestyle{fancy}
 \input{chapter2.tex} % 分析
 \input{chapter3.tex} % 結語
 
@@ -193,7 +195,7 @@
 \renewcommand{\thetable}{A.\arabic{table}}
 \setcounter{figure}{0}
 \setcounter{table}{0}
-\input{chapter_appendix_a.tex}
+\input{chapter_appendix_a.tex} % \chapter{A1}\thispagestyle{fancyappendix}
 
 \renewcommand{\thefigure}{B.\arabic{figure}}
 \renewcommand{\thesubsection}{B.\arabic{subsection}}
