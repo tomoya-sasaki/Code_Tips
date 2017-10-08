@@ -17,7 +17,7 @@
 %--行間の設定
 \usepackage{setspace} 
 \setstretch{1.13} % ページ全体の行間を設定
-%--コードの設定
+
 %--コードの設定
 \usepackage{listings}
 \usepackage{color}
@@ -104,6 +104,25 @@
   \renewcommand{\headrulewidth}{0pt} \fancyhead[C]{} \fancyhead[L]{}
   \cfoot{\thepage}
 }
+\fancypagestyle{fancyappendix}
+{
+  \fancyhead[LE,LO]{Appendix \thechapter}
+  % \fancyhead[RO,RE]{\thesection}
+  % \renewcommand{\chaptermark}[1]{\markboth{Appendix \thechapter}{}}
+  % \renewcommand{\sectionmark}[1]{\markright{\thesection\ ~#1}{}}
+  \cfoot{\thepage}
+}
+% Make TOC style the same as other chapters
+\makeatletter
+\def\ps@plainfoot{%
+  \let\@mkboth\@gobbletwo
+  \let\@oddhead\@empty
+  \def\@oddfoot{\normalfont\hfil \thepage \hfil}%
+  \let\@evenhead\@empty
+  \let\@evenfoot\@oddfoot}
+\let\ps@plain\ps@plainfoot
+\makeatother
+\pagestyle{plain}
 
 % Example: Do not show in Header
 % \chapter*{Introdution}
