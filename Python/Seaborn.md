@@ -92,6 +92,11 @@ import matplotlib.pyplot as plt
 plt.plot([x1, x2], [y1, y2], linewidth=2, color='red')
 ```
 
+```python
+f1 = sns.distplot(chain[self.show_num: , 0], kde=False)
+f1.axvline(x=3, linewidth=2, color = 'red')
+```
+
 ## 保存
 ```python
 f1 = sns.distplot(chain[self.show_num: , 0], hist=True, kde=False)
