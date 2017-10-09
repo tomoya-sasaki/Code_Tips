@@ -20,6 +20,7 @@ Another option: [HoloViews](https://github.com/Shusei-E/Code_Tips/blob/master/Py
 7. [Scatterplot](#scatterplot)
    * [カテゴリごとの色](#カテゴリごとの色)
 8. [直線を引く](#直線を引く)
+9. [保存](#保存)
 
 
 ## 軸やラベルなどの設定
@@ -89,4 +90,11 @@ sns.lmplot('X', 'Y', data=results, hue='Z', fit_reg=False)
 ```python
 import matplotlib.pyplot as plt
 plt.plot([x1, x2], [y1, y2], linewidth=2, color='red')
+```
+
+## 保存
+```python
+f1 = sns.distplot(chain[self.show_num: , 0], hist=True, kde=False)
+f1 = f1.get_figure()
+f1.savefig("fig.pdf")
 ```
