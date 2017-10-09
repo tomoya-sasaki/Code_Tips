@@ -13,6 +13,8 @@ Another option: [HoloViews](https://github.com/Shusei-E/Code_Tips/blob/master/Py
 # Table of Contents
 1. [軸やラベルなどの設定](#軸やラベルなどの設定)
 2. [サイズの調整](#サイズの調整)
+	* [Output Size](#output-size)
+	* [Font Size](#font-size)
 3. [棒だけのhistogram](#棒だけのhistogram)
 4. [折れ線グラフ](#折れ線グラフ)
 5. [日本語フォント](#日本語フォント)
@@ -31,10 +33,16 @@ fig1.set(xlabel='Category', ylabel='Likes', xlim=(-0.5, 10))
 ```
 
 ## サイズの調整
+### Output size
 先頭に一行追加
 ```python
 plt.subplots(figsize=(8, 8))
 fig1 = sns.boxplot(x="Topic", y="Likes", data=data_wTopicExt[["Topic", "Likes"]])
+```
+
+### Font size
+```python
+sns.set(font_scale=1.25)
 ```
 
 ## 棒だけのhistogram
