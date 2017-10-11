@@ -7,6 +7,7 @@ inlineの表示`%matplotlib inline`
 
 References:
 * [matplotlib + seaborn — Pythonでグラフ描画 ](https://heavywatal.github.io/python/matplotlib.html)
+* [Python-Graph-Gallery](https://python-graph-gallery.com/)
 
 Another option: [HoloViews](https://github.com/Shusei-E/Code_Tips/blob/master/Python/HoloViews.md)
 
