@@ -1,6 +1,8 @@
 # Eigen
 a template library for linear algebra
 
+Matrixのある列とVectorの足し算には注意！つねに縦横を意識すること --> [行列の要素ごとの演算](#行列の要素ごとの演算)
+
 ## Table of Contents
 Usage:
 
@@ -137,6 +139,14 @@ for(int ob=0; ob<num_observations; ob++){
 ```cpp
 x_bar.array() = x_bar.array() / n_k.array();
 ```
+### MatrixとVectorの足し算
+```cpp
+MatrixXd n_dk;
+VectorXd input_alpha;
+
+ndk_ak = n_dk.row(d).transpose() + input_alpha;
+```
+ここでtransposeをしないと値がおかしくなるので注意！！行列の`.row()`は横ベクトルなのに、ベクトルが縦ベクトルだからみたい。transposeをしなくてもエラーは出ないので注意。
 
 ## 数値を毎回ランダムに
 ```cpp
