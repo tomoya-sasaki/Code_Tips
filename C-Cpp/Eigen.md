@@ -135,10 +135,20 @@ for(int ob=0; ob<num_observations; ob++){
 ```
 
 ## 行列の要素ごとの演算
+
+### array
 `.array()`
 ```cpp
 x_bar.array() = x_bar.array() / n_k.array();
 ```
+同じ長さのvectorを足すとかだったら、`.array()`は要らないけど、+スカラーなら
+```cpp
+MatrixXd A = MatrixXd::Identity(3,3);
+MatrixXd B = A.array() + 1.0;
+```
+とする。
+細かな例は、[こちら](https://github.com/Shusei-E/Code_Tips/blob/master/C-Cpp/Examples/Eigen_calc1.cpp)を参考にすること。
+
 ### MatrixとVectorの足し算
 ```cpp
 MatrixXd n_dk;
