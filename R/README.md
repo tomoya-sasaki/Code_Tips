@@ -24,6 +24,7 @@ dev.off()
 write(x, file="variavle1.txt")
 
 saveRDS(RObject, file = paste("output/", "rsave.obj", sep=""))
+obj <- readRDS(file = paste0("output/", "rsave.obj"))
 ```
 
 
