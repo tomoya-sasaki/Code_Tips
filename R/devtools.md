@@ -7,6 +7,7 @@
 3. [Document](#document)
 4. [DESCRIPTION](#description)
 5. [C++](#c++)
+6. [Vignette](#vignette)
 
 
 ## Setup Packages
@@ -99,4 +100,11 @@ library(mypackage)
 int myfunc(int x){
   return 0;
 }
+```
+
+## Vignette
+[Reference](http://r-pkgs.had.co.nz/vignettes.html)
+```r
+devtools::use_vignette("Test_EstimateAlpha") # Initialize vignette
+devtools::build_vignettes()
 ```
