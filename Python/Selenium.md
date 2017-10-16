@@ -4,7 +4,7 @@ from selenium import webdriver
 driver = webdriver.Firefox() # If you want to download something, PhantomJS cannot be used
 driver.get(url) 
 ```
-PhantomJSを使う場合は、homebrewでインストール可能。[ここ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/BeautifulSoup.md#phantomjs)にも情報あり。
+PhantomJSを使う場合は、homebrewでインストール可能。[ここ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/BeautifulSoup.md#phantomjs)にも情報あり。Firefoxでerrorがでたら、`/usr/local/bin`に[`geckodriver`](https://github.com/mozilla/geckodriver/releases)を入れる。
 
 スクリーンショットをとると、PhantomJSでも楽。
 ```python
