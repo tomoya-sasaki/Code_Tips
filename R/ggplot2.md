@@ -143,8 +143,8 @@ Wrap function is [here](https://github.com/Shusei-E/Code_Tips/blob/master/R/Exam
  2 3.7064269 0.7886008 2.734082           2.2459909            7.378842    11
  3 2.9995301 0.7980033 2.314043           1.4600977            4.435327    21
 
-> parameters <- gather(parameters, key=parameter, value=value, "dp_alpha","lambda_", "dp_gamma", "mean(node.drifts)", "mean(data_drifts)")
-(> parameters <- gather(parameters, key=parameter, value=value, -iter) )
+> parameters <- tidyr::gather(parameters, key=parameter, value=value, "dp_alpha","lambda_", "dp_gamma", "mean(node.drifts)", "mean(data_drifts)")
+(> parameters <- tidyr::gather(parameters, key=parameter, value=value, -iter) )
 > parameters
 # A tibble: 930 x 3
     iter parameter     value
