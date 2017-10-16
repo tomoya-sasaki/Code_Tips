@@ -35,6 +35,11 @@ find_element_by_partial_link_text
 find_element_by_tag_name
 find_element_by_xpath
 ```
+You can press keys as well:
+```python
+from selenium.webdriver.common.keys import Keys
+driver.find_element_by_id("content").send_keys(Keys.RIGHT)
+```
 
 You may need to clean the link text:
 ```python
