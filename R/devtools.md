@@ -38,6 +38,8 @@ Stored in `man` folder. Write following a documentation format and run `devtools
 #' @examples
 #' multiply(1, 1)
 #' multiply(10, 1)
+#'
+#' @export
 multiply <- function(x, y) {
   res <- x * y
   return(res)
