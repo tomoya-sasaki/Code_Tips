@@ -103,6 +103,7 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 はコメントアウトしておかないと表示ができなかった (逆にこれがないと`/figures`に入れた図が表示できないこともあったので注意)。
 
 ## 数式関連
+[こちら](https://github.com/Shusei-E/Code_Tips/blob/master/Latex-Beamer/align.md)にも情報あり
 
 ### 数式で、式と式の間を広げる
 `\\[12pt]`のように改行するところで記述
