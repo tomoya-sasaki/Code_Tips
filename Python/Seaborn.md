@@ -1,6 +1,6 @@
 # Seaborn
 
-`import seaborn as sns`  
+`import seaborn as sns ; import matplotlib.pyplot as plt`  
 inlineの表示`%matplotlib inline`
 
 インストール時に、`ValueError: unknown locale: UTF-8`と出たら、ターミナルで`export LC_ALL=ja_JP.UTF-8`と実行。
