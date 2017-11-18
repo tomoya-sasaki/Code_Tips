@@ -14,6 +14,7 @@ cdefの中では特に使う変数に型を明示。return valueも型がわか�
    * [for loop](#for-loop)
 4. [Global Variable](#global-variable)
 5. [Make Cython even faster](#make-cython-even-faster)
+6. [Parallel](#parallel)
 
 ## Basics
 ### Import Cython Code
@@ -182,3 +183,57 @@ cdef extern from "math.h":
    double tgamma (double x) nogil
 ```
 `"math.h"` might be `"<math.h>"`. I'm not sure `nogil` is necessary. Functions are listed in [cython/Cython/Includes/libc/math.pxd](https://github.com/cython/cython/blob/master/Cython/Includes/libc/math.pxd)
+
+## Parallel
+### Prepare
+We need set up OpenMP for clang ([reference](https://qiita.com/hinatades/items/79935d8a2a93ddabe077#%E8%BF%BD%E8%A8%9820161109)).
+```terminal
+$ brew install llvm
+```
+In `~/.bashrc` (not necessary),
+```bashrc
+alias clang-omp='/usr/local/opt/llvm/bin/clang -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+alias clang-omp++='/usr/local/opt/llvm/bin/clang++ -fopenmp -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib'
+```
+
+### setup.py
+```python
+from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
+import numpy
+
+import os
+os.environ["CC"] = "/usr/local/opt/llvm/bin/clang -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+os.environ["CXX"] = "/usr/local/opt/llvm/bin/clang++ -L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+
+# loglik uses parallel
+ext_modules=[
+    Extension("loglik", sources=["loglik.pyx"], include_dirs = [numpy.get_include()], libraries=["m"],
+              extra_compile_args = ["-O3", "-ffast-math", "-march=native", "-fopenmp" ],
+              extra_link_args=['-fopenmp']),
+    Extension("utilTSTM", sources=["utilTSTM.pyx"], include_dirs = [numpy.get_include()], extra_compile_args = ["-ffast-math"])
+]
+
+setup(
+  name = 'TSSB_CSTM',
+  cmdclass = {'build_ext': build_ext},
+  ext_modules = ext_modules,
+)
+```
+`loglik.py`
+```python
+cdef double calc_nodellk_loop(np.ndarray[ftype_t, ndim=1] Psi_s, list word_ids, int num):
+    cdef double loglik = 0.0
+    cdef int index
+    cdef int word_id
+
+    
+    cdef np.ndarray[dtype_t, ndim=1] word_ids_np = np.array(word_ids, dtype=np.int32)
+    
+    for index in prange(num, nogil=True):
+        word_id = word_ids_np[index]
+        loglik += Psi_s[word_id]
+    
+    return loglik
+```
