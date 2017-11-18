@@ -40,3 +40,33 @@ double logsumexp_Eigen(VectorXd vec){
   return sum;
 
 }
+
+/*
+For Python
+
+def my_logsumexp(x, y, flg):
+    if flg:
+        return y
+    if x == y:
+        return x + 0.69314718055
+    
+    vmin = min(x,y)
+    vmax = max(x,y)
+    
+    if vmax > vmin + 50:
+        return vmax
+    else:
+        return vmax + np.log( np.exp(vmin - vmax) + 1.0 )
+    
+
+def calc_logsumexp(vec):
+    res = 0.0
+    size = vec.shape[0]
+    
+    for index in range(size):
+        res = my_logsumexp(res, vec[index], (index==0))
+        
+    return res
+
+
+*/
