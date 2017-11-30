@@ -9,6 +9,9 @@
 `homebrew` can be used.
 Training set: check [this](https://github.com/tesseract-ocr/tesseract/wiki#mac-os-x).
 
+Reference:
+* [しゃちの備忘録](http://teru0rc4.hatenablog.com/entry/2017/08/09/230046)
+
 ## Use in Python
 ```python
 from wand.image import Image
