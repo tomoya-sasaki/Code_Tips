@@ -18,6 +18,8 @@
 
 ## モデルを書く
 [tikz-bayesnet](https://github.com/jluttine/tikz-bayesnet)が便利。
+* [Example 1](https://github.com/Shusei-E/Code_Tips/blob/master/Latex-Beamer/Examples/bayesnet.tex)
+
 ```tex
 %tikz
 \usepackage{tikz}
