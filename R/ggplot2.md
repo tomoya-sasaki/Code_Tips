@@ -229,6 +229,13 @@ p + scale_x_discrete(limits = c("I1", "SI2", "SI1"), # order
 ```
 `coord_flip()`をするときは、逆順で書かないといけないので注意
 
+If you do not want to type one by one, consider one of these:
+```r
+scale_x_discrete(limits = rev(levels(dat$Sektion)))
+scale_x_discrete(limits = rev(sort(unique(res$Estimated))))
+scale_y_continuous(trans = "reverse", breaks = unique(df$position))
+```
+
 ## Legend関連
 ### 順番を変える
 ```r
