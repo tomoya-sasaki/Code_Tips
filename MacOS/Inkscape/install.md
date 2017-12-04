@@ -19,9 +19,7 @@ You can find pdflatex by
 ```terminal
 $ which pdflatex
 ```
-
-**ERROR**
-It does not work due to the error reported [here](https://github.com/Homebrew/homebrew-core/issues/13398).
+You need to restart the application (including X11).
 
 ### Alternative option
 Use LaTexiT and save as `.svg`. `brew install pdf2svg` is required.
