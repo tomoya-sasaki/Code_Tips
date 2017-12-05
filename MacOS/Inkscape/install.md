@@ -21,5 +21,12 @@ $ which pdflatex
 ```
 You need to restart the application (including X11).
 
+### Setting
+Prepare `textext.ini`
+```
+\usepackage{amsmath}
+\usepackage{amsfonts}
+```
+
 ### Alternative option
 Use LaTexiT and save as `.svg`. `brew install pdf2svg` is required.
