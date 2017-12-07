@@ -17,6 +17,7 @@ References:
 10. [軸関連](#軸関連)
 	* [軸のorderを変える](#軸のorderを変える)
 	* [orderとlabelを変える](#orderとlabelを変える)
+	* [値で並び替え](#値で並び替え)
 11. [Legend関連](#legend関連)
 	* [順番を変える](#順番を変える)
 	* [ラベルを変える](#ラベルを変える)
@@ -235,6 +236,15 @@ scale_x_discrete(limits = rev(levels(dat$Sektion)))
 scale_x_discrete(limits = rev(sort(unique(res$Estimated))))
 scale_y_continuous(trans = "reverse", breaks = unique(df$position))
 ```
+
+### 値で並び替え
+Continuous:
+```r
+g <- ggplot(res, aes(reorder(Word, Proportion), Proportion, fill = factor(.topic))) +
+  geom_col(show.legend = FALSE) + facet_wrap(~ .topic, scales = "free") +
+  coord_flip()
+```
+Here, we reorder `Word` column based on the values of `Proportion` column.
 
 ## Legend関連
 ### 順番を変える
