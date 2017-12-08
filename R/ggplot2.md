@@ -237,7 +237,11 @@ scale_x_discrete(limits = rev(sort(unique(res$Estimated))))
 scale_y_continuous(trans = "reverse", breaks = unique(df$position))
 ```
 
-If none of above does not work, set manually ([reference](https://qiita.com/hoxo_b/items/c569da6dbf568032e04a).
+If none of above does not work, set manually ([reference](https://qiita.com/hoxo_b/items/c569da6dbf568032e04a)).
+Complete example is [here](https://github.com/Shusei-E/Code_Tips/blob/master/R/Examples/others/stack_bar.Rmd).
+
+<img src="figures/ggplot2_bar_stack.png" width="420">
+
 ```r
 # Get Color Code
 ggColorHue <- function(n, l=65) {
