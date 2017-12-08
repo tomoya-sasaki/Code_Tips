@@ -76,6 +76,6 @@ g <- ggplot(res_count, aes(x=EstTopic, y=Proportion,
       xlab("Estimated Topics") + ylab("Proportion (%)")
 ```
 
-<img src="figures/ggplot2_bar_stack.png" width="480">
+<img src="../../figures/ggplot2_bar_stack.png" width="480">
 
 
