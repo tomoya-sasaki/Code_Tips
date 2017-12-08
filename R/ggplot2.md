@@ -237,6 +237,32 @@ scale_x_discrete(limits = rev(sort(unique(res$Estimated))))
 scale_y_continuous(trans = "reverse", breaks = unique(df$position))
 ```
 
+If none of above does not work, set manually ([reference](https://qiita.com/hoxo_b/items/c569da6dbf568032e04a).
+```r
+# Get Color Code
+ggColorHue <- function(n, l=65) {
+  hues <- seq(15, 375, length=n+1)
+  hcl(h=hues, l=l, c=100)[1:n]
+}
+
+cols       <- ggColorHue(n=5)
+cols_dark  <- ggColorHue(n=5, l=45)
+cols_light <- ggColorHue(n=5, l=85)
+
+col2rgb(cols)
+scales::show_col(cols)
+
+g1 <- ggplot(res_viz, aes(x=TrueTopics, True, 
+                          fill=factor(True, levels=rev(sort(unique(res_viz$True))))
+             ))+
+      geom_bar(aes(y=..count../sum(..count..)*100)) +
+      coord_flip() +
+      guides(fill = guide_legend(reverse = TRUE)) +
+      scale_fill_manual(name = "True Topics",
+                        values=rev(c("#F8766D", "#A3A500", "#00BF7D", "#00B0F6", "#E76BF3"))) +
+      xlab("") + ylab("Proportion (%)") + theme_bw(base_size=15)
+```
+
 ### 値で並び替え
 Continuous:
 ```r
