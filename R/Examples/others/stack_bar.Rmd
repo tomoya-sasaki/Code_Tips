@@ -1,0 +1,81 @@
+Data looks like this:
+```
+# A tibble: 38 x 3
+# Groups:   EstTopic [?]
+        EstTopic  True Proportion
+           <chr> <chr>      <dbl>
+ 1             R True1  75.116786
+ 2             R True3  24.883214
+ 3          R|00 True1  22.088353
+ 4          R|00 True2  14.457831
+ 5          R|00 True3  39.759036
+ 6          R|00 True4   9.236948
+ 7          R|00 True5  14.457831
+ 8    R|00|00|01 True1  51.724138
+ 9    R|00|00|01 True2  17.241379
+10    R|00|00|01 True3  27.586207
+11    R|00|00|01 True4   3.448276
+12    R|00|01|00 True1  44.444444
+13    R|00|01|00 True2  22.222222
+14    R|00|01|00 True5  33.333333
+15 R|00|01|00|00 True1  33.333333
+16 R|00|01|00|00 True4  66.666667
+17       R|01|00 True1  26.804124
+18       R|01|00 True2  12.886598
+19       R|01|00 True3  29.896907
+20       R|01|00 True4  15.979381
+21       R|01|00 True5  14.432990
+22 R|01|00|00|00 True1  25.000000
+23 R|01|00|00|00 True2   6.250000
+24 R|01|00|00|00 True3  43.750000
+25 R|01|00|00|00 True4  25.000000
+```
+
+Prepare position:
+```r
+prop_label <- res_count %>%
+  group_by(EstTopic) %>%
+  mutate(cumsum = cumsum(Proportion)) %>%
+  mutate(pos = cumsum - 0.5*Proportion)
+```
+```
+# A tibble: 38 x 5
+# Groups:   EstTopic [10]
+        EstTopic  True Proportion    cumsum      pos
+           <chr> <chr>      <dbl>     <dbl>    <dbl>
+ 1             R True1  75.116786  75.11679 37.55839
+ 2             R True3  24.883214 100.00000 87.55839
+ 3          R|00 True1  22.088353  22.08835 11.04418
+ 4          R|00 True2  14.457831  36.54618 29.31727
+ 5          R|00 True3  39.759036  76.30522 56.42570
+ 6          R|00 True4   9.236948  85.54217 80.92369
+ 7          R|00 True5  14.457831 100.00000 92.77108
+ 8    R|00|00|01 True1  51.724138  51.72414 25.86207
+ 9    R|00|00|01 True2  17.241379  68.96552 60.34483
+10    R|00|00|01 True3  27.586207  96.55172 82.75862
+11    R|00|00|01 True4   3.448276 100.00000 98.27586
+12    R|00|01|00 True1  44.444444  44.44444 22.22222
+13    R|00|01|00 True2  22.222222  66.66667 55.55556
+14    R|00|01|00 True5  33.333333 100.00000 83.33333
+15 R|00|01|00|00 True1  33.333333  33.33333 16.66667
+```
+
+Create a figure:
+```r
+g <- ggplot(res_count, aes(x=EstTopic, y=Proportion, 
+                           fill=factor(True, levels=rev(sort(unique(res_count$True))))
+                           )) +
+      geom_bar(stat="identity") +
+      scale_x_discrete(limits = rev(sort(unique(res$EstTopic)))) +
+      geom_text(data=prop_label, aes(x = EstTopic, y = pos,
+                   label = paste0(round(Proportion),"%")), size=4) +
+      coord_flip() +
+      guides(fill = guide_legend(reverse = TRUE)) +
+      scale_fill_manual(name = "True Topics",
+                        values=rev(c("#F8766D", "#A3A500", "#00BF7D", "#00B0F6", "#E76BF3"))) +
+      xlab("Estimated Topics") + ylab("Proportion (%)")
+```
+
+<img src="figures/ggplot2_bar_stack.png" width="480">
+
+
