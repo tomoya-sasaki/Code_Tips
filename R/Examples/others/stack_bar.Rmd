@@ -62,18 +62,34 @@ prop_label <- res_count %>%
 
 Create a figure:
 ```r
+# Get Color Code
+ggColorHue <- function(n, l=65) {
+  hues <- seq(15, 375, length=n+1)
+  hcl(h=hues, l=l, c=100)[1:n]
+}
+
+num <- length(unique(res$True)) # get the number of legend category
+cols       <- ggColorHue(n=num)
+cols_dark  <- ggColorHue(n=num, l=45)
+cols_light <- ggColorHue(n=num, l=85)
+
+col2rgb(cols)
+# scales::show_col(cols)
+
 g <- ggplot(res_count, aes(x=EstTopic, y=Proportion, 
                            fill=factor(True, levels=rev(sort(unique(res_count$True))))
                            )) +
       geom_bar(stat="identity") +
       scale_x_discrete(limits = rev(sort(unique(res$EstTopic)))) +
       geom_text(data=prop_label, aes(x = EstTopic, y = pos,
-                   label = paste0(round(Proportion),"%")), size=4) +
+                   label = ifelse(round(Proportion)>=20, paste0(round(Proportion), "%"), "")), 
+                size=6.0) +
       coord_flip() +
       guides(fill = guide_legend(reverse = TRUE)) +
       scale_fill_manual(name = "True Topics",
-                        values=rev(c("#F8766D", "#A3A500", "#00BF7D", "#00B0F6", "#E76BF3"))) +
+                        values=rev(cols)) + 
       xlab("Estimated Topics") + ylab("Proportion (%)")
+g
 ```
 
 <img src="../../figures/ggplot2_bar_stack.png" width="480">
