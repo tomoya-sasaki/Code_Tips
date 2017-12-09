@@ -57,7 +57,7 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 
 ### 図を並べる
 ```tex
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
  \begin{minipage}{0.5\hsize}
   \begin{center}
    \includegraphics[width=0.7 \linewidth]{fig1.pdf}
