@@ -192,16 +192,16 @@
 \input{chapter3.tex} % 結語
 
 %--ここからAppendix
-\def\thesection{\Alph{section}}
 \appendix
 \renewcommand{\thefigure}{A.\arabic{figure}}
+\renewcommand{\thesubsection}{A.\arabic{section}.\arabic{subsection}}
 \renewcommand{\thetable}{A.\arabic{table}}
 \setcounter{figure}{0}
 \setcounter{table}{0}
 \input{chapter_appendix_a.tex} % \chapter{A1}\thispagestyle{fancyappendix}
 
 \renewcommand{\thefigure}{B.\arabic{figure}}
-\renewcommand{\thesubsection}{B.\arabic{subsection}}
+\renewcommand{\thesubsection}{B.\arabic{section}.\arabic{subsection}}
 \renewcommand{\thetable}{B.\arabic{table}}
 \setcounter{figure}{0}
 \setcounter{table}{0}
