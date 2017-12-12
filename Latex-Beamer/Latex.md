@@ -7,6 +7,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
    * [図を並べる](#図を並べる)
    * [図の回転](#図の回転)
    * [sectionを跨がない](#sectionを跨がない)
+   * [図の下で左寄せ](#図の下で左寄せ)
 3. [文字サイズ変更](#文字サイズ変更)
 4. [Tikzでゲームツリー](#tikzでゲームツリー)
 5. [数式関連](#数式関連)
@@ -86,6 +87,13 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 \usepackage[section]{placeins} % figure outputs in each section
 ```
 `section`を`subsection`とかにもできる。
+
+### 図の下で左寄せ
+```tex
+\caption{Explanation is below}
+\raggedright{ text }
+```
+
 
 ## 文字サイズ変更
 `{\fontsize{9.5pt}{8pt}\selectfont   }`
