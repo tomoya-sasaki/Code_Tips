@@ -12,7 +12,7 @@ Input:
 ```python
 # Read Entile File
 with open("filename", "r") as file:
-  whole_str = file.read()
+    whole_str = file.read()
   
 # Read Line by Line
 with open("filename", encoding='utf-8') as a_file:  
