@@ -97,7 +97,7 @@ for(topic in unique_topic){
 }
 ```
 
-<img src="../../figures/ggplot2_bar_stack2.png" width="500">
+<img src="../../figures/ggplot2_bar_stack2.png" width="550">
 
 
-<img src="../../figures/ggplot2_bar_stack3.png" width="500">
+<img src="../../figures/ggplot2_bar_stack3.png" width="550">
