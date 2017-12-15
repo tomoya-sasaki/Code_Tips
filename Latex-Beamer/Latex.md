@@ -322,21 +322,17 @@ Topic & Lobbied & Not Lobbied \\
 \endfoot
 \hline
 \endlastfoot
-[0 0] & 2.26 & 3.22\tabularnewline
-[0 1] & 47.35 & 48.38\tabularnewline
-[0 2] & 11.71 & 10.95\tabularnewline
-[0 0 0] & 20.81 & 18.80\tabularnewline
-[0 0 1] & 0.60 & -\tabularnewline
-[0 0 2] & 0.60 & -\tabularnewline
-[0 1 0] & 7.84 & 12.42\tabularnewline
-[0 1 1] & 2.60 & -\tabularnewline
-[0 2 1] & 3.11 & 2.91\tabularnewline
-[0 0 0 0] & 1.17 & 2.15\tabularnewline
-[0 0 1 0] & 0.28 & 0.28\tabularnewline
-[0 2 1 0] & - & 0.88\tabularnewline
-[0 2 1 1] & 0.35 & -\tabularnewline
-[0 0 1 0 0] & 0.03 & -\tabularnewline
-[0 0 0 0 2 0] & 1.29 & -\tabularnewline
+$[0\ 0]$ & 2.26 & 3.22 \\
+$[0\ 1]$ & 47.35 & 48.38\\
+$[0\ 2]$ & 11.71 & 10.95\\
+$[0\ 0\ 0]$ & 20.81 & 18.80\\
+$[0\ 0\ 1]$ & 0.60 & - \\
+$[0\ 0\ 2]$ & 0.60 & - \\
+$[0\ 1\ 0]$ & 7.84 & 12.42\\
+$[0\ 1\ 1]$ & 2.60 & -\\
+$[0\ 2\ 0]$ & 3.11 & 2.91\\
+$[0\ 0\ 0\ 0]$ & 1.17 & 2.15\\
+$[0\ 0\ 1\ 0]$ & 0.28 & 0.28\\
 \bottomrule
 \end{longtable}
 ```
