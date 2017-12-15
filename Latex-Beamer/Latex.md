@@ -306,8 +306,8 @@ b&=c
 ### Simple
 Use longtable. You can use pandox to get longtable. Here is three columns example.
 ```tex
-\begin{longtable}[c]{@{}lrr@{}} % c is centering
-\caption{Estimated proportions of topics in ITSTM\label{table:ITSTM_Kim}}\\
+\begin{longtable}[c]{@{}ccc@{}}
+\caption{Estimated proportions of topics\label{table1}\protect\footnotemark}\\
 \hline
 Topic & Lobbied & Not Lobbied \\
 \hline
@@ -335,6 +335,7 @@ $[0\ 0\ 0\ 0]$ & 1.17 & 2.15\\
 $[0\ 0\ 1\ 0]$ & 0.28 & 0.28\\
 \bottomrule
 \end{longtable}
+\footnotetext{Note that...}
 ```
 
 ### Use with tabularxx
