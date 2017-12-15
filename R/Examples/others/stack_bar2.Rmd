@@ -39,6 +39,13 @@ $ pos            <dbl> 15.38462, 42.30769, 61.53846, 76.92308, 92.30769
 
 ## Code
 ```r
+# For selecting colors
+ggColorHue <- function(n, l=65) {
+  hues <- seq(15, 375, length=n+1)
+  hcl(h=hues, l=l, c=100)[1:n]
+}
+
+# How many to show
 topn <- 5
 
 res %>%
@@ -65,7 +72,7 @@ for(topic in unique_topic){
     mutate(cumsum = cumsum(Proportion_top)) %>%
     mutate(pos = cumsum - 0.5*Proportion_top) -> temp
 
-
+  # Select colors
   num <- length(unique(temp$Word))
   cols       <- ggColorHue(n=num)
   cols_dark  <- ggColorHue(n=num, l=45)
