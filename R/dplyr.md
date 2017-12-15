@@ -15,6 +15,7 @@
 10. [行のスライス](#行のスライス)
 11. [NAの処理](#naの処理)
 12. [Create Dummy](#create-dummy)
+13. [Split words](#split-words]
 
 
 ## 処理をして列を追加
@@ -284,4 +285,10 @@ dd <- data.frame(a=runif(30),
 
 dd %>% dummy("b")
 dd %>% dummy(c("b","d"))
+```
+
+## Split words
+Use `separate()`:
+```r
+separate(term, into=c("True", "raw_word_id"), sep="T") 
 ```
