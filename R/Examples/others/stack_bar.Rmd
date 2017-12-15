@@ -1,3 +1,6 @@
+[Different Design](#https://github.com/Shusei-E/Code_Tips/blob/master/R/Examples/others/stack_bar2.Rmd)
+
+
 Data looks like this:
 ```
 # A tibble: 38 x 3
