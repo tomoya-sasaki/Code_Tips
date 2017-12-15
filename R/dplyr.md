@@ -15,7 +15,7 @@
 10. [行のスライス](#行のスライス)
 11. [NAの処理](#naの処理)
 12. [Create Dummy](#create-dummy)
-13. [Split words](#split-words]
+13. [Split words](#split-words)
 
 
 ## 処理をして列を追加
