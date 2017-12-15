@@ -303,6 +303,47 @@ b&=c
 \end{multicols}
 ```
 ## ページをまたぐ表
+## Simple
+Use longtable. You can use pandox to get longtable. Here is three columns example.
+```tex
+\begin{center}
+\begin{longtable}[c]{@{}lrr@{}}
+\caption{Estimated proportions of topics in ITSTM\label{table:ITSTM_Kim}}\\
+\hline
+Topic & Lobbied & Not Lobbied \\
+\hline
+\endfirsthead
+\multicolumn{3}{l}%
+{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+\hline
+Topic & Lobbied & Not Lobbied \\
+\hline
+\endhead
+\hline \multicolumn{3}{r}{\textit{Continued on next page}} \\
+\endfoot
+\hline
+\endlastfoot
+[0 0] & 2.26 & 3.22\tabularnewline
+[0 1] & 47.35 & 48.38\tabularnewline
+[0 2] & 11.71 & 10.95\tabularnewline
+[0 0 0] & 20.81 & 18.80\tabularnewline
+[0 0 1] & 0.60 & -\tabularnewline
+[0 0 2] & 0.60 & -\tabularnewline
+[0 1 0] & 7.84 & 12.42\tabularnewline
+[0 1 1] & 2.60 & -\tabularnewline
+[0 2 1] & 3.11 & 2.91\tabularnewline
+[0 0 0 0] & 1.17 & 2.15\tabularnewline
+[0 0 1 0] & 0.28 & 0.28\tabularnewline
+[0 2 1 0] & - & 0.88\tabularnewline
+[0 2 1 1] & 0.35 & -\tabularnewline
+[0 0 1 0 0] & 0.03 & -\tabularnewline
+[0 0 0 0 2 0] & 1.29 & -\tabularnewline
+\bottomrule
+\end{longtable}
+\end{center}
+```
+
+### Use with tabularxx
 `\usepackage{ltablex}`を使うことで、tabluarx環境下で、longtable環境も使えるようになる。
 ```tex
 \setlongtables %これでlongtable環境を使えるようになる。
