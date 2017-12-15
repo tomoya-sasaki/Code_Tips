@@ -303,7 +303,7 @@ b&=c
 \end{multicols}
 ```
 ## ページをまたぐ表
-## Simple
+### Simple
 Use longtable. You can use pandox to get longtable. Here is three columns example.
 ```tex
 \begin{center}
