@@ -9,6 +9,7 @@
 5. [このセクションの内容](#このセクションの内容)
 6. [脚注のサイズの調整](#脚注のサイズの調整)
 7. [図の挿入](#図の挿入)
+    * [図の切り替え](#図の切り替え)
 8. [少し空白を入れる](#少し空白を入れる)
 9. [使いやすそうなスタイル](#使いやすそうなスタイル) 
 10. [右下のナビゲーションバーを消す](#右下のナビゲーションバーを消す)
@@ -18,8 +19,8 @@
 14. [Hide Appendix and References](#hide-appendix-and-references)
 15. [上部のナビゲーションバーを消す](#上部のナビゲーションバーを消す)
 16. [箇条書き](#箇条書き)
-  * [箇条書きを左にずらす](#箇条書きを左にずらす)
-  * [間隔の調整](#間隔の調整)
+    * [箇条書きを左にずらす](#箇条書きを左にずらす)
+    * [間隔の調整](#間隔の調整)
 17. [図の左寄せ](#図の左寄せ)
 
 ### Beamer Slide
@@ -89,6 +90,18 @@ Right Part
 ## 図の挿入
 `\includegraphics[width=6cm]{Fig1.pdf}`<br>
 だけで良さそう。
+
+### 図の切り替え
+```tex
+\begin{figure}
+    \begin{overprint}
+    \onslide<1>\includegraphics{./figure1.png}
+    \onslide<2>\includegraphics{./figure2.png}
+    \onslide<3>\includegraphics{./figure3.png}
+    \onslide<4->\includegraphics{./figure4.png}
+    \end{overprint}
+\end{figure}
+```
 
 ## 少し空白を入れる
 `\vspace{5mm}`
