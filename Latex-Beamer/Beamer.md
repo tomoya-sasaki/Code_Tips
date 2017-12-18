@@ -22,6 +22,7 @@
     * [箇条書きを左にずらす](#箇条書きを左にずらす)
     * [間隔の調整](#間隔の調整)
 17. [図の左寄せ](#図の左寄せ)
+18. [これまでの表示を消しつつ切り替え](#これまでの表示を消しつつ切り替え)
 
 ### Beamer Slide
 ```tex
@@ -188,4 +189,14 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
   \hspace*{-20mm}
   \includegraphics[width=0.84 \linewidth]{Fig.pdf}\\
 \end{figure}
+```
+
+## これまでの表示を消しつつ切り替え
+```tex
+\begin{overprint}
+  \onslide<1> a
+  \onslide<2> b
+  \onslide<3> c
+  \onslide<4> d
+\end{overprint}
 ```
