@@ -92,6 +92,13 @@ Right Part
 だけで良さそう。
 
 ### 図の切り替え
+Simple:
+```tex
+\includegraphics<1>{A}
+\includegraphics<2>{B}
+\includegraphics<3>{C}
+```
+
 ```tex
 \begin{figure}
     \begin{overprint}
