@@ -63,6 +63,20 @@ A = clone(B); // copy
 ## Errors
 
 ### gfortran
+
+#### Work
+1:
+```terminal
+$ which gfortran
+/usr/local/bin/gfortran
+```
+2: Edit the file `Makevars` (check below section to see how to make `Makevars`
+```txt
+FLIBS = -L/usr/local/bin/gfortran
+```
+
+
+#### Does not work
 1: Make a file
 ```terminal
 $ mkdir ~/.R
