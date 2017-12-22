@@ -94,11 +94,16 @@ FLIBS = ‘gfortran -print-search-dirs | grep ^libraries: | sed 's|libraries: =|
 Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf) and [this blog](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/).
 
 ## Debug
-### with LLDB
+### with lldb
 [Reference](http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/)
 
 ```terminal
 $ R -d lldb
 < ... >
 (lldb) run
+```
+
+### with valgrind
+```terminal
+$ R -d valgrind
 ```
