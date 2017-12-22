@@ -96,3 +96,9 @@ Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf)
 ## Debug
 ### with LLDB
 [Reference](http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/)
+
+```terminal
+$ R -d lldb
+< ... >
+(lldb) run
+```
