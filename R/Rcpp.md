@@ -4,6 +4,7 @@
 ## Table of Contents
 1. [Basics](#basics)
 2. [Matrix](#matrix)
+3. [Errors](#errors)
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -58,3 +59,21 @@ NumericMatrix B(m,n);
 A = B; // reference
 A = clone(B); // copy
 ```
+
+## Errors
+
+### gfortran
+1: Make a file
+```terminal
+$ mkdir ~/.R
+$ cat << EOF >> ~/.R/Makevars
+FLIBS=-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin16/6.3.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
+EOF
+```
+
+2: Edit the file `Makevars`
+```txt
+FLIBS = ‘gfortran -print-search-dirs | grep ^libraries: | sed 's|libraries: =||' | sed 's|:| -L|g' | sed 's|^|-L|’’
+```
+
+Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf) and [this blog](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/).
