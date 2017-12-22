@@ -5,6 +5,7 @@
 1. [Basics](#basics)
 2. [Matrix](#matrix)
 3. [Errors](#errors)
+4. [Debug](#debug)
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -91,3 +92,7 @@ FLIBS = ‘gfortran -print-search-dirs | grep ^libraries: | sed 's|libraries: =|
 ```
 
 Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf) and [this blog](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/).
+
+## Debug
+### with LLDB
+[Reference](http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/)
