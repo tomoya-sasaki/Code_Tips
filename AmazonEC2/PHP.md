@@ -48,3 +48,25 @@ Test. Access Public DNS. You'll see "Amazon Linux AMI Test Page"
 ```
 ec2-54-***-***-**.***.compute.amazonaws.com
 ```
+
+## Set file permissions
+
+Add use to the Apache group
+```terminal
+$ sudo usermod -a -G apache ec2-user
+```
+
+Log out and log in again to choose the new group
+```terminal
+$ exit
+$ groups
+ec2-user wheel apache
+```
+
+Change the ownership of `/var/www` and its contents to the apache group
+```terminal
+$ sudo chown -R ec2-user:apache /var/www
+$ sudo chmod 2775 /var/www
+$ find /var/www -type d -exec sudo chmod 2775 {} \;
+$ find /var/www -type f -exec sudo chmod 0664 {} \;
+```
