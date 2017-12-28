@@ -78,3 +78,4 @@ Haven't tried: [website](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-
 ```terminal
 $ scp -i /Users/***/***.pem /Users/***/***.php ec2-user@ec2-**-***-***-***.***.compute.amazonaws.com:/var/www/html/
 ```
+Access: http://ec2-**-***-***-***.***.compute.amazonaws.com/test.php
