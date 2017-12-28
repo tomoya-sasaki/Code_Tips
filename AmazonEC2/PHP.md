@@ -75,3 +75,6 @@ $ find /var/www -type f -exec sudo chmod 0664 {} \;
 Haven't tried: [website](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
 
 ## Upload PHP
+```terminal
+$ scp -i /Users/***/***.pem /Users/***/***.php ec2-user@ec2-**-***-***-***.***.compute.amazonaws.com:/var/www/html/
+```
