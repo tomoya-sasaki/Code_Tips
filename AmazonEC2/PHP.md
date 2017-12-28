@@ -70,3 +70,8 @@ $ sudo chmod 2775 /var/www
 $ find /var/www -type d -exec sudo chmod 2775 {} \;
 $ find /var/www -type f -exec sudo chmod 0664 {} \;
 ```
+
+## Use HTTPS
+Haven't tried: [website](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
+
+## Upload PHP
