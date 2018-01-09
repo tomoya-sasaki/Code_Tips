@@ -2,7 +2,7 @@
 * `\pause`をしていても、`\documentclass[handout]{beamer}`とすれば作成時に快適
 
 # Table of Contents
-1. <a href="https://gist.github.com/Shusei-E/12caa6d176d7b07d393e" target="_blank">全体のテンプレ</a>
+1. <a href="https://github.com/Shusei-E/Code_Tips/blob/master/Latex-Beamer/Templates/poster.tex" target="_blank">全体のテンプレ</a>
 2. [Beamer Slide](#beamer-slide)
 3. [ボックス](#ボックス)
 4. [2段組](#2段組)
