@@ -1,0 +1,58 @@
+\documentclass[12pt, dvipdfmx]{beamer}
+\usepackage[utf8]{inputenc} % Citationでのエラー防止
+\usetheme{Darmstadt}
+\useoutertheme[subsection=false]{miniframes} % subsection用のスペースは除く
+\AtBeginSection[]{\subsection{}}
+
+\setbeamersize{text margin left=11pt,text margin right=11pt}
+
+%数式フォントの設定
+\usefonttheme{professionalfonts}
+
+%箇条書きの設定
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacksquare$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacklozenge$}}
+
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{courier}
+
+\usepackage{xcolor}
+
+%数式の左寄せ
+\usepackage{nccmath}
+
+%箇条書きの左マージンの調整
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+
+
+\begin{document}
+
+\title{TITLE}
+\subtitle{SUBTITLE}
+\author{NAME$^{1}$}
+\institute{${}^1$Institute}
+\date{\today}
+
+\frame{\titlepage}
+
+\section{Introduction}
+
+\begin{frame}[fragile]
+\frametitle{TITLE}
+Text 1.\pause
+\begin{itemize}
+  \item Item 1
+\end{itemize}
+\vspace{3mm}
+\end{frame}
+
+\end{document}
