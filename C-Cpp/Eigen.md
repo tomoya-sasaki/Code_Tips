@@ -2,6 +2,12 @@
 a template library for linear algebra
 
 Matrixのある列とVectorの足し算には注意！つねに縦横を意識すること --> [行列の要素ごとの演算](#行列の要素ごとの演算)
+```cpp
+MatrixXd n_dk;
+VectorXd alpha;
+VectorXd ndk_ak;
+ndk_ak = n_dk.row(d) + alpha.transpose(); // We need .transpose()
+```
 
 ## Table of Contents
 Usage:
