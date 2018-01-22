@@ -3,11 +3,12 @@
 
 ## Table of Contents
 1. [Setup Packages](#setup-packages)
-2. [Install Packages](#install-packages)
-3. [Document](#document)
-4. [DESCRIPTION](#description)
-5. [C++](#c++)
-6. [Vignette](#vignette)
+2. [Workflow](#workflow)
+3. [Install Packages](#install-packages)
+4. [Document](#document)
+5. [DESCRIPTION](#description)
+6. [C++](#c++)
+7. [Vignette](#vignette)
 
 
 ## Setup Packages
@@ -18,6 +19,40 @@ devtools::create("path/to/package/testpackage")
 
 ### Add a first function
 Add R function in `R/` folder, then `devtools::load_all()` to load the function.
+
+## Workflow
+Recommended workflow ([Reference](http://r-pkgs.had.co.nz/namespace.html#namespace-workflow):
+1. Add roxygen comments to your .R files.
+2. Run `devtools::document()` (or press Ctrl/Cmd + Shift + D in RStudio) to convert roxygen comments to .Rd files.
+3. Look at NAMESPACE and run tests to check that the specification is correct.
+4. Rinse and repeat until the correct functions are exported.
+
+### When you edit code
+```r
+# Option 1
+devtools::load_all() # fine but not recommended
+
+# Option 2 (probably you need to restart R anyway)
+devtools::build()
+devtools::install()
+devtools::document()
+library(mypackage)
+```
+
+### Create Document
+```cpp
+//' My function
+//' 
+//' @param x A single integer.
+//' @examples
+//' myfunc(1, 1)
+//' myfunc(10, 1)
+//' @export
+// [[Rcpp::export]]
+int myfunc(int x){
+  return 0;
+}
+```
 
 ## Install Packages
 [Reference](http://r-pkgs.had.co.nz/package.html#package)
@@ -69,7 +104,6 @@ NULL
 ## C++
 [Reference](http://r-pkgs.had.co.nz/src.html)
 
-## Setup
 ```r
 devtools::use_rcpp()
 ```
@@ -77,33 +111,6 @@ In `DESCRIPTION`,
 ```txt
 LinkingTo: Rcpp, BH, RcppEigen
 SystemRequirements: C++11
-```
-
-### When you edit code
-```r
-# Option 1
-devtools::load_all() # fine but not recommended
-
-# Option 2 (probably you need to restart R anyway)
-devtools::build()
-devtools::install()
-devtools::document()
-library(mypackage)
-```
-
-### Create Document
-```cpp
-//' My function
-//' 
-//' @param x A single integer.
-//' @examples
-//' myfunc(1, 1)
-//' myfunc(10, 1)
-//' @export
-// [[Rcpp::export]]
-int myfunc(int x){
-  return 0;
-}
 ```
 
 ## Vignette
