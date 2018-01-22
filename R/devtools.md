@@ -47,6 +47,8 @@ multiply <- function(x, y) {
 ```
 
 ## DESCRIPTION
+> It’s common for packages to be listed in Imports in DESCRIPTION, but not in NAMESPACE. In fact, this is what I recommend: list the package in DESCRIPTION so that it’s installed, then always refer to it explicitly with pkg::fun(). Unless there is a strong reason not to, it’s better to be explicit. It’s a little more work to write, but a lot easier to read when you come back to the code in the future. ([Reference](http://r-pkgs.had.co.nz/namespace.html#imports))
+
 ### Add dependencies
 ```r
 devtools::use_package("tidyverse")
