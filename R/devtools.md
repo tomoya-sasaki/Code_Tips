@@ -54,7 +54,7 @@ devtools::use_package("tidyverse")
 
 ### Use external package
 ```r
-external_package::fun()
+devtools::external_package::fun()
 ```
 
 ### Easy way to write
