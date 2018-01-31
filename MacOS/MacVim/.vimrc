@@ -19,7 +19,7 @@ nnoremap <D-A-Right> gt
 set number
 
 " Use python filetype when open .pyx
-au BufNewFile,BufRead *.pyx setf python
+autocmd BufRead,BufNewFile *.pxd,*.pxi,*.pyx set filetype=pyrex
 
 " タブ幅の設定、Tabではなくスペース2つにする
 set tabstop=2
@@ -218,9 +218,9 @@ command! Skindefault call SkinDefault()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Programming and QuickRun Commands
-command! Run1 call s:Run1()
-noremap <F5> :Run1<CR>
-function! s:Run1()
+command! Crun call s:Runcode()
+noremap <F5> :Runcode<CR>
+function! s:Runcode()
   let e = expand("%:e")
   if e == "c"
     :Gcc1
@@ -245,7 +245,8 @@ endfunction
 
 command! Python3Do call s:Python1()
 function! s:Python1()
-  echo "Not Ready"
+  :!source activate py36
+  :!python %
 endfunction
 
 command! Gcc1 call s:Gcc1()
