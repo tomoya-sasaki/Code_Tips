@@ -122,5 +122,9 @@ urllib.request.urlretrieve(script_url, filename)
 [Reference](https://stackoverflow.com/questions/28431765/open-web-in-new-tab-selenium-python)
 
 ```python
-driver.execute_script('''window.open("http://bings.com","_blank");''')
+driver.execute_script('''window.open("http://bings.com","_blank");''') #open
+driver.switch_to.window(driver.window_handles[1]) # switch tab
+driver.close() # close
+driver.switch_to.window(driver.window_handles[0]) # Get back to the first tab
 ```
+Or you can keep the first tab with `main_window = driver.current_window_handle` and use `driver.switch_to.window(main_tab)`.
