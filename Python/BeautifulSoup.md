@@ -11,7 +11,7 @@
 7. [Download File](#download-file)
 
 
-### soupを作る
+## soupを作る
 ```python
 import httplib2
 
@@ -28,7 +28,7 @@ soup = BeautifulSoup(f.read(), "html.parser")
 f.close()
 ```
 
-### 探す
+## 探す
 ```python
 soup.find_all("td", class_="td2")
 ```
@@ -36,8 +36,9 @@ soup.find_all("td", class_="td2")
 `soup.find_all("div", class_="bill_text_content")`
 なら、`<div class="bill_text_content" id="main_text_content">...</div>`の中身から探してくる。
 
-### タグの中身を取り出す
-Example 1:
+## タグの中身を取り出す
+
+### Example 1
 ```python
 >td_list[1].find_all("a")
 [<a class="a1" href="**URL**">test</a>]
@@ -47,7 +48,7 @@ Example 1:
 ```
 
  
-Example 2:
+### Example 2
 Original is
 ```xml
 <caption time="2015-01-18T04:56:02.976" text="何らかの文章。"/>
@@ -61,14 +62,21 @@ Using Beautifulsoup,
 '何らかの文章。'
 ```
 
-### 少し待つ
+### Attributes
+Extract attributes from the results.
+```python
+soup.find_all("a", class_="link-area")[0]['href']
+```
+`<a class="link-area" href="/I/Need/This" id="0000">`とあったら`/I/Need/This`が返って来る。`['id']`なら`0000`。
+
+## 少し待つ
 ```python
 import random
 import time
 time.sleep(random.uniform(1, 2))
 ```
 
-### リンクの取り出し
+## リンクの取り出し
 ```python
 links = soup.find_all("a")
 list_xls_files = []
@@ -81,15 +89,15 @@ for link in links:
     pass
 ```
 
-### PhantomJS
-##### インストール
+## PhantomJS
+### インストール
 * `homebrew`
 * 権限の問題で上手くインストール出来ない場合は、以下の方法を試す
   * `echo $PATH`として、出てきたフォルダの中でアクセス可能なものの中に`bin/phantomjs`をコピー
   * もしくは、PATHを通す。`export PATH=$PATH:/Users/test/`としたら、`/Users/test/`にPATHを通すことができる
   * [参考](http://qiita.com/nbkn/items/01a11392921119fa0153)
 
-##### オブジェクトを探す
+### オブジェクトを探す
 これは、Seleniumの[Locating Elements](http://selenium-python.readthedocs.io/locating-elements.html)と関係している。サイトに例多数。
 * IDで探してクリック
 ```html
@@ -99,12 +107,12 @@ for link in links:
 browser.find_by_id('isearch').first.click()
 ```
 
-##### スクリーンショット
+### スクリーンショット
 ```python
 driver.save_screenshot('last.png')
 ```
 
-### Download File
+## Download File
 ```python
 urllib.request.urlretrieve(script_url, filename)
 ```
