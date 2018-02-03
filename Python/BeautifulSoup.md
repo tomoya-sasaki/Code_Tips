@@ -119,6 +119,8 @@ urllib.request.urlretrieve(script_url, filename)
 ```
 
 ## Open and Close a new Tab
-```py
+[Reference](https://stackoverflow.com/questions/28431765/open-web-in-new-tab-selenium-python)
+
+```python
 driver.execute_script('''window.open("http://bings.com","_blank");''')
 ```
