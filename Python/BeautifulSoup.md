@@ -9,7 +9,6 @@
 5. [リンクの取り出し](#リンクの取り出し)
 6. [PhantomJS](#phantomjs)
 7. [Download File](#download-file)
-8. [Open and Close a new Tab](#open-and-close-a-new-tab)
 
 
 ## soupを作る
@@ -117,14 +116,3 @@ driver.save_screenshot('last.png')
 ```python
 urllib.request.urlretrieve(script_url, filename)
 ```
-
-## Open and Close a new Tab
-[Reference](https://stackoverflow.com/questions/28431765/open-web-in-new-tab-selenium-python)
-
-```python
-driver.execute_script('''window.open("http://bings.com","_blank");''') #open
-driver.switch_to.window(driver.window_handles[1]) # switch tab
-driver.close() # close
-driver.switch_to.window(driver.window_handles[0]) # Get back to the first tab
-```
-Or you can keep the first tab with `main_window = driver.current_window_handle` and use `driver.switch_to.window(main_tab)`.
