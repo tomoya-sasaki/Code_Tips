@@ -32,6 +32,9 @@ f.close()
 ```python
 soup.find_all("td", class_="td2")
 ```
+例えば、
+`soup.find_all("div", class_="bill_text_content")`
+なら、`<div class="bill_text_content" id="main_text_content">...</div>`の中身から探してくる。
 
 ### タグの中身を取り出す
 Example 1:
@@ -42,9 +45,7 @@ Example 1:
 > td_list[1].find_all("a")[0].contents
 ['test']
 ```
-例えば、
-`soup.find_all("div", class_="bill_text_content")`
-なら、`<div class="bill_text_content" id="main_text_content">...</div>`の中身から探してくる。
+
  
 Example 2:
 Original is
