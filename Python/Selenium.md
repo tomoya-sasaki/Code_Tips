@@ -17,6 +17,7 @@ driver.save_screenshot('last.png')
 3. [File download](#file-download)
 4. [With BeautifulSoup](#with-beautifulsoup)
 5. [Pulldown menu](#pulldown-menu)
+6. [Open and Close a new Tab](#open-and-close-a-new-tab)
 
 ## クリック
 ```python
@@ -166,3 +167,14 @@ select.select_by_visible_text('2007')
 # select by value 
 select.select_by_value('2007')
 ```
+
+## Open and Close a new Tab
+[Reference](https://stackoverflow.com/questions/28431765/open-web-in-new-tab-selenium-python)
+
+```python
+driver.execute_script('''window.open("http://bings.com","_blank");''') #open
+driver.switch_to.window(driver.window_handles[1]) # switch tab
+driver.close() # close
+driver.switch_to.window(driver.window_handles[0]) # Get back to the first tab
+```
+Or you can keep the first tab with `main_window = driver.current_window_handle` and use `driver.switch_to.window(main_tab)`.
