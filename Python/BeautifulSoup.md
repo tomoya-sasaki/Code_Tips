@@ -9,6 +9,7 @@
 5. [リンクの取り出し](#リンクの取り出し)
 6. [PhantomJS](#phantomjs)
 7. [Download File](#download-file)
+8. [Open and Close a new Tab](#open-and-close-a-new-tab)
 
 
 ## soupを作る
@@ -115,4 +116,9 @@ driver.save_screenshot('last.png')
 ## Download File
 ```python
 urllib.request.urlretrieve(script_url, filename)
+```
+
+## Open and Close a new Tab
+```py
+driver.execute_script('''window.open("http://bings.com","_blank");''')
 ```
