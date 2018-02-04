@@ -1,5 +1,9 @@
 # PHP
-* [Tutorial](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
+* [Tutorial 1](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
+* [Tutorial 2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-lamp-amazon-linux-2.html)
+
+* Amazon Linux 1
+* Amazon Linux 2
 
 ## Allow connections
 SSH (port 22), HTTP (port 80), and HTTPS (port 443)
@@ -19,31 +23,50 @@ $ ssh -i /Users/KEY.pem ec2-user@ec2-**-***-**-**.***.compute.amazonaws.com
 
 ## Set up
 
-Update
+### Update
 ```terminal
 $ sudo yum update -y
 ```
 
-Set password
+### Set password
 ```terminal
 $ sudo passwd
 ```
 
-Install software packages
+### Install software packages
+Amazon Linux 1
 ```terminal
 $ sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
 ```
+Amazon Linux 2
+```terminal
+$ sudo amazon-linux-extras install lamp-mariadb10.2-php7.2
+$ sudo yum install -y httpd php mariadb-server php-mysqlnd
+```
 
-Start web server
+### Start web server
+Amazon Linux 1
 ```terminal
 $ sudo service httpd start
 ```
 
-Configure the Apache web server
+Amazon Linux 2
+```terminal
+$ sudo systemctl start httpd
+```
+
+### Configure the Apache web server
+Amazon Linux 1
 ```terminal
 $ sudo chkconfig httpd on
 $ chkconfig --list httpd
 httpd           0:off   1:off   2:on    3:on    4:on    5:on    6:off
+```
+
+Amazon Linux 2
+```terminal
+$ sudo systemctl enable httpd  # configure the Apache web server
+$ sudo systemctl is-enabled httpd  # verify that httpd is on
 ```
 
 Test. Access Public DNS. You'll see "Amazon Linux AMI Test Page"
@@ -61,6 +84,7 @@ $ sudo usermod -a -G apache ec2-user
 Log out and log in again to choose the new group
 ```terminal
 $ exit
+$ ssh -i ... # log in again
 $ groups
 ec2-user wheel apache
 ```
