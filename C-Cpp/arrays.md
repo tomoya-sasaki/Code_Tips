@@ -3,6 +3,7 @@
 ## Table of Contents
 1. [Arrays and brackets](#arrays-and-brackets)
 2. [Dynamic array](#dynamic-array)
+3. [Pass to a function](#pass-to-a-function)
 
 ## Arrays and brackets
 まず、`int a[10];`に対して`a`と記述すると`&a[0]`と同じに解釈 (arrayの先頭要素へのポインタ)
@@ -75,3 +76,6 @@ delete[] arr3D;
 ```
 
 関数に読み込ませてやるときは、`vecsum(int n, int Data[n+1])`のように長さに関わるものを先にすることで上手くいった。
+
+## Pass to a function
+Pointer might be the best.
