@@ -3,6 +3,8 @@
 
 ## Allow connections
 SSH (port 22), HTTP (port 80), and HTTPS (port 443)
+* SSH: My IP
+* HTTP/HTTPS: `0.0.0.0/0`and `::/0`
 
 ## Connect to the instance
 Set key (first time)
