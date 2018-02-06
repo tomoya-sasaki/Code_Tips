@@ -4,6 +4,10 @@
     * [Use self-defined tempalte](https://stackoverflow.com/questions/690386/writing-a-vim-function-to-insert-a-block-of-static-text)
 * Get line num: `line(".")`
 
+## Key Bidings
+* Replace: `ciw`, `cf[char]`
+* Delete: `caw`, `ciw`
+
 # Shortcuts
 ## Nvim-R
 * `\rf`: Start
