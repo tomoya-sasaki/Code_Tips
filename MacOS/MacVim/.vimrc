@@ -219,7 +219,7 @@ command! Skindefault call SkinDefault()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Programming and QuickRun Commands
 command! Crun call s:Runcode()
-noremap <F5> :Runcode<CR>
+noremap <F5> :Crun<CR>
 function! s:Runcode()
   let e = expand("%:e")
   if e == "c"
