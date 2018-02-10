@@ -37,6 +37,10 @@ devtools::build()
 devtools::install()
 devtools::document()
 library(mypackage)
+
+# Option 3 (better?)
+setwd(package_folder)
+devtools::install() ; library(topicdict)
 ```
 
 ### Create Document
