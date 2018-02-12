@@ -9,7 +9,7 @@
 5. [DESCRIPTION](#description)
 6. [C++](#c++)
 7. [Vignette](#vignette)
-
+8. [roxygen](#roxygen)
 
 ## Setup Packages
 ### Create
@@ -126,3 +126,23 @@ SystemRequirements: C++11
 devtools::use_vignette("Test_EstimateAlpha") # Initialize vignette
 devtools::build_vignettes()
 ```
+
+# roxygen
+```r
+#' Initialize a model
+#'
+#' This function creates a list of word indexes \code{W}.
+#'
+#' @param dict a quanteda dictionary
+#'
+#' @return A list containing \describe{
+#'         \item{W}{a list of vectors of word}
+#'         }.
+#' @import ggplot2
+#' @importFrom hashmap hashmap
+#' @export
+model <- function(dict){
+ [...]
+}
+```
+`#' @return ggplot2 object ` would suffice in some cases.
