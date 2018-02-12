@@ -41,6 +41,9 @@ library(mypackage)
 # Option 3 (better?)
 setwd(package_folder)
 devtools::document() ; devtools::install() ; library(mypackage)
+
+# You might want to check
+devtools::check()
 ```
 
 ### Create Document
