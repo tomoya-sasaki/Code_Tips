@@ -10,6 +10,11 @@ Which has updates:
 $ pip list -o
 ```
 
+## Update packages
+```terminal
+$ pip install tensorflow Keras -U
+```
+
 ## Update pip itself
 ```terminal
 $ pip install --upgrade pip
