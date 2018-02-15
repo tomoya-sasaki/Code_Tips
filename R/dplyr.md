@@ -231,6 +231,19 @@ bar_figure <- function(var, item_num){
 }
 ```
 
+### Convert NA to numbers
+[Reference 1](http://pediatricsurgery.hatenadiary.jp/entry/2017/07/07/232423) and [Reference 2](https://stackoverflow.com/questions/27909000/set-certain-values-to-na-with-dplyr)
+```r
+# Change all
+mutate_all(funs(ifelse(is.na(.),0,.)))
+
+# Only columns start with 'P'
+mutate_at(vars(starts_with("P")), funs(ifelse(is.na(.),0,.)))
+
+# Only columns that contain 1
+mutate_at(vars(matches("1",.)), funs(ifelse(is.na(.),0,.)))
+```
+
 ## Create Dummy
 Taken from [Stackoverflow](https://stackoverflow.com/questions/35943455/creating-indicator-variable-columns-in-dplyr-chain)
 ```r
