@@ -274,7 +274,7 @@ g <- ggplot(res, aes(reorder(Word, Proportion), Proportion, fill = factor(.topic
   geom_col(show.legend = FALSE) + facet_wrap(~ .topic, scales = "free") +
   coord_flip()
 ```
-Here, we reorder `Word` column based on the values of `Proportion` column.
+Here, we reorder `Word` column based on the values of `Proportion` column. If you put `-` before the `Proportion`, you can reverse the order.
 
 ## Legend関連
 ### 順番を変える
