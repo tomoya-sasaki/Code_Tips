@@ -10,6 +10,7 @@
 6. [C++](#c++)
 7. [Vignette](#vignette)
 8. [roxygen](#roxygen)
+9. [Use dplyr and ggplot2](#use-dplyr-and-ggplot2)
 
 ## Setup Packages
 ### Create
@@ -127,7 +128,7 @@ devtools::use_vignette("Test_EstimateAlpha") # Initialize vignette
 devtools::build_vignettes()
 ```
 
-# roxygen
+## roxygen
 ```r
 #' Initialize a model
 #'
@@ -146,3 +147,17 @@ model <- function(dict){
 }
 ```
 `#' @return ggplot2 object ` would suffice in some cases.
+
+## Use dplyr and ggplot2
+```r
+data %>%
+  mutate(Topic=Z+1) %>%
+  select(-starts_with("Z")) %>%
+  group_by_('Topic') %>%
+  summarize_(count = 'n()', sumx='sum(X)') %>%
+  ungroup() %>%
+  mutate_(Proportion='round(sumx/count*100, 3)')
+
+g <- ggplot(temp, aes_string(x=paste0("EstTopic", 'Topic'), y='Proportion')) +
+    geom_bar(stat="identity")
+```
