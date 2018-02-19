@@ -129,6 +129,7 @@ devtools::build_vignettes()
 ```
 
 ## roxygen
+### Function
 ```r
 #' Initialize a model
 #'
@@ -147,6 +148,32 @@ model <- function(dict){
 }
 ```
 `#' @return ggplot2 object ` would suffice in some cases.
+
+### Class
+```r
+#' Explore Documents Class
+#'
+#' @name ClassA
+#' @docType class
+#'
+#' @section Fields:
+#' \itemize{
+#'    \item data data in tidytext format
+#' }
+#'
+#' @section Contains:
+#' NULL
+#'
+#' @section Methods:
+#'  \itemize{
+#'    \item initialize
+#'  }
+#'
+#' @importFrom tidytext tidy 
+#' @import ggplot2 
+#' @export ClassA
+#' @exportClass ClassA
+```
 
 ### namespace
 [Reference](https://cran.r-project.org/web/packages/roxygen2/vignettes/namespace.html)
