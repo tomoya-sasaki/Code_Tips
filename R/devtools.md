@@ -148,6 +148,9 @@ model <- function(dict){
 ```
 `#' @return ggplot2 object ` would suffice in some cases.
 
+### namespace
+[Reference](https://cran.r-project.org/web/packages/roxygen2/vignettes/namespace.html)
+
 ## Use dplyr and ggplot2
 ```r
 data %>%
