@@ -151,7 +151,7 @@ model <- function(dict){
 
 ### Class
 ```r
-#' Explore Documents Class
+#' A Reference Class to ClassA
 #'
 #' @name ClassA
 #' @docType class
