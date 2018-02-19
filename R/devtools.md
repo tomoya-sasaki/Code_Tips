@@ -174,6 +174,7 @@ model <- function(dict){
 #' @export ClassA
 #' @exportClass ClassA
 ```
+If you want to use the class in other functions of the package, you need to add `#' @import methods` in the roxygen of the functions.
 
 ### namespace
 [Reference](https://cran.r-project.org/web/packages/roxygen2/vignettes/namespace.html)
