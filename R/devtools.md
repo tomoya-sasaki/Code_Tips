@@ -157,22 +157,28 @@ model <- function(dict){
 #' @docType class
 #'
 #' @section Fields:
-#' \itemize{
-#'    \item data data in tidytext format
-#' }
+#'  \describe{
+#'    \item{\code{data}}{ data in tidytext format}
+#'    \item{\code{words}}{ a vector}
+#'  }
 #'
 #' @section Contains:
 #' NULL
 #'
 #' @section Methods:
-#'  \itemize{
-#'    \item initialize
+#'  \describe{
+#'    \item{\code{initialize}}{ Constructor}
+#'    \item{\code{top_words(n_show=10)}}{ show top words}
 #'  }
 #'
 #' @importFrom tidytext tidy 
 #' @import ggplot2 
 #' @export ClassA
 #' @exportClass ClassA
+ClassA <- setRefClass(
+  Class = "ClassA",
+  [...]
+)
 ```
 If you want to use the class in other functions of the package, you need to add `#' @import methods` in the roxygen of the functions.
 
