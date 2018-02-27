@@ -30,6 +30,7 @@ References:
 14. [Theme](#theme)
 15. [日本語関連](#日本語関連)
 16. [文字の追加](#文字の追加)
+	* [geom_text()](#geom_text())
 17. [選択肢を強制的に表示](#選択肢を強制的に表示)
 18. [Use environment variables](#use-environment-variables)
 19. [色の変更](#色の変更)
@@ -370,6 +371,9 @@ ggsave(filepath, p, family="Japan1GothicBBB")
 annotate("text", x=5, y=8, colour="red",
    label=paste("Average:", as.character(round(mean_v,2))))
 ```
+
+### geom_text()
+文字が被らないようにしたかったら、`ggrepel` packageを使う。
 
 ## 選択肢を強制的に表示
 ```r
