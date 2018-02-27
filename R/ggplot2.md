@@ -30,7 +30,7 @@ References:
 14. [Theme](#theme)
 15. [日本語関連](#日本語関連)
 16. [文字の追加](#文字の追加)
-	* [geom_text()](#geom_text())
+	* [geom_text()](#geom_text)
 17. [選択肢を強制的に表示](#選択肢を強制的に表示)
 18. [Use environment variables](#use-environment-variables)
 19. [色の変更](#色の変更)
