@@ -57,6 +57,20 @@ cd
 python3 -m venv my_venv
 source my_venv/bin/activate
 ```
+If above does not work,
+```terminal
+$ which python3
+/usr/local/bin/python3
+$ virtualenv -p /usr/local/bin/python3 py36
+Running virtualenv with interpreter /usr/local/bin/python3
+Using base prefix '/usr/local'
+New python executable in /home/ec2-user/py36/bin/python3
+Also creating executable in /home/ec2-user/py36/bin/python
+Installing setuptools, pip, wheel...done.
+$ ls
+py36  Python-3.6.1  Python-3.6.1.tgz  usr
+$ source py36/bin/activate
+```
 
 Note
 ```terminal
