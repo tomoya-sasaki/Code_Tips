@@ -41,5 +41,8 @@ screenを開いた後で、その開いているスクリーンを閉じるに�
 ## Memory
 `$ free -m`
 
+Free memory:
+`echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null`
+
 # Try Later
 * `awe.s3`: R package to access ASW S3
