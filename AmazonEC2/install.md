@@ -2,5 +2,5 @@
 
 ## Graphviz
 ```terminal
-yum install graphviz
+sudo yum install graphviz
 ```
