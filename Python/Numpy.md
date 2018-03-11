@@ -17,6 +17,7 @@
 12. [vectorを繰り返してmatrixにする](#vectorを繰り返してmatrixにする)
 13. [Sparse matrix](#sparse-matrix)
 14. [Save](#save)
+15. [reshape](#reshape)
 
 
 ## arrayとmatrixの違い
@@ -186,4 +187,17 @@ sparse.csc_matrix(np.array(A))
 ```python
 header = ",".join([ "Dim"+str(i) for i in range(self.ndim)])
 np.savetxt(file_path, np_object, header=header, fmt="%0.9f", delimiter=',', comments='')
+```
+
+## reshape
+### Change Dimension
+```
+> train_set_x_orig.shape
+(209, 64, 64, 3)
+> train_set_x_orig.shape[0]
+209
+> (train_set_x_orig.reshape(train_set_x_orig.shape[0], -1)).shape
+(209, 12288)
+> (train_set_x_orig.reshape(train_set_x_orig.shape[0], -1).T).shape
+(12288, 209)
 ```
