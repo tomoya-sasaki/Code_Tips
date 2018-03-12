@@ -110,3 +110,6 @@ $$
 $$
 </span>
 ```
+
+## Navigation
+Edit `_data/navigation.yml`
