@@ -113,3 +113,6 @@ $$
 
 ## Navigation
 Edit `_data/navigation.yml`
+
+## Syntax Hilighting
+Edit `_sass/_syntax.scss`. Example is [here](https://github.com/Shusei-E/Code_Tips/blob/master/Website/_syntax.scss).
