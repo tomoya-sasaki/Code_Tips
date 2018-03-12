@@ -112,7 +112,25 @@ $$
 ```
 
 ## Navigation
-Edit `_data/navigation.yml`
+Edit `_data/navigation.yml`.
 
 ## Syntax Hilighting
 Edit `_sass/_syntax.scss`. Example is [here](https://github.com/Shusei-E/Code_Tips/blob/master/Website/_syntax.scss).
+
+## Post Design
+Edit `_config.yml`.
+```yml
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: false
+      related: false
+```
