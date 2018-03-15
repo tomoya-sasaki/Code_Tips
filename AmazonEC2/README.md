@@ -44,5 +44,34 @@ screenを開いた後で、その開いているスクリーンを閉じるに�
 Free memory:
 `echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null`
 
+## Use swap
+Create 1.5GB:
+```terminal
+$ free -m
+             total       used       free     shared    buffers     cached
+Mem:          3714       3010        703          0         10         72
+-/+ buffers/cache:       2927        786
+Swap:            0          0          0
+$ swapon -s
+$ df -h
+$ sudo dd if=/dev/zero of=/swapfile bs=1024 count=1500k
+$ sudo chmod 600 /swapfile
+$ sudo mkswap /swapfile
+$ sudo swapon /swapfile    # Turn on swap
+$ swapon -s
+$ echo 3 | sudo tee /proc/sys/vm/drop_caches > /dev/null
+```
+
+Turn off:
+```
+$ sudo swapoff /swapfile 
+```
+
+Automatically turn on:
+```
+$ sudo vi /etc/fstab
+```
+
+
 # Try Later
 * `awe.s3`: R package to access ASW S3
