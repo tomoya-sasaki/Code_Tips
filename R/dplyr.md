@@ -82,6 +82,18 @@ data %>% select(datetime) %>% rowwise() %>%
   mutate(hour = get_time(datetime, "hour"), minute=get_time(datetime,"minute"))
 ```
 
+直にapplyを使うこともできる
+```r
+calc_dist <- function(vec, target){
+  distance <- dist(rbind(target, vec[3:12]))[1]
+  return(distance)
+}
+
+wordvec %>%
+  mutate(distance = apply(., 1, calc_dist, target=get("target"))) %>%
+  arrange(distance)
+```
+
 ## Regression Simulation
 [Reference](http://ja.stackoverflow.com/q/32351/12704)  
 ちなみに、下のコードでは`position_dodge`を負の値にすることで線分の並びを逆にすることができる。
