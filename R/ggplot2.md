@@ -35,8 +35,9 @@ References:
 18. [Use environment variables](#use-environment-variables)
 19. [色の変更](#色の変更)
 20. [積み上げグラフ](#積み上げグラフ)
+21. [Correlation Plot](#correlation-plot]
 
-   
+
 ## xラベルの変更
 ```r
 xlabels <- rep("", 120)
@@ -502,3 +503,24 @@ scale_fill_manual(values=c("#09aa04", "#990066"))
   theme(plot.title = element_text(hjust = 0.5))
 ```
 <img src="figures/fig_stack_line.png" width="580">
+
+## Correlation Plot
+```r
+library(ggcorrplot)
+data %>%
+  select(starts_with("Q6.")) %>%
+  mutate(ID = 1:n()) %>%
+  gather(key=question, value=answer, -ID) %>%
+  na.omit() %>%
+  rowwise() %>%
+  mutate(marked=mark_sec6(question, answer)) %>%
+  mutate(qsec = substr(question, 1, 4)) %>%
+  ungroup() %>%
+  group_by(ID, qsec) %>%
+  summarize(sec_total = sum(marked)) %>%
+  ungroup() %>%
+  spread(key=qsec, value=sec_total) %>%
+  select(-ID) %>%
+  cor() %>%
+  ggcorrplot(., type="lower", lab = TRUE)
+```
