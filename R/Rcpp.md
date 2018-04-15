@@ -104,6 +104,9 @@ Eigen::Map<Eigen::MatrixXd> EigenMatrix(Rcpp::as<Eigen::Map<Eigen::MatrixXd> >(R
 
 // Eigen::MatrixXd and std::vector to Rcpp object
 Rcpp::NumericMatrix A = Rcpp::wrap(AA);
+
+// A column `x` in DataFrame A to std::vector xx
+std::vector<double> xx = Rcpp::as<std::vector<double> >(A["x"]);
 ```
 
 ## Debug
