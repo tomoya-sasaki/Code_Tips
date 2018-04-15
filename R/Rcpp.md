@@ -7,7 +7,8 @@
 1. [Basics](#basics)
 2. [Matrix](#matrix)
 3. [Errors](#errors)
-4. [Debug](#debug)
+4. [RcppEigen](#rcppeigen)
+5. [Debug](#debug)
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -94,6 +95,16 @@ FLIBS = ‘gfortran -print-search-dirs | grep ^libraries: | sed 's|libraries: =|
 ```
 
 Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf) and [this blog](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/).
+
+## RcppEigen
+### Convert between R and Cpp
+```cpp
+// Rcpp::NumericMatrix RMatrix to Eigen::MatrixXd EigenMatrix
+Eigen::Map<Eigen::MatrixXd> EigenMatrix(Rcpp::as<Eigen::Map<Eigen::MatrixXd> >(RMatrix));
+
+// Eigen::MatrixXd and std::vector to Rcpp object
+Rcpp::NumericMatrix A = Rcpp::wrap(AA);
+```
 
 ## Debug
 ### with lldb
