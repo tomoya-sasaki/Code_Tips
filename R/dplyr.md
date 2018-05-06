@@ -19,6 +19,7 @@ Check later:
 11. [NAの処理](#naの処理)
 12. [Create Dummy](#create-dummy)
 13. [Split words](#split-words)
+14. [Copy rows](#copy-rows)
 
 
 ## 処理をして列を追加
@@ -319,4 +320,34 @@ dd %>% dummy(c("b","d"))
 Use `separate()`:
 ```r
 separate(term, into=c("True", "raw_word_id"), sep="T") 
+```
+
+## Copy rows
+```r
+> a
+# A tibble: 5 x 4
+             document      term count .topic
+                <chr>     <chr> <dbl>  <dbl>
+1 Dr_David_Owen.1.txt  abortion     1      1
+2 Dr_David_Owen.1.txt attention     3      5
+3 Dr_David_Owen.1.txt   beliefs     1      5
+4 Dr_David_Owen.1.txt      bill     1      3
+5 Dr_David_Owen.1.txt         c     2      5
+
+
+> a %>%
+  group_by(document, term, .topic) %>%
+  tidyr::expand(number = seq(1:count))
+# A tibble: 8 x 4
+# Groups:   document, term, .topic [5]
+             document      term .topic number
+                <chr>     <chr>  <dbl>  <int>
+1 Dr_David_Owen.1.txt  abortion      1      1
+2 Dr_David_Owen.1.txt attention      5      1
+3 Dr_David_Owen.1.txt attention      5      2
+4 Dr_David_Owen.1.txt attention      5      3
+5 Dr_David_Owen.1.txt   beliefs      5      1
+6 Dr_David_Owen.1.txt      bill      3      1
+7 Dr_David_Owen.1.txt         c      5      1
+8 Dr_David_Owen.1.txt         c      5      2
 ```
