@@ -536,4 +536,4 @@ ggplot(temp, aes(x=Choice)) +
   theme_bw(base_family = "YuGo-Medium", base_size=16) +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 ```
-<img src="figures/fig_bar_percentage.png" width="500">
+<img src="figures/ggplot2_bar_percentage.png" width="500">
