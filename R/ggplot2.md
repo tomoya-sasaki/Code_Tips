@@ -503,7 +503,7 @@ scale_fill_manual(values=c("#09aa04", "#990066"))
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5))
 ```
-<img src="figures/fig_stack_line.png" width="580">
+<img src="figures/fig_stack_line.png" width="550">
 
 ## Correlation Plot
 ```r
@@ -536,4 +536,4 @@ ggplot(temp, aes(x=Choice)) +
   theme_bw(base_family = "YuGo-Medium", base_size=16) +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 ```
-<img src="figures/ggplot2_bar_percentage.png" width="500">
+<img src="figures/ggplot2_bar_percentage.png" width="350">
