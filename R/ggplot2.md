@@ -36,6 +36,7 @@ References:
 19. [色の変更](#色の変更)
 20. [積み上げグラフ](#積み上げグラフ)
 21. [Correlation Plot](#correlation-plot)
+22. [Bar plot with percentage](#bar-plot-with-percentage)
 
 
 ## xラベルの変更
@@ -524,3 +525,15 @@ data %>%
   cor() %>%
   ggcorrplot(., type="lower", lab = TRUE)
 ```
+
+## Bar plot with percentage
+```r
+ggplot(temp, aes(x=Choice)) +
+  geom_bar(aes(y = (..count..)/sum(..count..))) +
+  scale_x_discrete(limits=choices) +
+  scale_y_continuous(labels=scales::percent) +
+  ylab("Percentage (%)") +
+  theme_bw(base_family = "YuGo-Medium", base_size=16) +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+```
+<img src="figures/fig_bar_percentage.png" width="500">
