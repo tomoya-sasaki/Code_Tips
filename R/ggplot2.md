@@ -119,6 +119,7 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
 
 ## 図を並べる
 ### Use gridExtra
+Example 1:<br>
 [Reference](http://notchained.hatenablog.com/entry/2015/12/17/010904)
 ```r
 library(gridExtra)
@@ -135,6 +136,12 @@ gA <- grid.arrange(p1 + theme(legend.position="none"),
           )
 ```
 <img src="figures/ggplot_2figs.png" width="780">
+
+Example 2:<br>
+```r
+grid.arrange(grobs=list(g+ theme(legend.position="none"),
+                        g+ theme(legend.position="none")), ncol=2)
+```
 
 ### Use facet
 Wrap function is [here](https://github.com/Shusei-E/Code_Tips/blob/master/R/Examples/others/facet_params.R).
