@@ -143,6 +143,50 @@ grid.arrange(grobs=list(g+ theme(legend.position="none"),
                         g+ theme(legend.position="none")), ncol=2)
 ```
 
+
+Example 3:<br>
+```r
+# Create Combinations
+combinations <- expand.grid(trueK, estimatedK) %>%
+                  arrange(rev(Var2)) # reorder
+num_combinations <- nrow(combinations)
+
+# Load Data
+figures <- list()
+for(s in 1:num_combinations){
+  trueK_ <- combinations[s, 1]
+  estimatedK_ <- combinations[s, 2]
+
+  figures[[s]] <- readRDS(file = paste0("../obj/", 
+                          "fig_T", trueK_, "_E", estimatedK_, ".obj"))
+}
+
+### Create Figure
+# Get Information
+g1 <- ggplotGrob(figures[[1]])
+id.legend <- grep("guide", g1$layout$name)
+legend <- g1[["grobs"]][[id.legend]]
+
+# Edit Figure
+edit_figure <- theme(legend.position="none",
+                     axis.title.x=element_blank(),
+                     axis.title.y=element_blank(),
+                     axis.text.x=element_blank(),
+                     axis.text.y=element_blank())
+figures <- lapply(figures, function(x){x + edit_figure})
+
+# New Pictures cf. https://stackoverflow.com/a/11093069/4357279
+g <- arrangeGrob(grobs=figures, 
+             nrow = length(estimatedK),
+             right = legend,
+             top = textGrob(title_),
+             left = textGrob("Estimated Topic", rot = 90, vjust = 1),
+             bottom = textGrob("True Topic", vjust = -0.1))
+
+grid.draw(g) # Show plot
+```
+<img src="figures/ggplot2_arrangeGrob.png" width="580">
+
 ### Use facet
 Wrap function is [here](https://github.com/Shusei-E/Code_Tips/blob/master/R/Examples/others/facet_params.R).
 ```r
