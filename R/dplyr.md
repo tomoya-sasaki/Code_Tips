@@ -186,6 +186,14 @@ reg_figure <- function(var1, var2, var3){
 reg_figure("Q1", "Q2", "Q3")
 ```
 
+With `filter_()`:
+```r
+groupby <- "Q8"
+choice_name <- "Male"
+eval <- paste0(groupby, "==", '"',choice_name, '"')
+raw %>% filter_(get("eval"))
+```
+
 In ggolot2,
 ```r
 .e <- environment()
