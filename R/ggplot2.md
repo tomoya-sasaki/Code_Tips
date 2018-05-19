@@ -183,6 +183,7 @@ g <- arrangeGrob(grobs=figures,
              left = textGrob("Estimated Topic", rot = 90, vjust = 1),
              bottom = textGrob("True Topic", vjust = -0.1))
 
+grid.newpage()
 grid.draw(g) # Show plot
 ```
 <img src="figures/ggplot2_arrangeGrob.png" width="580">
