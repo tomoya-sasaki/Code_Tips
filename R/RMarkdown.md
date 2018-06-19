@@ -4,6 +4,7 @@ Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 ## Table of Contents
 1. [日本語を使用する際の設定](#日本語を使用する際の設定)
 2. [Chunk Options](#chunk-options)
+3. [Inline code](#inline-code)
 
 ## 日本語を使用する際の設定
 この部分のインデントは、タブではなくスペースで行わないといけないことに注意。Vimでは改行した時に自動にタブでインデントが入ってしまう。
@@ -58,3 +59,9 @@ Chunk optionsにはRの関数や評価結果の値を代入することが可能
 | fig.width/height | 7            | numeric         | 図のプロットのサイズ、"出力"画像のサイズであり、貼り付けのサイズではない点に注意（単位：インチ）                          |
 | fig.cap          | -            | character       | 図のキャプション    |
 | fig.align        |              | character       | `fig.align = 'center'` |
+
+
+## Inline code
+```md
+`r CODE`
+```
