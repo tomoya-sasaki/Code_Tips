@@ -20,6 +20,7 @@ Check later:
 12. [Create Dummy](#create-dummy)
 13. [Split words](#split-words)
 14. [Copy rows](#copy-rows)
+15. [tidyeval](#tidyeval)
 
 
 ## 処理をして列を追加
@@ -359,3 +360,15 @@ separate(term, into=c("True", "raw_word_id"), sep="T")
 7 Dr_David_Owen.1.txt         c      5      1
 8 Dr_David_Owen.1.txt         c      5      2
 ```
+
+## tidyeval
+Quotes in this section comes from [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html).
+
+### Example 1
+```r
+for(village in unique(data$village)){
+  vill <- enquo(village)
+  data_village <- data %>% filter(village==(!!vill))
+}
+```
+> By analogy to strings, we don’t want `""`, instead we want some function that turns an argument into a string. That’s the job of `enquo()`
