@@ -171,7 +171,7 @@ sway %>% subset(found==1) %>%
 ```
 
 ## Environmentの変数を使う
-Use `get()` function.
+Use `get()` function. ==> Better to use `quo()` and `enquo()`??
 ```r
 df %>% filter(b == get("b")) # Note the "" around b
 ```
