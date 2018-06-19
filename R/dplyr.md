@@ -371,6 +371,9 @@ for(village in unique(data$village)){
 ([Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html))
 
 ### Example 2: `quo()` and `enquo()`
+* `quo()`: quo()は入力を評価せずquote
+* `enquo()`: 関数に与えた引数そのものをquote
+
 `quo()` and `enquo()` correspond to `quote()` and `substitute()`. To see the difference, the following code taken from [this answer](https://stackoverflow.com/a/46835360) is useful.
 ```r
 f <- function(argX) {
