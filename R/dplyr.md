@@ -1,8 +1,5 @@
 # dplyr
 
-Check later:
-* [`quo()`](http://dplyr.tidyverse.org/articles/programming.html)
-
 ## Table of Contents
 1. [処理をして列を追加](#処理をして列を追加)
 2. [select](#select)
@@ -362,7 +359,6 @@ separate(term, into=c("True", "raw_word_id"), sep="T")
 ```
 
 ## tidyeval
-Quotes in this section comes from [Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html).
 
 ### Example 1
 ```r
@@ -371,4 +367,50 @@ for(village in unique(data$village)){
   data_village <- data %>% filter(village==(!!vill))
 }
 ```
-> By analogy to strings, we don’t want `""`, instead we want some function that turns an argument into a string. That’s the job of `enquo()`
+> By analogy to strings, we don’t want `""`, instead we want some function that turns an argument into a string. That’s the job of `enquo()` <br>
+([Programming with dplyr](https://dplyr.tidyverse.org/articles/programming.html))
+
+### Example 2: `quo()` and `enquo()`
+`quo()` and `enquo()` correspond to `quote()` and `substitute()`. To see the difference, the following code taken from [this answer](https://stackoverflow.com/a/46835360) is useful.
+```r
+f <- function(argX) {
+   list(quote(argX), substitute(argX), argX)
+}
+
+suppliedArgX <- 100
+f(argX = suppliedArgX)
+# [[1]]
+# argX
+# 
+# [[2]]
+# suppliedArgX
+# 
+# [[3]]
+# [1] 100
+```
+
+[Another answer](https://stackoverflow.com/a/44968197) explains them from a different angle.
+```r
+library(dplyr)
+df <- data.frame( 
+  color = c("blue", "black", "blue", "blue", "black"), 
+  value = 1:5)
+filter(df, color == "blue")
+
+# it was already possible to use a variable for the value
+val <- 'blue'
+filter(df, color == val)
+
+# As of dplyr 0.7, new functions were introduced to simplify the situation
+col_name <- quo(color) # captures the current environment
+df %>% filter((!!col_name) == val)
+
+# Remember to use enquo within a function
+filter_col <- function(df, col_name, val){
+  col_name <- enquo(col_name) # captures the environment in which the function was called
+  df %>% filter((!!col_name) == val)
+}
+filter_col(df, color, 'blue')
+```
+
+
