@@ -423,8 +423,8 @@ Asked in [this stackoverflow post](https://stackoverflow.com/questions/50928108/
 
 Use `map()`.
 ```r
-> data <- tibble(village = c("a", "a", "a", "b", "b"), A = rep(1, 5), Z = c(1, 1, 0, 0, 1), Y = c(500, 400, 800, 30, 700))
-> data
+> df <- tibble(village = c("a", "a", "a", "b", "b"), A = rep(1, 5), Z = c(1, 1, 0, 0, 1), Y = c(500, 400, 800, 30, 700))
+> df
    village     A     Z      Y 
      <chr> <int> <int>   <dbl> 
  1       a     1     1   500     
@@ -442,7 +442,7 @@ Use `map()`.
 }
 
  z_val <- 1
- data %>%
+ df %>%
   group_by(village) %>%
   nest() %>% # gives a column of tibbles called data
   mutate(y_hat = map(data, ~Y_hat_village(., z = z_val))) %>%
