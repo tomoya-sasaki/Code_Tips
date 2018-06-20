@@ -18,6 +18,7 @@
 13. [Split words](#split-words)
 14. [Copy rows](#copy-rows)
 15. [tidyeval](#tidyeval)
+16. [Passing grouped tibbles to a custom function](#passing-grouped-tibbles-to-a-custom-function)
 
 
 ## 処理をして列を追加
@@ -417,3 +418,39 @@ filter_col(df, color, 'blue')
 ```
 
 
+## Passing grouped tibbles to a custom function
+Asked in [this stackoverflow post](https://stackoverflow.com/questions/50928108/dplyr-passing-a-grouped-tibble-to-a-custom-function)
+
+Use `map()`.
+```r
+> data <- tibble(village = c("a", "a", "a", "b", "b"), A = rep(1, 5), Z = c(1, 1, 0, 0, 1), Y = c(500, 400, 800, 30, 700))
+> data
+   village     A     Z      Y 
+     <chr> <int> <int>   <dbl> 
+ 1       a     1     1   500     
+ 2       a     1     1   400     
+ 3       a     1     0   800  
+ 4       b     1     0   300  
+ 5       b     1     1   700  
+ # We would like to calculate the mean of Y only using Z==z by villages
+ ```
+ 
+ ```r
+ Y_hat_village <- function(data, z) {
+  data_z <- data %>% filter(Z == z)
+  return(mean(data_z$Y))
+}
+
+ z_val <- 1
+ data %>%
+  group_by(village) %>%
+  nest() %>% # gives a column of tibbles called data
+  mutate(y_hat = map(data, ~Y_hat_village(., z = z_val))) %>%
+  unnest(y_hat)
+#> # A tibble: 2 x 3
+#>   village data             y_hat
+#>   <chr>   <list>           <dbl>
+#> 1 a       <tibble [3 × 3]>   450
+#> 2 b       <tibble [2 × 3]>   700
+ ```
+ 
