@@ -65,3 +65,7 @@ Chunk optionsにはRの関数や評価結果の値を代入することが可能
 ```md
 `r CODE`
 ```
+When you use values, you might need to put `$`,
+```md
+$`r CODE RETUNS VALUE`$
+```
