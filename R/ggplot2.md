@@ -37,6 +37,7 @@ References:
 20. [積み上げグラフ](#積み上げグラフ)
 21. [Correlation Plot](#correlation-plot)
 22. [Bar plot with percentage](#bar-plot-with-percentage)
+23. [Return ggplot2 object in loop](#return-ggplot2-object-in-loop]
 
 
 ## xラベルの変更
@@ -589,3 +590,21 @@ ggplot(temp, aes(x=Choice)) +
   theme(axis.text.x = element_text(angle = 25, hjust = 1))
 ```
 <img src="figures/ggplot2_bar_percentage.png" width="350">
+
+## Return ggplot2 object in loop
+```r
+fig <- function(lower, upper){
+    g <-list( 
+      geom_vline(xintercept=lower, lty=2, size=0.3),
+      geom_vline(xintercept=upper, lty=2, size=0.2)
+    )
+    return(g)
+}
+
+g <- ggplot() 
+lower_seq <- seq(0.45,0.4975,0.0025)
+upper_seq <- seq(0.55, 0.5025, -0.0025)
+for(i in 1:length(lower_seq)){
+  g <- g + fig(lower_seq[i], upper_seq[i])
+}
+```
