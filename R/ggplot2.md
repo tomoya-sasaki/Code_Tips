@@ -37,7 +37,7 @@ References:
 20. [積み上げグラフ](#積み上げグラフ)
 21. [Correlation Plot](#correlation-plot)
 22. [Bar plot with percentage](#bar-plot-with-percentage)
-23. [Return ggplot2 object in loop](#return-ggplot2-object-in-loop]
+23. [Return ggplot2 object in loop](#return-ggplot2-object-in-loop)
 
 
 ## xラベルの変更
