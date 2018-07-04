@@ -30,3 +30,14 @@ resStan2 <- vb(model, data=stan_data, seed=919, iter=100000, output_samples=1000
 resStan3 <- vb(model, data=stan_data, seed=515, iter=100000, output_samples=1000, tol_rel_obj=0.005)
 resStan <- sflist2stanfit(list(resStan1, resStan2, resStan3))
 ```
+
+## Diagnosis
+[Documentation](https://www.rdocumentation.org/packages/rstan/versions/2.17.3/topics/Diagnostic%20plots)
+
+```r
+stan_diag(object)
+stan_par(object, par, chain = 0, ...)  
+stan_rhat(object, pars, ...)
+stan_ess(object, pars, ...)
+stan_mcse(object, pars, ...)
+```
