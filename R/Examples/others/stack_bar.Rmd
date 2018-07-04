@@ -100,3 +100,21 @@ g
 
 ## Miscellanea
 Another way to sort: `reorder(Word, Proportion_top)`
+
+In another case,
+```r
+use_data %>% 
+  ungroup() %>%
+  select(LevelQ2.4, Q5.3_level) %>%
+  filter(LevelQ2.4!="DK") %>%
+  group_by(Q5.3_level, LevelQ2.4) %>%
+  summarize(count=n()) %>%
+  ungroup() %>%
+  group_by(Q5.3_level) %>%
+  mutate(Proportion = count/sum(count)*100) %>%
+  mutate(cumsum = cumsum(count)) %>%
+  mutate(pos = cumsum - 0.5*count) %>%
+  mutate(pos = abs(sum(count) - pos)) %>% # Edit position
+  ungroup() -> temp
+```
+Make sure percentages are correct.
