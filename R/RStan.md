@@ -4,6 +4,7 @@
 1. [Visualization](#visualization)
 2. [Multi core](#multi-core)
 3. [Initialization](#initialization)
+4. [Diagnosis](#diagnosis)
 
 ## Visualization
 * [Bayesplot](https://github.com/stan-dev/bayesplot)
