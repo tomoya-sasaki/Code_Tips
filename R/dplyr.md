@@ -417,6 +417,18 @@ filter_col <- function(df, col_name, val){
 filter_col(df, color, 'blue')
 ```
 
+### Example 3: `ensym()`
+If we need to use strings in the function parameters:
+```r
+my_function <- function(data, x= "OriginalX" , y= "OriginalY" ){
+  qx <- ensym(x)
+  qy <- ensym(y)
+  data %>%
+    mutate(CopyX = !!qx, CopyY = !!qy)
+}
+```
+[Reference](https://stackoverflow.com/questions/51277336/dplyr-standard-evaluation-and-enquo/51277544#51277544)
+
 
 ## Passing grouped tibbles to a custom function
 Asked in [this stackoverflow post](https://stackoverflow.com/questions/50928108/dplyr-passing-a-grouped-tibble-to-a-custom-function)
