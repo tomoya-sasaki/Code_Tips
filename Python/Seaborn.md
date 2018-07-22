@@ -118,7 +118,7 @@ f1.savefig("fig.pdf")
 ## Annotate
 ```python
 f = sns.distplot(chain[self.show_num: , 0], hist=True, kde=False)
-f.text(1, 1, 'Test')
+f.text(1, 1, 'Test', ha ='left', fontsize = 15, color = 'red')
 ```
 
 ## New Plot
