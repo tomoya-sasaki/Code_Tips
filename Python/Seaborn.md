@@ -24,6 +24,7 @@ Another option: [HoloViews](https://github.com/Shusei-E/Code_Tips/blob/master/Py
    * [カテゴリごとの色](#カテゴリごとの色)
 8. [直線を引く](#直線を引く)
 9. [保存](#保存)
+10. [Annotate](#annotate)
 
 
 ## 軸やラベルなどの設定
@@ -111,4 +112,10 @@ f1.axvline(x=3, linewidth=2, color = 'red')
 f1 = sns.distplot(chain[self.show_num: , 0], hist=True, kde=False)
 f1 = f1.get_figure()
 f1.savefig("fig.pdf")
+```
+
+## Annotate
+```python
+f = sns.distplot(chain[self.show_num: , 0], hist=True, kde=False)
+f.text(1, 1, 'Test')
 ```
