@@ -25,6 +25,7 @@ else:
 Maybe you don't need to add an logistic error term in the examples below.
 * `Metropolis-Hastings-PRML-LogisticRegression`: Above points are fine.
 * `Slice-Sampling-LogisticRegression`: This should also be fine.
+* `DirichletMultinomialRegression.ipynb`: Works.
 
 ## Questions
 * MHでのBlock-wiseとComponent-wise
