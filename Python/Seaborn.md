@@ -25,6 +25,7 @@ Another option: [HoloViews](https://github.com/Shusei-E/Code_Tips/blob/master/Py
 8. [直線を引く](#直線を引く)
 9. [保存](#保存)
 10. [Annotate](#annotate)
+11. [New Plot](#new-plot)
 
 
 ## 軸やラベルなどの設定
@@ -118,4 +119,10 @@ f1.savefig("fig.pdf")
 ```python
 f = sns.distplot(chain[self.show_num: , 0], hist=True, kde=False)
 f.text(1, 1, 'Test')
+```
+
+## New Plot
+```python
+import matplotlib.pyplot as plt
+plt.figure()
 ```
