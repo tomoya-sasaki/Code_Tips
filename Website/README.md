@@ -68,10 +68,21 @@ For example, [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/doc
 ```
 Change Default:
 ```css
-/* in _sass/_page.scss */
+/* in _sass/minimal-mistakes/_page.scss */
 p, li, dl {
 	font-size: 0.8em; /* Main Character Size */
 }
+```
+
+### Table of Contents
+```md
+/* in _sass/minimal-mistakes/_navigstion.scss */
+.toc__menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  font-size: 1.5rem;
 ```
 
 ## Top Page
