@@ -82,7 +82,7 @@ p, li, dl {
   padding: 0;
   width: 100%;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 ```
 
 ## Top Page
