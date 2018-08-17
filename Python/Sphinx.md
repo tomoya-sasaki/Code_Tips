@@ -5,6 +5,7 @@
 1. [Install](#install)
 2. [Initialization](#initialization)
 3. [Compile](#compile)
+4. [Exclude files](#exclude-files)
 
 ## Install
 ```terminal
@@ -57,3 +58,29 @@ $ make latexpdf
 $ sphinx-apidoc -f -o ./docs ./
 $ sphinx-build -b html ./docs ./docs/_build
 ```
+
+Make a `run.py`:
+```python
+import subprocess
+ 
+def run():
+  cmd_api = "sphinx-apidoc -f -o ./docs ./"
+  cmd_doc = "sphinx-build -b html ./docs ./docs/_build"
+
+  commands = [["sphinx-apidoc","-f","-o","./docs","./"], # cmd_api
+          ["sphinx-build","-b","html","./docs","./docs/_build"] # cmd_doc
+          ]
+ 
+  for cmd in commands:
+    subprocess.run(cmd)
+ 
+if __name__ == '__main__':
+  run()
+```
+
+## Exclude files
+[Reference](http://www.sphinx-doc.org/en/master/usage/configuration.html#confval-exclude_patterns)
+```py
+exclude_patterns = ["run.rst"] # If you want to exclude run.py
+```
+It seems it does not work if we use `sphinx-apidoc`, and we need to set excluded files saparately ([link](https://stackoverflow.com/a/43868129/4357279)).
