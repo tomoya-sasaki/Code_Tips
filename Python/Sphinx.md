@@ -6,6 +6,7 @@
 2. [Initialization](#initialization)
 3. [Compile](#compile)
 4. [Exclude files](#exclude-files)
+5. [Grammar](#grammar)
 
 ## Install
 ```terminal
@@ -81,3 +82,10 @@ if __name__ == '__main__':
 exclude_patterns = ["run.rst"] # If you want to exclude run.py
 ```
 It seems it does not work if we use `sphinx-apidoc`, and we need to set excluded files saparately ([link](https://stackoverflow.com/a/43868129/4357279)).
+
+## Grammar
+### function
+```py
+:param name of the parameter: this is a parameter
+:return: what this function returns
+```
