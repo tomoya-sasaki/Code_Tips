@@ -64,15 +64,15 @@ Make a `run.py`:
 import subprocess
  
 def run():
-  commands = [["sphinx-apidoc","-f","-o","./docs","./"],
-        ["sphinx-build","-b","html","./docs","./docs/_build"] # cmd_doc
+    commands = [["sphinx-apidoc","-f","-o","./docs","./"],
+            ["sphinx-build","-b","html","./docs","./docs/_build"] # cmd_doc
         ]
  
-  for cmd in commands:
-    subprocess.run(cmd)
+    for cmd in commands:
+        subprocess.run(cmd)
  
 if __name__ == '__main__':
-  run()
+    run()
 ```
 
 ## Exclude files
