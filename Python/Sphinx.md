@@ -9,6 +9,7 @@
 3. [Compile](#compile)
 4. [Exclude files](#exclude-files)
 5. [Grammar](#grammar)
+6. [Cython](#cython)
 
 ## Install
 ```terminal
@@ -119,3 +120,41 @@ def example(name, state=None):
     """
     return 0
 ```
+
+## Cython
+`setup.py` should be like this ([Reference](https://github.com/abingham/cython-sphinx-example):
+
+```py
+# setup.py
+"""Build Cython files
+"""
+
+from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
+
+
+def main():
+    """Compile Cython files
+    """
+
+    ext_modules = [
+                Extension("test", sources=["test.pyx"])
+            ]
+
+    # This is the important part. By setting this compiler directive, cython will
+    # embed signature information in docstrings. Sphinx then knows how to extract
+    # and use those signatures.
+    for e in ext_modules:
+        e.compiler_directives = {"embedsignature": True}
+
+    setup(
+        name='Demonstrating Sphinx function signatures for Cython modules',
+        cmdclass={'build_ext': build_ext},
+        ext_modules=ext_modules
+    )
+
+if __name__ == "__main__":
+    main()
+```
+`cpdef` and `def` are fine, but `cdef` is not included.
