@@ -95,6 +95,12 @@ exclude_patterns = ["run.rst"] # If you want to exclude run.py
 It seems it does not work if we use `sphinx-apidoc`, and we need to set excluded files saparately ([link](https://stackoverflow.com/a/43868129/4357279)).
 
 ## Grammar
+Make sure you include
+```py
+if __name__ == "__main__":
+   pass # could be anything
+```
+
 ### function
 ```py
 def example(name, state=None):
