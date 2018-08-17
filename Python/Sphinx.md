@@ -100,6 +100,8 @@ exclude_patterns = ["run.rst"] # If you want to exclude run.py
 It seems it does not work if we use `sphinx-apidoc`, and we need to set excluded files saparately ([link](https://stackoverflow.com/a/43868129/4357279)).
 
 ## Grammar
+[Full code example](https://pythonhosted.org/an_example_pypi_project/sphinx.html#full-code-example) is useful.
+
 Make sure you include
 ```py
 if __name__ == "__main__":
@@ -123,6 +125,16 @@ def example(name, state=None):
     >> example("Your name")
     """
     return 0
+```
+
+```py
+def example(name):
+    """Simpler example
+    Args:
+        name (str): name
+    Returns:
+        name_id (int): name ID
+    """
 ```
 
 ## Cython
