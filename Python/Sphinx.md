@@ -64,12 +64,9 @@ Make a `run.py`:
 import subprocess
  
 def run():
-  cmd_api = "sphinx-apidoc -f -o ./docs ./"
-  cmd_doc = "sphinx-build -b html ./docs ./docs/_build"
-
-  commands = [["sphinx-apidoc","-f","-o","./docs","./"], # cmd_api
-          ["sphinx-build","-b","html","./docs","./docs/_build"] # cmd_doc
-          ]
+  commands = [["sphinx-apidoc","-f","-o","./docs","./"],
+        ["sphinx-build","-b","html","./docs","./docs/_build"] # cmd_doc
+        ]
  
   for cmd in commands:
     subprocess.run(cmd)
