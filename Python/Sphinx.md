@@ -40,6 +40,15 @@ autodoc_member_order = 'bysource'
 autodoc_default_flags = ['members', 'show-inheritance']
 ```
 
+### Edit index.rst
+```
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+```
+
 ### Add mock libralies
 If you get an error such as `No module named numpy` when you compile, add the following line in `conf.py`:
 ```py
