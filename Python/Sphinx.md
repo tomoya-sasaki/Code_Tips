@@ -97,6 +97,19 @@ It seems it does not work if we use `sphinx-apidoc`, and we need to set excluded
 ## Grammar
 ### function
 ```py
-:param name of the parameter: this is a parameter
-:return: what this function returns
+def example(name, state=None):
+    """Example code
+
+    :param name: The name to use.
+    :type name: str.
+    :param state: Current state to be in.
+    :type state: bool.
+    :returns:  int -- the return code.
+    :raises: AttributeError, KeyError
+    
+    We can use it as follows:
+    
+    >> example("Your name")
+    """
+    return 0
 ```
