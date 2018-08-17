@@ -126,7 +126,7 @@ def example(name, state=None):
 ```
 
 ## Cython
-`setup.py` should be like this ([Reference](https://github.com/abingham/cython-sphinx-example):
+`setup.py` should be like this ([Reference](https://github.com/abingham/cython-sphinx-example)):
 
 ```py
 # setup.py
