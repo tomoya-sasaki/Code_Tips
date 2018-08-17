@@ -65,12 +65,14 @@ $ cd docs
 $ make html
 $ make latexpdf
 ```
+Output folder is different from manual execution.
 
 ### Manual
 ```terminal
 $ sphinx-apidoc -f -o ./docs ./
 $ sphinx-build -b html ./docs ./docs/_build
 ```
+Output folder is different from easy execution.
 
 Make a `run.py`:
 ```python
