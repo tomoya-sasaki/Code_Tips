@@ -90,6 +90,8 @@ if __name__ == '__main__':
     run()
 ```
 
+If something goes wrong, try `make clean` in `docs` folder and rerun the code.
+
 ## Exclude files
 [Reference](http://www.sphinx-doc.org/en/master/usage/configuration.html#confval-exclude_patterns)
 ```py
