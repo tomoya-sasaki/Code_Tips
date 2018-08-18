@@ -46,14 +46,15 @@ autocmd ColorScheme * highlight MatchParen gui=bold,underline guibg=white guifg=
 " 勝手に括弧のハイライトでカーソルを動かさない
 set noshowmatch
 
-" 括弧の補完
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
+" 括弧の補完 (easybracket-vimを直に読み込む)
+source ~/.vim/ftplugin/easybracket.vim
+" inoremap { {}<Left>
+" inoremap [ []<Left>
+" inoremap ( ()<Left>
+" inoremap " ""<Left>
+" inoremap {<Enter> {}<Left><CR><ESC><S-o>
+" inoremap [<Enter> []<Left><CR><ESC><S-o>
+" inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 " ビジュアルモードでは勝手にヤンクしないようにする cf. http://goo.gl/7jq1Th
 vnoremap d "_d
@@ -68,30 +69,8 @@ nnoremap ; :
 nnoremap : ;
 
 " インサートモードで - と _ を入れ替える
-let g:code_mode = 0
-nnoremap <Leader>c :CodeMode<CR>
-command! CodeMode call s:CodeMode()
-function! s:CodeMode()
-  if g:code_mode==0
-    let g:code_mode = 1
-    inoremap _ -
-    inoremap - _
-    inoremap ' ""<Left>
-    inoremap " '
-    noremap ' ""<Left>
-    noremap " '
-    :echomsg "CodeSpecialMode is on"
-  else
-    let g:code_mode = 0
-    inoremap _ _
-    inoremap - -
-    inoremap ' '
-    inoremap " "
-    noremap ' '
-    noremap " "
-    :echomsg "CodeSpecialMode is off"
-  endif
-endfunction
+" Now in ~/.vim/ftplugin/easybracket.vim
+
 
 " 開いているファイルのあるフォルダにカレントディレクトリを設定
 nnoremap <Leader>d :ChangeDir<CR>
