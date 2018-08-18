@@ -1,6 +1,3 @@
-" ~/.vim/ftplugin/easybracket.vim
-
-
 " easybracket.vim: 自動括弧補完プラグイン。 -> (Edited to fit my environment)
 " 
 " The MIT License (MIT)
@@ -181,7 +178,7 @@ inoremap <expr> [ <SID>DoOpenBracket()
 inoremap <expr> ] <SID>DoCloseBracket()
 
 " アポストロフィをマップ。
-inoremap <expr> ' <SID>DoApostrophe()
+" inoremap <expr> ' <SID>DoApostrophe()
 
 " クオートをマップ。
 inoremap <expr> " <SID>DoQuote()
@@ -360,8 +357,8 @@ function! s:CodeMode()
     inoremap " '
     "noremap ' ""<Left>
     inoremap <expr> ' <SID>DoQuote()
-    "noremap " '
-    inoremap <expr> " <SID>DoApostrophe()
+    noremap " '
+    "inoremap <expr> " <SID>DoApostrophe()
     :echomsg "CodeSpecialMode is on"
   else
     let g:code_mode = 0
@@ -370,7 +367,8 @@ function! s:CodeMode()
     inoremap ' '
     inoremap " "
     noremap ' '
-    noremap " "
+    inoremap <expr> " <SID>DoQuote()
+    "noremap " "
     :echomsg "CodeSpecialMode is off"
   endif
 endfunction
