@@ -116,14 +116,19 @@ endfunction
 
 " クオートの制御。
 function <SID>DoQuote()
-    if (s:count_quote > 0) && (s:GetNextChar() == "\"")
-        let s:count_quote -= 1
-        return "\<RIGHT>"
-    else
-        let s:count_quote += 1
-        return "\"\"\<LEFT>"
-    endif
+    return "\"\"\<LEFT>"
 endfunction
+
+" Original
+" function <SID>DoQuote()
+"     if (s:count_quote > 0) && (s:GetNextChar() == "\"")
+"         let s:count_quote -= 1
+"         return "\<RIGHT>"
+"     else
+"         let s:count_quote += 1
+"         return "\"\"\<LEFT>"
+"     endif
+" endfunction
 
 " バックスペースの制御。
 " function <SID>DoBS()
@@ -180,8 +185,8 @@ inoremap <expr> ] <SID>DoCloseBracket()
 " アポストロフィをマップ。
 " inoremap <expr> ' <SID>DoApostrophe()
 
-" クオートをマップ。
-inoremap <expr> " <SID>DoQuote()
+" クオートをマップ。 Insert quote only in CodeMode
+" inoremap <expr> " <SID>DoQuote()
 
 " バックスペースをマップ。
 "inoremap <expr> <BS> <SID>DoBS()
@@ -367,8 +372,8 @@ function! s:CodeMode()
     inoremap ' '
     inoremap " "
     noremap ' '
-    inoremap <expr> " <SID>DoQuote()
-    "noremap " "
+    "inoremap <expr> " <SID>DoQuote()
+    noremap " "
     :echomsg "CodeSpecialMode is off"
   endif
 endfunction
