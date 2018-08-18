@@ -137,6 +137,11 @@ def example(name):
     """
 ```
 
+### in-line code
+```py
+:code:`x += 1`
+```
+
 ## Cython
 `setup.py` should be like this ([Reference](https://github.com/abingham/cython-sphinx-example)):
 
