@@ -1,4 +1,4 @@
-# Python経由でTerminalを使う
+# Python経由でCommand Lineを使う
 
 ## Run terminal commands
 
