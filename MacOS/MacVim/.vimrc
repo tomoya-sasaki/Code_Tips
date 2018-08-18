@@ -245,8 +245,7 @@ endfunction
 
 command! Python3Do call s:Python1()
 function! s:Python1()
-  :!source activate py36
-  :!python %
+  :!source activate py36 ; python %
 endfunction
 
 command! Gcc1 call s:Gcc1()
