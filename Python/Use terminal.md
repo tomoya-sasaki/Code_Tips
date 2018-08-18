@@ -9,3 +9,8 @@ subprocess.call( cmd.strip().split(" ")  )
 ```
 
 For details, check [this](http://takuya-1st.hatenablog.jp/entry/2014/08/23/022031) website.
+
+`subprocess.run()` gives you an actual output.
+```py
+subprocess.run(["git", "status"])
+```
