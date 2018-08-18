@@ -4,9 +4,13 @@
 # hook_source: just before loading the plugin
 # hook_post_source: just after loading the plugin
 
+# filetype: https://github.com/vim/vim/blob/master/runtime/filetype.vim
+
 
 ### Programming
 ## Multiple languages
+
+# Comment out
 [[plugins]]
 repo = 'tyru/caw.vim'
 on_ft = ['tex', 'pyrex', 'python', 'r', 'rmd', 'c', 'cpp'] # do not write separately for each language
@@ -23,6 +27,70 @@ hook_source = '''
   endif
 '''
   # copy manually the folder named 'r' in '.cache/dein/repos/github.com/tyru/caw.vim/after/ftplugin' for 'rmd'
+
+
+# Syntax check (Asynchronous linting/fixing)
+[[plugins]]
+repo = 'w0rp/ale'
+on_ft = ['vim', 'python', 'pyrex', 'r', 'c', 'cpp', 'tex'] # do not write separately for each language
+hook_source = '''
+  " Move between errors/warnings
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+  " Run Lint only when we save a file
+  let g:ale_lint_on_save = 1
+  let g:ale_lint_on_text_changed = 0
+
+  " If you don't want linters to run on opening a file (set it 0)
+  let g:ale_lint_on_enter = 1
+
+  " Show symbol column all the time
+  let g:ale_sign_column_always = 1
+
+  " Error symbol
+  " let g:ale_sign_error = 'x'
+
+  " Which linter to enable
+  let g:ale_linters = {
+  \   'python': ['flake8']
+  \}
+
+  " Option for Python 3
+  let g:ale_command_wrapper = "source activate py36; %* "
+
+  " message format
+  let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+  " Don't show lint on location list and QuickFix
+  let g:ale_set_loclist = 0
+  let g:ale_set_quickfix = 0
+  let g:ale_open_list = 0
+  let g:ale_keep_list_window_open = 0
+
+  " Syntax check on and off
+  let g:syntax_cheker_status = 1
+  nnoremap <Leader>s :OnOffSyntaxCheck<CR>
+  command! OnOffSyntaxCheck call s:OnOffSyntaxCheck()
+  function! s:OnOffSyntaxCheck()
+    if g:syntax_cheker_status==0
+      :ALEEnable
+      let g:syntax_cheker_status = 1
+    else
+      :ALEDisable
+      let g:syntax_cheker_status = 0
+    endif
+  endfunction
+  
+'''
+# Note:
+#   Python: install it using pip
+#     You can find installed flake8 by typing
+#       $ pip show flake8
+#     and edit the files if needed. For example,
+#     you can change the number of characters in
+#     a single line by editing `default.py`
+#   R: install.packages("lintr")
 
 ## Python
 [[plugins]]
@@ -69,14 +137,14 @@ hook_source = '''
   nnoremap <Leader>tc :Templatechunk<CR>jo
   command! Templatechunk call s:Templatechunk()
   function! s:Templatechunk()
-    call append(line("."), "```{r, warning=FALSE, message=FALSE}")
+    call append(line("."), "```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=5}")
     call append(line(".")+1,"```")
   endfunction
   nnoremap <Leader>tC :TemplateChunk<CR>jjo
   command! TemplateChunk call s:TemplateChunk()
   function! s:TemplateChunk()
     call append(line("."), "")
-    call append(line(".")+1, "```{r, warning=FALSE, message=FALSE}")
+    call append(line(".")+1, "```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=5}")
     call append(line(".")+2,"```")
   endfunction
 
@@ -137,7 +205,7 @@ hook_source = '''
   nnoremap <Leader>tl :TemplateLstlisting<CR>jo
   command! TemplateLstlisting call s:TemplateLstlisting()
   function! s:TemplateLstlisting()
-    call append(line("."), "\\begin{lstlisting}")
+    call append(line("."), "\\begin{lstlisting}[caption={}, label={}]")
     call append(line(".")+1,"\\end{lstlisting}")
   endfunction
 
@@ -186,6 +254,7 @@ hook_source = '''
       \                      '%S:p:r.synctex.gz',
       \                      '%S:p:r.toc',
       \                      '%S:p:r.lof',
+      \                      '%S:p:r.lol',
       \                      '%S:p:r.lot',
       \                      '%S:p:r.bcf',
       \                      '%S:p:r.nav',
