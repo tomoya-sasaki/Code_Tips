@@ -1,5 +1,7 @@
 # Python経由でTerminalを使う
 
+## Run terminal commands
+
 ```python
 import subprocess
 LDA_Folder = "/Users/GibbsLDA++-0.2/src/lda"
@@ -13,4 +15,15 @@ For details, check [this](http://takuya-1st.hatenablog.jp/entry/2014/08/23/02203
 `subprocess.run()` gives you an actual output.
 ```py
 subprocess.run(["git", "status"])
+```
+
+## Get command line arguments
+```py
+parser = argparse.ArgumentParser()
+parser.add_argument("--mode", default="a", help="select mode (p: Python only, s: Sphinx only)")
+args = parser.parse_args()
+
+if args.mode:
+  if args.mode == "p":
+    print("Python mode")
 ```
