@@ -19,6 +19,7 @@ subprocess.run(["git", "status"])
 
 ## Get command line arguments
 ```py
+import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--mode", default="a", help="select mode (p: Python only, s: Sphinx only)")
 args = parser.parse_args()
