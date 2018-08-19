@@ -31,6 +31,7 @@ def run_python(filename):
         for line in output:
             print(line, end='')  # Process the output
 ```
+`subprocess.run(["python", "main.py"])` might be enough.
 
 ## Get command line arguments
 ```py
