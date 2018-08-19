@@ -17,6 +17,21 @@ For details, check [this](http://takuya-1st.hatenablog.jp/entry/2014/08/23/02203
 subprocess.run(["git", "status"])
 ```
 
+### Execute python file and show it's output
+```py
+def run_python(filename):
+    # https://stackoverflow.com/q/51918012/2978524
+    kwargs = dict(bufsize=0,  # No buffering.
+                  stdout=subprocess.PIPE,
+                  stderr=subprocess.STDOUT,
+                  universal_newlines=True)
+    args = [sys.executable, filename]
+
+    with subprocess.Popen(args, **kwargs).stdout as output:
+        for line in output:
+            print(line, end='')  # Process the output
+```
+
 ## Get command line arguments
 ```py
 import argparse
