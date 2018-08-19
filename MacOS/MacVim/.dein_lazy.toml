@@ -53,7 +53,8 @@ hook_source = '''
 
   " Which linter to enable
   let g:ale_linters = {
-  \   'python': ['flake8']
+  \   'python': ['flake8'],
+  \   'cpp': ['clang']
   \}
 
   " Option for Python 3
@@ -70,10 +71,14 @@ hook_source = '''
 
   " Statusline
   function! LinterStatus() abort
+     if g:syntax_cheker_status == 0
+      return ''
+     endif
+
      let l:counts = ale#statusline#Count(bufnr(''))
      let l:all_errors = l:counts.error + l:counts.style_error
      let l:all_non_errors = l:counts.total - l:all_errors
-     return l:counts.total == 0 ? '' : printf(
+     return l:counts.total == 0 ? 'E:0 W:0' : printf(
      \ 'E:%d W:%d',
      \ l:all_errors,
      \ l:all_non_errors
@@ -102,27 +107,6 @@ hook_source = '''
   endfunction
   call ALEStatuslineOn()
 
-  function! ALEStatuslineOff() abort
-    let g:lightline = {
-      \'active': {
-      \  'left': [
-      \    [],
-      \    [],
-      \    ['filename', 'modified']
-      \  ],
-      \  'right': [
-      \      ['lineinfo'],
-      \      ['percent'],
-      \      []
-      \   ]
-      \},
-      \'component_function': {
-      \  'ale': 'LinterStatus'
-      \},
-      \ 'colorscheme' : 'solarized'
-    \ }
-  endfunction
-
   " Syntax check on and off
   let g:syntax_cheker_status = 1
   nnoremap <Leader>s :OnOffSyntaxCheck<CR>
@@ -131,12 +115,10 @@ hook_source = '''
     if g:syntax_cheker_status==0
       :ALEEnable
       let g:syntax_cheker_status = 1
-      call ALEStatuslineOn()
       echo "Syntax check is on"
     else
       :ALEDisable
       let g:syntax_cheker_status = 0
-      call ALEStatuslineOff()
       echo "Syntax check is off"
     endif
   endfunction
