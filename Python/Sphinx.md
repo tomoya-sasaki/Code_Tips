@@ -142,6 +142,9 @@ def example(name):
 :code:`x += 1`
 ```
 
+### Cross reference
+[Reference](http://www.sphinx-doc.org/ja/stable/domains.html#cross-referencing-python-objects)
+
 ## Cython
 `setup.py` should be like this ([Reference](https://github.com/abingham/cython-sphinx-example)):
 
