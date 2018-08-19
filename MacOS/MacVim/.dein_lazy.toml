@@ -32,7 +32,7 @@ hook_source = '''
 # Syntax check (Asynchronous linting/fixing)
 [[plugins]]
 repo = 'w0rp/ale'
-on_ft = ['vim', 'python', 'pyrex', 'r', 'c', 'cpp', 'tex'] # do not write separately for each language
+on_ft = ['python', 'pyrex', 'r', 'c', 'cpp'] # do not write separately for each language
 hook_source = '''
   " Move between errors/warnings
   nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -216,9 +216,6 @@ hook_source = '''
 repo = 'thinca/vim-quickrun'
 on_ft = ['tex']
 hook_add = '''
-  " Default syntax check is off
-  :ALEDisable
-
   let g:quickrun_config = {
   \   'tex': {
   \       'command': 'latexmk',
