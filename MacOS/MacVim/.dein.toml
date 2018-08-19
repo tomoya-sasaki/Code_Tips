@@ -42,12 +42,36 @@ command! Skinbadwolf call Badwolf()
 # command! Skinlucid call SchemeLucid()
 # '''
 
+# Statusline
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+    \'active': {
+    \  'left': [
+    \    [],
+    \    [],
+    \    ['filename', 'modified']
+    \  ],
+    \  'right': [
+    \      ['lineinfo'],
+    \      ['percent'],
+    \   ]
+    \},
+    \'component_function': {
+    \  'ale': 'LinterStatus'
+    \},
+    \ 'colorscheme' : 'PaperColor'
+  \ }
+'''
+
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'
 hook_add = '''
 function! SchemeSolarized()
   set background=light
   colorscheme solarized
+  highlight CursorIM guifg=NONE guibg=Purple
 endfunction
 command! Skinsolarized call SchemeSolarized()
 '''
