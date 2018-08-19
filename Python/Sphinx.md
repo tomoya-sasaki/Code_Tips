@@ -145,6 +145,11 @@ def example(name):
 ### Cross reference
 [Reference](http://www.sphinx-doc.org/ja/stable/domains.html#cross-referencing-python-objects)
 
+```python
+# Another module
+:py:mod:`dataread`
+```
+
 ## Cython
 `setup.py` should be like this ([Reference](https://github.com/abingham/cython-sphinx-example)):
 
