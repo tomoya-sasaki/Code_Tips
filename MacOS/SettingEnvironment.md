@@ -141,6 +141,11 @@ sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 ## Office
 Check Amazon's 「ゲーム&PCソフトダウンロードライブラリ」
 
+## Vim
+* Kaoriya-version
+* use `homebrew` from the next time?
+  * We want to install it with Python 3
+
 ## Pandoc
 * `$ brew install pandoc`
 * `$ brew install pandoc-citeproc`
