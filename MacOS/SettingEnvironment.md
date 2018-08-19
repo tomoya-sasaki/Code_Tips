@@ -5,7 +5,7 @@
 * `brew upgrade xxx`
 * `brew upgrade r` will update your R
 * Old packages: `/usr/local/lib/R/`
-* **Use normall installer from the website**
+* **Use normall installer from the website from the next time**
 
 ### Tensorflow
 It is always better to check the latest information on the official website. *Radeon Pro 450 2048 MB* is not for this instruction (or I could not find a way).
