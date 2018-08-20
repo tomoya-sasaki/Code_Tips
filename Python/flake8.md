@@ -14,4 +14,9 @@
 ...          " text")
 >>> text2
 ('my', ' text')
+
+>>> text3 = ("use "
+...          + text1)
+>>> text3
+'use my text'
 ```
