@@ -39,6 +39,10 @@ pylab.rcParams['figure.figsize'] = 16, 12 # default image size
 
 ### Get File List
 ```python
+# pathlib
+folder = pathlib.Path(self.data_folder)
+data_files = [str(path.resolve()) for path in folder.glob("*.txt")]
+
 # Return the list of Text Files
 glob.glob(directory+"/*.txt")
 
