@@ -63,6 +63,13 @@ hook_add = '''
     \},
     \ 'colorscheme' : 'PaperColor'
   \ }
+
+    let g:lightline.inactive = {
+        \ 'left': [ [ 'filename', 'modified'] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ]
+        \  ]
+        \ }
 '''
 
 [[plugins]]
