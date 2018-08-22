@@ -104,6 +104,14 @@ hook_source = '''
       \},
       \ 'colorscheme' : 'solarized'
     \ }
+
+    let g:lightline.inactive = {
+        \ 'left': [ [ 'filename', 'modified'] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ],
+        \             [ 'ale' ]
+        \  ] 
+        \ }
   endfunction
   call ALEStatuslineOn()
 
