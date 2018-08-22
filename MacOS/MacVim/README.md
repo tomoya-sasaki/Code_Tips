@@ -7,6 +7,7 @@
 ## Key Bidings
 * Replace: `ciw`, `cf[char]`
 * Delete: `caw`, `ciw`
+* Repeat command: `@:`
 
 # Shortcuts
 ## Nvim-R
