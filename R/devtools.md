@@ -66,7 +66,7 @@ int myfunc(int x){
 [Reference](http://r-pkgs.had.co.nz/package.html#package)
 ```r
 setwd("") # change directory to the package folder
-devtools::install() # same as install from source
+devtools::build() ; devtools::install() # same as install from source
 devtools::load_all() # In memory packages / use this for reloading
 ```
 
