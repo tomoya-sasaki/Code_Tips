@@ -22,6 +22,8 @@
 * `\kp`: Knit PDF (Errorが出たらフォント絡みのことがあるので、`mainfont: Meiryo`とだけする。この場合図の日本語は表示できない)
 * `\aa`: Send a file
 
+* [Referene 1](https://sakura-education.com/myblog/archives/913)
+
 ## foldmethod
 * `{{{`と`}}}`で囲う、コメントアウトされていてもOK
 * `zm`: 折りたたみ全てを一段階閉じる
