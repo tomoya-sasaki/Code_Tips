@@ -54,7 +54,8 @@ hook_source = '''
   " Which linter to enable
   let g:ale_linters = {
   \   'python': ['flake8'],
-  \   'cpp': ['clang']
+  \   'cpp': ['clang'],
+  \   'r': ['lintr']
   \}
 
   " Option for Python 3
@@ -172,7 +173,13 @@ hook_source = '''
 repo = 'jalvesaq/Nvim-R'
 on_ft = ['r', 'rmd']
 hook_source = '''
+  " No underscore replacement
   let g:R_assign = 0 
+
+  " Open R in an external terminal
+  let g:R_in_buffer = 0
+
+  " Keyboard mapping
   nmap <D-Enter> <Plug>RDSendLine
   imap <D-Enter> <ESC> <Plug>RDSendLine i
   nmap <LocalLeader>cc <Plug>RSendChunk
