@@ -7,9 +7,12 @@
 ## Table of Contents
 1. [Basics](#basics)
 2. [Matrix](#matrix)
-3. [Errors](#errors)
-4. [RcppEigen](#rcppeigen)
-5. [Debug](#debug)
+3. [RcppEigen](#rcppeigen)
+4. [Debug](#debug)
+
+## Errors
+1. [gfortran](#gfortran)
+2. [could not find function error](#could-not-find-function-error)
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -65,37 +68,6 @@ A = B; // reference
 A = clone(B); // copy
 ```
 
-## Errors
-
-### gfortran
-
-#### Work
-1:
-```terminal
-$ which gfortran
-/usr/local/bin/gfortran
-```
-2: Edit the file `Makevars` (check below section to see how to make `Makevars`
-```txt
-FLIBS = -L/usr/local/bin/gfortran
-```
-
-
-#### Does not work
-1: Make a file
-```terminal
-$ mkdir ~/.R
-$ cat << EOF >> ~/.R/Makevars
-FLIBS=-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin16/6.3.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
-EOF
-```
-
-2: Edit the file `Makevars`
-```txt
-FLIBS = ‘gfortran -print-search-dirs | grep ^libraries: | sed 's|libraries: =||' | sed 's|:| -L|g' | sed 's|^|-L|’’
-```
-
-Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf) and [this blog](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/).
 
 ## RcppEigen
 ### Convert between R and Cpp
@@ -124,3 +96,38 @@ $ R -d lldb
 ```terminal
 $ R -d valgrind
 ```
+
+
+
+# Errors
+
+## gfortran
+### Work
+1:
+```terminal
+$ which gfortran
+/usr/local/bin/gfortran
+```
+2: Edit the file `Makevars` (check below section to see how to make `Makevars`
+```txt
+FLIBS = -L/usr/local/bin/gfortran
+```
+
+### Does not work
+1: Make a file
+```terminal
+$ mkdir ~/.R
+$ cat << EOF >> ~/.R/Makevars
+FLIBS=-L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin16/6.3.0 -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
+EOF
+```
+
+2: Edit the file `Makevars`
+```txt
+FLIBS = ‘gfortran -print-search-dirs | grep ^libraries: | sed 's|libraries: =||' | sed 's|:| -L|g' | sed 's|^|-L|’’
+```
+
+Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf) and [this blog](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/).
+
+## could not find function error
+After `remove.packages()`, try `devtools::install() ; devtools::document()` again. It seems `NAMESPACE` does not contain the function you want to use. I am not sure what would be the best solution.
