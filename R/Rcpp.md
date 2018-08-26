@@ -1,7 +1,7 @@
 # Rcpp
+
 * [Rcpp for everyone](https://teuder.github.io/rcpp4everyone_en/), [ja](https://teuder.github.io/rcpp4everyone_ja/)
 * [Rcpp Gallery](http://gallery.rcpp.org/)
-
 * It's better not to use `push_back()` for R-type vector in C++.
 
 ## Table of Contents
