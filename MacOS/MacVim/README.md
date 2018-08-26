@@ -9,6 +9,13 @@
 * Delete: `caw`, `ciw`
 * Repeat command: `@:`
 
+## dein
+Update:
+```
+:call dein#check_update(['Nvim-R'])
+:call dein#update(['Nvim-R'])
+```
+
 # Shortcuts
 ## Nvim-R
 * `\rf`: Start
