@@ -75,6 +75,10 @@ A = clone(B); // copy
 // Rcpp::NumericMatrix RMatrix to Eigen::MatrixXd EigenMatrix
 Eigen::Map<Eigen::MatrixXd> EigenMatrix(Rcpp::as<Eigen::Map<Eigen::MatrixXd> >(RMatrix));
 
+// This also works (difference from the above?)
+NumericMatrix RMatrix = model["RMatrix"]; // model is a List object
+MatrixXd CppMAtrix = Rcpp::as<Eigen::MatrixXd>(RMatrix);
+
 // Eigen::MatrixXd and std::vector to Rcpp object
 Rcpp::NumericMatrix A = Rcpp::wrap(AA);
 
