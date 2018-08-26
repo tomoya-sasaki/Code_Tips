@@ -12,7 +12,6 @@
 ## dein
 Update:
 ```
-:call dein#check_update(['Nvim-R'])
 :call dein#update(['Nvim-R'])
 ```
 
