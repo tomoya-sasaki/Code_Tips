@@ -12,6 +12,9 @@
 8. [roxygen](#roxygen)
 9. [Use dplyr and ggplot2](#use-dplyr-and-ggplot2)
 
+## Errors
+1. [Install error](#install-error)
+
 ## Setup Packages
 ### Create
 ```r
@@ -198,3 +201,25 @@ data %>%
 g <- ggplot(temp, aes_string(x=paste0("EstTopic", 'Topic'), y='Proportion')) +
     geom_bar(stat="identity")
 ```
+
+# Errors
+
+## Install error
+### Issue
+When you are installing your package with `devtools::install()`,
+```
+Error: package or namespace load failed for 'topicdict' in dyn.load(file, DLLpath = DLLpath, ...):
+ unable to load shared object '/usr/local/lib/R/3.5/site-library/topicdict/libs/topicdict.so':
+  dlopen(/usr/local/lib/R/3.5/site-library/topicdict/libs/topicdict.so, 6): Symbol not found: __topicdict_topicdict_train_cov
+  Referenced from: /usr/local/lib/R/3.5/site-library/topicdict/libs/topicdict.so
+  Expected in: flat namespace
+ in /usr/local/lib/R/3.5/site-library/topicdict/libs/topicdict.so
+Error: loading failed
+Execution halted
+ERROR: loading failed
+* removing '/usr/local/lib/R/3.5/site-library/topicdict'
+Error: Command failed (1)
+```
+
+### Solution
+Run `Rcpp::compileAttributes()` before `devtools::install()`.
