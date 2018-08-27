@@ -87,6 +87,10 @@ cout << "Output: " << mu(1) << endl;
 matrix.row(i); // seems to return a horizontal vector
 // jth column
 matrix.col(j);
+
+// Get row and column number
+std::cout << M.rows() << std::endl;
+std::cout << M.rows() << std::endl;
 ```
 
 ## Count Elements
