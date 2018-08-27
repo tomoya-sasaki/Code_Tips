@@ -18,7 +18,7 @@ Usage:
 4. [Matrix](#matrix)
 5. [Count Elements](#count-elements)
 6. [行列要素へのアクセス](#行列要素へのアクセス)
-  * [exp](#exp)
+	* [exp](#exp)
 7. [行列の要素ごとの演算](#行列の要素ごとの演算)
 8. [数値を毎回ランダムに](#数値を毎回ランダムに)
 9. [行列でのvalueの使い方](#行列でのvalueの使い方)
