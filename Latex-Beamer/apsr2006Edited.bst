@@ -1,3 +1,9 @@
+%
+% misc needs `howpublished` instead of URL, {} (blank) is fine.
+%
+%
+%
+%
 % BibTeX bibliography style `apsr2006'
 % Version 1.10
 % 2009 May 19
