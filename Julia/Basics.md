@@ -6,6 +6,9 @@
 3. [Plots](#plots)
 
 ## Variables
+```julia
+exp.(A)  # elementwise operation
+```
 
 
 ## Distributions
