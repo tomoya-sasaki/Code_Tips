@@ -1,6 +1,13 @@
 # Various Ways of Sampling
 It is always good to track accept rate.
 
+Maybe you don't need to add an logistic error term in the examples below.
+* `Metropolis-Hastings-PRML-LogisticRegression`: Above points are fine.
+* `Slice-Sampling-LogisticRegression`: This should also be fine.
+* `DirichletMultinomialRegression.ipynb`: Works.
+
+When you use slice sampling, the choice of  `A` can be critical.
+
 **There might be bugs, or theoretical misunderstandings!! Check list below!!**
 * `Metropolis-Hastings-Gaussian1D`: should be fine
 * `Metropolis-Hastings-Gaussian`: no prior, no log sigma
@@ -21,11 +28,6 @@ else:
   param_new[k] = param_current[k].copy()
 ```
 **Follow the simple way.**
-
-Maybe you don't need to add an logistic error term in the examples below.
-* `Metropolis-Hastings-PRML-LogisticRegression`: Above points are fine.
-* `Slice-Sampling-LogisticRegression`: This should also be fine.
-* `DirichletMultinomialRegression.ipynb`: Works.
 
 ## Questions
 * MHでのBlock-wiseとComponent-wise
