@@ -2,6 +2,7 @@
 
 1. [List to vector](#list-to-vector)
 2. [Nested Data Frame](#nested-data-frame)
+3. [reduce](#reduce)
 
 ## List to vector
 ```r
@@ -44,3 +45,31 @@ $text2
  3  text3  <tibble [7 x 2]>
  [..omitted..]
 ```
+
+
+## reduce
+Element-wise mean over a list of matrices
+```r
+> res
+[[1]]
+           [,1]      [,2]      [,3]
+[1,] -1.3468857  4.361029 2.6439033
+[2,] -1.4050666 13.093184 5.0243749
+[3,]  0.4598971  2.453038 1.0621873
+[4,] -2.2853001  1.375237 0.3613922
+
+[[2]]
+           [,1]      [,2]      [,3]
+[1,] -1.3468857  4.361029 2.6439033
+[2,] -1.4050666 13.093184 5.0243749
+[3,]  0.4598971  2.453038 1.0621873
+[4,] -2.2888568  1.384942 0.3474066
+
+> reduce(res_Lambda, `+`) / length(res_Lambda)
+           [,1]      [,2]      [,3]
+[1,] -1.3469296  4.361458 2.6431927
+[2,] -1.4145961 13.093153 5.0282564
+[3,]  0.5359136  2.425231 1.0977963
+[4,] -2.2387312  1.030103 0.4059852
+```
+`Reduce("+", res_Lambda)/ length(res_Lambda)` also works. Be careful with a quotation mark (baseR) and a backtick (purrr).
