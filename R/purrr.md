@@ -48,7 +48,7 @@ $text2
 
 
 ## reduce
-Element-wise mean over a list of matrices
+Element-wise mean over a list of matrices:
 ```r
 > res
 [[1]]
