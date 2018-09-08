@@ -60,3 +60,16 @@ $pdflatex = 'pdflatex %O -synctex=1 %S';
 $lualatex = 'lualatex %O -synctex=1 %S';
 $xelatex = 'xelatex %O -synctex=1 %S';
 ```
+
+# Session
+## Save
+```
+:mks session.vim
+:mks!
+```
+
+## Open
+
+```
+:souce session.vim
+```
