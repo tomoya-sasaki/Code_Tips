@@ -22,6 +22,7 @@ References:
 	* [順番を変える](#順番を変える)
 	* [ラベルを変える](#ラベルを変える)
 	* [Legendに表示しない](#legendに表示しない)
+	* [Manually add](#manuall-add)
 12. [theme関連](#theme関連)
 	* [一括でサイズ](#一括でサイズ)
 	* [細かくサイズ](#細かくサイズ)
@@ -351,6 +352,25 @@ Add `show.legend = F`
 ```r
 geom_point(color="black", position="stack", show.legend = F)
 ```
+
+### Manually add
+```r
+ggplot() +
+   geom_pointrange(data=values_qua_past,
+                   aes(x=X, y=p50, ymin=p5, ymax=p95, colour="Estimated"),
+                   size=0.42, show.legend = F) +
+   geom_line(data=values_qua_past, aes(x=X, y=p50, colour="Estimated")) +
+   geom_point(data=data, aes(x=year, y=DemVotesPct, colour="Truth"),
+              size=2.2, shape=17, show.legend = F) + 
+   geom_line(data=data, aes(x=year, y=DemVotesPct, colour="Truth"), linetype="longdash") + 
+   scale_y_continuous(labels=scales::percent_format()) +
+   xlab("House") + ylab("Predicted Percentage") + 
+   ggtitle("Democrat's Vote Share in Predicted Elections") +
+   theme_bw() + 
+   scale_colour_manual(name="",values=c(Estimated="black", Truth="blue")) +
+   theme(plot.title = element_text(hjust = 0.5))
+```
+<img src="figures/ggplot2_manual_legend.png" width="600">
 
 ## theme関連
 ### 一括でサイズ
