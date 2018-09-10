@@ -8,6 +8,7 @@
 5. [特定の文字列を含む列を取り出す](#特定の文字列を含む列を取り出す)
 6. [特定の名前を含む列を除く](#特定の名前を含む列を除く)
 7. [新しい列の追加](#新しい列の追加)
+8. [list tp df](#list-to-df)
 
 
 
@@ -72,4 +73,7 @@ s_Y <- 25
 d <- transform(d, Y=rnorm(N, mean=a+b*X, sd=s_Y))
 ```
 
-
+## List to df
+```r
+do.call(rbind.data.frame, your_list)
+```
