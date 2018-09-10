@@ -76,4 +76,9 @@ d <- transform(d, Y=rnorm(N, mean=a+b*X, sd=s_Y))
 ## List to df
 ```r
 do.call(rbind.data.frame, your_list)
+
+vote <- data.frame()
+for (file in files){
+  vote <- rbind(vote, read_csv(file))
+}
 ```
