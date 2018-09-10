@@ -22,7 +22,7 @@ References:
 	* [順番を変える](#順番を変える)
 	* [ラベルを変える](#ラベルを変える)
 	* [Legendに表示しない](#legendに表示しない)
-	* [Manually add](#manuall-add)
+	* [Manually add](#manually-add)
 12. [theme関連](#theme関連)
 	* [一括でサイズ](#一括でサイズ)
 	* [細かくサイズ](#細かくサイズ)
