@@ -16,7 +16,7 @@
 11. [NAの処理](#naの処理)
 12. [Create Dummy](#create-dummy)
 13. [Split words](#split-words)
-14. [Copy rows](#copy-rows)
+14. [Copy rows (expand)](#copy-rows)
 15. [tidyeval](#tidyeval)
 16. [Passing grouped tibbles to a custom function](#passing-grouped-tibbles-to-a-custom-function)
 
