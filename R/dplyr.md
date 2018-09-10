@@ -330,6 +330,7 @@ separate(term, into=c("True", "raw_word_id"), sep="T")
 ```
 
 ## Copy rows
+Example 1:
 ```r
 > a
 # A tibble: 5 x 4
@@ -357,6 +358,29 @@ separate(term, into=c("True", "raw_word_id"), sep="T")
 6 Dr_David_Owen.1.txt      bill      3      1
 7 Dr_David_Owen.1.txt         c      5      1
 8 Dr_David_Owen.1.txt         c      5      2
+```
+
+Example 2:
+```r
+approval <- tibble(
+                startyear=c(1945, 1953, 1961, 1964, 1969, 1974, 1977, 1981, 1989, 1993, 2001, 2009), 
+                endyear=c(1952, 1960, 1963, 1968, 1973, 1976, 1980, 1988, 1992, 2000, 2008, 2016),
+                apprate=c(45.4, 65.0, 70.1, 55.1, 49.0, 47.2, 45.5, 52.8, 60.9, 55.1, 49.4, 47.9)
+                   )
+approval$ID <- 1:nrow(approval)
+
+approval %>% 
+  group_by(ID, apprate) %>%
+  tidyr::expand(year = startyear:endyear) -> a
+  
+> a
+# A tibble: 72 x 3
+# Groups:   ID, apprate [12]
+      ID apprate  year
+   <int>   <dbl> <int>
+ 1     1    45.4  1945
+ 2     1    45.4  1946
+ 3     1    45.4  1947
 ```
 
 ## tidyeval
