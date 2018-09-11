@@ -6,6 +6,7 @@ Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 2. [Chunk Options](#chunk-options)
 3. [Inline code](#inline-code)
 4. [align](#align)
+5. [Hide all code chunks](#hide-all-code-chunks)
 
 ## 日本語を使用する際の設定
 この部分のインデントは、タブではなくスペースで行わないといけないことに注意。Vimでは改行した時に自動にタブでインデントが入ってしまう。
@@ -73,3 +74,10 @@ $`r CODE RETUNS VALUE`$
 
 ## align
 Do not have to use `$$`. Just start with `\begin{align}`.
+
+
+## Hide all code chunks
+```r
+knitr::opts_chunk$set(echo=FALSE)
+```
+in the first code chunk.
