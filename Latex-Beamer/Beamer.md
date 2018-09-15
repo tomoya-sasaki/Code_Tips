@@ -23,6 +23,7 @@
     * [間隔の調整](#間隔の調整)
 17. [図の左寄せ](#図の左寄せ)
 18. [これまでの表示を消しつつ切り替え](#これまでの表示を消しつつ切り替え)
+19. [Hyper link](#hyper-link)
 
 ### Beamer Slide
 ```tex
@@ -199,4 +200,13 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
   \onslide<3> c
   \onslide<4> d
 \end{overprint}
+```
+
+## Hyper link
+[Reference](https://ja.sharelatex.com/blog/2013/08/16/beamer-series-pt3.html)
+```tex
+\hyperlink{contents}{\beamerbutton{contents page}}
+\hyperlink{columns}{\beamergotobutton{columns page}}
+\hyperlink{pictures}{\beamerskipbutton{pictures page}}
+\hyperlink{pictures}{\beamerreturnbutton{pictures page}}
 ```
