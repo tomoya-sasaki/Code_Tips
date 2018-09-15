@@ -10,6 +10,8 @@ flatten_int()
 ```    
 
 ## Nested Data Frame
+Check [dplyr](https://github.com/Shusei-E/Code_Tips/blob/master/R/dplyr.md#nested-data-frame) as well.
+
 ```r
 > head(res$W)
 $text1
