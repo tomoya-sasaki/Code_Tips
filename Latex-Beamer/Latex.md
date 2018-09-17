@@ -36,6 +36,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 22. [総ページ数の表示](#総ページ数の表示)
 23. [Wordcount](#wordcount)
 24. [Define subsubsubsection](#define-subsubsubsection)
+25. [記号](#記号)
 
 
 ## 写真の挿入
@@ -559,4 +560,11 @@ In preamble,
 }
 \makeatother
 \setcounter{secnumdepth}{4}
+```
+
+## 記号
+### Check mark
+```tex
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{52}\hspace{-0.4em}}
 ```
