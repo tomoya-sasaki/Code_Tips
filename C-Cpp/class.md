@@ -51,6 +51,7 @@ class LDACOV
     int test;
   
   public:
+    Rcpp::List W, Z; // R objects should be public (maybe)
     LDACOV(Rcpp::List model, const int iter, const int output_per);
 };
 #endif
