@@ -25,7 +25,7 @@ devtools::create("path/to/package/testpackage")
 Add R function in `R/` folder, then `devtools::load_all()` to load the function.
 
 ## Workflow
-Recommended workflow ([Reference](http://r-pkgs.had.co.nz/namespace.html#namespace-workflow):
+Recommended workflow ([Reference](http://r-pkgs.had.co.nz/namespace.html#namespace-workflow)):
 1. Add roxygen comments to your .R files.
 2. Run `devtools::document()` (or press Ctrl/Cmd + Shift + D in RStudio) to convert roxygen comments to .Rd files.
 3. Look at NAMESPACE and run tests to check that the specification is correct.
