@@ -20,6 +20,7 @@
 15. [tidyeval](#tidyeval)
 16. [Nested data frame](#nested-data-frame)
 	* [Passing grouped tibbles to a custom function](#passing-grouped-tibbles-to-a-custom-function)
+17. [case_when](#case_when)
 
 ## 処理をして列を追加
 ```r
@@ -525,6 +526,17 @@ Use `map()`.
 #> 2 b       <tibble [2 × 3]>   700
  ```
 
+## case_when
+```r
+mutate(Education = case_when(
+                      educ == 1 ~ "No HS",
+                      educ == 2 ~ "High School",
+                      educ == 3 ~ "Some college",
+                      educ == 4 ~ "2-Year",
+                      educ == 5 ~ "4-Year",
+                      educ == 6  ~ "Post-Grad"
+                    )) %>%
+```
 
 
 
