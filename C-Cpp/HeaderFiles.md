@@ -12,6 +12,8 @@
 2. Implement the class in a source file (`.cpp`)
 3. Include the header file if you want to use the class
 
+* Do not write `using` or `using namespace` in header files.
+
 ### Minimum Example
 [Reference](http://www7b.biglobe.ne.jp/~robe/cpphtml/html02/cpp02007.html)
 
