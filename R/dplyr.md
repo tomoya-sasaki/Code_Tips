@@ -18,9 +18,8 @@
 13. [Split words](#split-words)
 14. [Copy rows (expand)](#copy-rows)
 15. [tidyeval](#tidyeval)
-16. [Passing grouped tibbles to a custom function](#passing-grouped-tibbles-to-a-custom-function)
-17. [Nested data frame](#nested-data-frame)
-
+16. [Nested data frame](#nested-data-frame)
+	* [Passing grouped tibbles to a custom function](#passing-grouped-tibbles-to-a-custom-function)
 
 ## 処理をして列を追加
 ```r
@@ -454,8 +453,37 @@ my_function <- function(data, x= "OriginalX" , y= "OriginalY" ){
 ```
 [Reference](https://stackoverflow.com/questions/51277336/dplyr-standard-evaluation-and-enquo/51277544#51277544)
 
+ 
+ ## Nested data frame
+ Check [purrr](https://github.com/Shusei-E/Code_Tips/blob/master/R/purrr.md#nested-data-frame) as well.
+ 
+ ### Unnest
+ ```r
+> trueZ <- list()
+> for(d in 1:500){
++ trueZ[[d]] <- as.integer(strsplit(texts[d,], "\\s")[[1]])
++ }
 
-## Passing grouped tibbles to a custom function
+> tibble(trueZ)
+# A tibble: 500 x 1
+   trueZ
+   <list>
+ 1 <int [320]>
+ 2 <int [298]>
+ 3 <int [287]>
+ #...
+ 
+ > tibble(trueZ) %>% unnest(trueZ)
+# A tibble: 150,554 x 1
+   trueZ
+   <int>
+ 1    12
+ 2    11
+ 3    11
+ #...
+ ```
+ 
+### Passing grouped tibbles to a custom function
 Asked in [this stackoverflow post](https://stackoverflow.com/questions/50928108/dplyr-passing-a-grouped-tibble-to-a-custom-function)
 
 Use `map()`.
@@ -490,34 +518,7 @@ Use `map()`.
 #> 1 a       <tibble [3 × 3]>   450
 #> 2 b       <tibble [2 × 3]>   700
  ```
- 
- ## Nested data frame
- Check [purrr](https://github.com/Shusei-E/Code_Tips/blob/master/R/purrr.md#nested-data-frame) as well.
- 
- ### Unnest
- ```r
-> trueZ <- list()
-> for(d in 1:500){
-+ trueZ[[d]] <- as.integer(strsplit(texts[d,], "\\s")[[1]])
-+ }
 
-> tibble(trueZ)
-# A tibble: 500 x 1
-   trueZ
-   <list>
- 1 <int [320]>
- 2 <int [298]>
- 3 <int [287]>
- #...
- 
- > tibble(trueZ) %>% unnest(trueZ)
-# A tibble: 150,554 x 1
-   trueZ
-   <int>
- 1    12
- 2    11
- 3    11
- #...
- ```
- 
- 
+
+
+
