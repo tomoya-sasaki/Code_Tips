@@ -52,7 +52,6 @@ class LDACOV
   
   public:
     LDACOV(Rcpp::List model, const int iter, const int output_per);
-
 };
 #endif
 ```
