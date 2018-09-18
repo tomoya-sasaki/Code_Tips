@@ -425,6 +425,12 @@ ggplot(aes(colour = as.factor(setid))) +
 ## Theme
 [ggthemes](https://www.karada-good.net/analyticsr/r-566)
 
+### font
+```
+theme(plot.title = element_text(hjust = 0.5),
+      text = element_text(size=16))
+```
+
 
 ## 日本語関連
 ```r
