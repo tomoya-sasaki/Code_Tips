@@ -9,6 +9,7 @@
 2. [Matrix](#matrix)
 3. [RcppEigen](#rcppeigen)
 4. [Debug](#debug)
+5. [Class](#class)
 
 ## Errors
 1. [gfortran](#gfortran)
@@ -101,7 +102,8 @@ $ R -d lldb
 $ R -d valgrind
 ```
 
-
+## Class
+[Check here](https://github.com/Shusei-E/Code_Tips/blob/master/C-Cpp/class.md)
 
 # Errors
 
