@@ -134,4 +134,4 @@ FLIBS = ‘gfortran -print-search-dirs | grep ^libraries: | sed 's|libraries: =|
 Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf) and [this blog](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/).
 
 ## could not find function error
-After `remove.packages()`, try `devtools::install() ; devtools::document()` again. It seems `NAMESPACE` does not contain the function you want to use. I am not sure what would be the best solution.
+After `remove.packages()`, try `devtools::install() ; devtools::document()` again. It seems `NAMESPACE` does not contain the function you want to use. I am not sure what would be the best solution (probably run `devtools::build()` first? it seems there is no need to fully run `build`).
