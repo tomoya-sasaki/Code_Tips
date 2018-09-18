@@ -417,6 +417,12 @@ f(argX = suppliedArgX)
 # [1] 100
 ```
 
+```r
+var <- quo(gender)
+data %>%
+    select(!!var, Registration, Turnout, Eligible)
+```
+
 [Another answer](https://stackoverflow.com/a/44968197) explains them from a different angle.
 ```r
 library(dplyr)
