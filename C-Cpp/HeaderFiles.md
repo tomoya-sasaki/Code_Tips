@@ -1,4 +1,5 @@
 # Header Files
+Related topic: [class](https://github.com/Shusei-E/Code_Tips/blob/master/C-Cpp/class.md)
 
 1. [C++](#c==)
 2. [Rcpp](#rcpp)
