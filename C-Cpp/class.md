@@ -32,7 +32,7 @@ using namespace std;
 // [[Rcpp::export]]
 List lda_cov(List model, int iter=0, int output_iter=10)
 {
-  LDACOV ldacov(model, iter, output_iter)topo;
+  LDACOV ldacov(model, iter, output_iter);
   return model;
 }
 ```
