@@ -53,6 +53,7 @@ class LDACOV
   public:
     Rcpp::List W, Z; // R objects should be public (maybe)
     LDACOV(Rcpp::List model, const int iter, const int output_per);
+    void initialize();
 };
 #endif
 ```
@@ -68,5 +69,11 @@ using namespace std;
 LDACOV::LDACOV(List model, const int iter, const int output_iter)
 {
   cout << "test" << endl;
+  initialize();
+}
+
+void LDACOV::initialize()
+{
+  cout << "Initialize" << endl;
 }
 ```
