@@ -148,6 +148,9 @@ def example(name):
 ```python
 # Another module
 :py:mod:`dataread`
+
+# A function in another module
+:py:meth:`mymodule.MyClass.mymethod`
 ```
 
 ## Cython
