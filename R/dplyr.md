@@ -221,6 +221,12 @@ slice(data, 5:n())
 
 
 ## NAの処理
+### Remove
+```r
+drop_na()  # tidyr
+```
+
+### Replace
 `mutate`を他のところで使うにせよ、NAの処理は独立にしなければならない
 ```r
 # Example 1
