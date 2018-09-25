@@ -4,6 +4,11 @@ References:
 * [Top 50 ggplot2 Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html): 大体何でも載っているサイト
 * [ggsci: Color Palettes for ggplot2](https://github.com/road2stat/ggsci)
 
+```r
+my_theme <- theme_bw() +
+      theme(plot.title = element_text(hjust = 0.5))
+```
+
 ## Table of Contents
 1. [xラベルの変更](#xラベルの変更)
 2. [エラーバーの追加](#エラーバーの追加)
