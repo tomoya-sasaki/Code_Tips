@@ -16,6 +16,7 @@ cdefの中では特に使う変数に型を明示。return valueも型がわか�
 5. [Make Cython even faster](#make-cython-even-faster)
 6. [Parallel](#parallel)
 7. [No assert](#no-assert)
+8. [Cython header file](#cython-header-file)
 
 ## Basics
 ### Import Cython Code
@@ -256,3 +257,23 @@ setup(
       ext_modules=ext_modules
      )
 ```
+
+## Cython header file
+[Reference](https://cython.readthedocs.io/en/latest/src/userguide/sharing_declarations.html#sharing-c-functions)
+
+```pxd
+# tssb.pxd
+cdef object create_node_cy(object tssb, object node_parent, int maxnum=*)
+```
+
+```pyx
+cdef object create_node_cy(object tssb, object node_parent, int maxnum=10):
+    cdef object node = NODE(tssb.itstm, tssb.htssb,
+                            tssb_mine=tssb, node_parent=node_parent)
+    tssb.node_list.append(node)
+```
+
+
+
+
+
