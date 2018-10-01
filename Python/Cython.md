@@ -15,6 +15,7 @@ cdefの中では特に使う変数に型を明示。return valueも型がわか�
 4. [Global Variable](#global-variable)
 5. [Make Cython even faster](#make-cython-even-faster)
 6. [Parallel](#parallel)
+7. [No assert](#no-assert)
 
 ## Basics
 ### Import Cython Code
@@ -236,4 +237,22 @@ cdef double calc_nodellk_loop(np.ndarray[ftype_t, ndim=1] Psi_s, list word_ids, 
         loglik += Psi_s[word_id]
     
     return loglik
+```
+
+## No assert
+[Reference](https://stackoverflow.com/questions/52590073/remove-cython-assertion-option-in-setup-py/52597736#52597736)
+```py
+compiler_args = ["-O3", "-ffast-math", "-DCYTHON_WITHOUT_ASSERTIONS"]
+   # pass a preprocessor macro with "-D"
+   
+ext_modules = [
+               Extension("mycython", sources=["mycython.pyx"],
+               extra_compile_args=compiler_args)
+              ]
+
+setup(
+      name="Test",
+      cmdclass={'build_ext': build_ext},
+      ext_modules=ext_modules
+     )
 ```
