@@ -267,13 +267,17 @@ cdef object create_node_cy(object tssb, object node_parent, int maxnum=*)
 ```
 
 ```pyx
+# tssb.pyx
 cdef object create_node_cy(object tssb, object node_parent, int maxnum=10):
     cdef object node = NODE(tssb.itstm, tssb.htssb,
                             tssb_mine=tssb, node_parent=node_parent)
     tssb.node_list.append(node)
 ```
 
-
-
+```pyx
+# main.pyx
+cimport tssb
+node = tssb.create_node_cy()
+```
 
 
