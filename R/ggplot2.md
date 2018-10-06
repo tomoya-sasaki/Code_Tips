@@ -639,3 +639,17 @@ for(i in 1:length(lower_seq)){
   g <- g + fig(lower_seq[i], upper_seq[i])
 }
 ```
+
+Store in list:
+```r
+lambda_figs <- list()
+count <- 1
+for(i in 1:dim1){
+  for(m in 1:dim2){
+    g <- visualize_lambda_draw(true_Lambda, res_Lambda, i, m)
+    lambda_figs[[count]] <- g
+    count <- count + 1
+  }
+}
+```
+Do not use `l <- c(l, obj)`.
