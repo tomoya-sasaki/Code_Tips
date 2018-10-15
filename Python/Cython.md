@@ -264,6 +264,11 @@ setup(
 ```pxd
 # tssb.pxd
 cdef object create_node_cy(object tssb, object node_parent, int maxnum=*)
+
+cdef class HPYTable:
+    cdef public list  tables
+    cdef public double tuw
+    cdef public double cuw
 ```
 
 ```pyx
@@ -272,6 +277,12 @@ cdef object create_node_cy(object tssb, object node_parent, int maxnum=10):
     cdef object node = NODE(tssb.itstm, tssb.htssb,
                             tssb_mine=tssb, node_parent=node_parent)
     tssb.node_list.append(node)
+    
+cdef class HPYTable:
+    def __cinit__(self):
+        self.tables = []
+        self.tuw = 0
+        self.cuw = 0
 ```
 
 ```pyx
