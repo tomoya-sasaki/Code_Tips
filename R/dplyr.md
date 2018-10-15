@@ -227,6 +227,12 @@ drop_na()  # tidyr
 ```
 
 ### Replace
+Examle 1:
+```r
+replace_na(list(Q3.2 = 0, Q8.2 = 0))
+```
+
+Example 2:
 `mutate`を他のところで使うにせよ、NAの処理は独立にしなければならない
 ```r
 # Example 1
