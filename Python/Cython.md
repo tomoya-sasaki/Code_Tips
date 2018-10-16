@@ -283,12 +283,15 @@ cdef class HPYTable:
         self.tables = []
         self.tuw = 0
         self.cuw = 0
+    cdef void add_data(self):
+        self.tuw += 1
 ```
 
 ```pyx
 # main.pyx
 cimport tssb
 node = tssb.create_node_cy()
+cdef void add_data(self)
 ```
 
 
