@@ -269,6 +269,7 @@ cdef class HPYTable:
     cdef public list  tables
     cdef public double tuw
     cdef public double cuw
+    cdef void add_data(self)
 ```
 
 ```pyx
@@ -291,7 +292,6 @@ cdef class HPYTable:
 # main.pyx
 cimport tssb
 node = tssb.create_node_cy()
-cdef void add_data(self)
 ```
 
 
