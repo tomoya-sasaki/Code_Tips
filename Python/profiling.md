@@ -22,6 +22,12 @@ Save outputs:
 python -m cProfile -s time main.py > profile.txt 2>&1
 ```
 
+### with Cython
+Add this line in the top of Cython file.
+```
+# cython: profile=True
+```
+
 ## PyCallGraph
 
 ### Usage
