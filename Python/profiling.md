@@ -24,7 +24,7 @@ python -m cProfile -s time main.py > profile.txt 2>&1
 
 ### with Cython
 Add this line on the top of Cython file.
-```
+```py
 # cython: profile=True
 ```
 
