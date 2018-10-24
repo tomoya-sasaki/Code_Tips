@@ -5,6 +5,7 @@
 2. [Multi core](#multi-core)
 3. [Initialization](#initialization)
 4. [Diagnosis](#diagnosis)
+5. [Self-defined functions](#self-defined-functions)
 
 ## Visualization
 * [Bayesplot](https://github.com/stan-dev/bayesplot)
@@ -41,4 +42,25 @@ stan_par(object, par, chain = 0, ...)
 stan_rhat(object, pars, ...)
 stan_ess(object, pars, ...)
 stan_mcse(object, pars, ...)
+```
+
+## Self-defined functions
+[Reference](https://github.com/stan-dev/math/issues/214)
+```stan
+functions{
+	real normal_lb_ub_rng(real mu, real sigma, real lb, real ub) {
+			if(mu > 1.0)
+				return 1.0;
+			else if(mu < -1.0)
+				return -1.0;
+			else{
+				real p1 = normal_cdf(lb, mu, sigma);  // cdf with lower bound
+				real p2 = normal_cdf(ub, mu, sigma);  // cdf with upper bound
+				real u = uniform_rng(p1, p2);
+				return (sigma * inv_Phi(u)) + mu;  // inverse cdf 
+			}
+	}
+}
+data{
+}
 ```
