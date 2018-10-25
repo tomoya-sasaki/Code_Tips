@@ -12,6 +12,7 @@
 ```py
 re.match()  # 先頭から
 re.search()  # 先頭に限らずマッチを探す
+re.sub()  # substitute
 ```
 
 ## 繰り返しmatch
