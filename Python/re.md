@@ -3,11 +3,18 @@
 
 
 ## Table of Contents
-1. [繰り返しmatch](#繰り返しmatch)
-2. [パターンの作り方](#パターンの作り方)
-3. [パターンを別に定義](#パターンを別に定義)
+1. [Basics](#basics)
+2. [繰り返しmatch](#繰り返しmatch)
+3. [パターンの作り方](#パターンの作り方)
+4. [パターンを別に定義](#パターンを別に定義)
 
-### 繰り返しmatch
+## Basics
+```py
+re.match()  # 先頭から
+re.search()  # 先頭に限らずマッチを探す
+```
+
+## 繰り返しmatch
 `finditer`を使う
 ```python
 for matched in re.finditer(r"○<strong>(?P<Name>.+?)<\/strong>(?P<Speech>(.|\n)+?)(○|<\/span>)", str(soup)):
