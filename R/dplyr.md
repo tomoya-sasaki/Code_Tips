@@ -21,6 +21,7 @@
 16. [Nested data frame](#nested-data-frame)
 	* [Passing grouped tibbles to a custom function](#passing-grouped-tibbles-to-a-custom-function)
 17. [case_when](#case_when)
+18. [pull](#pull)
 
 ## 処理をして列を追加
 ```r
@@ -549,6 +550,12 @@ mutate(Education = case_when(
                       educ == 6  ~ "Post-Grad"
                     )) %>%
 ```
+
+# pull
+[Reference](https://dplyr.tidyverse.org/reference/pull.html)
+
+`pull(col)` replaces `select(col) %>% as.matrix() %>% as.numeric()` in my code.
+
 
 
 
