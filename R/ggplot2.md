@@ -284,6 +284,12 @@ ggplot(data=d, aes_string(x=var))
 scale_x_discrete(limits = c('a3', 'a2', 'a1'))
 ```
 が一番簡単そう。
+これだと実際のラベルの順番が変わってしまう可能性がある。
+
+Use this instead:
+```r
+aes(x=reorder(col_name, desc(col_name))
+```
 
 ### orderとlabelを変える
 ```r
