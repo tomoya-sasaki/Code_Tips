@@ -96,6 +96,11 @@ wordvec %>%
   arrange(distance)
 ```
 
+```
+group_by(col) %>%
+    do(my_function(.))
+```
+
 ## Regression Simulation
 [Reference](http://ja.stackoverflow.com/q/32351/12704)  
 ちなみに、下のコードでは`position_dodge`を負の値にすることで線分の並びを逆にすることができる。
