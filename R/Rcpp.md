@@ -12,6 +12,8 @@
 5. [Class](#class)
 
 ## Errors
+Check [devtools erros](https://github.com/Shusei-E/Code_Tips/blob/master/R/devtools.md#errors-1) as well!
+
 1. [gfortran](#gfortran)
 2. [could not find function error](#could-not-find-function-error)
 3. [Error occurs even if you fixed bugs](#error-occurs-even-if-you-fixed-bugs)
