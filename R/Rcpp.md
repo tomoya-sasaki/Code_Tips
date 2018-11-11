@@ -14,6 +14,7 @@
 ## Errors
 1. [gfortran](#gfortran)
 2. [could not find function error](#could-not-find-function-error)
+3. [Error occurs even if you fixed bugs](#error-occurs-even-if-you-fixed-bugs)
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -137,3 +138,6 @@ Official reference [2.16.2](http://dirk.eddelbuettel.com/code/rcpp/Rcpp-FAQ.pdf)
 
 ## could not find function error
 After `remove.packages()`, try `devtools::install() ; devtools::document()` again. It seems `NAMESPACE` does not contain the function you want to use. I am not sure what would be the best solution (probably run `devtools::build()` first? It seems there is no need to fully run `build`).
+
+### Error occurs even if you fixed bugs
+Try delete `*.o` and `*.so` files and recomplie all.
