@@ -222,4 +222,4 @@ Error: Command failed (1)
 ```
 
 ### Solution
-Run `Rcpp::compileAttributes()` before `devtools::install()`.
+Remove `RcppExports.cpp` and run `Rcpp::compileAttributes()` before `devtools::install()`.
