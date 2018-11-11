@@ -489,10 +489,10 @@ V&X。\\
 ```
 
 ```tex
-\noindent\rule{17.5cm}{1.7pt}
+\noindent\rule{\linewidth}{1.7pt}
 \vspace{-1.3cm}
 \tableofcontents
-\noindent\rule{17.5cm}{1.7pt}
+\noindent\rule{\linewidth}{1.7pt}
 ```
 Modify depth:
 ```tex
