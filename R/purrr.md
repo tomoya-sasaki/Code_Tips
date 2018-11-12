@@ -3,6 +3,7 @@
 1. [List to vector](#list-to-vector)
 2. [Nested Data Frame](#nested-data-frame)
 3. [reduce](#reduce)
+4. [Apply a function to a list](#apply-a-function-to-a-list)
 
 ## List to vector
 ```r
@@ -75,3 +76,13 @@ Element-wise mean over a list of matrices:
 [4,] -2.2387312  1.030103 0.4059852
 ```
 `Reduce("+", res_Lambda)/ length(res_Lambda)` also works. Be careful with a quotation mark (baseR) and a backtick (purrr).
+
+
+## Apply a function to a list
+```
+> keywords <- list(c("workers", "jobs"))  # add more words later
+> map(keywords,quanteda::char_wordstem, language = "en")
+[[1]]
+[1] "worker" "job"
+```
+
