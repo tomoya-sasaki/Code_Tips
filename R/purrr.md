@@ -81,7 +81,7 @@ Element-wise mean over a list of matrices:
 ## Apply a function to a list
 ```
 > keywords <- list(c("workers", "jobs"))  # add more words later
-> map(keywords,quanteda::char_wordstem, language = "en")
+> map(keywords, quanteda::char_wordstem, language = "en")
 [[1]]
 [1] "worker" "job"
 ```
