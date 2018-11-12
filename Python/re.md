@@ -15,6 +15,11 @@ re.search()  # 先頭に限らずマッチを探す
 re.sub()  # substitute
 ```
 
+```python
+> re.search("offshor", "offshor") != None
+True
+```
+
 ## 繰り返しmatch
 `finditer`を使う
 ```python
