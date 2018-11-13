@@ -2,9 +2,10 @@
 
 # RStudio
 * Use AMI: http://www.louisaslett.com/RStudio_AMI/
-* Open port 80 (HTTPS)
+* Open port 80 (HTTPS): set up security group
 * Use Public DNS to access
-* Default username and password: rstudio/rstudio
+* Default username and password
+  * The default password is no longer rstudio, but rather is set to the instance ID of the instance you have launched
   * This is the same as Linux
   * If you want to change them, connect with ssh and adduser + passwd
 
