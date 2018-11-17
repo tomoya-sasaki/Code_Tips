@@ -174,7 +174,11 @@ Page number counting ([Reference](https://tex.stackexchange.com/a/2559/95960)):
 \appendix
 \backupbegin
 
-\frame{\frametitle{One more thing}}
+\begin{frame}[fragile]
+\begin{center}
+  {\Huge Appendix}
+\end{center}
+\end{frame}
 
 \backupend
 ```
