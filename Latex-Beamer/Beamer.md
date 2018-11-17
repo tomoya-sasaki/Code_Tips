@@ -160,6 +160,7 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 
 Page number counting ([Reference](https://tex.stackexchange.com/a/2559/95960)):
 ```
+\begin{document}
 \newcommand{\backupbegin}{
    \newcounter{framenumberappendix}
    \setcounter{framenumberappendix}{\value{framenumber}}
