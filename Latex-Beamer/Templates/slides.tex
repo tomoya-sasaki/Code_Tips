@@ -49,7 +49,15 @@
 \institute{${}^1$Institute}
 \date{\today}
 
-\frame{\titlepage}
+% Page number on the title page
+%\frame{\titlepage}
+
+{% No page number on the title page
+\setbeamertemplate{footline}{}
+\begin{frame}
+\titlepage
+\end{frame}
+}
 
 \section{Introduction}
 
