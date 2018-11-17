@@ -1,7 +1,7 @@
 # Beamer
 * `\pause`をしていても、`\documentclass[handout]{beamer}`とすれば作成時に快適
 
-# Table of Contents
+## Table of Contents
 1. <a href="https://github.com/Shusei-E/Code_Tips/tree/master/Latex-Beamer/Templates" target="_blank">全体のテンプレ</a>
 2. [Beamer Slide](#beamer-slide)
 3. [ボックス](#ボックス)
@@ -25,7 +25,7 @@
 18. [これまでの表示を消しつつ切り替え](#これまでの表示を消しつつ切り替え)
 19. [Hyper link](#hyper-link)
 
-### Beamer Slide
+## Beamer Slide
 ```tex
 \begin{frame}[fragile]
 \frametitle{Title} 
@@ -45,7 +45,7 @@
 となっている。
 
 
-### ボックス
+## ボックス
 ```tex
 \begin{block}{} %blue
 
@@ -60,7 +60,7 @@
 \end{exampleblock}
 ```
 
-### 2段組
+## 2段組
 ```tex
 \begin{columns}[T] % align columns
 \begin{column}{.48\textwidth}
@@ -158,6 +158,26 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 ## Hide Appendix and References
 `\appendix`を直前に追加するだけでOK
 
+Page number counting ([Reference](https://tex.stackexchange.com/a/2559/95960)):
+```
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+
+\appendix
+\backupbegin
+
+\frame{\frametitle{One more thing}}
+
+\backupend
+```
+
 ## 上部のナビゲーションバーを消す
 `\usetheme{Frankfurt}`の場合は、
 ```tex
@@ -209,4 +229,11 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 \hyperlink{columns}{\beamergotobutton{columns page}}
 \hyperlink{pictures}{\beamerskipbutton{pictures page}}
 \hyperlink{pictures}{\beamerreturnbutton{pictures page}}
+
+[...]
+
+\begin{frame}
+\label{contents}
+[...]
+\end{frame}
 ```
