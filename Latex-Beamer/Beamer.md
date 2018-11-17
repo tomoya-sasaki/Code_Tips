@@ -173,6 +173,7 @@ Page number counting ([Reference](https://tex.stackexchange.com/a/2559/95960)):
 
 \appendix
 \backupbegin
+\setbeamertemplate{footline}{} % No page number
 
 \begin{frame}[fragile]
 \begin{center}
