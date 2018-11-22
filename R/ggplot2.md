@@ -6,7 +6,8 @@ References:
 
 ```r
 my_theme <- theme_bw() +
-      theme(plot.title = element_text(hjust = 0.5))
+      theme(plot.title = element_text(hjust = 0.5),
+            text = element_text(size=14))
 ```
 
 ## Table of Contents
