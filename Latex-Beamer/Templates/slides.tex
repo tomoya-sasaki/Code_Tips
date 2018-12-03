@@ -40,6 +40,13 @@
   \usebeamercolor[fg]{itemize item}
   \usebeamertemplate{itemize item}}
 
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
 
 \begin{document}
 
@@ -69,5 +76,15 @@ Text 1.\pause
 \end{itemize}
 \vspace{3mm}
 \end{frame}
+
+\appendix
+\backupbegin
+
+\begin{frame}
+\centering
+\Huge{Appendix}
+\end{frame}
+
+\backupend
 
 \end{document}
