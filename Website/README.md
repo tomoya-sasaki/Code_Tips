@@ -145,3 +145,9 @@ defaults:
       share: false
       related: false
 ```
+
+## Sitemap
+Edit `_site/robots.txt`
+```txt
+Sitemap: https://shusei-e.github.io//sitemap.xml
+```
