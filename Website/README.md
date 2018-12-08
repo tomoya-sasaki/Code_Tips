@@ -147,7 +147,7 @@ defaults:
 ```
 
 ## Sitemap
-Edit `_site/robots.txt`. Add this file to `.gitignore` otherwise `bundle exec jekyll serve` overwrites it. Same thing can be said for `sitemap.xml`.
+Edit `_site/robots.txt`. Add this file to `.gitignore` otherwise `bundle exec jekyll serve` overwrites it. Same thing can be said for `sitemap.xml`. Use `bundle exec jekyll build` before you push.
 ```txt
 Sitemap: https://shusei-e.github.io/sitemap.xml
 ```
