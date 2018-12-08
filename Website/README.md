@@ -151,3 +151,9 @@ Edit `_site/robots.txt`
 ```txt
 Sitemap: https://shusei-e.github.io/sitemap.xml
 ```
+
+## If you get Alart from Github
+Update bundle
+```terminal
+$ bundle update jekyll
+```
