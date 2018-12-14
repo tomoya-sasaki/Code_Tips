@@ -10,6 +10,8 @@
 ### Size of window
 `ConfigureFcitx` -> `Addon` -> Check `Advanced` -> Disable `kimpanel`
 
+If you reboot, you can use `Appearence` tab in `Ficix configuration` (you may need to search it from the menu).
+
 ### Japanese locale
 `ConfigureFcitx` -> `Addon` -> `Classic` -> `Configure` -> `Advanced`.
 
