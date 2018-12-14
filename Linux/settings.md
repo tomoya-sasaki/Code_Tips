@@ -32,5 +32,8 @@ keycode 111 = Prior
 keycode 115 = Next
 ```
 
-[Reference 1](https://nonsensej.xyz/?p=1226)
-[Reference 2](http://x68000.q-e-d.net/~68user/unix/pickup?xmodmap)
+You can now `$ xmodmap ~/.Xmodmap` and enjoy your keymappings! Lastly, add an command `/usr/bin/xmodmap /home/YOURUSERNAME/.Xmodmap` in Startup Applications with a delay of 15-20 seconds.
+
+[Reference 1](https://nonsensej.xyz/?p=1226)  
+[Reference 2](http://x68000.q-e-d.net/~68user/unix/pickup?xmodmap)  
+[Reference 3](http://www.dzhaworks.com/blog/remapping-thinkpads-pageback-and-pageforward-keys-in-mint-linux/)
