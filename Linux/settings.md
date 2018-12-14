@@ -9,3 +9,8 @@
 
 ### Size of window
 `ConfigureFcitx` -> `Addon` -> Check `Advanced` -> Disable `kimpanel`
+
+### Japanese locale
+`ConfigureFcitx` -> `Addon` -> `Classic` -> `Configure` -> `Advanced`.
+
+Locale shoud be `ja_JP.UTF-8`.
