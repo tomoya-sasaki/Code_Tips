@@ -2,6 +2,7 @@
 
 ## Table of Contents
 * [Japanese](#japanese)
+* [Keymappings](#keymappings)
 
 ## Japanese
 ### Change input method
@@ -18,3 +19,18 @@ If you reboot, you can use `Appearence` tab in `Ficix configuration` (you may ne
 `ConfigureFcitx` -> `Addon` -> `Classic` -> `Configure` -> `Advanced`.
 
 Locale shoud be `ja_JP.UTF-8`.
+
+## Keymappings
+### Home and end
+Remap home and end to page up and page down. Keyboard keycode values might be different between JP keyboards and US keyboards. Use `$ xev` and find keycodes.
+
+You can check current keymappings with `$ xmodmap -pke`. `keycode 10 = 1 exclam` shows that if you press the key, it is `1` but if you press it with Shift key, it becomes `exclam`.
+
+Create `~/.Xmodmap` and edit. For example,
+```
+keycode 111 = Prior
+keycode 115 = Next
+```
+
+[Reference 1](https://nonsensej.xyz/?p=1226)
+[Reference 2](http://x68000.q-e-d.net/~68user/unix/pickup?xmodmap)
