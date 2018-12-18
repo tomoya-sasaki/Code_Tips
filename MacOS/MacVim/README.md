@@ -3,6 +3,7 @@
 * Combine commands and move: `nnoremap <Leader>tc :TemplateChunk<CR>i`
     * [Use self-defined tempalte](https://stackoverflow.com/questions/690386/writing-a-vim-function-to-insert-a-block-of-static-text)
 * Get line num: `line(".")`
+* If you update `.vimrc`, `:source ~/.vimrc`
 
 ## Key Bidings
 * Replace: `ciw`, `cf[char]`
