@@ -6,6 +6,7 @@
 * [Install softwares](#install-softwares)
     * [gcc](#gcc)
     * [R](#r)
+    * [Vim](#vim)
 
 ## Japanese
 ### Change input method
@@ -66,4 +67,12 @@ $ apt install libcurl4-openssl-dev
 $ apt install libxml2-dev
 $ apt install libssl-dev
 $ apt install libz-dev
+```
+
+### Vim
+Use neovim.
+
+#### Setting file
+```
+~/.config/nvim/init.vim
 ```
