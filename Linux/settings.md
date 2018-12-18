@@ -3,6 +3,8 @@
 ## Table of Contents
 * [Japanese](#japanese)
 * [Keymappings](#keymappings)
+* [Install softwares](#install-softwares)
+    * [R](#r)
 
 ## Japanese
 ### Change input method
@@ -37,3 +39,16 @@ You can now `$ xmodmap ~/.Xmodmap` and enjoy your keymappings! Lastly, add an co
 [Reference 1](https://nonsensej.xyz/?p=1226)  
 [Reference 2](http://x68000.q-e-d.net/~68user/unix/pickup?xmodmap)  
 [Reference 3](http://www.dzhaworks.com/blog/remapping-thinkpads-pageback-and-pageforward-keys-in-mint-linux/)
+
+
+## Install Softwares
+### R
+```terminal
+$ apt install r-base
+```
+
+If you encounter error, try
+```terminal
+$ sudo rm -v /etc/apt/sources.list.d/additional-repositories.list
+```
+[Reference](https://forums.linuxmint.com/viewtopic.php?t=281017)
