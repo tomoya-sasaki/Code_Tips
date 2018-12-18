@@ -4,6 +4,7 @@
 * [Japanese](#japanese)
 * [Keymappings](#keymappings)
 * [Install softwares](#install-softwares)
+    * [gcc](#gcc)
     * [R](#r)
 
 ## Japanese
@@ -42,6 +43,12 @@ You can now `$ xmodmap ~/.Xmodmap` and enjoy your keymappings! Lastly, add an co
 
 
 ## Install Softwares
+### gcc
+```terminal
+$ sudo apt update
+$ sudo apt install build-essential
+```
+
 ### R
 ```terminal
 $ apt install r-base
