@@ -52,3 +52,11 @@ If you encounter error, try
 $ sudo rm -v /etc/apt/sources.list.d/additional-repositories.list
 ```
 [Reference](https://forums.linuxmint.com/viewtopic.php?t=281017)
+
+You many need to packages additionally.
+```terminal
+$ apt install libcurl4-openssl-dev
+$ apt install libxml2-dev
+$ apt install libssl-dev
+$ apt install libz-dev
+```
