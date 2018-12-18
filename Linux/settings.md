@@ -7,6 +7,7 @@
     * [gcc](#gcc)
     * [R](#r)
     * [Vim](#vim)
+    * [tmux](#tmux)
 
 ## Japanese
 ### Change input method
@@ -75,4 +76,12 @@ Use neovim.
 #### Setting file
 ```
 ~/.config/nvim/init.vim
+```
+
+### tmux
+Configuration commands should be in `~/.tmux.conf`. Reload `tmux source ~/.tmux.conf`.
+
+#### Esc speed
+```terminal
+set -g escape-time 0
 ```
