@@ -1,4 +1,5 @@
 # RStan
+Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938).
 
 ## Table of Contents
 1. [Visualization](#visualization)
