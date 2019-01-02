@@ -78,6 +78,11 @@ Use neovim.
 ~/.config/nvim/init.vim
 ```
 
+### gvim
+```
+sudo apt install vim-gnome
+```
+
 ### tmux
 Configuration commands should be in `~/.tmux.conf`. Reload `tmux source ~/.tmux.conf`.
 
