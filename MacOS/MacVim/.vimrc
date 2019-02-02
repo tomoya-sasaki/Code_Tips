@@ -21,6 +21,10 @@ set number
 " Use python filetype when open .pyx
 autocmd BufRead,BufNewFile *.pxd,*.pxi,*.pyx set filetype=pyrex
 
+" Use julia filetype for jl
+autocmd BufRead,BufNewFile *.jl set filetype=julia
+
+
 " タブ幅の設定、Tabではなくスペース2つにする
 set tabstop=2
 set shiftwidth=2
@@ -69,6 +73,7 @@ nnoremap ; :
 nnoremap : ;
 
 " インサートモードで - と _ を入れ替える
+" Code Mode
 " Now in ~/.vim/ftplugin/easybracket.vim
 
 
@@ -362,19 +367,6 @@ function! s:Marked2Run()
   endif
 endfunction
 
-" 今開いているtexのPDFををSkimで表示
-nnoremap <Leader>s :SkimRun<CR>
-command! SkimRun call s:SkimRun()
-function! s:SkimRun()
-  let e = expand("%:e")
-  if e == "tex" || e== "Rmd"
-    :!open -a /Applications/Skim.app %:r.pdf
-    echo "Open in Skim"
-  else
-    echo "File is not tex"
-  endif
-endfunction
-
 " Pandoc
 nnoremap <Leader>p :PandocRun<CR>
 command! PandocRun call s:PandocRun()
@@ -385,7 +377,11 @@ function! s:PandocRun()
     :!pandoc %:r.md -o %:r.tex  --template="pandoc_latex_template.tex"
     echo "Converted to tex file"
   else
-    echo "File is not MarkDown"
+    if e == "tex"
+      :!pandoc -s %:r.tex --bibliography=ref.bib -csl=chicago-author-date.csl -o %r.docx
+    else
+      echo "File is not supported"
+    endif
   endif
 endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
