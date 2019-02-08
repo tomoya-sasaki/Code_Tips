@@ -73,6 +73,12 @@ devtools::build() ; devtools::install() # same as install from source
 devtools::load_all() # In memory packages / use this for reloading
 ```
 
+Another way might be:
+```r
+setwd(package_folder)
+devtools::document() ; devtools::install() ; library(mypackage)
+```
+
 ## Document
 Stored in `man` folder. Write following a documentation format and run `devtools::document()`.
 ```r
