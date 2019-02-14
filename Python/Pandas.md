@@ -22,6 +22,7 @@
 19. [複数列に同じ値を入れる](#複数列に同じ値を入れる)
 20. [あるパターンの行の個数を数えて列に入れる](#あるパターンの行の個数を数えて列に入れる)
 21. [型の指定](#型の指定)
+22. [apply](#apply)
 
 
 ## データフレームを初期化した後に登録
@@ -245,4 +246,21 @@ df = df.drop_duplicates()
 ## 型の指定
 ```python
 df[var_lst] = df[var_lst].astype(float)
+```
+
+## apply
+[Reference 1](http://jonathansoma.com/lede/foundations/classes/pandas%20columns%20and%20functions/apply-a-function-to-every-row-in-a-pandas-dataframe/)
+
+```python
+def get_filename(string):
+    if type(string) != str:
+        return "NA"
+    
+    matched = re.search("X(?P<Filename>\d+\.\d+)\.", string)
+    filename = re.sub("\.", "_", matched.group("Filename"))
+    return filename
+
+data_ldp["file"].apply(get_filename)
+
+# X1996.997 becomes 1996_997
 ```
