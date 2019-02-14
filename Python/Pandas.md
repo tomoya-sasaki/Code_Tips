@@ -254,13 +254,11 @@ df[var_lst] = df[var_lst].astype(float)
 ```python
 def get_filename(string):
     if type(string) != str:
-        return "NA"
-    
+        return "NA" 
     matched = re.search("X(?P<Filename>\d+\.\d+)\.", string)
     filename = re.sub("\.", "_", matched.group("Filename"))
     return filename
 
 data_ldp["file"].apply(get_filename)
-
 # X1996.997 becomes 1996_997
 ```
