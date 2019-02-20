@@ -228,5 +228,5 @@ Error: Command failed (1)
 ```
 
 ### Solution
-1. Remove `RcppExports.cpp` and run `Rcpp::compileAttributes()` before `devtools::install()`.
+1. Remove `RcppExports.cpp` and `RcppExports.R`, then run `Rcpp::compileAttributes()` before `devtools::install()`.
 2. Check you did not define `inline` functions in a header file.
