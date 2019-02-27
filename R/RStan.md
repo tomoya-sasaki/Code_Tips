@@ -25,6 +25,13 @@ values_qua <- transform(values_qua, X=rownames(values_qua))
 values_melt <- gather(values, value=X)
 ```
 
+Quantile with `group_by()`
+```r
+theta_melted %>%
+    group_by(Year, Type) %>%
+    do(data.frame(t(quantile(.$Proportion, probs=c(0.025, 0.5, 0.975)))))
+```
+
 ## Multi core
 ```r
 rstan_options(auto_write = TRUE)
