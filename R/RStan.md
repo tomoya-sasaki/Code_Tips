@@ -12,6 +12,19 @@ Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938)
 * [Bayesplot](https://github.com/stan-dev/bayesplot)
 * [ShinyStan](http://mc-stan.org/interfaces/shinystan)
 
+### With ggplot2
+```r
+result <- rstan::extract(resStan)
+
+# Line Plot
+values <- as.tibble((result$predicted_values))
+colnames(values) <- paste0("X", colnames(values))
+values_qua <- (t(apply(values, 2, quantile, prob=c(0.05, 0.5, 0.95))))
+colnames(values_qua) <- c('p5', 'p50', 'p95')
+values_qua <- transform(values_qua, X=rownames(values_qua))
+values_melt <- gather(values, value=X)
+```
+
 ## Multi core
 ```r
 rstan_options(auto_write = TRUE)
