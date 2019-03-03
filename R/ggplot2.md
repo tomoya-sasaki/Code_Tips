@@ -24,6 +24,7 @@ my_theme <- theme_bw() +
 	* [軸のorderを変える](#軸のorderを変える)
 	* [orderとlabelを変える](#orderとlabelを変える)
 	* [値で並び替え](#値で並び替え)
+	* [カテゴリカルで並び替え](#カテゴリカルで並び替え)
 11. [Legend関連](#legend関連)
 	* [順番を変える](#順番を変える)
 	* [ラベルを変える](#ラベルを変える)
@@ -298,6 +299,10 @@ p + scale_x_discrete(limits = c("I1", "SI2", "SI1"), # order
                      labels = c("Ione","SItwo","SIone")) # new label
 ```
 `coord_flip()`をするときは、逆順で書かないといけないので注意
+これで順番問題は解消されるはず。
+```r
+aes(x = reorder(the_factor, desc(the_factor)), ...)
+```
 
 If you do not want to type one by one, consider one of these:
 ```r
@@ -344,6 +349,11 @@ g <- ggplot(res, aes(reorder(Word, Proportion), Proportion, fill = factor(.topic
   coord_flip()
 ```
 Here, we reorder `Word` column based on the values of `Proportion` column. If you put `-` before the `Proportion`, you can reverse the order.
+
+### カテゴリカルで並び替え
+```r
+aes(x = reorder(the_factor, desc(the_factor)), ...)
+````
 
 ## Legend関連
 ### 順番を変える
