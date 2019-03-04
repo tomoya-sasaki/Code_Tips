@@ -43,9 +43,9 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 ```tex
 \begin{figure}[!htb]
 \centering
-\includegraphics[clip,width=15.0cm]{.eps}
-\caption{ }
-\label{ }
+\includegraphics[width=1.0 \linewidth]{}
+\caption{}
+\label{}
 \end{figure}
 ```
 他の例としては、
