@@ -22,6 +22,8 @@ How to use Git
 11. [Change Previous Committed Comment](#change-previous-committed-comment)
 12. [Get a branch on GitHub](#get-a-branch-on-github)
 13. [Get back to previous commits](#get-back-to-previous-commits)
+14. [Moving a repository
+](#moving-a-repository)
 
 
 ## How to clone
@@ -217,3 +219,6 @@ Cancel the last `git reset`
 ```terminal
 $ git reset --hard ORIG_HEAD
 ```
+
+## Moving a repository
+[Check this](https://gist.github.com/Shusei-E/ce9eba97b9dfde8941248462c9b1f8dc)
