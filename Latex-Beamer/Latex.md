@@ -20,6 +20,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
 8. [横長の表を回転する](#横長の表を回転する)
 9. [コードを挿入](#コードを挿入)
+    * [Edit R keywords](#edit-r-keywords)
 10. [図のフォルダの指定](#図のフォルダの指定)
 11. [名前を英語に統一](#名前を英語に統一)
 12. [箇条書きを左にずらす](#箇条書きを左にずらす)
@@ -219,6 +220,19 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 Probably you need this:
 ```tex
 \renewcommand{\textasteriskcentered}{\ensuremath{*}}
+```
+
+### Edit R keywords
+Create `lstlang3.sty`.
+```
+\lst@definelanguage{R}%
+  {keywords={},%
+   alsoother={._$},%
+   sensitive,%
+   morecomment=[l]\#,%
+   morestring=[d]",%
+   morestring=[d]'% 2001 Robert Denham
+  }%
 ```
 
 ## 図のフォルダの指定
