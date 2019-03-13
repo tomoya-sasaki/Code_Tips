@@ -689,4 +689,4 @@ tibble(beta1 = beta[, 1],
     facet_wrap(~Parameter, ncol=2, scales = "free") +
     my_theme
 ```
-<img src="figures/facet_truth.png" width="350">
+<img src="figures/facet_truth.png" width="450">
