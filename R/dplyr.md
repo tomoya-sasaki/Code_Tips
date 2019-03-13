@@ -22,6 +22,7 @@
 	* [Passing grouped tibbles to a custom function](#passing-grouped-tibbles-to-a-custom-function)
 17. [case_when](#case_when)
 18. [pull](#pull)
+19. [Use of placeholders](#use-of-placeholders)
 
 ## 処理をして列を追加
 ```r
@@ -556,11 +557,31 @@ mutate(Education = case_when(
                     )) %>%
 ```
 
-# pull
+## pull
 [Reference](https://dplyr.tidyverse.org/reference/pull.html)
 
 `pull(col)` replaces `select(col) %>% as.matrix() %>% as.numeric()` in my code.
 
+## Use of placeholders
+[Reference](https://www.datacamp.com/community/tutorials/pipe-r-tutorial)
+```r
+## Three equivalent expressions
+paste(1:5, letters[1:5])
 
+1:5 %>%
+  paste(., letters[.])
+
+1:5 %>%
+  paste(., letters[.])
+```
+If you do not want to take the first argument, use `{}`
+```r
+# Two equivalent expressions
+paste(letters[1:5])
+
+1:5 %>% {
+  paste(letters[.])
+}
+```
 
 
