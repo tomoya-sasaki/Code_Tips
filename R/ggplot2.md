@@ -46,6 +46,7 @@ my_theme <- theme_bw() +
 21. [Correlation Plot](#correlation-plot)
 22. [Bar plot with percentage](#bar-plot-with-percentage)
 23. [Return ggplot2 object in loop](#return-ggplot2-object-in-loop)
+24. [facetで表示を分ける](#facetで表示を分ける)
 
 
 ## xラベルの変更
@@ -670,3 +671,22 @@ for(i in 1:dim1){
 }
 ```
 Do not use `l <- c(l, obj)`.
+
+
+## facetで表示を分ける
+```r
+library(mvtnorm)
+beta <- rmvnorm(1000, mean=rep(0, nrow(sigma)), sigma=diag(1, D))
+tibble(beta1 = beta[, 1],
+       beta2 = beta[, 2]) %>%
+  slice(floor(n()/2):n()) %>%
+  gather(key=Parameter, value=Value) %>%
+  ggplot(., aes(x=Value, fill=Parameter)) +
+    geom_histogram() +
+    geom_vline(data=tibble(Truth=c(0, 0),  # Truth
+                           Parameter=c("beta1", "beta2")),
+               aes(xintercept=Truth, group=Parameter)) +
+    facet_wrap(~Parameter, ncol=2, scales = "free") +
+    my_theme
+```
+<img src="figures/facet_truth.png" width="350">
