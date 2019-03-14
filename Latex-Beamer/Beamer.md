@@ -93,6 +93,13 @@ Right Part
 `\includegraphics[width=6cm]{Fig1.pdf}`<br>
 だけで良さそう。
 
+```tex
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8 \linewidth]{fig.png}
+\end{figure}
+```
+
 ### 図の切り替え
 Simple:
 ```tex
