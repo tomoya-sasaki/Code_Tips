@@ -278,7 +278,7 @@ bar_figure <- function(var, item_num){
 [Reference 1](http://pediatricsurgery.hatenadiary.jp/entry/2017/07/07/232423) and [Reference 2](https://stackoverflow.com/questions/27909000/set-certain-values-to-na-with-dplyr)
 ```r
 # Change all
-mutate_all(funs(ifelse(is.na(.),0,.)))
+mutate_all(list(ifelse(is.na(.),0,.)))
 
 # Only columns start with 'P'
 mutate_at(vars(starts_with("P")), funs(ifelse(is.na(.),0,.)))
