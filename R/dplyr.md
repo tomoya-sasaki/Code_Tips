@@ -554,7 +554,7 @@ mutate(Education = case_when(
                       educ == 4 ~ "2-Year",
                       educ == 5 ~ "4-Year",
                       educ == 6  ~ "Post-Grad",
-		      TRUE ~ "Other"
+                      TRUE ~ "Other"
                     )) %>%
 ```
 
