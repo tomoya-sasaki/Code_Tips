@@ -404,6 +404,7 @@ approval %>%
 ```
 
 ## tidyeval
+[Reference](https://tidyeval.tidyverse.org/)
 
 ### Example 1
 ```r
