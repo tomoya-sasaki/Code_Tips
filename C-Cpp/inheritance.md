@@ -2,6 +2,7 @@
 
 ## Table of contents
 1. [Basics](#basics)
+2. [Virtual Funcion](#virtual-function)
 
 
 ## Basics
@@ -87,8 +88,8 @@ int main()
 }
 ```
 
-### Virtual Funcion
-#### Basics
+## Virtual Funcion
+### Basics
 [Reference](https://stackoverflow.com/a/391492/4357279)
 
 > An abstract function cannot have functionality. You're basically saying, any child class MUST give their own version of this method, however it's too general to even try to implement in the parent class.
@@ -101,7 +102,7 @@ An abstract function might be related to a pure virtual function ([Reference](ht
 
 We should use a virtual function if there is any chance that the function will be overriden in subclass ([Reference](https://stackoverflow.com/q/2391679/4357279) has nice examples).
 
-#### Pointer
+### Pointer
 [Reference](https://stackoverflow.com/a/1307867/4357279) shows how `virtual` functions can be overriden.
 
 ```cpp
