@@ -40,7 +40,7 @@ class Child1 : public Parent
 class Child2 : public Parent
 {
   public:
-    virtual void say_virtual(string &text); // override
+    void say_virtual(string &text); // override
 };
 
 void Child2::say_virtual(string &text){
