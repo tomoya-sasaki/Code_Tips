@@ -103,7 +103,7 @@ An abstract function might be related to a pure virtual function ([Reference](ht
 We should use a virtual function if there is any chance that the function will be overriden in subclass ([Reference](https://stackoverflow.com/q/2391679/4357279) has nice examples).
 
 ### Pointer
-[Reference](https://stackoverflow.com/a/1307867/4357279) shows how `virtual` functions can be overriden.
+[Reference](https://stackoverflow.com/a/1307867/4357279) shows how `virtual` functions can be overriden (= when we can't override non-virtual functions).
 
 ```cpp
 #include <iostream>
