@@ -7,7 +7,7 @@
 3. [Install Packages](#install-packages)
 4. [Document](#document)
 5. [DESCRIPTION](#description)
-6. [C++](#c++)
+6. [C++](#c)
 7. [Vignette](#vignette)
 8. [roxygen](#roxygen)
 9. [Use dplyr and ggplot2](#use-dplyr-and-ggplot2)
