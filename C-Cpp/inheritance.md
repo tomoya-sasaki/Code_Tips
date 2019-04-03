@@ -2,7 +2,7 @@
 
 ## Table of contents
 1. [Basics](#basics)
-2. [Virtual Funcion](#virtual-function)
+2. [Virtual Function](#virtual-function)
 
 ## Basics
 Reference 1: Jumping into C++, Chapter 26  
@@ -87,7 +87,7 @@ int main()
 }
 ```
 
-## Virtual Funcion
+## Virtual Function
 
 ### Basics
 [Reference](https://stackoverflow.com/a/391492/4357279)
