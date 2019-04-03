@@ -5,7 +5,8 @@
 
 
 ## Basics
-Reference: Jumping into C++, Chapter 26
+Reference 1: Jumping into C++, Chapter 26
+Reference 2: [C++11 Syntax and Feature](http://ezoeryou.github.io/cpp-book/C++11-Syntax-and-Feature.xhtml#class.virtual)
 
 ```cpp
 #include<iostream>
