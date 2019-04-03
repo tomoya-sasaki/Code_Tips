@@ -148,5 +148,5 @@ int main() {
 
 In Ex.1, the compiler sees that `bDerived` is a `Base*`. Since `NonVirtual` is not virtual, it does the resolution on class `Base`.
 
-When we call `Virtual()` in `Derived` class, he selecction of method happens at run-time, not compile-time. What happens at compile-time is that the compiler sees that this is a `Base*`, and that it's calling a virtual method, so it insert a call to the virtual method table (vtable) instead of class `Base`. This vtable is instantiated at run-time.
+When we call `Virtual()` in `Derived` class (in Ex.1), he selecction of method happens at run-time, not compile-time. What happens at compile-time is that the compiler sees that this is a `Base*`, and that it's calling a virtual method, so it insert a call to the virtual method table (vtable) instead of class `Base`. This vtable is instantiated at run-time.
 
