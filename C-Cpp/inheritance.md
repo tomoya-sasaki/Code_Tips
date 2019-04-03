@@ -4,7 +4,6 @@
 1. [Basics](#basics)
 2. [Virtual Funcion](#virtual-function)
 
-
 ## Basics
 Reference 1: Jumping into C++, Chapter 26  
 Reference 2: [C++11 Syntax and Feature](http://ezoeryou.github.io/cpp-book/C++11-Syntax-and-Feature.xhtml#class.virtual)
@@ -89,6 +88,7 @@ int main()
 ```
 
 ## Virtual Funcion
+
 ### Basics
 [Reference](https://stackoverflow.com/a/391492/4357279)
 
