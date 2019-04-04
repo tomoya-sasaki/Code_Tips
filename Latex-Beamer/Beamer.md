@@ -72,6 +72,7 @@ Right Part
 \end{column}
 \end{columns}
 ```
+Vertical line: `\vrule{}` between `\end{column}` and `\begin{column}`.
 
 ## このセクションの内容
 ```tex
