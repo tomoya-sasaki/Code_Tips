@@ -4,6 +4,7 @@
 2. [Nested Data Frame](#nested-data-frame)
 3. [reduce](#reduce)
 4. [Apply a function to a list](#apply-a-function-to-a-list)
+5. [Apply multiple functions](#apply-multiple-functions)
 
 ## List to vector
 ```r
@@ -79,10 +80,15 @@ Element-wise mean over a list of matrices:
 
 
 ## Apply a function to a list
-```
+```r
 > keywords <- list(c("workers", "jobs"))  # add more words later
 > map(keywords, quanteda::char_wordstem, language = "en")
 [[1]]
 [1] "worker" "job"
 ```
 
+## Apply multiple functions
+```r
+map(res_chains, function(x){map(x$iter_pi, max)})
+```
+Take `iter_pi` list in `res_chains` list and apply `max`.
