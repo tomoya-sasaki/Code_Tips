@@ -231,5 +231,5 @@ Error: Command failed (1)
 1. Remove `RcppExports.cpp` and `RcppExports.R`, then run `Rcpp::compileAttributes()` before `devtools::install()`.
 2. Check you did not define `inline` functions in a header file. (not 100% sure we need this)
 3. After the all process and reinstalling, you might need to restart R session.
-4. Make sure you write all virtual functions both in `.h` and `.cpp` (`virtual`で定義している関数はヘッダーと本体を書かないと上のエラーになる)
+4. Make sure you write all virtual functions both in `.h` and `.cpp` when you use inheritance (継承を使うとき、`virtual`で定義している関数はヘッダーと本体に書かないと上のエラーになる)
 
