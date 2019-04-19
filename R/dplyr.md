@@ -23,6 +23,7 @@
 17. [case_when](#case_when)
 18. [pull](#pull)
 19. [Use of placeholders](#use-of-placeholders)
+20. [Extract words](#extract-words]
 
 ## 処理をして列を追加
 ```r
@@ -586,4 +587,9 @@ paste(letters[1:5])
 }
 ```
 
-
+## Extract words
+```r
+library(stringr)
+str_locate("aaa12xxx", "[0-9]+")
+str_extract("aaa12xxx", "[0-9]+")  # extract!
+```
