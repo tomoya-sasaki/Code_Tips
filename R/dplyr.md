@@ -23,7 +23,7 @@
 17. [case_when](#case_when)
 18. [pull](#pull)
 19. [Use of placeholders](#use-of-placeholders)
-20. [Extract words](#extract-words]
+20. [Extract words](#extract-words)
 
 ## 処理をして列を追加
 ```r
