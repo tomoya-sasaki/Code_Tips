@@ -78,6 +78,8 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 \end{figure}
 ```
 
+[subfigures](https://ja.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_3):_Figures,_Subfigures_and_Tables)
+
 ### 図の回転
 ```tex
 \includegraphics[width=100mm, angle=90]{fig1.pdf}
