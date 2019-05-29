@@ -427,6 +427,10 @@ V&X。\\
 
 ## 箇条書きのスタイル変更
 ```tex
+\renewcommand{\labelitemii}{$\circ$}
+```
+
+```tex
 % itemize
 \usepackage{enumitem}
 \setlistdepth{20}
