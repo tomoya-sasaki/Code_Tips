@@ -575,6 +575,36 @@ scale_fill_brewer(palette="Spectral")
 scale_fill_manual(values=c("#09aa04", "#990066"))
 ```
 
+### 点や線の色
+[Reference](https://qiita.com/yutannihilation/items/b4130186e1e095719dcb)
+
+If the variables' names are colour:
+```r
+d <- data.frame(x = 1:4, y = 1:4,
+                colour = c("red", "green", "blue", "yellow"))
+		
+ggplot(d, aes(x, y, colour = colour)) +
+    geom_point() +
+    scale_colour_identity(guide = "legend")  # explicitly shows legend (remove it if you don't need it)
+```
+
+If you want to specify the colour:
+```r
+d <- data.frame(x = 1:4, y = 1:4,
+                colour = c("col1", "col2", "col3", "col4"))
+
+ggplot(d, aes(x, y, colour = colour)) +
+  geom_point(size = 15) +
+  scale_colour_manual(
+    values = c(
+      col1  = "tomato",
+      col2  = "darkgreen",
+      col3  = "blue3",
+      col4  = "yellow3"
+    )
+  )
+```
+
 ## 積み上げグラフ
 ### 折れ線
 ```r
