@@ -395,13 +395,11 @@ int main(){
 
   Eigen::SparseMatrix<double> spmat;
 
-  MatrixXd mat;
-
   // Insert in spmat
   typedef Eigen::Triplet<double> T;
   vector<T> tripletList;
 
-  for(int i=0; i<mat.rows(); i++){
+  for(int i=0; i<5; i++){
     tripletList.push_back(T(i,i,i));  
   }
   spmat.resize(5,5);  // define size
