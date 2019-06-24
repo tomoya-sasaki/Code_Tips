@@ -416,6 +416,7 @@ int main(){
   return 0;
 }
 ```
+The `std::vector` of triplets might contain the elements in arbitrary order, and might even contain duplicated elements that will be summed up by `setFromTriplets()`.
 
 ### Use in class
 [Reference](https://eigen.tuxfamily.org/dox/group__SparseQuickRefPage.html)
