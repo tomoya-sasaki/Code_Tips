@@ -276,6 +276,12 @@ void my_function(const Foo& v);
 ## Map
 You can use c++ array as a Eigen object by mapping.
 
+### std::vector to Eigen vector
+```cpp
+std::vector<double> a = {1, 2, 3, 4};
+Eigen::VectorXd b = Eigen::Map<Eigen::VectorXd, Eigen::Unaligned>(a.data(), a.size());
+```
+
 ### Array to Eigen matrix
 ```cpp
 #include <iostream>
