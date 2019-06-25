@@ -1,6 +1,7 @@
 # Speed up
 
 1. [Avoid declaration multiple times](#avoid-declaration-multiple-times)
+2. [Inline function](#inline-function)
 
 ## Avoid declaration multiple times
 ```cpp
@@ -20,3 +21,6 @@ for(int i=0; i < doc.size().; i++){
     sum += temp;
 }
 ```
+
+## Inline function
+Use inline functions in class (write main code in the header).
