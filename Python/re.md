@@ -61,6 +61,7 @@ for matched in re.finditer(r"○<strong>(?P<Name>.+?)<\/strong>(?P<Speech>(.|\n)
 | \w       | 英数字とアンダースコア _ に一致 ([_a-zA-Z0-9] と同じ)     |
 | \W       | \w 以外と一致                                             |
 | \Z       | 文字列の末尾と一致                                        |
+| (?!) | not eg. `(?!span)`    |
 
 
 ## パターンを別に定義
