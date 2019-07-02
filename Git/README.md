@@ -1,5 +1,6 @@
 # Git
 How to use Git
+
 * Websites for reference
   * [いまさら聞けないgitの使い方](http://qiita.com/mountcedar/items/682743c95fd3b8fc274b)
   * [初心者向けGithubへのPullRequest方法](http://qiita.com/samurairunner/items/7442521bce2d6ac9330b)
@@ -7,6 +8,10 @@ How to use Git
   * [git pull -rebase](http://kray.jp/blog/git-pull-rebase/) / [Git開発でmasterの内容を開発ブランチに反映させる方法](http://sota1235.com/blog/2015/03/19/git-rebase.html)
   * [Gitでやらかした時に使える19個の奥義](http://qiita.com/muran001/items/dea2bbbaea1260098051)
   * [さっきの取り消したい！って時のGitコマンドまとめ](http://qiita.com/kansiho/items/2bacecdb95d752cb38b7)
+  
+* Complete Reference
+  * [k88hudson/git-flight-rules](https://github.com/k88hudson/git-flight-rules)
+  * [日本語訳](https://blog.labot.jp/entry/2019/07/01/183204)
 
 # Table of Contents
 1. [How to clone](#how-to-clone)
@@ -22,8 +27,7 @@ How to use Git
 11. [Change Previous Committed Comment](#change-previous-committed-comment)
 12. [Get a branch on GitHub](#get-a-branch-on-github)
 13. [Get back to previous commits](#get-back-to-previous-commits)
-14. [Moving a repository
-](#moving-a-repository)
+14. [Moving a repository](#moving-a-repository)
 
 
 ## How to clone
