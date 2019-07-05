@@ -349,6 +349,7 @@ Use `separate()`:
 ```r
 separate(term, into=c("True", "raw_word_id"), sep="T") 
 ```
+Use `NA` to omit the variable in the output.
 
 ## Copy rows
 Example 1:
