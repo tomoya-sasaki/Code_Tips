@@ -45,6 +45,7 @@ Update:
 ## Vimtex
 * `<localleader>lt`: アウトラインの表示
 * `<C-x><C-o>`: Citeeeの補完
+* [Reference](http://mmi.hatenablog.com/entry/2015/01/02/003517)
 
 
 
