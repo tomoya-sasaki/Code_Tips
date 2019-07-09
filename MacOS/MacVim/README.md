@@ -42,6 +42,11 @@ Update:
 * `zc`: カーソル下の折りたたみを一段階閉じる
 * `zC`: カーソル下の折りたたみを全て閉じる
 
+## Vimtex
+* `<localleader>lt`: アウトラインの表示
+* `<C-x><C-o>`: Citeeeの補完
+
+
 
 ## slimv
 * For SCIP: `brew install mit-scheme`
