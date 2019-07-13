@@ -483,6 +483,12 @@ my_function <- function(data, x= "OriginalX" , y= "OriginalY" ){
 [Reference](https://stackoverflow.com/questions/51277336/dplyr-standard-evaluation-and-enquo/51277544#51277544)
 
  
+ ### Example 4: Use characters in filter
+ ```r
+ a <- "Species"
+iris %>% filter(!!rlang::sym(a) == "versicolor")
+ ```
+ 
  ## Nested data frame
  Check [purrr](https://github.com/Shusei-E/Code_Tips/blob/master/R/purrr.md#nested-data-frame) as well.
  
