@@ -489,6 +489,15 @@ my_function <- function(data, x= "OriginalX" , y= "OriginalY" ){
 iris %>% filter(!!rlang::sym(a) == "versicolor")
  ```
  
+ ### Example 5: Programmatically-assigned names on the LHS
+ Use `:=` if you want programmatically-assigned names on the LHS of expressions.
+ ```r
+ x <- "mpg"
+xnew <- "mpg2"
+rename(mtcars, !!xnew := !!rlang::sym(x))
+ ```
+ [Reference](https://stackoverflow.com/a/45644882/4357279)
+ 
  ## Nested data frame
  Check [purrr](https://github.com/Shusei-E/Code_Tips/blob/master/R/purrr.md#nested-data-frame) as well.
  
