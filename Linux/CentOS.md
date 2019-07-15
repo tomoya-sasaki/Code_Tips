@@ -33,3 +33,25 @@
 * `$ module load gcc/8.2.0-fasrc01 openmpi/3.1.1-fasrc01 R/3.6.1-fasrc01`
 * `$ export R_LIBS_USER=$HOME/apps/R_3.6.1:$R_LIBS_USER`
 * `$ R`
+
+## SLURM
+### Run R
+```
+#!/bin/bash
+#SBATCH -n 1 # Number of cores requested
+#SBATCH -N 1 # Ensure that all cores are on one machine
+#SBATCH -t 01:00:00 # Runtime Limit
+#SBATCH -p serial_requeue # Partition to submit to
+#SBATCH --mem-per-cpu=2048 # Memory per cpu in MB (see also --mem-per-cpu)
+#SBATCH --open-mode=truncate
+#SBATCH --job-name=RunRSingleCore
+#SBATCH -o RunRSingleCore.out # Standard out goes to this file
+#SBATCH -e RunRSingleCore.err # Standard err goes to this filehostname
+
+# Load R
+module load gcc/8.2.0-fasrc01 openmpi/3.1.1-fasrc01 R/3.6.1-fasrc01
+export R_LIBS_USER=$HOME/apps/R_3.6.1:$R_LIBS_USE
+
+# Run R
+R CMD BATCH ~/obj/run.R ~/obj/Routput.txt
+```
