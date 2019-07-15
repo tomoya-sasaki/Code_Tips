@@ -35,7 +35,12 @@
 * `$ R`
 
 ## SLURM
+[Reference](https://slurm.schedmd.com/sbatch.html)
+
 ### Run R
+
+[Reference 1](https://hcc.unl.edu/docs/guides/submitting_jobs/submitting_r_jobs/) / [Reference 2](https://www.chpc.utah.edu/documentation/software/r-language.php)
+
 ```
 #!/bin/bash
 #SBATCH -n 1 # Number of cores requested
