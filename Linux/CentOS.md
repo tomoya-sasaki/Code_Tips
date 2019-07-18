@@ -70,4 +70,6 @@ R CMD BATCH ~/obj/run.R ~/obj/Routput.txt
 `$ sbatch run.slurm `.
 
 ### Job status
+[Reference](https://www.rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/)
+
 `$ squeue -u <username>`
