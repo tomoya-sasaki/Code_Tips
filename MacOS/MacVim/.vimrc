@@ -8,7 +8,7 @@ au Vimleave * mks! ~/.vim_session
 nnoremap <C-s> :source ~/.vim_session <cr> :nohl <cr>
 
 " Cmd-1を押して行頭に、Cmd-0を押して行末に
-noremap <D-1> 0
+noremap <D-1> ^
 noremap <D-0> $
 
 " Chrome的なタブの切り替え
@@ -174,6 +174,7 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml, {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
   call dein#end()
+  call dein#call_hook('post_source')
   call dein#save_state()
 endif
  
@@ -353,6 +354,18 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File Open
+" 今開いているtexのPDFををSkimで表示
+nnoremap <Leader>s :SkimRun<CR>
+command! SkimRun call s:SkimRun()
+function! s:SkimRun()
+  let e = expand("%:e")
+  if e == "tex" || e== "Rmd"
+    :!open -a /Applications/Skim.app %:r.pdf
+    echo "Open in Skim"
+  else
+    echo "File is not tex"
+  endif
+endfunction
 
 " 今開いているファイルをMarked 2で表示
 nnoremap <Leader>m :Marked2Run<CR>
