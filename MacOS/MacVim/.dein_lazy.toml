@@ -13,12 +13,13 @@
 # Comment out
 [[plugins]]
 repo = 'tyru/caw.vim'
-on_ft = ['tex', 'pyrex', 'python', 'r', 'rmd', 'c', 'cpp'] # do not write separately for each language
+on_ft = ['tex', 'pyrex', 'python', 'r', 'rmd', 'c', 'cpp', 'julia'] # do not write separately for each language
 hook_source = '''
   nmap <Leader>, <Plug>(caw:hatpos:toggle)
   vmap <Leader>, <Plug>(caw:hatpos:toggle)
 
   " Currently, I don't have cpp specific plugin
+  " If there is a plugin, set it there
   let e = expand("%:e")
   if e == "cpp" || e == "hpp" || e == "c" || e == "h"
     :Skinbadwolf
@@ -192,14 +193,14 @@ hook_source = '''
   nnoremap <Leader>tc :Templatechunk<CR>jo
   command! Templatechunk call s:Templatechunk()
   function! s:Templatechunk()
-    call append(line("."), "```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=5}")
+    call append(line("."), "```{r, warning=FALSE, message=FALSE, fig.align='center'}")
     call append(line(".")+1,"```")
   endfunction
   nnoremap <Leader>tC :TemplateChunk<CR>jjo
   command! TemplateChunk call s:TemplateChunk()
   function! s:TemplateChunk()
     call append(line("."), "")
-    call append(line(".")+1, "```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=5}")
+    call append(line(".")+1, "```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=5, fig.align='center'}")
     call append(line(".")+2,"```")
   endfunction
 
@@ -208,12 +209,44 @@ hook_source = '''
   :CodeMode
 '''
 
+
+# Julia
+  # If you get an error, edit the following file.
+  # ~/.cache/dein/repos/github.com/JuliaEditorSupport/julia-vim/ftdetect/julia.vim
+  # comment out auto commands that call LaTextoUnicode and a function L2UTrigger()
+  # Reload the plugin (comment out dein's julia-vim, open a *.jl file and comment in again)
+[[plugins]]
+repo = 'jpalardy/vim-slime'
+on_ft = ['julia']
+hook_source = '''
+  let g:slime_target = "tmux"
+  let g:slime_default_config = {"socket_name": "/private/tmp/tmux-502/default", "target_pane": "0"}
+  nmap <D-Enter> <Plug>SlimeLineSend j
+  vmap <D-Enter> <Plug>SlimeRegionSend
+'''
+
+
+[[plugins]]
+repo = 'JuliaEditorSupport/julia-vim'
+on_ft = ['julia']
+hook_source = '''
+  let g:latex_to_unicode_tab = 0
+  :Skinbadwolf
+  :Window
+  :CodeMode
+'''
+
+
 ## Tex
 [[plugins]] 
 repo = 'thinca/vim-quickrun'
 on_ft = ['tex']
 hook_add = '''
   let g:quickrun_config = {
+  \   "_" :{
+  \         "runner" : "vimproc",
+  \         "runner/vimproc/updatetime" : 60
+  \         },
   \   'tex': {
   \       'command': 'latexmk',
   \       'exec': ['%c -gg -pdfdvi %s']
@@ -386,12 +419,25 @@ hook_source = '''
   :Skinsolarized
   highlight MatchParen guibg=white guifg=orange
   :Window
+
+  " 今開いているtexのPDFををSkimで表示
+  nnoremap <Leader>s :SkimRun<CR>
+  command! SkimRun call s:SkimRun()
+  function! s:SkimRun()
+    let e = expand("%:e")
+    if e == "tex" || e== "Rmd"
+      :!open -a /Applications/Skim.app %:r.pdf
+      echo "Open in Skim"
+    else
+      echo "File is not tex"
+    endif
+  endfunction
 '''
 
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 hook_add = '''
-let g:vimtex_fold_envs = 0
-let g:tex_indent_brace=0
+  let g:vimtex_fold_envs = 0
+  let g:tex_indent_brace=0
 '''
