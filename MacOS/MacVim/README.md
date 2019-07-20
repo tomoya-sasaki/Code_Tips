@@ -58,6 +58,15 @@ Update:
   * `\a`: Abort
   * `\n`: Continue
 
+## vim-slime
+* Get an absolute path
+  * `lsof -U | grep '^tmux'`
+* Target pane: usually `0`, `1`,...
+* In `.vimrc`, you can set above two as: `let g:slime_default_config = {"socket_name": "/private/tmp/tmux-502/default", "target_pane": "0"}`
+* Close tmux: `<C-b>` and `:kill-session`
+  
+
+
 # Settings
 ## Latex
 You need to know how to write in `.latexmkrc` and command options. ([Reference](https://texwiki.texjp.org/?Latexmk))
