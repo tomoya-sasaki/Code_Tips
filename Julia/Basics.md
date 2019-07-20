@@ -2,12 +2,18 @@
 
 ## Table of Contents
 1. [Variables](#variables)
-2. [Distributions](#distributions)
-3. [Plots](#plots)
+2. [Types](#types)
+3. [Distributions](#distributions)
+4. [Plots](#plots)
 
 ## Variables
 ```julia
 exp.(A)  # elementwise operation
+```
+
+## Types
+```julia
+typeof(variable)  # check the type
 ```
 
 
