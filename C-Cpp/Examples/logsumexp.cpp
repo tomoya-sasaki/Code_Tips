@@ -41,6 +41,19 @@ double logsumexp_Eigen(VectorXd vec){
 
 }
 
+double new_logsumexp_Eigen(VectorXd &vec, const int size){
+	if(size == 1) return vec(0);
+
+	double vmax = vec.maxCoeff();
+	double sum = 0.0;
+
+	for(int i=0; i<size; i++){
+		sum += exp(vec(i) - vmax);
+	}
+  
+	return vmax + log(sum);
+}
+
 /*
 For Python
 
