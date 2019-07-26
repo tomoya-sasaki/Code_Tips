@@ -6,6 +6,8 @@
 4. [Apply a function to a list](#apply-a-function-to-a-list)
 5. [Apply multiple functions](#apply-multiple-functions)
 
+[そろそろ手を出すpurrr/nekosky](https://speakerdeck.com/s_uryu/nekosky)
+
 ## List to vector
 ```r
 flatten_int()
