@@ -73,3 +73,7 @@ R CMD BATCH ~/obj/run.R ~/obj/Routput.txt
 [Reference](https://www.rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/)
 
 `$ squeue -u <username>`
+
+
+## Python (RCE)
+`$ anaconda3-shell`
