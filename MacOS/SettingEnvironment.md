@@ -140,7 +140,7 @@ sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 
 ##### Set TexShop
 1. Update Software
-2. TeXShopの環境設定の［書類］タブの左下の［設定プロファイル］から「pTeX (ptex2pdf)」を選択
+2. TeXShopの環境設定の［書類］タブの左下の［設定プロファイル］から「upTeX (ptex2pdf)」~~「pTeX (ptex2pdf)」~~を選択
 
 ##### Update
 `sudo tlmgr update --self --all`
