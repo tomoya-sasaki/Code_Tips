@@ -93,7 +93,7 @@ Then, you can install python:
 * `$ brew install pyenv-virtualenv`
 * Usage of pyenv-virtualenv
   * It's easier to use virtualenv than pyenv to use multiuple versions of Python
-  * Make a new environment: `$ pyenv virtualenv 3.5.2 NAME`
+  * Make a new environment: `$ pyenv virtualenv 3.7.4 NAME`
   * Activate the environment: `$ pyenv activate NAME` or `source activate NAME`
   * Deactivate the environment: `$ pyenv deactivate`
   * Delete the environment:　`$ pyenv uninstall NAME`
