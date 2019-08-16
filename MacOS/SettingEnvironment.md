@@ -113,7 +113,7 @@ Do not forget to select custom install and **clear the checkbox for Ghostscript*
 
 ##### Update TexLive
 `sudo tlmgr update --self --all`   
-If there is an error, relaunch Terminal.
+If there is an error, relaunch Terminal. (Do we need `source /etc/profile`?)
 
 ##### Set Japanse Fonts
 Enter the following commands line by line.
