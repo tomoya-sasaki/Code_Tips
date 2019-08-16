@@ -117,6 +117,20 @@ If there is an error, relaunch Terminal. (Do we need `source /etc/profile`?)
 
 ##### Set Japanse Fonts
 Enter the following commands line by line.
+
+New ([reference](https://texwiki.texjp.org/?%E3%83%92%E3%83%A9%E3%82%AE%E3%83%8E%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88#macos-hiragino-setup):
+```
+sudo tlmgr update --self --all
+sudo tlmgr repository add http://contrib.texlive.info/current tlcontrib
+sudo tlmgr pinning add tlcontrib '*'
+sudo tlmgr install japanese-otf-nonfree japanese-otf-uptex-nonfree ptex-fontmaps-macos cjk-gs-integrate-macos
+sudo cjk-gs-integrate --link-texmf --cleanup
+sudo cjk-gs-integrate-macos --link-texmf
+sudo mktexlsr
+sudo kanji-config-updmap-sys --jis2004 hiragino-highsierra-pron
+```
+
+Old (~Sierra):
 ```
 cd /usr/local/texlive/2019/texmf-dist/scripts/cjk-gs-integrate
 sudo perl cjk-gs-integrate.pl --link-texmf --force
