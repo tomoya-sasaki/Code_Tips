@@ -1,4 +1,7 @@
-# Setting Environment 2016/12/28
+# Setting Environment 
+
+* 2016/12/28
+* 2019/07/16
 
 ## Using Homebrew
 ### R
