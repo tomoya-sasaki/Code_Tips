@@ -118,7 +118,7 @@ If there is an error, relaunch Terminal. (Do we need `source /etc/profile`?)
 ##### Set Japanse Fonts
 Enter the following commands line by line.
 ```
-cd /usr/local/texlive/2016/texmf-dist/scripts/cjk-gs-integrate
+cd /usr/local/texlive/2019/texmf-dist/scripts/cjk-gs-integrate
 sudo perl cjk-gs-integrate.pl --link-texmf --force
 sudo mktexlsr
 sudo kanji-config-updmap-sys hiragino-elcapitan-pron
