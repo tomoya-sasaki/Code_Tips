@@ -88,7 +88,7 @@ Do not forget to `source ~/.bash_profile` after editing!!
   
 Then, you can install python:
 * List Available Versions: `$ pyenv install -l`
-* `$ pyenv install 3.5.2` 
+* `$ pyenv install 3.7.4` 
  * If error occures, try `xcode-select --install` and install again
 * `$ brew install pyenv-virtualenv`
 * Usage of pyenv-virtualenv
