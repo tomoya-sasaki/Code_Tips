@@ -11,15 +11,17 @@ repo = 'Shougo/vimfiler.vim'
 
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
 
-  [plugins.build]
-  windows = 'tools\\update-dll-mingw'
-  cygwin  = 'make -f make_cygwin.mak'
-  mac     = 'make -f make_mac.mak'
-  linux   = 'make'
-  unix    = 'gmake'
+# From Vim 8.0, we can use `job` (provided in Vim)
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# 
+#   [plugins.build]
+#   windows = 'tools\\update-dll-mingw'
+#   cygwin  = 'make -f make_cygwin.mak'
+#   mac     = 'make -f make_mac.mak'
+#   linux   = 'make'
+#   unix    = 'gmake'
 
 ### Colorschemes
 [[plugins]]
