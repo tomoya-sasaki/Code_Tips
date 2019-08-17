@@ -60,7 +60,7 @@ hook_source = '''
   \}
 
   " Option for Python 3
-  let g:ale_command_wrapper = "source activate py36; %* "
+  let g:ale_command_wrapper = "source activate py37; %* "
 
   " message format
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -140,6 +140,8 @@ hook_source = '''
 #     and edit the files if needed. For example,
 #     you can change the number of characters in
 #     a single line by editing `default.py`
+#     Also, make sure to change
+#       g:ale_command_wrapper option above
 #   R: install.packages("lintr")
 
 ## Python
@@ -170,6 +172,7 @@ hook_source = '''
 '''
 
 ## R
+  # You need tmux
 [[plugins]]
 repo = 'jalvesaq/Nvim-R'
 on_ft = ['r', 'rmd']
@@ -211,30 +214,38 @@ hook_source = '''
 
 
 # Julia
-  # If you get an error, edit the following file.
-  # ~/.cache/dein/repos/github.com/JuliaEditorSupport/julia-vim/ftdetect/julia.vim
-  # comment out auto commands that call LaTextoUnicode and a function L2UTrigger()
-  # Reload the plugin (comment out dein's julia-vim, open a *.jl file and comment in again)
+  # When you precc command-Enter it asks you to enter tmux info 
 [[plugins]]
 repo = 'jpalardy/vim-slime'
 on_ft = ['julia']
 hook_source = '''
   let g:slime_target = "tmux"
-  let g:slime_default_config = {"socket_name": "/private/tmp/tmux-502/default", "target_pane": "0"}
+  let g:slime_default_config = {"socket_name": "/private/tmp/tmux-501/default", "target_pane": "0"}
   nmap <D-Enter> <Plug>SlimeLineSend j
   vmap <D-Enter> <Plug>SlimeRegionSend
-'''
-
-
-[[plugins]]
-repo = 'JuliaEditorSupport/julia-vim'
-on_ft = ['julia']
-hook_source = '''
-  let g:latex_to_unicode_tab = 0
   :Skinbadwolf
   :Window
   :CodeMode
 '''
+
+# Julia Syntax
+  # If you get an error, edit the following file.
+  # ~/.cache/dein/repos/github.com/JuliaEditorSupport/julia-vim/ftdetect/julia.vim
+  # comment out auto commands that call LaTextoUnicode and a function L2UTrigger()
+  # Reload the plugin (comment out dein's julia-vim, open a *.jl file and comment in again)
+  # In other cases, you might need to
+  #     * delete ~/.cache/dein
+  #     * Comment out all julia related lines in this file
+  #     * Relaunch and install other plugins first
+  # If you only need syntax,
+  #     * Add JuliaEditorSupport/julia-vim/master/syntax/julia.vim
+  #       to ~/.vim/syntax/
+# [[plugins]]
+# repo = 'JuliaEditorSupport/julia-vim'
+# on_ft = ['julia']
+# hook_source = '''
+#   let g:latex_to_unicode_tab = 0
+# '''
 
 
 ## Tex
