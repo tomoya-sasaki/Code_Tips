@@ -160,6 +160,14 @@ sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 ## Office
 Check Amazon's 「ゲーム&PCソフトダウンロードライブラリ」
 
+## Git
+Edit by `git config --global --edit`
+```
+#This is Git's per-user configuration file.
+[user]
+email = Email address registered at GitHub
+```
+
 ## Vim
 * Kaoriya-version
 * use `homebrew` from the next time?
