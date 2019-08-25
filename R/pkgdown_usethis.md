@@ -6,7 +6,7 @@ pkgdown::build_site("Path to the folder")
 ```
 
 ## Badge
-Create `README.Rmd`. Run `use_cran_badge()` and copy & paste.
+Create `README.Rmd`. Run `use_cran_badge()` and copy & paste. Use `badgecreatr` package for more.
 
 ## Articles
 If yoy do not want to include articles in a package, put the in a subfolder of `vignettes`.
