@@ -19,8 +19,12 @@
 ### Create
 It seems we need to use [`usethis`](https://usethis.r-lib.org/)..
 
-Old:
 ```r
+# New
+usethis::create_package("path/to/package/testpackage")
+usethis::use_roxygen_md()
+
+# Old
 devtools::create("path/to/package/testpackage")
 ```
 
@@ -125,6 +129,10 @@ NULL
 [Reference](http://r-pkgs.had.co.nz/src.html)
 
 ```r
+# New
+usethis::use_rcpp()
+
+# Old
 devtools::use_rcpp()
 ```
 In `DESCRIPTION`,
