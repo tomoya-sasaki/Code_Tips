@@ -4,6 +4,7 @@
 ```
 pkgdown::build_site("Path to the folder")
 ```
+You also have `build_reference()`, `build_articles()`, and so on.
 
 ## Badge
 Create `README.Rmd`. Run `use_cran_badge()` and copy & paste. Use `badgecreatr` package for more.
