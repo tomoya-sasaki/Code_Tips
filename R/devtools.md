@@ -17,6 +17,9 @@
 
 ## Setup Packages
 ### Create
+It seems we need to use [`usethis`](https://usethis.r-lib.org/)..
+
+Old:
 ```r
 devtools::create("path/to/package/testpackage")
 ```
