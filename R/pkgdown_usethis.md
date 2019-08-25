@@ -19,3 +19,10 @@ output:
     toc: true
 ---
 ```
+
+## References
+```r
+pkgdown::template_reference()
+```
+and add the output to `.yml`.
+
