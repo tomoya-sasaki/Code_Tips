@@ -14,6 +14,7 @@
 
 ## Errors
 1. [Install error](#install-error)
+2. [Function error](#function-error)
 
 ## Setup Packages
 ### Create
@@ -244,3 +245,21 @@ Error: Command failed (1)
 3. After the all process and reinstalling, you might need to restart R session.
 4. Make sure you write all virtual functions both in `.h` and `.cpp` when you use inheritance (継承を使うとき、`virtual`で定義している関数はヘッダーと本体に書かないと上のエラーになる)
 
+## Function error
+### Issue
+Can't call Rcpp functions.
+```
+"FUNCTION" not available for .Call() for package “MYPACKAGE”
+```
+
+### Solution
+Update `MYPACKAGE-package.R` ([Reference](https://stackoverflow.com/a/30469135/4357279)).
+```
+#' @useDynLib MYPACKAGE
+#' @importFrom Rcpp sourceCpp
+NULL
+
+.onUnload <- function(libpath) {
+  library.dynam.unload("MYPACKAGE", libpath)
+}
+```
