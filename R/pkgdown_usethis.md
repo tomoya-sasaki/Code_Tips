@@ -6,6 +6,14 @@ pkgdown::build_site("Path to the folder")
 ```
 You also have `build_reference()`, `build_articles()`, and so on.
 
+Note:
+When you use Terminal, open R after you move to the folder that has the package you want to build.
+```
+$ cd PATH
+$ R
+> pkgdown::build_site()
+```
+
 ## Badge
 Create `README.Rmd`. Run `use_cran_badge()` and copy & paste. Use `badgecreatr` package for more.
 
