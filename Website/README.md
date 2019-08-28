@@ -12,8 +12,8 @@ $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
 $ echo 'eval "$(rbenv init -)"' >> .bash_profile
 $ source .bash_profile
 $ rbenv install -l
-$ rbenv install 2.4.0
-$ rbenv global 2.4.0
+$ rbenv install 2.6.3
+$ rbenv global 2.6.3
 ```
 
 ### Install Bundler
