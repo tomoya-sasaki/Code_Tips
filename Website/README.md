@@ -52,7 +52,7 @@ If you get an error about JSON version, try adding `bundle exec` in front of the
 
 ## View Website locally
 ```terminal
-($ rbenv global 2.4.0)
+($ rbenv global 2.6.3)
 $ bundle exec jekyll serve
 ```
 
