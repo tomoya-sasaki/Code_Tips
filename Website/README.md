@@ -47,6 +47,7 @@ $ jekyll -v
 ($ bundle update json)
 $ bundle exec jekyll build # build
 ```
+Build it before you commit files, otherwise links can be wrong on the server.
 
 If you get an error about JSON version, try adding `bundle exec` in front of the commands.
 
