@@ -294,6 +294,11 @@ Use this instead:
 aes(x=reorder(col_name, desc(col_name))
 ```
 
+細かく指定する場合は、先に`factor`を使うのが早い
+```r
+data$Party <- factor(data$Party, levels=party_order)
+```
+
 ### orderとlabelを変える
 ```r
 p + scale_x_discrete(limits = c("I1", "SI2", "SI1"), # order
