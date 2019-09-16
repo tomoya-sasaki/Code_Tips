@@ -9,6 +9,7 @@
 * Replace: `ciw`, `cf[char]`
 * Delete: `caw`, `ciw`
 * Repeat command: `@:`
+* Math related tips: [How I'm able to take notes in mathematics lectures using LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)
 
 ## dein
 Update:
