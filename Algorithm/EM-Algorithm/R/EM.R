@@ -28,7 +28,7 @@ N <- dim(X)[1] # number of observation
 init_mu <- t(matrix(c(mean(X[,1]), mean(X[,2]))))
 mean_ <- rbind(1.1*init_mu, 0.9*init_mu)
 cov_ <- array(rep(0,4*K), dim=c(K, 2, 2)) # Multi dimensional array
-for(k in 1:K) cov_[,,k] = diag(K)
+for(k in 1:K) cov_[,,k] = diag(2)
 
 pi_ <- matrix(rep(1, 2), nrow=2, ncol=1) / K
 
