@@ -5,6 +5,7 @@
 3. [reduce](#reduce)
 4. [Apply a function to a list](#apply-a-function-to-a-list)
 5. [Apply multiple functions](#apply-multiple-functions)
+6. [Add names](#add-names)
 
 [そろそろ手を出すpurrr/nekosky](https://speakerdeck.com/s_uryu/nekosky)
 
@@ -94,3 +95,13 @@ Element-wise mean over a list of matrices:
 map(res_chains, function(x){map(x$iter_pi, max)})
 ```
 Take `iter_pi` list in `res_chains` list and apply `max`.
+
+## Add names
+[Reference](https://github.com/tidyverse/purrr/issues/179#issuecomment-310862158)
+
+If you get `Error: Argument 1 must have names`.
+```r
+a <- list(c(45, 108, 29, 65, 94, 67, 53, 107, 114, 218), 
+          c(114, 88,79, 126, 71, 105, 44, 119, 224, 176))
+a %>% set_names(1:length(a)) %>% map_df(head) 
+```
