@@ -16,6 +16,9 @@
 ## Storage
 [Video](https://youtu.be/U9YqIVlEFN0?t=1030)
 
+## Check usage
+* `sshare --account=xxx  -a`
+
 
 ## Module
 * [List of Modules](https://portal.rc.fas.harvard.edu/apps/modules)
