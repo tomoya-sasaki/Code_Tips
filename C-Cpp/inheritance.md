@@ -3,6 +3,7 @@
 ## Table of contents
 1. [Basics](#basics)
 2. [Virtual Function](#virtual-function)
+3. [Virtual Inheritance](#virtual-inheritance)
 
 ## Basics
 Reference 1: Jumping into C++, Chapter 26  
@@ -149,4 +150,10 @@ int main() {
 In Ex.1, the compiler sees that `bDerived` is a `Base*`. Since `NonVirtual` is not virtual, it does the resolution on class `Base`.
 
 When we call `Virtual()` in `Derived` class (in Ex.1), he selecction of method happens at run-time, not compile-time. What happens at compile-time is that the compiler sees that this is a `Base*`, and that it's calling a virtual method, so it insert a call to the virtual method table (vtable) instead of class `Base`. This vtable is instantiated at run-time.
+
+
+## Virtual Inheritance
+[Reference](http://www7b.biglobe.ne.jp/~robe/cpphtml/html03/cpp03053.html)
+
+The simplest situation is that suppose you have `Base` class. `ClassA` and `ClassB` inherit `Base`. You want to make `ClassC` from `ClassA` and `ClassB`. Without using virtual class, inherited `ClassA` and `ClassB` treat `Base` as a different class although they inherit the same `Base`.
 
