@@ -157,3 +157,5 @@ When we call `Virtual()` in `Derived` class (in Ex.1), he selecction of method h
 
 The simplest situation is that suppose you have `Base` class. `ClassA` and `ClassB` inherit `Base`. You want to make `ClassC` from `ClassA` and `ClassB`. Without using virtual class, inherited `ClassA` and `ClassB` treat `Base` as a different class although they inherit the same `Base`.
 
+A complete example code is [here](https://github.com/Shusei-E/Code_Tips/blob/master/C-Cpp/Examples/virtual_inheritance.cpp).
+
