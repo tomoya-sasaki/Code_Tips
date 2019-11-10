@@ -406,7 +406,8 @@ approval %>%
 ```
 
 ## tidyeval
-[Reference](https://tidyeval.tidyverse.org/)
+[Reference](https://tidyeval.tidyverse.org/)  
+"curly curly" is introduced. See the example below.
 
 ### Example 1
 ```r
@@ -497,6 +498,12 @@ xnew <- "mpg2"
 rename(mtcars, !!xnew := !!rlang::sym(x))
  ```
  [Reference](https://stackoverflow.com/a/45644882/4357279)
+ 
+ 
+ ## Curly Curly
+ [Reference](https://www.r-bloggers.com/tidyverse-evolutions-curly-curly-operator-and-pivoting-feat-tidytuesday-data-leaflet-visuals/)
+ 
+ 
  
  ## Nested data frame
  Check [purrr](https://github.com/Shusei-E/Code_Tips/blob/master/R/purrr.md#nested-data-frame) as well.
