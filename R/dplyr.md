@@ -500,7 +500,7 @@ rename(mtcars, !!xnew := !!rlang::sym(x))
  [Reference](https://stackoverflow.com/a/45644882/4357279)
  
  
- ## Curly Curly
+ ### Curly Curly
  [Reference](https://www.r-bloggers.com/tidyverse-evolutions-curly-curly-operator-and-pivoting-feat-tidytuesday-data-leaflet-visuals/)
  
  
