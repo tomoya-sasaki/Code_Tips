@@ -3,6 +3,11 @@
 ## Latex Plug-in
 Use [textext](https://pav.iki.fi/software/textext/).
 
+## Install
+We can follow [the instruction](https://textext.github.io/textext/install/macos.html) (using Homebrew to install). However, I had to copy files that `setup.py` generates to `/Users/***/.config/inkscape/extensions`. `textext.inx` should be outside of the `textext` folder.
+
+## Old Info
+
 ### postoedit
 ```terminal
 $ brew install pstoedit
