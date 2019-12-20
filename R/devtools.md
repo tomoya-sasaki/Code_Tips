@@ -11,6 +11,7 @@
 7. [Vignette](#vignette)
 8. [roxygen](#roxygen)
 9. [Use dplyr and ggplot2](#use-dplyr-and-ggplot2)
+10. [Submission](#submission)
 
 ## Errors
 1. [Install error](#install-error)
@@ -219,6 +220,17 @@ data %>%
 g <- ggplot(temp, aes_string(x=paste0("EstTopic", 'Topic'), y='Proportion')) +
     geom_bar(stat="identity")
 ```
+
+## Submission
+
+### Checks
+It's better to submit the package to winbuild.
+```
+devtools::devtools::check()
+devtools::build_win()
+```
+
+
 
 # Errors
 
