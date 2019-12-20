@@ -43,7 +43,7 @@ Recommended workflow ([Reference](http://r-pkgs.had.co.nz/namespace.html#namespa
 ### When you edit code
 ```r
 # Option 1
-devtools::load_all() # fine but not recommended
+devtools::load_all() # fine but not recommended (maybe fine for checking)
 
 # Option 2 (probably you need to restart R anyway)
 devtools::build()
