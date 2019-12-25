@@ -10,8 +10,9 @@
 6. [C++](#c)
 7. [Vignette](#vignette)
 8. [roxygen](#roxygen)
-9. [Use dplyr and ggplot2](#use-dplyr-and-ggplot2)
-10. [Submission](#submission)
+9. [data](#data)
+10. [Use dplyr and ggplot2](#use-dplyr-and-ggplot2)
+11. [Submission](#submission)
 
 ## Errors
 1. [Install error](#install-error)
@@ -219,6 +220,11 @@ data %>%
 
 g <- ggplot(temp, aes_string(x=paste0("EstTopic", 'Topic'), y='Proportion')) +
     geom_bar(stat="identity")
+```
+
+## data
+```r
+usethis::use_data(data_to_store, internal = F)
 ```
 
 ## Submission
