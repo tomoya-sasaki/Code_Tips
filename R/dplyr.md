@@ -61,6 +61,12 @@ rename(data, NEW = OLD)
 ```
 
 ## apply的処理
+`map`を使うのが一番良さそう
+```
+data %>%
+  mutate(Region = map_chr(Prefecture, get_region))
+```
+`rowwise()`でもできる
 ```r
 fun_AgeCohorts <- function(x){
 	if(x==0) return("male")
