@@ -407,7 +407,7 @@ approval %>%
 
 ## tidyeval
 [Reference](https://tidyeval.tidyverse.org/)  
-"curly curly" is introduced. See the example below.
+"curly curly" is introduced. See the example [below](#curly-curly).
 
 ### Example 1
 ```r
@@ -501,8 +501,16 @@ rename(mtcars, !!xnew := !!rlang::sym(x))
  
  
  ### Curly Curly
- [Reference](https://www.r-bloggers.com/tidyverse-evolutions-curly-curly-operator-and-pivoting-feat-tidytuesday-data-leaflet-visuals/)
- 
+ [Reference 1](https://www.r-bloggers.com/tidyverse-evolutions-curly-curly-operator-and-pivoting-feat-tidytuesday-data-leaflet-visuals/)  
+ [Reference 2](https://www.r-bloggers.com/curly-curly-the-successor-of-bang-bang/)
+ ```r
+ # Example from the second reference
+ summarise_groups <- function(dataframe, grouping_var, column_name){
+  dataframe %>%
+    group_by({{grouping_var}}) %>%  
+    summarise({{column_name}} := mean({{column_name}}, na.rm = TRUE))
+}
+ ```
  
  
  ## Nested data frame
