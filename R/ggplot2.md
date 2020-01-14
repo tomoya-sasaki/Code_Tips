@@ -416,7 +416,10 @@ theme(legend.position="none", text = element_text(size=15))
 ## position関連
 ### 線分の位置
 [ここ](https://github.com/Shusei-E/Code_Tips/blob/master/R/dplyr.md#regression-simulation)にも書いた通り、`position_dodge`を負の値にすることで線分の並びを逆にすることができる ([Reference](http://stackoverflow.com/questions/42303960/ggplot2-change-the-order-of-color))。
-<img src="figures/dplyr_simulation.png" width="330"><br>
+<img src="figures/dplyr_simulation.png" width="340"><br>
+
+Coefficient plotを作るだけなら、[sjPlot](https://strengejacke.github.io/sjPlot/articles/plot_model_estimates.html)も参考に。
+
 ```r
 # Toy Data and Make a Figure
 interval1 <- -qnorm((1-0.9)/2)  # 90% multiplier
