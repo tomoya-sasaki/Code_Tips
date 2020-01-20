@@ -9,6 +9,9 @@ References:
 my_theme <- theme_bw() +
       theme(plot.title = element_text(hjust = 0.5),
             text = element_text(size=14))
+	    
+library(ggtheme)
+theme_minimal()
 ```
 
 ## Table of Contents
