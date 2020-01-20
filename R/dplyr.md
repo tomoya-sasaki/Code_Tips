@@ -24,7 +24,7 @@
 18. [pull](#pull)
 19. [Use of placeholders](#use-of-placeholders)
 20. [Extract words](#extract-words)
-21. [Save objects between pipes](#save-objects-between-pipes]
+21. [Save objects between pipes](#save-objects-between-pipes)
 
 ## 処理をして列を追加
 ```r
