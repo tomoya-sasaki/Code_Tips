@@ -1,5 +1,4 @@
 # devtools
-* [Official Reference](http://r-pkgs.had.co.nz/)
 * [R packages](https://r-pkgs.org/) by Hadley Wickham and Jennifer Bryan
 
 ## Table of Contents
