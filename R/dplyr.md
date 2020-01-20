@@ -24,6 +24,7 @@
 18. [pull](#pull)
 19. [Use of placeholders](#use-of-placeholders)
 20. [Extract words](#extract-words)
+21. [Save objects between pipes](#save-objects-between-pipes]
 
 ## 処理をして列を追加
 ```r
@@ -630,3 +631,9 @@ library(stringr)
 str_locate("aaa12xxx", "[0-9]+")
 str_extract("aaa12xxx", "[0-9]+")  # extract!
 ```
+
+## Save objects between pipes
+```r
+%>% {. ->> output } %>%
+```
+
