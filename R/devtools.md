@@ -16,7 +16,8 @@
 
 ## Errors
 1. [Install error](#install-error)
-2. [Function error](#function-error)
+2. [DLL error](#dll-error)
+3. [Function error](#function-error)
 
 ## Setup Packages
 ### Create
