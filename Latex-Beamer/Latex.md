@@ -78,6 +78,23 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 \end{figure}
 ```
 
+別の方法:
+```tex
+\usepackage{subfig}
+\begin{figure*}[!h]
+  \subfloat[Title \label{fig1}]{%
+      \includegraphics[width=0.32\textwidth]{KNNPred_k_1.pdf}}
+\hspace{\fill}
+  \subfloat[\label{fig2} ]{%
+      \includegraphics[width=0.32\textwidth]{KNNPred_k_5.pdf}}
+\hspace{\fill}
+  \subfloat{% No title
+      \includegraphics[width=0.32\textwidth]{KNNPred_k_15.pdf}}\\
+\caption{kNN predictor}
+\end{figure*}
+```
+
+
 [subfigures](https://ja.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_3):_Figures,_Subfigures_and_Tables)
 
 ### 図の回転
