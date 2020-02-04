@@ -263,6 +263,19 @@ Error: Command failed (1)
 3. After the all process and reinstalling, you might need to restart R session.
 4. Make sure you write all virtual functions both in `.h` and `.cpp` when you use inheritance (継承を使うとき、`virtual`で定義している関数はヘッダーと本体に書かないと上のエラーになる)
 
+## DLL Error
+### Issue
+```
+Error in getDLLRegisteredRoutines.DLLInfo(dll, addNames = FALSE) : 
+  must specify DLL via a “DLLInfo” object. See getLoadedDLLs()
+```
+
+### Solution
+```
+pkgbuild::compile_dll()
+devtools::document()
+```
+
 ## Function error
 ### Issue
 Can't call Rcpp functions.
