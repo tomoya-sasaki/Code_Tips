@@ -18,6 +18,7 @@
 13. [Sparse matrix](#sparse-matrix)
 14. [Save](#save)
 15. [reshape](#reshape)
+16. [einsum](#einsum)
 
 
 ## arrayとmatrixの違い
@@ -200,4 +201,27 @@ np.savetxt(file_path, np_object, header=header, fmt="%0.9f", delimiter=',', comm
 (209, 12288)
 > (train_set_x_orig.reshape(train_set_x_orig.shape[0], -1).T).shape
 (12288, 209)
+```
+
+## einsum
+### Basic
+```
+np.einsum('今ある足'->'残したい足')
+```
+
+```
+> a = np.arange(9).reshape(3,3)
+array(
+[[0, 1, 2],
+[3, 4, 5],
+[6, 7, 8]])
+
+> np.einsum("ii",a)  # add diagonal elements
+12
+> np.einsum("ii->i",a)  # leave diagonal elements
+array([0, 4, 8])
+> np.einsum("ij->j",a)  # add column wise
+array([ 9, 12, 15])
+
+> np.einsum('ij, ij->i', a, b)  # row-wise product of two matrices
 ```
