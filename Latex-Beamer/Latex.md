@@ -1,6 +1,8 @@
 # Latex
 uplatexを使うと良いのかも。jsarticleのオプションとしてuplatexを指定。
 
+`\usepackage{booktabs}`
+
 ## Table of Contents
 1. <a href="https://github.com/Shusei-E/Code_Tips/blob/master/Latex-Beamer/Templates/essay.tex" target="_blank">レポートテンプレ</a>と<a href="https://github.com/Shusei-E/Code_Tips/blob/master/Latex-Beamer/Templates/thesis.tex" target="_blank">卒論テンプレ</a>
 2. [写真の挿入](#写真の挿入)
