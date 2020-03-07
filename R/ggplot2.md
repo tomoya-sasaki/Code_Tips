@@ -4,6 +4,7 @@ References:
 * [Top 50 ggplot2 Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html): 大体何でも載っているサイト
 * [ggsci: Color Palettes for ggplot2](https://github.com/road2stat/ggsci)
 * [Colour generator](https://www.colorhexa.com/)
+* [paletteer](https://github.com/EmilHvitfeldt/paletteer)
 
 ```r
 my_theme <- theme_bw() +
