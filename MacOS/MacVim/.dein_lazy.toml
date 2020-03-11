@@ -340,28 +340,7 @@ hook_source = '''
       \ 'outputter/error/success' : 'null',
       \ 'outputter/error/error' : 'quickfix',
       \ 'srcfile' : expand("%"),
-      \ 'cmdopt': '-pdfdvi',
-      \ 'hook/sweep/files' : [
-      \                      '%S:p:r.aux',
-      \                      '%S:p:r.bbl',
-      \                      '%S:p:r.blg',
-      \                      '%S:p:r.dvi',
-      \                      '%S:p:r.fdb_latexmk',
-      \                      '%S:p:r.fls',
-      \                      '%S:p:r.log',
-      \                      '%S:p:r.synctex.gz',
-      \                      '%S:p:r.toc',
-      \                      '%S:p:r.lof',
-      \                      '%S:p:r.lol',
-      \                      '%S:p:r.lot',
-      \                      '%S:p:r.bcf',
-      \                      '%S:p:r.nav',
-      \                      '%S:p:r.run.xml',
-      \                      '%S:p:r.snm',
-      \                      '%S:p:r.vrb',
-      \                      '%S:p:r.out'
-      \                      ],
-      \ 'exec': '%c %o %a %s',
+      \ 'cmdopt': '-pdfdvi'
       \}
       :echomsg "Typeset: latexmk (\\tc to change)"
     else
@@ -373,24 +352,7 @@ hook_source = '''
         \ 'outputter/error/success' : 'null',
         \ 'outputter/error/error' : 'quickfix',
         \ 'srcfile' : expand("%"),
-        \ 'cmdopt': '-pdf',
-        \ 'hook/sweep/files' : [
-        \                      '%S:p:r.aux',
-        \                      '%S:p:r.bbl',
-        \                      '%S:p:r.blg',
-        \                      '%S:p:r.dvi',
-        \                      '%S:p:r.fdb_latexmk',
-        \                      '%S:p:r.fls',
-        \                      '%S:p:r.log',
-        \                       '%S:p:r.synctex.gz',
-        \                       '%S:p:r.toc',
-        \                      '%S:p:r.bcf',
-        \                      '%S:p:r.nav',
-        \                      '%S:p:r.run.xml',
-        \                      '%S:p:r.snm',
-        \                      '%S:p:r.vrb',
-        \                      '%S:p:r.out'
-        \                      ],
+        \ 'cmdopt': '-pdf'
         \}
         :echomsg "Typeset: pdflatex (\\tc to change)"
       else
@@ -402,24 +364,7 @@ hook_source = '''
         \ 'outputter/error/success' : 'null',
         \ 'outputter/error/error' : 'quickfix',
         \ 'srcfile' : expand("%"),
-        \ 'cmdopt': '-xelatex',
-        \ 'hook/sweep/files' : [
-        \                      '%S:p:r.aux',
-        \                      '%S:p:r.bbl',
-        \                      '%S:p:r.blg',
-        \                      '%S:p:r.dvi',
-        \                      '%S:p:r.fdb_latexmk',
-        \                      '%S:p:r.fls',
-        \                      '%S:p:r.log',
-        \                       '%S:p:r.synctex.gz',
-        \                       '%S:p:r.toc',
-        \                      '%S:p:r.bcf',
-        \                      '%S:p:r.nav',
-        \                      '%S:p:r.run.xml',
-        \                      '%S:p:r.snm',
-        \                      '%S:p:r.vrb',
-        \                      '%S:p:r.out'
-        \                      ],
+        \ 'cmdopt': '-xelatex'
         \}
         :echomsg "Typeset: xelatex (\\tc to change)"
       endif
@@ -429,6 +374,33 @@ hook_source = '''
   :Skinsolarized
   highlight MatchParen guibg=white guifg=orange
   :Window
+
+  " Define remove command
+  command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
+
+  " Define remove function
+  nnoremap <Leader>tC :LatexDelete<CR><CR>
+  command! LatexDelete call s:LatexDelete()
+  function! s:LatexDelete()
+    Remove %:p:r.aux
+    Remove %:p:r.bbl
+    Remove %:p:r.blg
+    Remove %:p:r.dvi
+    Remove %:p:r.fdb_latexmk
+    Remove %:p:r.fls
+    Remove %:p:r.log
+    Remove %:p:r.synctex.gz
+    Remove %:p:r.toc
+    Remove %:p:r.lof
+    Remove %:p:r.lol
+    Remove %:p:r.lot
+    Remove %:p:r.bcf
+    Remove %:p:r.nav
+    Remove %:p:r.run.xml
+    Remove %:p:r.snm
+    Remove %:p:r.vrb
+    Remove %:p:r.out
+  endfunction
 
   " 今開いているtexのPDFををSkimで表示
   nnoremap <Leader>s :SkimRun<CR>
