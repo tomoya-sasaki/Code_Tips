@@ -4,7 +4,7 @@
 ```
 pkgdown::build_site("Path to the folder")
 ```
-You also have `build_reference()`, `build_articles()`, and so on.
+You also have `build_reference()`, `build_articles()`, `build_article("pkgdown_files/NAME_WITHOUT_EXTENSION")` and so on.
 
 Note:
 When you use Terminal, open R after you move to the folder that has the package you want to build.
