@@ -519,6 +519,7 @@ rename(mtcars, !!xnew := !!rlang::sym(x))
 }
  ```
  
+ If curly curly does not work, try `sym`, e.g., `filter(!!sym(groupby) == choice_name)`.
  
  ## Nested data frame
  Check [purrr](https://github.com/Shusei-E/Code_Tips/blob/master/R/purrr.md#nested-data-frame) as well.
