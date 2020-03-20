@@ -1,0 +1,128 @@
+%\documentclass[handout]{beamer}
+\documentclass[11pt, dvipdfmx]{beamer}          
+
+\mode<presentation>
+{
+ \setbeamercovered{invisible}
+ \usetheme{Madrid}
+ % \usetheme{Darmstadt} \useoutertheme[subsection=false]{miniframes}
+ % \usecolortheme{beaver}  % if you turn it on, it is red-gray
+}
+
+\makeatletter
+\newcommand*{\overlaynumber}{\number\beamer@minimum}
+\makeatother
+
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{bbm} % for a indicator function
+\usepackage{multirow,multicol}
+\usepackage{latexsym}
+\usepackage{colortbl,xcolor}
+\usepackage{appendixnumberbeamer}
+\usepackage{pifont}
+\usepackage{kantlipsum}
+\usepackage[utf8]{inputenc}
+\graphicspath{{./figure/}{../paper/figure/}}
+
+% === dcolumn package ===
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\vname}[1]{{\color{magenta}{\texttt{#1}}}}
+\newcommand{\bone}{\mathbf{1}}
+
+% === Title Page ===
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]  % no shdow
+
+% == bottom bar ===
+\setbeamertemplate{footline}[frame number]  % only show the number
+
+% === Blocks (block, exampleblock, aleartblock) ===
+\setbeamertemplate{blocks}[rounded][shadow=false]  % no shadow
+
+% === Cross out sentences === 
+\usepackage[normalem]{ulem}
+\newcommand\redsout{\bgroup\markoverwith{\textcolor{red}{\rule[0.5ex]{6pt}{1.5pt}}}\ULon}
+
+% === Multirow cells ===
+\usepackage{multirow, booktabs}
+
+% ==== dotted lines in tables ===
+\usepackage{arydshln}
+\usepackage{threeparttable}
+
+% === appendix numbers ===
+\usepackage{appendixnumberbeamer}
+
+% === table ===
+\usepackage{array}
+\usepackage{caption}
+
+% === button ===
+\usepackage{tikz}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+
+% === checkmark (pifont) ===
+\newcommand{\cmark}{\ding{52}}%
+\newcommand{\xmark}{\ding{55}}%
+
+
+% === begin document
+
+\begin{document}
+
+\newcommand{\indep}{\stackrel{ \text{indep.}}{\sim}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+% === new commands ===
+
+% new colors
+\definecolor{light-gray}{gray}{0.9}
+
+\newcommand{\difp}{\hspace{-0.15in}$\rangle$}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\newcommand\spacingset[1]{\renewcommand{\baselinestretch}%
+{#1}\small\normalsize}
+
+% \beamerdefaultoverlayspecification{<+->}  % for presentation
+\usenavigationsymbolstemplate{}  % no navigation bar
+% \beamerdefaultoverlayspecification{<+->}  % automatic pause
+
+%-- to show the bar, please comment out `footline` option
+\title[Title Short]{Title}
+\author[Author names in the bottom]{\large Author 1 \quad Author 2 \quad Author 3}
+\institute[Institute]{{\normalsize Institute 1 \hspace{.75in} Institute 2}}
+\date[Date]{\medskip Talk at the Workshop \\ Place \\ \bigskip Month xx,  20xx}
+
+
+\section{Title Page}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Motivation and Overview}
+\begin{itemize}
+  \item Text 
+  \vfill
+  \item Text \hfill Text
+\end{itemize}
+\begin{alertblock}{Show 1}
+A thing to show,
+\end{alertblock}
+\begin{exampleblock}{Show 2}
+A thing to show 2.
+\end{exampleblock}
+\end{frame}
+
+
+\end{document}
