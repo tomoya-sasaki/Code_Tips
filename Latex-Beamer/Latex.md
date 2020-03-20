@@ -479,13 +479,12 @@ V&X。\\
 `\begin{document}`の後で定義
 
 ```tex
+\newcommand*{\QEDB}{\hfill\ensuremath{\square}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand\dist{\buildrel\rm d\over\sim}
 \newcommand\ind{\stackrel{\rm indep.}{\sim}}
 \newcommand\iid{\stackrel{\rm i.i.d.}{\sim}}
 \newcommand\logit{{\rm logit}}
-\renewcommand\r{\right}
-\renewcommand\l{\left}
 
 \newcommand{\cD}{\mathcal{D}}
 \newcommand{\cN}{\mathcal{N}}
