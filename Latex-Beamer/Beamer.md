@@ -25,6 +25,7 @@
 18. [これまでの表示を消しつつ切り替え](#これまでの表示を消しつつ切り替え)
 19. [Hyper link](#hyper-link)
 20. [Code](#code)
+21. [フレームの改ページ](#フレームの改ページ)
 
 
 ## Beamer Slide
@@ -260,4 +261,18 @@ Page number counting ([Reference](https://tex.stackexchange.com/a/2559/95960)):
 # pty  1   5  11  30  59  71  92 100
 # num  1   1   1   2  33 169   1 286
 \end{semiverbatim}
+```
+
+## フレームの改ページ
+```tex
+\setbeamertemplate{frametitle continuation}{}  % do not show numbers
+
+\begin{document}
+\begin{frame}[allowframebreaks]{Title}
+\begin{itemize}
+  \item Key points
+  \vfill
+  \item Theory
+\end{itemize}
+\end{frame}
 ```
