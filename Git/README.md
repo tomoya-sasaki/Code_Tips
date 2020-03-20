@@ -28,6 +28,7 @@ How to use Git
 12. [Get a branch on GitHub](#get-a-branch-on-github)
 13. [Get back to previous commits](#get-back-to-previous-commits)
 14. [Moving a repository](#moving-a-repository)
+15. [Fetch a remote branch](#fetch-a-remote-branch)
 
 
 ## How to clone
@@ -226,3 +227,8 @@ $ git reset --hard ORIG_HEAD
 
 ## Moving a repository
 [Check this](https://gist.github.com/Shusei-E/ce9eba97b9dfde8941248462c9b1f8dc)
+
+## Fetch a remote branch
+```
+$ git checkout --track origin/daves_branch
+```
