@@ -237,7 +237,14 @@ devtools::devtools::check()
 devtools::build_win()
 ```
 
+### Passing CRAN checks
 
+#### tidyverse is tricky
+Add `@importFrom rlang .data` and write `.data` specifically, e.g., `dplyr::group_by(.data$Topic)`.
+
+
+#### remove pkgdown files
+Minimally, we need `data`, `man`, `R`, `src`, `DESCRIPTION`, and `NAMESPACE`. Probably we can remove `.so`, and `.o` as well.
 
 # Errors
 
