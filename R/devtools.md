@@ -247,13 +247,14 @@ Add `@importFrom rlang .data` and write `.data` specifically, e.g., `dplyr::grou
 Minimally, we need `data`, `man`, `R`, `src`, `DESCRIPTION`, and `NAMESPACE`. Probably we can remove `.so`, and `.o` as well.
 
 #### DESCRIPTION
-Probably, we cannot have `Authors@R:` type. Instead, `Author: NAME` format.
+Probably, we cannot have `Authors@R:` type. Instead, `Author: NAME` format. Remove `VignetteBuilder: knitr` if you don't have vignettes.
 
 #### Checking on your computer
 ```
 $ R CMD build PackageName
 $ R CMD check PackageName_0.1.0.tar.gz --as--cran
 ```
+
 
 # Errors
 
