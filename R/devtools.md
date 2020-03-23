@@ -246,6 +246,9 @@ Add `@importFrom rlang .data` and write `.data` specifically, e.g., `dplyr::grou
 #### remove pkgdown files
 Minimally, we need `data`, `man`, `R`, `src`, `DESCRIPTION`, and `NAMESPACE`. Probably we can remove `.so`, and `.o` as well.
 
+#### DESCRIPTION
+Probably, we cannot have `Authors@R:` type. Instead, `Author: NAME` format.
+
 # Errors
 
 ## Install error
