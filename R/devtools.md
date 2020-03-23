@@ -251,6 +251,7 @@ Probably, we cannot have `Authors@R:` type. Instead, `Author: NAME` format.
 
 #### Checking on your computer
 ```
+$ R CMD build PackageName
 $ R CMD check PackageName_0.1.0.tar.gz --as--cran
 ```
 
