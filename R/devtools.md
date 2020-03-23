@@ -249,6 +249,11 @@ Minimally, we need `data`, `man`, `R`, `src`, `DESCRIPTION`, and `NAMESPACE`. Pr
 #### DESCRIPTION
 Probably, we cannot have `Authors@R:` type. Instead, `Author: NAME` format.
 
+#### Checking on your computer
+```
+$ R CMD check PackageName_0.1.0.tar.gz --as--cran
+```
+
 # Errors
 
 ## Install error
