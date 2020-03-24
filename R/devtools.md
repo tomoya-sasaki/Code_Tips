@@ -11,8 +11,7 @@
 7. [Vignette](#vignette)
 8. [roxygen](#roxygen)
 9. [data](#data)
-10. [Use dplyr and ggplot2](#use-dplyr-and-ggplot2)
-11. [Submission](#submission)
+10. [Submission](#submission)
 
 ## Errors
 1. [Install error](#install-error)
@@ -209,19 +208,6 @@ If you want to use the class in other functions of the package, you need to add 
 ### namespace
 [Reference](https://cran.r-project.org/web/packages/roxygen2/vignettes/namespace.html)
 
-## Use dplyr and ggplot2
-```r
-data %>%
-  mutate(Topic=Z+1) %>%
-  select(-starts_with("Z")) %>%
-  group_by_('Topic') %>%
-  summarize_(count = 'n()', sumx='sum(X)') %>%
-  ungroup() %>%
-  mutate_(Proportion='round(sumx/count*100, 3)')
-
-g <- ggplot(temp, aes_string(x=paste0("EstTopic", 'Topic'), y='Proportion')) +
-    geom_bar(stat="identity")
-```
 
 ## data
 ```r
