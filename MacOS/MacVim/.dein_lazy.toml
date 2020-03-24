@@ -379,27 +379,13 @@ hook_source = '''
   command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
 
   " Define remove function
+  " %:p:r -> absolute path witout extension
   nnoremap <Leader>tC :LatexDelete<CR><CR>
   command! LatexDelete call s:LatexDelete()
   function! s:LatexDelete()
-    Remove %:p:r.aux
-    Remove %:p:r.bbl
-    Remove %:p:r.blg
-    Remove %:p:r.dvi
-    Remove %:p:r.fdb_latexmk
-    Remove %:p:r.fls
-    Remove %:p:r.log
-    Remove %:p:r.synctex.gz
-    Remove %:p:r.toc
-    Remove %:p:r.lof
-    Remove %:p:r.lol
-    Remove %:p:r.lot
-    Remove %:p:r.bcf
-    Remove %:p:r.nav
-    Remove %:p:r.run.xml
-    Remove %:p:r.snm
-    Remove %:p:r.vrb
-    Remove %:p:r.out
+    let delpath = ""
+    let delpathlist = split(globpath('.', "*.{aux,bbl,blg,dvi,fdb_latexmk,fls,log,synctex.gz,toc,lof,lol,lot,bcf,nav,run.xml,snm,vrb,out}"), '\n')
+    call map(delpathlist, 'delete(expand(v:val))')
   endfunction
 
   " 今開いているtexのPDFををSkimで表示
