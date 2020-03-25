@@ -238,7 +238,7 @@ Remove `VignetteBuilder: knitr` if you don't have vignettes.
 #### Checking on your computer
 ```
 $ R CMD build PackageName
-$ R CMD check PackageName_0.1.0.tar.gz --as--cran
+$ R CMD check --as-cran PackageName_0.1.0.tar.gz
 ```
 
 
