@@ -230,7 +230,7 @@ Add `@importFrom rlang .data` and write `.data` specifically, e.g., `dplyr::grou
 
 
 #### remove pkgdown files
-Minimally, we need `data`, `man`, `R`, `src`, `DESCRIPTION`, and `NAMESPACE`. Probably we can remove `.so`, and `.o` as well.
+Minimally, we need `data`, `man`, `R`, `src`, `DESCRIPTION`, and `NAMESPACE`. Probably we can remove `.so`, and `.o` as well. Write `.Rbuildignore` appropriately.
 
 #### DESCRIPTION
 Remove `VignetteBuilder: knitr` if you don't have vignettes.
