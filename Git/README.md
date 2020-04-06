@@ -12,6 +12,10 @@ How to use Git
 * Complete Reference
   * [k88hudson/git-flight-rules](https://github.com/k88hudson/git-flight-rules)
   * [日本語訳](https://blog.labot.jp/entry/2019/07/01/183204)
+  
+  
+* Use it on Terminal
+  * [GitHub CLI](https://cli.github.com/manual/)
 
 # Table of Contents
 1. [How to clone](#how-to-clone)
