@@ -54,7 +54,7 @@
 
 ## One-to-many
 ```r
-> # First make a block
+# First make a block
 > data_blocked <- blockData(cand, bio, varnames = c("year", "prefecture_id", "kunr"))
 
 ==================== 
@@ -68,19 +68,20 @@ Blocking variables.
 
 Combining blocked variables for final blocking assignments.
 
-> blocks <- names(data_blocked)
-> index = 3
+blocks <- names(data_blocked)
+index = 3
 
-> cand_index <- data_blocked[[blocks[index]]]$dfA.inds
-> bio_index <- data_blocked[[blocks[index]]]$dfB.inds
-> block1 <- cand[cand_index, ]
-> block2 <- bio[bio_index, ]
+cand_index <- data_blocked[[blocks[index]]]$dfA.inds
+bio_index <- data_blocked[[blocks[index]]]$dfB.inds
+block1 <- cand[cand_index, ]
+block2 <- bio[bio_index, ]
+
 > block1$name_jp
 [1] "中山なりあき"   "ばば洋光"       "かわむら秀三郎" "上杉光弘"      
 > block2$name_jp
 [1] "上杉光弘"   "中山成彬"   "川村秀三郎" "馬場洋光"   "鶴丸千夏"  
 
-> mat <- stringdist::stringdistmatrix(block1$name_jp,block2$name_jp)
+mat <- stringdist::stringdistmatrix(block1$name_jp,block2$name_jp)
 > mat
      [,1] [,2] [,3] [,4] [,5]
 [1,]    6    4    6    6    6
@@ -88,26 +89,27 @@ Combining blocked variables for final blocking assignments.
 [3,]    7    7    4    7    7
 [4,]    0    4    5    4    4
 
-> M <- Int(rows = nrow(block1), cols = nrow(block2))  # Indicator (which to use)
-> obj <- Minimize(sum(M * mat))
-> # Constraints
-> c1 <- M <=1
-> c2 <- M >=0
-> if (nrow(block1) < nrow(block2)) {
-+   c3 <- sum_entries(M, axis = 1) == 1
-+   c4 <- sum_entries(M, axis = 2) <= 1
-+ } else if (nrow(block1) < nrow(block2)){
-+   c3 <- sum_entries(M, axis = 1) <= 1
-+   c4 <- sum_entries(M, axis = 2) == 1
-+ } else {
-+   c3 <- sum_entries(M, axis = 1) == 1
-+   c4 <- sum_entries(M, axis = 2) == 1
-+ }
-> cts <- list(c1, c2, c3, c4)
-> prob <- Problem(objective = obj, constraints = cts)
-> sol <- solve(prob)
-> sol_val <- round(sol$getValue(M))
-> matched <- apply(sol_val, 1, function(x){which(x==1)}) %>% unlist()
+M <- Int(rows = nrow(block1), cols = nrow(block2))  # Indicator (which to use)
+obj <- Minimize(sum(M * mat))
+
+# Constraints
+c1 <- M <=1
+c2 <- M >=0
+if (nrow(block1) < nrow(block2)) {
+  c3 <- sum_entries(M, axis = 1) == 1
+  c4 <- sum_entries(M, axis = 2) <= 1
+} else if (nrow(block1) < nrow(block2)){
+  c3 <- sum_entries(M, axis = 1) <= 1
+  c4 <- sum_entries(M, axis = 2) == 1
+} else {
+  c3 <- sum_entries(M, axis = 1) == 1
+  c4 <- sum_entries(M, axis = 2) == 1
+}
+cts <- list(c1, c2, c3, c4)
+prob <- Problem(objective = obj, constraints = cts)
+sol <- solve(prob)
+sol_val <- round(sol$getValue(M))
+matched <- apply(sol_val, 1, function(x){which(x==1)}) %>% unlist()
 
 > cand$name_jp[cand_index]
 [1] "中山なりあき"   "ばば洋光"       "かわむら秀三郎" "上杉光弘"      
