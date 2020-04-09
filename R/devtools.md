@@ -12,6 +12,7 @@
 8. [roxygen](#roxygen)
 9. [data](#data)
 10. [Submission](#submission)
+11. [Travis](#travis)
 
 ## Errors
 1. [Install error](#install-error)
@@ -241,6 +242,9 @@ $ R CMD build PackageName
 $ R CMD check --as-cran PackageName_0.1.0.tar.gz
 ```
 
+
+## Travis
+If you encounter an error, running it again or deleting cache might help.
 
 # Errors
 
