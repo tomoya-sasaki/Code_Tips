@@ -44,7 +44,7 @@ $ github-pages versions  # you can check versions
 
 ```terminal
 $ jekyll -v
-($ bundle update json)
+($ bundle update json or just $ bundle update)
 $ bundle exec jekyll build # build
 ```
 Build it before you commit files, otherwise links can be wrong on the server.
