@@ -145,6 +145,7 @@ id.legend <- grep("guide", g1$layout$name)
 legend <- g1[["grobs"]][[id.legend]]
 lwidth <- sum(legend$width)
 
+# `arrangeGrob` does not show preview
 gA <- grid.arrange(p1 + theme(legend.position="none"), 
           p2 + theme(legend.position="none"), 
           legend, 
