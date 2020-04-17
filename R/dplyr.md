@@ -25,6 +25,7 @@
 19. [Use of placeholders](#use-of-placeholders)
 20. [Extract words](#extract-words)
 21. [Save objects between pipes](#save-objects-between-pipes)
+22. [Reorder columns](#reorder-columns)
 
 ## 処理をして列を追加
 ```r
@@ -638,3 +639,6 @@ str_extract("aaa12xxx", "[0-9]+")  # extract!
 %>% {. ->> output } %>%
 ```
 
+
+## Reorder columns
+`relocate()` ([blog](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-select-rename-relocate/)).
