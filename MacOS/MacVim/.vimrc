@@ -28,8 +28,8 @@ autocmd BufRead,BufNewFile *.jl set filetype=julia
 " タブ幅の設定、Tabではなくスペース2つにする
 set tabstop=2
 set shiftwidth=2
-set noexpandtab
-set softtabstop=0
+set expandtab
+set softtabstop=2
 autocmd Filetype tex setlocal expandtab
 
 " 新しい行のインデントを現在行と同じにする
@@ -84,6 +84,10 @@ function! s:ChangeDir()
   :cd %:h
   :pwd
 endfunction
+
+" Reverse search oder
+nnoremap # /\<<C-R>=expand('<cword>')<CR>\><CR>
+nnoremap * ?\<<C-R>=expand('<cword>')<CR>\><CR>
 
 
 " \wでwordcount (LatexならTeXcountを利用して純粋に単語数だけ)
