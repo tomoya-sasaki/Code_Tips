@@ -6,6 +6,7 @@ References:
 * [ggsci: Color Palettes for ggplot2](https://github.com/road2stat/ggsci)
 * [Colour generator](https://www.colorhexa.com/)
 * [paletteer](https://github.com/EmilHvitfeldt/paletteer)
+* [BBC Style](https://bbc.github.io/rcookbook/)
 
 ```r
 my_theme <- theme_bw() +
