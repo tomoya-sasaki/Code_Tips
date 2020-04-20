@@ -153,6 +153,9 @@ devtools::build_vignettes()
 ```
 
 ## roxygen
+
+To compile `.Rd` files locally, use `R CMD Rd2pdf main.Rd`.
+
 ### Function
 ```r
 #' Initialize a model
