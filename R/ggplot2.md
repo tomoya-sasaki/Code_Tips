@@ -3,10 +3,7 @@ References:
 * [ggplot2 — きれいなグラフを簡単に合理的に](https://heavywatal.github.io/rstats/ggplot2.html)
 * [Top 50 ggplot2 Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html): 大体何でも載っているサイト
 * [ggplot extensions](https://exts.ggplot2.tidyverse.org/gallery/)
-* [ggsci: Color Palettes for ggplot2](https://github.com/road2stat/ggsci)
-* [Colour generator](https://www.colorhexa.com/)
-* [paletteer](https://github.com/EmilHvitfeldt/paletteer)
-* [BBC Style](https://bbc.github.io/rcookbook/)
+
 
 ```r
 my_theme <- theme_bw() +
@@ -54,6 +51,7 @@ theme_minimal()
 22. [Bar plot with percentage](#bar-plot-with-percentage)
 23. [Return ggplot2 object in loop](#return-ggplot2-object-in-loop)
 24. [facetで表示を分ける](#facetで表示を分ける)
+25. [Colour and Style](#colour-and-style)
 
 
 ## xラベルの変更
@@ -736,3 +734,14 @@ tibble(beta1 = beta[, 1],
     my_theme
 ```
 <img src="figures/facet_truth.png" width="450">
+
+## Colour and Style
+
+### Colour
+* [ggsci: Color Palettes for ggplot2](https://github.com/road2stat/ggsci)
+* [Colour generator](https://www.colorhexa.com/)
+* [paletteer](https://github.com/EmilHvitfeldt/paletteer)
+* [Viridis color](https://gotellilab.github.io/GotelliLabMeetingHacks/NickGotelli/ViridisColorPalette.html)
+
+### Style
+* [BBC Style](https://bbc.github.io/rcookbook/)
