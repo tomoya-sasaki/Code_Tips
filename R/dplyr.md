@@ -55,6 +55,9 @@ temp <- data %>%
 ```r
 rename(data, NEW = OLD)
 ```
+```r
+setNames(c("food_regime", "initial_volume", "width"))
+```
 
 ## 複数列へ同じ処理を行う
 ```r
