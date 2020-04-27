@@ -17,6 +17,7 @@ Check [devtools erros](https://github.com/Shusei-E/Code_Tips/blob/master/R/devto
 1. [gfortran](#gfortran)
 2. [could not find function error](#could-not-find-function-error)
 3. [Error occurs even if you fixed bugs](#error-occurs-even-if-you-fixed-bugs)
+4. [Error related to the memory](#error-related-to-the-memory) 
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -143,3 +144,7 @@ After `remove.packages()`, try `devtools::install() ; devtools::document()` agai
 
 ## Error occurs even if you fixed bugs
 Try delete `*.o` and `*.so` files and recomplie all.
+
+
+## Error related to the memory
+Avoid using `.pusb_back()` in C++. Secure objects in R and rewrite them in C++.
