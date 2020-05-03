@@ -1,5 +1,7 @@
 # Tikz
-[Use style file](https://github.com/Shusei-E/tikz-bayesnet)
+* [Use style file](https://github.com/Shusei-E/tikz-bayesnet)
+* [TikzEdt](http://www.tikzedt.org/)
+
 
 ## Table of Contents
 1. [設定](#設定)
