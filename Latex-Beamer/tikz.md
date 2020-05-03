@@ -1,6 +1,6 @@
 # Tikz
 * [Use style file](https://github.com/Shusei-E/tikz-bayesnet)
-* [TikzEdt](http://www.tikzedt.org/)
+* [TikZiT](https://tikzit.github.io/)
 
 
 ## Table of Contents
