@@ -26,8 +26,8 @@
 > obj <- Maximize(sum(M * res_mat))
 > c1 <- M <=1
 > c2 <- M >=0
->   c3 <- sum_entries(M, axis=1) == 1
->   c4 <- sum_entries(M, axis=2) == 1
+> c3 <- sum_entries(M, axis=1) == 1
+> c4 <- sum_entries(M, axis=2) == 1
 > cts <- list(c1, c2, c3, c4)
 > prob <- Problem(objective=obj, constraints=cts)
 > sol <- solve(prob)
