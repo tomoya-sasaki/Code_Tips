@@ -236,3 +236,8 @@ $ git reset --hard ORIG_HEAD
 ```
 $ git checkout --track origin/daves_branch
 ```
+
+```
+$ git fetch <remote-repo> <remote-branch>:<local-branch>
+$ git checkout <local-branch>
+```
