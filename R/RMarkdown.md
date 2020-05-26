@@ -7,6 +7,7 @@ Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 3. [Inline code](#inline-code)
 4. [align](#align)
 5. [Hide all code chunks](#hide-all-code-chunks)
+6. [read_chunk](#read_chunk)
 
 ## 日本語を使用する際の設定
 この部分のインデントは、タブではなくスペースで行わないといけないことに注意。Vimでは改行した時に自動にタブでインデントが入ってしまう。
@@ -81,3 +82,32 @@ Do not have to use `$$`. Just start with `\begin{align}`.
 knitr::opts_chunk$set(echo=FALSE)
 ```
 in the first code chunk.
+
+## read_chunk
+R file
+```r
+## @knitr test-a --------
+1 + 1
+
+## ---- test-b --------
+if (TRUE) {
+  plot(cars)
+}
+```
+
+<pre><code>Read an external script:
+
+```{r, include=FALSE, cache=FALSE}
+knitr::read_chunk('test.R')
+```
+
+Now we can use the code, e.g.,
+
+```{r, test-a, echo=FALSE}
+
+```
+
+```{r, test-b, fig.height=4}
+
+```
+</code></pre>
