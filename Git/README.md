@@ -234,7 +234,7 @@ $ git reset --hard ORIG_HEAD
 
 ## Fetch a remote branch
 ```
-$ git checkout --track origin/daves_branch
+$ git checkout --track origin/dev_branch
 ```
 
 ```
