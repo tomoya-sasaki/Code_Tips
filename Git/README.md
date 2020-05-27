@@ -33,6 +33,7 @@ How to use Git
 13. [Get back to previous commits](#get-back-to-previous-commits)
 14. [Moving a repository](#moving-a-repository)
 15. [Fetch a remote branch](#fetch-a-remote-branch)
+16. [Fix a corrupt git](#fix-a-corrupt-git]
 
 
 ## How to clone
@@ -240,4 +241,11 @@ $ git checkout --track origin/dev_branch
 ```
 $ git fetch <remote-repo> <remote-branch>:<local-branch>
 $ git checkout <local-branch>
+```
+
+
+## Fix a corrupt git
+```
+$ rm .git/index
+$ git reset
 ```
