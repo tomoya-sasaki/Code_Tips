@@ -735,6 +735,8 @@ tibble(beta1 = beta[, 1],
 ```
 <img src="figures/facet_truth.png" width="450">
 
+If you want to change the width, use `facet_grid(~Group, scale = "free_x", space = "free")`.
+
 ## Colour and Style
 
 ### Colour
