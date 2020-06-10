@@ -41,6 +41,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 23. [Wordcount](#wordcount)
 24. [Define subsubsubsection](#define-subsubsubsection)
 25. [記号](#記号)
+26. [セル内で折り返し](#セル内で折り返し)
 
 
 ## 写真の挿入
@@ -613,3 +614,17 @@ In preamble,
 \usepackage{pifont}
 \newcommand{\cmark}{\ding{52}\hspace{-0.4em}}
 ```
+
+## セル内で折り返し
+`\shortstack`
+```tex
+% https://tex.stackexchange.com/questions/38924/newline-in-a-table-cell-which-is-centered/38926
+\documentclass{article}
+\begin{document} 
+\begin{tabular}{ccc}
+    one & two & three \\
+    one & two & \shortstack{a \\ bb \\ c}\\
+\end{tabular}
+\end{document}
+```
+
