@@ -242,6 +242,7 @@ $ git checkout --track origin/dev_branch
 $ git fetch <remote-repo> <remote-branch>:<local-branch>
 $ git checkout <local-branch>
 ```
+`<remote-repo>` is usually `origin`.
 
 
 ## Fix a corrupt git
