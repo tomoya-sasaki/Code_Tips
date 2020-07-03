@@ -223,7 +223,7 @@ usethis::use_data(data_to_store, internal = F)
 ### Checks
 It's better to submit the package to winbuild.
 ```
-devtools::devtools::check()
+devtools::check()
 devtools::build_win()
 ```
 
