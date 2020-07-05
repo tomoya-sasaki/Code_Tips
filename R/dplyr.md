@@ -526,7 +526,10 @@ my_summarise <- function(df, group_var) {
  
  ### Curly Curly
  [Reference 1](https://www.r-bloggers.com/tidyverse-evolutions-curly-curly-operator-and-pivoting-feat-tidytuesday-data-leaflet-visuals/)  
- [Reference 2](https://www.r-bloggers.com/curly-curly-the-successor-of-bang-bang/)
+ 
+ Curly Curly is a successor of Bang Bang ([Reference](https://www.r-bloggers.com/curly-curly-the-successor-of-bang-bang/)).
+ 
+ 
  ```r
  # Example from the second reference
  summarise_groups <- function(dataframe, grouping_var, column_name){
