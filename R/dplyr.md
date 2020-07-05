@@ -417,8 +417,7 @@ approval %>%
 ```
 
 ## tidyeval
-[Reference](https://tidyeval.tidyverse.org/)  
-"curly curly" is introduced. See the example [below](#curly-curly).
+**[Official Reference](https://dplyr.tidyverse.org/articles/programming.html)**
 
 ### Example 1
 ```r
@@ -510,6 +509,19 @@ rename(mtcars, !!xnew := !!rlang::sym(x))
  ```
  [Reference](https://stackoverflow.com/a/45644882/4357279)
  
+ 
+### Bang Bang
+[Reference](https://community.rstudio.com/t/how-can-i-write-a-function-while-working-with-tidyverse/7667/2)
+```r
+my_summarise <- function(df, group_var) {
+  group_var <- enquo(group_var)
+  print(group_var)
+
+  df %>%
+    group_by(!! group_var) %>%
+    summarise(a = mean(a))
+}
+```
  
  ### Curly Curly
  [Reference 1](https://www.r-bloggers.com/tidyverse-evolutions-curly-curly-operator-and-pivoting-feat-tidytuesday-data-leaflet-visuals/)  
