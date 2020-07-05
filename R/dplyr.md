@@ -417,7 +417,8 @@ approval %>%
 ```
 
 ## tidyeval
-**[Official Reference](https://dplyr.tidyverse.org/articles/programming.html)**
+* **[Official Reference](https://dplyr.tidyverse.org/articles/programming.html)**
+* [Advanced R](https://adv-r.hadley.nz/metaprogramming.html)
 
 ### Example 1
 ```r
