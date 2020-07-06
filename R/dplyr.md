@@ -419,7 +419,7 @@ approval %>%
 ## tidyeval
 * **[Official Reference](https://dplyr.tidyverse.org/articles/programming.html)**
 * [Advanced R](https://adv-r.hadley.nz/metaprogramming.html)
-* [Defuse R expressions](https://rlang.r-lib.org/reference/quotation.html): `expr()`, `enquo()` etc...
+* [Defuse R expressions](https://rlang.r-lib.org/reference/quotation.html): `expr()`, `enquo()` etc... ([cheat sheet](https://github.com/rstudio/cheatsheets/blob/master/tidyeval.pdf))
 
 ### Example 1
 ```r
