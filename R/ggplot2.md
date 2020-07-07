@@ -135,6 +135,9 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
 
 ## 図を並べる
 ### Use gridExtra
+
+If you do not have to preview, use `arrangeGrob` instead of `grid.arrange`.
+
 Example 1:<br>
 [Reference](http://notchained.hatenablog.com/entry/2015/12/17/010904)
 ```r
