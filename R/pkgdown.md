@@ -1,4 +1,4 @@
-# pkgdown and usethis
+# pkgdown
 
 ## Build Site
 ```
