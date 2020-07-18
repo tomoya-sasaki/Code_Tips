@@ -114,7 +114,7 @@ multiply <- function(x, y) {
 
 ### Add dependencies
 ```r
-devtools::use_package("tidyverse")
+usethis::use_package("tidyverse")
 ```
 
 ### Use external package
