@@ -18,6 +18,7 @@ Check [devtools erros](https://github.com/Shusei-E/Code_Tips/blob/master/R/devto
 2. [could not find function error](#could-not-find-function-error)
 3. [Error occurs even if you fixed bugs](#error-occurs-even-if-you-fixed-bugs)
 4. [Error related to the memory](#error-related-to-the-memory) 
+5. [XX not available for .Call() for package XX](#xx-not-available-for-.Call()-for-package-XX]
 
 ## Basics
 test.cpp (You need add `// [[Rcpp::export]]` before the function you want to use in R)
@@ -148,3 +149,6 @@ Try delete `*.o` and `*.so` files and recomplie all.
 
 ## Error related to the memory
 Avoid using `.pusb_back()` in C++. Secure objects in R and rewrite them in C++.
+
+
+## XX not available for .Call() for package XX
