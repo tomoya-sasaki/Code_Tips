@@ -87,7 +87,7 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 Do not forget to `source ~/.bash_profile` after editing!!
   
 Then, you can install python:
-* List Available Versions: `$ pyenv install -l`
+* List Available Versions: `$ pyenv install -l` (`$ brew upgrade pyenv`)
 * `$ pyenv install 3.7.4` 
  * If error occures, try `xcode-select --install` and install again
 * `$ brew install pyenv-virtualenv`
