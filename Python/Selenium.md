@@ -18,7 +18,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 if __name__ == "__main__":
     options = Options()
     options.add_argument('-headless')
-    driver = Firefox(executable_path='geckodriver', firefox_options=options)
+    driver = Firefox(executable_path='/usr/local/bin/geckodriver', options=options)
     wait = WebDriverWait(driver, timeout=10)
     driver.get('http://www.google.com')
     wait.until(expected.visibility_of_element_located((By.NAME, 'q'))).send_keys('headless firefox' + Keys.ENTER)
