@@ -4,7 +4,29 @@ from selenium import webdriver
 driver = webdriver.Firefox() # If you want to download something, PhantomJS cannot be used
 driver.get(url) 
 ```
-PhantomJSを使う場合は、homebrewでインストール可能。[ここ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/BeautifulSoup.md#phantomjs)にも情報あり。Firefoxでerrorがでたら、`/usr/local/bin`に[`geckodriver`](https://github.com/mozilla/geckodriver/releases)を入れる。
+PhantomJSを使う場合は、homebrewでインストール可能 (now it's deprecated)。[ここ](https://github.com/Shusei-E/Code_Tips/blob/master/Python/BeautifulSoup.md#phantomjs)にも情報あり。Firefoxでerrorがでたら、`/usr/local/bin`に[`geckodriver`](https://github.com/mozilla/geckodriver/releases)を入れる。
+
+```py
+# Firefox with headless mode
+from selenium.webdriver import Firefox
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.support import expected_conditions as expected
+from selenium.webdriver.support.wait import WebDriverWait
+
+if __name__ == "__main__":
+    options = Options()
+    options.add_argument('-headless')
+    driver = Firefox(executable_path='geckodriver', firefox_options=options)
+    wait = WebDriverWait(driver, timeout=10)
+    driver.get('http://www.google.com')
+    wait.until(expected.visibility_of_element_located((By.NAME, 'q'))).send_keys('headless firefox' + Keys.ENTER)
+    wait.until(expected.visibility_of_element_located((By.CSS_SELECTOR, '#ires a'))).click()
+    print(driver.page_source)
+    driver.quit()
+```
+
 
 スクリーンショットをとると、PhantomJSでも楽。
 ```python
