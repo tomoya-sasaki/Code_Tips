@@ -182,6 +182,7 @@ What you have:
 ```
 To select,
 ```python
+from selenium.webdriver.support.ui import Select
 select = Select(driver.find_element_by_name('YearDisplay'))
 #select = Select(driver.find_element_by_id('BrowseByYearFD5F77A1-B53C-94A4-983A8E7E2FE633F5'))
 # select by visible text
