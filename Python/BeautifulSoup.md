@@ -31,6 +31,7 @@ f.close()
 ## 探す
 ```python
 soup.find_all("td", class_="td2")
+soup.find_all("ul", {"name": "kaigiroku"})  # <ul name="kaigiroku">
 ```
 例えば、
 `soup.find_all("div", class_="bill_text_content")`
