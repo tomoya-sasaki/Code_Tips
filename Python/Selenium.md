@@ -40,6 +40,7 @@ driver.save_screenshot('last.png')
 4. [With BeautifulSoup](#with-beautifulsoup)
 5. [Pulldown menu](#pulldown-menu)
 6. [Open and Close a new Tab](#open-and-close-a-new-tab)
+7. [On Amazon EC2](#on-amazon-ec2)
 
 ## クリック
 ```python
@@ -201,3 +202,31 @@ driver.close() # close
 driver.switch_to.window(driver.window_handles[0]) # Get back to the first tab
 ```
 Or you can keep the first tab with `main_window = driver.current_window_handle` and use `driver.switch_to.window(main_tab)`.
+
+
+
+## On Amazon EC2
+```python
+import sys
+!{sys.executable} -m pip install pandas bs4 selenium
+
+!sudo apt-get --yes --force-yes update
+!sudo apt-get --yes --force-yes install xvfb firefox
+!apt-cache show firefox | grep Version
+
+# If you need to move the file
+from shutil import copy2
+copy2("/mnt/geckodriver", "/home/work")  # check on Jupyter notebook side, "move" option
+! sudo chmod 755 /home/work/geckodriver
+
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options
+
+options = Options()
+options.add_argument('-headless')
+driver = Firefox(executable_path="/home/work/geckodriver", options=options)
+wait = WebDriverWait(driver, timeout=15)
+```
+
+
+
