@@ -13,6 +13,14 @@ Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938)
 * [ShinyStan](http://mc-stan.org/interfaces/shinystan)
 * [tidybayes](https://github.com/mjskay/tidybayes)
 
+### With tidyverse
+```r
+returned %>%
+  tidybayes::spread_draws(diff_D[choice]) %>%
+  tidybayes::mean_hdi(.width = hdi_interval) %>%
+  ungroup()
+```
+
 ### With ggplot2
 ```r
 result <- rstan::extract(resStan)
