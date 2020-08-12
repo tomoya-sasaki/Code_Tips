@@ -16,7 +16,7 @@ Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938)
 ### With tidyverse
 ```r
 returned %>%
-  tidybayes::spread_draws(diff_D[choice]) %>%
+  tidybayes::spread_draws(diff_D[choice]) %>%  # predicted[choice, count]
   tidybayes::mean_hdi(.width = hdi_interval) %>%
   ungroup()
 ```
