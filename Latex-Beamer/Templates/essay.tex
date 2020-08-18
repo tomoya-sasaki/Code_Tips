@@ -1,9 +1,4 @@
 \documentclass[a4paper,10.5pt,uplatex]{jsarticle}
-%--脚注の設定
-\usepackage{natbib}
-\bibpunct[, ]{(}{)}{;}{and}{}{,} %本文での引用の体裁はここで整えられるみたい
-\bibliographystyle{apsr2006Edited} 
-\usepackage{amsmath}
 %--余白の設定
 \usepackage[truedimen,margin=20truemm]{geometry}
 %--図の設定
@@ -58,9 +53,9 @@
 %\usepackage{courier} Probably we don't need it
 \usepackage{here}
 %--日本語環境用の設定を追加
-% \usepackage[english]{babel} % まとめて英語化できる
- % \addto\captionsenglish{\renewcommand{\figurename}{Figure }} %jsarticleでFigureにスペースが入らないのを調整
- % \addto\captionsenglish{\renewcommand{\tablename}{Table }}
+\usepackage[english]{babel} % まとめて英語化できる
+ \addto\captionsenglish{\renewcommand{\figurename}{Figure }} %jsarticleでFigureにスペースが入らないのを調整
+ \addto\captionsenglish{\renewcommand{\tablename}{Table }}
  \renewcommand{\lstlistingname}{Code}
 \renewcommand{\refname}{参考文献}
 \renewcommand{\abstractname}{要約}
@@ -70,8 +65,13 @@
 \usepackage{amsmath} 
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{bbm}
 %--セクションのフォント
 \renewcommand{\headfont}{\bfseries}
+%--脚注の設定
+\usepackage{natbib}
+\bibpunct[, ]{(}{)}{;}{and}{}{,} %本文での引用の体裁はここで整えられるみたい
+\bibliographystyle{pa}
 %-----------------
 \begin{document}
 
