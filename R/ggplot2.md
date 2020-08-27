@@ -30,8 +30,9 @@ theme_minimal()
 	* [orderとlabelを変える](#orderとlabelを変える)
 	* [値で並び替え](#値で並び替え)
 	* [カテゴリカルで並び替え](#カテゴリカルで並び替え)
+	* [数値を綺麗に](#数値を綺麗に)
 11. [Legend関連](#legend関連)
-	* [順番を変える](#順番を変える)
+	* [順番を逆にする](#順番を逆にする)
 	* [ラベルを変える](#ラベルを変える)
 	* [Legendに表示しない](#legendに表示しない)
 	* [Manually add](#manually-add)
@@ -371,8 +372,13 @@ Here, we reorder `Word` column based on the values of `Proportion` column. If yo
 aes(x = reorder(the_factor, desc(the_factor)), ...)
 ````
 
+### 数値を綺麗に
+```r
+scale_y_continuous(labels = scales::percent)
+```
+
 ## Legend関連
-### 順番を変える
+### 順番を逆にする
 ```r
 guides(fill = guide_legend(reverse = TRUE)) # factor with `aes(fill = )`
 guides(colour = guide_legend(reverse = TRUE)) # factor with `aes(colour = )`
