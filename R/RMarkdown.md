@@ -62,7 +62,12 @@ Chunk optionsにはRの関数や評価結果の値を代入することが可能
 | fig.width/height | 7            | numeric         | 図のプロットのサイズ、"出力"画像のサイズであり、貼り付けのサイズではない点に注意（単位：インチ）                          |
 | fig.cap          | -            | character       | 図のキャプション    |
 | fig.align        |              | character       | `fig.align = 'center'` |
+| out.width = "90%" |             | numeric         | アウトプットする図のサイズ |
 
+```r
+knitr::opts_chunk$set(echo = TRUE, cache = FALSE, warning = FALSE, message = FALSE, 
+                      fig.width = 6.5, fig.height = 4.8, out.width="92%")
+```
 
 ## Inline code
 ```md
