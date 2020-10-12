@@ -14,3 +14,7 @@
 
 ## Natural Language Processing
 * KL divergence of Gaussians
+
+
+## Resources
+* [fiveMinuteStats](https://stephens999.github.io/fiveMinuteStats/index.html)
