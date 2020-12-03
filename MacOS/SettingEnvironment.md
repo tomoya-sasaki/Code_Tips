@@ -9,6 +9,7 @@
 * `brew upgrade r` will update your R
 * Old packages: `/usr/local/lib/R/`
 * **Use normall installer from the website from the next time**
+* To change language setting, write `export LC_ALL=en_US` in `~/.bash_profile` and `$ source ~/.bash_profile`.
 
 
 ### Tensorflow
