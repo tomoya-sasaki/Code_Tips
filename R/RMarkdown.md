@@ -19,8 +19,6 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
  pdf_document:
   latex_engine: xelatex
-  fig_width: 5
-  fig_height: 4
   number_sections: true
   toc: true
   toc_depth: 2
@@ -31,8 +29,16 @@ monofont: Ricty Discord
 \fontsize{9}{12}
 \hrulefill
 ```
+
 `\fontsize{文字サイズ}{行間}`なのかな？
 `monofont: Ricty Discord`といった行を追加して等幅日本語フォントの指定をしておかないと、コードブロックの日本語が表示されない。
+
+
+Figure settings:
+```rmd
+knitr::opts_chunk$set(echo = TRUE, cache = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(fig.width = 6.5, fig.height = 4.8, out.width="88%")
+```
 
 
 ### ggplot2
