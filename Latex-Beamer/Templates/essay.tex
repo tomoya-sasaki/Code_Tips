@@ -79,6 +79,13 @@
 \newtheorem{example}{Example}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+%--itemize
+\usepackage{enumitem}
+\setlistdepth{3}
+\renewlist{itemize}{itemize}{3}
+\setlist[itemize]{label=\textbullet}
+\setlist[itemize,2]{label=\(\circ\)}
+\setlist[itemize,3]{label=\(\diamond\)}
 %--セクションのフォント
 \renewcommand{\headfont}{\bfseries}
 %--脚注の設定
