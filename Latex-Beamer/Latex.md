@@ -42,6 +42,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 24. [Define subsubsubsection](#define-subsubsubsection)
 25. [記号](#記号)
 26. [セル内で折り返し](#セル内で折り返し)
+27. [数式の注釈](#数式の注釈)
 
 
 ## 写真の挿入
@@ -628,3 +629,14 @@ In preamble,
 \end{document}
 ```
 
+## 数式の注釈
+```
+\usepackage{mathtools}
+\begin{document}
+\begin{align}
+  \underbrace{(X_i - c)}_{\mathclap{X_i \text{ is centered at }c}} \\
+  \underbrace{(X_i - c)}_{\mathllap{X_i \text{ is centered at }c}} \\
+  \underbrace{(X_i - c)}_{\mathrlap{X_i \text{ is centered at }c}}
+\end{align}
+\end{document}
+```
