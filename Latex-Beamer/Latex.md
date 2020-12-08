@@ -630,7 +630,7 @@ In preamble,
 ```
 
 ## 数式の注釈
-```
+```tex
 \usepackage{mathtools}
 \begin{document}
 \begin{align}
