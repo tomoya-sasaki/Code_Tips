@@ -3,7 +3,7 @@
 * [Tutorial 2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-lamp-amazon-linux-2.html)
 
 * Amazon Linux 1
-* Amazon Linux 2
+* Amazon Linux 2: We should use this now.
 
 ## Allow connections
 SSH (port 22), HTTP (port 80), and HTTPS (port 443)
