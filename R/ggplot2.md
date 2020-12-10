@@ -57,6 +57,7 @@ theme_minimal()
 23. [Return ggplot2 object in loop](#return-ggplot2-object-in-loop)
 24. [facetで表示を分ける](#facetで表示を分ける)
 25. [Colour and Style](#colour-and-style)
+26. [if else](#if-else)
 
 
 ## xラベルの変更
@@ -761,3 +762,14 @@ If you want to change the width, use `facet_grid(~Group, scale = "free_x", space
 
 ### Style
 * [BBC Style](https://bbc.github.io/rcookbook/)
+
+
+## if else
+```r
+fig_base(res, yintercept, x_category = x_category) +
+  {if (facet) facet_wrap(~Category)} +
+  xlab(xlab) + ylab(ylab) +
+  {if (!is.null(set_ylim)) ylim(set_ylim)} +
+  {if (coord_flip) coord_flip()} +
+  fig_theme
+```
