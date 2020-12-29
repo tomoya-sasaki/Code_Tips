@@ -507,6 +507,10 @@ annotate("text", x=5, y=8, colour="red",
 
 ### geom_text()
 文字が被らないようにしたかったら、`ggrepel` packageを使う。
+これでもOK
+```r
+geom_text(aes(label = PointVal), position = position_nudge(x = 0.26))
+```
 
 ## 選択肢を強制的に表示
 ```r
