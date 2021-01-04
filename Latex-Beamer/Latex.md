@@ -194,7 +194,7 @@ x^{\textsc{r}}
 \end{document}
 ```
 
-## Middle pipe
+### Middle pipe
 ```tex
 \biggm\vert
 ```
