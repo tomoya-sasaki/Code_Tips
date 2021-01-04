@@ -43,6 +43,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 25. [記号](#記号)
 26. [セル内で折り返し](#セル内で折り返し)
 27. [数式の注釈](#数式の注釈)
+28. [Middle pipe](#middle-pipe)
 
 
 ## 写真の挿入
@@ -639,4 +640,9 @@ In preamble,
   \underbrace{(X_i - c)}_{\mathrlap{X_i \text{ is centered at }c}}
 \end{align}
 \end{document}
+```
+
+## Middle pipe
+```tex
+\biggm\vert
 ```
