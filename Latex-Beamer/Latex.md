@@ -20,6 +20,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
    * [記号をまたぐlinebreak](#記号をまたぐlinebreak)
    * [Small capital](#small-capital)
    * [数式の注釈](#数式の注釈)
+   * [Middle pipe](#middle-pipe)
 6. [ダブルスペース](#ダブルスペース)
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
 8. [横長の表を回転する](#横長の表を回転する)
@@ -43,7 +44,6 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 24. [Define subsubsubsection](#define-subsubsubsection)
 25. [記号](#記号)
 26. [セル内で折り返し](#セル内で折り返し)
-27. [Middle pipe](#middle-pipe)
 
 
 ## 写真の挿入
@@ -192,6 +192,11 @@ x^{\textsc{r}}
   \underbrace{(X_i - c)}_{\mathrlap{X_i \text{ is centered at }c}}
 \end{align}
 \end{document}
+```
+
+## Middle pipe
+```tex
+\biggm\vert
 ```
 
 ## ダブルスペース
@@ -641,9 +646,4 @@ In preamble,
     one & two & \shortstack{a \\ bb \\ c}\\
 \end{tabular}
 \end{document}
-```
-
-## Middle pipe
-```tex
-\biggm\vert
 ```
