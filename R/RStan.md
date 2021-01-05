@@ -1,12 +1,18 @@
 # RStan
-Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938).
+Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938) and `rstanarm`.
 
 ## Table of Contents
+
+### RStan
 1. [Visualization](#visualization)
 2. [Multi core](#multi-core)
 3. [Initialization](#initialization)
 4. [Diagnosis](#diagnosis)
 5. [Self-defined functions](#self-defined-functions)
+
+### rstanarm
+1. [Linear predictor](#linear-predictor)
+
 
 ## Visualization
 * [Bayesplot](https://github.com/stan-dev/bayesplot)
@@ -78,19 +84,26 @@ stan_mcse(object, pars, ...)
 [Reference](https://github.com/stan-dev/math/issues/214)
 ```stan
 functions{
-	real normal_lb_ub_rng(real mu, real sigma, real lb, real ub) {
-			if(mu > 1.0)
-				return 1.0;
-			else if(mu < -1.0)
-				return -1.0;
-			else{
-				real p1 = normal_cdf(lb, mu, sigma);  // cdf with lower bound
-				real p2 = normal_cdf(ub, mu, sigma);  // cdf with upper bound
-				real u = uniform_rng(p1, p2);
-				return (sigma * inv_Phi(u)) + mu;  // inverse cdf 
-			}
-	}
+  real normal_lb_ub_rng(real mu, real sigma, real lb, real ub) {
+      if(mu > 1.0)
+        return 1.0;
+      else if(mu < -1.0)
+        return -1.0;
+      else{
+        real p1 = normal_cdf(lb, mu, sigma);  // cdf with lower bound
+        real p2 = normal_cdf(ub, mu, sigma);  // cdf with upper bound
+        real u = uniform_rng(p1, p2);
+        return (sigma * inv_Phi(u)) + mu;  // inverse cdf 
+      }
+  }
 }
 data{
 }
+```
+
+# rstanarm
+
+## Linear Predictor
+```r
+rstanarm::posterior_linpred
 ```
