@@ -58,6 +58,8 @@ theme_minimal()
 24. [facetで表示を分ける](#facetで表示を分ける)
 25. [Colour and Style](#colour-and-style)
 26. [if else](#if-else)
+27. [Plot 3D info](#plot-3d-info)
+	* [geom_tile](#geom_tile)
 
 
 ## xラベルの変更
@@ -776,4 +778,17 @@ fig_base(res, yintercept, x_category = x_category) +
   {if (!is.null(set_ylim)) ylim(set_ylim)} +
   {if (coord_flip) coord_flip()} +
   fig_theme
+```
+
+
+## Plot 3D info
+### geom_tile
+```r
+p <- ggplot(res %>% mutate(L2 = factor(L2), L3 = factor(L3)), 
+            aes(x = L2, y = L3)) +
+  geom_tile(aes(fill = TestPerplexity, colour = NumTopics), size = 1.5,
+            width = 0.95, height = 0.9,  # make spaces between tiles
+            linejoin = "bevel") +
+  scale_fill_gradient(low = "blue", high = "white") +
+  scale_colour_gradient(low = "red", high = "gray60")
 ```
