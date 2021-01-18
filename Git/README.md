@@ -239,6 +239,10 @@ $ git checkout --track origin/dev_branch
 ```
 
 ```
+$ git fetch origin name_of_remote_branch
+```
+
+```
 $ git fetch <remote-repo> <remote-branch>:<local-branch>
 $ git checkout <local-branch>
 ```
