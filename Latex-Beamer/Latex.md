@@ -23,7 +23,9 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
    * [Middle pipe](#middle-pipe)
 6. [ダブルスペース](#ダブルスペース)
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
-8. [横長の表を回転する](#横長の表を回転する)
+8. [表関連](#表関連)
+   * [横長の表を回転する](#横長の表を回転する)
+   * [一部に線を引く](#一部に線を引く)
 9. [コードを挿入](#コードを挿入)
     * [Edit R keywords](#edit-r-keywords)
 10. [図のフォルダの指定](#図のフォルダの指定)
@@ -366,8 +368,14 @@ b&=c
 
 \end{multicols}
 ```
-## ページをまたぐ表
-### Simple
+
+## 表関連
+
+### 一部に線を引く
+Use `\cline{2-3}` instead of `\hline`.
+
+### ページをまたぐ表
+#### Simple
 Use longtable. You can use pandox to get longtable. Here is three columns example.
 ```tex
 \begin{longtable}[c]{@{}ccc@{}}
@@ -402,7 +410,7 @@ $[0\ 0\ 1\ 0]$ & 0.28 & 0.28\\
 \footnotetext{Note that...}
 ```
 
-### Use with tabularxx
+#### Use with tabularxx
 `\usepackage{ltablex}`を使うことで、tabluarx環境下で、longtable環境も使えるようになる。
 ```tex
 \setlongtables %これでlongtable環境を使えるようになる。
