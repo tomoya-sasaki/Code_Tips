@@ -13,7 +13,7 @@ $ cd PATH
 $ R
 > pkgdown::build_site()
 ```
-If it takes time, try `pkgdown::build_site(install = F)`.
+If it takes time, try `pkgdown::build_site(install = FALSE)`.
 
 ## Badge
 Create `README.Rmd`. Run `use_cran_badge()` and copy & paste. Use `badgecreatr` package for more.
