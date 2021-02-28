@@ -8,6 +8,7 @@ Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 4. [align](#align)
 5. [Hide all code chunks](#hide-all-code-chunks)
 6. [read_chunk](#read_chunk)
+7. [kable](#kable)
 
 ## 日本語を使用する際の設定
 この部分のインデントは、タブではなくスペースで行わないといけないことに注意。Vimでは改行した時に自動にタブでインデントが入ってしまう。
@@ -122,3 +123,11 @@ Now we can use the code, e.g.,
 
 ```
 </code></pre>
+
+
+## kable
+```r
+library(kableExtra)
+knitr::kable(res, format = 'latex', digit = 3, booktabs = TRUE) %>% 
+    kable_styling(position = "center")
+```
