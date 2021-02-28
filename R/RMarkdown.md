@@ -128,6 +128,6 @@ Now we can use the code, e.g.,
 ## kable
 ```r
 library(kableExtra)
-knitr::kable(res, format = 'latex', digit = 3, booktabs = TRUE) %>% 
+knitr::kable(res, format = "latex", digit = 3, booktabs = TRUE) %>% 
     kable_styling(position = "center")
 ```
