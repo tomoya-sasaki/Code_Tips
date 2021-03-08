@@ -12,7 +12,7 @@ Run from Terminal: `Rscript -e "rmarkdown::render('File.Rmd')"`
 
 ## 日本語を使用する際の設定
 この部分のインデントは、タブではなくスペースで行わないといけないことに注意。Vimでは改行した時に自動にタブでインデントが入ってしまう。
-```rmd
+<pre lang="Rmd">
 ---
 title: "Title"
 author: "名前"
@@ -29,7 +29,23 @@ monofont: Ricty Discord
 ---
 \fontsize{9}{12}
 \hrulefill
+
+```{r, warning=FALSE, message=FALSE, fig.align='center'}
+library(tidyverse)
+my_theme <- function(legend.position = "right") {
+  p <- theme_bw() +
+        theme(plot.title = element_text(hjust = 0.5),
+              panel.grid = element_blank(),
+              text = element_text(size = 12),
+              legend.position = legend.position)
+}
+
+make_table <- function(obj, digit = 3) {
+  knitr::kable(res, format = "latex", digit = digit, booktabs = TRUE) %>% 
+      kableExtra::kable_styling(position = "center")
+}
 ```
+</pre>
 
 `\fontsize{文字サイズ}{行間}`なのかな？
 `monofont: Ricty Discord`といった行を追加して等幅日本語フォントの指定をしておかないと、コードブロックの日本語が表示されない。
