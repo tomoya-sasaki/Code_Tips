@@ -27,6 +27,7 @@
 21. [Save objects between pipes](#save-objects-between-pipes)
 22. [Reorder columns](#reorder-columns)
 23. [mutate](#mutate)
+24. [Bootstrap](#bootstrap)
 
 ## 処理をして列を追加
 ```r
@@ -669,3 +670,9 @@ str_extract("aaa12xxx", "[0-9]+")  # extract!
 mutate_at(vars(-Q2),
           ~if_else(. == "あまり必要ない" | .== "全く必要ない", 1, 0))
 ```
+
+## Bootstrap
+```r
+modelr::bootstrap()
+```
+
