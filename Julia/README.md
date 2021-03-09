@@ -1,7 +1,7 @@
 # Julia
 ```julia
 using Pkg
-Pkg.add("IJulia")
+Pkg.add("IJulia"); Pkg.add("Distributions")
 
 using IJulia
 notebook()
