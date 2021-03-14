@@ -43,7 +43,7 @@ my_theme <- function(legend.position = "right") {
 make_table <- function(obj, caption = NULL, digit = 3) {
   knitr::kable(obj, format = "latex", caption = caption,
                digit = digit, booktabs = TRUE) %>% 
-      kableExtra::kable_styling(position = "center")
+      kableExtra::kable_styling(position = "center", latex_options = "hold_position")
 }
 ```
 </pre>
