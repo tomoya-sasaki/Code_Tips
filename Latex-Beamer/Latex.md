@@ -204,7 +204,8 @@ x^{\textsc{r}}
 
 ### arrows
 ```tex
-\xrightarrow{p} / \xrightarrow[]{p}
+\xrightarrow{p}
+\xrightarrow[]{p}
 ```
 
 
