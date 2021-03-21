@@ -21,6 +21,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
    * [Small capital](#small-capital)
    * [数式の注釈](#数式の注釈)
    * [Middle pipe](#middle-pipe)
+   * [Arrows](#arrows)
 6. [ダブルスペース](#ダブルスペース)
 7. [itemizeでbulletを変える](#itemizeでbulletを変える)
 8. [表関連](#表関連)
@@ -200,6 +201,13 @@ x^{\textsc{r}}
 ```tex
 \biggm\vert
 ```
+
+### arrows
+```tex
+\xrightarrow{p} / \xrightarrow[]{p}
+```
+
+
 
 ## ダブルスペース
 ```tex
