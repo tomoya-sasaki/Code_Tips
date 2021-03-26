@@ -154,7 +154,7 @@ Sitemap: https://shusei-e.github.io/sitemap.xml
 ```
 
 ## If you get Alart from Github
-Update bundle
+Edit `Gemfile.lock` and update bundle
 ```terminal
 $ bundle update
 $ bundle update jekyll
