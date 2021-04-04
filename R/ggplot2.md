@@ -758,6 +758,9 @@ tibble(beta1 = beta[, 1],
 
 If you want to change the width, use `facet_grid(~Group, scale = "free_x", space = "free")`.
 
+### Change size
+Use the `force_panelsizes()` function in `ggh4x`([reference](https://stackoverflow.com/a/65836587/4357279))
+
 ## Colour and Style
 
 ### Colour
