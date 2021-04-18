@@ -302,6 +302,12 @@ mutate_at(vars(matches("1",.)), funs(ifelse(is.na(.),0,.)))
 ```
 
 ## Create Dummy
+
+### Package
+Use `fastDummies::dummy_cols`
+
+
+### Manual
 Taken from [Stackoverflow](https://stackoverflow.com/questions/35943455/creating-indicator-variable-columns-in-dplyr-chain)
 ```r
 dummy <- function(data, col) {
