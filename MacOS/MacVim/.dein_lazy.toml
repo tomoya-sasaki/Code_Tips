@@ -196,14 +196,14 @@ hook_source = '''
   nnoremap <Leader>tc :Templatechunk<CR>jo
   command! Templatechunk call s:Templatechunk()
   function! s:Templatechunk()
-    call append(line("."), "```{r, warning = FALSE, message = FALSE, fig.align = 'center'}")
+    call append(line("."), "```{r, warning=FALSE, message=FALSE, fig.align='center'}")
     call append(line(".")+1,"```")
   endfunction
   nnoremap <Leader>tC :TemplateChunk<CR>jjo
   command! TemplateChunk call s:TemplateChunk()
   function! s:TemplateChunk()
     call append(line("."), "")
-    call append(line(".")+1, "```{r, warning = FALSE, message = FALSE, fig.width = 6, fig.height = 5, fig.align = 'center'}")
+    call append(line(".")+1, "```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=5, fig.align='center'}")
     call append(line(".")+2,"```")
   endfunction
 
@@ -340,9 +340,9 @@ hook_source = '''
       \ 'outputter/error/success' : 'null',
       \ 'outputter/error/error' : 'quickfix',
       \ 'srcfile' : expand("%"),
-      \ 'cmdopt': '-pdfdvi'
+      \ 'cmdopt': '-pdf'
       \}
-      :echomsg "Typeset: latexmk (\\tc to change)"
+      :echomsg "Typeset: pdflatex (\\tc to change)"
     else
       if g:latex_mode==1
         let g:latex_mode = 2
@@ -352,9 +352,9 @@ hook_source = '''
         \ 'outputter/error/success' : 'null',
         \ 'outputter/error/error' : 'quickfix',
         \ 'srcfile' : expand("%"),
-        \ 'cmdopt': '-pdf'
+        \ 'cmdopt': '-pdfdvi'
         \}
-        :echomsg "Typeset: pdflatex (\\tc to change)"
+        :echomsg "Typeset: latexmk (\\tc to change)"
       else
         " if g:latex_mode==2
         let g:latex_mode = 0
