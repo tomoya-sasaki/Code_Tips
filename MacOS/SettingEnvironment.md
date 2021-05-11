@@ -171,6 +171,7 @@ email = Email address registered at GitHub
 
 ### Personal access token
 Check [this](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) before your first login.
+To update the existing information, check [this](https://docs.github.com/ja/github/getting-started-with-github/updating-credentials-from-the-macos-keychain).
 
 
 ### GitHub CLI
