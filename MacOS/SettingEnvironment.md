@@ -169,6 +169,12 @@ Edit by `git config --global --edit`
 email = Email address registered at GitHub
 ```
 
+### GitHub CLI
+```
+$ brew install gh
+```
+
+
 ## Vim
 * Kaoriya-version
 * use `homebrew` from the next time?
