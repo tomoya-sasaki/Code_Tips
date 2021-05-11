@@ -169,6 +169,10 @@ Edit by `git config --global --edit`
 email = Email address registered at GitHub
 ```
 
+### Personal access token
+Check [this](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) before your first login.
+
+
 ### GitHub CLI
 ```
 $ brew install gh
