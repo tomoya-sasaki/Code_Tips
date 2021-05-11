@@ -172,6 +172,7 @@ email = Email address registered at GitHub
 ### GitHub CLI
 ```
 $ brew install gh
+$ gh auth login   # Use HTTPS
 ```
 
 
