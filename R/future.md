@@ -23,9 +23,9 @@ run_simulation <- function(nworkers, nsim, fn_simulation, parameters) {
   return(res)
 }
 
-run_simulation2 <- function(nworkers, fn_simulation, obj, grid) {
-  run_batch <- function(fn_simulation, index, obj, grid) {
-    res <- map_dfr(index, function(i) {fn_simulation(obj,
+run_simulation2 <- function(nworkers, fn_simulation, parameters, grid) {
+  run_batch <- function(fn_simulation, index, parameters, grid) {
+    res <- map_dfr(index, function(i) {fn_simulation(parameters,
                                           grid$lambda1[i],
                                           grid$lambda2[i])}) 
     return(res)
@@ -38,7 +38,7 @@ run_simulation2 <- function(nworkers, fn_simulation, obj, grid) {
                           function(index) {
                             run_batch(fn_simulation,
                                       index,
-                                      obj, grid)
+                                      parameters, grid)
                           },
                           .options = furrr_options(seed = TRUE,
                                                    packages = "ordinal")
