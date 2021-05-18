@@ -24,7 +24,7 @@ run_simulation <- function(nworkers, nsim, fn_simulation, parameters) {
 }
 
 run_simulation2 <- function(nworkers, fn_simulation, obj, grid) {
-  run_batch <- function(fn_simulation, index, parameters, grid) {
+  run_batch <- function(fn_simulation, index, obj, grid) {
     res <- map_dfr(index, function(i) {fn_simulation(obj,
                                           grid$lambda1[i],
                                           grid$lambda2[i])}) 
