@@ -180,7 +180,6 @@ $ brew install gh
 $ gh auth login   # Use HTTPS
 ```
 
-
 ## Vim
 * Kaoriya-version
 * use `homebrew` from the next time?
@@ -193,3 +192,16 @@ $ gh auth login   # Use HTTPS
 ## Keyboard Shortcuts
 * Keyboard -> Shortcuts -> App Shortcuts -> Add(+)
 * Help: Create keyboard shortcuts for apps
+
+
+## VS Code
+* Julia, Vim Plugins
+   * Go to VS Code's keyword shortcuts: change the shortcut for Julia execution (cmd + enter)
+* VS Code can read Vim `.vimrc`
+* Theme
+  * Go to the theme setting
+  * Color Theme: Dark
+  * Dark Color Theme: Dark
+  * High Contrast Color Theme: Light
+  * Light Color Theme: Dark
+  * Auto Detect Color Scheme and Auto Detect High Contrast are on
