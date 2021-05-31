@@ -195,6 +195,8 @@ $ gh auth login   # Use HTTPS
 
 
 ## VS Code
+[Settings in JSON](https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/VSCode)
+
 * Julia, Vim Plugins
 * Shortcuts
    * Go to VS Code's keyword shortcuts: change the shortcut for Julia execution (cmd + enter)
