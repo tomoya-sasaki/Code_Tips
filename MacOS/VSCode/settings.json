@@ -1,0 +1,33 @@
+{
+    "workbench.editor.showIcons": false,
+    "window.autoDetectColorScheme": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.preferredHighContrastColorTheme": "Default Light+",
+    "workbench.preferredLightColorTheme": "Default Dark+",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.enableTelemetry": true,
+    "jupyter.askForKernelRestart": false,
+    "vim.argumentObjectClosingDelimiters": [
+        ")",
+        "]",
+        "}"
+    ],
+    "vim.argumentObjectOpeningDelimiters": [
+        "(",
+        "[",
+        "{"
+    ],
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "/Users/shusei/.vimrc",
+    "vim.hlsearch": true,
+    "vim.whichwrap": "h,l,<,>,[,]",
+    "vim.startofline": false
+}
