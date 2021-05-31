@@ -1,0 +1,105 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "cmd+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "language-julia.executeJuliaCodeInREPL",
+        "when": "editorTextFocus && editorLangId == 'juliamarkdown'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-language-julia.executeJuliaCodeInREPL",
+        "when": "editorTextFocus && editorLangId == 'juliamarkdown'"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "language-julia.executeJuliaCodeInREPL",
+        "when": "editorTextFocus && editorLangId == 'julia'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-language-julia.executeJuliaCodeInREPL",
+        "when": "editorTextFocus && editorLangId == 'julia'"
+    },
+    {
+        "key": "cmd+1",
+        "command": "-workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "cmd+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "cmd+2",
+        "command": "cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "home",
+        "command": "-cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "cmd+0",
+        "command": "cursorEnd",
+        "when": "textInputFocus && !editorHasSelection"
+    },
+    {
+        "key": "cmd+1",
+        "command": "cursorHome",
+        "when": "textInputFocus &&  !editorHasSelection"
+    },
+    {
+        "key": "cmd+0",
+        "command": "cursorEndSelect",
+        "when": "textInputFocus && editorHasSelection"
+    },
+    {
+        "key": "cmd+1",
+        "command": "cursorHomeSelect",
+        "when": "textInputFocus &&  editorHasSelection"
+    },
+    {
+        "key": "end",
+        "command": "-cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "\\ v",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+up",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "cmd+down",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "cmd+left",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "cmd+right",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "cmd+right",
+        "command": "-cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "cmd+left",
+        "command": "-cursorHome",
+        "when": "textInputFocus"
+    }
+]
