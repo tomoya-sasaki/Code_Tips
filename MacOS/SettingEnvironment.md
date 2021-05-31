@@ -197,6 +197,7 @@ $ gh auth login   # Use HTTPS
 ## VS Code
 * Julia, Vim Plugins
    * Go to VS Code's keyword shortcuts: change the shortcut for Julia execution (cmd + enter)
+   * Delete `cmd + 0` and `cmd + 1` from the VS Code Shortcuts
 * VS Code can read Vim `.vimrc`
 * Theme
   * Go to the theme setting
