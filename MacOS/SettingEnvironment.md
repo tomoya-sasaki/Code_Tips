@@ -195,7 +195,8 @@ $ gh auth login   # Use HTTPS
 
 
 ## VS Code
-[Settings in JSON](https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/VSCode)
+[Settings in JSON](https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/VSCode)  
+["When" context](https://code.visualstudio.com/api/references/when-clause-contexts#conditional-operators)
 
 * Julia, Vim Plugins
 * Shortcuts
