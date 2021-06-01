@@ -200,18 +200,19 @@
         "when": "terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
     },
     {
-        "key": "alt+cmd+left",
+        "key": "alt+cmd+right",
         "command": "workbench.action.nextPanelView",
         "when": "panelFocus"
     },
     {
-        "key": "alt+cmd+right",
+        "key": "alt+cmd+left",
         "command": "workbench.action.previousPanelView",
         "when": "panelFocus"
     },
     {
         "key": "alt+cmd+right",
-        "command": "workbench.action.nextEditorInGroup"
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "!panelFocus"
     },
     {
         "key": "cmd+k alt+cmd+right",
@@ -219,7 +220,8 @@
     },
     {
         "key": "alt+cmd+left",
-        "command": "workbench.action.previousEditorInGroup"
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "!panelFocus"
     },
     {
         "key": "cmd+k alt+cmd+left",
@@ -242,5 +244,15 @@
     {
         "key": "alt+cmd+right",
         "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "cmd+right",
+        "command": "-workbench.action.terminal.sendSequence",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "-workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalProcessSupported"
     }
 ]
