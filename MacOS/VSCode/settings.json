@@ -4,7 +4,6 @@
     "files.trimTrailingWhitespace": true,
     "git.decorations.enabled": false,
     "terminal.integrated.cursorBlinking": true,
-    "workbench.preferredHighContrastColorTheme": "Default Light+",
     "workbench.preferredLightColorTheme": "Default Dark+",
     "workbench.editorAssociations": [
         {
@@ -52,6 +51,22 @@
             "after": [
                 ";"
             ]
+        },
+        {
+            "before": [
+                "*"
+            ],
+            "after": [
+                "#", "N"
+            ]
+        },
+        {
+            "before": [
+                "#"
+            ],
+            "after": [
+                "*", "N"
+            ]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -72,7 +87,34 @@
             ]
         }
      ],
+     "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["'"],
+            "after": ["\""],
+            "when": "editorTextFocus && editorLangId != 'tex'"
+        },
+        {
+            "before": ["\""],
+            "after": ["'"],
+            "when": "editorTextFocus && editorLangId != 'tex'"
+        },
+        {
+            "before": ["-"],
+            "after": ["_"],
+            "when": "editorTextFocus && editorLangId != 'tex'"
+        },
+        {
+            "before": ["_"],
+            "after": ["-"],
+            "when": "editorTextFocus && editorLangId != 'tex'"
+        }
+    ],
     "editor.tabSize": 2,
     "vim.useCtrlKeys": true,
-    "vim.easymotionDimBackground": false
+    "vim.easymotionDimBackground": false,
+    "workbench.preferredHighContrastColorTheme": "Default Light+",
+    "editor.occurrencesHighlight": false,
+    "editor.insertSpaces": true,
+    "workbench.colorTheme": "Default Light+",
+    "typescript.preferences.quoteStyle": "double"
 }
