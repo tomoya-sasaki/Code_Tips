@@ -81,14 +81,6 @@
         "command": "workbench.action.navigateDown"
     },
     {
-        "key": "cmd+left",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "cmd+right",
-        "command": "workbench.action.navigateRight"
-    },
-    {
         "key": "cmd+right",
         "command": "-cursorEnd",
         "when": "textInputFocus"
@@ -206,5 +198,49 @@
         "key": "cmd+down",
         "command": "-workbench.action.terminal.scrollToNextCommand",
         "when": "terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "cmd+k alt+cmd+right",
+        "command": "-workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "cmd+k alt+cmd+left",
+        "command": "-workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "cmd+left",
+        "command": "workbench.action.navigateLeft",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+right",
+        "command": "workbench.action.navigateRight",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "-workbench.action.nextEditor"
     }
 ]
