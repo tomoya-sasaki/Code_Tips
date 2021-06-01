@@ -2,6 +2,8 @@
     "workbench.editor.showIcons": false,
     "window.autoDetectColorScheme": true,
     "files.trimTrailingWhitespace": true,
+    "git.decorations.enabled": false,
+    "terminal.integrated.cursorBlinking": true,
     "workbench.preferredHighContrastColorTheme": "Default Light+",
     "workbench.preferredLightColorTheme": "Default Dark+",
     "workbench.editorAssociations": [
@@ -29,5 +31,9 @@
     "vim.vimrc.path": "/Users/shusei/.vimrc",
     "vim.hlsearch": true,
     "vim.whichwrap": "h,l,<,>,[,]",
-    "vim.startofline": false
+    "vim.startofline": false,
+    "editor.fontSize": 13.5,
+    "terminal.integrated.fontSize": 13.5,
+    "jupyter.enableKeyboardShortcuts": false,
+    "jupyter.alwaysTrustNotebooks": true
 }
