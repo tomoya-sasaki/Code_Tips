@@ -17,17 +17,6 @@
     ],
     "julia.enableTelemetry": true,
     "jupyter.askForKernelRestart": false,
-    "vim.argumentObjectClosingDelimiters": [
-        ")",
-        "]",
-        "}"
-    ],
-    "vim.argumentObjectOpeningDelimiters": [
-        "(",
-        "[",
-        "{"
-    ],
-    "vim.vimrc.enable": true,
     "vim.vimrc.path": "/Users/shusei/.vimrc",
     "vim.hlsearch": true,
     "vim.whichwrap": "h,l,<,>,[,]",
@@ -35,5 +24,55 @@
     "editor.fontSize": 13.5,
     "terminal.integrated.fontSize": 13.5,
     "jupyter.enableKeyboardShortcuts": false,
-    "jupyter.alwaysTrustNotebooks": true
+    "jupyter.alwaysTrustNotebooks": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "a", "a"],
+            "commands": [
+                {
+                    "command": "language-julia.executeFile"
+                }
+            ],
+            "when": "editorTextFocus && editorLangId == 'julia'"
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ";"
+            ],
+            "after": [
+                ":"
+            ]
+        },
+        {
+            "before": [
+                ":"
+            ],
+            "after": [
+                ";"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ";"
+            ],
+            "after": [
+                ":"
+            ]
+        },
+        {
+            "before": [
+                ":"
+            ],
+            "after": [
+                ";"
+            ]
+        }
+     ],
+    "editor.tabSize": 2,
+    "vim.useCtrlKeys": true,
+    "vim.easymotionDimBackground": false
 }
