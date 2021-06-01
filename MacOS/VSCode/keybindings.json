@@ -230,12 +230,12 @@
     {
         "key": "cmd+left",
         "command": "workbench.action.navigateLeft",
-        "when": "editorFocus"
+        "when": "!panelFocus"
     },
     {
         "key": "cmd+right",
         "command": "workbench.action.navigateRight",
-        "when": "editorFocus"
+        "when": "!panelFocus"
     },
     {
         "key": "alt+cmd+left",
