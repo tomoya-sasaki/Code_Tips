@@ -6,19 +6,9 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "cmd+enter",
-        "command": "language-julia.executeJuliaCodeInREPL",
-        "when": "editorTextFocus && editorLangId == 'juliamarkdown'"
-    },
-    {
         "key": "ctrl+enter",
         "command": "-language-julia.executeJuliaCodeInREPL",
         "when": "editorTextFocus && editorLangId == 'juliamarkdown'"
-    },
-    {
-        "key": "cmd+enter",
-        "command": "language-julia.executeJuliaCodeInREPL",
-        "when": "editorTextFocus && editorLangId == 'julia'"
     },
     {
         "key": "ctrl+enter",
@@ -306,14 +296,63 @@
         "args": {
           "sequence": [
             "python.execSelectionInTerminal",
-            "cursorDown"
+            "cursorDown",
+            "extension.vim_escape"
           ]
         },
         "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     },
     {
+        "key": "cmd+enter",
+        "command": "language-julia.executeJuliaCodeInREPL",
+        "when": "editorTextFocus && editorLangId == 'julia'"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "extension.multiCommand.execute",
+        "args": {
+          "sequence": [
+            "language-julia.executeJuliaCodeInREPL",
+            "extension.vim_escape"
+          ]
+        },
+        "when": "editorTextFocus && editorHasSelection && editorLangId == 'julia'"
+    },
+    {
+        "key": "\\ a",
+        "command": "language-julia.executeFile",
+        "when": "editorTextFocus && editorLangId == 'julia'"
+    },
+    {
+        "key": "\\ a",
+        "command": "extension.multiCommand.execute",
+        "args": {
+          "sequence": [
+            "editor.action.selectAll",
+            "python.execSelectionInTerminal",
+            "cursorDown"
+          ]
+        },
+        "when": "editorTextFocus && editorLangId == 'python'"
+    },
+    {
         "key": "shift+enter",
         "command": "-python.execSelectionInTerminal",
         "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "-editor.action.insertLineBefore",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "\\ ,",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+/",
+        "command": "-editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
