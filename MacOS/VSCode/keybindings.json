@@ -91,14 +91,6 @@
         "when": "textInputFocus"
     },
     {
-        "key": "cmd+l",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
-        "key": "cmd+t",
-        "command": "-workbench.action.showAllSymbols"
-    },
-    {
         "key": "alt+cmd+down",
         "command": "workbench.action.terminal.focusNext",
         "when": "terminalFocus && terminalProcessSupported"
@@ -254,5 +246,74 @@
         "key": "alt+cmd+right",
         "command": "-workbench.action.terminal.focusNextPane",
         "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "n",
+        "command": "notebook.cell.insertCodeCellBelow",
+        "when": "config.jupyter.enableKeyboardShortcuts && notebookEditorFocused && !inputFocus && notebookViewType == 'jupyter-notebook'"
+    },
+    {
+        "key": "b",
+        "command": "-notebook.cell.insertCodeCellBelow",
+        "when": "config.jupyter.enableKeyboardShortcuts && notebookEditorFocused && !inputFocus && notebookViewType == 'jupyter-notebook'"
+    },
+    {
+        "key": "ctrl+; b",
+        "command": "-jupyter.insertCellBelow",
+        "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "x",
+        "command": "jupyter.deleteCells",
+        "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; x",
+        "command": "-jupyter.deleteCells",
+        "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "x",
+        "command": "notebook.cell.delete",
+        "when": "config.jupyter.enableKeyboardShortcuts && notebookEditorFocused && !inputFocus && notebookViewType == 'jupyter-notebook'"
+    },
+    {
+        "key": "d d",
+        "command": "-notebook.cell.delete",
+        "when": "config.jupyter.enableKeyboardShortcuts && notebookEditorFocused && !inputFocus && notebookViewType == 'jupyter-notebook'"
+    },
+    {
+        "key": "x",
+        "command": "notebook.cell.delete",
+        "when": "notebookEditable && notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "cmd+backspace",
+        "command": "-notebook.cell.delete",
+        "when": "notebookEditable && notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "extension.multiCommand.execute",
+        "args": {
+          "sequence": [
+            "python.execSelectionInTerminal",
+            "cursorDown"
+          ]
+        },
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     }
 ]
