@@ -15,15 +15,23 @@
         "language-julia.interrupt"
     ],
     "julia.enableTelemetry": true,
+    //
+    // UI badges
+    //
+    "git.countBadge": "off",
+    //
+    // Jupyter
+    //
     "jupyter.askForKernelRestart": false,
+    "jupyter.enableKeyboardShortcuts": false,
+    "jupyter.alwaysTrustNotebooks": true,
+    //
+    // Vim
+    //
     "vim.vimrc.path": "/Users/shusei/.vimrc",
     "vim.hlsearch": true,
     "vim.whichwrap": "h,l,<,>,[,]",
     "vim.startofline": false,
-    "editor.fontSize": 13.5,
-    "terminal.integrated.fontSize": 13.5,
-    "jupyter.enableKeyboardShortcuts": false,
-    "jupyter.alwaysTrustNotebooks": true,
     "vim.normalModeKeyBindings": [
         {
             "before": ["<leader>", "a", "a"],
@@ -33,9 +41,35 @@
                 }
             ],
             "when": "editorTextFocus && editorLangId == 'julia'"
+        },
+        {
+            "before": ["<leader>", ","],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", ","],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
         }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "g", "f"
+            ],
+            "after": [
+                "g", "h"
+            ]
+        },
         {
             "before": [
                 ";"
@@ -109,12 +143,25 @@
             "when": "editorTextFocus && editorLangId != 'tex'"
         }
     ],
-    "editor.tabSize": 2,
     "vim.useCtrlKeys": true,
     "vim.easymotionDimBackground": false,
-    "workbench.preferredHighContrastColorTheme": "Default Light+",
-    "editor.occurrencesHighlight": false,
+    "workbench.preferredHighContrastColorTheme": "Atom One Light",
+    "typescript.preferences.quoteStyle": "double",
+    //
+    // Editor
+    //
+    // Controls if quick suggestions should show up while typing
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    // Controls if suggestions should automatically show up when typing trigger characters
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.minimap.enabled": false,
     "editor.insertSpaces": true,
-    "workbench.colorTheme": "Default Light+",
-    "typescript.preferences.quoteStyle": "double"
+    "editor.fontSize": 13.5,
+    "editor.tabSize": 2,
+    "editor.occurrencesHighlight": false,
+    "breadcrumbs.enabled": false
 }
