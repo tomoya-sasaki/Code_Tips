@@ -7,6 +7,8 @@
 * `multi-command`のextensionが必要になる
 
 # memo
+
+## Snippet
 ```json
 {
     "key": "cmd+K cmd+L",
@@ -17,3 +19,7 @@
     }
 }
 ```
+
+## Add a context
+https://github.com/VSCodeVim/Vim/issues/4765
+
