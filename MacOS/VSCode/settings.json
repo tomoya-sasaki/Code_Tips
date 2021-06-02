@@ -3,7 +3,6 @@
     "window.autoDetectColorScheme": true,
     "files.trimTrailingWhitespace": true,
     "git.decorations.enabled": false,
-    "terminal.integrated.cursorBlinking": true,
     "workbench.preferredLightColorTheme": "Default Dark+",
     "workbench.editorAssociations": [
         {
@@ -11,19 +10,24 @@
             "filenamePattern": "*.ipynb"
         }
     ],
+    "julia.enableTelemetry": true,
+    //
+    // Terminal
+    //
+    "terminal.integrated.fontSize": 13.5,
+    "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "julia.enableTelemetry": true,
     //
     // UI badges
     //
+    "scm.countBadge": "off",
     "git.countBadge": "off",
     //
     // Jupyter
     //
     "jupyter.askForKernelRestart": false,
-    "jupyter.enableKeyboardShortcuts": false,
     "jupyter.alwaysTrustNotebooks": true,
     //
     // Vim
@@ -41,6 +45,21 @@
                 }
             ],
             "when": "editorTextFocus && editorLangId == 'julia'"
+        },
+        {
+            "before": ["<leader>", "a", "a"],
+            "commands": [
+                {
+                    "command": "editor.action.selectAll"
+                },
+                {
+                    "command": "python.execSelectionInTerminal"
+                },
+                {
+                    "command": "workbench.action.navigateBack"
+                }
+            ],
+            "when": "editorTextFocus && editorLangId == 'python'"
         },
         {
             "before": ["<leader>", ","],
@@ -163,5 +182,7 @@
     "editor.fontSize": 13.5,
     "editor.tabSize": 2,
     "editor.occurrencesHighlight": false,
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "keyboard.touchbar.enabled": false,
+    "jupyter.enableKeyboardShortcuts": false
 }
