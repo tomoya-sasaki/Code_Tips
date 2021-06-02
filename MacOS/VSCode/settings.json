@@ -36,50 +36,26 @@
     "vim.hlsearch": true,
     "vim.whichwrap": "h,l,<,>,[,]",
     "vim.startofline": false,
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["<leader>", "a", "a"],
-            "commands": [
-                {
-                    "command": "language-julia.executeFile"
-                }
-            ],
-            "when": "editorTextFocus && editorLangId == 'julia'"
-        },
-        {
-            "before": ["<leader>", "a", "a"],
-            "commands": [
-                {
-                    "command": "editor.action.selectAll"
-                },
-                {
-                    "command": "python.execSelectionInTerminal"
-                },
-                {
-                    "command": "workbench.action.navigateBack"
-                }
-            ],
-            "when": "editorTextFocus && editorLangId == 'python'"
-        },
-        {
-            "before": ["<leader>", ","],
-            "commands": [
-                {
-                    "command": "editor.action.commentLine"
-                }
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": ["<leader>", ","],
-            "commands": [
-                {
-                    "command": "editor.action.commentLine"
-                }
-            ]
-        }
-    ],
+    // "vim.normalModeKeyBindings": [
+    //     {
+    //         "before": ["<leader>", ","],
+    //         "commands": [
+    //             {
+    //                 "command": "editor.action.commentLine"
+    //             }
+    //         ]
+    //     }
+    // ],
+    // "vim.visualModeKeyBindings": [
+    //     {
+    //         "before": ["<leader>", ","],
+    //         "commands": [
+    //             {
+    //                 "command": "editor.action.commentLine"
+    //             }
+    //         ]
+    //     }
+    // ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -141,6 +117,7 @@
         }
      ],
      "vim.insertModeKeyBindingsNonRecursive": [
+         // Note that 'when' is not working now
         {
             "before": ["'"],
             "after": ["\""],
