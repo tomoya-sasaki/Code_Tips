@@ -1,7 +1,7 @@
 # Gadfly
 
 ## Table of Contents
-* [Layer](layer)
+* [Layer](#layer)
 
 
 ## Layer
