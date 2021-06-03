@@ -457,6 +457,25 @@
         "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
     },
     //
+    // Workaround for using leader
+    //
+    {
+        "key": "shift+\\",
+        "command": "type",
+        "args": {
+            "text": "\\"
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "`",
+        "command": "type",
+        "args": {
+            "text": "\\"
+        },
+        "when": "editorTextFocus && editorLangId == latex"
+    },
+    //
     // Snippet
     //
     {   // RMarkdown: a new code chunk
@@ -475,4 +494,60 @@
             ]
         }
     }
+    {   // LaTex: a new figure
+        "key": "\\ f",
+        "when": "editorTextFocus && editorLangId == 'latex'",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "cursorDown",
+                {"command": "editor.action.insertSnippet",
+                 "args": {
+                    "snippet": "\\begin{figure}[!htb]\n\\centering\n\\includegraphics[width=1.0 \\linewidth]{}\n\\caption{}\n\\label{}\n\\end{figure}\n"
+                 }
+                },
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
+                "cursorUp",
+                "cursorLineEnd",
+                "cursorLeft"
+            ]
+        }
+    }
+    // {   // LaTex: a new align
+    //     "key": "\\ e",
+    //     "when": "editorTextFocus && editorLangId == 'latex'",
+    //     "command": "extension.multiCommand.execute",
+    //     "args": {
+    //         "sequence": [
+    //             "cursorDown",
+    //             {"command": "editor.action.insertSnippet",
+    //              "args": {
+    //                 "snippet": "\\begin{align}\n \n\\end{align}\n"
+    //              }
+    //             },
+    //             "cursorUp",
+    //             "cursorUp"
+    //         ]
+    //     }
+    // },
+    // {   // LaTex: a new itemize
+    //     "key": "\\ i",
+    //     "when": "editorTextFocus && editorLangId == 'latex'",
+    //     "command": "extension.multiCommand.execute",
+    //     "args": {
+    //         "sequence": [
+    //             "cursorDown",
+    //             {"command": "editor.action.insertSnippet",
+    //              "args": {
+    //                 "snippet": "\\begin{itemize}\n  \\item \n\\end{itemize}\n"
+    //              }
+    //             },
+    //             "cursorUp",
+    //             "cursorUp",
+    //             "cursorLineEnd"
+    //         ]
+    //     }
+    // }
 ]
