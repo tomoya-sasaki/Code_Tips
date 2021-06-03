@@ -408,5 +408,24 @@
         "key": "shift+cmd+k",
         "command": "-r.knitRmd",
         "when": "editorTextFocus && editorLangId == 'rmd'"
+    },
+    //
+    // Snippet
+    //
+    {   // RMarkdown: a new code chunk
+        "key": "\\ shift+c",
+        "when": "editorTextFocus && editorLangId == 'rmd'",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "cursorDown",
+                {"command": "editor.action.insertSnippet",
+                 "args": {
+                    "snippet": "```{r, warning = FALSE, message = FALSE, fig.align = 'center'}\n\n```"
+                 }
+                },
+                "cursorUp"
+            ]
+        }
     }
 ]
