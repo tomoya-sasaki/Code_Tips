@@ -60,6 +60,7 @@
       "name": "Markdown Header",
       "scope": ["markup.heading.markdown", "punctuation.definition.heading.markdown", "entity.name.section.markdown"],
       "settings": {
+        "fontStyle": "bold",
         "foreground": "#d874db"
       }
     },
@@ -348,8 +349,7 @@
       "name": "LaTeX environment",
       "scope": "text.tex.latex variable.parameter.function.latex",
       "settings": {
-        "fontStyle": "italic",
-        "foreground": "#e88501"
+        "foreground": "#A96329"
       }
     },
     {
