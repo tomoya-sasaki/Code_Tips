@@ -25,6 +25,33 @@
     "scm.countBadge": "off",
     "git.countBadge": "off",
     //
+    // Sidebar
+    //
+    "files.exclude": {
+        "**/*.pdf": true,
+        "**/*.html": true,
+        "**/*.log": true,
+        "**/*.rds": true,
+        "**/.vscode": true,
+        "**/.Rhistory": true,
+        // R //
+        "**/**_cache": true,
+        "**/**_files": true,
+        // Tex //
+        "**/*.aux": true,
+        "**/*.dvi": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.fbs": true,
+        "**/*.fls": true,
+        "**/*.nav": true,
+        "**/*.out": true,
+        "**/*.snm": true,
+        "**/*.toc": true,
+        "**/*.synctex.gz": true,
+        // ipynb //
+        ".ipynb_checkpoints": true
+    },
+    //
     // Jupyter
     //
     "jupyter.askForKernelRestart": false,
@@ -144,16 +171,30 @@
     "workbench.preferredHighContrastColorTheme": "Atom One Light",
     "typescript.preferences.quoteStyle": "double",
     //
+    // R
+    //
+    "r.rmarkdown.enableCodeLens": false,
+    "r.lsp.debug": true,
+    "r.lsp.diagnostics": true,
+    "r.rpath.mac": "/Library/Frameworks/R.framework/Versions/4.0/Resources/bin/R",
+    "r.rterm.mac": "/usr/local/var/pyenv/versions/3.8.5/envs/py38/bin/radian",
+    "r.rterm.option": [
+        "--no-save",
+        "--no-restore",
+        "--r-binary=/Library/Frameworks/R.framework/Versions/4.0/Resources/bin/R"
+    ],
+    "r.bracketedPaste": true,
+    //
     // Editor
     //
     // Controls if quick suggestions should show up while typing
     "editor.quickSuggestions": {
-        "other": false,
+        "other": true,
         "comments": false,
-        "strings": false
+        "strings": true
     },
     // Controls if suggestions should automatically show up when typing trigger characters
-    "editor.suggestOnTriggerCharacters": false,
+    "editor.suggestOnTriggerCharacters": true,
     "editor.minimap.enabled": false,
     "editor.insertSpaces": true,
     "editor.fontSize": 13.5,
