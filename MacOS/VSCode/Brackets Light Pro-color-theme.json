@@ -32,7 +32,7 @@
       "name": "String",
       "scope": "string",
       "settings": {
-        "foreground": "#e88501"
+        "foreground": "#a96329"
       }
     },
     {
@@ -102,7 +102,7 @@
       "name": "Built-in constant",
       "scope": "constant.language",
       "settings": {
-        "foreground": "#e88501"
+        "foreground": "#316e87"
       }
     },
     {
@@ -110,7 +110,7 @@
       "scope": "constant.other",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#e88501"
+        "foreground": "#a96329"
       }
     },
     {
@@ -131,7 +131,7 @@
         "text.xml constant.character.entity.xml"
       ],
       "settings": {
-        "foreground": "#e88501"
+        "foreground": "#a96329"
       }
     },
     {
