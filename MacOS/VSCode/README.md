@@ -12,6 +12,7 @@
 * You will need `R` and `R LSP Client`
 * R側でも`languageserver`と`lintr`を入れておく
 * Python3のenvironmentを使って、`radian`を入れた場合は、environmentの大元の場所を探す、`/usr/local/var/pyenv/versions/3.8.5/envs/py38/bin/radian`
+* radian color scheme: `$HOME/.radian_profile`に`options(radian.color_scheme = "manni")`
 
 ## TeX
 * `latexmkrc`は[これ](https://github.com/Shusei-E/Code_Tips/blob/master/MacOS/MacVim/.latexmkrc)と同じ
