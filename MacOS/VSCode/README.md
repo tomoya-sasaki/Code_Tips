@@ -8,6 +8,11 @@
 
 # memo
 
+## R
+* You will need `R` and `R LSP Client`
+* R側でも`languageserver`と`lintr`を入れておく
+* Python3のenvironmentを使って、`radian`を入れた場合は、environmentの大元の場所を探す、`/usr/local/var/pyenv/versions/3.8.5/envs/py38/bin/radian`
+
 ## Snippet
 ```json
 {
