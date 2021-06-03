@@ -493,7 +493,7 @@
                 "cursorUp"
             ]
         }
-    }
+    },
     {   // LaTex: a new figure
         "key": "\\ f",
         "when": "editorTextFocus && editorLangId == 'latex'",
@@ -514,40 +514,22 @@
                 "cursorLeft"
             ]
         }
+    },
+    //
+    // Reference
+    //
+    {
+        "key": "ctrl+b",
+        "command": "-cursorLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.navigateBack",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-workbench.action.navigateBack"
     }
-    // {   // LaTex: a new align
-    //     "key": "\\ e",
-    //     "when": "editorTextFocus && editorLangId == 'latex'",
-    //     "command": "extension.multiCommand.execute",
-    //     "args": {
-    //         "sequence": [
-    //             "cursorDown",
-    //             {"command": "editor.action.insertSnippet",
-    //              "args": {
-    //                 "snippet": "\\begin{align}\n \n\\end{align}\n"
-    //              }
-    //             },
-    //             "cursorUp",
-    //             "cursorUp"
-    //         ]
-    //     }
-    // },
-    // {   // LaTex: a new itemize
-    //     "key": "\\ i",
-    //     "when": "editorTextFocus && editorLangId == 'latex'",
-    //     "command": "extension.multiCommand.execute",
-    //     "args": {
-    //         "sequence": [
-    //             "cursorDown",
-    //             {"command": "editor.action.insertSnippet",
-    //              "args": {
-    //                 "snippet": "\\begin{itemize}\n  \\item \n\\end{itemize}\n"
-    //              }
-    //             },
-    //             "cursorUp",
-    //             "cursorUp",
-    //             "cursorLineEnd"
-    //         ]
-    //     }
-    // }
 ]
