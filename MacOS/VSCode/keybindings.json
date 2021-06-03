@@ -245,6 +245,9 @@
         "key": "cmd+p",
         "command": "-workbench.action.quickOpen"
     },
+    //
+    // Jupyter
+    //
     {
         "key": "n",
         "command": "notebook.cell.insertCodeCellBelow",
@@ -290,18 +293,9 @@
         "command": "-notebook.cell.delete",
         "when": "notebookEditable && notebookEditorFocused && !inputFocus"
     },
-    {
-        "key": "cmd+enter",
-        "command": "extension.multiCommand.execute",
-        "args": {
-          "sequence": [
-            "python.execSelectionInTerminal",
-            "cursorDown",
-            "extension.vim_escape"
-          ]
-        },
-        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-    },
+    //
+    // Julia
+    //
     {
         "key": "cmd+enter",
         "command": "language-julia.executeJuliaCodeInREPL",
@@ -320,11 +314,6 @@
     },
     {
         "key": "\\ a",
-        "command": "r.knitRmd",
-        "when": "editorTextFocus && editorLangId == 'rmd'"
-    },
-    {
-        "key": "\\ a",
         "command": "extension.multiCommand.execute",
         "args": {
           "sequence": [
@@ -333,6 +322,21 @@
           ]
         },
         "when": "editorTextFocus && editorLangId == 'julia'"
+    },
+    //
+    // Python
+    //
+    {
+        "key": "cmd+enter",
+        "command": "extension.multiCommand.execute",
+        "args": {
+          "sequence": [
+            "python.execSelectionInTerminal",
+            "cursorDown",
+            "extension.vim_escape"
+          ]
+        },
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     },
     {
         "key": "\\ a",
@@ -366,6 +370,14 @@
         "key": "cmd+/",
         "command": "-editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    //
+    // R and RMarkdown
+    //
+    {
+        "key": "\\ a",
+        "command": "r.knitRmd",
+        "when": "editorTextFocus && editorLangId == 'rmd'"
     },
     {
         "key": "\\ c",
@@ -408,6 +420,41 @@
         "key": "shift+cmd+k",
         "command": "-r.knitRmd",
         "when": "editorTextFocus && editorLangId == 'rmd'"
+    },
+    //
+    // LaTeX
+    //
+    {
+        "key": "\\ a",
+        "command": "latex-workshop.recipes",
+        "args": "pdflatex",
+        "when": "editorTextFocus && editorLangId == latex"
+    },
+    {
+        "key": "\\ shift+a",
+        "command": "latex-workshop.recipes",
+        "args": "latexmk",
+        "when": "editorTextFocus && editorLangId == latex"
+    },
+    {
+        "key": "\\ shift+c",
+        "command": "latex-workshop.clean",
+        "when": "editorTextFocus && editorLangId == latex"
+    },
+    {
+        "key": "\\ s",
+        "command": "latex-workshop.viewExternal",
+        "when": "editorTextFocus && editorLangId == latex"
+    },
+    {
+        "key": "cmd+l alt+c",
+        "command": "-latex-workshop.clean",
+        "when": "config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
+    },
+    {
+        "key": "alt+cmd+c",
+        "command": "-latex-workshop.clean",
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && editorLangId =~ /latex|rsweave|jlweave/"
     },
     //
     // Snippet
