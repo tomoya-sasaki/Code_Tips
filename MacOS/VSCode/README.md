@@ -30,6 +30,9 @@
 }
 ```
 
+## Color theme
+* `Brackets Light Pro-color-theme.json`: edited for High Contrast mode (`fehey.brackets-light-pro-0.4.5`)
+
 ## Add a context
 https://github.com/VSCodeVim/Vim/issues/4765
 
