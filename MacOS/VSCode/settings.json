@@ -184,6 +184,97 @@
         "--r-binary=/Library/Frameworks/R.framework/Versions/4.0/Resources/bin/R"
     ],
     "r.bracketedPaste": true,
+    "[r]": {
+        "editor.parameterHints.enabled": false
+    },
+    "[rmd]": {
+        "editor.parameterHints.enabled": false
+    },
+    //
+    // LaTex
+    //
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    "latex-workshop.latex.autoClean.run": "never",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.chktex.enabled": false,
+    // Warnings (https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#settings-details)
+    "latex-workshop.message.log.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.message.badbox.show": false,
+    // Compile
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+              "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+              "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdfdvi",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    // Viewer
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+    "latex-workshop.view.pdf.external.viewer.args": [ "0", "%PDF%" ],
+    "latex-workshop.view.pdf.external.synctex.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
+    "latex-workshop.view.pdf.external.synctex.args": [ "-r", "%LINE%", "%PDF%", "%TEX%" ],
     //
     // Editor
     //
@@ -191,10 +282,14 @@
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
-        "strings": true
+        "strings": false,
     },
+    // Errors and Warnings
+    "problems.decorations.enabled": false,
+    "outline.problems.badges": false,
+    "problems.autoReveal": false,
     // Controls if suggestions should automatically show up when typing trigger characters
-    "editor.suggestOnTriggerCharacters": true,
+    "editor.suggestOnTriggerCharacters": false,
     "editor.minimap.enabled": false,
     "editor.insertSpaces": true,
     "editor.fontSize": 13.5,
