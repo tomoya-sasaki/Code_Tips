@@ -4,13 +4,13 @@
     "files.trimTrailingWhitespace": true,
     "git.decorations.enabled": false,
     "workbench.preferredLightColorTheme": "Default Dark+",
+    "workbench.preferredHighContrastColorTheme": "Brackets Light Pro",
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
     ],
-    "julia.enableTelemetry": true,
     //
     // Terminal
     //
@@ -174,7 +174,6 @@
     ],
     "vim.useCtrlKeys": true,
     "vim.easymotionDimBackground": false,
-    "workbench.preferredHighContrastColorTheme": "Brackets Light Pro",
     "typescript.preferences.quoteStyle": "double",
     //
     // R
@@ -194,7 +193,7 @@
         "editor.parameterHints.enabled": false,
         "editor.colorDecorators":false
     },
-    "[rmd]": {
+    "[rmarkdown]": {
         "editor.parameterHints.enabled": false,
         "editor.colorDecorators":false
     },
@@ -206,9 +205,7 @@
     "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.chktex.enabled": false,
     // Intellisense
-    "latex-workshop.intellisense.package.enabled": true,
-    "latex-workshop.intellisense.package.extra": ["enumitem", "enumerate"],
-    // "latex-workshop.intellisense.package.dirs": ["/Users/shusei/.vscode/myfiles/"],
+    "latex-workshop.intellisense.package.enabled": false,
     "latex-workshop.intellisense.includegraphics.preview.enabled": false,
     // Warnings (https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#settings-details)
     "latex-workshop.message.log.show": false,
@@ -310,6 +307,5 @@
     "editor.occurrencesHighlight": false,
     "breadcrumbs.enabled": false,
     "keyboard.touchbar.enabled": false,
-    "jupyter.enableKeyboardShortcuts": false,
-    "workbench.colorTheme": "Brackets Light Pro"
+    "jupyter.enableKeyboardShortcuts": false
 }
