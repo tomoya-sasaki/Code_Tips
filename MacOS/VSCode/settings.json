@@ -81,10 +81,10 @@
     ],
     // "vim.visualModeKeyBindings": [
     //     {
-    //         "before": ["<leader>", ","],
+    //         "before": ["z", "g"],
     //         "commands": [
     //             {
-    //                 "command": "editor.action.commentLine"
+    //                 "command": "spellright.addFromSelectionToUserDictionary"
     //             }
     //         ]
     //     }
@@ -181,6 +181,7 @@
     "r.rmarkdown.enableCodeLens": false,
     "r.lsp.debug": true,
     "r.lsp.diagnostics": true,
+    "r.helpPanel.enableHoverLinks": true,
     "r.rpath.mac": "/Library/Frameworks/R.framework/Versions/4.0/Resources/bin/R",
     "r.rterm.mac": "/usr/local/var/pyenv/versions/3.8.5/envs/py38/bin/radian",
     "r.rterm.option": [
@@ -193,7 +194,7 @@
         "editor.parameterHints.enabled": false,
         "editor.colorDecorators":false
     },
-    "[rmarkdown]": {
+    "[rmd]": {
         "editor.parameterHints.enabled": false,
         "editor.colorDecorators":false
     },
@@ -286,6 +287,19 @@
     "latex-workshop.view.pdf.external.synctex.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
     "latex-workshop.view.pdf.external.synctex.args": [ "-r", "%LINE%", "%PDF%", "%TEX%" ],
     //
+    // Spell check (Spell Right)
+    //
+    "spellright.documentTypes": ["latex"],
+    "spellright.ignoreRegExpsByClass": {
+        "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
+        "cpp": [ "/#include\\s+\\\".+\\\"/g" ],
+        "html": [ "/<script>[^]*?</script>/gm" ],
+        "latex": ["/\\\\begin{figure}[^]*?\\\\end{figure}/gm",
+                  "/\\\\begin{align}[^]*?\\\\end{align}/gm",
+                  "/\\\\begin{align*}[^]*?\\\\end{align*}/gm"]
+    },
+    "spellright.notificationClass": "information",
+    //
     // Editor
     //
     // Controls if quick suggestions should show up while typing
@@ -294,6 +308,7 @@
         "comments": false,
         "strings": true,
     },
+    "editor.snippetSuggestions": "inline",
     // Errors and Warnings
     "problems.decorations.enabled": false,
     "outline.problems.badges": false,
