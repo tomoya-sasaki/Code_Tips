@@ -33,7 +33,7 @@ run_simulation2 <- function(nworkers, fn_simulation, parameters, grid) {
 
   nrows <- nrow(grid)
   batch_size <- ceiling(nrows / nworkers)
-  split_index <- split(1:nrows, ceiling(seq_along(1:nrows)/batch_size))
+  split_index <- split(sample(1:nrows), ceiling(seq_along(1:nrows)/batch_size))
   res <- future_map_dfr(split_index,
                           function(index) {
                             run_batch(fn_simulation,
