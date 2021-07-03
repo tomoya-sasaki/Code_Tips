@@ -35,3 +35,7 @@
 ## Add a context
 https://github.com/VSCodeVim/Vim/issues/4765
 
+# Multiple cursor
+* `gb`を繰り返すことで追加できる
+  * `Option`を押しながらクリックでも追加できる
+* `v`でビジュアルモードに戻れる
