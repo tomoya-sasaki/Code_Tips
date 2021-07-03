@@ -199,9 +199,8 @@ $ gh auth login   # Use HTTPS
 ["When" context](https://code.visualstudio.com/api/references/when-clause-contexts#conditional-operators)
 
 * Julia, Vim Plugins
+* Setting Python interpreter? `cmd + l`, `>Python` and then select
 * Shortcuts
-   * Go to VS Code's keyword shortcuts: change the shortcut for Julia execution (cmd + enter)
-   * Delete `cmd + 0` and `cmd + 1` from the VS Code Shortcuts, and set new keybindings for `cursorHome` and `cursorEnd` (delete the old one)
    * `workbench.action.navigateLeft`: `cmd + <-`, similar definitions for Righ, Up, Down to switch tabs
    * Toggle Side Bar Visibility: use `\v`
 * VS Code can read Vim `.vimrc`
