@@ -298,7 +298,15 @@
     //
     {
         "key": "cmd+enter",
-        "command": "language-julia.executeJuliaCodeInREPL",
+        "command": "extension.multiCommand.execute",
+        "args": {
+          "sequence": [
+            "language-julia.executeJuliaCodeInREPL",
+            "onelinescroll.scrollDown",
+            "cursorUp"
+          ]
+        },
+        // "command": "language-julia.executeJuliaCodeInREPL",
         "when": "editorTextFocus && editorLangId == 'julia'"
     },
     {
@@ -380,6 +388,11 @@
         "when": "editorTextFocus && editorLangId == 'rmd'"
     },
     {
+        "key": "\\ a",
+        "command": "r.runSource",
+        "when": "editorTextFocus && editorLangId == 'r'"
+      }
+    {
         "key": "\\ c",
         "command": "r.runCurrentChunk",
         "when": "editorTextFocus && editorLangId == 'rmd'"
@@ -387,6 +400,7 @@
     {
         "key": "\\ n",
         "command": "extension.multiCommand.execute",
+        "description": "RMarkdown: go to the next chunk",
         "args": {
           "sequence": [
             "r.goToNextChunk",
@@ -403,6 +417,7 @@
     {
         "key": "\\ shift+n",
         "command": "extension.multiCommand.execute",
+        "description": "RMarkdown: go to the previous chunk",
         "args": {
           "sequence": [
             "r.goToPreviousChunk",
@@ -468,6 +483,14 @@
         "when": "editorTextFocus"
     },
     {
+        "key": "\\ \\",
+        "command": "type",
+        "args": {
+            "text": "|"
+        },
+        "when": "editorTextFocus"
+    },
+    {
         "key": "`",
         "command": "type",
         "args": {
@@ -482,14 +505,16 @@
         "key": "\\ shift+c",
         "when": "editorTextFocus && editorLangId == 'rmd'",
         "command": "extension.multiCommand.execute",
+        "description": "RMarkdown: create a new code chunk",
         "args": {
             "sequence": [
                 "cursorDown",
                 {"command": "editor.action.insertSnippet",
                  "args": {
-                    "snippet": "```{r, warning = FALSE, message = FALSE, fig.align = 'center'}\n\n```"
+                    "snippet": "```{r, warning = FALSE, message = FALSE, fig.align = 'center'}\n\n```\n"
                  }
                 },
+                "cursorUp",
                 "cursorUp"
             ]
         }
@@ -498,6 +523,7 @@
         "key": "\\ f",
         "when": "editorTextFocus && editorLangId == 'latex'",
         "command": "extension.multiCommand.execute",
+        "description": "LaTex: insert a new figure",
         "args": {
             "sequence": [
                 "cursorDown",
@@ -526,6 +552,7 @@
     {
         "key": "ctrl+b",
         "command": "workbench.action.navigateBack",
+        "description": "Naviagte back to the last cursor position",
         "when": "textInputFocus"
     },
     {
