@@ -1,6 +1,7 @@
 # Tikz
 * [Use style file](https://github.com/Shusei-E/tikz-bayesnet)
 * [TikZiT](https://tikzit.github.io/)
+* [tikz-cd](https://www.ctan.org/pkg/tikz-cd)
 
 
 ## Table of Contents
