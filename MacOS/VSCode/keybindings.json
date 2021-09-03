@@ -1,5 +1,45 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+    // Switch panels
+    {
+        "key": "alt+cmd+up",
+        "command": "-extension.vim_cmd+alt+up",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "alt+cmd+down",
+        "command": "-extension.vim_cmd+alt+down",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "alt+up",
+        "command": "-editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+down",
+        "command": "workbench.action.terminal.focus",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+up",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    //
+    {
+        "key": "cmd+q",
+        "command": "-workbench.action.quit"
+    },
+    {
+        "key": "cmd+q cmd+q",
+        "command": "workbench.action.quit"
+    },
     {
         "key": "cmd+enter",
         "command": "-editor.action.insertLineAfter",
@@ -23,11 +63,11 @@
         "key": "cmd+0",
         "command": "-workbench.action.focusSideBar"
     },
-    {
-        "key": "cmd+2",
-        "command": "cursorHome",
-        "when": "textInputFocus"
-    },
+    // {
+    //     "key": "cmd+1",
+    //     "command": "cursorHome",
+    //     "when": "textInputFocus"
+    // },
     {
         "key": "home",
         "command": "-cursorHome",
@@ -391,7 +431,7 @@
         "key": "\\ a",
         "command": "r.runSource",
         "when": "editorTextFocus && editorLangId == 'r'"
-      }
+    },
     {
         "key": "\\ c",
         "command": "r.runCurrentChunk",
@@ -490,14 +530,14 @@
         },
         "when": "editorTextFocus"
     },
-    {
-        "key": "`",
-        "command": "type",
-        "args": {
-            "text": "\\"
-        },
-        "when": "editorTextFocus && editorLangId == latex"
-    },
+    // {
+    //     "key": "`",
+    //     "command": "type",
+    //     "args": {
+    //         "text": "\\"
+    //     },
+    //     "when": "editorTextFocus && editorLangId == latex"
+    // },
     //
     // Snippet
     //
