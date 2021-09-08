@@ -17,3 +17,5 @@ $ module load cuda/11.1.0-fasrc01  # cuda/9.0-fasrc02
 $ module load cudnn/8.1.0.77_cuda11.2-fasrc01  # cudnn/7.0_cuda9.0-fasrc01
 ```
 Check [combination](https://www.tensorflow.org/install/source?hl=ja#linux).
+
+You need to load `cuda` and `cudnn` for tf.
