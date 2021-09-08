@@ -16,3 +16,4 @@ $ module load python/3.8.5-fasrc01
 $ module load cuda/11.1.0-fasrc01  # cuda/9.2.88-fasrc01
 $ module load cudnn/8.1.0.77_cuda11.2-fasrc01
 ```
+Check [combination](https://www.tensorflow.org/install/source?hl=ja#linux).
