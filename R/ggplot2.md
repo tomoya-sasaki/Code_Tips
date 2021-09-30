@@ -141,6 +141,10 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
 ```
 
 ## 図を並べる
+
+### Use patchwork
+Probably [the easiest](https://qiita.com/nozma/items/4512623bea296ccb74ba)?
+
 ### Use gridExtra
 
 If you do not have to preview, use `arrangeGrob` instead of `grid.arrange`.
