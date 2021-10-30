@@ -493,7 +493,13 @@
     },
     {
         "key": "\\ shift+c",
-        "command": "latex-workshop.clean",
+        "command": "extension.multiCommand.execute",
+        "args": {
+          "sequence": [
+            "latex-workshop.kill",
+            "latex-workshop.clean"
+          ]
+        },
         "when": "editorTextFocus && editorLangId == latex"
     },
     {
