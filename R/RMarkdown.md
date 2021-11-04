@@ -26,6 +26,9 @@ output:
 graphics: yes
 mainfont: YuMincho
 monofont: Ricty Discord
+header-includes:
+- \usepackage{booktabs}
+- \usepackage{makecell}
 ---
 \fontsize{9}{12}
 \hrulefill
