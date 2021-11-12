@@ -11,6 +11,7 @@
 * **Use normall installer from the website from the next time**
 * To change language setting, write `export LC_ALL=en_US.UTF-8` in `~/.bash_profile` and `$ source ~/.bash_profile`.
 
+[Apple Silicon](https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#g_t_0060Apple-Silicon_0027)
 
 ### Tensorflow
 It is always better to check the latest information on the official website. *Radeon Pro 450 2048 MB* is not for this instruction (or I could not find a way).
