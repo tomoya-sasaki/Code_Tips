@@ -102,7 +102,7 @@ Then, you can install python:
   
 ### Tex
 [Reference](http://qiita.com/hideaki_polisci/items/3afd204449c6cdd995c9)  
-Using the `homebrew` seems to be the safest (2021-11-12)
+Using the `homebrew` seems to be the safest (2021-11-12), [reference](https://texwiki.texjp.org/?MacTeX)
 
 ##### Install Ghostscript
 `brew install ghostscript`
