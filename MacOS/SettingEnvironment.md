@@ -101,7 +101,8 @@ Then, you can install python:
   * List Current Environments: `$ pyenv versions`
   
 ### Tex
-[Reference](http://qiita.com/hideaki_polisci/items/3afd204449c6cdd995c9)
+[Reference](http://qiita.com/hideaki_polisci/items/3afd204449c6cdd995c9)  
+Using the `homebrew` seems to be the safest (2021-11-12)
 
 ##### Install Ghostscript
 `brew install ghostscript`
