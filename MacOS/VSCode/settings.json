@@ -3,6 +3,7 @@
     // Appearence
     //
     "workbench.editor.showIcons": false,
+    "window.restoreWindows": "all",
     "window.autoDetectColorScheme": true,
     "files.trimTrailingWhitespace": true,
     "git.decorations.enabled": false,
@@ -10,7 +11,7 @@
     "workbench.preferredHighContrastColorTheme": "Brackets Light Pro",
     "workbench.editorAssociations": [
         {
-            "viewType": "jupyter.notebook.ipynb",
+            "viewType": "jupyter-notebook",
             "filenamePattern": "*.ipynb"
         }
     ],
@@ -58,9 +59,15 @@
         "**/*.out": true,
         "**/*.snm": true,
         "**/*.toc": true,
+        "**/*.vrb": true,
         "**/*.synctex.gz": true,
         // ipynb //
-        ".ipynb_checkpoints": true
+        ".ipynb_checkpoints": true,
+        // Python //
+        "**/*.so": true,
+        "**/*.c": true,
+        "**/*.pyc": true,
+        "**/*.vim": true
     },
     //
     // Jupyter
@@ -170,7 +177,7 @@
         {
             "before": ["-"],
             "after": ["_"],
-            "when": "editorTextFocus && editorLangId != 'tex'"
+            "when": "editorTextFocus && editorLangId != 'tex' "
         },
         {
             "before": ["_"],
@@ -356,5 +363,6 @@
     "editor.wordWrap": "on",
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "julia.enableTelemetry": false
+    "julia.enableTelemetry": false,
+    "python.pythonPath": "/usr/local/var/pyenv/versions/3.6.9/envs/tf1/bin/python"
 }
