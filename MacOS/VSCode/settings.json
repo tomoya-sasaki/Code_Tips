@@ -61,11 +61,14 @@
         "**/*.toc": true,
         "**/*.vrb": true,
         "**/*.synctex.gz": true,
+        "**/*.bbl": true,
+        "**/*.blg": true,
         // ipynb //
         ".ipynb_checkpoints": true,
         // Python //
         "**/*.so": true,
         "**/*.c": true,
+        "**/*.o": true,
         "**/*.pyc": true,
         "**/*.vim": true
     },
