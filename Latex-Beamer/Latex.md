@@ -47,6 +47,7 @@ uplatexを使うと良いのかも。jsarticleのオプションとしてuplatex
 24. [Define subsubsubsection](#define-subsubsubsection)
 25. [記号](#記号)
 26. [セル内で折り返し](#セル内で折り返し)
+27. [取り消し線 striking out](#striking-out)
 
 
 ## 写真の挿入
@@ -663,4 +664,12 @@ In preamble,
     one & two & \shortstack{a \\ bb \\ c}\\
 \end{tabular}
 \end{document}
+```
+
+
+## Striking out
+```tex
+\usepackage[normalem]{ulem}
+\newcommand{\msout}[1]{{\color{red}\text{\sout{\ensuremath{#1}}}}}  % in math
+\newcommand{\Sout}[1]{{\color{red} \sout{#1}}}  % in red
 ```
