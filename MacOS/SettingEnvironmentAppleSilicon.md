@@ -2,12 +2,13 @@
 
 ## Starting
 ```
-# 1: Homebrew (check below)
-
-# 2: XCode
+# 1: XCode
 $ xcode-select --install
 
-# 3: gvv
+# 2: Homebrew (check below)
+
+
+# 3: gcc
 $ brew install gcc
 ```
 
