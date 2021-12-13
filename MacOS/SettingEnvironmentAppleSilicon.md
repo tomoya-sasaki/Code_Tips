@@ -27,10 +27,13 @@ export LC_ALL=en_US.UTF-8
 
 ([Source](https://mpopov.com/blog/2021/10/10/even-faster-matrix-math-in-r-on-macos-with-m1/))
 
-### Rcpp
-
 
 ## LaTeX
+```
+$ brew install wget xz
+$ brew install --cask mactex
+$ sudo tlmgr update --self --all
+```
 
 
 ## Python
