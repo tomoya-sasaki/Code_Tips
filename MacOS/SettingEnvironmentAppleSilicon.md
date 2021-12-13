@@ -50,7 +50,7 @@ $ brew install pandoc
 
 1. Installing pyenv: `brew install pyenv`
 
-2. Setting file
+2. Setting file (the last two lines are from [the official guide](https://github.com/pyenv/pyenv#homebrew-in-macos))
 ```
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zprofile
