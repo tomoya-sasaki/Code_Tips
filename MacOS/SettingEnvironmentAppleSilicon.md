@@ -16,7 +16,11 @@ $ brew install gcc
 
 
 ## R
-[Native R](https://cran.r-project.org/bin/macosx/) and [gfortran](https://mac.r-project.org/libs-arm64/) ([Source](https://mpopov.com/blog/2021/10/10/even-faster-matrix-math-in-r-on-macos-with-m1/))
+1. XQuartz
+2. [gfortran](https://mac.r-project.org/libs-arm64/)
+3. [Native R](https://cran.r-project.org/bin/macosx/)
+
+([Source](https://mpopov.com/blog/2021/10/10/even-faster-matrix-math-in-r-on-macos-with-m1/))
 
 ### Rcpp
 
