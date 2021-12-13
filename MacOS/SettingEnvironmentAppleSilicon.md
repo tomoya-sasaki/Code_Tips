@@ -20,6 +20,11 @@ $ brew install gcc
 2. [Native R](https://cran.r-project.org/bin/macosx/)
 3. [gfortran](https://mac.r-project.org/libs-arm64/) (move files to `opt/R/arm64`)
 
+Add the following to `~/.bash_profile` and `souce ~/.bash_profile`
+```
+export LC_ALL=en_US.UTF-8
+```
+
 ([Source](https://mpopov.com/blog/2021/10/10/even-faster-matrix-math-in-r-on-macos-with-m1/))
 
 ### Rcpp
