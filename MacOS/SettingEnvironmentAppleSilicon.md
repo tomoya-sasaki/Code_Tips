@@ -10,12 +10,9 @@ $ xcode-select --install
 
 # 2: Homebrew (check below)
 
-
 # 3: gcc
 $ brew install gcc
 ```
-
-## Homebrew
 
 
 ## R
@@ -38,7 +35,7 @@ $ brew install --cask mactex
 $ sudo tlmgr update --self --all
 ```
 
-
+* TeXShop: TeXShopの環境設定の［書類］タブの左下の［設定プロファイル］から「upTeX (ptex2pdf)」を選択
 
 
 ## Python
