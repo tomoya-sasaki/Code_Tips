@@ -3,6 +3,9 @@
 * Setting up with English
 * Don't use Migration Assistant, manually move files from Time Machine
 
+Be careful:
+* Terminal uses `zsh` so make `.zprofile` instead of `.bash_profile` ([Reference](https://leico.github.io/TechnicalNote/Mac/catalina-zsh))
+
 ## Starting
 ```
 # 1: XCode
@@ -20,7 +23,7 @@ $ brew install gcc
 2. [Native R](https://cran.r-project.org/bin/macosx/)
 3. [gfortran](https://mac.r-project.org/libs-arm64/) (move files to `opt/R/arm64`)
 
-Add the following to `~/.bash_profile` and `souce ~/.bash_profile`
+Add the following to `~/.zprofile` and `souce ~/.zprofile`
 ```
 export LC_ALL=en_US.UTF-8
 ```
@@ -38,16 +41,42 @@ $ sudo tlmgr update --self --all
 * TeXShop: TeXShopの環境設定の［書類］タブの左下の［設定プロファイル］から「upTeX (ptex2pdf)」を選択
 
 
+## Pandoc
+```
+$ brew install pandoc
+```
+
 ## Python
+
+1. Installing pyenv: `brew install pyenv`
+
+2. Setting file
+```
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zprofile
+echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+```
+
 
 
 ## Vim
 
 ## Git
+1. Git CLI
 ```
 $ brew install gh
 $ gh auth login   # Use HTTPS
 ```
+
+2. Git configulation file
+Edit by `git config --global --edit`
+```
+#This is Git's per-user configuration file.
+[user]
+email = Email address registered at GitHub
+```
+
 
 ## Inkscape
 [via Homebrew](https://blog.looseknot.jp/mac/m1mac_inkscape_install.html)
