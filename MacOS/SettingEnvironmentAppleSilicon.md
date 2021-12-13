@@ -44,7 +44,11 @@ $ sudo tlmgr update --self --all
 
 ## Vim
 
-
+## Git
+```
+$ brew install gh
+$ gh auth login   # Use HTTPS
+```
 
 ## Inkscape
 [via Homebrew](https://blog.looseknot.jp/mac/m1mac_inkscape_install.html)
