@@ -58,6 +58,23 @@ echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 ```
 
+Add this to `.zprofile`: `export PYENV_VIRTUALENV_DISABLE_PROMPT=1`
+
+Quit and reopen the terminal app
+
+3. virtual env `brew install pyenv-virtualenv`
+
+4. Without Rosetta 2
+```
+$ pyenv install 3.9.6
+$ pyenv virtualenv 3.9.6 NAME
+$ pyenv activate NAME
+$ pyenv deactivate
+$ pyenv uninstall NAME
+$ pyenv versions  # list versions
+```
+
+5. With Rosetta 2
 
 
 ## Vim
