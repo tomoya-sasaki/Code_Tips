@@ -1,5 +1,7 @@
 # Setting Environment for Apple Silicon
 
+* Setting up with English
+
 ## Starting
 ```
 # 1: XCode
