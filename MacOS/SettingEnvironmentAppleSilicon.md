@@ -49,3 +49,8 @@ $ sudo tlmgr update --self --all
 ## Inkscape
 [via Homebrew](https://blog.looseknot.jp/mac/m1mac_inkscape_install.html)
 
+```
+$ brew tap homebrew/cask
+$ brew install inkscape
+$ inkscape  # launch
+```
