@@ -1,6 +1,7 @@
 # Setting Environment for Apple Silicon
 
 * Setting up with English
+* Don't use Migration Assistant, manually move files from Time Machine
 
 ## Starting
 ```
