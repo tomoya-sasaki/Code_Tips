@@ -14,11 +14,14 @@ Dockerファイルの設定が入ったフォルダを用意
 
 
 ## Running the docker container
+* Launch Docker Desktop
 * Make a container and launch it: `docker run --name <name-of-the-container> -it -v ~/Dropbox:/myfile <name-of-the-image> /bin/zsh` (or `/bin/bash`)
 * Launch a container (you already have a container, you can see it with `docker ps -a`): `docker start -i <name-of-the-image>`
 
-## VSCode
-* `Shift + command + p` and select `Remote-containers: Attatch to runnning container`
+### VSCode
+* After `run`, you can see the container in the side bar (Remote Explorer)
+* Select `Attach to Container`
+* In the new window, select `open folder`, if you mounted a folder, you can select the folder (probably delete `/root/` and type `/myfile`)
 
 
 ## Stop and Update
@@ -27,10 +30,6 @@ When you update the source code, you need to remove the old container ([referenc
 * Once it's stopped, we can remove it `docker rm <the-container-id>`
 * Stop and remove `docker rm -f <the-container-id>
 
-
-## VSCode
-* After `run`, you can see the container in the side bar (Remote Explorer)
-* Select `Attach to Container`
 
 ## Stop container
 * Stop docker run by `<CTRL + C>`
