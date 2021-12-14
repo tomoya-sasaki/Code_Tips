@@ -5,7 +5,7 @@ Dockerファイルの設定が入ったフォルダを用意
 ## Build
 
 * Build: `docker build -t <tag> .` 
-* Get IDs of the container: `docker ps -a`
+
 
 ## Show all containers
 * `docker ps -a`
@@ -17,8 +17,9 @@ When you update the source code, you need to remove the old container ([referenc
 
 
 ## Running the docker container
-* Make a container and launch it `docker run -d <name>`
+* Make a container and launch it
   * `docker -it --rm -name <name-of-the-container> <name-of-the-image>`: `--rm` deletes the container automatically (probably use this for VSCode?) 
+  * `docker run -d <name>`
 * Launch a container `docker start <name>`
 * `Shift + command + p` and select `Remote-containers: Attatch to runnning container`
 
