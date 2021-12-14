@@ -16,7 +16,7 @@ Dockerファイルの設定が入ったフォルダを用意
   * Run in the terminal `docker run --name <name-of-the-container> -it <name-of-the-image> /bin/bash`
   * `docker run -it --rm --name <name-of-the-container> <name-of-the-image>`: `--rm` deletes the container automatically (probably use this for VSCode?) 
   * `docker run -d <name>`
-* Launch a container `docker start <name>`
+* Launch a container (you already have a container, you can see it with `docker ps -a`): `docker start -i <name-of-the-image>`
 * `Shift + command + p` and select `Remote-containers: Attatch to runnning container`
 
 
