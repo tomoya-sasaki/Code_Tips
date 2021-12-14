@@ -1,4 +1,4 @@
-# Remote-Containers
+# Docker
 
 Dockerファイルの設定が入ったフォルダを用意
 
@@ -22,6 +22,7 @@ Dockerファイルの設定が入ったフォルダを用意
 * After `run`, you can see the container in the side bar (Remote Explorer)
 * Select `Attach to Container`
 * In the new window, select `open folder`, if you mounted a folder, you can select the folder (probably delete `/root/` and type `/myfile`)
+* If you want to use local extensions, go `EXTENSIONS` menu and install extensions to the container
 
 
 ## Stop and Update
