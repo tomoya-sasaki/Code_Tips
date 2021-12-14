@@ -15,6 +15,7 @@ When you update the source code, you need to remove the old container ([referenc
 
 Running the docker and use it on VSCode
 * Make a container and launch it `docker run -d <name>`
+  * `docker -it --rm -name <name-of-the-container> <name-of-the-image>`: `--rm` deletes the container automatically (probably use this for VSCode?) 
 * Launch a container `docker start <name>`
 * `Shift + command + p` and select `Remote-containers: Attatch to runnning container`
 
