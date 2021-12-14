@@ -9,8 +9,9 @@ Dockerファイルの設定が入ったフォルダを用意
 ## Images
 * `docker images`
 
-## Show all containers
-* `docker ps -a`
+## Containers
+* Launched: `docker ps`
+* Show all: `docker ps -a`
 
 
 ## Running the docker container
