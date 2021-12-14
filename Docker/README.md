@@ -10,12 +10,13 @@ Dockerファイルの設定が入ったフォルダを用意
 * `docker images`
 
 ## Containers
-* Launched: `docker ps`
+Launch a container from an image (next section)
+* Only active: `docker ps`
 * Show all: `docker ps -a`
 
 
 ## Running the docker container
-* Launch Docker Desktop
+* Open Docker Desktop
 * Make a container and launch it: `docker run --name <name-of-the-container> -it -v ~/Dropbox:/myfile <name-of-the-image> /bin/zsh` (or `/bin/bash`)
 * Launch a container (you already have a container, you can see it with `docker ps -a`): `docker start -i <name-of-the-image>`
 
