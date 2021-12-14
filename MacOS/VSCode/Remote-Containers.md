@@ -20,3 +20,7 @@ Running the docker and use it on VSCode
 
 Pull container
 * `docker pull jupyter/scipy-notebook` (open Docker Desktop first)
+
+
+References:
+* [M1 Mac で Python環境 (Docker + VSCode編)](https://zenn.dev/ochamikan/articles/24465ac14a9e24)
