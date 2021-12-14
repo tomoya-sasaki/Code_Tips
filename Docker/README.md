@@ -14,11 +14,10 @@ Dockerファイルの設定が入ったフォルダを用意
 
 
 ## Running the docker container
-* Make a container and launch it
-  * Run in the terminal `docker run --name <name-of-the-container> -it <name-of-the-image> /bin/bash`
-  * `docker run -it --rm --name <name-of-the-container> <name-of-the-image>`: `--rm` deletes the container automatically (probably use this for VSCode?) 
-  * `docker run -d <name>`
+* Make a container and launch it: `docker run --name <name-of-the-container> -it -v ~/Dropbox:/myfile <name-of-the-image> /bin/zsh` (or `/bin/bash`)
 * Launch a container (you already have a container, you can see it with `docker ps -a`): `docker start -i <name-of-the-image>`
+
+## VSCode
 * `Shift + command + p` and select `Remote-containers: Attatch to runnning container`
 
 
