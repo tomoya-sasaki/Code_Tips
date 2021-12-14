@@ -24,7 +24,7 @@ Launch a container from an image (next section)
 * After `run`, you can see the container in the side bar (Remote Explorer)
 * Select `Attach to Container`
 * In the new window, select `open folder`, if you mounted a folder, you can select the folder (probably delete `/root/` and type `/myfile`)
-* If you want to use local extensions, go `EXTENSIONS` menu and install extensions to the container
+* If you want to use local extensions, go to the `EXTENSIONS` menu and install extensions to the container
 
 
 ## Stop and Update
