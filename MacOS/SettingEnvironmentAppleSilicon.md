@@ -74,10 +74,7 @@ $ pyenv uninstall NAME
 $ pyenv versions  # list versions
 ```
 
-5. With Rosetta 2
-
-
-## Vim
+Older versions -> [Docker](#docker)
 
 ## Git
 1. Git CLI
@@ -103,3 +100,9 @@ $ brew tap homebrew/cask
 $ brew install inkscape
 $ inkscape  # launch
 ```
+
+## Docker
+1. Install docker following the official website (with Rosetta 2)
+
+
+## Vim
