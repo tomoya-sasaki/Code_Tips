@@ -10,11 +10,6 @@ Dockerファイルの設定が入ったフォルダを用意
 ## Show all containers
 * `docker ps -a`
 
-## Update
-When you update the source code, you need to remove the old container ([reference](https://docs.docker.com/get-started/03_updating_app/#update-the-source-code))
-* Stop the container: `docker stop <the-container-id>`
-* Once it's stopped, we can remove it `docker rm <the-container-id>`
-
 
 ## Running the docker container
 * Make a container and launch it
@@ -22,6 +17,13 @@ When you update the source code, you need to remove the old container ([referenc
   * `docker run -d <name>`
 * Launch a container `docker start <name>`
 * `Shift + command + p` and select `Remote-containers: Attatch to runnning container`
+
+
+## Stop and Update
+When you update the source code, you need to remove the old container ([reference](https://docs.docker.com/get-started/03_updating_app/#update-the-source-code))
+* Stop the container: `docker stop <the-container-id>`
+* Once it's stopped, we can remove it `docker rm <the-container-id>`
+
 
 ## VSCode
 * After `run`, you can see the container in the side bar (Remote Explorer)
