@@ -13,6 +13,7 @@ Dockerファイルの設定が入ったフォルダを用意
 
 ## Running the docker container
 * Make a container and launch it
+  * Run in the terminal `docker run --name <name-of-the-container> -it <name-of-the-image> /bin/bash`
   * `docker run -it --rm --name <name-of-the-container> <name-of-the-image>`: `--rm` deletes the container automatically (probably use this for VSCode?) 
   * `docker run -d <name>`
 * Launch a container `docker start <name>`
