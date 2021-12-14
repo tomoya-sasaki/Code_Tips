@@ -18,3 +18,5 @@ Running the docker and use it on VSCode
 * Launch a container `docker start <name>`
 * `Shift + command + p` and select `Remote-containers: Attatch to runnning container`
 
+Pull container
+* `docker pull jupyter/scipy-notebook` (open Docker Desktop first)
