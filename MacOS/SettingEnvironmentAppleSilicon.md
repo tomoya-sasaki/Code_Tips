@@ -101,6 +101,11 @@ $ brew install inkscape
 $ inkscape  # launch
 ```
 
+## VSCode
+1. Check [this foler](https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/VSCode)
+2. You need `Remote-Containers` for Docker
+
+
 ## Docker
 1. Install docker following the official website (with Rosetta 2)
 
