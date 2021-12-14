@@ -6,6 +6,8 @@ Dockerファイルの設定が入ったフォルダを用意
 
 * Build: `docker build -t <tag> .` 
 
+## Images
+* `docker images`
 
 ## Show all containers
 * `docker ps -a`
