@@ -2,12 +2,17 @@
 
 Dockerファイルの設定が入ったフォルダを用意
 
-## Build
-
-* Build: `docker build -t <tag> .` 
 
 ## Images
 * `docker images`
+
+### Pull images
+* `docker pull jupyter/scipy-notebook` (open Docker Desktop first)
+
+
+## Build
+
+* Build: `docker build -t <tag> .` 
 
 ## Containers
 Launch a container from an image (next section)
@@ -29,18 +34,11 @@ Launch a container from an image (next section)
 
 ## Stop and Update
 When you update the source code, you need to remove the old container ([reference](https://docs.docker.com/get-started/03_updating_app/#update-the-source-code))
-* Stop the container: `docker stop <the-container-id>`
+* Stop the container: `docker stop <the-container-id>` (you can also use the container name)
+* Force stio: `docker kill <the-container-id>`
 * Once it's stopped, we can remove it `docker rm <the-container-id>`
 * Stop and remove `docker rm -f <the-container-id>`
 
-
-## Stop container
-* Stop docker run by `<CTRL + C>`
-* `docker ps` -> `docker kill <id>`
-
-
-## Pull container
-* `docker pull jupyter/scipy-notebook` (open Docker Desktop first)
 
 
 References:
