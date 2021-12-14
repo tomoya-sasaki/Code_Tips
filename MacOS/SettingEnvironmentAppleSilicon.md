@@ -1,6 +1,6 @@
 # Setting Environment for Apple Silicon
 
-* Setting up with English
+* Setting up in English, area is Japan
 * Don't use Migration Assistant, manually move files from Time Machine
 
 Be careful:
