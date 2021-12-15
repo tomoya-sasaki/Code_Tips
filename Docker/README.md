@@ -7,13 +7,13 @@ Dockerファイルの設定が入ったフォルダを用意
 * `docker images`
 * Delete: `docker rmi <image-id>`
 
+### Build
+* Move to the folder with `Dockerfile`
+* Build: `docker build -t <tag> .` 
+
 ### Pull images
 * `docker pull jupyter/scipy-notebook` (open Docker Desktop first)
 
-
-## Build
-
-* Build: `docker build -t <tag> .` 
 
 ## Containers
 Launch a container from an image (next section)
