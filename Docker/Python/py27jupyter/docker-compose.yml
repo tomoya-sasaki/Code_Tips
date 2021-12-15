@@ -1,0 +1,13 @@
+version: '3'
+services:
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: py27
+    volumes:
+      - "~/Desktop:/src/notebooks/myfile"
+    ports:
+      - "8888:8888"
+    tty: true
+    command: jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root
