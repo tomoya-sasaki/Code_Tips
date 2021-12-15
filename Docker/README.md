@@ -2,6 +2,7 @@
 
 Dockerファイルの設定が入ったフォルダを用意
 
+**Better approach: [with docker-compose](https://github.com/Shusei-E/Docker)**
 
 ## Images
 * `docker images`
