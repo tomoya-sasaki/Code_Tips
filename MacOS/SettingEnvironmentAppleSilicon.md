@@ -98,10 +98,8 @@ email = Email address registered at GitHub
 ```
 $ brew tap homebrew/cask
 $ brew install inkscape
-$ inkscape  # launch
+$ inkscape  # launch (to use built-in LaTeX extension)
 ```
-
-Use [LaTex[(https://textext.github.io/textext/install/macos.html)
 
 ## Docker
 Install docker following the official website (with Rosetta 2).
