@@ -107,9 +107,8 @@ Install docker following the official website (with Rosetta 2).
 [More details on Docker](https://github.com/Shusei-E/Code_Tips/tree/master/Docker)
 
 ## Vim
-```
-$ brew install --cask macvim
-```
+Install from MacVim's official website. Other settings are [here](https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/MacVim).
+
 
 ## VSCode
 1. Check [this foler](https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/VSCode)
