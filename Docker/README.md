@@ -5,6 +5,7 @@ Dockerファイルの設定が入ったフォルダを用意
 
 ## Images
 * `docker images`
+* Delete: `docker rmi <image-id>`
 
 ### Pull images
 * `docker pull jupyter/scipy-notebook` (open Docker Desktop first)
