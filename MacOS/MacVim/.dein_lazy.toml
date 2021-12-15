@@ -406,6 +406,5 @@ hook_source = '''
 repo = 'lervag/vimtex'
 on_ft = ['tex']
 hook_add = '''
-  let g:vimtex_fold_envs = 0
   let g:tex_indent_brace=0
 '''
