@@ -15,6 +15,9 @@ noremap <D-0> $
 nnoremap <D-A-Left> gT
 nnoremap <D-A-Right> gt
 
+" 行末、行頭の間のスムーズな移動
+set whichwrap=h,l,<,>,[,]
+
 " 行番号を表示する
 set number
 
