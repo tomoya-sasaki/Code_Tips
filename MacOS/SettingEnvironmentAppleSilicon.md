@@ -114,3 +114,8 @@ Install docker following the official website (with Rosetta 2).
 
 
 ## Vim
+
+
+## Other softwares
+* Skim
+* Adobe Acrobat Reader
