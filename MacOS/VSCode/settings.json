@@ -367,5 +367,6 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "julia.enableTelemetry": false,
-    "python.pythonPath": "/usr/local/var/pyenv/versions/3.6.9/envs/tf1/bin/python"
+    "python.pythonPath": "/usr/local/var/pyenv/versions/3.6.9/envs/tf1/bin/python",
+    "terminal.integrated.altClickMovesCursor": false
 }
