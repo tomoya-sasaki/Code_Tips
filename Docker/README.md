@@ -24,6 +24,7 @@ Launch a container from an image (next section)
 ## Running the docker container
 * Open Docker Desktop
 * Make a container and launch it: `docker run --name <name-of-the-container> -it -v ~/Dropbox:/myfile <name-of-the-image> /bin/zsh` (or `/bin/bash`)
+  * You can write details in `docker-compose.yml`
 * Launch a container (you already have a container, you can see it with `docker ps -a`): `docker start -i <name-of-the-image>`
 
 ### VSCode
