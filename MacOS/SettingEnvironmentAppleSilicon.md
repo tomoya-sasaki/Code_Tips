@@ -101,6 +101,8 @@ $ brew install inkscape
 $ inkscape  # launch
 ```
 
+Use [LaTex[(https://textext.github.io/textext/install/macos.html)
+
 ## Docker
 Install docker following the official website (with Rosetta 2).
 
