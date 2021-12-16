@@ -402,7 +402,7 @@ endfunction
 function! SchemeDefault()
   Skinhybrid
   colorscheme macvim
-  highlight Normal guifg=MacTextColor guibg=gray90
+  highlight Normal guifg=MacTextColor guibg=gray90 ctermfg=White ctermbg=Black
   highlight Cursor guifg=NONE guibg=#57fc00
   highlight StatusLineNC guibg=#a8a6a6 guifg=#606060
   highlight Cursor guifg=NONE guibg=Green
@@ -411,5 +411,6 @@ function! SchemeDefault()
 endfunction
 command! SkinDefault call SchemeDefault()
 
+" Use default color if not specific file types
 let notdefault = ['tex', 'py', 'r', 'rmd', 'pyrex', 'julia', 'cpp']
 autocmd BufEnter * if index(notdefault, &ft) < 0 | SkinDefault
