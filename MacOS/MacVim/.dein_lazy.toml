@@ -1,0 +1,416 @@
+# ~/.dein_lazy.toml
+
+# hook_add: when dein.vim recognizes plugin
+# hook_source: just before loading the plugin
+# hook_post_source: just after loading the plugin
+
+# filetype: https://github.com/vim/vim/blob/master/runtime/filetype.vim
+
+
+### Programming
+## Multiple languages
+
+# Comment out
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_ft = ['tex', 'pyrex', 'python', 'r', 'rmd', 'c', 'cpp', 'julia'] # do not write separately for each language
+hook_source = '''
+  nmap <Leader>, <Plug>(caw:hatpos:toggle)
+  vmap <Leader>, <Plug>(caw:hatpos:toggle)
+
+  " Currently, I don't have cpp specific plugin
+  " If there is a plugin, set it there
+  let e = expand("%:e")
+  if e == "cpp" || e == "hpp" || e == "c" || e == "h"
+    :Skinbadwolf
+    :Window
+    :CodeMode
+  endif
+'''
+  # copy manually the folder named 'r' in '.cache/dein/repos/github.com/tyru/caw.vim/after/ftplugin' for 'rmd'
+
+
+# Syntax check (Asynchronous linting/fixing)
+[[plugins]]
+repo = 'dense-analysis/ale'
+on_ft = ['python', 'pyrex', 'r', 'c', 'cpp'] # do not write separately for each language
+hook_source = '''
+  " Move between errors/warnings
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+  " Run Lint only when we save a file
+  let g:ale_lint_on_save = 1
+  let g:ale_lint_on_text_changed = 0
+
+  " If you don't want linters to run on opening a file (set it 0)
+  let g:ale_lint_on_enter = 1
+
+  " Show symbol column all the time
+  let g:ale_sign_column_always = 1
+
+  " Error symbol
+  " let g:ale_sign_error = 'x'
+
+  " Which linter to enable
+  let g:ale_linters = {
+  \   'python': ['flake8'],
+  \   'cpp': ['clang'],
+  \   'r': ['lintr']
+  \}
+
+  " Option for Python 3
+  let e = expand("%:e")
+  if e == "python"
+    let g:ale_command_wrapper = "pyenv local py39; %*"
+  endif
+  if e == "pyrex"
+    let g:ale_command_wrapper = "pyenv local py39; %*"
+  endif
+
+  " message format
+  let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+  " Don't show lint on location list and QuickFix
+  let g:ale_set_loclist = 0
+  let g:ale_set_quickfix = 0
+  let g:ale_open_list = 0
+  let g:ale_keep_list_window_open = 0
+
+  " Statusline
+  function! LinterStatus() abort
+     if g:syntax_cheker_status == 0
+      return ''
+     endif
+
+     let l:counts = ale#statusline#Count(bufnr(''))
+     let l:all_errors = l:counts.error + l:counts.style_error
+     let l:all_non_errors = l:counts.total - l:all_errors
+     return l:counts.total == 0 ? 'E:0 W:0' : printf(
+     \ 'E:%d W:%d',
+     \ l:all_errors,
+     \ l:all_non_errors
+     \)
+  endfunction
+
+  function! ALEStatuslineOn() abort
+    let g:lightline = {
+      \'active': {
+      \  'left': [
+      \    [],
+      \    [],
+      \    ['filename', 'modified']
+      \  ],
+      \  'right': [
+      \      ['lineinfo'],
+      \      ['percent'],
+      \      ['ale']
+      \   ]
+      \},
+      \'component_function': {
+      \  'ale': 'LinterStatus'
+      \},
+      \ 'colorscheme' : 'solarized'
+    \ }
+
+    let g:lightline.inactive = {
+        \ 'left': [ [ 'filename', 'modified'] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ],
+        \             [ 'ale' ]
+        \  ] 
+        \ }
+  endfunction
+  call ALEStatuslineOn()
+
+  " Syntax check on and off
+  let g:syntax_cheker_status = 1
+  nnoremap <Leader>s :OnOffSyntaxCheck<CR>
+  command! OnOffSyntaxCheck call s:OnOffSyntaxCheck()
+  function! s:OnOffSyntaxCheck()
+    if g:syntax_cheker_status==0
+      :ALEEnable
+      let g:syntax_cheker_status = 1
+      echo "Syntax check is on"
+    else
+      :ALEDisable
+      let g:syntax_cheker_status = 0
+      echo "Syntax check is off"
+    endif
+  endfunction
+'''
+# Note:
+#   Python: install it using pip
+#     You can find installed flake8 by typing
+#       $ pip show flake8
+#     and edit the files if needed. For example,
+#     you can change the number of characters in
+#     a single line by editing `default.py`
+#     Also, make sure to change
+#       g:ale_command_wrapper option above
+#   R: install.packages("lintr")
+
+## Python
+[[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+on_ft = ['python', 'pyrex']
+hook_source = '''
+  :Skinbadwolf
+  :Window
+  :CodeMode
+'''
+
+## Lisp
+[[plugins]]
+repo = 'kovisoft/slimv'
+on_ft = ['scheme', 'lisp']
+hook_source = '''
+  nmap <D-Enter> ,d j
+  imap <D-Enter> <ESC> ,d i
+  nmap <LocalLeader>rf ,c
+  nmap <LocalLeader>rq ,Q
+  nmap <LocalLeader>cc ,b
+  nmap <LocalLeader>a ,a
+  nmap <LocalLeader>n ,n
+
+  :Skinbadwolf
+  :Window
+'''
+
+## R
+  # You need tmux
+[[plugins]]
+repo = 'jalvesaq/Nvim-R'
+on_ft = ['r', 'rmd']
+hook_source = '''
+  " No underscore replacement
+  let g:R_assign = 0 
+
+  " Open R in an external terminal
+  let g:R_external_term = 1
+
+  " Keyboard mapping
+  nmap <D-Enter> <Plug>RDSendLine
+  imap <D-Enter> <ESC> <Plug>RDSendLine i
+  nmap <LocalLeader>cc <Plug>RSendChunk
+  vmap <LocalLeader>ss <Plug>RDSendSelection <C-c>
+  nmap <LocalLeader>pp <Plug>RDSendParagraph
+  nmap <LocalLeader>cn <Plug>RNextRChunk
+  nmap <LocalLeader>cN <Plug>RPreviousRChunk
+
+  " Insert chunk
+  nnoremap <Leader>tc :Templatechunk<CR>jo
+  command! Templatechunk call s:Templatechunk()
+  function! s:Templatechunk()
+    call append(line("."), "```{r, warning=FALSE, message=FALSE, fig.align='center'}")
+    call append(line(".")+1,"```")
+  endfunction
+  nnoremap <Leader>tC :TemplateChunk<CR>jjo
+  command! TemplateChunk call s:TemplateChunk()
+  function! s:TemplateChunk()
+    call append(line("."), "")
+    call append(line(".")+1, "```{r, warning=FALSE, message=FALSE, fig.width=6, fig.height=5, fig.align='center'}")
+    call append(line(".")+2,"```")
+  endfunction
+
+  :Skinbadwolf
+  :Window
+  :CodeMode
+'''
+
+
+# Julia
+  # When you precc command-Enter it asks you to enter tmux info 
+[[plugins]]
+repo = 'jpalardy/vim-slime'
+on_ft = ['julia']
+hook_source = '''
+  let g:slime_target = "tmux"
+  let g:slime_default_config = {"socket_name": "/private/tmp/tmux-501/default", "target_pane": "0"}
+  nmap <D-Enter> <Plug>SlimeLineSend j
+  vmap <D-Enter> <Plug>SlimeRegionSend
+  :Skinbadwolf
+  :Window
+  :CodeMode
+'''
+
+# Julia Syntax
+  # If you get an error, edit the following file.
+  # ~/.cache/dein/repos/github.com/JuliaEditorSupport/julia-vim/ftdetect/julia.vim
+  # comment out auto commands that call LaTextoUnicode and a function L2UTrigger()
+  # Reload the plugin (comment out dein's julia-vim, open a *.jl file and comment in again)
+  # In other cases, you might need to
+  #     * delete ~/.cache/dein
+  #     * Comment out all julia related lines in this file
+  #     * Relaunch and install other plugins first
+  # If you only need syntax,
+  #     * Add JuliaEditorSupport/julia-vim/master/syntax/julia.vim
+  #       to ~/.vim/syntax/
+# [[plugins]]
+# repo = 'JuliaEditorSupport/julia-vim'
+# on_ft = ['julia']
+# hook_source = '''
+#   let g:latex_to_unicode_tab = 0
+# '''
+
+
+## Tex
+[[plugins]] 
+repo = 'thinca/vim-quickrun'
+on_ft = ['tex']
+hook_add = '''
+  let g:quickrun_config = {
+  \   "_" :{
+  \         "runner" : "job",
+  \         },
+  \   'tex': {
+  \       'command': 'latexmk',
+  \       'exec': ['%c -gg -pdfdvi %s']
+  \   },
+  \}
+
+ " Insert Default Template
+  nnoremap <Leader>tn :TemplateNewDefault<CR>
+  command! TemplateNewDefault call s:TemplateNewDefault()
+  function! s:TemplateNewDefault()
+    r ~/.vim/ftplugin/default.tex
+  endfunction
+
+ " Insert Eng Template
+  nnoremap <Leader>tN :TemplateNewEng<CR>
+  command! TemplateNewEng call s:TemplateNewEng()
+  function! s:TemplateNewEng()
+    r ~/.vim/ftplugin/EngTex.tex
+  endfunction
+'''
+hook_source = '''
+  " TexShopでtexファイルを表示
+  nnoremap <Leader>ts :TeXShopRun<CR>
+  command! TeXShopRun call s:TeXShopRun()
+  function! s:TeXShopRun()
+    let e = expand("%:e")
+    if e == "tex"
+      :!open -a /Applications/TeX/TeXShop.app %:r.tex
+      echo "Open in TeXShop"
+    else
+      echo "File is not tex"
+    endif
+  endfunction
+
+ " Insert align
+  nnoremap <Leader>ta :TemplateAlign<CR>jo
+  command! TemplateAlign call s:TemplateAlign()
+  function! s:TemplateAlign()
+    call append(line("."), "\\begin{align}")
+    call append(line(".")+1,"\\end{align}")
+  endfunction
+
+ " Insert lstlistings
+  nnoremap <Leader>tl :TemplateLstlisting<CR>jo
+  command! TemplateLstlisting call s:TemplateLstlisting()
+  function! s:TemplateLstlisting()
+    call append(line("."), "\\begin{lstlisting}[caption={}, label={}]")
+    call append(line(".")+1,"\\end{lstlisting}")
+  endfunction
+
+ " Insert itemize
+  nnoremap <Leader>ti :TemplateItemize<CR>jo
+  command! TemplateItemize call s:TemplateItemize()
+  function! s:TemplateItemize()
+    call append(line("."), "\\begin{itemize}")
+    call append(line(".")+1,"\\end{itemize}")
+  endfunction
+
+ " Insert figure
+  nnoremap <Leader>tf :TemplateFigure<CR>jjj
+  command! TemplateFigure call s:TemplateFigure()
+  function! s:TemplateFigure()
+    call append(line("."), "\\begin{figure}[!htb]")
+    call append(line(".")+1, "\\centering")
+    call append(line(".")+2, "\\includegraphics[width=1.0 \\linewidth]{}")
+    call append(line(".")+3,"\\caption{}")
+    call append(line(".")+4,"\\label{}")
+    call append(line(".")+5,"\\end{figure}")
+  endfunction
+
+  " Typeset
+  let g:latex_mode = 0
+  nnoremap <Leader>tc :LatexMode<CR>
+  command! LatexMode call s:LatexMode()
+  function! s:LatexMode()
+    if g:latex_mode==0
+      let g:latex_mode = 1
+      let g:quickrun_config['tex'] = {
+      \ 'command' : 'latexmk',
+      \ 'outputter' : 'error',
+      \ 'outputter/error/success' : 'null',
+      \ 'outputter/error/error' : 'quickfix',
+      \ 'srcfile' : expand("%"),
+      \ 'cmdopt': '-pdf'
+      \}
+      :echomsg "Typeset: pdflatex (\\tc to change)"
+    else
+      if g:latex_mode==1
+        let g:latex_mode = 2
+        let g:quickrun_config['tex'] = {
+        \ 'command' : 'latexmk',
+        \ 'outputter' : 'error',
+        \ 'outputter/error/success' : 'null',
+        \ 'outputter/error/error' : 'quickfix',
+        \ 'srcfile' : expand("%"),
+        \ 'cmdopt': '-pdfdvi'
+        \}
+        :echomsg "Typeset: latexmk (\\tc to change)"
+      else
+        " if g:latex_mode==2
+        let g:latex_mode = 0
+        let g:quickrun_config['tex'] = {
+        \ 'command' : 'latexmk',
+        \ 'outputter' : 'error',
+        \ 'outputter/error/success' : 'null',
+        \ 'outputter/error/error' : 'quickfix',
+        \ 'srcfile' : expand("%"),
+        \ 'cmdopt': '-xelatex'
+        \}
+        :echomsg "Typeset: xelatex (\\tc to change)"
+      endif
+    endif
+  endfunction
+  :LatexMode
+  :Skinsolarized
+  highlight MatchParen guibg=white guifg=orange
+  :Window
+
+  " Define remove command
+  command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
+
+  " Define remove function
+  " %:p:r -> absolute path witout extension
+  nnoremap <Leader>tC :LatexDelete<CR><CR>
+  command! LatexDelete call s:LatexDelete()
+  function! s:LatexDelete()
+    let delpath = ""
+    let delpathlist = split(globpath('.', "*.{aux,bbl,blg,dvi,fdb_latexmk,fls,log,synctex.gz,toc,lof,lol,lot,bcf,nav,run.xml,snm,vrb,out}"), '\n')
+    call map(delpathlist, 'delete(expand(v:val))')
+  endfunction
+
+  " 今開いているtexのPDFををSkimで表示
+  nnoremap <Leader>s :SkimRun<CR>
+  command! SkimRun call s:SkimRun()
+  function! s:SkimRun()
+    let e = expand("%:e")
+    if e == "tex" || e== "Rmd"
+      :!open -a /Applications/Skim.app %:r.pdf
+      echo "Open in Skim"
+    else
+      echo "File is not tex"
+    endif
+  endfunction
+'''
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+  let g:tex_indent_brace=0
+'''

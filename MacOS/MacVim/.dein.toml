@@ -1,0 +1,101 @@
+# ~/.dein.toml
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+
+# git clone 後、実行すべきコマンドがある場合はこんな感じ
+
+# From Vim 8.0, we can use `job` (provided in Vim)
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# 
+#   [plugins.build]
+#   windows = 'tools\\update-dll-mingw'
+#   cygwin  = 'make -f make_cygwin.mak'
+#   mac     = 'make -f make_mac.mak'
+#   linux   = 'make'
+#   unix    = 'gmake'
+
+### Colorschemes
+[[plugins]]
+repo = 'sjl/badwolf'
+hook_add = '''
+function! Badwolf()
+  colorscheme badwolf
+  highlight Comment ctermfg=22 guifg=#84cc90
+endfunction
+command! Skinbadwolf call Badwolf()
+'''
+
+# [[plugins]]
+# repo = 'cseelus/vim-colors-lucid'
+# hook_add = '''
+# function! SchemeLucid()
+#   colorscheme lucid
+#   highlight Comment ctermfg=22 guifg=#4286f4
+# endfunction
+# command! Skinlucid call SchemeLucid()
+# '''
+
+# Statusline
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  let g:lightline = {
+    \'active': {
+    \  'left': [
+    \    [],
+    \    [],
+    \    ['filename', 'modified']
+    \  ],
+    \  'right': [
+    \      ['lineinfo'],
+    \      ['percent'],
+    \   ]
+    \},
+    \'component_function': {
+    \  'ale': 'LinterStatus'
+    \},
+    \ 'colorscheme' : 'PaperColor'
+  \ }
+
+    let g:lightline.inactive = {
+        \ 'left': [ [ 'filename', 'modified'] ],
+        \ 'right': [ [ 'lineinfo' ],
+        \            [ 'percent' ]
+        \  ]
+        \ }
+'''
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+hook_add = '''
+function! SchemeSolarized()
+  set background=light
+  colorscheme solarized
+  highlight CursorIM guifg=NONE guibg=Purple
+endfunction
+command! Skinsolarized call SchemeSolarized()
+'''
+
+[[plugins]]
+repo = 'scwood/vim-hybrid'
+hook_add = '''
+function! Schemehybrid()
+  colorscheme hybrid
+  set background=light
+  highlight Comment ctermfg=22 guifg=#4286f4
+  highlight Cursor guifg=NONE guibg=#57fc00    
+  highlight LineNr guifg=#808080
+  highlight Visual guifg=black guibg=#aaa2dc
+  highlight Search guibg=yellow guifg=black
+endfunction
+command! Skinhybrid call Schemehybrid()
+'''
