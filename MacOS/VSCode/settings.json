@@ -9,12 +9,9 @@
     "git.decorations.enabled": false,
     "workbench.preferredLightColorTheme": "Default Dark+",
     "workbench.preferredHighContrastColorTheme": "Brackets Light Pro",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     //
     // Terminal
     //
@@ -76,8 +73,6 @@
     // Jupyter
     //
     "jupyter.askForKernelRestart": false,
-    "jupyter.alwaysTrustNotebooks": true,
-    "jupyter.enableKeyboardShortcuts": false,
     //
     // Vim
     //
@@ -198,12 +193,12 @@
     "r.lsp.debug": true,
     "r.lsp.diagnostics": true,
     "r.helpPanel.enableHoverLinks": true,
-    "r.rpath.mac": "/Library/Frameworks/R.framework/Versions/4.0/Resources/bin/R",
-    "r.rterm.mac": "/usr/local/var/pyenv/versions/3.8.5/envs/py38/bin/radian",
+    "r.rpath.mac": "/Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/bin/R",
+    "r.rterm.mac": "/Users/shusei/.pyenv/versions/3.9.6/envs/py39/bin/radian",
     "r.rterm.option": [
         "--no-save",
         "--no-restore",
-        "--r-binary=/Library/Frameworks/R.framework/Versions/4.0/Resources/bin/R"
+        "--r-binary=/Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/bin/R"
     ],
     "r.bracketedPaste": true,
     "[r]": {
@@ -214,6 +209,10 @@
         "editor.parameterHints.enabled": false,
         "editor.colorDecorators":false
     },
+    //
+    // Python
+    //
+    "python.defaultInterpreterPath": "/Users/shusei/.pyenv/versions/3.9.6/envs/py39/bin/python",
     //
     // LaTex
     //
@@ -367,6 +366,6 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "julia.enableTelemetry": false,
-    "python.pythonPath": "/usr/local/var/pyenv/versions/3.6.9/envs/tf1/bin/python",
-    "terminal.integrated.altClickMovesCursor": false
+    "terminal.integrated.altClickMovesCursor": false,
+    "security.workspace.trust.untrustedFiles": "open"
 }
