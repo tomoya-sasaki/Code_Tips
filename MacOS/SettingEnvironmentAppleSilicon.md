@@ -30,6 +30,33 @@ export LC_ALL=en_US.UTF-8
 
 ([Source](https://mpopov.com/blog/2021/10/10/even-faster-matrix-math-in-r-on-macos-with-m1/))
 
+### Trouble shooting
+
+#### gfortran error
+```
+ld: warning: directory not found for option '-L/opt/R/arm64/gfortran/lib/gcc/aarch64-apple-darwin20.2.0/11.0.0'
+ld: warning: directory not found for option '-L/opt/R/arm64/gfortran/lib'
+ld: library not found for -lgfortran
+```
+
+Find `gfortran/lib` and add the path to `~/.R/Makevars` ([reference](https://stackoverflow.com/a/69883911/4357279))
+```
+FLIBS=-L/opt/R/arm64/opt/R/arm64/gfortran/lib
+```
+
+Alternative setting from the reference:
+```
+# homebrew gfortran
+FLIBS=-L/opt/homebrew/opt/gfortran/lib
+
+# gfortran included in R
+FLIBS=-L/opt/R/arm64/gfortran/lib
+
+# In addition one might want to also define F77 and FC as
+F77     = /opt/R/arm64/gfortran/bin/gfortran
+FC      = /opt/R/arm64/gfortran/bin/gfortran
+```
+
 
 ## LaTeX
 ```
