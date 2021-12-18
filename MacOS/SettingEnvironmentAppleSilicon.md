@@ -11,7 +11,7 @@ Be careful:
 # 1: XCode
 $ xcode-select --install
 
-# 2: Homebrew (check below)
+# 2: Homebrew (following the official website)
 
 # 3: gcc
 $ brew install gcc
