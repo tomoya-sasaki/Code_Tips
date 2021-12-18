@@ -32,7 +32,14 @@ export LC_ALL=en_US.UTF-8
 
 ### Trouble shooting
 
-#### gfortran error
+#### gfortran error 1
+Add a symbolic link:
+```
+$ ln -s /opt/R/arm64/opt/R/arm64/gfortran/lib/ /opt/R/arm64/gfortran/lib/
+```
+You have to make `/opt/R/arm64/gfortran/` manually.
+
+#### gfortran error 2
 ```
 ld: warning: directory not found for option '-L/opt/R/arm64/gfortran/lib/gcc/aarch64-apple-darwin20.2.0/11.0.0'
 ld: warning: directory not found for option '-L/opt/R/arm64/gfortran/lib'
