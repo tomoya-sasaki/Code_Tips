@@ -16,3 +16,6 @@ It's faster if you don't remove temporary files. You might use `$ texcount *.tex
 
 ## .styの追加
 `/usr/local/texlive/texmf-local/tex/latex/`して`sudo mktexlsr`
+
+## .bstの追加
+`/usr/local/texlive/texmf-local/bibtex/bst`に追加して`sudo mktexlsr`
