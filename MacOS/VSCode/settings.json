@@ -37,7 +37,7 @@
     // Sidebar
     //
     "files.exclude": {
-        "**/*.pdf": true,
+        //"**/*.pdf": true,
         "**/*.html": true,
         "**/*.log": true,
         "**/*.rds": true,
@@ -297,11 +297,11 @@
         }
     ],
     // Viewer
-    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.view.pdf.external.viewer.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
-    "latex-workshop.view.pdf.external.viewer.args": [ "0", "%PDF%" ],
+    "latex-workshop.view.pdf.external.viewer.args": ["0", "%PDF%"],
     "latex-workshop.view.pdf.external.synctex.command": "/Applications/Skim.app/Contents/SharedSupport/displayline",
-    "latex-workshop.view.pdf.external.synctex.args": [ "-r", "%LINE%", "%PDF%", "%TEX%" ],
+    "latex-workshop.view.pdf.external.synctex.args": [ "-r", "-b", "%LINE%", "%PDF%", "%TEX%"],
     //
     // Spell check (Spell Right)
     //
@@ -336,6 +336,7 @@
         "begin\\{frame\\}"
     ],
     "spellright.notificationClass": "error",
+    "spellright.statusBarIndicator": true,
     //
     // Editor
     //
@@ -345,6 +346,7 @@
         "comments": false,
         "strings": true,
     },
+    "editor.hover.delay": 1200,
     "editor.snippetSuggestions": "inline",
     // Errors and Warnings
     "problems.decorations.enabled": false,
