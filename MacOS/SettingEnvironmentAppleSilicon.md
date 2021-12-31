@@ -148,6 +148,8 @@ Install from MacVim's official website. Other settings are [here](https://github
 1. Check [this foler](https://github.com/Shusei-E/Code_Tips/tree/master/MacOS/VSCode)
 2. You need `Remote-Containers` for Docker
 
+Spell checking: Check [this](https://github.com/satokaz/hitorigoto/issues/29).
+
 
 
 ## Other softwares
