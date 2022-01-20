@@ -43,6 +43,14 @@ driver.save_screenshot('last.png')
 7. [On Amazon EC2](#on-amazon-ec2)
 
 ## クリック
+```
+from selenium.webdriver.common.by import By
+element = driver.find_element(By.TAG_NAME, 'div')
+driver.find_element(By.ID, 'div').click()
+```
+
+
+Deprecated:
 ```python
 driver.find_element_by_id("ctl00_ContentPlaceHolder1_showRelAggreement_imgExport").click()
 driver.find_element_by_link_text("Click This").click()
