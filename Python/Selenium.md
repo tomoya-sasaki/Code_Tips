@@ -159,7 +159,7 @@ url = "https://www.roberts.senate.gov/public/index.cfm?p=PressReleases"
 driver.get(url)
 
 data = driver.page_source.encode('utf-8')
-soup = BeautifulSoup(data, "lxml")
+soup = BeautifulSoup(data, "lxml") # or without "lxml"
 ```
 
 ## Pulldown menu
