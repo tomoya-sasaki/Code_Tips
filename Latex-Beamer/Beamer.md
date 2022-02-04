@@ -27,6 +27,7 @@
 20. [Code](#code)
 21. [フレームの改ページ](#フレームの改ページ)
 22. [アスペクト比](#アスペクト比)
+23. [少しずつ表示](#少しずつ表示)
 
 
 ## Beamer Slide
@@ -281,4 +282,10 @@ Page number counting ([Reference](https://tex.stackexchange.com/a/2559/95960)):
 ## アスペクト比
 ```tex
 \documentclass[11pt, dvipdfmx, aspectratio=169, handout]{beamer}
+```
+
+## 少しずつ表示
+```tex
+\only<3->{}
+\uncover<3->{}
 ```
