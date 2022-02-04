@@ -99,8 +99,13 @@
 
 %-- to show the bar, please comment out `footline` option
 \title[Title Short]{Title}
-\author[Author names in the bottom]{\large Author 1 \quad Author 2 \quad Author 3}
-\institute[Institute]{{\normalsize Institute 1 \hspace{.75in} Institute 2}}
+\author[Author names in the bottom]{{\normalsize
+\begin{tabular}[h]{cc}
+  Author 1 &  Author 2 \\[2.5mm]
+  Institution 1 & Institution 2
+\end{tabular}
+}}
+% \institute[Institute]{{\normalsize Institute 1 \hspace{.75in} Institute 2}}
 \date[Date]{\medskip Talk at the Workshop \\ Place \\ \bigskip Month xx,  20xx}
 
 
