@@ -70,6 +70,15 @@
 \newcommand{\cmark}{\ding{52}}%
 \newcommand{\xmark}{\ding{55}}%
 
+% == Appendix
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
 
 % === begin document
 
@@ -128,5 +137,14 @@ A thing to show 2.
 \end{exampleblock}
 \end{frame}
 
+\appendix
+\backupbegin
+
+\begin{frame}
+\centering
+\Huge{Appendix}
+\end{frame}
+
+\backupend
 
 \end{document}
