@@ -168,6 +168,11 @@ Test\autocite{Acemoglu2001} % (Acemoglu and Robinson 2001)
 エンコードっぽいエラーが発生する場合は、`\usepackage[utf8]{inputenc}`をプリアンブルに追加する。<br>
 エラーが出ても、そのまま何回かコンパイルしないといけないのかも。
 
+### Cite directly
+```tex
+\newcommand{\citedirect}[1]{{\small \color{gray} {#1}}}
+```
+
 ## Hide Appendix and References
 `\appendix`を直前に追加するだけでOK
 
