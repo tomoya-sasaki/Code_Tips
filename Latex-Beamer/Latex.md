@@ -104,6 +104,7 @@ pngを挿入するときは、`\documentclass[a4paper,10.5pt,dvipdfmx,uplatex]{j
 \caption{kNN predictor}
 \end{figure*}
 ```
+`\linewidth` might be better?
 
 
 [subfigures](https://ja.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_3):_Figures,_Subfigures_and_Tables)
