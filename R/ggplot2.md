@@ -60,9 +60,10 @@ theme_minimal()
 22. [Bar plot with percentage](#bar-plot-with-percentage)
 23. [Return ggplot2 object in loop](#return-ggplot2-object-in-loop)
 24. [facetで表示を分ける](#facetで表示を分ける)
-25. [Colour and Style](#colour-and-style)
-26. [if else](#if-else)
-27. [Plot 3D info](#plot-3d-info)
+	* [ラベルの変更](#ラベルの変更)
+26. [Colour and Style](#colour-and-style)
+27. [if else](#if-else)
+28. [Plot 3D info](#plot-3d-info)
 	* [geom_tile](#geom_tile)
 
 
@@ -768,6 +769,17 @@ If you want to change the width, use `facet_grid(~Group, scale = "free_x", space
 
 ### Change size
 Use the `force_panelsizes()` function in `ggh4x`([reference](https://stackoverflow.com/a/65836587/4357279))
+
+
+### ラベルの変更
+```r
+facet_wrap(
+  ~feature, scale = scale, nrow = nrow,
+  labeller = labeller(feature = ~{str_remove_all(., "\`")})
+)
+```
+Removing backticks from `feature`.
+
 
 ## Colour and Style
 
