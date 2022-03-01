@@ -306,9 +306,38 @@ mutate_at(vars(matches("1",.)), funs(ifelse(is.na(.),0,.)))
 ### Package
 Use `fastDummies::dummy_cols`
 
+### Manual v2
+```
+dummy <- function(data, cols) {
+  for (col in cols) {
+    if (is.factor(data[[col]])) {
+      levels <- levels(data[[col]])
+    } else {
+      levels <- sort(unique(as.character(data[[col]])))
+    }
+    cat_base <- levels[1]
+    nlevel <- length(levels)
 
-### Manual
+    for (index in 2:nlevel) {
+      level <- levels[index]
+      dummy <- as.character(data[[col]])  # copy
+      dummy <- ifelse(dummy == level, 1, 0)
+      # Deviation Coding
+      # dummy <- ifelse(dummy == cat_base, -1,
+      #                ifelse(dummy == level, 1, 0))
+      data[[paste0(gsub("-", "", col), "_", gsub("-|\\s", "", level))]] <- dummy
+    }
+
+    data[[col]] <- NULL
+  }
+  return(data)
+}
+```
+
+### Manual v1
 Taken from [Stackoverflow](https://stackoverflow.com/questions/35943455/creating-indicator-variable-columns-in-dplyr-chain)
+This might create columns for all levels
+
 ```r
 dummy <- function(data, col) {
     # Can take factor
