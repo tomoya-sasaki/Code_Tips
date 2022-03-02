@@ -821,3 +821,24 @@ Changing colors:
 scale_fill_gradientn(colours = viridis::viridis(10))
 ```
 
+### Example
+```r
+grid %>%
+  mutate(Consumption = factor(Consumption), Age = factor(Age)) %>%
+ggplot(., aes(x = Consumption, y = Age)) +
+  geom_tile(aes(fill = eval)) +
+  scale_fill_gradientn(colours = viridis::viridis(10), name = "Effect") +
+  scale_x_discrete(breaks = as.character(c(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5))) +
+  scale_y_discrete(breaks = as.character(c(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5))) +
+  # theme
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        panel.grid = element_blank(),
+        text = element_text(size = 14),
+        panel.border = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text.x = element_text(margin = unit(c(-2, 0, 0, 0), 'points')),  # make it closer to the panel
+        axis.text.y = element_text(margin = unit(c(0, -2, 0, 0), 'points')),
+        legend.position = legend.position)
+```
+<img src="figures/ggplot2_tile.png" width="390">
