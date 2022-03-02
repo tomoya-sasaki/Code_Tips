@@ -815,3 +815,9 @@ p <- ggplot(res %>% mutate(L2 = factor(L2), L3 = factor(L3)),
   scale_fill_gradient(low = "blue", high = "white") +
   scale_colour_gradient(low = "red", high = "gray60")
 ```
+
+Changing colors:
+```r
+scale_fill_gradientn(colours = viridis::viridis(10))
+```
+
