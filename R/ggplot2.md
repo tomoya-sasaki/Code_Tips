@@ -38,6 +38,7 @@ theme_minimal()
 	* [値で並び替え](#値で並び替え)
 	* [カテゴリカルで並び替え](#カテゴリカルで並び替え)
 	* [数値を綺麗に](#数値を綺麗に)
+	* [Scientific notation](#scientific-notation)
 11. [Legend関連](#legend関連)
 	* [順番を逆にする](#順番を逆にする)
 	* [ラベルを変える](#ラベルを変える)
@@ -392,6 +393,18 @@ aes(x = reorder(the_factor, desc(the_factor)), ...)
 scale_y_continuous(breaks = scales::pretty_breaks())
 scale_y_continuous(labels = scales::percent)
 ```
+
+
+## Scientific notation
+```r
+scale_science <- function(x) {
+  format(x, scientific = TRUE, digit = 2)
+}
+
+scale_x_continuous(trans = "log", labels = scale_science)
+```
+
+
 
 ## Legend関連
 ### 順番を逆にする
