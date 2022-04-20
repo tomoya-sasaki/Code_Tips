@@ -66,3 +66,8 @@ c = a[:]
 d = b[:]
 e = b[0][:]
 ```
+
+### Save the output
+```terminal
+> python run.py > output.txt 2>&1
+```
