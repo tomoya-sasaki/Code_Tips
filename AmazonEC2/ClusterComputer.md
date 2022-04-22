@@ -19,3 +19,13 @@ $ module load cudnn/8.1.0.77_cuda11.2-fasrc01  # cudnn/7.0_cuda9.0-fasrc01
 Check [combination](https://www.tensorflow.org/install/source?hl=ja#linux).
 
 You need to load `cuda` and `cudnn` for tf.
+
+## Git
+
+### Personal Access Token
+It's the easiest to use [a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+```terminal
+$ git clone https://github.com/username/repo.git
+Username: your_username
+Password: your_token
+```
