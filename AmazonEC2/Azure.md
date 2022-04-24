@@ -6,20 +6,23 @@
 ssh -i /Users/KEY.pem <User Name>@<IP address>
 ```
 
-## Set up
+## Set up: Python
 Check [this], but change `yum` to `apt-get`.
 
 ```
 sudo apt-get install gcc
-sudo apt-get install zlib-devel
-sudo apt-get install openssl-devel
-sudo apt-get install bzip2-devel
-sudo apt-get install readline-devel
-sudo apt-get -y install make automake gcc gcc-c++ kernel-devel git-core  # ビルドツールのインストール
-sudo apt-get groupinstall "Development tools"
-sudo apt-get install python-devel libpng-devel freetype-devel
+sudo apt-get install zlib1g-dev
+sudo apt-get install libssl-dev
+sudo apt-get install bzip2
+sudo apt-get install libreadline-dev
+sudo apt-get install -y build-essential git-core cmake doxygen  # ビルドツールのインストール
+sudo apt-get install -y autoconf automake gdb git libffi-dev
+sudo apt-get install -y python3.9-dev libpng-dev libfreetype6-dev
+sudo apt-get install -y tk-dev 
 ```
 One line:
 ```
-sudo apt-get install gcc zlib-devel openssl-devel bzip2-devel readline-devel ; sudo apt-get -y install make automake gcc gcc-c++ kernel-devel git-core ; sudo apt-get groupinstall "Development tools" ; sudo apt-get install python-devel libpng-devel freetype-devel; sudo apt-get install gcc zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+sudo apt-get install gcc zlib1g-dev libssl-dev bzip2 libreadline-dev ; sudo apt-get install -y build-essential git-core cmake doxygen ; sudo apt-get install -y autoconf automake gdb git libffi-dev ; sudo apt-get install -y python3.9-dev libpng-dev libfreetype6-dev
+;
+# sudo apt-get install sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
 ```
