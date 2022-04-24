@@ -100,6 +100,7 @@ lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
 $ cd /mydata
 
 # It might be nice to change the permisson of `/mydata`
+sudo chmod -R a+rwx /path/to/folder
 ```
 
 
