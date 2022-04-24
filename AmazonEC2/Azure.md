@@ -111,3 +111,4 @@ sudo chmod -R a+rwx /path/to/folder
 
 ## Memo
 * `/dev/sdb1`: temporary disk
+* `python3 run_azure.py --mode p > output.txt 2>&1`
