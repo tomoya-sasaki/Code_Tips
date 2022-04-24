@@ -55,3 +55,7 @@ $ python3 -V
 Python 3.9.5
 ```
 
+### Installing packages
+```terminal
+$ sudo pip install XXX
+```
