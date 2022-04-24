@@ -26,3 +26,32 @@ sudo apt-get install gcc zlib1g-dev libssl-dev bzip2 libreadline-dev ; sudo apt-
 ;
 # sudo apt-get install sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
 ```
+
+### Set priority for multiple versions
+[Reference](https://qiita.com/piyo_parfait/items/5abbe4bee2495a62acdc)
+
+```terminal
+$ python3 -V
+Python 3.8.5
+
+$ which python3
+/usr/bin/python3
+
+$ which update-alternatives
+/usr/bin/update-alternatives
+
+$ ls /usr/bin/ | grep python
+python3
+python3.8
+python3.8-config
+python3.9
+python3.9-config
+python3-config
+
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1   # first priority
+update-alternatives: using /usr/bin/python3.9 to provide /usr/bin/python3 (python3) in auto mode
+
+$ python3 -V
+Python 3.9.5
+```
+
