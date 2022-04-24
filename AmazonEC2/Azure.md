@@ -103,7 +103,7 @@ $ cd /mydata
 sudo chmod -R a+rwx /path/to/folder
 ```
 
-## Filizilla
+## FileZilla
 * SSH, Port 22
 * You can get the IP address from the manager console
 * key is the `.pem` file
