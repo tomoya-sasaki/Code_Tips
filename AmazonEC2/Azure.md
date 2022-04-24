@@ -95,6 +95,9 @@ $ sudo nano /etc/fstab
       
 # Verification
 lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
+
+# Move 
+$ cd /mydata
 ```
 
 ### Memo
