@@ -98,7 +98,10 @@ lsblk -o NAME,HCTL,SIZE,MOUNTPOINT | grep -i "sd"
 
 # Move 
 $ cd /mydata
+
+# It might be nice to change the permisson of `/mydata`
 ```
 
-### Memo
+
+## Memo
 * `/dev/sdb1`: temporary disk
