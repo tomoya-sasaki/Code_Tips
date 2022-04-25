@@ -840,7 +840,7 @@ grid %>%
   mutate(Consumption = factor(Consumption), Age = factor(Age)) %>%
 ggplot(., aes(x = Consumption, y = Age)) +
   geom_tile(aes(fill = eval)) +
-  scale_fill_gradientn(colours = viridis::viridis(10), name = "Effect") +
+  scale_fill_gradientn(colours = viridis::viridis(10), name = "Effect") +  #  scale_fill_gradient2() also works
   scale_x_discrete(breaks = as.character(c(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5))) +
   scale_y_discrete(breaks = as.character(c(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5))) +
   # theme
