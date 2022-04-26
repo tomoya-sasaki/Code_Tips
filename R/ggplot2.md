@@ -7,6 +7,7 @@ References:
 * Color code
   * [Bootswatch](https://bootswatch.com/)
   * [MetBrewer](https://github.com/BlakeRMills/MetBrewer)
+  * [Nippon Colors](https://nipponcolors.com/)
 
 
 ```r
