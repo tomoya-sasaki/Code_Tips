@@ -27,6 +27,13 @@ There are several suitable screens on:
 
 `screen -r 3xxx.pts-x.ip-xxx-xx-xx-xxx`のようにすることで、指定したscreenに入れる。一つしかスクリーンを作っていなければ、`screen -rD`でOK。
 
+Screen with a name:
+```terminal
+$ screen -S NAME
+$ screen -r NAME  /  screen -xS NAME
+```
+
+
 screenを開いた後で、その開いているスクリーンを閉じるには、`[Control+a] + k`
 
 複数のスクリーンが必要な場合は、一つscreenを作って、そこからタブを作るような感覚で広げていくと良い。
