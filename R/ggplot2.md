@@ -225,9 +225,9 @@ figures <- lapply(figures, function(x){x + edit_figure})
 g <- arrangeGrob(grobs=figures, 
              nrow = length(estimatedK),
              right = legend,
-             top = textGrob(title_),
-             left = textGrob("Estimated Topic", rot = 90, vjust = 1),
-             bottom = textGrob("True Topic", vjust = -0.1))
+             top = grid::textGrob(title_),
+             left = grid::textGrob("Estimated Topic", rot = 90, vjust = 1),
+             bottom = grid::textGrob("True Topic", vjust = -0.1))
 
 grid.newpage()
 grid.draw(g) # Show plot
