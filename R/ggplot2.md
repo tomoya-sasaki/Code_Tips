@@ -11,12 +11,19 @@ References:
 
 
 ```r
-my_theme <- function(legend.position = "right") {
+my_theme <- function(
+  legend.position = "right", 
+  legend.direction = "vertical",
+  legend.key.width = unit(2, "line"),
+  textsize = 14) 
+{
   p <- theme_bw() +
         theme(plot.title = element_text(hjust = 0.5),
               panel.grid = element_blank(),
-              text = element_text(size = 14),
-              legend.position = legend.position)
+              text = element_text(size = textsize),
+              legend.position = legend.position,
+              legend.direction = legend.direction,
+              legend.key.width = legend.key.width)
 }
 	    
 library(ggtheme)
@@ -45,6 +52,7 @@ theme_minimal()
 	* [ラベルを変える](#ラベルを変える)
 	* [Legendに表示しない](#legendに表示しない)
 	* [Manually add](#manually-add)
+	* [Change the length of the legend](#change-the-length-of-the-legend)
 12. [theme関連](#theme関連)
 	* [一括でサイズ](#一括でサイズ)
 	* [細かくサイズ](#細かくサイズ)
@@ -445,6 +453,11 @@ ggplot() +
    theme(plot.title = element_text(hjust = 0.5))
 ```
 <img src="figures/ggplot2_manual_legend.png" width="600">
+
+### Change the length of the legend
+```r
+theme(legend.key.width = unit(2, "line"))
+```
 
 ## theme関連
 ### 一括でサイズ
