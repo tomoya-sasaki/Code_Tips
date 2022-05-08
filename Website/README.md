@@ -86,6 +86,17 @@ p, li, dl {
   font-size: 1.2rem;
 ```
 
+### Side bar
+` _sass/minimal-mistakes/_sidebar.scss`
+```md
+p,
+li {
+  font-family: $sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+```
+
 ## Top Page
 Edit `_layouts/home.html`
 
