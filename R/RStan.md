@@ -14,6 +14,10 @@ Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938)
 1. [Linear predictor](#linear-predictor)
 
 
+### brms
+1. [Multinomial logit](#multinomial-logit)
+
+
 ## Visualization
 * [Bayesplot](https://github.com/stan-dev/bayesplot)
 * [ShinyStan](http://mc-stan.org/interfaces/shinystan)
@@ -106,4 +110,14 @@ data{
 ## Linear Predictor
 ```r
 rstanarm::posterior_linpred
+```
+
+
+# brms
+
+## Multinomial logit
+```r
+fit_brms <- brm(Category ~ count_necessary, family = categorical(link = "logit"), data = dat)
+newdata <- tibble(count_necessary = 1:12)
+tidybayes::epred_draws(fit_brms, newdata = newdata, ndraws = 1) 
 ```
