@@ -30,7 +30,7 @@ ORDER BY
 * AVG
 * GROUP BY
 * [HAVING](#having): `WHERE`はaggregateした値には使えないので必要
-* CASE
+* [CASE](#case): If elseの代わり
 * DISTINCT
 * Jins
 
@@ -60,6 +60,24 @@ SELECT year,
  GROUP BY year, month
 HAVING MAX(high) > 100
  ORDER BY year, month
+```
+
+## CASE
+
+```sql
+SELECT name,
+       year,
+       CASE WHEN year <= 10 THEN 'Cat 1'
+            WHEN year <= 15 THEN 'Cat 2'
+            ELSE 'Cat 3' END AS check
+  FROM data
+```
+`ELSE` is optional.
+
+
+```sql
+
+
 ```
 
 
