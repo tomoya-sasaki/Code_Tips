@@ -2,6 +2,16 @@
 
 [MODE Tutorial](https://mode.com/sql-tutorial/)
 
+Query order:
+```sql
+SELECT
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+```
+
 ## Basic commands
 * SELECT
 * LIMIT
@@ -19,7 +29,7 @@
 * MIN/MAX
 * AVG
 * GROUP BY
-* HAVING
+* [HAVING](#having): `WHERE`はaggregateした値には使えないので必要
 * CASE
 * DISTINCT
 * Jins
@@ -40,6 +50,17 @@ SELECT *
  ORDER BY year DESC, rank
 ```
 You can use the order of the column in `SELECT` to specify the column.
+
+
+## HAVING
+```sql
+SELECT year,
+       MAX(high) AS high_monthly
+  FROM mydata
+ GROUP BY year, month
+HAVING MAX(high) > 100
+ ORDER BY year, month
+```
 
 
 ## Usages
