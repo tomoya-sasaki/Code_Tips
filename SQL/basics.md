@@ -10,6 +10,7 @@
 * IS NULL: we can't do `= NULL`
 * AND/OR/NOT
 * [ORDER BY](#order-by)
+* Comments: `--` (two dashes) or `/* COMMENT */`
 
 
 ## LIKE
@@ -26,6 +27,8 @@ SELECT *
   WHERE rank <= 3
  ORDER BY year DESC, rank
 ```
+You can use the order of the column in `SELECT` to specify the column.
+
 
 ## Usages
 
