@@ -9,7 +9,7 @@
 * BETWEEN: `WHERE rank BETWEEN 5 AND 10`
 * IS NULL: we can't do `= NULL`
 * AND/OR/NOT
-* ORDER BY
+* [ORDER BY](#order-by)
 
 
 ## LIKE
@@ -18,6 +18,14 @@
 * `_`: a substitution for an individual character
 * `ILIKE`: a case-insensitive version of `LIKE`
 
+## ORDER BY
+
+```sql
+SELECT *
+  FROM music
+  WHERE rank <= 3
+ ORDER BY year DESC, rank
+```
 
 ## Usages
 
