@@ -4,12 +4,20 @@
 * SELECT
 * LIMIT
 * WHERE
-* LIKE: simiar valueにmatchできるlogical operator
-* IN
-* BETWEEN
-* IS NULL
+* [LIKE](#like): simiar valueにmatchできるlogical operator
+* IN: `WHERE rank IN (1, 2, 3)`
+* BETWEEN: `WHERE rank BETWEEN 5 AND 10`
+* IS NULL: we can't do `= NULL`
 * AND/OR/NOT
 * ORDER BY
+
+
+## LIKE
+
+* `%`: any character or set of characters.
+* `_`: a substitution for an individual character
+* `ILIKE`: a case-insensitive version of `LIKE`
+
 
 ## Usages
 
