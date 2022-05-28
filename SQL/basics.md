@@ -1,5 +1,7 @@
 # SQL Basics
 
+[MODE Tutorial](https://mode.com/sql-tutorial/)
+
 ## Basic commands
 * SELECT
 * LIMIT
@@ -11,6 +13,16 @@
 * AND/OR/NOT
 * [ORDER BY](#order-by)
 * Comments: `--` (two dashes) or `/* COMMENT */`
+
+* COUNT: a total count of non-null rows
+* SUM
+* MIN/MAX
+* AVG
+* GROUP BY
+* HAVING
+* CASE
+* DISTINCT
+* Jins
 
 
 ## LIKE
