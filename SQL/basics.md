@@ -13,6 +13,7 @@ ORDER BY
 ```
 
 ## Basic commands
+
 * SELECT
 * LIMIT
 * WHERE
@@ -23,7 +24,6 @@ ORDER BY
 * AND/OR/NOT
 * [ORDER BY](#order-by)
 * Comments: `--` (two dashes) or `/* COMMENT */`
-
 * COUNT: a total count of non-null rows
 * SUM
 * MIN/MAX
