@@ -5,7 +5,7 @@ Once the inner query runs, the outer query will run using the results from the i
 Usages:
 * [Aggregation in multiple stages](https://mode.com/sql-tutorial/sql-sub-queries/#using-subqueries-to-aggregate-in-multiple-stages): まず日毎に集計して、それをさらに曜日月ごとに集計したいような場合
 * [In conditional logic](https://mode.com/sql-tutorial/sql-sub-queries/#subqueries-in-conditional-logic): データセットから条件における値を求めたいとき
-* [Speeding up](https://mode.com/sql-tutorial/sql-sub-queries/#joining-subqueries): aggregate and then join, not the reverse order
+* [Speeding up](https://mode.com/sql-tutorial/sql-sub-queries/#joining-subqueries): aggregate and then join, not the reverse order, similarly, if you want to use a subset, [make it first](https://mode.com/sql-tutorial/sql-performance-tuning/#reducing-table-size).
   
   
 ```sql
