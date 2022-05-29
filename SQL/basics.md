@@ -72,7 +72,7 @@ SELECT name,
             ELSE 'Cat 3' END AS check
   FROM data
 ```
-`ELSE` is optional.
+`ELSE` is optional. It's good to use only `CASE` and `*` (or some columns like above) to make sure `CASE` works.
 
 
 Combination with `COUNT`
