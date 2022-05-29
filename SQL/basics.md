@@ -85,6 +85,13 @@ SELECT CASE WHEN year <= 10 THEN 'Cat 1'
 GROUP BY check
 ```
 
+Using it in the `COUNT` (this example does pivoting)
+```sql
+SELECT COUNT(CASE WHEN year = 'A' THEN 1 ELSE NULL END) AS year_A,
+       COUNT(CASE WHEN year = 'B' THEN 1 ELSE NULL END) AS year_B
+  FROM data
+```
+
 
 ## Usages
 
