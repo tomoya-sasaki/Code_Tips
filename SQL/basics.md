@@ -75,9 +75,14 @@ SELECT name,
 `ELSE` is optional.
 
 
+Combination with `COUNT`
 ```sql
-
-
+SELECT CASE WHEN year <= 10 THEN 'Cat 1'
+            WHEN year <= 15 THEN 'Cat 2'
+            ELSE 'Cat 3' END AS check,
+       COUNT(*) AS count  -- COUNT(1) also works
+  FROM data
+GROUP BY check
 ```
 
 
