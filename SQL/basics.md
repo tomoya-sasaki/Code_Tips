@@ -35,6 +35,7 @@ ORDER BY
 * [CASE](#case): If elseの代わり
 * [DISTINCT](#distinct): `SELECT DISTINCT year`
 * [JOIN](#join)
+* [UNION](#union): stacking one dataset on top of the other
 
 ## SELECT
 
@@ -122,6 +123,7 @@ SELECT d1 players
 ```
 (default is `INNER JOIN`)
 
+### Using JOIN with AND
 Filtering in the `ON` clause (an example from [here](https://mode.com/sql-tutorial/sql-joins-where-vs-on/)):
 ```sql
 SELECT school.permalink AS school_permalink,
@@ -132,7 +134,10 @@ SELECT school.permalink AS school_permalink,
    AND acquisitions.company_permalink != '/shool.com'  -- the conditional statement is evaluated before the join
  ORDER BY 1
 ```
+You can also use a comparison operator such as `AND investments.funded_year > companies.founded_year + 5`. (the same rule applies to `WHERE`). `AND` can be used to join on [multiple keys](https://mode.com/sql-tutorial/sql-joins-on-multiple-keys/).
 
+
+### Using JOIN with WHERE
 ```sql
 SELECT school.permalink AS school_permalink,
        school.name AS school_name
@@ -143,6 +148,18 @@ SELECT school.permalink AS school_permalink,
     OR acquisitions.company_permalink IS NULL  -- filtering in `WHERE` removes NULL
  ORDER BY 1
 ```
+
+
+### Self joins
+Joining a table to itself. [Example](https://mode.com/sql-tutorial/sql-self-joins/#self-joining-tables).
+
+
+
+## UNION
+
+`UNION ALL` does not remove duplicate rows.
+
+
 
 ## Usages
 
