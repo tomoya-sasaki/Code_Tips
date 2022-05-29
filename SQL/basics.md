@@ -6,6 +6,8 @@ Query order:
 ```sql
 SELECT
 FROM
+JOIN
+  ON
 WHERE
 GROUP BY
 HAVING
@@ -14,7 +16,7 @@ ORDER BY
 
 ## Basic commands
 
-* SELECT
+* [SELECT](#select)
 * LIMIT
 * WHERE
 * [LIKE](#like): simiar valueにmatchできるlogical operator
@@ -31,8 +33,17 @@ ORDER BY
 * GROUP BY
 * [HAVING](#having): `WHERE`はaggregateした値には使えないので必要
 * [CASE](#case): If elseの代わり
-* DISTINCT
-* Jins
+* [DISTINCT](#distinct): `SELECT DISTINCT year`
+* [JOIN](#join)
+
+## SELECT
+
+aliases
+```sql
+FROM some_pretty_long_name data1
+```
+
+`SELCT`で`AS`を使っても、その後の`ON`とかでは元の名前を使わないといけない？
 
 
 ## LIKE
@@ -92,6 +103,46 @@ SELECT COUNT(CASE WHEN year = 'A' THEN 1 ELSE NULL END) AS year_A,
   FROM data
 ```
 
+
+## DISTINCT
+
+It can be used with the aggregations.
+```sql
+SELECT COUNT(DISTINCT month) AS unique_months
+  FROM data
+```
+
+## JOIN
+
+Basic:
+```sql
+SELECT d1 players
+  JOIN d2 teams
+    ON teams.school_id = players.school_id
+```
+(default is `INNER JOIN`)
+
+Filtering in the `ON` clause (an example from [here](https://mode.com/sql-tutorial/sql-joins-where-vs-on/)):
+```sql
+SELECT school.permalink AS school_permalink,
+       school.name AS school_name
+  FROM D1 school
+  LEFT JOIN D2 student
+    ON school.permalink = student.permalink
+   AND acquisitions.company_permalink != '/shool.com'  -- the conditional statement is evaluated before the join
+ ORDER BY 1
+```
+
+```sql
+SELECT school.permalink AS school_permalink,
+       school.name AS school_name
+  FROM D1 school
+  LEFT JOIN D2 student
+    ON school.permalink = student.permalink
+ WHERE acquisitions.company_permalink != '/shool.com'  -- filtering happens after the join
+    OR acquisitions.company_permalink IS NULL  -- filtering in `WHERE` removes NULL
+ ORDER BY 1
+```
 
 ## Usages
 
