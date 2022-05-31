@@ -1,5 +1,8 @@
 # Date time data
 
+## ggplot2
+[`scale_date`](https://ggplot2.tidyverse.org/reference/scale_date.html)
+
 ## Get year month from a Date object
 
 ```r
