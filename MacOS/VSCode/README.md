@@ -7,6 +7,12 @@
 
 # memo
 
+## keyを押しっぱなしにできるように
+[Reference](https://stackoverflow.com/questions/39972335/how-do-i-press-and-hold-a-key-and-have-it-repeat-in-vscode)
+```terminal
+$ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+```
+
 ## R
 * You will need `R` and `R LSP Client`
 * R側でも`languageserver`と`lintr`を入れておく
