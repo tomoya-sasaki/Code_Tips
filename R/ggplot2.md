@@ -404,7 +404,7 @@ scale_y_continuous(labels = scales::percent)
 ```
 
 
-## Scientific notation
+### Scientific notation
 ```r
 scale_science <- function(x) {
   format(x, scientific = TRUE, digit = 2)
