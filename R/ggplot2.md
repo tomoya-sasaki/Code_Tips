@@ -47,6 +47,7 @@ theme_minimal()
 	* [カテゴリカルで並び替え](#カテゴリカルで並び替え)
 	* [数値を綺麗に](#数値を綺麗に)
 	* [Scientific notation](#scientific-notation)
+	* [Date](#date-in-axis)
 11. [Legend関連](#legend関連)
 	* [順番を逆にする](#順番を逆にする)
 	* [ラベルを変える](#ラベルを変える)
@@ -413,6 +414,11 @@ scale_science <- function(x) {
 scale_x_continuous(trans = "log", labels = scale_science)
 ```
 
+### Date in axis
+[Reference](https://ggplot2.tidyverse.org/reference/scale_date.html)
+```
+scale_x_date(date_labels = "%m")
+```
 
 
 ## Legend関連
