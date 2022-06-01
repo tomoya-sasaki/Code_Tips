@@ -40,7 +40,7 @@ data.tableには行名という概念がないので、data.frameの行名を保
 
 ### グループ化と集約
 ```r
-> dt <- data.table(x=rep(c("a","b","c"),each=3), y=c(1,3,6), v=1:9)
+> dt <- data.table(x = rep(c("a", "b", "c"),　each = 3), y = c(1, 3, 6), v = 1:9)
 > dt
    x y v
 1: a 1 1
