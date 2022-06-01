@@ -28,6 +28,10 @@ data.tableには行名という概念がないので、data.frameの行名を保
 > dt[, list(x, y)] # 列名による列の選択
 > dt[, 1:2, with = FALSE] # インデクスによる列の選択
 > dt[, c("x", "y"), with = FALSE] # 列名(文字列)による選択
+
+> dt[col_month %chin% c('Jan', 'Feb'),]  # 文字列の場合は`%chin%`を
+> dt[col_month %like% "^(Mar|Apr)',]  # regular expression
+> dt[col %between% c(3, 5),] # same as `dt[col %in% 3:5,]`
 ```
 
 ### 追加と削除
