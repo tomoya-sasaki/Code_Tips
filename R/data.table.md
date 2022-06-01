@@ -2,14 +2,15 @@
 [Reference](http://kohske.github.io/ESTRELA/201410/index.html)
 
 ## Table of Contents
-1. [Basics](#basics)
-	* [data.frameとの違い](#data.frameとの違い)
-	* [Setting Key](#setting-key)
-	* [行と列の抽出と検索](#行と列の抽出と検索)
-	* [追加と削除](#追加と削除)
-	* [グループ化と集約](#グループ化と集約)
-	* [オブジェクトのコピー](#オブジェクトのコピー)
-	* Sort
+
+* [Basics](#basics)
+  * [data.frameとの違い](#data.frameとの違い)
+  * [Setting Key](#setting-key)
+  * [行と列の抽出と検索](#行と列の抽出と検索)
+  * [追加と削除](#追加と削除)
+  * [グループ化と集約](#グループ化と集約)
+  * [オブジェクトのコピー](#オブジェクトのコピー)
+  * [Sort](#sort)
 
 
 ## Basics
@@ -85,3 +86,9 @@ data.tableには行名という概念がないので、data.frameの行名を保
 
 ### オブジェクトのコピー
 data.tableのオブジェクトを関数などに渡した時、関数内で変更が行われると元のオブジェクトも更新される。 これを防ぐには`copy()`により明示的にコピーを作成して関数に渡さねばならない。
+
+### sort
+```r
+# Sort flights first by column origin in ascending order, and then by dest in descending order
+flights[order(origin, -dest)]
+```
