@@ -29,6 +29,7 @@ data.tableには行名という概念がないので、data.frameの行名を保
 ```r
 > dt[, x]  # return as a vector (all rows in `x`)
 > dt[, list(x)]  # return as a data.table
+> dt[, .(x)]  # same as above, `.()` is an alias to `list()`
 > dt[, list(x, y)] # 列名による列の選択
 > dt[, 1:2, with = FALSE] # インデクスによる列の選択
 > dt[, c("x", "y"), with = FALSE] # 列名(文字列)による選択
