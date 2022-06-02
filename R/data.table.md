@@ -11,6 +11,7 @@
   * [グループ化と集約](#グループ化と集約)
   * [オブジェクトのコピー](#オブジェクトのコピー)
   * [Sort](#sort)
+  * [setnames](#setnames)
 
 
 ## Basics
@@ -99,4 +100,10 @@ data.tableのオブジェクトを関数などに渡した時、関数内で変�
 ```r
 # Sort flights first by column origin in ascending order, and then by dest in descending order
 flights[order(origin, -dest)]
+```
+
+### setnames
+
+```r
+setnames(data, "old", "new")
 ```
