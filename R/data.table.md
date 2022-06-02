@@ -87,6 +87,9 @@ data.tableには行名という概念がないので、data.frameの行名を保
 7: c  8
 8: c 11
 9: c 15
+
+> flights[carrier == "AA", .(.N), by = .(origin, dest)]  # special symbol `.N`
+> flights[, .N, by = origin]  # if there's only one column or expression to refer to in j and by, we can drop the `.()` notation
 ```
 
 ### オブジェクトのコピー
