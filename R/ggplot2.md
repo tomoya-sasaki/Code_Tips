@@ -400,7 +400,7 @@ aes(x = reorder(the_factor, desc(the_factor)), ...)
 
 ### 数値を綺麗に
 ```r
-scale_y_continuous(breaks = scales::pretty_breaks())
+scale_y_continuous(breaks = scales::breaks_pretty())
 scale_y_continuous(labels = scales::percent)
 ```
 
