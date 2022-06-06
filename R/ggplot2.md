@@ -23,8 +23,9 @@ my_theme <- function(
             text = element_text(size = textsize),
             legend.position = legend.position,
             legend.direction = legend.direction,
-            legend.key.width = legend.key.width),
-	    ...
+            legend.key.width = legend.key.width,
+	    ...)
+    return(p)
 }
 	    
 library(ggtheme)
