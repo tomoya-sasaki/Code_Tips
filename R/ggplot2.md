@@ -15,7 +15,7 @@ my_theme <- function(
   legend.position = "right", 
   legend.direction = "vertical",
   legend.key.width = unit(2, "line"),
-  textsize = 14) 
+  textsize = 14, ...) 
 {
   p <- theme_bw() +
         theme(plot.title = element_text(hjust = 0.5),
@@ -23,7 +23,8 @@ my_theme <- function(
               text = element_text(size = textsize),
               legend.position = legend.position,
               legend.direction = legend.direction,
-              legend.key.width = legend.key.width)
+              legend.key.width = legend.key.width),
+	      ...
 }
 	    
 library(ggtheme)
