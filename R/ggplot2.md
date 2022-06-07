@@ -1,9 +1,9 @@
 # ggplot2
 References:
+
 * [ggplot2 — きれいなグラフを簡単に合理的に](https://heavywatal.github.io/rstats/ggplot2.html)
 * [Top 50 ggplot2 Visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html): 大体何でも載っているサイト
 * [ggplot extensions](https://exts.ggplot2.tidyverse.org/gallery/)
-
 * Color code
   * [Bootswatch](https://bootswatch.com/)
   * [MetBrewer](https://github.com/BlakeRMills/MetBrewer)
