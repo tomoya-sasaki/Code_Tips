@@ -426,8 +426,7 @@ scale_x_date(date_labels = "%m")
 ## Legend関連
 ### 順番を逆にする
 ```r
-guides(fill = guide_legend(reverse = TRUE)) # factor with `aes(fill = )`
-guides(colour = guide_legend(reverse = TRUE)) # factor with `aes(colour = )`
+guides(color = guide_legend(reverse = TRUE), fill = guide_legend(reverse = TRUE))
 ```
 ### ラベルを変える
 ```r
