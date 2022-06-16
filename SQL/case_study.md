@@ -8,6 +8,7 @@
 
 [Reference](https://thoughtbot.com/blog/ordering-within-a-sql-group-by-clause)
 
+### If there is no duplicate `event_date` at the account level
 ```sql
 SELECT
   orders.*
@@ -22,6 +23,22 @@ INNER JOIN orders
   ON
         orders.account_id = latest.account_id
     AND orders.event_date = latest.oldest
+```
+
+### Order observations and select the top one
+```sql
+WITH account_cumsum AS (
+  SELECT
+    *,
+    COUNT(signup_date)
+      OVER (PARTITION BY account_id ORDER BY signup_date)
+      AS cumsum
+   FROM account_data  
+)
+
+SELECT *
+FROM account_cumsum
+WHERE cumsum = 1
 ```
 
 ## Checking duplicates
