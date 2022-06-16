@@ -27,18 +27,18 @@ INNER JOIN orders
 
 ### Order observations and select the top one
 ```sql
-WITH account_cumsum AS (
+WITH account_rownum AS (
   SELECT
     *,
-    COUNT(signup_date)
+    ROW_NUMBER()
       OVER (PARTITION BY account_id ORDER BY signup_date)
-      AS cumsum
+      AS rownum
    FROM account_data  
 )
 
 SELECT *
-FROM account_cumsum
-WHERE cumsum = 1
+FROM account_rownum
+WHERE rownum = 1
 ```
 
 ## Checking duplicates
