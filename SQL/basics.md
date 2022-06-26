@@ -158,7 +158,16 @@ Joining a table to itself. [Example](https://mode.com/sql-tutorial/sql-self-join
 ## UNION
 
 `UNION ALL` does not remove duplicate rows.
+```sql
+SELECT *
+FROM dataA
 
+UNION ALL
+
+SELECT *
+FROM dataB
+```
+  
 
 
 ## Usages
