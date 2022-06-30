@@ -12,10 +12,10 @@ References:
 
 ```r
 my_theme <- function(
-  legend.position = "right", 
+  legend.position = "right",
   legend.direction = "vertical",
   legend.key.width = unit(2, "line"),
-  textsize = 14, ...) 
+  textsize = 14, ...)
 {
     p <- theme_bw() +
       theme(plot.title = element_text(hjust = 0.5),
@@ -27,7 +27,7 @@ my_theme <- function(
 	    ...)
     return(p)
 }
-	    
+
 library(ggtheme)
 theme_minimal()
 ```
@@ -85,10 +85,10 @@ theme_minimal()
 xlabels <- rep("", 120)
 xlabels[c(seq(from = 1, to = 120, by = 10))] <- c(seq(from = 120, to = 1, by = -10))
 
-g <- ggplot(data.frame(predicted=predicted, Date=date_vec, true_index=true_index), aes(x=reorder(Date, true_index), y=predicted)) + 
+g <- ggplot(data.frame(predicted=predicted, Date=date_vec, true_index=true_index), aes(x=reorder(Date, true_index), y=predicted)) +
         geom_point() + xlab("Days to Election") + ylab("Prediction") +
         scale_x_discrete(labels = xlabels) +  # ここで変更を行なっている！
-        theme_bw() 
+        theme_bw()
 options(repr.plot.width=6, repr.plot.height=2.8)
 g
 ```
@@ -126,7 +126,7 @@ g <- ggplot(result, aes(x=reorder(Date, true_index), y=mean, group=1)) + # reord
         geom_line(aes(x=reorder(Date, true_index), y=top), size=0.4, color="gray") + # 上を結ぶ
         geom_line(aes(x=reorder(Date, true_index), y=bottom), size=0.4, color="gray") + # 下を結ぶ
         scale_x_discrete(labels = xlabels) + # 軸ラベルを調整
-        theme_bw() 
+        theme_bw()
 options(repr.plot.width=7, repr.plot.height=2.8)
 g
 ```
@@ -147,7 +147,7 @@ g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
   geom_point()+
   scale_linetype_manual(values=c("dotdash", "dotted"))+
   theme(legend.position="top")
-  
+
 # Change line colors and sizes
 g <- ggplot(df2, aes(x=grade, y=score, group=gender)) +
   geom_line(aes(linetype=gender, color=gender, size=gender))+
@@ -178,9 +178,9 @@ legend <- g1[["grobs"]][[id.legend]]
 lwidth <- sum(legend$width)
 
 # `arrangeGrob` does not show preview
-gA <- grid.arrange(p1 + theme(legend.position="none"), 
-          p2 + theme(legend.position="none"), 
-          legend, 
+gA <- grid.arrange(p1 + theme(legend.position="none"),
+          p2 + theme(legend.position="none"),
+          legend,
           layout_matrix = rbind(c(1,1,1,2,2,2,3))
           )
 ```
@@ -206,7 +206,7 @@ for(s in 1:num_combinations){
   trueK_ <- combinations[s, 1]
   estimatedK_ <- combinations[s, 2]
 
-  figures[[s]] <- readRDS(file = paste0("../obj/", 
+  figures[[s]] <- readRDS(file = paste0("../obj/",
                           "fig_T", trueK_, "_E", estimatedK_, ".obj"))
 }
 
@@ -225,7 +225,7 @@ edit_figure <- theme(legend.position="none",
 figures <- lapply(figures, function(x){x + edit_figure})
 
 # New Pictures cf. https://stackoverflow.com/a/11093069/4357279
-g <- arrangeGrob(grobs=figures, 
+g <- arrangeGrob(grobs=figures,
              nrow = length(estimatedK),
              right = legend,
              top = grid::textGrob(title_),
@@ -307,7 +307,7 @@ ggplot(faithful, aes(x=waiting)) +
 
 
 ## 関数の曲線を描く
-[Reference](http://qiita.com/hoxo_b/items/a6522a6e6561f8ca7b96)  
+[Reference](http://qiita.com/hoxo_b/items/a6522a6e6561f8ca7b96)
 `stat_function` or `geom_path`
 
 
@@ -322,6 +322,12 @@ ggplot(data=d, aes_string(x=var))
 
 ## 軸関連
 ### 軸のorderを変える
+
+このように直に設定できるようになっている (2022)
+```r
+aes(x = forcats::fct_rev(country))
+```
+
 ```r
 scale_x_discrete(limits = c('a3', 'a2', 'a1'))
 ```
@@ -375,7 +381,7 @@ cols_light <- ggColorHue(n=5, l=85)
 col2rgb(cols)
 scales::show_col(cols)
 
-g1 <- ggplot(res_viz, aes(x=TrueTopics, True, 
+g1 <- ggplot(res_viz, aes(x=TrueTopics, True,
                           fill=factor(True, levels=rev(sort(unique(res_viz$True))))
              ))+
       geom_bar(aes(y=..count../sum(..count..)*100)) +
@@ -430,8 +436,8 @@ guides(color = guide_legend(reverse = TRUE), fill = guide_legend(reverse = TRUE)
 ```
 ### ラベルを変える
 ```r
-data %>% select_("Group", "Finished") %>% slice(3:n()) %>% 
-   ggplot(aes(Group, fill=Finished)) + geom_bar() + scale_fill_hue(name = "Finished", labels = c("0"="Not Finished", "1"="Finished")) 
+data %>% select_("Group", "Finished") %>% slice(3:n()) %>%
+   ggplot(aes(Group, fill=Finished)) + geom_bar() + scale_fill_hue(name = "Finished", labels = c("0"="Not Finished", "1"="Finished"))
 ```
 `aes`のところが`colour`なら、`scale_colour_hue`になる。<br>
 <img src="figures/ggplot2_legend_label.png" width="330">
@@ -450,12 +456,12 @@ ggplot() +
                    size=0.42, show.legend = F) +
    geom_line(data=values_qua_past, aes(x=X, y=p50, colour="Estimated")) +
    geom_point(data=data, aes(x=year, y=DemVotesPct, colour="Truth"),
-              size=2.2, shape=17, show.legend = F) + 
-   geom_line(data=data, aes(x=year, y=DemVotesPct, colour="Truth"), linetype="longdash") + 
+              size=2.2, shape=17, show.legend = F) +
+   geom_line(data=data, aes(x=year, y=DemVotesPct, colour="Truth"), linetype="longdash") +
    scale_y_continuous(labels=scales::percent_format()) +
-   xlab("House") + ylab("Predicted Percentage") + 
+   xlab("House") + ylab("Predicted Percentage") +
    ggtitle("Democrat's Vote Share in Predicted Elections") +
-   theme_bw() + 
+   theme_bw() +
    scale_colour_manual(name="",values=c(Estimated="black", Truth="blue")) +
    theme(plot.title = element_text(hjust = 0.5))
 ```
@@ -498,22 +504,22 @@ tibble(
     ) %>%
   group_by(setid) %>%
   do(model1 = tidy(lm(score ~ age, data = .)),
-     model2 = tidy(lm(score ~ age + gender, data = .))) %>% 
-  gather(model_name, model, -setid) %>%                     
-  unnest() %>%                                              
-  filter(term == "age")  %>%                                 
+     model2 = tidy(lm(score ~ age + gender, data = .))) %>%
+  gather(model_name, model, -setid) %>%
+  unnest() %>%
+  filter(term == "age")  %>%
 ggplot(aes(colour = as.factor(setid))) +
   geom_hline(yintercept = 0, colour = gray(1/2), lty = 2) +
   geom_linerange(aes(x = model_name, ymin = estimate - std.error*interval1,
                      ymax = estimate + std.error*interval1),
                  lwd = 1, position = position_dodge(width = -1/2)) +
-  geom_pointrange(aes(x = model_name, y = estimate, 
+  geom_pointrange(aes(x = model_name, y = estimate,
 											ymin = estimate - std.error*interval2,
 											ymax = estimate + std.error*interval2),
 									lwd = 1/2, position = position_dodge(width = -1/2),
 									shape = 21, fill = "WHITE") +
   scale_x_discrete(limits=c("model2", "model1"), labels=c("M2", "M1")) +
-  scale_colour_hue(name = "Model", 
+  scale_colour_hue(name = "Model",
 					labels = c("1"="Model 1", "2"="Model 2", "3"="Model 3")) +
   coord_flip()
 ```
@@ -576,21 +582,21 @@ Let's use this and make a function to draw a bar plot.
 ```r
 fig_BarPlot <- function(data, qnum, varname, savename, mylimits=NA, mylabels=NA, folder="figures/"){
 
-  temp <- data %>% select_(get("qnum")) 
+  temp <- data %>% select_(get("qnum"))
   .e <- environment()
 
-  p <- ggplot(temp, aes(x=temp[[get("qnum")]], fill=temp[[get("qnum")]]), environment = .e) + 
-  geom_bar(stat="count") 
+  p <- ggplot(temp, aes(x=temp[[get("qnum")]], fill=temp[[get("qnum")]]), environment = .e) +
+  geom_bar(stat="count")
 
   # Modify order and labels
   if (is.na(mylimits) & is.na(mylabels)){
     # Nothing to do
   } else if(is.vector(mylimits) & is.vector(mylabels) & !is.na(mylimits) & !is.na(mylabels)){
-    p <- p + scale_x_discrete(limits=mylimits, labels=mylabels) 
+    p <- p + scale_x_discrete(limits=mylimits, labels=mylabels)
   } else if(is.vector(mylimits) & is.na(mylabels)){
-    p <- p + scale_x_discrete(limits=mylimits) 
+    p <- p + scale_x_discrete(limits=mylimits)
   } else if(is.na(mylimits) & is.vector(mylabels)){
-    p <- p + scale_x_discrete(labels=mylabels) 
+    p <- p + scale_x_discrete(labels=mylabels)
   }
 
 
@@ -598,7 +604,7 @@ fig_BarPlot <- function(data, qnum, varname, savename, mylimits=NA, mylabels=NA,
 
   savehist <- paste(folder, savename, sep="")
   ggsave(savehist, p)
-  
+
 }
 
 fig_BarPlot(data, "Q15.7", "Education",
@@ -613,8 +619,8 @@ Another Example:
 ```r
 myggsave <- function(savepath, p, font_family="Japan1GothicBBB", save=T, themebw=T, legend=F, return_=F){
   if(themebw)
-    p <- p + theme_bw() 
-  
+    p <- p + theme_bw()
+
   if(!legend)
     p <- p + theme(legend.position="none")
 
@@ -625,17 +631,17 @@ myggsave <- function(savepath, p, font_family="Japan1GothicBBB", save=T, themebw
     return(p)
 }
 
-fig_hist <- function(data, qnum, varname, savename, bin=25, folder="figures/"){  
+fig_hist <- function(data, qnum, varname, savename, bin=25, folder="figures/"){
   # Hist
   mean_v <- mean(unlist(data[, qnum]))
   temp <- data
   .e <- environment()
-  p <- ggplot(temp, aes(x=temp[[get("qnum")]], , fill=temp[[get("qnum")]])) + 
+  p <- ggplot(temp, aes(x=temp[[get("qnum")]], , fill=temp[[get("qnum")]])) +
     geom_histogram(binwidth=bin) +
-    labs(x=varname) + 
+    labs(x=varname) +
     geom_vline(xintercept=mean_v, colour="red") +
     annotate("text", x=mean_v, y=8, colour="white",
-            label=paste("Average:", as.character(round(mean_v,2)))) 
+            label=paste("Average:", as.character(round(mean_v,2))))
 
   savehist <- paste(folder, savename, sep="")
   myggsave(savehist, p)
@@ -660,7 +666,7 @@ If the variables' names are colour:
 ```r
 d <- data.frame(x = 1:4, y = 1:4,
                 colour = c("red", "green", "blue", "yellow"))
-		
+
 ggplot(d, aes(x, y, colour = colour)) +
     geom_point() +
     scale_colour_identity(guide = "legend")  # explicitly shows legend (remove it if you don't need it)
@@ -697,14 +703,14 @@ ggplot(d, aes(x, y, colour = colour)) +
 5 2017-08-28     morning   553.2
 6 2017-08-28       night    66.9
 
-> calorie_timeperiod_fig <- ggplot(calorie_timeperiod, 
+> calorie_timeperiod_fig <- ggplot(calorie_timeperiod,
   aes(x=date, y=calorie,
       group=factor(time_period, levels=c("morning","afternoon", "night", "midnight")),
       fill=factor(time_period, levels=c("morning","afternoon", "night", "midnight")),
       color=factor(time_period, levels=c("morning","afternoon", "night", "midnight")))) +
-  geom_line(position="stack") + 
+  geom_line(position="stack") +
   geom_area(aes(color=NULL),position="stack") + # use only group and fill
-  geom_hline(aes(fill=NULL), yintercept = 1400, color="red") + # Ideal calorie (actually, 1300) 
+  geom_hline(aes(fill=NULL), yintercept = 1400, color="red") + # Ideal calorie (actually, 1300)
   geom_point(color="black", position="stack", show.legend = F) + # don't show point in legend
   ggtitle("Calorie") +
   guides(fill=guide_legend(title="Time periods"), color=guide_legend(title="Time periods")) +
@@ -751,14 +757,14 @@ ggplot(temp, aes(x=Choice)) +
 ## Return ggplot2 object in loop
 ```r
 fig <- function(lower, upper){
-    g <-list( 
+    g <-list(
       geom_vline(xintercept=lower, lty=2, size=0.3),
       geom_vline(xintercept=upper, lty=2, size=0.2)
     )
     return(g)
 }
 
-g <- ggplot() 
+g <- ggplot()
 lower_seq <- seq(0.45,0.4975,0.0025)
 upper_seq <- seq(0.55, 0.5025, -0.0025)
 for(i in 1:length(lower_seq)){
@@ -841,7 +847,7 @@ fig_base(res, yintercept, x_category = x_category) +
 ## Plot 3D info
 ### geom_tile
 ```r
-p <- ggplot(res %>% mutate(L2 = factor(L2), L3 = factor(L3)), 
+p <- ggplot(res %>% mutate(L2 = factor(L2), L3 = factor(L3)),
             aes(x = L2, y = L3)) +
   geom_tile(aes(fill = TestPerplexity, colour = NumTopics), size = 1.5,
             width = 0.95, height = 0.9,  # make spaces between tiles
