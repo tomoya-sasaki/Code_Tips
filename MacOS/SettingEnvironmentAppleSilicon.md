@@ -105,6 +105,7 @@ $ sudo tlmgr update --self --all  # you may need to relaunch the terminal
 ```
 
 * TeXShop: TeXShopの環境設定の［書類］タブの左下の［設定プロファイル］から「upTeX (ptex2pdf)」を選択
+* [latexmkrc](https://github.com/Shusei-E/Code_Tips/blob/master/MacOS/MacVim/IntelMac/.latexmkrc)
 
 
 ## Pandoc
