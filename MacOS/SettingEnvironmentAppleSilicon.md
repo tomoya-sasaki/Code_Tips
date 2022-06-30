@@ -101,7 +101,7 @@ CPPFLAGS=-I/opt/homebrew/opt/gettext/include -I$(LLVM_LOC)/include
 ```
 $ brew install wget xz
 $ brew install --cask mactex
-$ sudo tlmgr update --self --all
+$ sudo tlmgr update --self --all  # you may need to relaunch the terminal
 ```
 
 * TeXShop: TeXShopの環境設定の［書類］タブの左下の［設定プロファイル］から「upTeX (ptex2pdf)」を選択
