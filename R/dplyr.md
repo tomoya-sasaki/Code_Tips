@@ -28,6 +28,7 @@
 22. [Reorder columns](#reorder-columns)
 23. [mutate](#mutate)
 24. [Bootstrap](#bootstrap)
+25. [recode](#recode)
 
 ## 処理をして列を追加
 ```r
@@ -711,3 +712,21 @@ mutate_at(vars(-Q2),
 modelr::bootstrap()
 ```
 
+## recode
+```
+r$> items <- c("Apple", "Orange", "Banana", "Grape", "Pear")
+
+r$> recode(c(2, 3, 5, 1), !!!items)
+[1] "Orange" "Banana" "Pear"   "Apple" 
+
+r$> recode(c(2, 3, 5, 1, 6), !!!items, .default = NA_character_)
+[1] "Orange" "Banana" "Pear"   "Apple"  NA      
+
+r$> recode_factor(c(2, 3, 5, 1), !!!items)
+[1] Orange Banana Pear   Apple 
+Levels: Apple Orange Banana Pear
+
+r$> recode_factor(c(2, 3, 5, 1, NA, 4), !!!items)
+[1] Orange Banana Pear   Apple  <NA>   Grape 
+Levels: Apple Orange Banana Grape Pear
+```
