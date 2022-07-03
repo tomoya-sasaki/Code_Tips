@@ -1,6 +1,11 @@
-<h1>Pandas</h1>
+# Pandas
 
-# Table of Contents
+* [R to Pandas](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)
+* [Tidy to Pandas](https://stmorse.github.io/journal/tidyverse-style-pandas.html)
+* 
+
+
+## Table of Contents
 1. [データフレームを初期化した後に登録](#データフレームを初期化した後に登録)
 2. [再インデックス](#再インデックス)
 3. [時系列インデックスをつけてソートする](#時系列インデックスをつけてソートする)
