@@ -8,6 +8,7 @@ References:
   * [Bootswatch](https://bootswatch.com/)
   * [MetBrewer](https://github.com/BlakeRMills/MetBrewer)
   * [Nippon Colors](https://nipponcolors.com/)
+  * [My color code](https://gist.github.com/Shusei-E/8ac19ed745fd3279875a458970500698)
 
 
 ```r
