@@ -79,6 +79,7 @@ theme_minimal()
 27. [if else](#if-else)
 28. [Plot 3D info](#plot-3d-info)
 	* [geom_tile](#geom_tile)
+29. [Bar plot order](#bar-plot-order)
 
 
 ## xラベルの変更
@@ -883,3 +884,11 @@ ggplot(., aes(x = Consumption, y = Age)) +
         legend.position = legend.position)
 ```
 <img src="figures/ggplot2_tile.png" width="390">
+
+
+## Bar plot order
+```r
+ggplot(data, aes(x = fct_rev(country), y = Count, fill = Choices)) +
+  geom_bar(stat = "identity", position = position_stack(reverse = TRUE)) +
+  coord_flip()
+```
