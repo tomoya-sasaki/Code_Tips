@@ -1,5 +1,5 @@
 # Shiny
-[My examples](../Examples/Shiny/)
+[My examples](./Examples/Shiny/)
 
 ## Table of Contents
 1. [File organization](#file-organization)
