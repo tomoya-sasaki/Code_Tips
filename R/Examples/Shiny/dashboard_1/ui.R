@@ -15,7 +15,7 @@ dashboardPage(
     fluidRow(
     # Column 1: Parameters
     column(width = 3,
-      box(width = NULL,
+      box(width = NULL,  # it's important to explicitly set the width to `NULL`
         # Country
         selectInput(
           "country",
