@@ -32,6 +32,7 @@ dashboardPage(
         )
       )  # close box
     ),  # close column 1
+    # Column 2: Result
     column(
       width = 8,
       box(
