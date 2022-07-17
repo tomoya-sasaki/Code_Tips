@@ -34,6 +34,23 @@ my_theme <- function(
         )
 }
 
+figure_save <- function(p, filename, ext = "pdf", folder = NULL, width = 7, height = 5, ratio = NULL)
+{
+
+  if (is.null(folder)) {
+    folder <- "figures"
+  }
+
+  if (!is.null(ratio)) {
+    if (ratio == "long") {
+      width <- 8
+      height <- 4
+    }
+  }
+
+  ggsave(filename = fs::path(folder, filename, ext = ext),
+         plot = p, width = width, height = height)
+}
 
 library(ggtheme)
 theme_minimal()
