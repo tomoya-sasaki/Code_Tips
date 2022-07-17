@@ -16,18 +16,24 @@ my_theme <- function(
   legend.position = "right",
   legend.direction = "vertical",
   legend.key.width = unit(2, "line"),
+  legend.text = element_text(size = 10),
+  title_textsize = 14,
   textsize = 14, ...)
 {
-    p <- theme_bw() +
-      theme(plot.title = element_text(hjust = 0.5),
-            panel.grid = element_blank(),
-            text = element_text(size = textsize),
-            legend.position = legend.position,
-            legend.direction = legend.direction,
-            legend.key.width = legend.key.width,
-	    ...)
-    return(p)
+  p <- ggplot2::theme_bw() +
+        ggplot2::theme(
+          plot.margin = margin(0.15, 0.3, 0.12, 0.12, "cm"),
+          plot.title = ggplot2::element_text(hjust = 0.5, size = title_textsize),
+          panel.grid = ggplot2::element_blank(),
+          text = ggplot2::element_text(size = textsize),
+          legend.position = legend.position,
+          legend.direction = legend.direction,
+          legend.key.width = legend.key.width,
+          legend.text = legend.text,
+          ...
+        )
 }
+
 
 library(ggtheme)
 theme_minimal()
