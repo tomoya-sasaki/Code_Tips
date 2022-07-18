@@ -13,6 +13,9 @@ format_number <- function(x, round = 1) {
 ```
 
 ## Table
+
+Also check [flextable](./flextable.md).
+
 ```r
 format_table <- function(x, sep = " ", type = c("basic", "latex"), ...) {
   type <- match.arg(type)
