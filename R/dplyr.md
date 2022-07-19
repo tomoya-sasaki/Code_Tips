@@ -29,6 +29,7 @@
 23. [mutate](#mutate)
 24. [Bootstrap](#bootstrap)
 25. [recode](#recode)
+26. [unite](#unite): Unite multiple columns into one
 
 ## 処理をして列を追加
 ```r
@@ -730,3 +731,6 @@ r$> recode_factor(c(2, 3, 5, 1, NA, 4), !!!items)
 [1] Orange Banana Pear   Apple  <NA>   Grape 
 Levels: Apple Orange Banana Grape Pear
 ```
+
+## unite
+[unite](https://tidyr.tidyverse.org/reference/unite.html)
