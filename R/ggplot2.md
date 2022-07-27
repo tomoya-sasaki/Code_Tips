@@ -435,6 +435,7 @@ aes(x = reorder(the_factor, desc(the_factor)), ...)
 ```r
 scale_y_continuous(breaks = scales::breaks_pretty())
 scale_y_continuous(labels = scales::percent)
+scale_y_continuous(label = function(x) {paste0("$", x)})
 ```
 
 
