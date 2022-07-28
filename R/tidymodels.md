@@ -54,3 +54,31 @@ fit_lasso %>%
   pull_workflow_fit() %>%
   vi(lambda = lasso_best$penalty)
 ```
+
+
+```r
+data_split <- initial_split(data, strata = GroupID, prop = 0.8)
+data_train <- training(data_split)
+data_test <- testing(data_split)
+
+# Preparation
+rec <- recipe(
+          outcome ~ .,
+          data = data_train %>% select(-GroupID)) %>%
+  step_dummy(county)
+
+use_data_train <- bake(prep(rec), new_data = NULL) %>% as.data.frame()
+use_data_test <- bake(prep(rec), new_data = data_test %>% select(-GroupID)) %>% as.data.frame()
+use_formula <- formula(rec %>% prep())
+data_original <- bake(prep(rec), new_data = data %>% select(-GroupID)) %>% as.data.frame()
+
+
+
+# Fitting BART 1
+post <- gbart(
+  x.train = use_data_train %>% select(-all_of(outcome)),
+  y.train = use_data_train %>% pull(all_of(outcome))
+)
+
+pred <- predict(post, newdata = use_data_test %>% select(-all_of(outcome)))
+```
