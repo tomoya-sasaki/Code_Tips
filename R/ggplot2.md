@@ -34,7 +34,7 @@ my_theme <- function(
         )
 }
 
-figure_save <- function(p, filename, ext = "png", folder = NULL, width = 7, height = 5, ratio = NULL, ...)
+figure_save <- function(p, filename, ext = "pdf", folder = NULL, width = 7, height = 5, ratio = NULL, ...)
 {
 
   if (is.null(folder)) {
