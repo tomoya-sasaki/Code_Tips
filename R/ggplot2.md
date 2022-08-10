@@ -472,7 +472,10 @@ data %>% select_("Group", "Finished") %>% slice(3:n()) %>%
 ### Legendに表示しない
 Add `show.legend = F`
 ```r
+# 1
 geom_point(color="black", position="stack", show.legend = F)
+# 2
+guides(colour = "none")
 ```
 
 ### Manually add
