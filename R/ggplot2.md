@@ -34,7 +34,7 @@ my_theme <- function(
         )
 }
 
-figure_save <- function(p, filename, ext = "pdf", folder = NULL, width = 7, height = 5, ratio = NULL)
+figure_save <- function(p, filename, ext = "png", folder = NULL, width = 7, height = 5, ratio = NULL, ...)
 {
 
   if (is.null(folder)) {
@@ -49,7 +49,7 @@ figure_save <- function(p, filename, ext = "pdf", folder = NULL, width = 7, heig
   }
 
   ggsave(filename = fs::path(folder, filename, ext = ext),
-         plot = p, width = width, height = height)
+         plot = p, width = width, height = height, ...)
 }
 
 library(ggtheme)
@@ -86,6 +86,7 @@ theme_minimal()
 13. [position関連](#position関連)
 	* [線分の位置](#線分の位置)
 14. [Theme](#theme)
+	* [Transparent](#transparent)
 15. [日本語関連](#日本語関連)
 16. [文字の追加](#文字の追加)
 	* [geom_text()](#geom_text)
@@ -559,6 +560,20 @@ ggplot(aes(colour = as.factor(setid))) +
 theme(plot.title = element_text(hjust = 0.5),
       text = element_text(size=16))
 ```
+
+### Transparent
+```r
+theme(
+ panel.background = element_rect(fill = "transparent"),
+ plot.background = element_rect(fill = "transparent", color = NA),
+ panel.grid.major = element_blank(),
+ panel.grid.minor = element_blank(),
+ legend.background = element_rect(fill = "transparent")
+ legend.box.background = element_rect(fill = "transparent")
+)
+ggsave("plot.png", p, bg = "transparent")
+```
+
 
 
 ## 日本語関連
