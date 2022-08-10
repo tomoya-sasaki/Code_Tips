@@ -1,7 +1,8 @@
 # R
 
-### path
-`here` package
+### Books
+* [私たちのR: ベストプラクティスの探究](https://www.jaysong.net/RBook/)
+
 
 ### 虹色
 ```r
