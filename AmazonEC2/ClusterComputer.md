@@ -9,6 +9,8 @@ $ source activate tf
 $ pip install tensorflow==2.5 
 ```
 * jobを作ったら、`source activate tf`で大丈夫
+* `tensorflow==1.15`はPython 3.7以下じゃないとできない
+
 
 ## CUDA
 ```
