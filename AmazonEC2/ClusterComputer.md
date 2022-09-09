@@ -11,6 +11,7 @@ $ pip install tensorflow==2.5
 * jobを作ったら、`source activate tf`で大丈夫
 * `tensorflow==1.15`はPython 3.7以下じゃないとできない
 * 環境を作ったら新しいターミナルで入り直さないとエラーが出ることがあった
+* `conda info --envs`
 
 
 ## CUDA
