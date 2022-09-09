@@ -43,7 +43,7 @@ screenを開いた後で、その開いているスクリーンを閉じるに�
 
 # Status
 ## Storage
-`$ df -h`
+`$ df -h .`
 
 ## Memory
 `$ free -m`
