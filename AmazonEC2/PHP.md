@@ -13,7 +13,7 @@ SSH (port 22), HTTP (port 80), and HTTPS (port 443)
 ## Connect to the instance
 Set key (first time)
 ```terminal
-$ chmod 400 KEY.pem
+$ chmod 400 KEY.pem  # 600を使わないといけないかも
 ```
 
 Access
