@@ -21,6 +21,8 @@ Access
 $ ssh -i /Users/KEY.pem ec2-user@ec2-**-***-**-**.***.compute.amazonaws.com
 ```
 
+Security groupのSSHのIPアドレスの設定が正しくなっているか注意 (Custom IPの場合)
+
 ## Set up
 
 ### Update
