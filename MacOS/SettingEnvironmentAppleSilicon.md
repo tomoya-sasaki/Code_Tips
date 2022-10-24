@@ -143,6 +143,10 @@ $ pyenv versions  # list versions
 
 Older versions -> [Docker](#docker)
 
+### Tensorflow
+* [tensorflow-metal](https://developer.apple.com/metal/tensorflow-plugin/)
+
+
 ## Git
 1. Git CLI
 ```
