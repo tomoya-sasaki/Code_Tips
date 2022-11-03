@@ -540,6 +540,8 @@ my_function <- function(data, x= "OriginalX" , y= "OriginalY" ){
  a <- "Species"
 iris %>% filter(!!rlang::sym(a) == "versicolor")
  ```
+ [Reference](https://stackoverflow.com/questions/48219732/pass-a-string-as-variable-name-in-dplyrfilter)
+ 
  
  ### Example 5: Programmatically-assigned names on the LHS
  Use `:=` if you want programmatically-assigned names on the LHS of expressions.
