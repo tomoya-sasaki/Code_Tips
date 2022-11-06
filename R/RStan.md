@@ -9,6 +9,7 @@ Consider using [`brms`](https://das-kino.hatenablog.com/entry/2018/12/15/230938)
 3. [Initialization](#initialization)
 4. [Diagnosis](#diagnosis)
 5. [Self-defined functions](#self-defined-functions)
+6. [Running on R](#running-on-r)
 
 ### rstanarm
 1. [Linear predictor](#linear-predictor)
@@ -104,6 +105,23 @@ functions{
 data{
 }
 ```
+
+
+## Running on R
+
+```r
+library(rstan)
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+
+model_stan <- stan_model(file = "analysis/model.stan", model_name = "bayes")
+datalist <- list(
+  N = nrow(data),
+  Y = data$correct
+)
+fitted <- sampling(model_stan, data = datalist)
+```
+
 
 # rstanarm
 
