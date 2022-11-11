@@ -25,6 +25,17 @@ INNER JOIN orders
     AND orders.event_date = latest.oldest
 ```
 
+Another example from [LeetCode: 511. Game Play Analysis I](https://leetcode.com/problems/game-play-analysis-i/).
+```sql
+SELECT
+  A.player_id,
+  MIN(A.event_date) AS first_login
+FROM
+  Activity AS A
+GROUP BY
+  A.player_id  
+```
+
 ### Order observations and select the top one
 ```sql
 WITH account_rownum AS (
@@ -39,6 +50,42 @@ WITH account_rownum AS (
 SELECT *
 FROM account_rownum
 WHERE rownum = 1
+```
+
+Another example from [LeetCode: 511. Game Play Analysis I](https://leetcode.com/problems/game-play-analysis-i/).
+```sql
+/* Solution 1 */
+SELECT
+  X.player_id,
+  X.event_date AS first_login
+FROM
+  (
+    SELECT
+      A.player_id,
+      A.event_date,
+      RANK() OVER (
+        PARTITION BY
+          A.player_id
+        ORDER BY
+          A.event_date
+      ) AS rnk
+    FROM
+      Activity A
+  ) X
+WHERE
+  X.rnk = 1
+  
+/* Solution 2 */
+SELECT DISTINCT
+  A.player_id,
+  FIRST_VALUE(A.event_date) OVER (
+    PARTITION BY
+      A.player_id
+    ORDER BY
+      A.event_date
+  ) AS first_login
+FROM
+  Activity A
 ```
 
 ## Checking duplicates
