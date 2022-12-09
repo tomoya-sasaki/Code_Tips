@@ -1,8 +1,9 @@
 # Pandas
 
-* [R to Pandas](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)
-* [Tidy to Pandas](https://stmorse.github.io/journal/tidyverse-style-pandas.html)
-* 
+* [R to pandas](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_r.html)
+* [Tidy to pandas](https://stmorse.github.io/journal/tidyverse-style-pandas.html)
+* Best Practices
+  * [apply and memory](https://qiita.com/141sksk/items/9883be05a3851c90d1d1)
 
 
 ## Table of Contents
