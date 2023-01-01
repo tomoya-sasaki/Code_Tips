@@ -46,7 +46,7 @@ double rcpp_sum(NumericVector v){
 test.R
 ```r
 library(Rcpp)
-sourceCpp('test.cpp')
+sourceCpp("test.cpp")
 rcpp_sum(1:10)
 ```
 
