@@ -1,6 +1,10 @@
 # Various Ways of Sampling
 It is always good to track accept rate.
 
+## Slice Sampling
+It's better to use general slice sampling and adjust the parameter `A`.
+
+## Notes
 Maybe you don't need to add an logistic error term in the examples below.
 * `Metropolis-Hastings-PRML-LogisticRegression`: Above points are fine.
 * `Slice-Sampling-LogisticRegression`: This should also be fine.
