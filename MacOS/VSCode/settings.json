@@ -1,6 +1,6 @@
 {
     //
-    // Appearence
+    // Appearance
     //
     "workbench.editor.showIcons": false,
     "window.restoreWindows": "all",
@@ -209,13 +209,7 @@
         "editor.parameterHints.enabled": false,
         "editor.colorDecorators":false
     },
-    //
-    // Python
-    //
     "python.defaultInterpreterPath": "/Users/shusei/.pyenv/versions/3.9.6/envs/py39/bin/python",
-    //
-    // LaTex
-    //
     "latex-workshop.bibtex-fields.sort.enabled": true,
     "latex-workshop.latex.autoClean.run": "never",
     "latex-workshop.latex.autoBuild.run": "never",
@@ -305,41 +299,43 @@
     //
     // Spell check (Spell Right)
     //
-    "spellright.documentTypes": ["latex"],
-    "spellright.ignoreRegExpsByClass": {
-        "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
-        "cpp": [ "/#include\\s+\\\".+\\\"/g" ],
-        "html": [ "/<script>[^]*?</script>/gm" ],
-        "latex": ["/\\\\begin{figure}[^]*?\\\\end{figure}/gm",
-                  "/\\\\begin{align}[^]*?\\\\end{align}/gm",
-                  "/\\\\begin{align*}[^]*?\\\\end{align*}/gm"]
-    },
-    "spellright.latexSpellParameters": [
-        "title",
-        "date",
-        "chapter",
-        "section\\*?",
-        "subsection\\*?",
-        "subsubsection\\*?",
-        "part",
-        "paragraph",
-        "subparagraph",
-        "text(rm|sf|tt|md|bf|up|it|sl|sc|normal)",
-        "underline",
-        "emph",
-        "item",
-        "footnote(text)?",
-        "caption(of)?",
-        "multicolumn",
-        "href",
-        "hyperref",
-        "begin\\{frame\\}"
-    ],
-    "spellright.notificationClass": "error",
-    "spellright.statusBarIndicator": true,
+    // "spellright.documentTypes": ["latex"],
+    // "spellright.language": ["en"],
+    // "spellright.ignoreRegExpsByClass": {
+    //     "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
+    //     "cpp": [ "/#include\\s+\\\".+\\\"/g" ],
+    //     "html": [ "/<script>[^]*?</script>/gm" ],
+    //     "latex": ["/\\\\begin{figure}[^]*?\\\\end{figure}/gm",
+    //               "/\\\\begin{align}[^]*?\\\\end{align}/gm",
+    //               "/\\\\begin{align*}[^]*?\\\\end{align*}/gm"]
+    // },
+    // "spellright.latexSpellParameters": [
+    //     "title",
+    //     "date",
+    //     "chapter",
+    //     "section\\*?",
+    //     "subsection\\*?",
+    //     "subsubsection\\*?",
+    //     "part",
+    //     "paragraph",
+    //     "subparagraph",
+    //     "text(rm|sf|tt|md|bf|up|it|sl|sc|normal)",
+    //     "underline",
+    //     "emph",
+    //     "item",
+    //     "footnote(text)?",
+    //     "caption(of)?",
+    //     "multicolumn",
+    //     "href",
+    //     "hyperref",
+    //     "begin\\{frame\\}"
+    // ],
+    // "spellright.notificationClass": "error",
     //
     // Editor
     //
+    //Grammarly
+    "grammarly.files.include": ["**/*.md", "**/*.tex", "**/*.txt"],
     // Controls if quick suggestions should show up while typing
     "editor.quickSuggestions": {
         "other": true,
@@ -369,5 +365,6 @@
     "editor.tabSize": 2,
     "julia.enableTelemetry": false,
     "terminal.integrated.altClickMovesCursor": false,
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "julia.symbolCacheDownload": true
 }
