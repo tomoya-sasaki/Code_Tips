@@ -8,7 +8,8 @@
     "files.trimTrailingWhitespace": true,
     "git.decorations.enabled": false,
     "workbench.preferredLightColorTheme": "Default Dark+",
-    "workbench.preferredHighContrastColorTheme": "Brackets Light Pro",
+    "workbench.preferredHighContrastLightColorTheme": "Atom One Light",
+    "workbench.preferredHighContrastColorTheme": "monokai-charcoal (gray)",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
