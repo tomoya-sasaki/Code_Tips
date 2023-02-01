@@ -3,7 +3,7 @@
 ## Tensorflow
 * 管理画面からのterminalで、condaのenvironmentを作ってTensorflowを入れる
 ```
-$ module load python/3.8.5-fasrc01  # python/3.6.3-fasrc01
+$ module load python/3.9.12-fasrc01  # python/3.6.3-fasrc01
 $ conda create -n tf python=3.8 pip numpy six wheel scipy pandas
 $ conda activate tf
 $ pip install tensorflow==2.5 
