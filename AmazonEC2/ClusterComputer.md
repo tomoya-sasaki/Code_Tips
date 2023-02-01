@@ -5,7 +5,7 @@
 ```
 $ module load python/3.9.12-fasrc01  # python/3.6.3-fasrc01
 $ conda create -n tf python=3.9 pip cython numpy six wheel scipy pandas
-$ conda activate tf
+$ source activate tf
 $ pip install tensorflow==2.5 
 $ conda deactivate
 ```
