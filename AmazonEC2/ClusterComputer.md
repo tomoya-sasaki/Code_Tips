@@ -5,8 +5,9 @@
 ```
 $ module load python/3.8.5-fasrc01  # python/3.6.3-fasrc01
 $ conda create -n tf python=3.8 pip numpy six wheel scipy pandas
-$ source activate tf
+$ conda activate tf
 $ pip install tensorflow==2.5 
+$ conda deactivate
 ```
 * jobを作ったら、`source activate tf`で大丈夫
 * `tensorflow==1.15`はPython 3.7以下じゃないとできない
