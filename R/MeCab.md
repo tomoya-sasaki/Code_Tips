@@ -1,7 +1,7 @@
 # RMeCab
 
 ## Install
-Try [this](https://github.com/IshidaMotohiro/RMeCab/issues/21#issuecomment-1113888363) on Terminal (not on iTerm). Do not use homebrew.
+Try [this](https://github.com/IshidaMotohiro/RMeCab/issues/21#issuecomment-1113888363) on Terminal (not on iTerm). Do not use homebrew (if you're using Apple Silicon).
 
 ## neogold
 
