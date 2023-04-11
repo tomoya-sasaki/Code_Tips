@@ -144,7 +144,8 @@ $ pyenv versions  # list versions
 Older versions -> [Docker](#docker)
 
 ### Tensorflow
-* [tensorflow-metal](https://developer.apple.com/metal/tensorflow-plugin/)
+* [tensorflow-metal](https://developer.apple.com/metal/tensorflow-plugin/): Using macOS GPU
+* Older version `pip install https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.5.0-py3-none-any.whl` (should use Python < 3.8)
 
 
 ## Git
