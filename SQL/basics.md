@@ -117,9 +117,14 @@ SELECT COUNT(DISTINCT month) AS unique_months
 
 Basic:
 ```sql
-SELECT d1 players
-  JOIN d2 teams
-    ON teams.school_id = players.school_id
+# Leetcode: 175. Combine Two Tables
+SELECT d1.firstNAME,
+       d1.lastName,
+       d2.city,
+       d2.state
+FROM Person d1 
+LEFT JOIN Address d2 
+ON d1.personId = d2.personID
 ```
 (default is `INNER JOIN`)
 
